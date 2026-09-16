@@ -1,0 +1,10 @@
+{
+  "port": 8768,
+  "scan_seconds": 300,
+  "report_seconds": 3600,
+  "extract_timeout_seconds": 60,
+  "max_file_bytes": 104857600,
+  "roots": [
+    "./sample-library/FATHER_GOLDEN_LIBRARY"
+  ]
+}
