@@ -63,6 +63,8 @@ def init():
         db.execute('INSERT OR IGNORE INTO settings VALUES(?,?)', ('report_baseline',json.dumps({'at':time.time(),'processed':0,'errors':0,'chunks':0})))
     with connection() as db:
         study.init(db)
+        import source_filter
+        source_filter.install(db)
         for row in db.execute("SELECT DISTINCT sha FROM files WHERE sha IS NOT NULL AND status IN ('ready','partial')").fetchall():
             study.add_notes(db,row[0])
 
@@ -110,6 +112,7 @@ def scan():
             if STOP.is_set(): break
             dirs[:] = [d for d in dirs if d not in SKIP and not (Path(directory)/d).is_symlink()]
             for name in names:
+                if name.startswith('~$'): continue
                 path = Path(directory)/name
                 domain,kind=study.classify(path)
                 catalog.append((str(path),domain,kind,int(path.suffix.lower() in SUPPORTED)))
@@ -147,6 +150,9 @@ def process_one():
     path = Path(row['path'])
     domain,kind=study.classify(path)
     LIVE.update(phase='разбор документа', current=str(path),study_domain=study.DOMAINS[domain],source_kind=kind)
+    if path.suffix.lower()=='.pdf':
+        import pdf_batch
+        return pdf_batch.process(sys.modules[__name__], row)
     started = time.monotonic()
     output = DATA / 'extract-result.json'
     status, error, sha, payload = 'error', '', None, None
@@ -280,9 +286,9 @@ class Handler(BaseHTTPRequestHandler):
 
 
 def serve():
-    init()
     try: server=ThreadingHTTPServer(('127.0.0.1',PORT),Handler)
     except OSError: return 17
+    init()
     thread=threading.Thread(target=worker,daemon=True); thread.start()
     try: server.serve_forever(poll_interval=1)
     finally: STOP.set(); server.server_close()

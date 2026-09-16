@@ -6,6 +6,32 @@ from extract import extract
 
 
 class FormatTests(unittest.TestCase):
+    def test_mhtml_word_unicode(self):
+        from email.message import EmailMessage
+        with tempfile.TemporaryDirectory() as d:
+            p = Path(d)/'archive.doc'
+            message = EmailMessage()
+            message.set_content('<html><p>Требование</p></html>'.encode('utf-16'), maintype='text', subtype='html', cte='base64')
+            message.replace_header('Content-Type', 'text/html; charset="unicode"')
+            p.write_bytes(message.as_bytes())
+            # Real Word MHTML starts with MIME-Version and contains HTML MIME parts.
+            raw = p.read_bytes()
+            p.write_bytes(b'MIME-Version: 1.0\n' + raw)
+            self.assertEqual(extract(p)['chunks'][0]['text'], 'Требование')
+
+    def test_scanned_pdf_ocr_preserves_page_and_partial(self):
+        from unittest.mock import patch
+        from pypdf import PdfWriter
+        with tempfile.TemporaryDirectory() as d:
+            p = Path(d)/'scan.pdf'
+            writer = PdfWriter()
+            writer.add_blank_page(width=200, height=200)
+            writer.write(p)
+            with patch('ocr.recognize_pdf', return_value=([('страница 1; OCR — требуется сверка', 'Распознано')], True)):
+                result = extract(p)
+            self.assertEqual(result['status'], 'partial')
+            self.assertIn('OCR', result['chunks'][0]['locator'])
+
     def test_fb2_encoding_nested_sections_notes_and_binary(self):
         with tempfile.TemporaryDirectory() as d:
             p = Path(d)/'source.fb2'

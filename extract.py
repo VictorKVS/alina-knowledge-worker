@@ -17,12 +17,21 @@ def extract(path):
         if reader.is_encrypted and not reader.decrypt(''):
             raise ValueError('PDF зашифрован')
         partial = len(reader.pages) > 2000
+        scanned = []
         for i, page in enumerate(reader.pages[:2000]):
             text = page.extract_text() or ''
             if text.strip():
                 parts.append((f'страница {i+1}', text))
+            else:
+                scanned.append(i)
+        if scanned:
+            from ocr import recognize_pdf
+            recognized, incomplete = recognize_pdf(path, scanned)
+            parts.extend(recognized)
+            parts.sort(key=lambda item: int(item[0].split()[1].rstrip(';')))
+            partial = partial or incomplete
         if not parts:
-            raise ValueError('Нет извлекаемого текста: требуется OCR')
+            raise ValueError('Нет текста после OCR: проверьте качество скана и языки Windows OCR')
     elif path.suffix.lower() in {'.doc', '.rtf', '.epub', '.fb2'}:
         from formats import document_parts
         parts = document_parts(path, raw)

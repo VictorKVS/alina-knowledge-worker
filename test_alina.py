@@ -14,6 +14,25 @@ from extract import extract
 
 
 class AlinaTests(unittest.TestCase):
+    def test_pdf_batches_resume_and_finish_without_duplicate_chunks(self):
+        from reportlab.pdfgen.canvas import Canvas
+        p=self.sources/'large.pdf'
+        canvas=Canvas(str(p))
+        for page in range(17):
+            canvas.drawString(50,750,f'Page {page+1}: persistent extraction test')
+            canvas.showPage()
+        canvas.save()
+        alina.scan();alina.process_one()
+        self.assertEqual(alina.snapshot()['counts']['pending'],1)
+        with alina.connection() as db:
+            self.assertEqual(db.execute('SELECT next FROM pdf_progress').fetchone()[0],8)
+            self.assertEqual(db.execute('SELECT count(*) FROM chunks').fetchone()[0],8)
+        alina.init();alina.process_one();alina.process_one()
+        self.assertEqual(alina.snapshot()['counts']['ready'],1)
+        self.assertEqual(alina.snapshot()['chunks'],17)
+        self.assertEqual(alina.snapshot()['processed'],1)
+        alina.scan();self.assertFalse(alina.process_one())
+
     def setUp(self):
         self.temp=tempfile.TemporaryDirectory()
         self.base=Path(self.temp.name)

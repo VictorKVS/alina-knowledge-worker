@@ -103,7 +103,22 @@ def document_parts(path, raw):
     suffix = path.suffix.lower()
     if suffix == '.epub': return epub_parts(path)
     if suffix == '.fb2': return fb2_parts(raw)
-    if raw.lstrip().startswith(b'{\\rtf'):
+    if raw.lstrip().lower().startswith(b'mime-version:'):
+        from email.parser import BytesParser
+        from email import policy
+        message = BytesParser(policy=policy.default).parsebytes(raw)
+        texts = []
+        for part in message.walk():
+            if part.get_content_type() == 'text/html':
+                content = part.get_payload(decode=True)
+                if content:
+                    charset = part.get_content_charset() or 'utf-8'
+                    if charset.lower() == 'unicode': charset = 'utf-16'
+                    decoded = content.decode(charset)
+                    texts.append(html_text(decoded.encode('utf-8')))
+        if not texts: raise ValueError('MHTML: не найден HTML-текст')
+        text = '\n'.join(texts)
+    elif raw.lstrip().startswith(b'{\\rtf'):
         text = office_text(path, 'rtf')
     elif raw.lstrip().lower().startswith((b'<!doctype html', b'<html')):
         text = html_text(raw)

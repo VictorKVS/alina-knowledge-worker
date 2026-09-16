@@ -1,5 +1,6 @@
 param([string]$Source, [string]$Output, [string]$PidFile, [string]$Format)
 $ErrorActionPreference = 'Stop'
+[Console]::OutputEncoding = New-Object System.Text.UTF8Encoding
 if ($Format -eq 'rtf') {
     Add-Type -AssemblyName System.Windows.Forms
     $box = New-Object System.Windows.Forms.RichTextBox
@@ -19,7 +20,13 @@ $word = New-Object -ComObject Word.Application
 $owned = $false
 try {
     [uint32]$wordProcess = 0
-    [void][AlinaWindow]::GetWindowThreadProcessId([IntPtr]$word.Hwnd, [ref]$wordProcess)
+    if ($null -ne $word.Hwnd) {
+        [void][AlinaWindow]::GetWindowThreadProcessId([IntPtr]$word.Hwnd, [ref]$wordProcess)
+    } else {
+        $created = @(Get-Process WINWORD -ErrorAction SilentlyContinue | Where-Object { $previous -notcontains $_.Id })
+        if ($created.Count -ne 1) { throw 'Cannot identify isolated Word process' }
+        $wordProcess = $created[0].Id
+    }
     if ($previous -contains $wordProcess) { throw 'Cannot use an existing Word session' }
     $owned = $true
     [IO.File]::WriteAllText($PidFile, [string]$wordProcess)
@@ -27,10 +34,14 @@ try {
     $word.DisplayAlerts = 0
     $word.AutomationSecurity = 3
     $word.Options.UpdateLinksAtOpen = $false
-    $doc = $word.Documents.Open($Source, $false, $true, $false, 'ALINA_NO_PASSWORD', '', $false, '', '', 0, '', $false, $false)
+    $no = $false
+    $yes = $true
+    $password = 'ALINA_NO_PASSWORD'
+    $zero = 0
+    $doc = $word.Documents.Open([ref]$Source, [ref]$no, [ref]$yes, [ref]$no, [ref]$password)
     try { [IO.File]::WriteAllText($Output, $doc.Content.Text, [Text.Encoding]::UTF8) }
-    finally { $doc.Close(0) }
+    finally { $doc.Close([ref]$zero) }
 } finally {
-    if ($owned) { $word.Quit(0) }
+    if ($owned) { $zero = 0; $word.Quit([ref]$zero) }
     [void][Runtime.InteropServices.Marshal]::FinalReleaseComObject($word)
 }
