@@ -273,3 +273,18 @@ A visual review is complete when:
 ## Core principle
 
 **ALINA Analyst measures and explains the gap. Makar closes it.**
+
+
+# 13. Temporary reference underlay
+
+During design reconstruction a raster reference may be placed behind/beside the editable implementation to support alignment and comparison.
+
+ALINA must treat that raster as **reference evidence only**, not as a successful implementation layer.
+
+Checks:
+- functional text/buttons/cards are reconstructed as real UI;
+- hero/environment replacement plan exists;
+- temporary raster crop is explicitly labeled;
+- final/release review verifies the trace underlay is absent.
+
+A screenshot can guide geometry. It cannot substitute for the product.
