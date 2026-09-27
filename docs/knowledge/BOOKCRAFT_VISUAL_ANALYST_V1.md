@@ -288,3 +288,22 @@ Checks:
 - final/release review verifies the trace underlay is absent.
 
 A screenshot can guide geometry. It cannot substitute for the product.
+
+
+# 14. Geometry-first review gate
+
+Before ALINA reviews final heroine quality, seasonal art, glow polish or motion, the static shell must be reviewed first.
+
+Static shell review order:
+1. header and navigation placement;
+2. headline block and copy width;
+3. primary/secondary CTA placement;
+4. hero placeholder size and safe zone;
+5. HUD anchors;
+6. metrics;
+7. service-card geometry;
+8. responsive recomposition.
+
+If these are unstable, ALINA should classify the review as `geometry_not_locked` and defer art/motion critique.
+
+This keeps visual iteration focused and prevents expensive re-generation of assets around a moving layout.
