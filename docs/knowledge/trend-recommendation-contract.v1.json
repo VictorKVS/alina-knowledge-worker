@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "role": "ALINA Trend Analyst",
+  "recommendation_fields": [
+    "recommendation_id",
+    "content_type",
+    "action",
+    "direction",
+    "reason",
+    "horizon",
+    "confidence",
+    "evidence_refs",
+    "experiment"
+  ],
+  "trend_labels": [
+    "rising",
+    "stable",
+    "falling",
+    "spike",
+    "seasonal",
+    "evergreen",
+    "saturated",
+    "insufficient_evidence"
+  ],
+  "required_context": [
+    "time_window",
+    "metric_definition",
+    "population_or_segment",
+    "source_refs"
+  ],
+  "feedback_outcomes": [
+    "useful",
+    "neutral",
+    "wrong",
+    "inconclusive"
+  ]
+}
