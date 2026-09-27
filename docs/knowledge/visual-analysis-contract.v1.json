@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0",
+  "role": "ALINA Analyst",
+  "purpose": "reference-to-implementation visual comparison",
+  "required_inputs": [
+    "project_id",
+    "theme_id",
+    "breakpoint",
+    "viewport",
+    "reference_ref",
+    "implementation_ref",
+    "commit_ref"
+  ],
+  "categories": [
+    "composition",
+    "hero_scale",
+    "hero_position",
+    "crop",
+    "typography",
+    "spacing",
+    "card_geometry",
+    "hud_geometry",
+    "icon_consistency",
+    "color_balance",
+    "lighting",
+    "depth",
+    "glow",
+    "decorative_density",
+    "cta_prominence",
+    "attention_hierarchy",
+    "responsive_behavior",
+    "readability",
+    "ui_art_separation"
+  ],
+  "severity": [
+    "critical",
+    "high",
+    "medium",
+    "low"
+  ],
+  "correction_priority": [
+    "composition",
+    "hero_scale_position",
+    "typography",
+    "geometry_spacing",
+    "color_lighting",
+    "depth_glow",
+    "micro_detail"
+  ],
+  "output_fields": [
+    "summary",
+    "mismatches",
+    "top_corrections",
+    "accepted_deviations",
+    "evidence_refs",
+    "next_check"
+  ]
+}
