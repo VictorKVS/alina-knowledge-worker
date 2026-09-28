@@ -212,7 +212,15 @@ def source_type(kind: str) -> str:
 
 def build_master(registry: Path, library_path: Path, backup: Path) -> StageResult:
     raw = json_load(library_path)
-    items = raw.get("items", raw if isinstance(raw, list) else [])
+    if isinstance(raw, dict):
+        items = raw.get("items", [])
+        source_root = raw.get("source_root")
+    elif isinstance(raw, list):
+        items = raw
+        source_root = None
+    else:
+        items = []
+        source_root = None
     if not isinstance(items, list) or not items:
         return StageResult("K1.3A_MASTER_REGISTRY", "BLOCKED", errors=1, detail="Library inventory has no items")
     existing_sources = jsonl_load(registry / "sources.jsonl")
@@ -224,8 +232,8 @@ def build_master(registry: Path, library_path: Path, backup: Path) -> StageResul
         sha = str(item.get("sha256") or "").lower()
         rel = str(item.get("relative_path") or "")
         full = str(item.get("path") or "")
-        if not full and raw.get("source_root") and rel:
-            full = str(Path(raw["source_root"]) / rel)
+        if not full and source_root and rel:
+            full = str(Path(source_root) / rel)
         if not sha:
             skipped += 1
             continue
