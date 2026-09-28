@@ -83,6 +83,63 @@ class K1AutoProjectTests(unittest.TestCase):
             self.assertEqual(len(k1.jsonl_load(registry/"sources.jsonl")), 1)
             self.assertEqual(len(k1.jsonl_load(registry/"physical_copies.jsonl")), 1)
 
+
+    def test_existing_generic_source_is_promoted_by_catalog_legal_evidence(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            registry = root / "registry"
+            backup = root / "backup"
+            registry.mkdir()
+            sha = "f" * 64
+            k1.jsonl_write(registry / "sources.jsonl", [{
+                "source_id": k1.stable_source_id(sha),
+                "sha256": sha,
+                "content_digest": "sha256:" + sha,
+                "raw_title": "document.pdf",
+                "source_type_candidate": "DOCUMENT",
+                "document_kind_candidate": "UNKNOWN_DOCUMENT"
+            }])
+            k1.jsonl_write(registry / "physical_copies.jsonl", [])
+            catalog = root / "catalog.json"
+            write_json(catalog, [{
+                "sha256": sha,
+                "path": str(root / "152-fz.pdf"),
+                "title_candidate": "Федеральный закон 152-ФЗ",
+                "page_count": 10,
+                "size": 100,
+                "review_required": False,
+                "current_revision_verified": False
+            }])
+            result = k1.import_document_catalog(registry, catalog, backup)
+            src = k1.jsonl_load(registry / "sources.jsonl")[0]
+            self.assertEqual(result.status, "PASS")
+            self.assertEqual(src["source_type_candidate"], "LEGAL_DOCUMENT")
+            self.assertEqual(src["document_kind_candidate"], "FEDERAL_LAW")
+
+    def test_legal_registry_can_promote_from_provenance_fallback(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            backup = root / "backup"
+            sha = "1" * 64
+            sid = k1.stable_source_id(sha)
+            k1.jsonl_write(root / "sources.jsonl", [{
+                "source_id": sid,
+                "sha256": sha,
+                "content_digest": "sha256:" + sha,
+                "raw_title": "unknown.pdf"
+            }])
+            k1.jsonl_write(root / "source_provenance.jsonl", [{
+                "source_id": sid,
+                "title_candidate": "Приказ Минздрава № 123",
+                "source_path": "x.pdf",
+                "date_number_candidates": ["№ 123"]
+            }])
+            result = k1.build_legal_registry(root, backup)
+            rows = k1.jsonl_load(root / "legal_documents.jsonl")
+            self.assertEqual(result.status, "PASS")
+            self.assertEqual(len(rows), 1)
+            self.assertEqual(rows[0]["identity"]["document_kind"], "ORDER")
+
     def test_invariants_block_duplicate_physical_paths(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
