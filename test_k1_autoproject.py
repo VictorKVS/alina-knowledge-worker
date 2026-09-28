@@ -43,6 +43,24 @@ class K1AutoProjectTests(unittest.TestCase):
             self.assertEqual(len(copies), 1)
             self.assertEqual(sources[0]["physical_copies"], 1)
 
+
+    def test_master_build_accepts_array_inventory_root(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            registry = root / "registry"
+            backup = root / "backup"
+            registry.mkdir()
+            inventory = root / "inventory-array.json"
+            sha = "e" * 64
+            write_json(inventory, [{
+                "item_id":"BOOK-2","path":str(root/"b.pdf"),"file_name":"b.pdf",
+                "normalized_title":"Book B","format":"PDF","extension":".pdf",
+                "size_bytes":11,"page_count":2,"sha256":sha
+            }])
+            result = k1.build_master(registry, inventory, backup)
+            self.assertEqual(result.status, "PASS")
+            self.assertEqual(len(k1.jsonl_load(registry / "sources.jsonl")), 1)
+
     def test_document_import_is_idempotent(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
