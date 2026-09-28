@@ -622,6 +622,20 @@ def history_metrics(history_path: Path, current: list[StageResult]) -> dict[str,
     # It becomes measurable only after explicit corrective-work events are recorded.
     return metrics
 
+def expectation_vs_fact(stages: list[StageResult]) -> dict[str, Any]:
+    by_stage = {s.stage: s for s in stages}
+    def fact(stage: str) -> str:
+        s = by_stage.get(stage)
+        if not s:
+            return "NO_DATA"
+        return f"{s.status}: {s.detail}"
+    return {
+        "reuse_existing_audit": {**APPROACHES["reuse_existing_audit"], "actual": fact("K1.3A_MASTER_REGISTRY")},
+        "content_addressed_dedup": {**APPROACHES["content_addressed_dedup"], "actual": fact("K1.INVARIANTS")},
+        "candidate_first_identity": {**APPROACHES["candidate_first_identity"], "actual": fact("K1.3B_IDENTITY_PREP")},
+        "official_verification_gate": {**APPROACHES["official_verification_gate"], "actual": fact("K1.5D_OFFICIAL_VERIFICATION")},
+    }
+
 def append_journal(path: Path, run: dict[str,Any]) -> None:
     path.parent.mkdir(parents=True,exist_ok=True)
     lines=[f"\n## Run {run['run_id']}",f"- Started: {run['started_at']}",
@@ -685,6 +699,7 @@ def main() -> int:
         "stop_reason":stop_reason,"first_human_gate":first_gate,
         "stages":[asdict(s) for s in stages],"metrics":metrics,
         "approaches":APPROACHES,
+        "expectation_vs_fact":expectation_vs_fact(stages),
         "safety":{"originals_mutated":False,"originals_moved":False,"originals_deleted":False,
                   "derived_writes_atomic":True,"derived_backups_enabled":True},
     }
