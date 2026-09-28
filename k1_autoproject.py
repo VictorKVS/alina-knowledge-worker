@@ -122,6 +122,25 @@ def source_id_collision_check(rows: list[dict[str, Any]]) -> None:
             raise PipelineError(f"source_id collision: {sid} maps to multiple SHA-256 values")
         seen[sid] = sha
 
+def assign_copy_ids(copies: list[dict[str, Any]]) -> None:
+    used = {str(x.get("copy_id")) for x in copies if x.get("copy_id")}
+    next_id = 1
+    for copy in sorted(copies, key=lambda x: (str(x.get("source_id")), str(x.get("path")))):
+        if copy.get("copy_id"):
+            continue
+        while f"COPY-{next_id:06d}" in used:
+            next_id += 1
+        copy["copy_id"] = f"COPY-{next_id:06d}"
+        used.add(copy["copy_id"])
+        next_id += 1
+
+def next_legal_id(rows: list[dict[str, Any]]) -> str:
+    used = {str(x.get("legal_document_id")) for x in rows if x.get("legal_document_id")}
+    n = 1
+    while f"LDOC-{n:06d}" in used:
+        n += 1
+    return f"LDOC-{n:06d}"
+
 def first_existing(candidates: list[Path]) -> Path | None:
     for p in candidates:
         if p.exists():
@@ -237,9 +256,7 @@ def build_master(registry: Path, library_path: Path, backup: Path) -> StageResul
             }
             existing_copies.append(copy); by_path[full.lower()] = copy
     existing_copies.sort(key=lambda x: (str(x.get("source_id")), str(x.get("path"))))
-    for i, copy in enumerate(existing_copies, 1):
-        if not copy.get("copy_id"):
-            copy["copy_id"] = f"COPY-{i:06d}"
+    assign_copy_ids(existing_copies)
     counts: dict[str, int] = {}
     for copy in existing_copies:
         counts[copy["source_id"]] = counts.get(copy["source_id"], 0) + 1
@@ -334,9 +351,7 @@ def import_document_catalog(registry: Path, catalog_path: Path | None, backup: P
             "linked_at": now_iso(),
         })
     copies.sort(key=lambda x: (str(x.get("source_id")), str(x.get("path"))))
-    for i, copy in enumerate(copies, 1):
-        if not copy.get("copy_id"):
-            copy["copy_id"] = f"COPY-{i:06d}"
+    assign_copy_ids(copies)
     counts: dict[str,int] = {}
     for copy in copies:
         counts[copy["source_id"]] = counts.get(copy["source_id"],0)+1
@@ -359,11 +374,11 @@ def build_legal_registry(registry: Path, backup: Path) -> StageResult:
     rows = []
     created = updated = 0
     candidates = [s for s in sources if s.get("source_type_candidate") in {"LEGAL_DOCUMENT","REGULATORY_DOCUMENT"} or s.get("document_kind_candidate") in LEGAL_KINDS]
-    for idx, src in enumerate(sorted(candidates, key=lambda x: str(x.get("source_id"))), 1):
+    for src in sorted(candidates, key=lambda x: str(x.get("source_id"))):
         row = by_source.get(src.get("source_id"))
         if row is None:
             row = {
-                "legal_document_id": f"LDOC-{idx:06d}", "source_id": src.get("source_id"),
+                "legal_document_id": next_legal_id(old + rows), "source_id": src.get("source_id"),
                 "identity": {"canonical_name":None,"short_name":None,"original_name":src.get("raw_title"),
                              "aliases":[],"document_kind":src.get("document_kind_candidate"),
                              "document_number":None,"issuer":None,"jurisdiction":None,"language":None},
@@ -534,8 +549,22 @@ def build_official_queue(registry: Path, backup: Path) -> StageResult:
         "official_evidence":[],"conflicts":[],"status":"PENDING_OFFICIAL_VERIFICATION",
         "created_at":now_iso(),
     }
-    jsonl_write(registry/"legal_official_verification_queue.jsonl",[task],backup)
-    return StageResult("K1.5D_OFFICIAL_VERIFICATION","HUMAN_GATE",1,1,created=1,warnings=1,
+    queue_path = registry/"legal_official_verification_queue.jsonl"
+    queue = jsonl_load(queue_path)
+    existing = {x.get("verification_task_id"): x for x in queue}
+    created = 0
+    if task["verification_task_id"] in existing:
+        prior = existing[task["verification_task_id"]]
+        task["created_at"] = prior.get("created_at") or task["created_at"]
+        task["official_evidence"] = prior.get("official_evidence") or []
+        task["conflicts"] = prior.get("conflicts") or []
+        task["verification_state"] = prior.get("verification_state") or task["verification_state"]
+        queue = [task if x.get("verification_task_id") == task["verification_task_id"] else x for x in queue]
+    else:
+        queue.append(task)
+        created = 1
+    jsonl_write(queue_path,queue,backup)
+    return StageResult("K1.5D_OFFICIAL_VERIFICATION","HUMAN_GATE",1,len(queue),created=created,updated=1-created,warnings=1,
                        detail="Official-source/current-revision/legal-status verification required",
                        gate_reason="Review authoritative source evidence before legal status is promoted")
 
@@ -587,12 +616,10 @@ def history_metrics(history_path: Path, current: list[StageResult]) -> dict[str,
     }
     if history:
         prev=history[-1].get("metrics",{})
-        prev_created=(prev.get("created") or 0)+(prev.get("updated") or 0)
-        cur_changed=metrics["created"]+metrics["updated"]
-        denom=max(metrics["records_written"],1)
-        metrics["rework_ratio"]=round(100*cur_changed/denom,3)
         if prev.get("wall_seconds") and attempts==prev.get("records_read"):
             metrics["relative_speed_vs_previous_run"]=round(prev["wall_seconds"]/max(duration,1e-9),3)
+    # Rework is intentionally not inferred from ordinary idempotent updates.
+    # It becomes measurable only after explicit corrective-work events are recorded.
     return metrics
 
 def append_journal(path: Path, run: dict[str,Any]) -> None:
