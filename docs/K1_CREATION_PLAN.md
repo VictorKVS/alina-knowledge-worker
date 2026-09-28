@@ -1,47 +1,56 @@
 # ALINA / FATHER — K1 Creation and Development Plan
 
 ## Goal
-Build a traceable source-to-knowledge pipeline for books, technical documents and legal/regulatory material without confusing file discovery with factual or legal verification.
+Build a traceable source-to-knowledge pipeline for books, technical documents and legal/regulatory material without confusing discovery, extraction, inference and legal verification.
 
-## Core model
+## Canonical model
 PHYSICAL_COPY -> SOURCE -> DOCUMENT -> REVISION -> STRUCTURAL_UNIT -> EVIDENCE -> KNOWLEDGE -> COMPETENCE
 
-## Current automation boundary
+## Autonomous execution boundary
 
-| Stage | Automatic | Gate condition |
-|---|---:|---|
-| K1.3A Master Registry | yes | missing/inconsistent master registry |
-| K1.3B Identity preparation | yes | missing identity layer |
-| K1.4 Document import validation | yes | warnings go to review queue |
-| K1.5A Legal registry validation | yes | legal registry missing |
-| K1.5C Semantic metadata | yes | low confidence is flagged |
-| K1.5D Official verification | conditional | human/authoritative verification required when status/revision is unverified |
-| K1.6+ structure/requirements | planned | starts only after verification policy is satisfied |
+| Stage | Action | Automatic | Stop condition |
+|---|---|---:|---|
+| K1.0 | discover known inventories/catalogs | yes | required library inventory cannot be found |
+| K1.3A | create/upsert Master Source Registry | yes | malformed inventory or identity collision |
+| K1.3B | build identity candidates | yes | malformed source registry |
+| K1.4 | import/upsert document corpus | yes | malformed document catalog |
+| K1.INVARIANTS | validate source/copy integrity | yes | orphan copy, duplicate physical path, digest conflict |
+| K1.5A | create/upsert legal-document registry | yes | unsafe registry inconsistency |
+| K1.5C | select legal pilot and extract semantic metadata | yes | inaccessible PDF, OCR/extractor required |
+| K1.5D | create/update official verification task | yes | HUMAN_GATE until authoritative verification exists |
+| K1.6+ | structure, clauses, requirements, definitions | next phase | starts only after verification policy is satisfied |
+
+## Idempotency and durability
+Repeated runs must not create duplicate SOURCE, PHYSICAL_COPY, LEGAL_DOCUMENT or verification-task entities. Derived files are written atomically. Before replacement, the previous derived file is copied into the K1 backup area.
+
+## Evidence policy
+Raw source identity and extracted evidence are preserved separately from normalized/inferred candidates. A confidence score never promotes a legal-status assertion. EFFECTIVE, REPEALED, current revision and similar fields require authoritative verification.
 
 ## Measurement model
-For each run capture:
-- count of records entering each stage;
-- elapsed time per stage;
-- warnings and hard errors;
-- review-queue share;
-- automation yield to first human gate;
-- rework ratio when reruns are comparable;
-- throughput;
-- speedup vs 1-stream baseline only when baseline exists;
-- ETA only when remaining volume and stable throughput are known.
+Every run captures records read/written, created/updated/skipped, stage duration, warnings/errors, review pressure, automation yield, throughput and history. Relative speed may be shown only for comparable runs with the same observed input volume.
 
-## Experiment principle
-Every approach has an expectation and conditions where it should work better or worse. Observed facts must replace expectations over time.
+Speedup versus one-stream baseline, rework ratio and ETA remain NO_DATA until the required telemetry exists.
 
-## Review policy
-Green candidates can continue automatically only when mandatory evidence checks pass. Yellow candidates go to review. Red/blocked candidates stop the affected branch. High confidence alone never asserts that a legal document is currently effective.
+## Experiment model
+For each approach store:
+- expectation;
+- conditions where it should perform better;
+- conditions where it can perform worse;
+- observed stage result;
+- runtime metrics.
 
-## Dashboard
-The local dashboard shows:
-1. expected vs observed performance;
-2. stage funnel;
-3. first human gate;
-4. review pressure;
-5. warnings/errors;
-6. throughput and run history;
-7. NO_DATA instead of invented speedup, rework or ETA.
+The dashboard is an experiment board, not a decorative status page.
+
+## Human review policy
+GREEN: mandatory evidence checks passed; continue automatically.
+YELLOW: ambiguity is isolated into a review queue; unaffected branches may continue.
+RED/BLOCKED: invariant or prerequisite failure; stop the affected pipeline branch.
+HUMAN_GATE: a decision or authoritative verification cannot be safely inferred.
+
+## Runtime outputs
+Runtime data remains local under data/k1-run:
+- latest.json;
+- history.jsonl;
+- DEV_JOURNAL_K1.md.
+
+Real books, extracted passages, private registries and runtime history are not committed to Git.
