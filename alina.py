@@ -77,6 +77,16 @@ def setting(key, value=None):
         return row[0] if row else None
 
 
+def load_k1_metrics():
+    path = DATA / 'k1-run' / 'latest.json'
+    if not path.exists():
+        return {'status':'NO_DATA','metrics':{},'stages':[],'first_human_gate':None,'expectation_vs_fact':{}}
+    try:
+        return json.loads(path.read_text(encoding='utf-8-sig'))
+    except Exception as exc:
+        return {'status':'ERROR','error':str(exc)[:300],'metrics':{},'stages':[],'first_human_gate':None,'expectation_vs_fact':{}}
+
+
 def snapshot():
     with connection() as db:
         counts = dict(db.execute('SELECT status,count(*) FROM files GROUP BY status').fetchall())
@@ -95,7 +105,7 @@ def snapshot():
         'chunks':chunk_count, 'active_seconds':float(setting('active_seconds') or 0),
         'live':dict(LIVE), 'reports':reports, 'errors':errors,
         'next_report':json.loads(setting('report_baseline'))['at']+CONFIG['report_seconds'],
-        'roots':CONFIG['roots'], 'pid':os.getpid(), 'study':study_status}
+        'roots':CONFIG['roots'], 'pid':os.getpid(), 'study':study_status, 'k1':load_k1_metrics()}
 
 
 def scan():
