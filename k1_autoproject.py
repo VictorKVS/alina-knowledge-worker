@@ -210,6 +210,38 @@ def source_type(kind: str) -> str:
         return "BOOK"
     return "DOCUMENT"
 
+def classification_rank(stype: str | None, kind: str | None) -> int:
+    if kind in LEGAL_KINDS or stype in {"LEGAL_DOCUMENT", "REGULATORY_DOCUMENT"}:
+        return 30
+    if kind in {"STANDARD", "BOOK"} or stype in {"STANDARD", "BOOK"}:
+        return 20
+    if kind and kind != "UNKNOWN_DOCUMENT":
+        return 10
+    if stype and stype not in {"DOCUMENT", "UNKNOWN", "UNKNOWN_DOCUMENT"}:
+        return 5
+    return 0
+
+def catalog_classification_text(doc: dict[str, Any], title: str | None, path: str) -> str:
+    parts = [
+        title or "",
+        path,
+        json.dumps(doc.get("date_number_candidates"), ensure_ascii=False),
+        json.dumps(doc.get("revision_mentions"), ensure_ascii=False),
+        str(doc.get("revision_history_excerpt") or ""),
+    ]
+    return " ".join(parts)
+
+def upgrade_source_classification(src: dict[str, Any], kind: str, stype: str, evidence: str) -> bool:
+    current_kind = src.get("document_kind_candidate")
+    current_type = src.get("source_type_candidate")
+    if classification_rank(stype, kind) <= classification_rank(current_type, current_kind):
+        return False
+    src["source_type_candidate"] = stype
+    src["document_kind_candidate"] = kind
+    src["classification_status"] = "CANDIDATE"
+    src["classification_evidence"] = evidence[:2000]
+    return True
+
 def build_master(registry: Path, library_path: Path, backup: Path) -> StageResult:
     raw = json_load(library_path)
     if isinstance(raw, dict):
@@ -310,14 +342,15 @@ def import_document_catalog(registry: Path, catalog_path: Path | None, backup: P
     copies = jsonl_load(registry / "physical_copies.jsonl")
     by_sha = {str(x.get("sha256")).lower(): x for x in sources if x.get("sha256")}
     by_path = {str(x.get("path")).lower(): x for x in copies if x.get("path")}
-    created = linked = copy_created = review = 0
+    created = linked = copy_created = review = classification_upgrades = 0
     provenance = []
     review_rows = []
     for doc in docs:
         sha = str(doc.get("sha256") or "").lower()
         path = str(doc.get("path") or doc.get("FullName") or "")
         title = doc.get("title_candidate") or doc.get("Name") or (Path(path).name if path else None)
-        kind = detect_kind(f"{title or ''} {path}")
+        class_text = catalog_classification_text(doc, title, path)
+        kind = detect_kind(class_text)
         stype = source_type(kind)
         if not sha:
             review += 1
@@ -340,8 +373,8 @@ def import_document_catalog(registry: Path, catalog_path: Path | None, backup: P
             sources.append(src); by_sha[sha] = src; created += 1
         else:
             linked += 1
-            src.setdefault("source_type_candidate", stype)
-            src.setdefault("document_kind_candidate", kind)
+            if upgrade_source_classification(src, kind, stype, class_text):
+                classification_upgrades += 1
         if path and path.lower() not in by_path:
             copy = {"copy_id":None,"source_id":src["source_id"],"path":path,
                     "file_name":Path(path).name,"legacy_item_id":None,"state":"OBSERVED",
@@ -373,15 +406,41 @@ def import_document_catalog(registry: Path, catalog_path: Path | None, backup: P
     return StageResult("K1.4_DOCUMENT_IMPORT", "PASS", len(docs), len(sources),
                        created=created+copy_created, updated=linked, skipped=review,
                        warnings=review,
-                       detail=f"new_sources={created}; linked={linked}; new_copies={copy_created}; review={review}")
+                       detail=f"new_sources={created}; linked={linked}; new_copies={copy_created}; classification_upgrades={classification_upgrades}; review={review}")
 
 def build_legal_registry(registry: Path, backup: Path) -> StageResult:
     sources = jsonl_load(registry / "sources.jsonl")
     old = jsonl_load(registry / "legal_documents.jsonl")
+    provenance = jsonl_load(registry / "source_provenance.jsonl")
     by_source = {x.get("source_id"):x for x in old}
+    provenance_by_source: dict[str, list[dict[str, Any]]] = {}
+    for row in provenance:
+        if row.get("source_id"):
+            provenance_by_source.setdefault(str(row["source_id"]), []).append(row)
     rows = []
-    created = updated = 0
-    candidates = [s for s in sources if s.get("source_type_candidate") in {"LEGAL_DOCUMENT","REGULATORY_DOCUMENT"} or s.get("document_kind_candidate") in LEGAL_KINDS]
+    created = updated = fallback_promotions = 0
+    candidates = []
+    for src in sources:
+        if src.get("source_type_candidate") in {"LEGAL_DOCUMENT","REGULATORY_DOCUMENT"} or src.get("document_kind_candidate") in LEGAL_KINDS:
+            candidates.append(src)
+            continue
+        evidence_rows = provenance_by_source.get(str(src.get("source_id")), [])
+        evidence_text = " ".join(
+            " ".join([
+                str(x.get("title_candidate") or ""),
+                str(x.get("source_path") or ""),
+                json.dumps(x.get("date_number_candidates"), ensure_ascii=False),
+                json.dumps(x.get("revision_mentions"), ensure_ascii=False),
+                str(x.get("revision_history_excerpt") or ""),
+            ]) for x in evidence_rows
+        )
+        fallback_kind = detect_kind(evidence_text)
+        if fallback_kind in LEGAL_KINDS:
+            src["document_kind_candidate"] = fallback_kind
+            src["source_type_candidate"] = "LEGAL_DOCUMENT"
+            src["classification_status"] = "CANDIDATE_FROM_PROVENANCE"
+            fallback_promotions += 1
+            candidates.append(src)
     for src in sorted(candidates, key=lambda x: str(x.get("source_id"))):
         row = by_source.get(src.get("source_id"))
         if row is None:
@@ -418,7 +477,8 @@ def build_legal_registry(registry: Path, backup: Path) -> StageResult:
             jsonl_write(p, [], backup)
     return StageResult("K1.5A_LEGAL_REGISTRY", "PASS" if rows else "WARN",
                        len(candidates), len(rows), created=created, updated=updated,
-                       warnings=0 if rows else 1, detail=f"legal_documents={len(rows)}")
+                       warnings=0 if rows else 1,
+                       detail=f"legal_documents={len(rows)}; fallback_promotions={fallback_promotions}")
 
 def extract_pdf_front(path: Path, pages: int = 20) -> tuple[str, int]:
     if PdfReader is None:
