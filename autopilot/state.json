@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0",
+  "project": "ALINA Analyst Expert",
+  "current_stage": "K3",
+  "target_stage": "K10",
+  "mode": "autonomous_with_human_gates",
+  "active_gate": null,
+  "active_task": "K3-EVIDENCE-001",
+  "status": "ready_to_implement",
+  "safe_fix_attempts_used": 0,
+  "last_completed_stage": "K2",
+  "next_action": "implement unified evidence schemas and adapters",
+  "human_action_required": false
+}
