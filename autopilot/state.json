@@ -1,14 +1,16 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "project": "ALINA Analyst Expert",
-  "current_stage": "K3",
+  "orchestrator": "ALINA Lead",
+  "execution_pool": "Agent Zoo",
+  "current_stage": "C0",
   "target_stage": "K10",
-  "mode": "autonomous_with_human_gates",
   "active_gate": null,
-  "active_task": "K3-EVIDENCE-001",
-  "status": "ready_to_implement",
-  "safe_fix_attempts_used": 0,
+  "active_task": "C0.1-REPOSITORY-INVENTORY",
+  "status": "ready_for_zoo_execution",
+  "verticals": ["legal_compliance", "project_competency", "alina_self"],
   "last_completed_stage": "K2",
-  "next_action": "implement unified evidence schemas and adapters",
+  "resume_after_c0": "K3",
+  "next_action": "inventory existing FATHER/ALINA knowledge, legal, security, graph and specialist assets before creating duplicate core structures",
   "human_action_required": false
 }
