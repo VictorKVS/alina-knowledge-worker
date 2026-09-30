@@ -1,34 +1,46 @@
-schema_version: "1.0"
+schema_version: "1.1"
 project: ALINA Analyst Expert
 source_repository: VictorKVS/alina-knowledge-worker
-current_stage: K3
+preflight_stage: C0
+current_stage: C0
 target_stage: K10
-mode: autonomous_with_human_gates
+mode: alina_lead_agent_zoo_autopilot
 invariants:
   - extraction_is_not_verified_knowledge
   - every_promoted_knowledge_object_requires_provenance
   - llm_cannot_write_directly_to_production_kb
   - production_and_candidate_states_are_separate
   - readiness_is_derived_from_tests_not_estimated
+  - c0_is_read_analyze_map_propose_test_only
+  - no_duplicate_core_before_consolidation
+verticals:
+  legal_compliance: "Document -> Requirement -> Obligation -> Role -> ResponsibilityBasis -> Control -> Evidence"
+  project_competency: "Profession -> Role -> Task -> Competency -> Knowledge -> Skill -> Tool -> TeamInterface"
+  alina_self: "Task -> Competency -> Knowledge -> Method -> RAG -> Prompt -> Tool -> Evaluation -> Gap"
+shared_chain: "Document -> Requirement -> Obligation -> Role -> Competency -> Knowledge -> Method -> Agent -> Action -> Control -> Evidence"
+agent_zoo:
+  lead: ALINA
+  workers: [inventory, history, schema, dedup, graph, legal, competency, alina_self, architect, critic, evaluation]
+  allowed: [read, analyze, map, propose, test, create_experimental_artifacts]
+  forbidden_without_human: [delete, mass_move, mass_rename, production_merge, destructive_migration, security_boundary_change]
 human_gates:
   A: evidence_and_knowledge_architecture
   B: knowledge_promotion_policy
   C: self_modification_and_security_policy
   D: k10_production_certification
-human_only:
-  - secrets
-  - paid_external_services
-  - destructive_operations
-  - security_boundary_changes
-  - production_promotion
+human_only: [secrets, paid_external_services, destructive_operations, security_boundary_changes, production_promotion]
 retry_policy:
   safe_fix_attempts: 3
   on_exhaustion: human_review
 stages:
+  C0:
+    name: Consolidation and Canonical Mapping
+    status: in_progress
+    outputs: [repository_inventory, database_inventory, schema_map, overlap_map, canonical_entity_model, ownership_map, adapter_map, migration_proposal, vertical_tests, consolidation_report]
   K3:
     name: Unified Evidence Core
-    status: in_progress
-    depends_on: [K2]
+    status: blocked_by_C0
+    depends_on: [C0, K2]
     outputs: [evidence_schema, provenance_adapter, evidence_lifecycle, gate_A_report]
   K4:
     name: Knowledge Extraction
