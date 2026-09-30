@@ -1,0 +1,67 @@
+schema_version: "1.0"
+project: ALINA Analyst Expert
+source_repository: VictorKVS/alina-knowledge-worker
+current_stage: K3
+target_stage: K10
+mode: autonomous_with_human_gates
+invariants:
+  - extraction_is_not_verified_knowledge
+  - every_promoted_knowledge_object_requires_provenance
+  - llm_cannot_write_directly_to_production_kb
+  - production_and_candidate_states_are_separate
+  - readiness_is_derived_from_tests_not_estimated
+human_gates:
+  A: evidence_and_knowledge_architecture
+  B: knowledge_promotion_policy
+  C: self_modification_and_security_policy
+  D: k10_production_certification
+human_only:
+  - secrets
+  - paid_external_services
+  - destructive_operations
+  - security_boundary_changes
+  - production_promotion
+retry_policy:
+  safe_fix_attempts: 3
+  on_exhaustion: human_review
+stages:
+  K3:
+    name: Unified Evidence Core
+    status: in_progress
+    depends_on: [K2]
+    outputs: [evidence_schema, provenance_adapter, evidence_lifecycle, gate_A_report]
+  K4:
+    name: Knowledge Extraction
+    status: blocked
+    depends_on: [K3]
+    outputs: [knowledge_candidate_schema, extractor_interface, candidate_dedup, contradiction_capture]
+  K5:
+    name: ALINA Knowledge Core
+    status: blocked
+    depends_on: [K4]
+    outputs: [alina_analyst_kb, promotion_pipeline, versioning, gate_B_report]
+  K6:
+    name: Knowledge Graph
+    status: blocked
+    depends_on: [K5]
+    outputs: [ontology_registry, typed_graph, graph_validator]
+  K7:
+    name: RAG v2 and GraphRAG
+    status: blocked
+    depends_on: [K6]
+    outputs: [hybrid_retrieval, reranker_interface, graph_expansion, context_builder, retrieval_benchmark]
+  K8:
+    name: Analyst Reasoning Engine
+    status: blocked
+    depends_on: [K7]
+    outputs: [task_router, methods_registry, prompt_registry, reasoning_workflows, critic, fact_checker]
+  K9:
+    name: Evaluation and Competency Lab
+    status: blocked
+    depends_on: [K8]
+    outputs: [competency_model, benchmark_registry, regression_gate, gap_analyzer]
+  K10:
+    name: Controlled Self-Improvement
+    status: blocked
+    depends_on: [K9]
+    outputs: [candidate_environment, learning_queue, self_improvement_loop, rollback, gate_C_report, gate_D_report]
