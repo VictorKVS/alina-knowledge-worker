@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0",
+  "stage": "C0.4",
+  "status": "started",
+  "duplicate_classes": [
+    {
+      "id": "DUP-01",
+      "class": "historical_working_copy",
+      "examples": [
+        "knowledge_factory_v0.sql across FATHER_OPERATOR_CONSOLE/Vibe-coding variants"
+      ],
+      "action": "COMPARE_HASH_THEN_SELECT_CANONICAL"
+    },
+    {
+      "id": "DUP-02",
+      "class": "snapshot_version",
+      "examples": [
+        "normative_library.before.sqlite",
+        "registry.before.sqlite"
+      ],
+      "action": "KEEP_AS_HISTORY_NOT_ACTIVE_DB"
+    },
+    {
+      "id": "DUP-03",
+      "class": "framework_runtime",
+      "examples": [
+        "auth_group",
+        "alembic_version",
+        "_cf_ALARM",
+        "Cache"
+      ],
+      "action": "EXCLUDE_FROM_FATHER_CANON"
+    },
+    {
+      "id": "DUP-04",
+      "class": "third_party_research",
+      "examples": [
+        "grype",
+        "llama-index",
+        "Aleph",
+        "MISP",
+        "OpenCTI fixtures"
+      ],
+      "action": "EXCLUDE_UNLESS_EXPLICITLY_IMPORTED_AS_SOURCE"
+    },
+    {
+      "id": "DUP-05",
+      "class": "domain_overlap",
+      "examples": [
+        "security_kb_reference",
+        "SecGraph security schema",
+        "KNOWLEDGE_CORE security-knowledge"
+      ],
+      "action": "MAP_SEMANTICS_AND_PROVENANCE_NO_BLIND_MERGE"
+    }
+  ],
+  "protected_rules": [
+    "never deduplicate by table name alone",
+    "never delete historical snapshot during C0",
+    "hash equality proves byte identity, not semantic authority",
+    "canonical owner decided by current architecture + provenance + tests"
+  ]
+}
