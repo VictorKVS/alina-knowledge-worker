@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0",
+  "stage": "C0.3",
+  "status": "started",
+  "canonical_core": "KNOWLEDGE_CORE",
+  "projections": {
+    "security_legal": {
+      "sources": [
+        "security-knowledge",
+        "security_kb_reference",
+        "normative snapshots"
+      ],
+      "decision": "MERGE_BY_ADAPTER"
+    },
+    "security_graph": {
+      "sources": [
+        "SecGraph kg_schema.sql",
+        "SecGraph security KB schemas"
+      ],
+      "decision": "KEEP_AS_PROJECTION"
+    },
+    "osint": {
+      "sources": [
+        "OSINT_deepseek operational stores"
+      ],
+      "decision": "KEEP_EVIDENCE_SUPPLIER"
+    },
+    "alina_runtime": {
+      "sources": [
+        "alina-knowledge-worker SQLite/FTS"
+      ],
+      "decision": "KEEP_RUNTIME_CACHE"
+    },
+    "cybered": {
+      "sources": [
+        "CyberED -IB"
+      ],
+      "decision": "TRAINING_EVALUATION_SOURCE"
+    }
+  },
+  "canonical_entity_chain": [
+    "Source",
+    "Snapshot",
+    "Chunk",
+    "Claim",
+    "Evidence",
+    "Document",
+    "Requirement",
+    "Applicability",
+    "Role",
+    "Responsibility",
+    "Asset",
+    "Threat",
+    "Vulnerability",
+    "Scenario",
+    "Control",
+    "Risk",
+    "Competency",
+    "Knowledge",
+    "Method",
+    "Agent",
+    "Evaluation",
+    "DecisionMemory"
+  ],
+  "rules": [
+    "no destructive migration",
+    "no second ALINA knowledge graph",
+    "do not promote third-party/test/runtime DBs",
+    "preserve provenance",
+    "historical schemas are donors until mapped"
+  ]
+}
