@@ -6,8 +6,8 @@
   "current_stage": "C0",
   "target_stage": "K10",
   "active_gate": null,
-  "active_task": "C0.2-DATABASE-INVENTORY",
-  "status": "c0_2_github_discovery_in_progress",
+  "active_task": "C0.2-LOCAL-DATABASE-PROBE",
+  "status": "human_gate_local_probe",
   "verticals": [
     "legal_compliance",
     "project_competency",
@@ -15,8 +15,8 @@
   ],
   "last_completed_stage": "K2",
   "resume_after_c0": "K3",
-  "next_action": "continue C0.2 using repository-visible schemas/configs, then prepare one local discovery probe only for assets that remain unobservable",
-  "human_action_required": false,
+  "next_action": "Run autopilot/c0/RUN_C0_2_LOCAL_PROBE.ps1 against G:\\\\1 and return alina_c0_local_inventory.json; then ALINA resumes autonomously at C0.3.",
+  "human_action_required": true,
   "cross_project_policies": [
     "OTUS_FATHER_CONTINUOUS_ENGINEERING_CHAIN"
   ]
