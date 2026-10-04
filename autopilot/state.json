@@ -6,8 +6,8 @@
   "current_stage": "C0",
   "target_stage": "K10",
   "active_gate": null,
-  "active_task": "C0.2-LOCAL-DATABASE-PROBE",
-  "status": "human_gate_local_probe",
+  "active_task": "C0.3-SCHEMA-MAPPING",
+  "status": "c0_2_passed_c0_3_started",
   "verticals": [
     "legal_compliance",
     "project_competency",
@@ -15,8 +15,8 @@
   ],
   "last_completed_stage": "K2",
   "resume_after_c0": "K3",
-  "next_action": "Run autopilot/c0/RUN_C0_2_LOCAL_PROBE.ps1 against G:\\\\1 and return alina_c0_local_inventory.json; then ALINA resumes autonomously at C0.3.",
-  "human_action_required": true,
+  "next_action": "map first-party FATHER security/normative/SecGraph/ALINA schemas; classify duplicate historical schema copies; prepare corrected schema probe only if exact column-level mapping remains necessary",
+  "human_action_required": false,
   "cross_project_policies": [
     "OTUS_FATHER_CONTINUOUS_ENGINEERING_CHAIN"
   ]
