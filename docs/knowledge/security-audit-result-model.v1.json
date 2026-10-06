@@ -1,0 +1,108 @@
+{
+  "schema": "father.security_audit_result_model.v1",
+  "title": "Security Audit Result Semantics",
+  "entities": [
+    {
+      "id": "FINDING",
+      "definition": "Наблюдаемый факт, полученный при аудите/проверке.",
+      "must_have": [
+        "finding_id",
+        "asset",
+        "observation",
+        "evidence_refs",
+        "source_step"
+      ]
+    },
+    {
+      "id": "VULNERABILITY",
+      "definition": "Подтверждённая или кандидатная слабость, создающая потенциальную возможность нарушения безопасности.",
+      "must_have": [
+        "asset",
+        "weakness",
+        "status",
+        "evidence_refs"
+      ],
+      "status": [
+        "CANDIDATE",
+        "CONFIRMED",
+        "FALSE_POSITIVE",
+        "NOT_APPLICABLE"
+      ]
+    },
+    {
+      "id": "THREAT_SCENARIO",
+      "definition": "Связанный сценарий: актив → нарушитель → точка входа → способ реализации → объект воздействия → негативное последствие.",
+      "must_have": [
+        "asset",
+        "threat_actor",
+        "entry_point",
+        "path",
+        "impact_object",
+        "negative_consequence"
+      ]
+    },
+    {
+      "id": "PENTEST_VERIFIED",
+      "definition": "Сценарий практически подтверждён в явно разрешённых пределах активной проверки.",
+      "must_have": [
+        "scenario_id",
+        "authorization_ref",
+        "scope_ref",
+        "evidence_refs",
+        "verification_result"
+      ]
+    },
+    {
+      "id": "COMPLIANCE_GAP",
+      "definition": "Не выполнено конкретное применимое нормативное/договорное/внутреннее требование.",
+      "must_have": [
+        "requirement_id",
+        "applicability",
+        "evidence_refs",
+        "gap_statement"
+      ]
+    },
+    {
+      "id": "RISK",
+      "definition": "Оценка последствий и вероятности/реализуемости с учётом существующих controls.",
+      "must_have": [
+        "risk_id",
+        "source_refs",
+        "impact",
+        "likelihood_or_feasibility",
+        "rating",
+        "rationale"
+      ]
+    },
+    {
+      "id": "CONTROL",
+      "definition": "Организационная или техническая мера, выбранная для снижения риска или закрытия применимого требования.",
+      "must_have": [
+        "control_id",
+        "source_refs",
+        "control_statement",
+        "implementation_status"
+      ]
+    }
+  ],
+  "forbidden_inferences": [
+    "scanner found CVE => system was compromised",
+    "vulnerability candidate => pentest verified",
+    "pentest verified => regulatory violation",
+    "CVE => violation of a specific regulation without applicability mapping",
+    "finding => compliance gap without requirement and evidence"
+  ],
+  "canonical_chain": [
+    "FINDING",
+    "VULNERABILITY",
+    "THREAT_SCENARIO",
+    "RISK",
+    "PENTEST_VERIFIED(optional)",
+    "COMPLIANCE_GAP(optional)",
+    "CONTROL",
+    "TARGET_ARCHITECTURE",
+    "IMPLEMENTATION",
+    "RETEST",
+    "EVIDENCE"
+  ]
+}
