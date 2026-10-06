@@ -1,0 +1,68 @@
+{
+  "schema": "father.process_contract.v1",
+  "required_process_fields": [
+    "schema",
+    "id",
+    "version",
+    "title",
+    "domain",
+    "agent_role",
+    "purpose",
+    "steps"
+  ],
+  "step_required_fields": [
+    "id",
+    "order",
+    "title",
+    "mode",
+    "required",
+    "actions",
+    "outputs",
+    "completion"
+  ],
+  "runtime": {
+    "process_states": [
+      "ACTIVE",
+      "INACTIVE"
+    ],
+    "run_states": [
+      "READY",
+      "IN_PROGRESS",
+      "DONE",
+      "BLOCKED",
+      "REVIEW_REQUIRED"
+    ],
+    "step_states": [
+      "PENDING",
+      "READY",
+      "IN_PROGRESS",
+      "DONE",
+      "BLOCKED",
+      "NOT_APPLICABLE",
+      "REVIEW_REQUIRED"
+    ],
+    "terminal_step_states": [
+      "DONE",
+      "BLOCKED",
+      "NOT_APPLICABLE",
+      "REVIEW_REQUIRED"
+    ]
+  },
+  "rules": [
+    "Only the first step is READY when a run is created; subsequent steps start PENDING.",
+    "A PENDING step cannot execute until prior ordered work is closed.",
+    "BLOCKED, NOT_APPLICABLE and REVIEW_REQUIRED require a reason.",
+    "Terminal step state is immutable in the same run.",
+    "Run completion requires all steps to be terminal.",
+    "Evidence and result remain traceable to run_id and step_id."
+  ],
+  "traceability": [
+    "PROCESS_DEFINITION -> PROCESS_STEP",
+    "WORK_ORDER -> WORK_RUN",
+    "WORK_RUN -> WORK_STEP_RUN",
+    "WORK_STEP_RUN -> RESULT",
+    "WORK_STEP_RUN -> EVIDENCE",
+    "RESULT -> FINDING/GAP/DECISION",
+    "WORK_RUN -> OUTPUT_PACKAGE"
+  ]
+}
