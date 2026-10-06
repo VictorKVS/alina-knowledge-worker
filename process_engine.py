@@ -244,6 +244,13 @@ def update_step(
     ).fetchone()
     if not row:
         raise ValueError("unknown run step")
+    current_status = row["status"]
+    if current_status == "PENDING" and status != "PENDING":
+        raise ValueError("step is not ready; previous required steps must be closed first")
+    if current_status in TERMINAL and status != current_status:
+        raise ValueError("terminal step is immutable; create a new run or explicit review workflow")
+    if status in {"BLOCKED", "NOT_APPLICABLE", "REVIEW_REQUIRED"} and not (note or "").strip():
+        raise ValueError(f"{status} requires a reason in note")
 
     now = time.time()
     started = now if status == "IN_PROGRESS" else None
@@ -291,8 +298,8 @@ def _refresh_run(db, run_id: str) -> None:
     now = time.time()
 
     if statuses and all(status in TERMINAL for status in statuses):
-        final = "REVIEW_REQUIRED" if "REVIEW_REQUIRED" in statuses else (
-            "BLOCKED" if "BLOCKED" in statuses else "DONE"
+        final = "BLOCKED" if "BLOCKED" in statuses else (
+            "REVIEW_REQUIRED" if "REVIEW_REQUIRED" in statuses else "DONE"
         )
         db.execute(
             "UPDATE work_runs SET status=?,updated=?,completed=? WHERE run_id=?",
