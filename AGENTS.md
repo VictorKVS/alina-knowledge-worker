@@ -26,3 +26,23 @@
 Для новых рабочих процессов используйте контракт `docs/knowledge/process-contract.v1.json` и мета-процесс `processes/alina_process_design.v1.json`.
 
 Не считайте ответ LLM выполнением шага. RUN должен пройти последовательные `work_step_runs`; каждый обязательный шаг завершается только `DONE / BLOCKED / NOT_APPLICABLE / REVIEW_REQUIRED`. Причина обязательна для всех terminal-state кроме `DONE`. Результат и evidence сохраняются отдельно и остаются трассируемыми к `run_id + step_id`.
+
+
+## Технический аудит с пентестом
+
+Основной процесс технического аудита: `processes/security_audit_with_pentest.v1.json`.
+
+Обязательная последовательность:
+
+```text
+DISCOVERY → INVENTORY → SAFE AUDIT → CONFIGURATION AUDIT
+→ VULNERABILITY ASSESSMENT → THREAT MODEL → RISK ENGINE
+→ APPROVAL GATE → ACTIVE PENTEST (optional)
+→ NORMALIZED FINDINGS → COMPLIANCE MAPPING
+→ CONTROLS → SECURITY ARCHITECTURE
+→ IMPLEMENTATION PLAN → RETEST → REPORT/EVIDENCE
+```
+
+ACTIVE_TEST запрещён без подтверждённого authorization/scope. Если разрешение не получено, активный шаг закрывается `NOT_APPLICABLE` с причиной, а сам аудит продолжается в безопасном режиме.
+
+Не объединяйте сущности `Finding`, `Vulnerability`, `Threat Scenario`, `Pentest Verified`, `Compliance GAP`, `Risk` и `Control`. Сканер/CVE не является доказательством взлома или нарушения конкретного требования. Используйте `docs/knowledge/security-audit-result-model.v1.json`.
