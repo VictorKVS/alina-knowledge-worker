@@ -12,7 +12,7 @@ def classify(path):
     book = 'father_golden_library' in parts and '_non_book_documents' not in parts
     if parts & {'12_security','00_standards','19_standards_governance','security-knowledge','security-corpora','security-core','application-security','devsecops'}:
         domain='security'
-    elif parts & {'01_requirements_analysis','02_domain_model_ddd','06_api_integration','09_software_engineering','programming-practice'}:
+    elif parts & {'01_requirements_analysis','02_domain_model_ddd','03_process_design','06_api_integration','09_software_engineering','programming-practice'}:
         domain='design'
     elif parts & {'04_software_architecture','08_microservices_distributed','07_data_knowledge_graph','11_observability_reliability','architecture','distributed-systems'}:
         domain='architecture'
