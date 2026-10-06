@@ -17,6 +17,7 @@ from urllib.parse import parse_qs, urlparse
 from urllib.request import urlopen
 import webbrowser
 import study
+import process_engine
 
 BASE = Path(__file__).resolve().parent
 DATA = BASE / 'data'
@@ -63,6 +64,7 @@ def init():
         db.execute('INSERT OR IGNORE INTO settings VALUES(?,?)', ('report_baseline',json.dumps({'at':time.time(),'processed':0,'errors':0,'chunks':0})))
     with connection() as db:
         study.init(db)
+        process_engine.init(db, BASE)
         import source_filter
         source_filter.install(db)
         for row in db.execute("SELECT DISTINCT sha FROM files WHERE sha IS NOT NULL AND status IN ('ready','partial')").fetchall():
@@ -85,6 +87,7 @@ def snapshot():
         errors = [dict(r) for r in db.execute("SELECT path,error,status FROM files WHERE status IN ('error','partial','oversize') ORDER BY updated DESC LIMIT 10")]
         chunk_count = db.execute('SELECT count(*) FROM chunks').fetchone()[0]
         study_status = study.summary(db)
+        process_status = process_engine.summary(db)
     total = sum(counts.values())
     terminal = sum(counts.get(k,0) for k in ('ready','partial','error','oversize'))
     return {'name':'Алина', 'mode':'Локальная подготовка источников; не утверждение фактов в KB',
@@ -95,7 +98,8 @@ def snapshot():
         'chunks':chunk_count, 'active_seconds':float(setting('active_seconds') or 0),
         'live':dict(LIVE), 'reports':reports, 'errors':errors,
         'next_report':json.loads(setting('report_baseline'))['at']+CONFIG['report_seconds'],
-        'roots':CONFIG['roots'], 'pid':os.getpid(), 'study':study_status}
+        'roots':CONFIG['roots'], 'pid':os.getpid(), 'study':study_status,
+        'processes':process_status}
 
 
 def scan():
@@ -238,6 +242,17 @@ def worker():
 
 class Handler(BaseHTTPRequestHandler):
     def log_message(self,*args): pass
+    def read_json(self):
+        try:
+            size=min(int(self.headers.get('Content-Length','0') or 0),262144)
+        except ValueError:
+            size=0
+        if size <= 0:
+            return {}
+        try:
+            return json.loads(self.rfile.read(size).decode('utf-8'))
+        except Exception:
+            return {}
     def send(self,body,status=200,kind='application/json; charset=utf-8'):
         raw=body if isinstance(body,bytes) else json.dumps(body,ensure_ascii=False).encode()
         self.send_response(status); self.send_header('Content-Type',kind)
@@ -258,6 +273,21 @@ class Handler(BaseHTTPRequestHandler):
             if domain not in study.DOMAINS: return self.send({'error':'domain'},400)
             with connection() as db: result=study.book_results(db,domain)
             return self.send(result)
+        if u.path=='/api/processes':
+            with connection() as db: result=process_engine.list_processes(db)
+            return self.send(result)
+        if u.path=='/api/process':
+            process_id=parse_qs(u.query).get('process_id',[''])[0][:200]
+            with connection() as db: result=process_engine.get_process(db,process_id)
+            return self.send(result if result else {'error':'process not found'},200 if result else 404)
+        if u.path=='/api/run':
+            run_id=parse_qs(u.query).get('run_id',[''])[0][:200]
+            with connection() as db: result=process_engine.run_status(db,run_id)
+            return self.send(result if result else {'error':'run not found'},200 if result else 404)
+        if u.path=='/api/run/next':
+            run_id=parse_qs(u.query).get('run_id',[''])[0][:200]
+            with connection() as db: result=process_engine.next_step(db,run_id)
+            return self.send(result if result else {'done':True})
         if u.path=='/api/search':
             q=parse_qs(u.query).get('q',[''])[0][:200]
             terms=[f'"{s.replace(chr(34),chr(34)*2)}"' for s in q.split()[:8]]
@@ -270,7 +300,32 @@ class Handler(BaseHTTPRequestHandler):
         if (not self.valid_host() or self.headers.get('X-Alina-Token')!=TOKEN
             or self.headers.get('Origin') not in {URL,f'http://localhost:{PORT}'}):
             return self.send({'error':'forbidden'},403)
-        if self.path.startswith('/api/focus/'):
+        if self.path.startswith('/api/run/start/'):
+            process_id=self.path[len('/api/run/start/'):][:200]
+            payload=self.read_json()
+            try:
+                with connection() as db:
+                    result=process_engine.create_run(db,process_id,payload.get('context') or payload)
+                return self.send(result)
+            except ValueError as exc:
+                return self.send({'error':str(exc)},400)
+        elif self.path.startswith('/api/run/') and '/step/' in self.path:
+            tail=self.path[len('/api/run/'):]
+            run_id,step_id=tail.split('/step/',1)
+            payload=self.read_json()
+            try:
+                with connection() as db:
+                    result=process_engine.update_step(
+                        db,run_id[:200],step_id[:200],
+                        payload.get('status',''),
+                        payload.get('result'),
+                        payload.get('evidence'),
+                        payload.get('note'),
+                    )
+                return self.send(result)
+            except ValueError as exc:
+                return self.send({'error':str(exc)},400)
+        elif self.path.startswith('/api/focus/'):
             domain=self.path.rsplit('/',1)[-1]
             if domain not in {'auto',*study.DOMAINS}: return self.send({'error':'domain'},400)
             setting('focus_domain',domain)
