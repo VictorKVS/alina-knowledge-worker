@@ -61,3 +61,23 @@ CI выполняет тесты на Windows. Локальная проверк
 DOC поддерживает также MHTML, включая кодировку unicode. Служебные файлы с префиксом `~$` исключены из каталога; исходники не удаляются.
 
 Публичное подготовленное демо: https://victorkvs.github.io/alina-knowledge-worker/
+
+
+## Исполняемые процессы Алины
+
+Алина теперь хранит не только индекс документов, но и структурированные рабочие процессы.
+
+При старте `alina.py` каталог `processes/` регистрируется в SQLite:
+
+```text
+PROCESS_DEFINITION
+  -> PROCESS_STEP
+  -> WORK_RUN
+  -> WORK_STEP_RUN
+  -> RESULT / EVIDENCE
+```
+
+Первый мета-процесс: `PROC-ALINA-PROCESS-DESIGN` — проектирование нового процесса агента.
+Первый прикладной процесс: `RUNBOOK-WEB-SECURITY-001` — Web Security в разрешённом scope.
+
+Процесс считается завершённым только после terminal-state каждого обязательного шага. `BLOCKED`, `NOT_APPLICABLE` и `REVIEW_REQUIRED` требуют причины.
