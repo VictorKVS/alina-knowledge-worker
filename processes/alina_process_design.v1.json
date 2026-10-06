@@ -1,0 +1,304 @@
+{
+  "schema": "father.agent_work_process.v1",
+  "id": "PROC-ALINA-PROCESS-DESIGN",
+  "version": "1.0",
+  "title": "Алина-аналитик — проектирование рабочего процесса агента",
+  "domain": "design",
+  "agent_role": "ALINA-ANALYST",
+  "purpose": "Преобразовать цель работы в проверяемый исполняемый процесс, который агент проходит по всем обязательным шагам и оставляет evidence.",
+  "invariants": [
+    "Процесс начинается с цели, контекста, границ и критериев завершения.",
+    "Каждый обязательный шаг должен завершиться DONE, BLOCKED, NOT_APPLICABLE или REVIEW_REQUIRED.",
+    "NOT_APPLICABLE требует причины.",
+    "BLOCKED требует причины и недостающего входа.",
+    "Нельзя подменять источник знания выводом агента.",
+    "Для регулируемых/опасных действий нужен отдельный guard перед исполнением.",
+    "Каждый результат должен иметь trace к шагу, источнику и evidence."
+  ],
+  "output_contract": {
+    "required": [
+      "process_id",
+      "title",
+      "purpose",
+      "domain",
+      "agent_role",
+      "inputs",
+      "constraints",
+      "knowledge_sources",
+      "steps",
+      "evidence_contract",
+      "quality_gates",
+      "outputs",
+      "completion_rule",
+      "failure_modes"
+    ]
+  },
+  "steps": [
+    {
+      "id": "PD-00",
+      "order": 0,
+      "title": "Принять задачу и определить цель",
+      "mode": "ANALYSIS",
+      "required": true,
+      "actions": [
+        "capture_goal",
+        "capture_expected_output",
+        "capture_stakeholder"
+      ],
+      "outputs": [
+        "goal_statement",
+        "expected_output"
+      ],
+      "completion": "цель и ожидаемый результат сформулированы"
+    },
+    {
+      "id": "PD-01",
+      "order": 1,
+      "title": "Определить границы и ограничения",
+      "mode": "GUARD",
+      "required": true,
+      "actions": [
+        "define_scope",
+        "define_out_of_scope",
+        "identify_legal_security_business_constraints"
+      ],
+      "outputs": [
+        "scope",
+        "constraints"
+      ],
+      "completion": "scope и ограничения зафиксированы"
+    },
+    {
+      "id": "PD-02",
+      "order": 2,
+      "title": "Определить входные данные",
+      "mode": "ANALYSIS",
+      "required": true,
+      "actions": [
+        "inventory_inputs",
+        "mark_required_optional",
+        "define_data_quality_requirements"
+      ],
+      "outputs": [
+        "input_contract"
+      ],
+      "completion": "для каждого входа указан источник и обязательность"
+    },
+    {
+      "id": "PD-03",
+      "order": 3,
+      "title": "Маршрутизировать знания",
+      "mode": "KNOWLEDGE",
+      "required": true,
+      "actions": [
+        "identify_domains",
+        "select_knowledge_sources",
+        "select_documents_standards_methods"
+      ],
+      "outputs": [
+        "knowledge_route"
+      ],
+      "completion": "для этапов процесса определены источники знаний"
+    },
+    {
+      "id": "PD-04",
+      "order": 4,
+      "title": "Определить роли и агентов",
+      "mode": "DESIGN",
+      "required": true,
+      "actions": [
+        "identify_roles",
+        "assign_agent_responsibilities",
+        "define_handoffs"
+      ],
+      "outputs": [
+        "role_model"
+      ],
+      "completion": "каждое действие имеет исполнителя или оркестратор"
+    },
+    {
+      "id": "PD-05",
+      "order": 5,
+      "title": "Декомпозировать работу на этапы",
+      "mode": "DESIGN",
+      "required": true,
+      "actions": [
+        "derive_steps",
+        "order_steps",
+        "define_dependencies"
+      ],
+      "outputs": [
+        "step_graph"
+      ],
+      "completion": "получен полный упорядоченный граф шагов"
+    },
+    {
+      "id": "PD-06",
+      "order": 6,
+      "title": "Спроектировать действие каждого шага",
+      "mode": "DESIGN",
+      "required": true,
+      "actions": [
+        "define_step_inputs",
+        "define_actions",
+        "define_tools",
+        "define_outputs"
+      ],
+      "outputs": [
+        "step_contracts"
+      ],
+      "completion": "каждый шаг имеет input/action/output"
+    },
+    {
+      "id": "PD-07",
+      "order": 7,
+      "title": "Определить проверки и quality gates",
+      "mode": "QA",
+      "required": true,
+      "actions": [
+        "define_preconditions",
+        "define_validation",
+        "define_acceptance_criteria"
+      ],
+      "outputs": [
+        "quality_gates"
+      ],
+      "completion": "каждый критичный этап имеет проверку"
+    },
+    {
+      "id": "PD-08",
+      "order": 8,
+      "title": "Определить evidence",
+      "mode": "QA",
+      "required": true,
+      "actions": [
+        "define_evidence_per_step",
+        "define_traceability",
+        "define_retention"
+      ],
+      "outputs": [
+        "evidence_contract"
+      ],
+      "completion": "для каждого обязательного шага определено evidence или причина его отсутствия"
+    },
+    {
+      "id": "PD-09",
+      "order": 9,
+      "title": "Спроектировать состояния и ошибки",
+      "mode": "DESIGN",
+      "required": true,
+      "actions": [
+        "define_states",
+        "define_blocked_conditions",
+        "define_retry_and_escalation"
+      ],
+      "outputs": [
+        "state_machine",
+        "failure_modes"
+      ],
+      "completion": "определены terminal states, retry и escalation"
+    },
+    {
+      "id": "PD-10",
+      "order": 10,
+      "title": "Определить findings / gaps / decisions",
+      "mode": "ANALYSIS",
+      "required": true,
+      "actions": [
+        "define_finding_schema",
+        "define_gap_schema",
+        "define_decision_schema"
+      ],
+      "outputs": [
+        "finding_contract",
+        "gap_contract",
+        "decision_contract"
+      ],
+      "completion": "отклонения и решения имеют структуру"
+    },
+    {
+      "id": "PD-11",
+      "order": 11,
+      "title": "Определить итоговый пакет",
+      "mode": "DESIGN",
+      "required": true,
+      "actions": [
+        "define_outputs",
+        "define_report",
+        "define_machine_readable_artifacts"
+      ],
+      "outputs": [
+        "output_contract"
+      ],
+      "completion": "итоговые артефакты и потребители определены"
+    },
+    {
+      "id": "PD-12",
+      "order": 12,
+      "title": "Проверить полноту процесса",
+      "mode": "QA",
+      "required": true,
+      "actions": [
+        "check_no_missing_required_steps",
+        "check_traceability",
+        "check_unhandled_failures"
+      ],
+      "outputs": [
+        "coverage_report"
+      ],
+      "completion": "все обязательные элементы process contract закрыты"
+    },
+    {
+      "id": "PD-13",
+      "order": 13,
+      "title": "Зарегистрировать процесс",
+      "mode": "PUBLISH",
+      "required": true,
+      "actions": [
+        "assign_process_id",
+        "version_process",
+        "persist_definition",
+        "publish_to_knowledge_base"
+      ],
+      "outputs": [
+        "registered_process"
+      ],
+      "completion": "процесс сохранён в registry и доступен для запуска"
+    },
+    {
+      "id": "PD-14",
+      "order": 14,
+      "title": "Пилотный прогон",
+      "mode": "RUN",
+      "required": true,
+      "actions": [
+        "create_test_run",
+        "execute_all_steps",
+        "collect_metrics",
+        "record_blockers"
+      ],
+      "outputs": [
+        "pilot_run",
+        "pilot_metrics"
+      ],
+      "completion": "каждый обязательный шаг получил terminal state"
+    },
+    {
+      "id": "PD-15",
+      "order": 15,
+      "title": "Ретроспектива и улучшение",
+      "mode": "LEARN",
+      "required": true,
+      "actions": [
+        "compare_expected_actual",
+        "capture_errors",
+        "update_process_if_needed"
+      ],
+      "outputs": [
+        "lessons_learned",
+        "change_candidates"
+      ],
+      "completion": "качество процесса оценено и изменения зафиксированы"
+    }
+  ]
+}
