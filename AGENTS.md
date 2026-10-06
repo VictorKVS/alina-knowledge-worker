@@ -19,3 +19,10 @@
 Для анализа востребованности контента используйте `docs/knowledge/TREND_ANALYST_PROTOCOL_V1.md` и `docs/knowledge/trend-recommendation-contract.v1.json`.
 
 Аналитик обязан разделять наблюдаемые метрики, интерпретацию тренда, прогноз и рекомендацию. Прогнозы показывают временной горизонт, источники и confidence; при недостатке данных используется `insufficient_evidence`. После теста рекомендация должна получить исход `useful / neutral / wrong / inconclusive`, чтобы система училась на качестве собственных советов.
+
+
+## Процессы Алины-аналитика
+
+Для новых рабочих процессов используйте контракт `docs/knowledge/process-contract.v1.json` и мета-процесс `processes/alina_process_design.v1.json`.
+
+Не считайте ответ LLM выполнением шага. RUN должен пройти последовательные `work_step_runs`; каждый обязательный шаг завершается только `DONE / BLOCKED / NOT_APPLICABLE / REVIEW_REQUIRED`. Причина обязательна для всех terminal-state кроме `DONE`. Результат и evidence сохраняются отдельно и остаются трассируемыми к `run_id + step_id`.
