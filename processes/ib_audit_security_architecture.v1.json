@@ -1,0 +1,349 @@
+{
+  "schema": "father.agent_work_process.v1",
+  "id": "PROC-IB-AUDIT-ARCH",
+  "version": "1.0",
+  "title": "ИБ-аудит, соответствие и проектирование системы защиты",
+  "domain": "security_audit",
+  "domain_id": "DOM-IB-AUDIT",
+  "agent_role": "AGENT-IB-AUDITOR-ARCHITECT",
+  "purpose": "Провести нормативный и инженерный аудит ИБ, установить применимые требования, проверить evidence, выявить gaps/risks и спроектировать минимально достаточную систему защиты с трассировкой до требований.",
+  "principles": [
+    "DOCUMENT_FOUND не означает REQUIREMENT_VERIFIED.",
+    "REQUIREMENT_VERIFIED не означает APPLICABLE.",
+    "COMPLIANCE GAP существует только при подтверждённой применимости и evidence.",
+    "Ответственность конкретного лица не выводится из должности без внутреннего документа.",
+    "Проектирование защиты должно трассироваться от requirement/gap/risk к control и architecture decision.",
+    "При необходимости технической проверки вызывается PROC-SECURITY-AUDIT-PENTEST."
+  ],
+  "inputs": [
+    "work_order",
+    "system_description",
+    "asset_inventory",
+    "data_inventory",
+    "data_flows",
+    "architecture",
+    "contracts",
+    "internal_documents",
+    "regulatory_context",
+    "security_controls",
+    "evidence"
+  ],
+  "outputs": [
+    "applicability_matrix",
+    "requirement_register",
+    "evidence_matrix",
+    "compliance_gaps",
+    "risk_register",
+    "control_plan",
+    "target_security_architecture",
+    "security_document_plan",
+    "implementation_plan",
+    "ib_audit_report"
+  ],
+  "steps": [
+    {
+      "id": "IB-00",
+      "order": 0,
+      "title": "Определить объект, цель и границы",
+      "mode": "GUARD",
+      "required": true,
+      "actions": [
+        "capture_scope",
+        "capture_business_context",
+        "capture_system_boundaries"
+      ],
+      "outputs": [
+        "scope_snapshot"
+      ],
+      "completion": "объект и границы зафиксированы"
+    },
+    {
+      "id": "IB-01",
+      "order": 1,
+      "title": "Обследование и инвентаризация",
+      "mode": "READ_ONLY",
+      "required": true,
+      "actions": [
+        "inventory_assets",
+        "inventory_users_roles",
+        "inventory_security_tools",
+        "inventory_external_connections"
+      ],
+      "outputs": [
+        "asset_inventory"
+      ],
+      "completion": "состав объекта обследования подтверждён"
+    },
+    {
+      "id": "IB-02",
+      "order": 2,
+      "title": "Информация, процессы и потоки",
+      "mode": "ANALYSIS",
+      "required": true,
+      "actions": [
+        "identify_information_categories",
+        "map_data_flows",
+        "identify_processing_purposes",
+        "identify_storage_and_transfer"
+      ],
+      "outputs": [
+        "data_inventory",
+        "data_flow_model"
+      ],
+      "completion": "информация и потоки описаны"
+    },
+    {
+      "id": "IB-03",
+      "order": 3,
+      "title": "Классификация / категорирование / контекст",
+      "mode": "ANALYSIS",
+      "required": true,
+      "actions": [
+        "determine_system_types",
+        "identify_pdn_gis_kii_crypto_context",
+        "record_classification_inputs"
+      ],
+      "outputs": [
+        "classification_context"
+      ],
+      "completion": "контекст классификации сформирован без неподтверждённых выводов"
+    },
+    {
+      "id": "IB-04",
+      "order": 4,
+      "title": "Нормативная применимость",
+      "mode": "KNOWLEDGE",
+      "required": true,
+      "actions": [
+        "select_documents",
+        "extract_requirements",
+        "verify_requirement_source",
+        "assess_applicability"
+      ],
+      "outputs": [
+        "applicability_matrix",
+        "requirement_register"
+      ],
+      "completion": "каждое требование имеет source/status/applicability"
+    },
+    {
+      "id": "IB-05",
+      "order": 5,
+      "title": "Локальные документы и ответственность",
+      "mode": "ANALYSIS",
+      "required": true,
+      "actions": [
+        "inventory_internal_documents",
+        "map_required_roles",
+        "map_internal_assignment_evidence",
+        "identify_document_gaps"
+      ],
+      "outputs": [
+        "local_document_register",
+        "responsibility_matrix"
+      ],
+      "completion": "роли отделены от конкретных лиц и подтверждены evidence где возможно"
+    },
+    {
+      "id": "IB-06",
+      "order": 6,
+      "title": "Модель угроз и нарушителя",
+      "mode": "ANALYSIS",
+      "required": true,
+      "actions": [
+        "identify_assets",
+        "identify_threat_sources",
+        "identify_entry_points",
+        "build_threat_scenarios",
+        "record_assumptions"
+      ],
+      "outputs": [
+        "threat_model"
+      ],
+      "completion": "актуальность угроз обоснована"
+    },
+    {
+      "id": "IB-07",
+      "order": 7,
+      "title": "Оценка существующих мер",
+      "mode": "READ_ONLY",
+      "required": true,
+      "actions": [
+        "inventory_controls",
+        "map_controls_to_requirements",
+        "collect_evidence",
+        "test_documented_vs_actual"
+      ],
+      "outputs": [
+        "control_inventory",
+        "evidence_matrix"
+      ],
+      "completion": "существующие меры связаны с evidence"
+    },
+    {
+      "id": "IB-08",
+      "order": 8,
+      "title": "Техническая проверка при необходимости",
+      "mode": "ORCHESTRATION",
+      "required": true,
+      "actions": [
+        "identify_need_for_technical_audit",
+        "invoke_security_audit_process_if_approved",
+        "import_verified_findings"
+      ],
+      "outputs": [
+        "technical_verification_refs"
+      ],
+      "completion": "техническая проверка выполнена либо NOT_APPLICABLE с причиной"
+    },
+    {
+      "id": "IB-09",
+      "order": 9,
+      "title": "Compliance GAP",
+      "mode": "ANALYSIS",
+      "required": true,
+      "actions": [
+        "compare_requirements_to_evidence",
+        "create_confirmed_gaps",
+        "mark_not_proven_separately",
+        "deduplicate"
+      ],
+      "outputs": [
+        "compliance_gaps"
+      ],
+      "completion": "каждый GAP связан с requirement и evidence"
+    },
+    {
+      "id": "IB-10",
+      "order": 10,
+      "title": "Risk Assessment",
+      "mode": "ANALYSIS",
+      "required": true,
+      "actions": [
+        "link_gaps_and_threats",
+        "assess_impact",
+        "assess_likelihood",
+        "consider_existing_controls",
+        "prioritize"
+      ],
+      "outputs": [
+        "risk_register"
+      ],
+      "completion": "значимые gaps/threats оценены"
+    },
+    {
+      "id": "IB-11",
+      "order": 11,
+      "title": "Выбор мер защиты",
+      "mode": "ARCHITECTURE",
+      "required": true,
+      "actions": [
+        "derive_security_requirements",
+        "select_controls",
+        "minimize_redundancy",
+        "define_organizational_measures",
+        "define_technical_measures"
+      ],
+      "outputs": [
+        "control_plan"
+      ],
+      "completion": "controls закрывают подтверждённые requirements/risks"
+    },
+    {
+      "id": "IB-12",
+      "order": 12,
+      "title": "Target Security Architecture",
+      "mode": "ARCHITECTURE",
+      "required": true,
+      "actions": [
+        "design_security_zones",
+        "design_iam",
+        "design_network_protection",
+        "design_endpoint_server_controls",
+        "design_logging_monitoring",
+        "design_dlp_if_needed",
+        "design_crypto_if_needed",
+        "design_backup_resilience"
+      ],
+      "outputs": [
+        "target_security_architecture",
+        "architecture_decisions"
+      ],
+      "completion": "каждое architecture decision имеет trace к requirement/risk/control"
+    },
+    {
+      "id": "IB-13",
+      "order": 13,
+      "title": "Комплект документации",
+      "mode": "DESIGN",
+      "required": true,
+      "actions": [
+        "define_required_local_acts",
+        "define_regulations",
+        "define_procedures",
+        "define_journals_registers",
+        "define_evidence_artifacts"
+      ],
+      "outputs": [
+        "security_document_plan"
+      ],
+      "completion": "документы связаны с обязательствами и процессами"
+    },
+    {
+      "id": "IB-14",
+      "order": 14,
+      "title": "Implementation Roadmap",
+      "mode": "DESIGN",
+      "required": true,
+      "actions": [
+        "prioritize_controls",
+        "define_phases",
+        "define_dependencies",
+        "define_owner_roles",
+        "define_acceptance_tests"
+      ],
+      "outputs": [
+        "implementation_plan"
+      ],
+      "completion": "целевое состояние разложено на этапы реализации"
+    },
+    {
+      "id": "IB-15",
+      "order": 15,
+      "title": "Validation / Re-audit",
+      "mode": "QA",
+      "required": true,
+      "actions": [
+        "verify_implemented_controls",
+        "collect_new_evidence",
+        "reassess_gaps",
+        "reassess_risk"
+      ],
+      "outputs": [
+        "validation_results"
+      ],
+      "completion": "остаточные gaps и risks актуализированы"
+    },
+    {
+      "id": "IB-16",
+      "order": 16,
+      "title": "Финальный ИБ Audit & Architecture Pack",
+      "mode": "REPORT",
+      "required": true,
+      "actions": [
+        "build_audit_report",
+        "build_requirement_trace",
+        "build_gap_register",
+        "build_architecture_pack",
+        "build_evidence_index"
+      ],
+      "outputs": [
+        "ib_audit_report",
+        "architecture_pack",
+        "evidence_package",
+        "coverage_matrix"
+      ],
+      "completion": "полный trace DOCUMENT→REQUIREMENT→GAP/RISK→CONTROL→ARCHITECTURE→TEST→EVIDENCE"
+    }
+  ]
+}
