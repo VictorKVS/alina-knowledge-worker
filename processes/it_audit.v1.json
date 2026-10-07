@@ -1,0 +1,287 @@
+{
+  "schema": "father.agent_work_process.v1",
+  "id": "PROC-IT-AUDIT",
+  "version": "1.0",
+  "title": "IT Audit — инфраструктура, эксплуатация и IT controls",
+  "domain": "it_audit",
+  "domain_id": "DOM-IT-AUDIT",
+  "agent_role": "AGENT-IT-AUDITOR",
+  "purpose": "Провести системный аудит IT-среды: активы, архитектура, доступ, конфигурации, эксплуатация, резервирование, мониторинг, изменения, отказоустойчивость и IT controls; сформировать evidence, gaps, risks и remediation plan.",
+  "principles": [
+    "IT Audit не равен пентесту и не выполняет эксплуатацию уязвимостей.",
+    "Каждый вывод должен иметь evidence.",
+    "Отсутствие evidence означает NOT_PROVEN, а не автоматический NON_COMPLIANT.",
+    "Технические security findings могут передаваться в PROC-SECURITY-AUDIT-PENTEST."
+  ],
+  "inputs": [
+    "work_order",
+    "scope",
+    "systems",
+    "network_scope",
+    "owners",
+    "architecture",
+    "policies",
+    "service_data",
+    "change_records",
+    "backup_records",
+    "monitoring_data"
+  ],
+  "outputs": [
+    "it_asset_inventory",
+    "architecture_map",
+    "control_assessment",
+    "findings",
+    "gaps",
+    "risk_register",
+    "remediation_plan",
+    "it_audit_report",
+    "evidence_package"
+  ],
+  "steps": [
+    {
+      "id": "IT-00",
+      "order": 0,
+      "title": "Scope и цели IT-аудита",
+      "mode": "GUARD",
+      "required": true,
+      "actions": [
+        "capture_scope",
+        "capture_objectives",
+        "capture_constraints"
+      ],
+      "outputs": [
+        "scope_snapshot"
+      ],
+      "completion": "scope и цели утверждены"
+    },
+    {
+      "id": "IT-01",
+      "order": 1,
+      "title": "Инвентаризация IT-активов",
+      "mode": "READ_ONLY",
+      "required": true,
+      "actions": [
+        "inventory_servers",
+        "inventory_workstations",
+        "inventory_network",
+        "inventory_virtualization",
+        "inventory_cloud",
+        "inventory_databases",
+        "inventory_storage"
+      ],
+      "outputs": [
+        "it_asset_inventory"
+      ],
+      "completion": "активы и владельцы зафиксированы"
+    },
+    {
+      "id": "IT-02",
+      "order": 2,
+      "title": "Архитектура и зависимости",
+      "mode": "ANALYSIS",
+      "required": true,
+      "actions": [
+        "map_network_zones",
+        "map_dependencies",
+        "map_data_flows",
+        "identify_critical_services"
+      ],
+      "outputs": [
+        "architecture_map"
+      ],
+      "completion": "критичные сервисы и зависимости описаны"
+    },
+    {
+      "id": "IT-03",
+      "order": 3,
+      "title": "Identity & Access",
+      "mode": "READ_ONLY",
+      "required": true,
+      "actions": [
+        "review_accounts",
+        "review_privileged_access",
+        "review_joiner_mover_leaver",
+        "review_service_accounts"
+      ],
+      "outputs": [
+        "iam_assessment"
+      ],
+      "completion": "доступ и привилегии оценены"
+    },
+    {
+      "id": "IT-04",
+      "order": 4,
+      "title": "Конфигурации и baseline",
+      "mode": "READ_ONLY",
+      "required": true,
+      "actions": [
+        "review_os_configuration",
+        "review_network_configuration",
+        "review_virtualization_configuration",
+        "review_database_configuration"
+      ],
+      "outputs": [
+        "configuration_assessment"
+      ],
+      "completion": "ключевые платформы оценены"
+    },
+    {
+      "id": "IT-05",
+      "order": 5,
+      "title": "Patch / lifecycle / software",
+      "mode": "ANALYSIS",
+      "required": true,
+      "actions": [
+        "review_patch_process",
+        "review_eol_eos",
+        "review_software_inventory",
+        "identify_unsupported_components"
+      ],
+      "outputs": [
+        "lifecycle_assessment"
+      ],
+      "completion": "lifecycle и patch gaps зафиксированы"
+    },
+    {
+      "id": "IT-06",
+      "order": 6,
+      "title": "Backup / Restore / DR",
+      "mode": "ANALYSIS",
+      "required": true,
+      "actions": [
+        "review_backup_policy",
+        "review_backup_jobs",
+        "review_restore_tests",
+        "review_rpo_rto",
+        "review_dr_plan"
+      ],
+      "outputs": [
+        "resilience_assessment"
+      ],
+      "completion": "backup/restore/DR подтверждены evidence либо gap"
+    },
+    {
+      "id": "IT-07",
+      "order": 7,
+      "title": "Monitoring / Logging / Capacity",
+      "mode": "ANALYSIS",
+      "required": true,
+      "actions": [
+        "review_monitoring",
+        "review_logging",
+        "review_alerting",
+        "review_capacity",
+        "review_availability"
+      ],
+      "outputs": [
+        "operations_observability_assessment"
+      ],
+      "completion": "наблюдаемость и эксплуатационные метрики оценены"
+    },
+    {
+      "id": "IT-08",
+      "order": 8,
+      "title": "Change / Release / Configuration Management",
+      "mode": "ANALYSIS",
+      "required": true,
+      "actions": [
+        "review_change_process",
+        "review_release_process",
+        "review_config_management",
+        "sample_changes"
+      ],
+      "outputs": [
+        "change_management_assessment"
+      ],
+      "completion": "управление изменениями проверено"
+    },
+    {
+      "id": "IT-09",
+      "order": 9,
+      "title": "Incident / Problem / Service Management",
+      "mode": "ANALYSIS",
+      "required": true,
+      "actions": [
+        "review_incident_process",
+        "review_problem_management",
+        "review_service_ownership",
+        "review_sla_slo"
+      ],
+      "outputs": [
+        "service_management_assessment"
+      ],
+      "completion": "процессы эксплуатации оценены"
+    },
+    {
+      "id": "IT-10",
+      "order": 10,
+      "title": "Control Testing",
+      "mode": "SAFE_TEST",
+      "required": true,
+      "actions": [
+        "sample_controls",
+        "validate_evidence",
+        "mark_not_proven_where_needed"
+      ],
+      "outputs": [
+        "control_assessment"
+      ],
+      "completion": "каждый выбранный control имеет результат"
+    },
+    {
+      "id": "IT-11",
+      "order": 11,
+      "title": "Findings / Gaps / Risk",
+      "mode": "ANALYSIS",
+      "required": true,
+      "actions": [
+        "normalize_findings",
+        "build_gaps",
+        "assess_risk",
+        "deduplicate"
+      ],
+      "outputs": [
+        "findings",
+        "gaps",
+        "risk_register"
+      ],
+      "completion": "findings связаны с evidence и risks"
+    },
+    {
+      "id": "IT-12",
+      "order": 12,
+      "title": "Remediation Plan",
+      "mode": "DESIGN",
+      "required": true,
+      "actions": [
+        "define_quick_wins",
+        "define_projects",
+        "assign_owner_roles",
+        "define_dependencies",
+        "prioritize"
+      ],
+      "outputs": [
+        "remediation_plan"
+      ],
+      "completion": "для значимых gaps определены действия"
+    },
+    {
+      "id": "IT-13",
+      "order": 13,
+      "title": "Финальный IT Audit Report",
+      "mode": "REPORT",
+      "required": true,
+      "actions": [
+        "build_executive_summary",
+        "build_technical_sections",
+        "build_evidence_index",
+        "build_coverage_matrix"
+      ],
+      "outputs": [
+        "it_audit_report",
+        "evidence_package"
+      ],
+      "completion": "все шаги закрыты и coverage отражён"
+    }
+  ]
+}
