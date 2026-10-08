@@ -1,0 +1,53 @@
+{
+  "schema": "father.cyber_security_learning_registry.v1",
+  "id": "REG-CYBER-SECURITY-LEARNING",
+  "block": "CYBER → ALINA-ANALYST → IB",
+  "principle": "Параллельные программы не заменяют друг друга. Знания сводятся в FATHER KB с сохранением provenance.",
+  "tracks": [
+    {
+      "id": "TRACK-CYBERED",
+      "title": "CYBERED — исходная учебная программа",
+      "role": "PRIMARY_CURRENT_STUDY_SEQUENCE",
+      "execution": "Идём по реальным пунктам CYBERED в их порядке.",
+      "provenance": "CYBERED"
+    },
+    {
+      "id": "TRACK-FATHER-GRAND-PENTEST",
+      "title": "FATHER Grand Pentest Course",
+      "role": "PARALLEL_MASTER_PROGRAM",
+      "provenance": "FATHER",
+      "composition": [
+        "Исторический курс 21 направление",
+        "Security Academy S01–S18",
+        "FATHER Security Academy v2 S01–S30",
+        "FATHER Pentest Academy 16 Core + plugins A–J",
+        "38-block engineering map",
+        "SecGraph / FATHER agent platform"
+      ]
+    },
+    {
+      "id": "TRACK-OSINT-SYSTEMS",
+      "title": "OSINT Systems",
+      "role": "PARALLEL_SPECIALIZATION",
+      "provenance": "FATHER_OSINT",
+      "relation": "Отдельная специализация внутри Recon/OSINT большой программы; не заменяет полный пентест-курс."
+    }
+  ],
+  "comparison": {
+    "status": "DEFERRED",
+    "rule": "Сначала накапливаем содержание треков независимо. Потом строим матрицу покрытия без потери исходных программ.",
+    "dimensions": [
+      "TOPIC",
+      "DEPTH",
+      "TOOLS",
+      "LABS",
+      "METHODS",
+      "AGENT_SKILLS",
+      "EVIDENCE",
+      "RISK",
+      "CONTROL",
+      "COMPETENCY",
+      "AUTOMATION"
+    ]
+  }
+}
