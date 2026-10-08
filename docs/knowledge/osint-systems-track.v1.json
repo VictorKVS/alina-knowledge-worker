@@ -1,0 +1,90 @@
+{
+  "schema": "father.osint_systems_track.v1",
+  "id": "TRACK-OSINT-SYSTEMS",
+  "title": "OSINT Systems — исследование систем и графовых платформ",
+  "parent_course": "COURSE-FATHER-GRAND-PENTEST",
+  "parent_block": "05 OSINT и разведка",
+  "status": "PARALLEL_ACTIVE",
+  "scope_rule": "Это только OSINT-системы. Не трактовать как полный курс OSINT и тем более как полный курс пентеста.",
+  "systems": [
+    {
+      "id": "OSINT-MALTEGO",
+      "title": "Maltego",
+      "focus": [
+        "entity graph",
+        "transforms",
+        "investigation workflow",
+        "link analysis"
+      ]
+    },
+    {
+      "id": "OSINT-LINKSCOPE",
+      "title": "LinkScope",
+      "focus": [
+        "graph investigation",
+        "entities",
+        "connectors",
+        "visual link analysis"
+      ]
+    },
+    {
+      "id": "OSINT-LAMPYRE",
+      "title": "Lampyre",
+      "focus": [
+        "OSINT investigations",
+        "data sources",
+        "graph/table analysis",
+        "entity enrichment"
+      ]
+    },
+    {
+      "id": "OSINT-OSINTBUDDY",
+      "title": "OSINTBuddy",
+      "focus": [
+        "graph schema",
+        "plugins/modules",
+        "entity relations",
+        "investigation automation"
+      ]
+    },
+    {
+      "id": "OSINT-RECONNG",
+      "title": "Recon-ng",
+      "focus": [
+        "workspace",
+        "modules",
+        "marketplace",
+        "recon workflow",
+        "structured results"
+      ]
+    },
+    {
+      "id": "OSINT-SPIDERFOOT",
+      "title": "SpiderFoot",
+      "focus": [
+        "automated OSINT",
+        "modules",
+        "correlation",
+        "attack-surface discovery"
+      ]
+    }
+  ],
+  "study_template": [
+    "INSTALL/DEPLOY",
+    "ARCHITECTURE",
+    "DATA MODEL",
+    "ENTITY MODEL",
+    "MODULE/PLUGIN MODEL",
+    "DATA SOURCES",
+    "WORKFLOW",
+    "GRAPH/CORRELATION",
+    "EXPORT/API",
+    "AUTOMATION",
+    "EXTENSIBILITY",
+    "SECURITY/PRIVACY",
+    "STRENGTHS",
+    "LIMITATIONS",
+    "FATHER REUSE"
+  ],
+  "father_goal": "Исследовать лучшие архитектурные решения OSINT-систем и переносить полезные идеи в SecGraph/FATHER без копирования продуктов."
+}
