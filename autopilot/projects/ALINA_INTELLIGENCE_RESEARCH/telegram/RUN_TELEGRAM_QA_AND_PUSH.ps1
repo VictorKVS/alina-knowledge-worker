@@ -1,65 +1,55 @@
 # ============================================================
-# FATHER / ALINA — TELEGRAM QA + GITHUB EVIDENCE
-# STAGE 02: pull, test, publish sanitized status
+# FATHER / ALINA — TELEGRAM QA: RUN TESTS AND PUSH SAFE EVIDENCE
+# Compatible with Windows PowerShell 5.1 and PowerShell 7
 # ============================================================
-param([string]$RepoRoot = "", [switch]$SkipPull)
+param([string]$RepoRoot = "")
 $ErrorActionPreference = "Stop"
+$BranchName = "feature/alina-k3-k10-autopilot"
+$Rel = "autopilot/projects/ALINA_INTELLIGENCE_RESEARCH/telegram/evidence/TELEGRAM_QA_LATEST.md"
 if (-not $RepoRoot) {
-    $RepoRoot = (Resolve-Path (Join-Path $PSScriptRoot "..\..\..\..")).Path
+    $RepoRoot = (Resolve-Path (Join-Path $PSScriptRoot "../../../..")).Path
 }
-$TargetBranch = "feature/alina-k3-k10-autopilot"
-$EvidenceRelative = "autopilot/projects/ALINA_INTELLIGENCE_RESEARCH/telegram/evidence/TELEGRAM_QA_LATEST.md"
-$Evidence = Join-Path $RepoRoot ($EvidenceRelative -replace "/", "\")
-$TestsDir = Join-Path $RepoRoot "autopilot/projects/ALINA_INTELLIGENCE_RESEARCH/telegram"
-Write-Host "=== FATHER / ALINA — TELEGRAM QA + GITHUB ===" -ForegroundColor Cyan
 Set-Location $RepoRoot
-if ((git rev-parse --show-toplevel).Trim() -ne ($RepoRoot -replace "\\","/")) {
-    Write-Host "Repository path may use different canonical spelling. Continuing with explicit root." -ForegroundColor Yellow
-}
-$Branch = (git branch --show-current).Trim()
-if ($Branch -ne $TargetBranch) {
-    throw "Wrong branch: '$Branch'. Switch to '$TargetBranch' manually first; no automatic branch switch over local changes."
-}
-if (-not $SkipPull) {
-    git pull --ff-only origin $TargetBranch
-    if ($LASTEXITCODE -ne 0) { throw "git pull failed; local modifications/branches need attention" }
-}
-New-Item -ItemType Directory -Force -Path (Split-Path $Evidence) | Out-Null
-$Timestamp = (Get-Date).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ")
-$Commit = (git rev-parse HEAD).Trim()
-$RawLog = Join-Path $env:TEMP "father_alina_telegram_qa.log"
-Push-Location $TestsDir
-try {
-    & python -m unittest discover -s . -p "test_pipeline.py" -v 2>&1 | Out-File -FilePath $RawLog -Encoding utf8
-    $ExitCode = $LASTEXITCODE
-} finally { Pop-Location }
-# Publish ONLY a machine-generated summary, not raw stdout: paths, tokens or PII can leak via failures.
+Write-Host "=== FATHER / ALINA / TELEGRAM QA ===" -ForegroundColor Cyan
+$Current = (& git branch --show-current).Trim()
+if ($LASTEXITCODE -ne 0 -or $Current -ne $BranchName) { throw "Expected branch $BranchName. Actual: $Current" }
+$TestDir = Join-Path $RepoRoot "autopilot/projects/ALINA_INTELLIGENCE_RESEARCH/telegram"
+$LogPath = Join-Path $env:TEMP "father_alina_telegram_qa_stdout_stderr.log"
+$Py = (Get-Command python -ErrorAction Stop).Source
+$ReportPath = Join-Path $RepoRoot ($Rel -replace "/", [IO.Path]::DirectorySeparatorChar)
+# Start-Process redirects both streams without PowerShell 5.1 native STDERR promotion.
+$Process = Start-Process -FilePath $Py -ArgumentList @("-m","unittest","discover","-s",".","-p","test_pipeline.py","-v") -WorkingDirectory $TestDir -Wait -PassThru -RedirectStandardOutput ($LogPath + ".out") -RedirectStandardError ($LogPath + ".err") -NoNewWindow
+$ExitCode = $Process.ExitCode
 $Status = if ($ExitCode -eq 0) { "PASS" } else { "FAIL" }
-$Digest = (Get-FileHash -Algorithm SHA256 $RawLog).Hash
-$Report = @"
-# FATHER / ALINA — Telegram Offline QA
-- Result: **$Status**
-- UTC: $Timestamp
-- Tested commit: `$Commit`
-- Command: `python -m unittest discover -s . -p "test_pipeline.py" -v`
-- Exit code: $ExitCode
-- Raw log SHA-256 (raw log NOT uploaded): `$Digest`
-- Scope: offline JSONL classification tests only; no live TDLib or Telegram connection tested.
-- Generated automatically by RUN_TELEGRAM_QA_AND_PUSH.ps1.
-"@
-Set-Content -Path $Evidence -Value $Report -Encoding UTF8
-git add -- $EvidenceRelative
+$TimeUtc = [DateTime]::UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ")
+$Sha = (& git rev-parse HEAD).Trim()
+$ErrHash = (Get-FileHash -Algorithm SHA256 ($LogPath + ".err")).Hash
+$OutHash = (Get-FileHash -Algorithm SHA256 ($LogPath + ".out")).Hash
+New-Item -ItemType Directory -Force -Path (Split-Path $ReportPath) | Out-Null
+$Lines = @(
+    "# FATHER / ALINA — Telegram Offline QA",
+    "",
+    "- Status: **$Status**",
+    "- UTC: $TimeUtc",
+    "- Tested commit: $Sha",
+    "- Exit code: $ExitCode",
+    "- Command: python -m unittest discover -s . -p test_pipeline.py -v",
+    "- stdout SHA256: $OutHash",
+    "- stderr SHA256: $ErrHash",
+    "- Scope: offline candidate-intake tests only. No Telegram API/TDLib connection was tested.",
+    "- Raw logs are kept locally in the user's temporary directory, not pushed to GitHub."
+)
+[IO.File]::WriteAllLines($ReportPath, [string[]]$Lines, [Text.UTF8Encoding]::new($false))
+# Stage ONLY known evidence path. Do not upload messages, secrets or unrelated files.
+& git add -- $Rel
 if ($LASTEXITCODE -ne 0) { throw "git add failed" }
-git diff --cached --quiet
-$HasChange = $LASTEXITCODE -eq 1
-if ($HasChange) {
-    git commit -m "test(alina): record Telegram offline QA status"
+& git diff --cached --quiet -- $Rel
+if ($LASTEXITCODE -eq 1) {
+    & git commit -m "test(alina): record offline Telegram QA status" -- $Rel
     if ($LASTEXITCODE -ne 0) { throw "git commit failed" }
-    git push origin $TargetBranch
-    if ($LASTEXITCODE -ne 0) { throw "git push failed" }
 }
-Write-Host "GitHub evidence: $EvidenceRelative" -ForegroundColor Green
-Write-Host "Test status: $Status" -ForegroundColor $(if ($ExitCode -eq 0) { "Green" } else { "Red" })
-Write-Host "Raw log (local only): $RawLog"
+& git push origin $BranchName
+if ($LASTEXITCODE -ne 0) { throw "git push failed: verify remote permissions and conflicts" }
+Write-Host "QA=$Status; evidence uploaded to $Rel" -ForegroundColor $(if($ExitCode -eq 0){"Green"}else{"Red"})
 Write-Host "2" -ForegroundColor Cyan
 if ($ExitCode -ne 0) { exit $ExitCode }
