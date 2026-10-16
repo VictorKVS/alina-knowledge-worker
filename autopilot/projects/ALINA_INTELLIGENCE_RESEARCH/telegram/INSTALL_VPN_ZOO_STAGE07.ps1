@@ -15,9 +15,9 @@ $results.Add("- Amnezia profile backup: confirmed by user (contents NOT accessed
 $results.Add("- No account passwords, tokens, private IPs or config values collected.")
 $results.Add("")
 $ids=@("AmneziaVPN.AmneziaVPN","Proton.ProtonVPN","Windscribe.Windscribe")
-function RunWinget([string[]]$args,[string]$step) {
+function RunWinget([string]$step,[string[]]$commandArgs) {
   Write-Host ("VPN ZOO: "+$step) -ForegroundColor Cyan
-  & winget @args
+  & winget @commandArgs
   $rc=$LASTEXITCODE
   $results.Add(("- "+$step+": exit code "+$rc))
   return $rc
@@ -35,14 +35,14 @@ try {
   # The native uninstaller may show UAC and UI. Do not force-remove profiles.
   $found=& winget list --id "AmneziaVPN.AmneziaVPN" --exact --source winget 2>$null
   if($LASTEXITCODE -eq 0 -and (($found -join " ") -match "AmneziaVPN")) {
-    $r=RunWinget @("--uninstall","--id","AmneziaVPN.AmneziaVPN","--exact","--source","winget") "Uninstall AmneziaVPN application"
+    $r=RunWinget "Uninstall AmneziaVPN application" @("uninstall","--id","AmneziaVPN.AmneziaVPN","--exact","--source","winget")
     if($r -ne 0){throw "AmneziaVPN uninstall failed; use Apps > Installed apps or official updater"}
   } else { $results.Add("- AmneziaVPN: winget did not list an installed version; skip uninstall") }
   foreach($id in $ids) {
-    $r=RunWinget @("install","--id",$id,"--exact","--source","winget","--accept-package-agreements","--accept-source-agreements") ("Install "+$id)
+    $r=RunWinget ("Install "+$id) @("install","--id",$id,"--exact","--source","winget","--accept-package-agreements","--accept-source-agreements")
     if($r -ne 0) {
       # package may already be present; winget upgrade is the non-destructive path
-      $r=RunWinget @("upgrade","--id",$id,"--exact","--source","winget","--accept-package-agreements","--accept-source-agreements") ("Upgrade "+$id)
+      $r=RunWinget ("Upgrade "+$id) @("upgrade","--id",$id,"--exact","--source","winget","--accept-package-agreements","--accept-source-agreements")
       if($r -ne 0){throw ("Installation/upgrade failed: "+$id)}
     }
   }
