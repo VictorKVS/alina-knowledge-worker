@@ -250,6 +250,44 @@ class Handler(BaseHTTPRequestHandler):
         if u.path=='/':
             page=(BASE/'dashboard.html').read_text(encoding='utf-8').replace('__TOKEN__',TOKEN)
             return self.send(page.encode(),kind='text/html; charset=utf-8')
+        if u.path=='/registry':
+            return self.send((BASE/'registry.html').read_bytes(),kind='text/html; charset=utf-8')
+        if u.path=='/api/registry':
+            params=parse_qs(u.query)
+            query=params.get('q',[''])[0][:200].strip()
+            domain=params.get('domain',[''])[0][:40]
+            status=params.get('status',[''])[0][:40]
+            try: page=max(1,min(100000,int(params.get('page',['1'])[0])))
+            except ValueError: page=1
+            conditions=[]; args=[]
+            if query:
+                conditions.append("(c.path LIKE ? ESCAPE '\\' OR c.path LIKE ? ESCAPE '\\')")
+                escaped=query.replace('\\','\\\\').replace('%','\\%').replace('_','\\_')
+                args.extend(['%'+escaped+'%','%'+escaped+'%'])
+            if domain:
+                if domain not in study.DOMAINS: return self.send({'error':'domain'},400)
+                conditions.append('c.domain=?'); args.append(domain)
+            if status:
+                if status not in ('ready','partial','pending','error','oversize','unsupported','unavailable'):
+                    return self.send({'error':'status'},400)
+                conditions.append("COALESCE(f.status,CASE WHEN c.supported=0 THEN 'unsupported' ELSE 'unavailable' END)=?")
+                args.append(status)
+            where=' WHERE '+' AND '.join(conditions) if conditions else ''
+            base=""" FROM catalog c LEFT JOIN files f ON f.path=c.path
+                LEFT JOIN versions v ON v.sha=f.sha """
+            with connection() as db:
+                total=db.execute('SELECT count(*)'+base+where,args).fetchone()[0]
+                counts=dict(db.execute("""SELECT COALESCE(f.status,CASE WHEN c.supported=0
+                    THEN 'unsupported' ELSE 'unavailable' END),count(*)"""
+                    +base+' GROUP BY 1').fetchall())
+                rows=db.execute("""SELECT c.path,c.domain,c.kind,c.supported,
+                    COALESCE(f.status,CASE WHEN c.supported=0 THEN 'unsupported'
+                    ELSE 'unavailable' END) status,f.size,f.sha,
+                    COALESCE(v.chunks,0) chunks,f.error,f.updated"""
+                    +base+where+' ORDER BY c.path LIMIT 100 OFFSET ?',
+                    [*args,(page-1)*100]).fetchall()
+            return self.send({'total':total,'page':page,'page_size':100,
+                'counts':counts,'items':[dict(r) for r in rows]})
         if u.path=='/api/status': return self.send(snapshot())
         if u.path=='/study-ui.js':
             return self.send((BASE/'study-ui.js').read_bytes(),kind='text/javascript; charset=utf-8')
