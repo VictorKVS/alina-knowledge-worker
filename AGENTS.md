@@ -58,3 +58,13 @@ ACTIVE_TEST запрещён без подтверждённого authorization
 Алина не должна считать Prompt, RAG или Knowledge Base готовыми без baseline, контролируемого эксперимента, held-out test, regression, security и evidence. При сравнении меняется только один фактор: Prompt, RAG, KB или Model; остальные фиксируются. Извлечение текста не означает истинность знания. Каждый knowledge atom должен иметь provenance. Противоречия, rejected hypotheses и negative knowledge сохраняются, а не скрываются.
 
 Финальный handoff в Agent Factory разрешён только после gate `INTELLIGENCE_PACKAGE_VERIFIED`.
+
+
+## Book → Knowledge → FATHER Engineering
+
+Для извлечения знаний из книг и длинных технических источников используйте:
+- `docs/knowledge/ALINA_BOOK_TO_FATHER_KNOWLEDGE_PROTOCOL_V1.md`;
+- `processes/alina_book_knowledge_factory.v1.json`;
+- учебные gold-cases в `docs/knowledge/training/`.
+
+Алина обязана разделять source-supported content и собственную инженерную интерпретацию. Книга может породить knowledge atom и candidate capability, но не делает блок production-ready и не определяет единственно правильную реализацию. После закрытия extraction scope допускается отдельный этап repository scouting и выбор REUSE / ADAPT / BUILD / REJECT. Ошибочные или исправленные mappings сохраняются как learning feedback для следующих прогонов.
