@@ -1,0 +1,106 @@
+{
+  "schema": "father.book_knowledge_package.v1",
+  "source": "SRC-BOOK-0001",
+  "scope": "Chapter 1 — Introduction",
+  "status": "PILOT",
+  "original_index": [
+    "LLM introduction",
+    "prompting",
+    "API access",
+    "strengths and limitations",
+    "PDF chatbot prototype",
+    "prototype to production"
+  ],
+  "translation": {
+    "status": "SUMMARY_TRANSLATION_READY",
+    "traceable": true
+  },
+  "semantic_outline": [
+    "LLM capabilities and limitations",
+    "prompting as interaction layer",
+    "simple RAG/PDF chatbot pipeline",
+    "retrieval limitations",
+    "prototype vs production gap",
+    "roadmap toward production-grade systems"
+  ],
+  "glossary": [
+    {
+      "term_id": "TERM-B001-001",
+      "original_term": "prompt",
+      "canonical_ru": "промпт / инструкция модели"
+    },
+    {
+      "term_id": "TERM-B001-002",
+      "original_term": "context",
+      "canonical_ru": "контекст модели"
+    },
+    {
+      "term_id": "TERM-B001-003",
+      "original_term": "embedding",
+      "canonical_ru": "векторное представление / эмбеддинг"
+    },
+    {
+      "term_id": "TERM-B001-004",
+      "original_term": "retrieval",
+      "canonical_ru": "поиск / извлечение релевантного контекста"
+    },
+    {
+      "term_id": "TERM-B001-005",
+      "original_term": "RAG",
+      "canonical_ru": "генерация с дополнением извлечёнными данными"
+    }
+  ],
+  "applications": [
+    "PDF question-answering",
+    "model selection under budget constraints",
+    "tool/API-connected assistants"
+  ],
+  "examples": [
+    "Chat with PDF pipeline"
+  ],
+  "algorithms": [
+    "PDF QA retrieval-generation pipeline",
+    "prototype-to-production improvement loop"
+  ],
+  "conclusions": [
+    "A prototype can work while still lacking production reliability.",
+    "Similarity retrieval does not guarantee answer relevance.",
+    "Production systems require explicit model, evaluation, cost, latency and reliability decisions."
+  ],
+  "combinations": [
+    "RAG decomposition + modular FATHER blocks",
+    "model selection + capability/cost profiles",
+    "tool use + orchestration + guardrails"
+  ],
+  "checklists": [
+    "Production-readiness checklist",
+    "RAG pipeline completeness checklist",
+    "Model-selection evidence checklist"
+  ],
+  "knowledge_atoms": [
+    "KNOW-BOOK0001-CH01-001",
+    "KNOW-BOOK0001-CH01-002",
+    "KNOW-BOOK0001-CH01-003",
+    "KNOW-BOOK0001-CH01-004",
+    "KNOW-BOOK0001-CH01-005"
+  ],
+  "father_mapping": {
+    "existing": [
+      "FTH-BLOCK-MODEL-001",
+      "FTH-BLOCK-RUNTIME-001",
+      "FTH-BLOCK-ROUTER-001"
+    ],
+    "planned": [
+      "C2_KNOWLEDGE_RAG",
+      "FTH-BLOCK-EVAL-001",
+      "FTH-BLOCK-RERANK-001",
+      "FTH-BLOCK-TOOLS-001"
+    ]
+  },
+  "quality": {
+    "provenance_complete": true,
+    "inference_separated": true,
+    "full_chapter_translation": false,
+    "review_required": true
+  }
+}
