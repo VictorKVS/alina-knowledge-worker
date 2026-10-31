@@ -1,0 +1,800 @@
+{
+  "schema": "father.book_knowledge_package.v1",
+  "source": "SRC-BOOK-0001",
+  "scope_id": "CH02",
+  "scope": "Chapter 2 — Pre-Training Data",
+  "status": "REVIEW_REQUIRED",
+  "original_index": [
+    "why pre-training data matters",
+    "pre-training data requirements",
+    "data sourcing and extraction",
+    "language identification",
+    "quality filtering",
+    "deduplication",
+    "PII removal and remediation",
+    "training set decontamination",
+    "data mixtures",
+    "dataset ordering",
+    "bias and fairness",
+    "popular datasets and preprocessing"
+  ],
+  "translation": [
+    {
+      "locator": "pp.83-86",
+      "ru_summary": "Глава объясняет, почему состав и подготовка предобучающих данных существенно влияют на поведение и ошибки модели. Для серьёзного применения важно знать происхождение и свойства данных модели."
+    },
+    {
+      "locator": "chapter section: Training Data Preprocessing",
+      "ru_summary": "Подготовка данных рассматривается как последовательный pipeline: извлечение и очистка текста, определение языка, quality filtering, deduplication, обработка PII и decontamination тестовых наборов."
+    },
+    {
+      "locator": "chapter section: Deduplication",
+      "ru_summary": "Дубликаты разделяются на точные, приближённые и семантические, а также по уровню документа и последовательности. Deduplication влияет на размер корпуса, memorization и чистоту оценки."
+    },
+    {
+      "locator": "chapter section: Removing Personally Identifiable Information",
+      "ru_summary": "PII необходимо обнаруживать и удалять или заменять. Простая замена случайными значениями может менять демографическое распределение, поэтому важна локализация замен."
+    },
+    {
+      "locator": "chapter section: Training Set Decontamination",
+      "ru_summary": "Если benchmark test data попадает в pre-training corpus, оценки модели становятся завышенными. Для обнаружения используются overlap-based методы, но перефразирование и перевод делают проблему сложнее."
+    },
+    {
+      "locator": "chapter sections: Data Mixtures / Dataset Ordering",
+      "ru_summary": "Не только состав, но и доли доменов и порядок подачи данных могут влиять на обучение. Применяются upsampling, mixture optimization и curriculum-like ordering."
+    },
+    {
+      "locator": "chapter section: Bias and Fairness Issues",
+      "ru_summary": "Bias может возникать как из состава источников, так и из фильтрации. Наивные keyword-фильтры способны удалять полезные тексты непропорционально для отдельных сообществ и диалектов."
+    }
+  ],
+  "semantic_outline": [
+    {
+      "id": "SEM-CH02-01",
+      "topic": "Data provenance determines model behavior",
+      "children": [
+        "source composition",
+        "model transparency",
+        "downstream effects"
+      ]
+    },
+    {
+      "id": "SEM-CH02-02",
+      "topic": "Pre-training data preprocessing pipeline",
+      "children": [
+        "extraction",
+        "language identification",
+        "quality filtering",
+        "deduplication",
+        "PII remediation",
+        "decontamination"
+      ]
+    },
+    {
+      "id": "SEM-CH02-03",
+      "topic": "Data quality is multi-dimensional",
+      "children": [
+        "quality filtering",
+        "duplicates",
+        "privacy",
+        "contamination",
+        "bias"
+      ]
+    },
+    {
+      "id": "SEM-CH02-04",
+      "topic": "Dataset composition and ordering are optimization variables",
+      "children": [
+        "mixtures",
+        "upsampling",
+        "curriculum learning"
+      ]
+    },
+    {
+      "id": "SEM-CH02-05",
+      "topic": "Preprocessing creates tradeoffs and secondary risks",
+      "children": [
+        "bias from filters",
+        "privacy-utility tradeoff",
+        "evaluation inflation"
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term_id": "TERM-B002-001",
+      "canonical_ru": "предобучающие данные",
+      "original_term": "pre-training data",
+      "definition": "Корпус данных, на котором модель обучается до последующей адаптации и использования.",
+      "source_definition": "source-derived summary",
+      "locators": [
+        "pp.83-86"
+      ],
+      "related_terms": [
+        "data mixture",
+        "downstream performance",
+        "preprocessing"
+      ]
+    },
+    {
+      "term_id": "TERM-B002-002",
+      "canonical_ru": "фильтрация качества",
+      "original_term": "quality filtering",
+      "definition": "Отбор документов или фрагментов по признакам качества для исключения низкокачественного текста.",
+      "source_definition": "source-derived summary",
+      "locators": [
+        "chapter section: Selecting Quality Documents"
+      ],
+      "related_terms": [
+        "classifier-based filtering",
+        "perplexity filtering"
+      ]
+    },
+    {
+      "term_id": "TERM-B002-003",
+      "canonical_ru": "дедупликация",
+      "original_term": "deduplication",
+      "definition": "Выявление и удаление повторяющихся или почти повторяющихся данных на уровне документов или последовательностей.",
+      "source_definition": "source-derived summary",
+      "locators": [
+        "chapter section: Deduplication"
+      ],
+      "related_terms": [
+        "exact match",
+        "approximate match",
+        "MinHash",
+        "memorization"
+      ]
+    },
+    {
+      "term_id": "TERM-B002-004",
+      "canonical_ru": "персонально идентифицируемая информация",
+      "original_term": "PII",
+      "definition": "Данные, способные прямо или косвенно идентифицировать человека и требующие отдельной обработки в dataset pipeline.",
+      "source_definition": "source-derived summary",
+      "locators": [
+        "chapter section: Removing Personally Identifiable Information"
+      ],
+      "related_terms": [
+        "redaction",
+        "replacement",
+        "differential privacy"
+      ]
+    },
+    {
+      "term_id": "TERM-B002-005",
+      "canonical_ru": "деконтаминация обучающего набора",
+      "original_term": "training set decontamination",
+      "definition": "Удаление пересечений между обучающими данными и benchmark/test данными для снижения искажений оценки.",
+      "source_definition": "source-derived summary",
+      "locators": [
+        "chapter section: Training Set Decontamination"
+      ],
+      "related_terms": [
+        "benchmark contamination",
+        "n-gram overlap",
+        "evaluation"
+      ]
+    },
+    {
+      "term_id": "TERM-B002-006",
+      "canonical_ru": "смесь данных",
+      "original_term": "data mixture",
+      "definition": "Соотношение различных доменов и источников в итоговом pre-training corpus.",
+      "source_definition": "source-derived summary",
+      "locators": [
+        "chapter section: Data Mixtures"
+      ],
+      "related_terms": [
+        "upsampling",
+        "domain balance",
+        "RegMix",
+        "DoReMi"
+      ]
+    },
+    {
+      "term_id": "TERM-B002-007",
+      "canonical_ru": "обучение по учебному плану",
+      "original_term": "curriculum learning",
+      "definition": "Подход, при котором порядок предъявления обучающих примеров выбирается намеренно, например от коротких последовательностей к длинным.",
+      "source_definition": "source-derived summary",
+      "locators": [
+        "chapter section: Dataset Ordering"
+      ],
+      "related_terms": [
+        "dataset ordering",
+        "sequence length"
+      ]
+    }
+  ],
+  "applications": [
+    {
+      "application_id": "APP-CH02-001",
+      "problem": "Подготовить корпус для pre-training или continual pre-training",
+      "method": "source → extract/clean → language ID → quality filter → deduplicate → PII remediation → decontaminate → mix/order",
+      "preconditions": [
+        "raw corpus",
+        "quality criteria",
+        "privacy policy",
+        "benchmark sets"
+      ],
+      "constraints": [
+        "large-scale cleaning remains imperfect",
+        "some semantic duplicates are out of scope"
+      ],
+      "source_locators": [
+        "chapter summary",
+        "preprocessing sections"
+      ],
+      "father_targets": [
+        "Data Factory",
+        "Model Zoo",
+        "Knowledge governance"
+      ]
+    },
+    {
+      "application_id": "APP-CH02-002",
+      "problem": "Оценить риск недостоверной benchmark-оценки",
+      "method": "check train/test overlap and contamination including transformed variants",
+      "preconditions": [
+        "training corpus sample or provenance",
+        "benchmark data"
+      ],
+      "constraints": [
+        "translated/rephrased contamination can evade exact matching"
+      ],
+      "source_locators": [
+        "chapter section: Training Set Decontamination"
+      ],
+      "father_targets": [
+        "Evaluator",
+        "Benchmark Registry",
+        "Evidence Gate"
+      ]
+    },
+    {
+      "application_id": "APP-CH02-003",
+      "problem": "Снизить privacy leakage from training data",
+      "method": "detect PII then remove/redact/replace or apply stronger privacy techniques",
+      "preconditions": [
+        "PII detector",
+        "policy",
+        "replacement strategy"
+      ],
+      "constraints": [
+        "replacement can distort demographics; stronger privacy techniques can reduce utility"
+      ],
+      "source_locators": [
+        "chapter section: PII remediation"
+      ],
+      "father_targets": [
+        "Security Profiles",
+        "Data Sanitizer",
+        "Privacy Gate"
+      ]
+    },
+    {
+      "application_id": "APP-CH02-004",
+      "problem": "Сравнить внешние модели по data transparency",
+      "method": "record known dataset composition/preprocessing and mark unknowns",
+      "preconditions": [
+        "public model documentation"
+      ],
+      "constraints": [
+        "proprietary models may disclose little"
+      ],
+      "source_locators": [
+        "pp.83-85"
+      ],
+      "father_targets": [
+        "Model Zoo",
+        "Model Risk Profile"
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "example_id": "EX-CH02-001",
+      "type": "data_pipeline_reference",
+      "purpose": "Показать масштабируемый preprocessing pipeline",
+      "inputs": [
+        "raw pre-training corpus"
+      ],
+      "procedure": [
+        "inspect Hugging Face DataTrove as implementation reference",
+        "map chapter stages to pipeline stages"
+      ],
+      "outputs": [
+        "implementation candidates"
+      ],
+      "concept_ids": [
+        "TERM-B002-002",
+        "TERM-B002-003",
+        "TERM-B002-004",
+        "TERM-B002-005"
+      ],
+      "source_locators": [
+        "chapter section near Table 2-2"
+      ]
+    },
+    {
+      "example_id": "EX-CH02-002",
+      "type": "pii_remediation_example",
+      "purpose": "Показать замену PII синтетическими локализованными значениями",
+      "inputs": [
+        "detected PII",
+        "locale"
+      ],
+      "procedure": [
+        "initialize Faker with locale",
+        "generate format-compatible fake identifiers/addresses",
+        "replace original tokens"
+      ],
+      "outputs": [
+        "sanitized representative text"
+      ],
+      "concept_ids": [
+        "TERM-B002-004"
+      ],
+      "source_locators": [
+        "chapter section: PII remediation"
+      ]
+    },
+    {
+      "example_id": "EX-CH02-003",
+      "type": "evaluation_integrity_example",
+      "purpose": "Показать contamination detection through n-gram overlap",
+      "inputs": [
+        "train corpus",
+        "test/validation set"
+      ],
+      "procedure": [
+        "find long n-gram overlaps",
+        "remove matched regions from training data"
+      ],
+      "outputs": [
+        "decontaminated training corpus"
+      ],
+      "concept_ids": [
+        "TERM-B002-005"
+      ],
+      "source_locators": [
+        "chapter section: Training Set Decontamination"
+      ]
+    },
+    {
+      "example_id": "EX-CH02-004",
+      "type": "bias_failure_example",
+      "purpose": "Показать, что naive keyword filtering может создавать secondary bias",
+      "inputs": [
+        "web corpus",
+        "blocklist"
+      ],
+      "procedure": [
+        "apply keyword blocklist",
+        "observe false positives across minority topics/dialects"
+      ],
+      "outputs": [
+        "filtered corpus with distribution shift"
+      ],
+      "concept_ids": [
+        "TERM-B002-002"
+      ],
+      "source_locators": [
+        "chapter section: Bias and Fairness Issues"
+      ]
+    }
+  ],
+  "algorithms": [
+    {
+      "algorithm_id": "ALG-CH02-001",
+      "goal": "Подготовить pre-training dataset",
+      "inputs": [
+        "raw sources",
+        "language policy",
+        "quality rules",
+        "PII policy",
+        "benchmark sets"
+      ],
+      "steps": [
+        "collect/source data",
+        "extract and clean text",
+        "identify language",
+        "apply quality filtering",
+        "deduplicate exact/approximate duplicates",
+        "detect and remediate PII",
+        "decontaminate against evaluation sets",
+        "compose data mixture",
+        "choose ordering strategy",
+        "record provenance and preprocessing metadata"
+      ],
+      "branches": [
+        "semantic duplicates may remain out of scope",
+        "privacy technique depends on risk/utility constraints",
+        "mixture/order strategy depends on target model goals"
+      ],
+      "outputs": [
+        "processed training corpus",
+        "provenance record",
+        "quality report"
+      ],
+      "failure_modes": [
+        "low-quality extraction",
+        "over-filtering",
+        "under-filtering",
+        "duplicate leakage",
+        "PII leakage",
+        "benchmark contamination",
+        "distribution bias"
+      ],
+      "source_locators": [
+        "chapter preprocessing sections",
+        "chapter summary"
+      ]
+    },
+    {
+      "algorithm_id": "ALG-CH02-002",
+      "goal": "Проверить dataset на contamination",
+      "inputs": [
+        "training corpus",
+        "benchmark/test data"
+      ],
+      "steps": [
+        "normalize text",
+        "compute overlap candidates",
+        "detect exact or n-gram overlaps",
+        "remove or quarantine matched regions",
+        "repeat checks after preprocessing",
+        "record residual uncertainty"
+      ],
+      "branches": [
+        "if only inputs overlap, classify as input contamination",
+        "if inputs and labels overlap, classify as input+label contamination",
+        "if paraphrase/translation suspected, mark manual/semantic review required"
+      ],
+      "outputs": [
+        "decontamination report",
+        "cleaned corpus"
+      ],
+      "failure_modes": [
+        "hidden paraphrases",
+        "translations",
+        "web leakage after benchmark publication"
+      ],
+      "source_locators": [
+        "chapter section: Training Set Decontamination"
+      ]
+    },
+    {
+      "algorithm_id": "ALG-CH02-003",
+      "goal": "Сделать PII remediation с минимальным искажением распределения",
+      "inputs": [
+        "text",
+        "detected PII spans",
+        "locale/geography"
+      ],
+      "steps": [
+        "classify PII type",
+        "choose remove/redact/replace strategy",
+        "if replacement selected choose locale-compatible generator",
+        "replace preserving format class",
+        "verify no original PII remains",
+        "measure distribution shift"
+      ],
+      "branches": [
+        "high-risk PII may require removal instead of replacement",
+        "locale unavailable triggers review"
+      ],
+      "outputs": [
+        "sanitized text",
+        "PII audit trail"
+      ],
+      "failure_modes": [
+        "missed PII",
+        "unrealistic replacements",
+        "demographic distortion"
+      ],
+      "source_locators": [
+        "chapter section: PII remediation"
+      ]
+    }
+  ],
+  "conclusions": [
+    {
+      "conclusion_id": "CONC-CH02-AUTH-001",
+      "owner": "AUTHOR",
+      "statement": "Состав и preprocessing pre-training data оказывают существенное влияние на downstream behavior модели.",
+      "support": [
+        "chapter framing and summary"
+      ],
+      "source_locators": [
+        "pp.83-86",
+        "chapter summary"
+      ]
+    },
+    {
+      "conclusion_id": "CONC-CH02-AUTH-002",
+      "owner": "AUTHOR",
+      "statement": "Deduplication улучшает integrity оценки, уменьшает объём корпуса и снижает memorization risk.",
+      "support": [
+        "deduplication discussion"
+      ],
+      "source_locators": [
+        "chapter section: Deduplication"
+      ]
+    },
+    {
+      "conclusion_id": "CONC-CH02-AUTH-003",
+      "owner": "AUTHOR",
+      "statement": "Training-set contamination способна завышать benchmark results и не всегда обнаруживается exact matching.",
+      "support": [
+        "decontamination discussion"
+      ],
+      "source_locators": [
+        "chapter section: Training Set Decontamination"
+      ]
+    },
+    {
+      "conclusion_id": "CONC-CH02-ALINA-001",
+      "owner": "ALINA",
+      "statement": "Для FATHER происхождение и preprocessing данных модели должны быть частью Model Risk Profile, а не внешней справкой.",
+      "support": [
+        "KNOW-BOOK0001-CH02-001",
+        "KNOW-BOOK0001-CH02-005"
+      ],
+      "input_knowledge_ids": [
+        "KNOW-BOOK0001-CH02-001",
+        "KNOW-BOOK0001-CH02-005"
+      ]
+    },
+    {
+      "conclusion_id": "CONC-CH02-ALINA-002",
+      "owner": "ALINA",
+      "statement": "Data pipeline следует оформить как стандартную цепочку заменяемых блоков с отдельными quality/privacy/evaluation gates.",
+      "support": [
+        "KNOW-BOOK0001-CH02-002",
+        "KNOW-BOOK0001-CH02-003",
+        "KNOW-BOOK0001-CH02-004"
+      ],
+      "input_knowledge_ids": [
+        "KNOW-BOOK0001-CH02-002",
+        "KNOW-BOOK0001-CH02-003",
+        "KNOW-BOOK0001-CH02-004"
+      ]
+    }
+  ],
+  "combinations": [
+    {
+      "combination_id": "COMBO-CH02-001",
+      "input_knowledge_ids": [
+        "KNOW-BOOK0001-CH02-002",
+        "KNOW-BOOK0001-CH02-003",
+        "KNOW-BOOK0001-CH02-004"
+      ],
+      "hypothesis": "Единый FATHER Data Chassis может собираться из Extract/Clean/Filter/Dedup/PII/Decontamination блоков по стандартным контрактам.",
+      "expected_benefit": "повторное использование и сравнение data pipelines",
+      "conflicts": [
+        "book describes techniques, not FATHER block architecture"
+      ],
+      "validation_needed": [
+        "implement reference data chassis",
+        "compare two dedup/filter implementations"
+      ]
+    },
+    {
+      "combination_id": "COMBO-CH02-002",
+      "input_knowledge_ids": [
+        "KNOW-BOOK0001-CH02-005",
+        "KNOW-BOOK0001-CH01-004"
+      ],
+      "hypothesis": "Model Router должен учитывать transparency/provenance риска модели вместе с capability/cost profile.",
+      "expected_benefit": "более обоснованный выбор модели для high-risk use cases",
+      "conflicts": [],
+      "validation_needed": [
+        "extend model registry schema",
+        "define transparency score"
+      ]
+    },
+    {
+      "combination_id": "COMBO-CH02-003",
+      "input_knowledge_ids": [
+        "KNOW-BOOK0001-CH02-006",
+        "KNOW-BOOK0001-CH02-007"
+      ],
+      "hypothesis": "Data quality gate должен измерять не только noise, но и unintended demographic/domain distribution shift после фильтрации.",
+      "expected_benefit": "снижение secondary bias from preprocessing",
+      "conflicts": [],
+      "validation_needed": [
+        "define distribution metrics",
+        "test on synthetic corpus"
+      ]
+    }
+  ],
+  "checklists": [
+    {
+      "checklist_id": "CHK-CH02-001",
+      "goal": "Проверка data preprocessing pipeline",
+      "items": [
+        "source provenance recorded",
+        "text extraction documented",
+        "language identification performed",
+        "quality filtering criteria documented",
+        "deduplication performed",
+        "PII handling defined",
+        "benchmark decontamination performed",
+        "data mixture recorded",
+        "ordering policy recorded"
+      ],
+      "pass_fail_rule": "PASS only when every applicable stage has evidence or an explicit NOT_APPLICABLE reason",
+      "source_knowledge_ids": [
+        "KNOW-BOOK0001-CH02-001",
+        "KNOW-BOOK0001-CH02-002",
+        "KNOW-BOOK0001-CH02-003",
+        "KNOW-BOOK0001-CH02-004",
+        "KNOW-BOOK0001-CH02-005"
+      ]
+    },
+    {
+      "checklist_id": "CHK-CH02-002",
+      "goal": "Проверка privacy обработки dataset",
+      "items": [
+        "PII categories defined",
+        "detector coverage documented",
+        "removal/redaction/replacement policy defined",
+        "locale effects considered",
+        "post-remediation verification performed",
+        "residual privacy risk recorded"
+      ],
+      "pass_fail_rule": "FAIL if original PII remains unassessed or replacement strategy is undocumented",
+      "source_knowledge_ids": [
+        "KNOW-BOOK0001-CH02-004"
+      ]
+    },
+    {
+      "checklist_id": "CHK-CH02-003",
+      "goal": "Проверка benchmark contamination",
+      "items": [
+        "benchmark sources enumerated",
+        "train/test exact overlap checked",
+        "n-gram overlap checked where applicable",
+        "input-only contamination considered",
+        "input+label contamination considered",
+        "paraphrase/translation residual risk recorded"
+      ],
+      "pass_fail_rule": "PASS requires documented decontamination method and residual uncertainty",
+      "source_knowledge_ids": [
+        "KNOW-BOOK0001-CH02-005"
+      ]
+    }
+  ],
+  "knowledge_atoms": [
+    {
+      "knowledge_id": "KNOW-BOOK0001-CH02-001",
+      "class": "CONCEPT",
+      "statement": "Pre-training data composition materially affects downstream model behavior and failure modes.",
+      "source_support": "explicit",
+      "confidence": 0.99,
+      "source_locators": [
+        "pp.83-86",
+        "chapter summary"
+      ]
+    },
+    {
+      "knowledge_id": "KNOW-BOOK0001-CH02-002",
+      "class": "PATTERN",
+      "statement": "A pre-training data pipeline includes extraction/cleaning, language identification, quality filtering, deduplication, PII remediation and test-set decontamination.",
+      "source_support": "explicit",
+      "confidence": 0.99,
+      "source_locators": [
+        "chapter summary"
+      ]
+    },
+    {
+      "knowledge_id": "KNOW-BOOK0001-CH02-003",
+      "class": "CONCEPT",
+      "statement": "Deduplication can reduce overlap, training cost and memorization risk without necessarily degrading model quality.",
+      "source_support": "strong",
+      "confidence": 0.95,
+      "source_locators": [
+        "chapter section: Deduplication"
+      ]
+    },
+    {
+      "knowledge_id": "KNOW-BOOK0001-CH02-004",
+      "class": "LIMITATION",
+      "statement": "PII remediation can introduce new distribution distortions if replacements are not representative.",
+      "source_support": "explicit",
+      "confidence": 0.98,
+      "source_locators": [
+        "chapter section: PII remediation"
+      ]
+    },
+    {
+      "knowledge_id": "KNOW-BOOK0001-CH02-005",
+      "class": "LIMITATION",
+      "statement": "Benchmark contamination can inflate model evaluation results and may survive exact-overlap checks through paraphrase or translation.",
+      "source_support": "explicit",
+      "confidence": 0.99,
+      "source_locators": [
+        "chapter section: Training Set Decontamination"
+      ]
+    },
+    {
+      "knowledge_id": "KNOW-BOOK0001-CH02-006",
+      "class": "LIMITATION",
+      "statement": "Naive keyword-based quality filtering can produce false positives and disproportionate removal of text from some communities or dialects.",
+      "source_support": "explicit",
+      "confidence": 0.99,
+      "source_locators": [
+        "chapter section: Bias and Fairness Issues"
+      ]
+    },
+    {
+      "knowledge_id": "KNOW-BOOK0001-CH02-007",
+      "class": "CONCEPT",
+      "statement": "Data mixture proportions and training data ordering are controllable variables that can affect training outcomes.",
+      "source_support": "explicit",
+      "confidence": 0.96,
+      "source_locators": [
+        "chapter sections: Data Mixtures / Dataset Ordering"
+      ]
+    },
+    {
+      "knowledge_id": "KNOW-BOOK0001-CH02-008",
+      "class": "TOOL_REFERENCE",
+      "statement": "Hugging Face DataTrove is referenced as a full preprocessing pipeline implementation for pre-training datasets.",
+      "source_support": "explicit",
+      "confidence": 0.99,
+      "source_locators": [
+        "chapter section near Table 2-2"
+      ]
+    }
+  ],
+  "father_mapping": {
+    "capabilities": [
+      "data_ingestion",
+      "text_extraction",
+      "language_identification",
+      "quality_filtering",
+      "deduplication",
+      "pii_detection",
+      "pii_remediation",
+      "benchmark_decontamination",
+      "data_mixture",
+      "dataset_ordering",
+      "data_bias_audit"
+    ],
+    "existing_blocks": [
+      "FTH-BLOCK-AUDIT-001",
+      "FTH-BLOCK-OBS-001"
+    ],
+    "candidate_blocks": [
+      "FTH-BLOCK-DATA-INGEST-001",
+      "FTH-BLOCK-DATA-FILTER-001",
+      "FTH-BLOCK-DEDUP-001",
+      "FTH-BLOCK-PII-001",
+      "FTH-BLOCK-DECONTAM-001",
+      "FTH-BLOCK-DATA-BIAS-001"
+    ],
+    "candidate_chassis": [
+      "C9_DATA_FACTORY"
+    ],
+    "products": [
+      "FATHER Factory",
+      "ALINA",
+      "Model Zoo",
+      "RAG/Knowledge ingestion"
+    ]
+  },
+  "quality": {
+    "translation_traceable": true,
+    "semantic_coverage": "first-pass-reviewed",
+    "glossary_coverage": "core-concepts",
+    "inference_separated": true,
+    "provenance_complete": true,
+    "algorithms_traceable": true,
+    "checklists_traceable": true,
+    "external_validation_complete": false,
+    "human_review_required": true
+  }
+}
