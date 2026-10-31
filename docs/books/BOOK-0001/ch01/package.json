@@ -1,106 +1,569 @@
 {
   "schema": "father.book_knowledge_package.v1",
   "source": "SRC-BOOK-0001",
+  "scope_id": "CH01",
   "scope": "Chapter 1 — Introduction",
-  "status": "PILOT",
+  "status": "REVIEW_REQUIRED",
   "original_index": [
-    "LLM introduction",
-    "prompting",
-    "API access",
+    "LLM introduction and limitations",
+    "prompting and context",
+    "API interaction",
     "strengths and limitations",
-    "PDF chatbot prototype",
-    "prototype to production"
+    "Chat with PDF prototype",
+    "prototype-to-production roadmap"
   ],
-  "translation": {
-    "status": "SUMMARY_TRANSLATION_READY",
-    "traceable": true
-  },
+  "translation": [
+    {
+      "locator": "pp.24-25",
+      "ru_summary": "Вводится понятие LLM, их место в генеративном ИИ, основные сильные стороны и ограничения, а также цель главы — перейти от базового понимания к практическому прототипу."
+    },
+    {
+      "locator": "pp.50-60",
+      "ru_summary": "Промптинг рассматривается как управляемое формирование контекста модели. Разбираются zero-shot, few-shot, chain-of-thought, chaining и adversarial prompting, а также ограничения этих подходов."
+    },
+    {
+      "locator": "pp.61-64",
+      "ru_summary": "Показывается программный доступ к LLM через API и параметры генерации; подчёркивается необходимость управлять форматом и поведением вывода."
+    },
+    {
+      "locator": "pp.70-77",
+      "ru_summary": "Пошагово строится прототип Chat with PDF: парсинг PDF, разбиение на фрагменты, эмбеддинги, векторное хранилище, поиск, передача контекста LLM и UI."
+    },
+    {
+      "locator": "pp.78-81",
+      "ru_summary": "Прототип сопоставляется с production-системой: требуется выбор модели, оценки, fine-tuning при необходимости, снижение hallucinations, оптимизация latency/cost, tools/agents, улучшенный retrieval и полноценный RAG."
+    }
+  ],
   "semantic_outline": [
-    "LLM capabilities and limitations",
-    "prompting as interaction layer",
-    "simple RAG/PDF chatbot pipeline",
-    "retrieval limitations",
-    "prototype vs production gap",
-    "roadmap toward production-grade systems"
+    {
+      "id": "SEM-CH01-01",
+      "topic": "LLM as probabilistic language system",
+      "children": [
+        "capabilities",
+        "limitations",
+        "hallucinations",
+        "reasoning limits"
+      ]
+    },
+    {
+      "id": "SEM-CH01-02",
+      "topic": "Prompting as control surface",
+      "children": [
+        "zero-shot",
+        "few-shot",
+        "chain-of-thought",
+        "prompt chaining",
+        "prompt drift"
+      ]
+    },
+    {
+      "id": "SEM-CH01-03",
+      "topic": "RAG prototype anatomy",
+      "children": [
+        "parser",
+        "chunks",
+        "embeddings",
+        "vector store",
+        "retriever",
+        "LLM",
+        "history",
+        "UI"
+      ]
+    },
+    {
+      "id": "SEM-CH01-04",
+      "topic": "Prototype-to-production gap",
+      "children": [
+        "accuracy",
+        "reliability",
+        "model selection",
+        "evaluation",
+        "latency",
+        "cost",
+        "tools",
+        "RAG quality"
+      ]
+    }
   ],
   "glossary": [
     {
       "term_id": "TERM-B001-001",
+      "canonical_ru": "промпт",
       "original_term": "prompt",
-      "canonical_ru": "промпт / инструкция модели"
+      "definition": "Входная инструкция и/или данные, подаваемые модели для получения требуемого ответа.",
+      "source_definition": "source-derived summary",
+      "locators": [
+        "pp.50-54"
+      ],
+      "related_terms": [
+        "context",
+        "zero-shot prompting",
+        "few-shot prompting"
+      ]
     },
     {
       "term_id": "TERM-B001-002",
+      "canonical_ru": "контекст модели",
       "original_term": "context",
-      "canonical_ru": "контекст модели"
+      "definition": "Совокупность текста, доступного модели при генерации, включая вход и уже сгенерированные токены.",
+      "source_definition": "source-derived summary",
+      "locators": [
+        "pp.50-52"
+      ],
+      "related_terms": [
+        "prompt",
+        "context length"
+      ]
     },
     {
       "term_id": "TERM-B001-003",
+      "canonical_ru": "эмбеддинг",
       "original_term": "embedding",
-      "canonical_ru": "векторное представление / эмбеддинг"
+      "definition": "Векторное представление текста, используемое для сравнения семантической близости.",
+      "source_definition": "source-derived summary",
+      "locators": [
+        "pp.71-75"
+      ],
+      "related_terms": [
+        "vector store",
+        "retrieval"
+      ]
     },
     {
       "term_id": "TERM-B001-004",
+      "canonical_ru": "извлечение",
       "original_term": "retrieval",
-      "canonical_ru": "поиск / извлечение релевантного контекста"
+      "definition": "Поиск фрагментов данных, потенциально полезных для ответа на запрос.",
+      "source_definition": "source-derived summary",
+      "locators": [
+        "pp.71-76"
+      ],
+      "related_terms": [
+        "embedding",
+        "RAG",
+        "similarity search"
+      ]
     },
     {
       "term_id": "TERM-B001-005",
-      "original_term": "RAG",
-      "canonical_ru": "генерация с дополнением извлечёнными данными"
+      "canonical_ru": "RAG",
+      "original_term": "retrieval-augmented generation",
+      "definition": "Подход, в котором LLM получает внешний найденный контекст и использует его при генерации ответа.",
+      "source_definition": "source-derived summary",
+      "locators": [
+        "pp.80-81"
+      ],
+      "related_terms": [
+        "retrieval",
+        "context",
+        "generation"
+      ]
     }
   ],
   "applications": [
-    "PDF question-answering",
-    "model selection under budget constraints",
-    "tool/API-connected assistants"
+    {
+      "application_id": "APP-CH01-001",
+      "problem": "Ответы на вопросы по загруженному PDF",
+      "method": "Parse → chunk → embed → retrieve → provide context → generate",
+      "preconditions": [
+        "доступный для парсинга документ",
+        "embedding model",
+        "vector store",
+        "LLM"
+      ],
+      "constraints": [
+        "retrieved similarity does not guarantee answer relevance"
+      ],
+      "source_locators": [
+        "pp.70-77"
+      ],
+      "father_targets": [
+        "C2_KNOWLEDGE_RAG",
+        "ALINA",
+        "BOOKCRAFT"
+      ]
+    },
+    {
+      "application_id": "APP-CH01-002",
+      "problem": "Выбор модели под production-задачу",
+      "method": "Сопоставить способности модели, ограничения, стоимость и критерии оценки с use case",
+      "preconditions": [
+        "определённый use case",
+        "метрики/benchmark"
+      ],
+      "constraints": [
+        "одна модель не оптимальна для всех задач"
+      ],
+      "source_locators": [
+        "pp.78-80"
+      ],
+      "father_targets": [
+        "FTH-BLOCK-MODEL-001",
+        "Model Zoo"
+      ]
+    },
+    {
+      "application_id": "APP-CH01-003",
+      "problem": "Расширение LLM-системы действиями во внешней среде",
+      "method": "Подключение code interpreters, databases, APIs и многошаговой декомпозиции",
+      "preconditions": [
+        "tool interface",
+        "permission model"
+      ],
+      "constraints": [
+        "требуются контроль и проверка действий"
+      ],
+      "source_locators": [
+        "p.80"
+      ],
+      "father_targets": [
+        "Tool/MCP Registry",
+        "Agent chassis"
+      ]
+    }
   ],
   "examples": [
-    "Chat with PDF pipeline"
+    {
+      "example_id": "EX-CH01-001",
+      "type": "worked_prototype",
+      "purpose": "Показать минимальный PDF QA pipeline",
+      "inputs": [
+        "PDF",
+        "user query"
+      ],
+      "procedure": [
+        "parse document",
+        "split into chunks",
+        "create embeddings",
+        "store vectors",
+        "embed query",
+        "retrieve similar chunks",
+        "send retrieved context to LLM",
+        "return answer",
+        "append conversation history"
+      ],
+      "outputs": [
+        "answer",
+        "updated history"
+      ],
+      "concept_ids": [
+        "TERM-B001-003",
+        "TERM-B001-004",
+        "TERM-B001-005"
+      ],
+      "source_locators": [
+        "pp.70-77"
+      ]
+    },
+    {
+      "example_id": "EX-CH01-002",
+      "type": "prompting_example",
+      "purpose": "Показать управляемый формат ответа через явную инструкцию",
+      "inputs": [
+        "classification task",
+        "allowed output labels"
+      ],
+      "procedure": [
+        "state task precisely",
+        "declare output space",
+        "provide input"
+      ],
+      "outputs": [
+        "bounded classification answer"
+      ],
+      "concept_ids": [
+        "TERM-B001-001"
+      ],
+      "source_locators": [
+        "pp.53-54"
+      ]
+    }
   ],
   "algorithms": [
-    "PDF QA retrieval-generation pipeline",
-    "prototype-to-production improvement loop"
+    {
+      "algorithm_id": "ALG-CH01-001",
+      "goal": "Ответить на вопрос по PDF через retrieval-augmented pipeline",
+      "inputs": [
+        "PDF",
+        "user query",
+        "embedding model",
+        "vector store",
+        "LLM"
+      ],
+      "steps": [
+        "extract text",
+        "split text into chunks",
+        "compute chunk embeddings",
+        "store/index vectors",
+        "compute query embedding",
+        "retrieve top-k similar chunks",
+        "assemble query + retrieved context + instructions",
+        "invoke LLM",
+        "return response",
+        "persist conversation history"
+      ],
+      "branches": [
+        "if document fits effective context, chunk/retrieval may be unnecessary",
+        "if retrieved chunks are irrelevant, answer quality degrades"
+      ],
+      "outputs": [
+        "answer",
+        "conversation state"
+      ],
+      "failure_modes": [
+        "parse failure",
+        "poor chunking",
+        "irrelevant retrieval",
+        "hallucination",
+        "context overflow"
+      ],
+      "source_locators": [
+        "pp.70-80"
+      ]
+    },
+    {
+      "algorithm_id": "ALG-CH01-002",
+      "goal": "Перевести LLM-прототип к production-ready design",
+      "inputs": [
+        "working prototype",
+        "use-case requirements"
+      ],
+      "steps": [
+        "identify accuracy/reliability requirements",
+        "select candidate models",
+        "define evaluation metrics and benchmark data",
+        "decide whether fine-tuning/adaptation is required",
+        "address hallucination/reasoning failures",
+        "optimize latency/cost",
+        "add tools or agent behavior if needed",
+        "improve embeddings/chunking/retrieval",
+        "design robust RAG and system architecture"
+      ],
+      "branches": [
+        "fine-tune only if prompting/base model is insufficient",
+        "use tools for computations/actions better handled externally"
+      ],
+      "outputs": [
+        "production design requirements"
+      ],
+      "failure_modes": [
+        "black-box model choice",
+        "missing evals",
+        "unbounded cost/latency",
+        "weak retrieval",
+        "uncontrolled tools"
+      ],
+      "source_locators": [
+        "pp.78-81"
+      ]
+    }
   ],
   "conclusions": [
-    "A prototype can work while still lacking production reliability.",
-    "Similarity retrieval does not guarantee answer relevance.",
-    "Production systems require explicit model, evaluation, cost, latency and reliability decisions."
+    {
+      "conclusion_id": "CONC-CH01-AUTH-001",
+      "owner": "AUTHOR",
+      "statement": "Построить демонстрационный LLM-прототип относительно легко, но production-система требует существенно большей надёжности и инженерной проработки.",
+      "support": [
+        "prototype vs production discussion"
+      ],
+      "source_locators": [
+        "pp.78-81"
+      ]
+    },
+    {
+      "conclusion_id": "CONC-CH01-AUTH-002",
+      "owner": "AUTHOR",
+      "statement": "Семантическая близость retrieved text к запросу сама по себе не гарантирует наличие ответа или достаточную релевантность.",
+      "support": [
+        "retrieval discussion"
+      ],
+      "source_locators": [
+        "p.75"
+      ]
+    },
+    {
+      "conclusion_id": "CONC-CH01-ALINA-001",
+      "owner": "ALINA",
+      "statement": "Для FATHER RAG следует моделировать как заменяемую цепочку блоков, а не как монолитный компонент.",
+      "support": [
+        "KNOW-BOOK0001-CH01-002",
+        "KNOW-BOOK0001-CH01-003"
+      ],
+      "input_knowledge_ids": [
+        "KNOW-BOOK0001-CH01-002",
+        "KNOW-BOOK0001-CH01-003"
+      ]
+    }
   ],
   "combinations": [
-    "RAG decomposition + modular FATHER blocks",
-    "model selection + capability/cost profiles",
-    "tool use + orchestration + guardrails"
+    {
+      "combination_id": "COMBO-CH01-001",
+      "input_knowledge_ids": [
+        "KNOW-BOOK0001-CH01-002",
+        "KNOW-BOOK0001-CH01-003"
+      ],
+      "hypothesis": "Если parser/chunker/embedder/retriever/reranker сделать стандартными заменяемыми блоками, FATHER сможет сравнивать варианты RAG без перестройки продукта.",
+      "expected_benefit": "повторное использование и измеримое сравнение RAG-компонентов",
+      "conflicts": [
+        "book itself does not mandate FATHER modularization"
+      ],
+      "validation_needed": [
+        "implement C2 prototype",
+        "benchmark at least two retrievers/chunkers"
+      ]
+    },
+    {
+      "combination_id": "COMBO-CH01-002",
+      "input_knowledge_ids": [
+        "KNOW-BOOK0001-CH01-001",
+        "KNOW-BOOK0001-CH01-004"
+      ],
+      "hypothesis": "Production Readiness Gate должен проверять не только тесты кода, но и model-eval/cost/latency evidence.",
+      "expected_benefit": "запрет преждевременного статуса production",
+      "conflicts": [],
+      "validation_needed": [
+        "define measurable thresholds",
+        "run on reference product"
+      ]
+    }
   ],
   "checklists": [
-    "Production-readiness checklist",
-    "RAG pipeline completeness checklist",
-    "Model-selection evidence checklist"
+    {
+      "checklist_id": "CHK-CH01-001",
+      "goal": "Проверка production readiness LLM-продукта",
+      "items": [
+        "accuracy target exists",
+        "reliability target exists",
+        "model selection evidence exists",
+        "evaluation metrics exist",
+        "benchmark dataset exists",
+        "latency budget exists",
+        "cost budget exists",
+        "known failure modes documented"
+      ],
+      "pass_fail_rule": "PASS only when all mandatory items have evidence",
+      "source_knowledge_ids": [
+        "KNOW-BOOK0001-CH01-001",
+        "KNOW-BOOK0001-CH01-004"
+      ]
+    },
+    {
+      "checklist_id": "CHK-CH01-002",
+      "goal": "Проверка минимальной RAG-цепочки",
+      "items": [
+        "parser defined",
+        "chunk strategy defined",
+        "embedding model defined",
+        "vector index defined",
+        "retrieval defined",
+        "retrieval relevance evaluated",
+        "context assembly defined",
+        "generation defined",
+        "conversation state policy defined"
+      ],
+      "pass_fail_rule": "FAIL if any mandatory stage is undefined or retrieval quality is unmeasured",
+      "source_knowledge_ids": [
+        "KNOW-BOOK0001-CH01-002",
+        "KNOW-BOOK0001-CH01-003"
+      ]
+    }
   ],
   "knowledge_atoms": [
-    "KNOW-BOOK0001-CH01-001",
-    "KNOW-BOOK0001-CH01-002",
-    "KNOW-BOOK0001-CH01-003",
-    "KNOW-BOOK0001-CH01-004",
-    "KNOW-BOOK0001-CH01-005"
+    {
+      "knowledge_id": "KNOW-BOOK0001-CH01-001",
+      "class": "CONCEPT",
+      "statement": "Prototype success does not imply production readiness.",
+      "source_support": "explicit",
+      "confidence": 0.99,
+      "source_locators": [
+        "pp.78-81"
+      ]
+    },
+    {
+      "knowledge_id": "KNOW-BOOK0001-CH01-002",
+      "class": "PATTERN",
+      "statement": "PDF QA can be decomposed into parse/chunk/embed/store/retrieve/generate/history stages.",
+      "source_support": "explicit",
+      "confidence": 0.99,
+      "source_locators": [
+        "pp.70-77"
+      ]
+    },
+    {
+      "knowledge_id": "KNOW-BOOK0001-CH01-003",
+      "class": "LIMITATION",
+      "statement": "Similarity retrieval may return text that is not sufficient to answer the question.",
+      "source_support": "explicit",
+      "confidence": 0.99,
+      "source_locators": [
+        "p.75"
+      ]
+    },
+    {
+      "knowledge_id": "KNOW-BOOK0001-CH01-004",
+      "class": "RECOMMENDATION",
+      "statement": "Model choice for production should be evaluated against use-case capabilities, cost and evaluation criteria.",
+      "source_support": "strong",
+      "confidence": 0.95,
+      "source_locators": [
+        "pp.78-80"
+      ]
+    },
+    {
+      "knowledge_id": "KNOW-BOOK0001-CH01-005",
+      "class": "CONCEPT",
+      "statement": "Tools, APIs and multi-step task decomposition extend LLM applications toward agents.",
+      "source_support": "explicit",
+      "confidence": 0.98,
+      "source_locators": [
+        "p.80"
+      ]
+    }
   ],
   "father_mapping": {
-    "existing": [
-      "FTH-BLOCK-MODEL-001",
-      "FTH-BLOCK-RUNTIME-001",
-      "FTH-BLOCK-ROUTER-001"
+    "capabilities": [
+      "production_readiness",
+      "model_selection",
+      "evaluation",
+      "document_parsing",
+      "chunking",
+      "embedding",
+      "vector_storage",
+      "retrieval",
+      "retrieval_evaluation",
+      "tool_use",
+      "task_decomposition"
     ],
-    "planned": [
-      "C2_KNOWLEDGE_RAG",
+    "existing_blocks": [
+      "FTH-BLOCK-RUNTIME-001",
+      "FTH-BLOCK-ROUTER-001",
+      "FTH-BLOCK-MODEL-001"
+    ],
+    "candidate_blocks": [
       "FTH-BLOCK-EVAL-001",
       "FTH-BLOCK-RERANK-001",
-      "FTH-BLOCK-TOOLS-001"
+      "FTH-BLOCK-TOOLS-001",
+      "FTH-BLOCK-PROD-GATE-001"
+    ],
+    "candidate_chassis": [
+      "C2_KNOWLEDGE_RAG"
+    ],
+    "products": [
+      "ALINA",
+      "OSINT",
+      "BOOKCRAFT",
+      "FATHER Factory"
     ]
   },
   "quality": {
-    "provenance_complete": true,
+    "translation_traceable": true,
+    "semantic_coverage": "pilot-reviewed",
+    "glossary_coverage": "core-terms-only",
     "inference_separated": true,
-    "full_chapter_translation": false,
-    "review_required": true
+    "provenance_complete": true,
+    "algorithms_traceable": true,
+    "checklists_traceable": true,
+    "external_validation_complete": false,
+    "human_review_required": true
   }
 }
