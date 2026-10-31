@@ -1,0 +1,34 @@
+{
+  "process_id": "PROC-ALINA-INTELLIGENCE-PACKAGE-DESIGN",
+  "version": "1.0",
+  "title": "ALINA Scientific Prompt/RAG/KB Engineering",
+  "owner": "ALINA",
+  "purpose": "Design and verify an agent intelligence package before Agent Factory handoff.",
+  "terminal_states": ["DONE", "BLOCKED", "NOT_APPLICABLE", "REVIEW_REQUIRED"],
+  "steps": [
+    {"id":"I01","name":"Requirements and contracts","required":true},
+    {"id":"I02","name":"Role and task decomposition","required":true},
+    {"id":"I03","name":"Prompt baseline","required":true},
+    {"id":"I04","name":"Knowledge scope and source registry","required":true},
+    {"id":"I05","name":"Knowledge normalization and provenance","required":true},
+    {"id":"I06","name":"RAG baseline and corpus snapshot","required":true},
+    {"id":"I07","name":"Evaluation dataset split","required":true},
+    {"id":"I08","name":"Prompt controlled experiments","required":true},
+    {"id":"I09","name":"RAG controlled experiments","required":true},
+    {"id":"I10","name":"KB quality and contradiction tests","required":true},
+    {"id":"I11","name":"Held-out evaluation","required":true},
+    {"id":"I12","name":"Adversarial and security evaluation","required":true},
+    {"id":"I13","name":"Regression evaluation","required":true},
+    {"id":"I14","name":"Evidence and development passport update","required":true},
+    {"id":"I15","name":"INTELLIGENCE_PACKAGE_VERIFIED gate","required":true},
+    {"id":"I16","name":"Agent Factory handoff","required":true}
+  ],
+  "rules": [
+    "Do not optimize on TEST.",
+    "Change one experimental factor at a time.",
+    "Extraction does not imply truth.",
+    "No knowledge atom without provenance.",
+    "No promotion without regression and security evidence.",
+    "Rejected hypotheses remain recorded as negative knowledge."
+  ]
+}
