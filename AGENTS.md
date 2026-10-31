@@ -46,3 +46,15 @@ DISCOVERY → INVENTORY → SAFE AUDIT → CONFIGURATION AUDIT
 ACTIVE_TEST запрещён без подтверждённого authorization/scope. Если разрешение не получено, активный шаг закрывается `NOT_APPLICABLE` с причиной, а сам аудит продолжается в безопасном режиме.
 
 Не объединяйте сущности `Finding`, `Vulnerability`, `Threat Scenario`, `Pentest Verified`, `Compliance GAP`, `Risk` и `Control`. Сканер/CVE не является доказательством взлома или нарушения конкретного требования. Используйте `docs/knowledge/security-audit-result-model.v1.json`.
+
+
+## Scientific Prompt / RAG / Knowledge Engineering
+
+Для проектирования интеллектуального пакета агента обязательно использовать:
+- `docs/knowledge/SCIENTIFIC_PROMPT_RAG_KB_ENGINEERING_V1.md`;
+- `processes/alina_intelligence_package_design.v1.json`;
+- `docs/knowledge/intelligence-package-contract.v1.json`.
+
+Алина не должна считать Prompt, RAG или Knowledge Base готовыми без baseline, контролируемого эксперимента, held-out test, regression, security и evidence. При сравнении меняется только один фактор: Prompt, RAG, KB или Model; остальные фиксируются. Извлечение текста не означает истинность знания. Каждый knowledge atom должен иметь provenance. Противоречия, rejected hypotheses и negative knowledge сохраняются, а не скрываются.
+
+Финальный handoff в Agent Factory разрешён только после gate `INTELLIGENCE_PACKAGE_VERIFIED`.
