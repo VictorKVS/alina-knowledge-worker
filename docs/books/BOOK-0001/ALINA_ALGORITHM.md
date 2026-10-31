@@ -1,94 +1,133 @@
-# ALINA Algorithm — Technical Book → FATHER
+# ALINA Algorithm — Chapter-by-Chapter Technical Book Study
 
-## Input
+## Canonical chapter order
 
-- one bounded source scope (chapter/section);
-- source manifest;
-- exact source locators;
-- target FATHER capability map.
+Every chapter is processed in the same visible order:
 
-## Output
+```text
+CHAPTER N
+  ↓
+0. ORIGINAL SOURCE VIEW
+  ↓
+1. RUSSIAN TRANSLATION
+  ↓
+2. SEMANTIC ANALYSIS
+  ↓
+3. APPLICATION AREAS
+  ↓
+4. EXAMPLES / CASES
+  ↓
+5. ALGORITHMS / PROCEDURES
+  ↓
+6. AUTHOR CONCLUSIONS
+  ↓
+7. ALINA CONCLUSIONS
+  ↓
+8. GLOSSARY / CONCEPT DICTIONARY
+  ↓
+9. COMBINATIONS / HYPOTHESES
+  ↓
+10. CHECKLISTS
+  ↓
+11. FATHER MAPPING
+  ↓
+12. QUALITY GATE
+  ↓
+NEXT CHAPTER
+```
 
-A valid `father.book_knowledge_package.v1`.
+## 0. Original source view
 
-## Algorithm
+The original book remains the first layer.
 
-### A. Source control
+ALINA must expose locally:
 
-1. Register `source_id`.
-2. Record edition/year/ISBN.
-3. Freeze processing scope.
-4. Record page/chapter boundaries.
-5. Do not alter or silently correct source claims.
+- original chapter pages;
+- original diagrams/figures/images;
+- original tables;
+- captions;
+- page numbers;
+- chapter/section boundaries.
 
-### B. Translation
+The public GitHub repository must NOT contain the full copyrighted chapter or copied figures.
 
-1. Translate meaning into Russian.
-2. Preserve original technical terms alongside Russian equivalents.
-3. Keep formulas, identifiers, tool names and code names unchanged.
-4. Attach locator to each translation unit.
-5. Mark uncertain translation as `REVIEW_REQUIRED`.
+GitHub stores only:
 
-### C. Semantic decomposition
+- exact page/section map;
+- figure/table index;
+- short evidence snippets where necessary;
+- derived translation and analysis;
+- hashes/locators back to the local source.
 
-For each bounded unit identify:
+### Local source contract
+
+```text
+BOOK PDF
+  -> chapter page range
+  -> page image / original text view
+  -> figure/table anchors
+  -> source locator
+```
+
+A user reviewing a chapter should always be able to go back from any derived statement to the exact page/figure in the local source.
+
+## 1. Russian translation
+
+Translate the chapter section-by-section.
+
+For each translation unit preserve:
+
+- source page;
+- source section;
+- original technical term;
+- Russian equivalent;
+- uncertainty marker when needed.
+
+Do not silently simplify away technical distinctions.
+
+## 2. Semantic analysis
+
+Decompose the chapter into:
 
 - problem;
-- concept;
-- definition;
-- assumption;
-- method;
-- limitation;
-- recommendation;
-- tool/reference;
-- example;
-- experiment;
-- conclusion;
-- open question.
+- concepts;
+- definitions;
+- assumptions;
+- methods;
+- constraints;
+- failure modes;
+- tradeoffs;
+- recommendations;
+- open questions;
+- relationships between concepts.
 
-Do not preserve page order as the only structure. Build a concept hierarchy.
+## 3. Application areas
 
-### D. Glossary
+For each important concept/method answer:
 
-For every important term create:
+- where can it be used?
+- what problem does it solve?
+- what prerequisites are required?
+- when should it NOT be used?
+- what FATHER/ALINA products may benefit?
 
-```text
-TERM_ID
-original term
-canonical RU
-definition
-source definition status
-source locators
-related terms
-FATHER capability links
-```
+## 4. Examples / cases
 
-### E. Applications
-
-For each method identify:
-
-- what problem it solves;
-- prerequisites;
-- when to use;
-- when not to use;
-- limitations;
-- target FATHER products.
-
-### F. Examples
-
-Normalize each important example:
+Reconstruct each meaningful example as:
 
 ```text
-input
-→ procedure
-→ output
-→ lesson
-→ reusable pattern
+purpose
+inputs
+procedure
+outputs
+lesson
+reusable pattern
+source locator
 ```
 
-### G. Algorithms
+## 5. Algorithms / procedures
 
-Convert procedural source material into:
+When the chapter contains a procedure, convert it into:
 
 ```text
 goal
@@ -99,45 +138,64 @@ branches
 outputs
 failure modes
 verification
+source locator
 ```
 
-Never invent a branch not supported by the source; additions must be labeled `ALINA_INFERENCE`.
+If the source does not define an algorithm, do not invent one.
 
-### H. Conclusions
+## 6. Author conclusions
 
-Separate:
+Store conclusions explicitly attributable to the author.
 
-- `AUTHOR_CONCLUSION`
-- `ALINA_CONCLUSION`
+## 7. ALINA conclusions
 
-The second must reference the source atoms it combines.
+Store ALINA synthesis separately.
 
-### I. Combinations
+Every ALINA conclusion must cite the source-derived knowledge atoms it combines.
 
-Combine atoms only as hypotheses:
+## 8. Glossary / concept dictionary
+
+Maintain a cumulative book glossary.
+
+Each term:
+
+- original term;
+- canonical Russian term;
+- definition;
+- source pages;
+- first chapter seen;
+- related terms;
+- FATHER capability links.
+
+The glossary is cumulative across chapters.
+
+## 9. Combinations / hypotheses
+
+Combine ideas only as ALINA hypotheses.
 
 ```text
 KNOW-A + KNOW-B
-→ HYPOTHESIS
-→ expected benefit
-→ conflicts
-→ validation needed
+  -> hypothesis
+  -> expected benefit
+  -> conflicts
+  -> validation needed
 ```
 
-Never present synthesis as a book claim.
+Never present a combination as a statement from the book.
 
-### J. Checklists
+## 10. Checklists
 
-Generate operational checklists only from traceable atoms/algorithms.
+Generate operational checklists only from traceable knowledge or algorithms.
 
-Each item contains:
+Each checklist item must have:
+
 - source knowledge IDs;
 - pass/fail condition;
-- evidence needed.
+- expected evidence.
 
-### K. FATHER mapping
+## 11. FATHER mapping
 
-Map each validated atom to zero or more:
+Map validated knowledge to:
 
 - capability;
 - block;
@@ -147,33 +205,52 @@ Map each validated atom to zero or more:
 - evidence;
 - product.
 
-If no destination is justified, use `UNMAPPED` rather than guessing.
+If no mapping is justified, record `UNMAPPED`.
 
-### L. Quality gates
+## 12. Chapter quality gate
 
-A chapter cannot be marked learned until:
+A chapter is closed only when:
 
-- translation traceable;
-- semantic coverage reviewed;
-- glossary linked;
-- algorithms traceable;
-- examples reconstructed;
-- author vs ALINA conclusions separated;
-- combinations labeled as hypotheses;
-- checklists traceable;
-- provenance complete;
-- FATHER mapping reviewed.
+- original page range is registered;
+- figures/tables are indexed;
+- translation is traceable;
+- semantic coverage is reviewed;
+- glossary is updated;
+- applications are identified where supported;
+- examples are structured;
+- algorithms are extracted where present;
+- author and ALINA conclusions are separated;
+- combinations are labeled as hypotheses;
+- checklists are traceable;
+- FATHER mapping is reviewed;
+- unresolved questions remain visible.
+
+Only then move to the next chapter.
+
+## Book completion rule
+
+```text
+CH01 CLOSED
+→ CH02
+→ CH02 CLOSED
+→ CH03
+...
+→ CH13 CLOSED
+→ CROSS-CHAPTER SYNTHESIS
+→ REPOSITORY SCOUTING
+→ REUSE / ADAPT / BUILD
+```
 
 ## Learning feedback
 
-After every chapter record:
+After each chapter record:
 
 - missed concepts;
 - unsupported inferences;
 - wrong mappings;
-- duplicate atoms;
 - terminology errors;
+- missed figures/tables;
 - contradiction misses;
 - useful new extraction patterns.
 
-These corrections become gold examples for the next run.
+These corrections become gold examples for the next chapter.
