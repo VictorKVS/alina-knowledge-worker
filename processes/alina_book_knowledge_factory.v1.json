@@ -1,375 +1,58 @@
 {
-  "schema": "father.agent_work_process.v1",
-  "id": "PROC-ALINA-BOOK-KNOWLEDGE-FACTORY",
+  "process_id": "PROC-ALINA-BOOK-KNOWLEDGE-FACTORY",
   "version": "1.1",
-  "title": "Алина — разбор книги и передача знаний в FATHER",
-  "domain": "knowledge-engineering",
-  "agent_role": "ALINA-KNOWLEDGE-ENGINEER",
-  "purpose": "Преобразовать ограниченный фрагмент книги в перевод, смысловую структуру, словарь, примеры, алгоритмы, выводы, комбинации, чек-листы и трассируемые знания для FATHER.",
-  "invariants": [
-    "Перевод не заменяет оригинал: locator оригинала сохраняется.",
-    "Извлечение не означает истинность.",
-    "Факт источника, рекомендация автора и вывод Алины различаются.",
-    "Каждый knowledge atom имеет provenance.",
-    "Авторские примеры не объявляются универсальными без проверки.",
-    "Алгоритм должен быть восстановим как последовательность шагов, входов, выходов и условий.",
-    "Комбинации знаний помечаются как ALINA_INFERENCE до внешней проверки.",
-    "Ни одно решение не считается production-ready без тестов и evidence."
-  ],
+  "title": "ALINA Book to FATHER Knowledge Factory",
+  "owner": "ALINA",
+  "purpose": "Translate, semantically decompose and convert a bounded technical book scope into a traceable knowledge package for FATHER.",
+  "terminal_states": ["DONE", "BLOCKED", "NOT_APPLICABLE", "REVIEW_REQUIRED"],
   "steps": [
-    {
-      "id": "BK-00",
-      "order": 0,
-      "title": "Зарегистрировать источник и границы разбора",
-      "mode": "SOURCE",
-      "required": true,
-      "actions": [
-        "assign_source_id",
-        "capture_bibliography",
-        "define_page_chapter_scope",
-        "record_license_and_usage_constraints"
-      ],
-      "outputs": [
-        "source_record",
-        "scope_record"
-      ],
-      "completion": "источник и ограниченный scope имеют стабильные идентификаторы и provenance"
-    },
-    {
-      "id": "BK-01",
-      "order": 1,
-      "title": "Извлечь оригинальный текст с локаторами",
-      "mode": "EXTRACT",
-      "required": true,
-      "actions": [
-        "extract_text",
-        "preserve_page_section_locators",
-        "detect_missing_or_corrupt_text",
-        "retain_original_language"
-      ],
-      "outputs": [
-        "source_chunks",
-        "extraction_report"
-      ],
-      "completion": "все обработанные фрагменты имеют locator; пропуски отмечены"
-    },
-    {
-      "id": "BK-02",
-      "order": 2,
-      "title": "Перевести на русский с двусторонней трассировкой",
-      "mode": "TRANSLATE",
-      "required": true,
-      "actions": [
-        "translate_semantically",
-        "preserve_terms",
-        "link_translation_to_original_locator",
-        "flag_ambiguous_translation"
-      ],
-      "outputs": [
-        "translated_chunks",
-        "translation_glossary_candidates",
-        "translation_ambiguities"
-      ],
-      "completion": "каждый перевод связан с оригинальным фрагментом; неоднозначности отмечены"
-    },
-    {
-      "id": "BK-03",
-      "order": 3,
-      "title": "Разложить материал по смысловым единицам",
-      "mode": "SEMANTIC_ANALYSIS",
-      "required": true,
-      "actions": [
-        "segment_by_topic",
-        "identify_thesis",
-        "identify_supporting_arguments",
-        "identify_limitations",
-        "identify_dependencies"
-      ],
-      "outputs": [
-        "semantic_outline",
-        "topic_graph"
-      ],
-      "completion": "материал разбит на темы, подтемы, тезисы, связи и ограничения"
-    },
-    {
-      "id": "BK-04",
-      "order": 4,
-      "title": "Построить словарь понятий",
-      "mode": "KNOWLEDGE",
-      "required": true,
-      "actions": [
-        "extract_terms",
-        "normalize_synonyms",
-        "capture_source_definition",
-        "capture_context_definition",
-        "link_related_terms"
-      ],
-      "outputs": [
-        "glossary",
-        "concept_relations"
-      ],
-      "completion": "ключевые термины имеют определение, locator, синонимы и связи"
-    },
-    {
-      "id": "BK-05",
-      "order": 5,
-      "title": "Извлечь применения и сценарии использования",
-      "mode": "APPLICATION",
-      "required": true,
-      "actions": [
-        "identify_use_cases",
-        "identify_problem_solved",
-        "identify_preconditions",
-        "identify_constraints",
-        "map_to_father_products"
-      ],
-      "outputs": [
-        "application_cards"
-      ],
-      "completion": "каждое применение описывает проблему, условия, ограничения и возможное место в FATHER"
-    },
-    {
-      "id": "BK-06",
-      "order": 6,
-      "title": "Извлечь и классифицировать примеры",
-      "mode": "EXAMPLES",
-      "required": true,
-      "actions": [
-        "extract_examples",
-        "classify_example_type",
-        "identify_input_output",
-        "capture_author_purpose",
-        "separate_demonstration_from_evidence"
-      ],
-      "outputs": [
-        "example_catalog"
-      ],
-      "completion": "каждый пример связан с понятием и помечен как illustration/experiment/case/evidence"
-    },
-    {
-      "id": "BK-07",
-      "order": 7,
-      "title": "Восстановить алгоритмы и процедуры",
-      "mode": "ALGORITHM",
-      "required": true,
-      "actions": [
-        "identify_procedures",
-        "derive_ordered_steps",
-        "capture_inputs_outputs",
-        "capture_branch_conditions",
-        "capture_failure_modes"
-      ],
-      "outputs": [
-        "algorithm_cards",
-        "procedure_graphs"
-      ],
-      "completion": "процедуры представлены как воспроизводимые шаги с условиями и результатами"
-    },
-    {
-      "id": "BK-08",
-      "order": 8,
-      "title": "Извлечь выводы, ограничения и открытые вопросы",
-      "mode": "SYNTHESIS",
-      "required": true,
-      "actions": [
-        "extract_author_conclusions",
-        "extract_limitations",
-        "extract_open_questions",
-        "separate_alina_inference"
-      ],
-      "outputs": [
-        "conclusion_catalog",
-        "limitations",
-        "open_questions"
-      ],
-      "completion": "выводы автора и выводы Алины разделены и имеют provenance"
-    },
-    {
-      "id": "BK-09",
-      "order": 9,
-      "title": "Построить комбинации знаний",
-      "mode": "SYNTHESIS",
-      "required": true,
-      "actions": [
-        "combine_compatible_patterns",
-        "identify_complementary_methods",
-        "detect_conflicts",
-        "generate_hypotheses",
-        "label_inference"
-      ],
-      "outputs": [
-        "combination_candidates",
-        "conflict_map",
-        "hypotheses"
-      ],
-      "completion": "каждая комбинация содержит исходные knowledge_id и помечена как inference до проверки"
-    },
-    {
-      "id": "BK-10",
-      "order": 10,
-      "title": "Сформировать чек-листы и decision trees",
-      "mode": "OPERATIONALIZE",
-      "required": true,
-      "actions": [
-        "convert_rules_to_checklists",
-        "derive_decision_points",
-        "define_pass_fail_conditions",
-        "link_to_source_and_algorithms"
-      ],
-      "outputs": [
-        "checklists",
-        "decision_trees"
-      ],
-      "completion": "чек-листы имеют проверяемые пункты и ссылки на знания-основания"
-    },
-    {
-      "id": "BK-11",
-      "order": 11,
-      "title": "Сформировать knowledge atoms",
-      "mode": "NORMALIZE",
-      "required": true,
-      "actions": [
-        "classify_atoms",
-        "deduplicate",
-        "assign_knowledge_ids",
-        "attach_provenance",
-        "score_source_support"
-      ],
-      "outputs": [
-        "knowledge_atoms"
-      ],
-      "completion": "нет knowledge atom без source_id, locator, class и support level"
-    },
-    {
-      "id": "BK-12",
-      "order": 12,
-      "title": "Сопоставить знания с FATHER",
-      "mode": "MAPPING",
-      "required": true,
-      "actions": [
-        "map_to_capabilities",
-        "map_to_existing_blocks",
-        "identify_missing_blocks",
-        "map_to_chassis_policy_tests",
-        "mark_no_fit"
-      ],
-      "outputs": [
-        "father_mapping",
-        "gap_register"
-      ],
-      "completion": "каждый релевантный atom имеет место назначения либо NO_FIT с причиной"
-    },
-    {
-      "id": "BK-13",
-      "order": 13,
-      "title": "Найти готовые реализации и репозитории",
-      "mode": "SCOUT",
-      "required": false,
-      "actions": [
-        "search_upstream_repositories",
-        "capture_version_commit_license",
-        "map_repo_capabilities",
-        "record_maintenance_security_signals"
-      ],
-      "outputs": [
-        "repository_candidates"
-      ],
-      "completion": "кандидаты трассируемы до URL/version/commit/license и требуемой capability"
-    },
-    {
-      "id": "BK-14",
-      "order": 14,
-      "title": "Сравнить REUSE / ADAPT / BUILD / REJECT",
-      "mode": "DECISION",
-      "required": false,
-      "actions": [
-        "compare_candidates",
-        "evaluate_fit",
-        "evaluate_license",
-        "evaluate_security",
-        "evaluate_testability",
-        "select_reuse_mode"
-      ],
-      "outputs": [
-        "candidate_matrix",
-        "reuse_decisions"
-      ],
-      "completion": "решение имеет критерии, альтернативы и недостающие evidence"
-    },
-    {
-      "id": "BK-15",
-      "order": 15,
-      "title": "Проверить полноту и противоречия",
-      "mode": "QA",
-      "required": true,
-      "actions": [
-        "check_translation_coverage",
-        "check_semantic_coverage",
-        "check_glossary_links",
-        "check_algorithm_trace",
-        "check_contradictions",
-        "check_provenance"
-      ],
-      "outputs": [
-        "coverage_report",
-        "contradiction_report"
-      ],
-      "completion": "обязательные типы артефактов проверены; пробелы явно отмечены"
-    },
-    {
-      "id": "BK-16",
-      "order": 16,
-      "title": "Проверить качество Алины",
-      "mode": "CRITIC",
-      "required": true,
-      "actions": [
-        "measure_unsupported_inference",
-        "measure_provenance_completeness",
-        "sample_mapping_precision",
-        "record_missed_knowledge",
-        "record_false_combinations"
-      ],
-      "outputs": [
-        "alina_quality_report",
-        "corrections"
-      ],
-      "completion": "качество измерено и ошибки превращены в корректирующие примеры"
-    },
-    {
-      "id": "BK-17",
-      "order": 17,
-      "title": "Передать пакет в FATHER",
-      "mode": "HANDOFF",
-      "required": true,
-      "actions": [
-        "publish_machine_readable_package",
-        "publish_human_readable_map",
-        "link_to_source_registry",
-        "mark_validation_status"
-      ],
-      "outputs": [
-        "father_knowledge_package"
-      ],
-      "completion": "пакет принят в FATHER с source/knowledge/artifact trace"
-    },
-    {
-      "id": "BK-18",
-      "order": 18,
-      "title": "Ретроспектива и обучение Алины",
-      "mode": "LEARN",
-      "required": true,
-      "actions": [
-        "compare_expected_actual",
-        "record_rejected_mappings",
-        "update_gold_examples",
-        "propose_protocol_changes"
-      ],
-      "outputs": [
-        "lessons_learned",
-        "training_examples",
-        "protocol_change_candidates"
-      ],
-      "completion": "ошибки и улучшения сохранены для следующего прогона"
-    }
+    {"id":"BK01","name":"Register source, edition, license notes and bounded scope","required":true},
+    {"id":"BK02","name":"Preserve original structure and source locators","required":true},
+    {"id":"BK03","name":"Produce traceable Russian translation for the bounded scope","required":true},
+    {"id":"BK04","name":"Build semantic outline by ideas rather than page order only","required":true},
+    {"id":"BK05","name":"Extract and normalize glossary of terms and concepts","required":true},
+    {"id":"BK06","name":"Extract source-supported claims, limitations and recommendations","required":true},
+    {"id":"BK07","name":"Extract applications and use cases","required":true},
+    {"id":"BK08","name":"Extract examples and reconstruct their purpose/input/procedure/output","required":true},
+    {"id":"BK09","name":"Extract algorithms, procedures and decision branches","required":true},
+    {"id":"BK10","name":"Extract author conclusions and keep them separate from ALINA conclusions","required":true},
+    {"id":"BK11","name":"Generate cross-chapter combinations and engineering hypotheses","required":true},
+    {"id":"BK12","name":"Generate operational checklists from validated knowledge","required":true},
+    {"id":"BK13","name":"Create normalized knowledge atoms with provenance","required":true},
+    {"id":"BK14","name":"Map atoms to FATHER capabilities","required":true},
+    {"id":"BK15","name":"Identify ADR/block/chassis/policy/test targets","required":true},
+    {"id":"BK16","name":"Identify gaps, contradictions and missing evidence","required":true},
+    {"id":"BK17","name":"External repository and implementation scouting","required":false},
+    {"id":"BK18","name":"Compare REUSE/ADAPT/BUILD/REJECT candidates","required":false},
+    {"id":"BK19","name":"Critic review of translation and semantic coverage","required":true},
+    {"id":"BK20","name":"Record ALINA learning feedback and corrections","required":true},
+    {"id":"BK21","name":"FATHER knowledge package handoff","required":true}
+  ],
+  "required_output_contract": "docs/knowledge/book-knowledge-package-contract.v1.json",
+  "rules": [
+    "Extraction does not imply truth.",
+    "Translation must preserve source meaning and locator.",
+    "No glossary term without source locator.",
+    "Source-derived content and ALINA inference must be separately labeled.",
+    "Author conclusion and ALINA conclusion are different entities.",
+    "Combination hypotheses are never presented as source claims.",
+    "Do not perform repository selection before extraction and semantic decomposition are closed.",
+    "One book cannot by itself make an architecture decision production-ready.",
+    "Conflicts and rejected knowledge remain recorded.",
+    "No checklist item without a traceable knowledge or algorithm source.",
+    "No production claim without test and evidence."
+  ],
+  "quality_metrics": [
+    "translation_traceability",
+    "semantic_coverage",
+    "glossary_coverage",
+    "provenance_completeness",
+    "unsupported_inference_rate",
+    "duplicate_atom_rate",
+    "algorithm_traceability",
+    "checklist_traceability",
+    "mapping_precision",
+    "contradiction_detection_rate",
+    "wrong_recommendation_rate"
   ]
 }
