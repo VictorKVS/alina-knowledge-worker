@@ -1,0 +1,41 @@
+{
+  "process_id": "PROC-ALINA-BOOK-KNOWLEDGE-FACTORY",
+  "version": "1.0",
+  "title": "ALINA Book to FATHER Knowledge Factory",
+  "owner": "ALINA",
+  "purpose": "Convert a bounded book scope into traceable engineering knowledge and hand off validated mappings to FATHER Factory.",
+  "terminal_states": ["DONE", "BLOCKED", "NOT_APPLICABLE", "REVIEW_REQUIRED"],
+  "steps": [
+    {"id":"BK01","name":"Register source and bounded scope","required":true},
+    {"id":"BK02","name":"Extract source-supported claims and concepts","required":true},
+    {"id":"BK03","name":"Classify knowledge atoms","required":true},
+    {"id":"BK04","name":"Separate source content from ALINA inference","required":true},
+    {"id":"BK05","name":"Normalize provenance and deduplicate","required":true},
+    {"id":"BK06","name":"Map to FATHER capabilities","required":true},
+    {"id":"BK07","name":"Identify ADR/block/chassis/policy candidates","required":true},
+    {"id":"BK08","name":"Identify tests and missing evidence","required":true},
+    {"id":"BK09","name":"External repository and implementation scouting","required":false},
+    {"id":"BK10","name":"Compare REUSE/ADAPT/BUILD/REJECT candidates","required":false},
+    {"id":"BK11","name":"Contradiction and gap review","required":true},
+    {"id":"BK12","name":"Human/critic review of extraction quality","required":true},
+    {"id":"BK13","name":"Record ALINA learning feedback","required":true},
+    {"id":"BK14","name":"FATHER knowledge handoff","required":true}
+  ],
+  "rules": [
+    "Extraction does not imply truth.",
+    "No knowledge atom without provenance.",
+    "Source-derived content and ALINA inference must be separately labeled.",
+    "Do not perform repository selection before the extraction scope is closed.",
+    "One book cannot by itself make an architecture decision production-ready.",
+    "Conflicts and rejected knowledge remain recorded.",
+    "No production claim without test and evidence."
+  ],
+  "quality_metrics": [
+    "provenance_completeness",
+    "unsupported_inference_rate",
+    "duplicate_atom_rate",
+    "mapping_precision",
+    "contradiction_detection_rate",
+    "wrong_recommendation_rate"
+  ]
+}
