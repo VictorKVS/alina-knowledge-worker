@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ALINA Intelligence Package Contract V1",
+  "type": "object",
+  "required": [
+    "package_id","role_profile","prompt","rag","knowledge_base",
+    "evaluation","security","evidence","status"
+  ],
+  "properties": {
+    "package_id": {"type":"string"},
+    "role_profile": {"type":"object"},
+    "prompt": {
+      "type":"object",
+      "required":["version","baseline","promoted","hash"],
+      "properties":{
+        "version":{"type":"string"},
+        "baseline":{"type":"string"},
+        "promoted":{"type":"string"},
+        "hash":{"type":"string"}
+      }
+    },
+    "rag": {
+      "type":"object",
+      "required":["manifest","strategy","corpus_snapshot","index_versions"],
+      "properties":{
+        "manifest":{"type":"string"},
+        "strategy":{"type":"string"},
+        "corpus_snapshot":{"type":"string"},
+        "index_versions":{"type":"array","items":{"type":"string"}}
+      }
+    },
+    "knowledge_base": {
+      "type":"object",
+      "required":["manifest","source_registry","snapshot","provenance_complete"],
+      "properties":{
+        "manifest":{"type":"string"},
+        "source_registry":{"type":"string"},
+        "snapshot":{"type":"string"},
+        "provenance_complete":{"type":"boolean"}
+      }
+    },
+    "evaluation": {"type":"object"},
+    "security": {"type":"object"},
+    "evidence": {"type":"array","items":{"type":"string"}},
+    "status": {
+      "enum":["DRAFT","BASELINE","EXPERIMENT","CANDIDATE","VERIFIED","PROMOTED","REJECTED","SUPERSEDED"]
+    }
+  }
+}
