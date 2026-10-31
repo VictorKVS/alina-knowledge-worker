@@ -197,3 +197,23 @@ def list_packages(db) -> list[dict]:
             "SELECT package_id,source_id,scope,status,path,created,updated FROM book_packages ORDER BY updated DESC"
         ).fetchall()
     ]
+
+
+def import_bundled_packages(db, base: Path) -> list[dict]:
+    """Import canonical derived book packages shipped with the repository."""
+    imported = []
+    root = Path(base) / "docs" / "books"
+    if not root.exists():
+        return imported
+    for path in sorted(root.glob("BOOK-*/ch*/package.json")):
+        try:
+            result = import_package_file(db, path)
+            imported.append({"path": str(path), **result})
+        except (OSError, json.JSONDecodeError, BookKnowledgeError) as exc:
+            ident = str(path)
+            db.execute(
+                "INSERT INTO book_package_events(at,package_id,kind,detail) VALUES(?,?,?,?)",
+                (time.time(), ident, "import_error", str(exc)[:1000]),
+            )
+            imported.append({"path": str(path), "status": "ERROR", "error": str(exc)})
+    return imported
