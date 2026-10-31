@@ -67,6 +67,7 @@ def init():
         study.init(db)
         process_engine.init(db, BASE)
         book_knowledge.init(db)
+        book_knowledge.import_bundled_packages(db, BASE)
         import source_filter
         source_filter.install(db)
         for row in db.execute("SELECT DISTINCT sha FROM files WHERE sha IS NOT NULL AND status IN ('ready','partial')").fetchall():
