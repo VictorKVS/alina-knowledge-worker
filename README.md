@@ -1,10 +1,316 @@
-# Алина — локальная рабочая библиотека
+# ALINA — Evidence-First Knowledge Analyst
 
-Фоновый обработчик документов с веб-дашбордом. Собирает текстовые фрагменты и выдержки с происхождением в SQLite/FTS5. Не вызывает LLM и не обучает модель. Извлечение текста не означает проверку утверждений или усвоение книги.
+> **From documents to structured, verifiable expertise.**  
+> ALINA is an experimental knowledge-analysis system for turning heterogeneous sources into structured knowledge, evidence-linked graphs, domain-specific analysis profiles, and eventually qualified digital specialists.
 
-## Запуск на Windows
+[![Python](https://img.shields.io/badge/Python-3.11+-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![Platform](https://img.shields.io/badge/Primary%20runtime-Windows-0078D6?logo=windows&logoColor=white)](#current-runtime)
+[![Status](https://img.shields.io/badge/status-active%20R%26D-7C3AED)](#project-status)
+[![Architecture](https://img.shields.io/badge/architecture-evidence--first-0F766E)](docs/architecture/KNOWLEDGE_ANALYSIS_ENGINE.md)
+[![Pages](https://img.shields.io/badge/demo-GitHub%20Pages-222?logo=github)](https://victorkvs.github.io/alina-knowledge-worker/)
 
-Нужен Python 3.11+ с tkinter. В PowerShell из каталога проекта:
+---
+
+## Why ALINA exists
+
+Most AI knowledge systems still follow a simplified pattern:
+
+```text
+documents → chunks → embeddings → RAG → answer
+```
+
+ALINA explores a deeper model:
+
+```text
+SOURCE
+  ↓
+IDENTIFY
+  ↓
+CLASSIFY
+  ↓
+DOMAIN / GENRE / SUBDOMAIN
+  ↓
+SELECT ANALYSIS PROFILE
+  ↓
+A0–A5 ANALYSIS DEPTH
+  ↓
+DECOMPOSE INTO KNOWLEDGE ATOMS
+  ↓
+ENTITIES + EVENTS + CLAIMS + RELATIONS + EVIDENCE
+  ↓
+KNOWLEDGE GRAPH + RETRIEVAL
+  ↓
+CRITIC / VERIFICATION
+  ↓
+DOMAIN EXPERT
+```
+
+The goal is not merely to retrieve passages. The goal is to preserve **what a source says, what kind of knowledge it contains, how claims are connected, how reliable they are, and which expert workflow should process them**.
+
+---
+
+## Core idea: one engine, many analysis profiles
+
+ALINA should not analyze a novel, a scientific paper, a regulation, a threat report and source code with the same algorithm.
+
+The architecture separates a universal knowledge pipeline from domain-specific profiles:
+
+```text
+UNIVERSAL KNOWLEDGE ENGINE
+        +
+ANALYSIS PROFILE
+        =
+SPECIALIZED ANALYST
+```
+
+Examples:
+
+```text
+general engine + fiction.detective
+general engine + fiction.science_fiction
+general engine + science.paper
+general engine + security.regulation
+general engine + security.threat_report
+general engine + code.repository
+```
+
+A source may activate several profiles at once. A military science-fiction novel can combine narrative, science-fiction, military and political-analysis modules instead of being forced into one label.
+
+See:
+- [Knowledge Analysis Engine](docs/architecture/KNOWLEDGE_ANALYSIS_ENGINE.md)
+- [Source & Profile Matrix](docs/architecture/SOURCE_PROFILE_MATRIX.md)
+- [Engineering Principles](docs/principles/PRINCIPLES.md)
+
+---
+
+## Analysis depth: A0 → A5
+
+ALINA uses a staged model so expensive reasoning is applied only where needed.
+
+| Level | Purpose | Typical output |
+|---|---|---|
+| **A0 — Identify** | What is this source? | type, author, date, language, version |
+| **A1 — Extract** | What is explicitly present? | entities, terms, events, requirements |
+| **A2 — Structure** | How is it connected? | relations, timelines, graph edges |
+| **A3 — Semantics** | What does it mean? | interpretation, motives, implications |
+| **A4 — Expert analysis** | What follows in this domain? | risks, contradictions, causal chains |
+| **A5 — Synthesis** | What new conclusion can be justified? | scenarios, recommendations, prediction |
+
+This is intentionally different from sending every page directly to the largest LLM.
+
+---
+
+## Knowledge is typed, not just chunked
+
+A useful knowledge base needs more than text fragments.
+
+ALINA's target knowledge model includes:
+
+```text
+ENTITY
+EVENT
+FACT
+CLAIM
+RULE
+REQUIREMENT
+RELATION
+CAUSE
+HYPOTHESIS
+OPINION
+PROCEDURE
+METHOD
+RISK
+CONTROL
+EVIDENCE
+PREDICTION
+```
+
+Every important knowledge node should retain provenance:
+
+```text
+source
+source fragment
+source class
+confidence
+authority
+freshness
+applicability
+relations
+evidence
+```
+
+The system should be able to explain **why** a conclusion exists, not only produce it.
+
+---
+
+## Domain examples
+
+### Fiction & narrative analysis
+
+A common narrative core:
+
+```text
+CHARACTERS
+EVENTS
+LOCATIONS
+OBJECTS
+TIMELINE
+RELATIONS
+CAUSES
+CONSEQUENCES
+MOTIVES
+BELIEFS
+SECRETS
+CONFLICTS
+CLUES
+PLOT THREADS
+```
+
+Then genre-specific modules add their own logic.
+
+**Detective:** suspects, clues, alibis, lies, motive, probability of guilt.  
+**Science fiction:** technology, scientific assumptions, constraints, plausibility, second-order effects.  
+**Drama:** relationships, emotional state, conflict, moral dilemmas, turning points.  
+**Military fiction:** forces, objectives, logistics, command decisions, tactics and consequences.
+
+### Information security
+
+The same engine can process a very different knowledge schema:
+
+```text
+LAW / STANDARD / REQUIREMENT
+        ↓
+APPLICABILITY
+        ↓
+SYSTEM / ASSET / INFORMATION
+        ↓
+THREAT / ATTACK SCENARIO
+        ↓
+RISK
+        ↓
+CONTROL
+        ↓
+IMPLEMENTATION
+        ↓
+VERIFICATION / EVIDENCE
+```
+
+This allows a future ALINA Security expert to reason across regulatory requirements, technical controls, threat intelligence and implementation evidence instead of treating them as unrelated document folders.
+
+### Scientific literature
+
+```text
+RESEARCH QUESTION
+HYPOTHESIS
+METHOD
+DATA
+EXPERIMENT
+RESULT
+LIMITATION
+CLAIM
+CITATION
+REPRODUCIBILITY
+```
+
+---
+
+## Current runtime
+
+The repository already contains a working local document-processing layer.
+
+Current capabilities include:
+
+- local background document processing;
+- SQLite + FTS5 storage;
+- provenance-preserving text fragments;
+- queue state and resumable processing;
+- TXT / MD / JSON / YAML ingestion;
+- PDF chunked processing with saved position;
+- Windows OCR fallback for scans;
+- EPUB / FB2 / RTF / DOC handling;
+- local web dashboard;
+- structured process definitions and execution states;
+- Windows-oriented installation and supervision scripts;
+- test suite and CI support.
+
+Important: **the current runtime is not yet the complete ALINA analytical architecture described above**. The repository distinguishes implemented ingestion/runtime capabilities from the research architecture under active development.
+
+---
+
+## Project status
+
+```text
+DOCUMENT INGESTION           ████████████████████  implemented
+LOCAL INDEX / PROVENANCE     ████████████████████  implemented
+PROCESS ENGINE               ████████████████████  implemented
+
+SOURCE CLASSIFICATION        ███████░░░░░░░░░░░░░  design / R&D
+ANALYSIS PROFILE REGISTRY    ███████░░░░░░░░░░░░░  design / R&D
+A0–A5 DEPTH ROUTING          ██████░░░░░░░░░░░░░░  design / R&D
+KNOWLEDGE GRAPH              ██████░░░░░░░░░░░░░░  design / R&D
+WEIGHT ENGINE                █████░░░░░░░░░░░░░░░  design / R&D
+DOMAIN EXPERT QUALIFICATION  ████░░░░░░░░░░░░░░░░  design / R&D
+```
+
+These percentages are roadmap indicators, not benchmark claims.
+
+---
+
+## Relation to FATHER
+
+ALINA is designed as a specialist layer that can be produced and qualified by the broader **FATHER expert factory** architecture.
+
+The separation is deliberate:
+
+```text
+SPECIALIST
+  ├── role
+  ├── competency pack
+  ├── knowledge graph
+  ├── workflows
+  ├── tools
+  ├── tests
+  ├── evidence
+  └── BRAIN SLOT
+```
+
+The LLM is a replaceable brain, not the specialist itself. A future model can replace the current model only after passing the specialist's qualification suite.
+
+---
+
+## Research notes & articles
+
+### Architecture
+- [Knowledge Analysis Engine](docs/architecture/KNOWLEDGE_ANALYSIS_ENGINE.md)
+- [Source & Analysis Profile Matrix](docs/architecture/SOURCE_PROFILE_MATRIX.md)
+
+### Principles
+- [ALINA Engineering Principles](docs/principles/PRINCIPLES.md)
+
+### Research
+- [World Landscape: parsers, GraphRAG, domain knowledge and expert systems](docs/research/WORLD_LANDSCAPE.md)
+
+### Articles
+- [From RAG to Verified Digital Expert](docs/articles/01_FROM_RAG_TO_VERIFIED_EXPERT.md)
+
+### Media
+- [Media Kit & Social Positioning](docs/media/MEDIA_KIT.md)
+
+---
+
+## Public demo
+
+Prepared demo:
+
+**https://victorkvs.github.io/alina-knowledge-worker/**
+
+The public Pages demo is a presentation layer. The local document-processing service remains local by design and should not be exposed directly to the Internet without separate authentication and deployment hardening.
+
+---
+
+## Local start
+
+Requires Python 3.11+ on Windows.
 
 ```powershell
 python -m venv .venv
@@ -13,71 +319,57 @@ Copy-Item config.example.json config.json
 .\.venv\Scripts\python.exe alina.py --serve
 ```
 
-Откройте http://127.0.0.1:8768. В комплекте три коротких авторских учебных примера. Для своей библиотеки измените `roots` в `config.json` и перезапустите процесс. Относительные пути считаются от каталога приложения. Конфигурация и база данных исключены из Git.
+Open:
 
-Для фонового запуска, ярлыка на рабочем столе и автозагрузки после входа в Windows:
+```text
+http://127.0.0.1:8768
+```
+
+Install as a background Windows process:
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1
 ```
 
-Перед этим остановите ручной запуск сочетанием Ctrl+C. Фоновый процесс использует `.venv\Scripts\pythonw.exe`. Пауза доступна в дашборде; чтобы отключить автозапуск, удалите ярлык Алины из `shell:startup`.
-
-## Что можно показать на сдаче
-
-1. Найдены три учебных документа: ИБ → проектирование → архитектура.
-2. В очереди видны состояния, ошибки и результаты извлечения.
-3. Поиск возвращает текст и источник; карточки книг показывают выдержки.
-4. Повторное сканирование не индексирует неизменённые файлы заново.
-5. Пауза/продолжение и выбор приоритетного раздела управляют обработкой.
-6. Отчёт каждый час показывает изменения счётчиков. Окно закрывается через 25 секунд; история остаётся в дашборде.
-
-Конкретные условия ДЗ ещё не предоставлены: соответствие заданию не подтверждено. Пошаговая анимация разбора, анализ идей, Socrates review и продвижение в каноническую KB пока не реализованы.
-
-## Форматы и ограничения
-
-TXT, MD, JSON, YAML: UTF-8. PDF: порции по 8 страниц через PDFium с сохранением позиции в SQLite; сканы распознаются Windows OCR. EPUB: порядок spine. FB2: разделы и примечания. RTF: Windows RichTextBox. DOC: HTML/RTF по содержимому; бинарный DOC требует установленного Microsoft Word. Макросы и обновление ссылок отключены, исходники открываются только для чтения.
-
-Для фоновой обработки PDF нет прежнего общего лимита 100 МБ, 2000 страниц или 5 млн символов: лимит времени 90 секунд применяется к порции. Позиция и фрагменты сохраняются атомарно, повтор после ошибки продолжает с сохранённой позиции. OCR требует языков Windows и сверки результата. Для остальных форматов остаются 100 МБ, 60 секунд и 5 млн символов; EPUB до 200 МБ распакованного содержимого. DJVU пока не поддерживается. Классификация тематик основана на папках, а не понимании текста.
-
-## Проверка
-
-Перед тестами установите зависимости: `python -m pip install -r requirements-dev.txt`.
+Run tests:
 
 ```powershell
 .\.venv\Scripts\python.exe -B -m unittest discover -s . -p "test_*.py" -v
 ```
 
-CI выполняет тесты на Windows. Локальная проверка: 20 тестов. Реальные книги, выдержки из них, база и журналы в репозиторий не включены.
+---
 
-## Работа через веб
+## Research direction
 
-Репозиторий содержит код для просмотра и дальнейшей разработки в веб-инструментах с доступом к GitHub. GitHub не запускает фоновую Алину и не предоставляет доступ к диску G:. Дашборд работает на компьютере владельца; для публичного сервера потребуются отдельное развёртывание и аутентификация. Не открывайте текущий локальный сервер в Интернет.
-
-## Устройство
-
-`alina.py`: очередь, HTTP API, SQLite, отчёты. `extract.py` и `formats.py`: извлечение в отдельном процессе. `study.py`: тематические очереди и выдержки. `dashboard.html` и `study-ui.js`: интерфейс. PowerShell-скрипты: Windows-интеграция. `data/` создаётся при запуске.
-
-DOC поддерживает также MHTML, включая кодировку unicode. Служебные файлы с префиксом `~$` исключены из каталога; исходники не удаляются.
-
-Публичное подготовленное демо: https://victorkvs.github.io/alina-knowledge-worker/
-
-
-## Исполняемые процессы Алины
-
-Алина теперь хранит не только индекс документов, но и структурированные рабочие процессы.
-
-При старте `alina.py` каталог `processes/` регистрируется в SQLite:
+The long-term target is:
 
 ```text
-PROCESS_DEFINITION
-  -> PROCESS_STEP
-  -> WORK_RUN
-  -> WORK_STEP_RUN
-  -> RESULT / EVIDENCE
+ANY SOURCE
+  ↓
+understand what it is
+  ↓
+choose the correct analytical method
+  ↓
+decompose it into typed knowledge
+  ↓
+preserve evidence and uncertainty
+  ↓
+connect knowledge into a graph
+  ↓
+apply domain-specific reasoning
+  ↓
+qualify the specialist on real tasks
 ```
 
-Первый мета-процесс: `PROC-ALINA-PROCESS-DESIGN` — проектирование нового процесса агента.
-Первый прикладной процесс: `RUNBOOK-WEB-SECURITY-001` — Web Security в разрешённом scope.
+**ALINA is not intended to be another chat interface over a folder of PDFs.  
+It is an attempt to engineer verifiable digital expertise.**
 
-Процесс считается завершённым только после terminal-state каждого обязательного шага. `BLOCKED`, `NOT_APPLICABLE` и `REVIEW_REQUIRED` требуют причины.
+---
+
+## License / usage
+
+This repository is currently an active research and engineering project. Before commercial reuse or redistribution, review the repository's licensing status and the licenses of any external components integrated in future versions.
+
+---
+
+Maintained by **VictorKVS**.
