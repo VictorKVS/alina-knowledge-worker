@@ -1,0 +1,99 @@
+{
+  "schema": "father.book_knowledge_package.v1",
+  "required_sections": [
+    "source",
+    "scope",
+    "original_index",
+    "translation",
+    "semantic_outline",
+    "glossary",
+    "applications",
+    "examples",
+    "algorithms",
+    "conclusions",
+    "combinations",
+    "checklists",
+    "knowledge_atoms",
+    "father_mapping",
+    "quality"
+  ],
+  "traceability": {
+    "translation": "translation_item -> source locator",
+    "glossary": "term -> source locator(s) -> knowledge atom(s)",
+    "example": "example -> concept(s) -> source locator",
+    "algorithm": "algorithm -> source locator(s) -> capability",
+    "checklist": "checklist item -> knowledge/algorithm -> source locator",
+    "father": "knowledge atom -> capability -> block/chassis/policy/test"
+  },
+  "artifact_types": {
+    "term": [
+      "term_id",
+      "canonical_ru",
+      "original_term",
+      "definition",
+      "source_definition",
+      "locators",
+      "related_terms"
+    ],
+    "application": [
+      "application_id",
+      "problem",
+      "method",
+      "preconditions",
+      "constraints",
+      "source_locators",
+      "father_targets"
+    ],
+    "example": [
+      "example_id",
+      "type",
+      "purpose",
+      "inputs",
+      "procedure",
+      "outputs",
+      "concept_ids",
+      "source_locators"
+    ],
+    "algorithm": [
+      "algorithm_id",
+      "goal",
+      "inputs",
+      "steps",
+      "branches",
+      "outputs",
+      "failure_modes",
+      "source_locators"
+    ],
+    "conclusion": [
+      "conclusion_id",
+      "owner",
+      "statement",
+      "support",
+      "source_locators"
+    ],
+    "combination": [
+      "combination_id",
+      "input_knowledge_ids",
+      "hypothesis",
+      "expected_benefit",
+      "conflicts",
+      "validation_needed"
+    ],
+    "checklist": [
+      "checklist_id",
+      "goal",
+      "items",
+      "pass_fail_rule",
+      "source_knowledge_ids"
+    ]
+  },
+  "gates": [
+    "TRANSLATION_TRACEABLE",
+    "SEMANTIC_COVERAGE_ACCEPTABLE",
+    "GLOSSARY_LINKED",
+    "ALGORITHMS_TRACEABLE",
+    "INFERENCE_SEPARATED",
+    "PROVENANCE_COMPLETE",
+    "FATHER_MAPPING_REVIEWED"
+  ]
+}

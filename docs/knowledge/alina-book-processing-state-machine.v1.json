@@ -1,0 +1,43 @@
+{
+  "schema": "alina.book_processing_algorithm.v1",
+  "states": [
+    "SOURCE_REGISTERED",
+    "STRUCTURE_CAPTURED",
+    "TRANSLATION_TRACEABLE",
+    "SEMANTIC_OUTLINE_READY",
+    "GLOSSARY_LINKED",
+    "EXAMPLES_RECONSTRUCTED",
+    "ALGORITHMS_TRACEABLE",
+    "INFERENCE_SEPARATED",
+    "COMBINATIONS_EXPLICIT",
+    "CHECKLIST_TRACEABLE",
+    "FATHER_MAPPING_REVIEWED",
+    "IMPLEMENTATION_DECISION_RECORDED",
+    "KNOWLEDGE_PACKAGE_READY",
+    "BOOK_ASSIMILATED"
+  ],
+  "required_chapter_gates": [
+    "SOURCE_REGISTERED",
+    "STRUCTURE_CAPTURED",
+    "TRANSLATION_TRACEABLE",
+    "SEMANTIC_OUTLINE_READY",
+    "GLOSSARY_LINKED",
+    "EXAMPLES_RECONSTRUCTED",
+    "ALGORITHMS_TRACEABLE",
+    "INFERENCE_SEPARATED",
+    "COMBINATIONS_EXPLICIT",
+    "CHECKLIST_TRACEABLE",
+    "FATHER_MAPPING_REVIEWED"
+  ],
+  "optional_after_extraction": [
+    "IMPLEMENTATION_DECISION_RECORDED"
+  ],
+  "invariants": [
+    "source content and ALINA inference are distinct",
+    "every semantic artifact has provenance",
+    "every checklist item traces to knowledge or approved decision",
+    "implementation selection happens after semantic extraction",
+    "source extraction is not proof of truth",
+    "production readiness requires tests and evidence"
+  ]
+}

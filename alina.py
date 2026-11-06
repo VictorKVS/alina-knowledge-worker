@@ -18,6 +18,7 @@ from urllib.request import urlopen
 import webbrowser
 import study
 import process_engine
+import book_knowledge
 
 BASE = Path(__file__).resolve().parent
 DATA = BASE / 'data'
@@ -65,6 +66,8 @@ def init():
     with connection() as db:
         study.init(db)
         process_engine.init(db, BASE)
+        book_knowledge.init(db)
+        book_knowledge.import_bundled_packages(db, BASE)
         import source_filter
         source_filter.install(db)
         for row in db.execute("SELECT DISTINCT sha FROM files WHERE sha IS NOT NULL AND status IN ('ready','partial')").fetchall():
@@ -88,6 +91,7 @@ def snapshot():
         chunk_count = db.execute('SELECT count(*) FROM chunks').fetchone()[0]
         study_status = study.summary(db)
         process_status = process_engine.summary(db)
+        book_status = book_knowledge.summary(db)
     total = sum(counts.values())
     terminal = sum(counts.get(k,0) for k in ('ready','partial','error','oversize'))
     return {'name':'Алина', 'mode':'Локальная подготовка источников; не утверждение фактов в KB',
@@ -99,7 +103,7 @@ def snapshot():
         'live':dict(LIVE), 'reports':reports, 'errors':errors,
         'next_report':json.loads(setting('report_baseline'))['at']+CONFIG['report_seconds'],
         'roots':CONFIG['roots'], 'pid':os.getpid(), 'study':study_status,
-        'processes':process_status}
+        'processes':process_status, 'book_knowledge':book_status}
 
 
 def scan():
@@ -272,6 +276,9 @@ class Handler(BaseHTTPRequestHandler):
             domain=parse_qs(u.query).get('domain',['security'])[0]
             if domain not in study.DOMAINS: return self.send({'error':'domain'},400)
             with connection() as db: result=study.book_results(db,domain)
+            return self.send(result)
+        if u.path=='/api/book-packages':
+            with connection() as db: result=book_knowledge.list_packages(db)
             return self.send(result)
         if u.path=='/api/processes':
             with connection() as db: result=process_engine.list_processes(db)

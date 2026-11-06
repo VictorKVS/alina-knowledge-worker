@@ -1,0 +1,26 @@
+name: ALINA Book Knowledge
+
+on:
+  push:
+    branches: ["feature/alina-book-knowledge-factory"]
+    paths:
+      - "book_knowledge.py"
+      - "test_book_knowledge.py"
+      - "docs/books/**"
+      - ".github/workflows/book-knowledge.yml"
+  pull_request:
+    paths:
+      - "book_knowledge.py"
+      - "test_book_knowledge.py"
+      - "docs/books/**"
+
+jobs:
+  book-knowledge:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Validate BOOK-0001 semantic package
+        run: python -m unittest test_book_knowledge.py -v

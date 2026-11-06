@@ -1,0 +1,23 @@
+{
+  "schema": "father.book_source_manifest.v1",
+  "source_id": "SRC-BOOK-0001",
+  "title": "Designing Large Language Model Applications: A Holistic Approach to LLMs",
+  "author": "Suhas Pai",
+  "publisher": "O'Reilly Media",
+  "year": 2025,
+  "edition": "First Edition",
+  "isbn": "978-1-098-15050-1",
+  "source_kind": "user_provided_pdf",
+  "local_source_note": "Original file is held outside Git and is not committed.",
+  "companion_material": "https://oreil.ly/llm-playbooks",
+  "total_chapters": 13,
+  "parts": 3,
+  "processing_policy": {
+    "store_original_text": false,
+    "preserve_locators": true,
+    "store_derived_translation": true,
+    "store_knowledge_atoms": true,
+    "store_long_verbatim_quotes": false
+  },
+  "status": "REGISTERED"
+}
