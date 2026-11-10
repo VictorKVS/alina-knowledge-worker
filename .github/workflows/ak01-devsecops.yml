@@ -39,3 +39,8 @@ jobs:
 
       - name: Dependency audit
         run: pip-audit -r requirements-ak01.txt
+
+      - name: Architecture tests
+        env:
+          AK01_TEST_ADAPTER: ak01.testing_adapter
+        run: pytest future_lab/agents/AK-01/architecture/tests/executable -q
