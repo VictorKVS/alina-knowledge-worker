@@ -1,0 +1,22 @@
+profession_id: AI-LLM
+family: AI_ML_ENGINEERING
+title: LLM Engineer
+version: 1
+competency_vector:
+  transformer_fundamentals: K4
+  prompting: K5
+  context_engineering: K5
+  inference: K4
+  evaluation: K5
+  tool_use: K4
+  safety_security: K4
+  data_pipelines: K4
+knowledge_requirements:
+  - {id: TRANS, name: Transformer and LLM Fundamentals, depth: K4, criticality: MANDATORY}
+  - {id: PROMPT, name: Prompt and Context Engineering, depth: K5, criticality: MANDATORY}
+  - {id: INF, name: LLM Inference, depth: K4, criticality: MANDATORY}
+  - {id: EVAL, name: LLM Evaluation, depth: K5, criticality: MANDATORY}
+  - {id: TOOL, name: Tool Calling and Agent Interfaces, depth: K4, criticality: MANDATORY}
+  - {id: SAFE, name: LLM Safety and Security, depth: K4, criticality: MANDATORY}
+qualification:
+  requires: [prompt_case, inference_case, eval_case, tool_case, security_case]
