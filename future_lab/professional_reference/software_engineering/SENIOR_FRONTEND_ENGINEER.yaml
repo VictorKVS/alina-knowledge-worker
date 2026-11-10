@@ -1,0 +1,27 @@
+profession_id: SW-FE-SENIOR
+family: SOFTWARE_ENGINEERING
+title: Senior Frontend Engineer
+version: 1
+responsibility:
+  level: senior
+competency_vector:
+  programming_language: K5
+  browser_platform: K5
+  frontend_architecture: K5
+  state_management: K4
+  web_performance: K4
+  accessibility: K4
+  security: K4
+  testing: K5
+  API_integration: K4
+  observability: K3
+knowledge_requirements:
+  - {id: JS, name: JavaScript/TypeScript, depth: K5, criticality: MANDATORY}
+  - {id: WEB, name: Browser and Web Platform, depth: K5, criticality: MANDATORY}
+  - {id: ARCH, name: Frontend Architecture, depth: K5, criticality: MANDATORY}
+  - {id: UX, name: Accessibility and UX Engineering, depth: K4, criticality: MANDATORY}
+  - {id: PERF, name: Web Performance, depth: K4, criticality: MANDATORY}
+  - {id: SEC, name: Web Security, depth: K4, criticality: MANDATORY}
+  - {id: TEST, name: Frontend Testing, depth: K5, criticality: MANDATORY}
+qualification:
+  requires: [architecture_case, implementation_case, accessibility_case, performance_case, security_case, testing_case]
