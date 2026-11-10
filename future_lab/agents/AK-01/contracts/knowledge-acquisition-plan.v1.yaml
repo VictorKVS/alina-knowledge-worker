@@ -1,0 +1,38 @@
+schema_version: 1
+required:
+  - knowledge_gap_id
+  - knowledge_type
+  - required_depth
+  - required_evidence
+  - search_queries
+  - source_mix
+  - stop_conditions
+
+fields:
+  knowledge_gap_id: string
+  competency_id: string
+  knowledge_type:
+    enum:
+      - foundational
+      - conceptual
+      - procedural
+      - algorithmic
+      - normative
+      - implementation
+      - operational
+      - security
+      - quality
+      - failure
+      - frontier
+  required_depth:
+    enum: [K0, K1, K2, K3, K4, K5]
+  required_evidence:
+    type: array
+  search_queries:
+    type: array
+  source_mix:
+    type: array
+  qualification_requirements:
+    type: array
+  stop_conditions:
+    type: array
