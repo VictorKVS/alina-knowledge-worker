@@ -1,0 +1,167 @@
+version: 1
+families:
+  - id: SOFTWARE_ENGINEERING
+    title: Software Engineering
+    specializations:
+      - Backend Engineer
+      - Frontend Engineer
+      - Full-Stack Engineer
+      - Mobile Engineer
+      - Systems Programmer
+      - Embedded Engineer
+      - API Engineer
+      - Platform Engineer
+
+  - id: AI_ML_ENGINEERING
+    title: AI / Machine Learning Engineering
+    specializations:
+      - ML Engineer
+      - LLM Engineer
+      - RAG Engineer
+      - Agent Engineer
+      - MLOps Engineer
+      - AI Safety Engineer
+      - Computer Vision Engineer
+      - Speech AI Engineer
+
+  - id: DATA_ENGINEERING
+    title: Data Engineering and Analytics
+    specializations:
+      - Data Engineer
+      - Data Analyst
+      - BI Engineer
+      - Analytics Engineer
+      - Data Scientist
+      - Database Engineer
+
+  - id: INFRASTRUCTURE
+    title: Infrastructure and Reliability
+    specializations:
+      - DevOps Engineer
+      - SRE
+      - Cloud Engineer
+      - Kubernetes Engineer
+      - Network Engineer
+      - Systems Administrator
+      - Infrastructure Architect
+
+  - id: CYBERSECURITY
+    title: Cybersecurity
+    specializations:
+      - Security Engineer
+      - AppSec Engineer
+      - DevSecOps Engineer
+      - SOC Analyst
+      - Threat Intelligence Analyst
+      - Incident Responder
+      - Security Architect
+      - GRC Specialist
+      - IAM Engineer
+      - Malware Analyst
+      - Pentester
+
+  - id: OSINT_INTELLIGENCE
+    title: OSINT and Intelligence
+    specializations:
+      - OSINT Analyst
+      - Cyber Intelligence Analyst
+      - Digital Risk Analyst
+      - Investigation Analyst
+      - Geospatial Analyst
+      - Social Media Intelligence Analyst
+
+  - id: PRODUCT_MANAGEMENT
+    title: Product and Delivery
+    specializations:
+      - Product Manager
+      - Product Owner
+      - Project Manager
+      - Program Manager
+      - Delivery Manager
+
+  - id: ANALYSIS_ARCHITECTURE
+    title: Analysis and Architecture
+    specializations:
+      - Business Analyst
+      - System Analyst
+      - Solution Architect
+      - Software Architect
+      - Enterprise Architect
+      - Data Architect
+      - Security Architect
+
+  - id: QA_ENGINEERING
+    title: Quality Engineering
+    specializations:
+      - QA Engineer
+      - Test Automation Engineer
+      - Performance Engineer
+      - Reliability Test Engineer
+      - AI Evaluator
+
+  - id: LEGAL_COMPLIANCE
+    title: Legal and Compliance
+    specializations:
+      - Lawyer
+      - Compliance Specialist
+      - Privacy Specialist
+      - Contract Specialist
+      - Regulatory Analyst
+
+  - id: FINANCE_ECONOMICS
+    title: Finance and Economics
+    specializations:
+      - Financial Analyst
+      - Accountant
+      - Risk Analyst
+      - Quantitative Analyst
+      - Economist
+      - Investment Analyst
+
+  - id: MEDICINE_HEALTHCARE
+    title: Medicine and Healthcare
+    specializations:
+      - Physician
+      - Clinical Analyst
+      - Medical Informatics Specialist
+      - Healthcare Data Analyst
+      - Clinical Safety Specialist
+
+  - id: ENGINEERING
+    title: Engineering
+    specializations:
+      - Electrical Engineer
+      - Electronics Engineer
+      - Mechanical Engineer
+      - Robotics Engineer
+      - Control Systems Engineer
+      - Industrial Automation Engineer
+      - Telecommunications Engineer
+
+  - id: SCIENCE_RESEARCH
+    title: Science and Research
+    specializations:
+      - Researcher
+      - Statistician
+      - Applied Mathematician
+      - Physicist
+      - Chemist
+      - Biologist
+
+  - id: OPERATIONS
+    title: Operations
+    specializations:
+      - Operations Analyst
+      - Process Engineer
+      - Service Manager
+      - Technical Support Engineer
+      - Incident Manager
+
+  - id: CONTENT_COMMUNICATION
+    title: Content and Communication
+    specializations:
+      - Technical Writer
+      - Editor
+      - Content Strategist
+      - Knowledge Manager
+      - Documentation Engineer
