@@ -1,0 +1,39 @@
+schema_version: "1.0"
+object_type: agent_knowledge_pack
+
+pack:
+  id:
+  target_agent_id:
+  target_agent_version:
+  knowledge_pack_version:
+  status: DRAFT|VERIFIED|QUALIFIED
+
+scope:
+  goals: []
+  tasks: []
+  domains: []
+
+contents:
+  concepts: []
+  methods: []
+  algorithms: []
+  formulas: []
+  assumptions: []
+  limitations: []
+  metrics: []
+  datasets: []
+  implementations: []
+
+evidence:
+  source_ids: []
+  contradictions: []
+  unknowns: []
+
+runtime_policy:
+  minimum_knowledge_state: VERIFIED
+  qualified_only_for_autonomous_decisions: true
+
+provenance:
+  produced_by: AK-01
+  reviewed_by: AKN-01
+  produced_at:
