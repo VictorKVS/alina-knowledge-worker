@@ -1,0 +1,36 @@
+schema_version: 1
+required:
+  - profile_id
+  - product_id
+  - selected_roles
+  - competency_demand
+  - knowledge_requirements
+  - qualification_requirements
+
+fields:
+  profile_id: string
+  product_id: string
+  selected_roles:
+    type: array
+    item:
+      profession_id: string
+      responsibility_level: string
+      rationale: string
+  competency_demand:
+    type: array
+    item:
+      competency_id: string
+      required_depth: string
+      criticality: string
+      related_tasks: array
+      related_decisions: array
+  knowledge_requirements:
+    type: array
+    item:
+      knowledge_id: string
+      required_depth: string
+      source_requirements: array
+      existing_coverage: number
+      gap: boolean
+  qualification_requirements:
+    type: array
