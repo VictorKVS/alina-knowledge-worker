@@ -85,6 +85,19 @@ footer{margin-top:42px;border-top:1px solid var(--line);padding-top:18px;color:v
 
 
 
+
+<section class="section"><h2>Celestial Knowledge Base</h2>
+<p>Научное ядро для расчёта положения и движения небесных тел. Астрономические вычисления и исторические/астрологические интерпретации хранятся как два разных слоя доказательности.</p>
+<div class="flow">JPL HORIZONS / DE441 + SPICE + SWISS EPHEMERIS → CELESTIAL ENGINE → NORMALIZED EPHEMERIS → SCIENCE | CULTURAL INTERPRETATION</div>
+<div class="grid">
+<div class="card method"><span class="badge science">SCIENTIFIC_A</span><h3>JPL Horizons / DE441</h3><p>Эфемериды, положения, скорости, наблюдаемость, координаты и геометрия объектов Солнечной системы.</p><small>Авторитетный reference layer.</small></div>
+<div class="card method"><span class="badge science">SCIENTIFIC_A</span><h3>NASA NAIF SPICE</h3><p>Локальные воспроизводимые расчёты геометрии, reference frames и ephemeris kernels.</p><small>Основа профессионального Celestial Engine.</small></div>
+<div class="card method"><span class="badge planned">COMPATIBILITY</span><h3>Swiss Ephemeris</h3><p>Высокоточная библиотека эфемерид и слой совместимости для традиционных астрологических расчётов.</p><small>Расчёт координат научный; астрологическая интерпретация — отдельный NON_SCIENTIFIC слой.</small></div>
+<div class="card method"><span class="badge science">KB</span><h3>Time & Frames</h3><p>UTC, UT1, TT, TDB, Julian Date, ICRF, ecliptic/equatorial/Earth-fixed frames, precession/nutation.</p></div>
+<div class="card method"><span class="badge science">KB</span><h3>Celestial Events</h3><p>Фазы, восход/заход, кульминации, соединения, оппозиции, угловые расстояния, затмения, occultations.</p></div>
+<div class="card method"><span class="badge culture">NON_SCIENTIFIC</span><h3>Astrology Systems</h3><p>Western, Jyotish, Hellenistic, Medieval, Chinese; natal, transit, synastry, horary, electional, mundane.</p><small>Все правила паспортизируются отдельно и никогда не повышают scientific confidence.</small></div>
+</div></section>
+
 <section class="section"><h2>Quant / Trading Lab</h2>
 <p>Торговый домен Future Lab: индикаторы, стратегии, риск, факторные модели, market data и строгий backtesting. Источник-карта: <b>awesome-quant</b>.</p>
 <div class="flow">INDICATOR → SIGNAL RULE → STRATEGY → EXECUTION → FEES / SLIPPAGE → BACKTEST → WALK-FORWARD → OUT-OF-SAMPLE → RISK SCORE</div>
