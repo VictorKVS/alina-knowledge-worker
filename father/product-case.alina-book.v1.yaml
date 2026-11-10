@@ -1,0 +1,64 @@
+schema_version: "1.0"
+product_case:
+  id: "FTH-PC-000001"
+  product_code: "ALINA-BOOK"
+  title: "ALINA-BOOK / Alice Qualification MVP"
+  status: "DISCOVERY"
+  factory: "FATHER"
+  purpose: >
+    Showcase and qualify AU-01 (Universal Analyst / Alina Analyst) on a narrative
+    case with entities, events, relations, claims, evidence, timeline, hypotheses,
+    forecast and backtesting.
+  primary_benchmark:
+    name: "Alice / narrative benchmark"
+    data_policy: "Only legally provided or synthetic test materials are committed."
+  product_owner_station: "PM-01"
+  analytical_block: "AU-01"
+  domain_pack: "NARRATIVE"
+  success_metrics:
+    - id: "M-01"
+      name: "Pipeline completion"
+      target: "100% mandatory production-floor stations completed or explicitly gated"
+    - id: "M-02"
+      name: "Traceability"
+      target: "Every conclusion traces to source/evidence or is marked hypothesis/opinion"
+    - id: "M-03"
+      name: "Narrative structure"
+      target: "Entities, events, relations and timeline produced in machine-readable form"
+    - id: "M-04"
+      name: "Forecast evaluation"
+      target: "Forecast compared with known future using explicit scoring"
+  scope:
+    in:
+      - "source ingestion"
+      - "narrative entity extraction"
+      - "event extraction"
+      - "relationship graph"
+      - "timeline"
+      - "claim typing"
+      - "evidence/provenance"
+      - "hypothesis generation"
+      - "forecast"
+      - "backtesting"
+      - "human-readable report"
+      - "production-floor trace"
+    out:
+      - "fully autonomous web research"
+      - "unbounded self-modification"
+      - "production-grade external OSINT collection"
+  constraints:
+    - "Existing ALINA runtime must be reused where fit."
+    - "No fabricated evidence may be presented as live research."
+    - "LLM output is not evidence by itself."
+    - "All new stages must expose status, failure reason and traceability."
+  required_artifacts:
+    - "product_definition"
+    - "business_analysis"
+    - "system_specification"
+    - "agent_architecture"
+    - "software_architecture"
+    - "security_review"
+    - "implementation"
+    - "verification"
+    - "polygon_result"
+    - "release_manifest"
