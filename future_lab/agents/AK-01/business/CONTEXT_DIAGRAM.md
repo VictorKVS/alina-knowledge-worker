@@ -10,27 +10,54 @@ flowchart LR
     AK[AK-01 Knowledge Architect]
     KC[AKN-01 Knowledge Curator]
     TA[AT-01 Training Architect]
-    CODEX[FATHER_CODEX]
+    AC[AC-01 Agent Coach]
+    AG[Target Agent / Specialist]
     QA[AQ-01 QA / Evaluator]
+    POL[POLYGON]
+    OBS[Production Observation]
+    CODEX[FATHER_CODEX]
     FL[Future Lab]
 
     FA -->|target agent request| AK
     PM -->|product goals / scope| AK
     AA -->|role / tasks / capabilities| AK
-    DE -->|domain constraints| AK
+    DE -->|domain constraints / local practice| AK
     SP -->|books / papers / standards / docs| AK
 
-    AK -->|knowledge units / graph / weights| KC
-    AK -->|Agent Knowledge Blueprint| AA
+    AK -->|Knowledge Capsule / Blueprint| KC
     AK -->|training prerequisites| TA
     AK -->|implementation refs| CODEX
-    AK -->|test requirements| QA
     AK -->|methods needing qualification| FL
 
     KC -->|review / corrections| AK
-    QA -->|quality failures| AK
-    FL -->|qualification evidence| AK
+    TA -->|training program| AC
+    AC -->|practice / exercises| AG
+    AG -->|task traces / outcomes| QA
+    QA -->|competency gaps / failures| AK
+    POL -->|adversarial failures| AK
+    OBS -->|real cases / local specifics / corrections| AK
+
+    AK -->|Knowledge Delta proposal| KC
+    KC -->|approved delta| TA
+    TA -->|targeted retraining plan| AC
+    AC -->|retraining| AG
+    AG -->|retest evidence| QA
+    QA -->|qualification result| POL
 ```
 
 ## Interpretation
-AK-01 is a central knowledge-engineering station, not the final authority on runtime qualification.
+
+AK-01 is not a one-time extractor. It is a continuous knowledge-engineering station.
+
+It creates the initial specialist knowledge capsule and later accepts:
+- training failures;
+- real production cases;
+- local organizational knowledge;
+- human corrections;
+- QA findings;
+- POLYGON findings;
+- newly published sources.
+
+AK-01 analyzes them and produces a **Knowledge Delta** instead of silently rewriting the current capsule.
+
+Final runtime qualification remains outside AK-01 authority.
