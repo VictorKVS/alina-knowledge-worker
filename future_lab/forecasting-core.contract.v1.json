@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.0",
+  "service": "FATHER-FORECASTING-CORE",
+  "request": {
+    "required": [
+      "request_id",
+      "agent_id",
+      "domain",
+      "task_type",
+      "target",
+      "horizon"
+    ],
+    "fields": {
+      "request_id": "string",
+      "agent_id": "string",
+      "domain": "string",
+      "task_type": "string",
+      "target": "string",
+      "horizon": "string|number|object",
+      "data_ref": "optional string/object",
+      "data_shape": "optional object",
+      "constraints": {
+        "latency_ms": "optional number",
+        "cpu": "optional",
+        "ram_mb": "optional number",
+        "gpu": "optional boolean|string",
+        "vram_mb": "optional number",
+        "energy_budget": "optional",
+        "cost_budget": "optional"
+      },
+      "required_outputs": [
+        "point_forecast",
+        "interval",
+        "probability",
+        "scenarios"
+      ],
+      "evidence_policy": "optional",
+      "allowed_method_classes": "optional array",
+      "forbidden_method_classes": "optional array"
+    }
+  },
+  "response": {
+    "fields": {
+      "request_id": "string",
+      "selected_methods": "array",
+      "rejected_methods": "array",
+      "assumptions": "array",
+      "predictions": "array",
+      "ensemble": "optional object",
+      "uncertainty": "object",
+      "evidence": "array",
+      "backtest": "object",
+      "method_scores": "array",
+      "resources": {
+        "cpu": "optional",
+        "ram": "optional",
+        "gpu": "optional",
+        "vram": "optional",
+        "latency": "optional",
+        "energy": "optional",
+        "energy_status": [
+          "MEASURED",
+          "ESTIMATED",
+          "UNKNOWN"
+        ]
+      },
+      "limitations": "array",
+      "confidence": "optional",
+      "decision_notes": "array",
+      "versions": "object"
+    }
+  }
+}
