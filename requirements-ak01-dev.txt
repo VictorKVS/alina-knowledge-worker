@@ -1,0 +1,5 @@
+-r requirements-ak01.txt
+ruff>=0.8
+mypy>=1.13
+bandit>=1.7
+pip-audit>=2.7
