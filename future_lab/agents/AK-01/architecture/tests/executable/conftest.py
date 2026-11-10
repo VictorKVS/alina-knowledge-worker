@@ -23,6 +23,9 @@ REQUIRED_METHODS = {
     "build_prompt_package",
     "mark_source_stale",
     "impact_analysis",
+    "check_source_integrity",
+    "invoke_tool",
+    "send_model_context",
 }
 
 
