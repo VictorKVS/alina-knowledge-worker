@@ -25,6 +25,19 @@ footer{margin-top:42px;border-top:1px solid var(--line);padding-top:18px;color:v
 <body><main class="wrap">
 <section class="hero"><div class="eyebrow">FATHER / AU-01 / PMP-01</div><h1>Future Lab<br>«Расчёты будущего»</h1><p>Лаборатория воспроизводимых прогнозов. Каждый результат должен показывать: <b>какой метод</b> применён, <b>на каких данных</b>, <b>по какому алгоритму</b>, <b>из какого авторитетного источника</b> и <b>как метод прошёл backtesting</b>.</p></section>
 
+
+<section class="section"><h2>FATHER Forecasting Core</h2>
+<p>Единая база прогнозирования для всех агентов FATHER. Агент формулирует задачу и ограничения, а ядро выбирает методы, запускает сравнение, оценивает неопределённость, backtest, ресурсы и энергию.</p>
+<div class="flow">AGENT → FORECAST REQUEST → CLASSIFY → SELECT METHODS → RUN → COMPARE / ENSEMBLE → BACKTEST → SCORE → RESOURCE / ENERGY PROFILE → RESPONSE</div>
+<div class="grid">
+<div class="card"><h3>Method Registry</h3><p>Единый каталог методов и паспортов.</p></div>
+<div class="card"><h3>Method Selector</h3><p>Выбор кандидатов по домену, горизонту, данным, точности и ограничениям.</p></div>
+<div class="card"><h3>Backtest Engine</h3><p>Проверка метода на известном будущем и rolling-origin validation.</p></div>
+<div class="card"><h3>Score Registry</h3><p>Репутация метода хранится по контексту, а не как одна глобальная оценка.</p></div>
+<div class="card"><h3>Resource Profile</h3><p>CPU, RAM, GPU, VRAM, latency, throughput и сложность развёртывания.</p></div>
+<div class="card"><h3>Energy Profile</h3><p>Энергозатраты маркируются как MEASURED, ESTIMATED или UNKNOWN — без выдуманных значений.</p></div>
+</div></section>
+
 <section class="section"><h2>Принцип работы</h2><div class="flow">TASK → CLASSIFY → SELECT METHODS → CHECK ASSUMPTIONS → RUN → COMPARE / ENSEMBLE → FORECAST → KNOWN FUTURE → BACKTEST → METHOD SCORE REGISTRY</div></section>
 
 <section class="section"><h2>Научный пул</h2><div class="grid">
