@@ -1,22 +1,18 @@
-# Method Passport v1
+# Method Passport v2
 
-Каждый метод Future Lab оформляется по одному контракту.
+Все прогнозные, аналитические, сетевые, экспертные и сравнительные методы Future Lab оформляются по единому контракту.
 
 ```yaml
 method:
   id: TS-SES-01
   name: Simple Exponential Smoothing
   family: time_series
+  status: RUNNABLE
   evidence_class: SCIENTIFIC_A
 
   purpose:
     predicts:
       - future_level
-
-  authoritative_sources:
-    - id: SRC-HYNDMAN-FPP3
-      type: academic_text
-      url: https://otexts.com/fpp3/
 
   inputs:
     - observations
@@ -25,17 +21,27 @@ method:
 
   outputs:
     - point_forecast
+    - diagnostics
+
+  algorithm:
+    summary: recursive exponentially weighted level
+    code: future_lab.methods:simple_exponential_smoothing
+
+  applications:
+    - short-horizon level forecasting
+    - baseline comparison
 
   assumptions:
     - no material trend
     - no material seasonality
 
-  unsuitable_when:
-    - strong trend dominates
-    - strong seasonal structure dominates
+  limitations:
+    - strong trend reduces adequacy
+    - structural breaks invalidate historical pattern
 
-  algorithm:
-    reference: future_lab.methods:simple_exponential_smoothing
+  unsuitable_when:
+    - assumptions are materially violated
+    - validation data are unavailable
 
   verification:
     unit_tests: true
@@ -43,25 +49,44 @@ method:
     recommended_metrics:
       - MAE
       - RMSE
+      - MASE
 
-  status: RUNNABLE
+  sources:
+    - SRC-HYNDMAN-FPP3
+
+  conclusion:
+    summary: use for level-only processes and as a transparent benchmark
 ```
+
+## Обязательные поля паспорта
+
+1. **Что предсказывает / решает.**
+2. **Входные данные.**
+3. **Выход.**
+4. **Алгоритм / формула.**
+5. **Где применять.**
+6. **Предпосылки.**
+7. **Ограничения.**
+8. **Когда не применять.**
+9. **Метрики проверки.**
+10. **Источники и класс доказательности.**
+11. **Код и тесты.**
+12. **Backtesting / qualification.**
+13. **Практический вывод.**
 
 ## Правило допуска
 
-Метод не получает статус `RUNNABLE`, если отсутствует хотя бы одно из:
+`DISCOVERED` — метод найден и описан.
 
-- источник;
-- алгоритм;
-- код;
-- тест;
-- описание предпосылок.
+`DESIGNED` — определено место в архитектуре и контракт.
 
-Метод не получает статус `QUALIFIED`, пока не проведён backtesting на релевантном классе задач.
+`RUNNABLE` — есть источник, алгоритм, код, тест и описание предпосылок.
+
+`QUALIFIED` — выполнен backtesting на релевантном классе задач и зарегистрирован score.
+
+`CATALOG_ONLY` — хранится для исторического/сравнительного исследования, но не используется как научно квалифицированный прогноз.
 
 ## Репутация метода
-
-Future Lab хранит оценку не «вообще», а по контексту:
 
 ```text
 method
@@ -70,7 +95,8 @@ method
 + data shape
 + task type
 + dataset/version
++ implementation/version
 → score
 ```
 
-Поэтому метод может быть сильным для одного режима и слабым для другого.
+Один и тот же метод может быть сильным в одном режиме и слабым в другом. Поэтому глобального «лучшего метода» в реестре нет.
