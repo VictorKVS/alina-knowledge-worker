@@ -17,6 +17,12 @@ REQUIRED_METHODS = {
     "simulate_failure",
     "get_events",
     "get_audit",
+    "get_graph",
+    "build_procedure",
+    "build_checklist",
+    "build_prompt_package",
+    "mark_source_stale",
+    "impact_analysis",
 }
 
 
