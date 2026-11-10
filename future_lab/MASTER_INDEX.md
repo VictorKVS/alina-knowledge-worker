@@ -39,6 +39,29 @@
 | Survival / Hazard | Time-to-event | PLANNED |
 | Causal models | Causal / counterfactual prediction | PLANNED |
 
+## 3A. Graph & Network Methods
+
+Статус: **DESIGNED / DISCOVERED**.
+
+Зафиксированы:
+- Shortest Path;
+- Minimum Spanning Tree;
+- Maximum Flow / Minimum Cut;
+- Travelling Salesman Problem;
+- Critical Path Method (CPM);
+- PERT;
+- GERT.
+
+Назначение:
+- оптимизация маршрутов и порядка действий;
+- вычисление bottleneck/throughput;
+- сетевое планирование FATHER Factory;
+- критический путь и временные резервы;
+- вероятностные workflow агентов;
+- графы зависимостей, знаний и причинности.
+
+Пакет: `future_lab/graph_network/`.
+
 ## 4. Narrative Prediction Pool
 
 Статус: **DESIGNED / NOT YET QUALIFIED**.
@@ -131,6 +154,15 @@ AU-01 / FUTURE LAB
 │   ├── Mean             [RUNNABLE]
 │   ├── Drift            [RUNNABLE]
 │   └── SES              [RUNNABLE]
+│
+├── GRAPH / NETWORK
+│   ├── Shortest Path    [DISCOVERED]
+│   ├── MST              [DISCOVERED]
+│   ├── Max Flow         [DISCOVERED]
+│   ├── TSP              [DISCOVERED]
+│   ├── CPM              [DISCOVERED]
+│   ├── PERT             [DISCOVERED]
+│   └── GERT             [DISCOVERED]
 │
 ├── NARRATIVE
 │   └── ALINA BOOK 2 Prediction Pool [DESIGNED]
