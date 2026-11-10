@@ -1,0 +1,59 @@
+schema_version: "1.0"
+object_type: knowledge_unit
+
+knowledge_unit:
+  id:
+  type: CONCEPT|METHOD|ALGORITHM|FORMULA|CLAIM|EVIDENCE|LIMITATION|ASSUMPTION|METRIC|DATASET
+  name:
+  state: RAW|EXTRACTED|VERIFIED|QUALIFIED
+
+target_relevance:
+  agents: []
+  tasks: []
+  capabilities: []
+
+content:
+  definition:
+  mathematical_basis:
+  algorithm:
+  inputs: []
+  outputs: []
+  assumptions: []
+  limitations: []
+  unsuitable_when: []
+  examples: []
+
+source:
+  source_id:
+  source_type:
+  title:
+  authors: []
+  edition:
+  year:
+  chapter:
+  section:
+  pages:
+  exact_location:
+  evidence_class:
+
+relations:
+  depends_on: []
+  related_to: []
+  contradicts: []
+  supports: []
+  supersedes: []
+
+implementation:
+  refs: []
+  tests: []
+  datasets: []
+
+confidence:
+  value:
+  rationale:
+
+provenance:
+  extracted_by: AK-01
+  reviewed_by:
+  created_at:
+  updated_at:
