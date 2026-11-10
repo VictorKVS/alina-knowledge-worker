@@ -1,0 +1,29 @@
+version: 1
+input:
+  required:
+    - product_id
+    - product_class
+    - functions
+    - quality_requirements
+  optional:
+    - nonfunctional_requirements
+    - security_requirements
+    - regulatory_requirements
+    - infrastructure
+    - budget_constraints
+    - delivery_constraints
+
+output:
+  required:
+    - task_graph
+    - decision_graph
+    - competency_demand
+    - selected_roles
+    - coverage
+    - gaps
+    - qualification_plan
+
+coverage_rule:
+  critical_competency_must_be_covered: true
+  title_match_is_insufficient: true
+  project_specific_competencies_allowed: true
