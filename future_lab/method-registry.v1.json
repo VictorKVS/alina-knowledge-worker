@@ -204,6 +204,38 @@
       "status": "DISCOVERED",
       "evidence_class": "EXPERIMENTAL",
       "rule": "Discovery complete. Requires authoritative source, code, tests and qualification before RUNNABLE."
+    },
+    {
+      "id": "TS-ABS-GROWTH-01",
+      "family": "time_series",
+      "name": "Mean absolute increment extrapolation",
+      "status": "DISCOVERED",
+      "evidence_class": "EXPERIMENTAL",
+      "rule": "Educational source captured; qualify against authoritative time-series reference before RUNNABLE."
+    },
+    {
+      "id": "TS-GROWTH-RATE-01",
+      "family": "time_series",
+      "name": "Mean growth-rate extrapolation",
+      "status": "DISCOVERED",
+      "evidence_class": "EXPERIMENTAL",
+      "rule": "Requires implementation, tests and authoritative-source qualification."
+    },
+    {
+      "id": "TS-TREND-LINE-01",
+      "family": "time_series",
+      "name": "Trend-line extrapolation",
+      "status": "DISCOVERED",
+      "evidence_class": "EXPERIMENTAL",
+      "rule": "Requires explicit trend model selection, diagnostics, code and backtest."
+    },
+    {
+      "id": "TS-INTERVAL-01",
+      "family": "forecast_uncertainty",
+      "name": "Forecast interval",
+      "status": "DISCOVERED",
+      "evidence_class": "EXPERIMENTAL",
+      "rule": "Interval formulation must be tied to the selected forecasting model and qualified statistically."
     }
   ]
 }
