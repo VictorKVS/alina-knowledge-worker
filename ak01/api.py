@@ -5,6 +5,7 @@ from fastapi import FastAPI, HTTPException
 from .application import KnowledgeApplication
 from .contracts import CreateKnowledgeJob, RegisterSource
 from .events import InMemoryEventBus
+from .middleware import CorrelationIdMiddleware
 from .repositories import InMemoryJobRepository
 
 
@@ -13,6 +14,7 @@ events = InMemoryEventBus()
 app_service = KnowledgeApplication(jobs, events)
 
 app = FastAPI(title="AK-01 ALINA Knowledge Architect", version="0.1.0")
+app.add_middleware(CorrelationIdMiddleware)
 
 
 @app.get("/health/live")
