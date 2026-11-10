@@ -49,6 +49,20 @@ footer{margin-top:42px;border-top:1px solid var(--line);padding-top:18px;color:v
 <div class="card method"><span class="badge planned">DISCOVERED</span><h3>GERT</h3><p>Вероятностные переходы, ветвления, циклы и возвраты.</p><small>Особенно подходит для agent workflow и повторной обработки.</small></div>
 </div></section>
 
+
+<section class="section"><h2>Объединение прогнозов / Ensemble Lab</h2><p>Несколько независимых методов дают свои прогнозы, после чего отдельная стратегия рассчитывает веса и формирует комбинированный прогноз. Веса затем проверяются и обновляются по фактическим ошибкам.</p>
+<div class="flow">METHOD A + METHOD B + METHOD C → WEIGHT STRATEGY → ENSEMBLE → FACT → BACKTEST → UPDATE WEIGHTS</div>
+<div class="grid">
+<div class="card method"><span class="badge planned">DISCOVERED</span><h3>Simple / Trimmed Mean</h3><p>Равные веса либо усечение экстремальных индивидуальных прогнозов.</p><small>ENS-AVG-01 · ENS-TRIM-01</small></div>
+<div class="card method"><span class="badge planned">DISCOVERED</span><h3>Inverse Error</h3><p>Более точные на ретроспективе модели получают больший вес: MAE, MSE, RMSE, MAPE и другие ошибки.</p><small>ENS-INVERR-01 · ENS-INVMSE-01</small></div>
+<div class="card method"><span class="badge planned">DISCOVERED</span><h3>Bates–Granger</h3><p>Весовая комбинация, ориентированная на минимизацию дисперсии ошибки объединённого прогноза.</p><small>ENS-BG-01</small></div>
+<div class="card method"><span class="badge planned">DISCOVERED</span><h3>Regression Combination</h3><p>Веса определяются регрессионно / через МНК, с возможными ограничениями.</p><small>ENS-OLS-01 · ENS-GR-01</small></div>
+<div class="card method"><span class="badge planned">DISCOVERED</span><h3>AIC / BIC Weights</h3><p>Модели получают веса на основе информационных критериев.</p><small>ENS-AIC-01 · ENS-BIC-01</small></div>
+<div class="card method"><span class="badge planned">DISCOVERED</span><h3>Adaptive Weights</h3><p>Вес пересчитывается по свежим ошибкам, чтобы ансамбль реагировал на смену режима.</p><small>ENS-ADAPT-01</small></div>
+<div class="card method"><span class="badge planned">DISCOVERED</span><h3>Optimization</h3><p>Поиск весов через квадратичное или нелинейное программирование при ограничениях на сумму и диапазон весов.</p><small>ENS-QP-01 · ENS-MAPE-OPT-01</small></div>
+<div class="card method"><span class="badge planned">DISCOVERED</span><h3>Pairwise / Factor</h3><p>Попарные предпочтения и факторный анализ как альтернативные способы построения весов.</p><small>ENS-PAIR-01 · ENS-FACTOR-01</small></div>
+</div></section>
+
 <section class="section"><h2>ALINA BOOK 2 — Narrative Prediction Pool</h2><div class="grid">
 <div class="card"><h3>Character Goal / Need</h3><p>Потребность → цель → препятствие → выбор → последствия.</p></div>
 <div class="card"><h3>Plot Threads</h3><p>Незавершённые линии ранжируются по вероятности ближайшего развития.</p></div>
