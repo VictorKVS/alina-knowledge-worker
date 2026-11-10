@@ -1,0 +1,2886 @@
+{
+  "schema_version": "1.0",
+  "title": "FATHER Future Lab — Method Passport Catalog",
+  "generated_from": "PMP-01",
+  "count": 53,
+  "passports": [
+    {
+      "id": "TS-NAIVE-01",
+      "name": "Naive forecast",
+      "family": "time_series",
+      "status": "RUNNABLE",
+      "evidence_class": "SCIENTIFIC_A",
+      "purpose": {
+        "predicts": [
+          "future numeric level",
+          "short-horizon continuation"
+        ]
+      },
+      "inputs": [
+        "ordered observations",
+        "forecast horizon"
+      ],
+      "outputs": [
+        "forecast / method-specific result",
+        "diagnostics"
+      ],
+      "algorithm": "ŷ(t+h)=y(t) for a non-seasonal naive forecast",
+      "applications": [
+        "mandatory benchmark for time-series models"
+      ],
+      "assumptions": [
+        "historical pattern contains usable information about the near future"
+      ],
+      "limitations": [
+        "ignores trend and seasonality",
+        "baseline only"
+      ],
+      "unsuitable_when": [
+        "method assumptions are materially violated",
+        "no validation/backtest is available"
+      ],
+      "verification": {
+        "code": "future_lab.methods:naive",
+        "unit_tests": true,
+        "backtest_required": true,
+        "metrics": [
+          "MAE",
+          "RMSE",
+          "MASE"
+        ]
+      },
+      "sources": [
+        "SRC-HYNDMAN-FPP3"
+      ],
+      "conclusion": "Use as transparent baseline or when data are limited; always compare with a naive benchmark and rolling backtest.",
+      "qualification_rule": "Requires source, algorithm, implementation/tests and relevant backtest."
+    },
+    {
+      "id": "TS-MEAN-01",
+      "name": "Historical mean",
+      "family": "time_series",
+      "status": "RUNNABLE",
+      "evidence_class": "SCIENTIFIC_A",
+      "purpose": {
+        "predicts": [
+          "future numeric level",
+          "short-horizon continuation"
+        ]
+      },
+      "inputs": [
+        "ordered observations",
+        "forecast horizon"
+      ],
+      "outputs": [
+        "forecast / method-specific result",
+        "diagnostics"
+      ],
+      "algorithm": "ŷ = arithmetic mean of historical levels",
+      "applications": [
+        "sales/demand baselines",
+        "weather baselines",
+        "load and capacity baselines",
+        "benchmark for complex models"
+      ],
+      "assumptions": [
+        "stable level without material trend"
+      ],
+      "limitations": [
+        "poor under trend, seasonality or structural break"
+      ],
+      "unsuitable_when": [
+        "method assumptions are materially violated",
+        "no validation/backtest is available"
+      ],
+      "verification": {
+        "code": "future_lab.methods:historical_mean",
+        "unit_tests": true,
+        "backtest_required": true,
+        "metrics": [
+          "MAE",
+          "RMSE",
+          "MASE"
+        ]
+      },
+      "sources": [
+        "SRC-HYNDMAN-FPP3"
+      ],
+      "conclusion": "Use as transparent baseline or when data are limited; always compare with a naive benchmark and rolling backtest.",
+      "qualification_rule": "Requires source, algorithm, implementation/tests and relevant backtest."
+    },
+    {
+      "id": "TS-DRIFT-01",
+      "name": "Drift method",
+      "family": "time_series",
+      "status": "RUNNABLE",
+      "evidence_class": "SCIENTIFIC_A",
+      "purpose": {
+        "predicts": [
+          "future numeric level",
+          "short-horizon continuation"
+        ]
+      },
+      "inputs": [
+        "ordered observations",
+        "forecast horizon"
+      ],
+      "outputs": [
+        "forecast / method-specific result",
+        "diagnostics"
+      ],
+      "algorithm": "extend the average change from first to last observation linearly",
+      "applications": [
+        "sales/demand baselines",
+        "weather baselines",
+        "load and capacity baselines",
+        "benchmark for complex models"
+      ],
+      "assumptions": [
+        "approximately linear long-run change"
+      ],
+      "limitations": [
+        "sensitive to endpoints",
+        "no seasonality"
+      ],
+      "unsuitable_when": [
+        "method assumptions are materially violated",
+        "no validation/backtest is available"
+      ],
+      "verification": {
+        "code": "future_lab.methods:drift",
+        "unit_tests": true,
+        "backtest_required": true,
+        "metrics": [
+          "MAE",
+          "RMSE",
+          "MASE"
+        ]
+      },
+      "sources": [
+        "SRC-HYNDMAN-FPP3"
+      ],
+      "conclusion": "Use as transparent baseline or when data are limited; always compare with a naive benchmark and rolling backtest.",
+      "qualification_rule": "Requires source, algorithm, implementation/tests and relevant backtest."
+    },
+    {
+      "id": "TS-SES-01",
+      "name": "Simple exponential smoothing",
+      "family": "time_series",
+      "status": "RUNNABLE",
+      "evidence_class": "SCIENTIFIC_A",
+      "purpose": {
+        "predicts": [
+          "future numeric level",
+          "short-horizon continuation"
+        ]
+      },
+      "inputs": [
+        "ordered observations",
+        "forecast horizon"
+      ],
+      "outputs": [
+        "forecast / method-specific result",
+        "diagnostics"
+      ],
+      "algorithm": "recursive exponentially weighted level with smoothing parameter α",
+      "applications": [
+        "sales/demand baselines",
+        "weather baselines",
+        "load and capacity baselines",
+        "benchmark for complex models"
+      ],
+      "assumptions": [
+        "level process; no material trend or seasonality"
+      ],
+      "limitations": [
+        "inadequate for strong trend/seasonality"
+      ],
+      "unsuitable_when": [
+        "method assumptions are materially violated",
+        "no validation/backtest is available"
+      ],
+      "verification": {
+        "code": "future_lab.methods:simple_exponential_smoothing",
+        "unit_tests": true,
+        "backtest_required": true,
+        "metrics": [
+          "MAE",
+          "RMSE",
+          "MASE"
+        ]
+      },
+      "sources": [
+        "SRC-HYNDMAN-FPP3"
+      ],
+      "conclusion": "Use as transparent baseline or when data are limited; always compare with a naive benchmark and rolling backtest.",
+      "qualification_rule": "Requires source, algorithm, implementation/tests and relevant backtest."
+    },
+    {
+      "id": "NAV-KALMAN-01",
+      "name": "Kalman-family state estimation",
+      "family": "state_estimation",
+      "status": "PLANNED",
+      "evidence_class": "SCIENTIFIC_A",
+      "purpose": {
+        "predicts": [
+          "latent/current state and its evolution"
+        ]
+      },
+      "inputs": [
+        "state model",
+        "observations",
+        "noise models"
+      ],
+      "outputs": [
+        "forecast / method-specific result",
+        "diagnostics"
+      ],
+      "algorithm": "Formal algorithm to be finalized during qualification.",
+      "applications": [
+        "navigation",
+        "sensor fusion",
+        "equipment state",
+        "tracking"
+      ],
+      "assumptions": [
+        "state and observation equations are sufficiently accurate"
+      ],
+      "limitations": [
+        "wrong noise/model assumptions degrade estimates",
+        "nonlinear/non-Gaussian systems may require variants"
+      ],
+      "unsuitable_when": [
+        "method assumptions are materially violated",
+        "no validation/backtest is available"
+      ],
+      "verification": {
+        "code": null,
+        "unit_tests": false,
+        "backtest_required": true,
+        "metrics": [
+          "RMSE",
+          "innovation diagnostics",
+          "consistency tests"
+        ]
+      },
+      "sources": [
+        "SRC-NASA-NAV"
+      ],
+      "conclusion": "Strong for sequential state estimation; choose the filter variant to match system dynamics.",
+      "qualification_rule": "Requires source, algorithm, implementation/tests and relevant backtest."
+    },
+    {
+      "id": "PROB-BAYES-01",
+      "name": "Bayesian probabilistic model",
+      "family": "bayesian",
+      "status": "PLANNED",
+      "evidence_class": "SCIENTIFIC_A",
+      "purpose": {
+        "predicts": [
+          "posterior probability",
+          "probabilistic future outcomes"
+        ]
+      },
+      "inputs": [
+        "prior",
+        "likelihood/evidence",
+        "model"
+      ],
+      "outputs": [
+        "forecast / method-specific result",
+        "diagnostics"
+      ],
+      "algorithm": "Formal algorithm to be finalized during qualification.",
+      "applications": [
+        "hypothesis ranking",
+        "risk",
+        "OSINT",
+        "uncertainty-aware forecasting"
+      ],
+      "assumptions": [
+        "prior and likelihood are explicit and defensible"
+      ],
+      "limitations": [
+        "results depend on model/prior",
+        "computational cost may be high"
+      ],
+      "unsuitable_when": [
+        "method assumptions are materially violated",
+        "no validation/backtest is available"
+      ],
+      "verification": {
+        "code": null,
+        "unit_tests": false,
+        "backtest_required": true,
+        "metrics": [
+          "log score",
+          "Brier score",
+          "calibration"
+        ]
+      },
+      "sources": [
+        "SRC-STAN"
+      ],
+      "conclusion": "Prefer when uncertainty and competing hypotheses are central.",
+      "qualification_rule": "Requires source, algorithm, implementation/tests and relevant backtest."
+    },
+    {
+      "id": "ENS-01",
+      "name": "Ensemble forecast and uncertainty",
+      "family": "ensemble",
+      "status": "PLANNED",
+      "evidence_class": "SCIENTIFIC_A",
+      "purpose": {
+        "predicts": [
+          "combined forecast and uncertainty"
+        ]
+      },
+      "inputs": [
+        "multiple model forecasts"
+      ],
+      "outputs": [
+        "forecast / method-specific result",
+        "diagnostics"
+      ],
+      "algorithm": "Formal algorithm to be finalized during qualification.",
+      "applications": [
+        "weather",
+        "robust production forecasting",
+        "model-risk reduction"
+      ],
+      "assumptions": [
+        "component models add complementary information"
+      ],
+      "limitations": [
+        "correlated errors reduce benefit",
+        "bad weighting can degrade performance"
+      ],
+      "unsuitable_when": [
+        "method assumptions are materially violated",
+        "no validation/backtest is available"
+      ],
+      "verification": {
+        "code": null,
+        "unit_tests": false,
+        "backtest_required": true,
+        "metrics": [
+          "MAE",
+          "RMSE",
+          "Brier/log score",
+          "calibration"
+        ]
+      },
+      "sources": [
+        "SRC-ECMWF-ENS"
+      ],
+      "conclusion": "Use when no single model dominates consistently; preserve individual forecasts for auditability.",
+      "qualification_rule": "Requires source, algorithm, implementation/tests and relevant backtest."
+    },
+    {
+      "id": "DIV-ASTRO-01",
+      "name": "Natal astrology",
+      "family": "cultural_divination",
+      "status": "CATALOG_ONLY",
+      "evidence_class": "NON_SCIENTIFIC",
+      "purpose": {
+        "predicts": [
+          "claims defined by the historical/divinatory rule system"
+        ]
+      },
+      "inputs": [
+        "system-specific symbolic inputs"
+      ],
+      "outputs": [
+        "forecast / method-specific result",
+        "diagnostics"
+      ],
+      "algorithm": "historical astrology rule set only; scientific validation is not assumed",
+      "applications": [
+        "historical/cultural comparison",
+        "blind benchmark experiments"
+      ],
+      "assumptions": [
+        "rules are documented reproducibly"
+      ],
+      "limitations": [
+        "not scientifically validated as predictive evidence",
+        "must not influence scientific confidence or high-stakes decisions"
+      ],
+      "unsuitable_when": [
+        "method assumptions are materially violated",
+        "no validation/backtest is available"
+      ],
+      "verification": {
+        "code": null,
+        "unit_tests": false,
+        "backtest_required": true,
+        "metrics": [
+          "blind-test accuracy against baseline",
+          "calibration where probabilities exist"
+        ]
+      },
+      "sources": [
+        "SRC-NATURE-ASTROLOGY"
+      ],
+      "conclusion": "Keep strictly separated as NON_SCIENTIFIC; may be tested experimentally but never labeled scientific.",
+      "qualification_rule": "May be reproduced as a cultural/historical algorithm for comparison, never labeled scientifically validated."
+    },
+    {
+      "id": "DIV-PALM-01",
+      "name": "Palmistry / chiromancy",
+      "family": "cultural_divination",
+      "status": "CATALOG_ONLY",
+      "evidence_class": "NON_SCIENTIFIC",
+      "purpose": {
+        "predicts": [
+          "claims defined by the historical/divinatory rule system"
+        ]
+      },
+      "inputs": [
+        "system-specific symbolic inputs"
+      ],
+      "outputs": [
+        "forecast / method-specific result",
+        "diagnostics"
+      ],
+      "algorithm": "historical palmistry/chiromancy rule set only; scientific validation is not assumed",
+      "applications": [
+        "historical/cultural comparison",
+        "blind benchmark experiments"
+      ],
+      "assumptions": [
+        "rules are documented reproducibly"
+      ],
+      "limitations": [
+        "not scientifically validated as predictive evidence",
+        "must not influence scientific confidence or high-stakes decisions"
+      ],
+      "unsuitable_when": [
+        "method assumptions are materially violated",
+        "no validation/backtest is available"
+      ],
+      "verification": {
+        "code": null,
+        "unit_tests": false,
+        "backtest_required": true,
+        "metrics": [
+          "blind-test accuracy against baseline",
+          "calibration where probabilities exist"
+        ]
+      },
+      "sources": [
+        "SRC-NCBI-PALMISTRY"
+      ],
+      "conclusion": "Keep strictly separated as NON_SCIENTIFIC; may be tested experimentally but never labeled scientific.",
+      "qualification_rule": "May be documented as a historical divinatory system; predictive claims must not be presented as scientific evidence."
+    },
+    {
+      "id": "GRAPH-SP-01",
+      "name": "Shortest path",
+      "family": "graph_network",
+      "status": "DISCOVERED",
+      "evidence_class": "EXPERIMENTAL",
+      "purpose": {
+        "predicts": [
+          "optimal route / network structure / bottleneck"
+        ]
+      },
+      "inputs": [
+        "vertices",
+        "edges",
+        "weights/capacities"
+      ],
+      "outputs": [
+        "forecast / method-specific result",
+        "diagnostics"
+      ],
+      "algorithm": "shortest-path algorithms such as Dijkstra/Bellman–Ford depending on weight conditions",
+      "applications": [
+        "agent routing",
+        "OSINT source traversal",
+        "logistics",
+        "infrastructure topology"
+      ],
+      "assumptions": [
+        "graph accurately represents the system and weights"
+      ],
+      "limitations": [
+        "dynamic/stochastic networks may invalidate static solution",
+        "some problems are computationally hard"
+      ],
+      "unsuitable_when": [
+        "method assumptions are materially violated",
+        "no validation/backtest is available"
+      ],
+      "verification": {
+        "code": null,
+        "unit_tests": false,
+        "backtest_required": true,
+        "metrics": [
+          "path cost",
+          "total tree weight",
+          "flow",
+          "runtime"
+        ]
+      },
+      "sources": [],
+      "conclusion": "Use for structural optimization; it predicts consequences of network constraints rather than future time series by itself.",
+      "qualification_rule": "Discovery complete. Requires authoritative source, code, tests and qualification before RUNNABLE."
+    },
+    {
+      "id": "GRAPH-MST-01",
+      "name": "Minimum spanning tree",
+      "family": "graph_network",
+      "status": "DISCOVERED",
+      "evidence_class": "EXPERIMENTAL",
+      "purpose": {
+        "predicts": [
+          "optimal route / network structure / bottleneck"
+        ]
+      },
+      "inputs": [
+        "vertices",
+        "edges",
+        "weights/capacities"
+      ],
+      "outputs": [
+        "forecast / method-specific result",
+        "diagnostics"
+      ],
+      "algorithm": "minimum spanning tree, e.g. Prim/Kruskal",
+      "applications": [
+        "agent routing",
+        "OSINT source traversal",
+        "logistics",
+        "infrastructure topology"
+      ],
+      "assumptions": [
+        "graph accurately represents the system and weights"
+      ],
+      "limitations": [
+        "dynamic/stochastic networks may invalidate static solution",
+        "some problems are computationally hard"
+      ],
+      "unsuitable_when": [
+        "method assumptions are materially violated",
+        "no validation/backtest is available"
+      ],
+      "verification": {
+        "code": null,
+        "unit_tests": false,
+        "backtest_required": true,
+        "metrics": [
+          "path cost",
+          "total tree weight",
+          "flow",
+          "runtime"
+        ]
+      },
+      "sources": [],
+      "conclusion": "Use for structural optimization; it predicts consequences of network constraints rather than future time series by itself.",
+      "qualification_rule": "Discovery complete. Requires authoritative source, code, tests and qualification before RUNNABLE."
+    },
+    {
+      "id": "GRAPH-FLOW-01",
+      "name": "Maximum flow / minimum cut",
+      "family": "graph_network",
+      "status": "DISCOVERED",
+      "evidence_class": "EXPERIMENTAL",
+      "purpose": {
+        "predicts": [
+          "optimal route / network structure / bottleneck"
+        ]
+      },
+      "inputs": [
+        "vertices",
+        "edges",
+        "weights/capacities"
+      ],
+      "outputs": [
+        "forecast / method-specific result",
+        "diagnostics"
+      ],
+      "algorithm": "maximize feasible source-to-sink flow under edge capacities",
+      "applications": [
+        "agent routing",
+        "OSINT source traversal",
+        "logistics",
+        "infrastructure topology"
+      ],
+      "assumptions": [
+        "graph accurately represents the system and weights"
+      ],
+      "limitations": [
+        "dynamic/stochastic networks may invalidate static solution",
+        "some problems are computationally hard"
+      ],
+      "unsuitable_when": [
+        "method assumptions are materially violated",
+        "no validation/backtest is available"
+      ],
+      "verification": {
+        "code": null,
+        "unit_tests": false,
+        "backtest_required": true,
+        "metrics": [
+          "path cost",
+          "total tree weight",
+          "flow",
+          "runtime"
+        ]
+      },
+      "sources": [],
+      "conclusion": "Use for structural optimization; it predicts consequences of network constraints rather than future time series by itself.",
+      "qualification_rule": "Discovery complete. Requires authoritative source, code, tests and qualification before RUNNABLE."
+    },
+    {
+      "id": "GRAPH-TSP-01",
+      "name": "Travelling salesman problem",
+      "family": "graph_network",
+      "status": "DISCOVERED",
+      "evidence_class": "EXPERIMENTAL",
+      "purpose": {
+        "predicts": [
+          "optimal route / network structure / bottleneck"
+        ]
+      },
+      "inputs": [
+        "vertices",
+        "edges",
+        "weights/capacities"
+      ],
+      "outputs": [
+        "forecast / method-specific result",
+        "diagnostics"
+      ],
+      "algorithm": "find minimum tour visiting all required nodes and returning to start",
+      "applications": [
+        "agent routing",
+        "OSINT source traversal",
+        "logistics",
+        "infrastructure topology"
+      ],
+      "assumptions": [
+        "graph accurately represents the system and weights"
+      ],
+      "limitations": [
+        "NP-hard; exact solution scales poorly",
+        "heuristics may be needed"
+      ],
+      "unsuitable_when": [
+        "method assumptions are materially violated",
+        "no validation/backtest is available"
+      ],
+      "verification": {
+        "code": null,
+        "unit_tests": false,
+        "backtest_required": true,
+        "metrics": [
+          "path cost",
+          "total tree weight",
+          "flow",
+          "runtime"
+        ]
+      },
+      "sources": [],
+      "conclusion": "Use for structural optimization; it predicts consequences of network constraints rather than future time series by itself.",
+      "qualification_rule": "Discovery complete. Requires authoritative source, code, tests and qualification before RUNNABLE."
+    },
+    {
+      "id": "GRAPH-CPM-01",
+      "name": "Critical Path Method",
+      "family": "project_network",
+      "status": "DISCOVERED",
+      "evidence_class": "EXPERIMENTAL",
+      "purpose": {
+        "predicts": [
+          "project duration / critical path / probabilistic workflow"
+        ]
+      },
+      "inputs": [
+        "activities",
+        "dependencies",
+        "durations or duration distributions"
+      ],
+      "outputs": [
+        "forecast / method-specific result",
+        "diagnostics"
+      ],
+      "algorithm": "forward/backward pass to compute earliest/latest event times, slack and critical path",
+      "applications": [
+        "FATHER Production Floor",
+        "project schedules",
+        "agent workflows"
+      ],
+      "assumptions": [
+        "dependencies and duration estimates are credible"
+      ],
+      "limitations": [
+        "resource constraints and changing dependencies may require extended models"
+      ],
+      "unsuitable_when": [
+        "method assumptions are materially violated",
+        "no validation/backtest is available"
+      ],
+      "verification": {
+        "code": null,
+        "unit_tests": false,
+        "backtest_required": true,
+        "metrics": [
+          "schedule error",
+          "deadline probability",
+          "critical-path stability"
+        ]
+      },
+      "sources": [],
+      "conclusion": "Use to forecast completion and bottlenecks in work networks; update as actual durations arrive.",
+      "qualification_rule": "Discovery complete. Requires authoritative source, code, tests and qualification before RUNNABLE."
+    },
+    {
+      "id": "GRAPH-PERT-01",
+      "name": "PERT",
+      "family": "project_network",
+      "status": "DISCOVERED",
+      "evidence_class": "EXPERIMENTAL",
+      "purpose": {
+        "predicts": [
+          "project duration / critical path / probabilistic workflow"
+        ]
+      },
+      "inputs": [
+        "activities",
+        "dependencies",
+        "durations or duration distributions"
+      ],
+      "outputs": [
+        "forecast / method-specific result",
+        "diagnostics"
+      ],
+      "algorithm": "project-network forecast using uncertain activity durations / expected duration estimates",
+      "applications": [
+        "FATHER Production Floor",
+        "project schedules",
+        "agent workflows"
+      ],
+      "assumptions": [
+        "dependencies and duration estimates are credible"
+      ],
+      "limitations": [
+        "resource constraints and changing dependencies may require extended models"
+      ],
+      "unsuitable_when": [
+        "method assumptions are materially violated",
+        "no validation/backtest is available"
+      ],
+      "verification": {
+        "code": null,
+        "unit_tests": false,
+        "backtest_required": true,
+        "metrics": [
+          "schedule error",
+          "deadline probability",
+          "critical-path stability"
+        ]
+      },
+      "sources": [],
+      "conclusion": "Use to forecast completion and bottlenecks in work networks; update as actual durations arrive.",
+      "qualification_rule": "Discovery complete. Requires authoritative source, code, tests and qualification before RUNNABLE."
+    },
+    {
+      "id": "GRAPH-GERT-01",
+      "name": "GERT probabilistic network",
+      "family": "project_network",
+      "status": "DISCOVERED",
+      "evidence_class": "EXPERIMENTAL",
+      "purpose": {
+        "predicts": [
+          "project duration / critical path / probabilistic workflow"
+        ]
+      },
+      "inputs": [
+        "activities",
+        "dependencies",
+        "durations or duration distributions"
+      ],
+      "outputs": [
+        "forecast / method-specific result",
+        "diagnostics"
+      ],
+      "algorithm": "probabilistic network with branches, loops and stochastic transitions",
+      "applications": [
+        "FATHER Production Floor",
+        "project schedules",
+        "agent workflows"
+      ],
+      "assumptions": [
+        "dependencies and duration estimates are credible"
+      ],
+      "limitations": [
+        "resource constraints and changing dependencies may require extended models"
+      ],
+      "unsuitable_when": [
+        "method assumptions are materially violated",
+        "no validation/backtest is available"
+      ],
+      "verification": {
+        "code": null,
+        "unit_tests": false,
+        "backtest_required": true,
+        "metrics": [
+          "schedule error",
+          "deadline probability",
+          "critical-path stability"
+        ]
+      },
+      "sources": [],
+      "conclusion": "Use to forecast completion and bottlenecks in work networks; update as actual durations arrive.",
+      "qualification_rule": "Discovery complete. Requires authoritative source, code, tests and qualification before RUNNABLE."
+    },
+    {
+      "id": "TS-ABS-GROWTH-01",
+      "name": "Mean absolute increment extrapolation",
+      "family": "time_series",
+      "status": "DISCOVERED",
+      "evidence_class": "EXPERIMENTAL",
+      "purpose": {
+        "predicts": [
+          "future numeric level",
+          "short-horizon continuation"
+        ]
+      },
+      "inputs": [
+        "ordered observations",
+        "forecast horizon"
+      ],
+      "outputs": [
+        "forecast / method-specific result",
+        "diagnostics"
+      ],
+      "algorithm": "last value + horizon × mean absolute increment",
+      "applications": [
+        "sales/demand baselines",
+        "weather baselines",
+        "load and capacity baselines",
+        "benchmark for complex models"
+      ],
+      "assumptions": [
+        "chain absolute increments are approximately constant"
+      ],
+      "limitations": [
+        "structural breaks reduce accuracy",
+        "long horizons amplify error",
+        "trend/seasonality must match method assumptions"
+      ],
+      "unsuitable_when": [
+        "method assumptions are materially violated",
+        "no validation/backtest is available"
+      ],
+      "verification": {
+        "code": null,
+        "unit_tests": false,
+        "backtest_required": true,
+        "metrics": [
+          "MAE",
+          "RMSE",
+          "MASE"
+        ]
+      },
+      "sources": [],
+      "conclusion": "Use as transparent baseline or when data are limited; always compare with a naive benchmark and rolling backtest.",
+      "qualification_rule": "Educational source captured; qualify against authoritative time-series reference before RUNNABLE."
+    },
+    {
+      "id": "TS-GROWTH-RATE-01",
+      "name": "Mean growth-rate extrapolation",
+      "family": "time_series",
+      "status": "DISCOVERED",
+      "evidence_class": "EXPERIMENTAL",
+      "purpose": {
+        "predicts": [
+          "future numeric level",
+          "short-horizon continuation"
+        ]
+      },
+      "inputs": [
+        "ordered observations",
+        "forecast horizon"
+      ],
+      "outputs": [
+        "forecast / method-specific result",
+        "diagnostics"
+      ],
+      "algorithm": "last value × mean growth coefficient^horizon",
+      "applications": [
+        "sales/demand baselines",
+        "weather baselines",
+        "load and capacity baselines",
+        "benchmark for complex models"
+      ],
+      "assumptions": [
+        "relative growth rate is approximately constant"
+      ],
+      "limitations": [
+        "structural breaks reduce accuracy",
+        "long horizons amplify error",
+        "trend/seasonality must match method assumptions"
+      ],
+      "unsuitable_when": [
+        "method assumptions are materially violated",
+        "no validation/backtest is available"
+      ],
+      "verification": {
+        "code": null,
+        "unit_tests": false,
+        "backtest_required": true,
+        "metrics": [
+          "MAE",
+          "RMSE",
+          "MASE"
+        ]
+      },
+      "sources": [],
+      "conclusion": "Use as transparent baseline or when data are limited; always compare with a naive benchmark and rolling backtest.",
+      "qualification_rule": "Requires implementation, tests and authoritative-source qualification."
+    },
+    {
+      "id": "TS-TREND-LINE-01",
+      "name": "Trend-line extrapolation",
+      "family": "time_series",
+      "status": "DISCOVERED",
+      "evidence_class": "EXPERIMENTAL",
+      "purpose": {
+        "predicts": [
+          "future numeric level",
+          "short-horizon continuation"
+        ]
+      },
+      "inputs": [
+        "ordered observations",
+        "forecast horizon"
+      ],
+      "outputs": [
+        "forecast / method-specific result",
+        "diagnostics"
+      ],
+      "algorithm": "fit trend curve and evaluate it at future t",
+      "applications": [
+        "sales/demand baselines",
+        "weather baselines",
+        "load and capacity baselines",
+        "benchmark for complex models"
+      ],
+      "assumptions": [
+        "historical pattern contains usable information about the near future"
+      ],
+      "limitations": [
+        "curve choice strongly affects extrapolation",
+        "trend may not persist"
+      ],
+      "unsuitable_when": [
+        "method assumptions are materially violated",
+        "no validation/backtest is available"
+      ],
+      "verification": {
+        "code": null,
+        "unit_tests": false,
+        "backtest_required": true,
+        "metrics": [
+          "MAE",
+          "RMSE",
+          "MASE"
+        ]
+      },
+      "sources": [],
+      "conclusion": "Use as transparent baseline or when data are limited; always compare with a naive benchmark and rolling backtest.",
+      "qualification_rule": "Requires explicit trend model selection, diagnostics, code and backtest."
+    },
+    {
+      "id": "TS-INTERVAL-01",
+      "name": "Forecast interval",
+      "family": "forecast_uncertainty",
+      "status": "DISCOVERED",
+      "evidence_class": "EXPERIMENTAL",
+      "purpose": {
+        "predicts": [
+          "range of plausible future values"
+        ]
+      },
+      "inputs": [
+        "point forecast",
+        "model error estimate",
+        "confidence/coverage level"
+      ],
+      "outputs": [
+        "forecast / method-specific result",
+        "diagnostics"
+      ],
+      "algorithm": "model-specific point forecast ± uncertainty term",
+      "applications": [
+        "risk communication",
+        "planning ranges",
+        "decision thresholds"
+      ],
+      "assumptions": [
+        "interval formula matches the forecast model and error process"
+      ],
+      "limitations": [
+        "interval formula must match model; generic interval is unsafe"
+      ],
+      "unsuitable_when": [
+        "method assumptions are materially violated",
+        "no validation/backtest is available"
+      ],
+      "verification": {
+        "code": null,
+        "unit_tests": false,
+        "backtest_required": true,
+        "metrics": [
+          "coverage",
+          "interval width",
+          "Winkler/interval score"
+        ]
+      },
+      "sources": [],
+      "conclusion": "A point forecast without uncertainty is incomplete for consequential decisions.",
+      "qualification_rule": "Interval formulation must be tied to the selected forecasting model and qualified statistically."
+    },
+    {
+      "id": "ENS-AVG-01",
+      "name": "Simple average forecast combination",
+      "family": "forecast_combination",
+      "status": "DISCOVERED",
+      "evidence_class": "SCIENTIFIC_B",
+      "purpose": {
+        "predicts": [
+          "weighted combined forecast"
+        ]
+      },
+      "inputs": [
+        "individual forecasts",
+        "historical forecast errors",
+        "weight strategy"
+      ],
+      "outputs": [
+        "forecast / method-specific result",
+        "diagnostics"
+      ],
+      "algorithm": "equal weights wi=1/K",
+      "applications": [
+        "multi-model forecasting",
+        "model-risk reduction",
+        "adaptive forecasting"
+      ],
+      "assumptions": [
+        "historical errors are informative about future performance"
+      ],
+      "limitations": [
+        "weight overfitting",
+        "regime change",
+        "highly correlated component errors"
+      ],
+      "unsuitable_when": [
+        "method assumptions are materially violated",
+        "no validation/backtest is available"
+      ],
+      "verification": {
+        "code": null,
+        "unit_tests": false,
+        "backtest_required": true,
+        "metrics": [
+          "MAE",
+          "RMSE",
+          "MSE",
+          "MAPE",
+          "rolling-origin score"
+        ]
+      },
+      "sources": [
+        "SRC-FRENKEL-SURKOV-2017"
+      ],
+      "conclusion": "A surprisingly strong baseline for combinations; must be included in every ensemble benchmark.",
+      "qualification_rule": "Requires primary-source verification, implementation, tests and rolling-origin backtest before RUNNABLE."
+    },
+    {
+      "id": "ENS-TRIM-01",
+      "name": "Trimmed mean forecast combination",
+      "family": "forecast_combination",
+      "status": "DISCOVERED",
+      "evidence_class": "SCIENTIFIC_B",
+      "purpose": {
+        "predicts": [
+          "weighted combined forecast"
+        ]
+      },
+      "inputs": [
+        "individual forecasts",
+        "historical forecast errors",
+        "weight strategy"
+      ],
+      "outputs": [
+        "forecast / method-specific result",
+        "diagnostics"
+      ],
+      "algorithm": "remove selected extreme component forecasts, then average remaining forecasts",
+      "applications": [
+        "multi-model forecasting",
+        "model-risk reduction",
+        "adaptive forecasting"
+      ],
+      "assumptions": [
+        "historical errors are informative about future performance"
+      ],
+      "limitations": [
+        "weight overfitting",
+        "regime change",
+        "highly correlated component errors"
+      ],
+      "unsuitable_when": [
+        "method assumptions are materially violated",
+        "no validation/backtest is available"
+      ],
+      "verification": {
+        "code": null,
+        "unit_tests": false,
+        "backtest_required": true,
+        "metrics": [
+          "MAE",
+          "RMSE",
+          "MSE",
+          "MAPE",
+          "rolling-origin score"
+        ]
+      },
+      "sources": [
+        "SRC-FRENKEL-SURKOV-2017"
+      ],
+      "conclusion": "Weights are a model of their own and must be trained/backtested separately from component forecasters.",
+      "qualification_rule": "Requires primary-source verification, implementation, tests and rolling-origin backtest before RUNNABLE."
+    },
+    {
+      "id": "ENS-OLS-01",
+      "name": "OLS / regression forecast combination",
+      "family": "forecast_combination",
+      "status": "DISCOVERED",
+      "evidence_class": "SCIENTIFIC_B",
+      "purpose": {
+        "predicts": [
+          "weighted combined forecast"
+        ]
+      },
+      "inputs": [
+        "individual forecasts",
+        "historical forecast errors",
+        "weight strategy"
+      ],
+      "outputs": [
+        "forecast / method-specific result",
+        "diagnostics"
+      ],
+      "algorithm": "regress actual outcomes on component forecasts; coefficients become weights",
+      "applications": [
+        "multi-model forecasting",
+        "model-risk reduction",
+        "adaptive forecasting"
+      ],
+      "assumptions": [
+        "historical errors are informative about future performance"
+      ],
+      "limitations": [
+        "weight overfitting",
+        "regime change",
+        "highly correlated component errors"
+      ],
+      "unsuitable_when": [
+        "method assumptions are materially violated",
+        "no validation/backtest is available"
+      ],
+      "verification": {
+        "code": null,
+        "unit_tests": false,
+        "backtest_required": true,
+        "metrics": [
+          "MAE",
+          "RMSE",
+          "MSE",
+          "MAPE",
+          "rolling-origin score"
+        ]
+      },
+      "sources": [
+        "SRC-FRENKEL-SURKOV-2017"
+      ],
+      "conclusion": "Weights are a model of their own and must be trained/backtested separately from component forecasters.",
+      "qualification_rule": "Requires primary-source verification, implementation, tests and rolling-origin backtest before RUNNABLE."
+    },
+    {
+      "id": "ENS-GR-01",
+      "name": "Granger–Ramanathan forecast combination",
+      "family": "forecast_combination",
+      "status": "DISCOVERED",
+      "evidence_class": "SCIENTIFIC_B",
+      "purpose": {
+        "predicts": [
+          "weighted combined forecast"
+        ]
+      },
+      "inputs": [
+        "individual forecasts",
+        "historical forecast errors",
+        "weight strategy"
+      ],
+      "outputs": [
+        "forecast / method-specific result",
+        "diagnostics"
+      ],
+      "algorithm": "Granger–Ramanathan regression combination with alternative intercept/weight constraints",
+      "applications": [
+        "multi-model forecasting",
+        "model-risk reduction",
+        "adaptive forecasting"
+      ],
+      "assumptions": [
+        "historical errors are informative about future performance"
+      ],
+      "limitations": [
+        "weight overfitting",
+        "regime change",
+        "highly correlated component errors"
+      ],
+      "unsuitable_when": [
+        "method assumptions are materially violated",
+        "no validation/backtest is available"
+      ],
+      "verification": {
+        "code": null,
+        "unit_tests": false,
+        "backtest_required": true,
+        "metrics": [
+          "MAE",
+          "RMSE",
+          "MSE",
+          "MAPE",
+          "rolling-origin score"
+        ]
+      },
+      "sources": [
+        "SRC-FRENKEL-SURKOV-2017"
+      ],
+      "conclusion": "Weights are a model of their own and must be trained/backtested separately from component forecasters.",
+      "qualification_rule": "Requires primary-source verification, implementation, tests and rolling-origin backtest before RUNNABLE."
+    },
+    {
+      "id": "ENS-BG-01",
+      "name": "Bates–Granger minimum-error-variance combination",
+      "family": "forecast_combination",
+      "status": "DISCOVERED",
+      "evidence_class": "SCIENTIFIC_B",
+      "purpose": {
+        "predicts": [
+          "weighted combined forecast"
+        ]
+      },
+      "inputs": [
+        "individual forecasts",
+        "historical forecast errors",
+        "weight strategy"
+      ],
+      "outputs": [
+        "forecast / method-specific result",
+        "diagnostics"
+      ],
+      "algorithm": "choose combination weights to minimize combined forecast-error variance",
+      "applications": [
+        "multi-model forecasting",
+        "model-risk reduction",
+        "adaptive forecasting"
+      ],
+      "assumptions": [
+        "historical errors are informative about future performance"
+      ],
+      "limitations": [
+        "weight overfitting",
+        "regime change",
+        "highly correlated component errors"
+      ],
+      "unsuitable_when": [
+        "method assumptions are materially violated",
+        "no validation/backtest is available"
+      ],
+      "verification": {
+        "code": null,
+        "unit_tests": false,
+        "backtest_required": true,
+        "metrics": [
+          "MAE",
+          "RMSE",
+          "MSE",
+          "MAPE",
+          "rolling-origin score"
+        ]
+      },
+      "sources": [
+        "SRC-FRENKEL-SURKOV-2017"
+      ],
+      "conclusion": "Weights are a model of their own and must be trained/backtested separately from component forecasters.",
+      "qualification_rule": "Requires primary-source verification, implementation, tests and rolling-origin backtest before RUNNABLE."
+    },
+    {
+      "id": "ENS-INVERR-01",
+      "name": "Inverse-error weighting",
+      "family": "forecast_combination",
+      "status": "DISCOVERED",
+      "evidence_class": "SCIENTIFIC_B",
+      "purpose": {
+        "predicts": [
+          "weighted combined forecast"
+        ]
+      },
+      "inputs": [
+        "individual forecasts",
+        "historical forecast errors",
+        "weight strategy"
+      ],
+      "outputs": [
+        "forecast / method-specific result",
+        "diagnostics"
+      ],
+      "algorithm": "weights inversely related to retrospective forecast error",
+      "applications": [
+        "multi-model forecasting",
+        "model-risk reduction",
+        "adaptive forecasting"
+      ],
+      "assumptions": [
+        "historical errors are informative about future performance"
+      ],
+      "limitations": [
+        "weight overfitting",
+        "regime change",
+        "highly correlated component errors"
+      ],
+      "unsuitable_when": [
+        "method assumptions are materially violated",
+        "no validation/backtest is available"
+      ],
+      "verification": {
+        "code": null,
+        "unit_tests": false,
+        "backtest_required": true,
+        "metrics": [
+          "MAE",
+          "RMSE",
+          "MSE",
+          "MAPE",
+          "rolling-origin score"
+        ]
+      },
+      "sources": [
+        "SRC-FRENKEL-SURKOV-2017"
+      ],
+      "conclusion": "Weights are a model of their own and must be trained/backtested separately from component forecasters.",
+      "qualification_rule": "Requires primary-source verification, implementation, tests and rolling-origin backtest before RUNNABLE."
+    },
+    {
+      "id": "ENS-INVMSE-01",
+      "name": "Inverse-MSE weighting",
+      "family": "forecast_combination",
+      "status": "DISCOVERED",
+      "evidence_class": "SCIENTIFIC_B",
+      "purpose": {
+        "predicts": [
+          "weighted combined forecast"
+        ]
+      },
+      "inputs": [
+        "individual forecasts",
+        "historical forecast errors",
+        "weight strategy"
+      ],
+      "outputs": [
+        "forecast / method-specific result",
+        "diagnostics"
+      ],
+      "algorithm": "wi ∝ 1/MSEi, normalized to sum to one",
+      "applications": [
+        "multi-model forecasting",
+        "model-risk reduction",
+        "adaptive forecasting"
+      ],
+      "assumptions": [
+        "historical errors are informative about future performance"
+      ],
+      "limitations": [
+        "weight overfitting",
+        "regime change",
+        "highly correlated component errors"
+      ],
+      "unsuitable_when": [
+        "method assumptions are materially violated",
+        "no validation/backtest is available"
+      ],
+      "verification": {
+        "code": null,
+        "unit_tests": false,
+        "backtest_required": true,
+        "metrics": [
+          "MAE",
+          "RMSE",
+          "MSE",
+          "MAPE",
+          "rolling-origin score"
+        ]
+      },
+      "sources": [
+        "SRC-FRENKEL-SURKOV-2017"
+      ],
+      "conclusion": "Weights are a model of their own and must be trained/backtested separately from component forecasters.",
+      "qualification_rule": "Requires primary-source verification, implementation, tests and rolling-origin backtest before RUNNABLE."
+    },
+    {
+      "id": "ENS-AIC-01",
+      "name": "AIC-weighted forecast combination",
+      "family": "forecast_combination",
+      "status": "DISCOVERED",
+      "evidence_class": "SCIENTIFIC_B",
+      "purpose": {
+        "predicts": [
+          "weighted combined forecast"
+        ]
+      },
+      "inputs": [
+        "individual forecasts",
+        "historical forecast errors",
+        "weight strategy"
+      ],
+      "outputs": [
+        "forecast / method-specific result",
+        "diagnostics"
+      ],
+      "algorithm": "derive normalized model weights from relative AIC support",
+      "applications": [
+        "multi-model forecasting",
+        "model-risk reduction",
+        "adaptive forecasting"
+      ],
+      "assumptions": [
+        "historical errors are informative about future performance"
+      ],
+      "limitations": [
+        "weight overfitting",
+        "regime change",
+        "highly correlated component errors"
+      ],
+      "unsuitable_when": [
+        "method assumptions are materially violated",
+        "no validation/backtest is available"
+      ],
+      "verification": {
+        "code": null,
+        "unit_tests": false,
+        "backtest_required": true,
+        "metrics": [
+          "MAE",
+          "RMSE",
+          "MSE",
+          "MAPE",
+          "rolling-origin score"
+        ]
+      },
+      "sources": [
+        "SRC-FRENKEL-SURKOV-2017"
+      ],
+      "conclusion": "Weights are a model of their own and must be trained/backtested separately from component forecasters.",
+      "qualification_rule": "Requires primary-source verification, implementation, tests and rolling-origin backtest before RUNNABLE."
+    },
+    {
+      "id": "ENS-BIC-01",
+      "name": "BIC-weighted forecast combination",
+      "family": "forecast_combination",
+      "status": "DISCOVERED",
+      "evidence_class": "SCIENTIFIC_B",
+      "purpose": {
+        "predicts": [
+          "weighted combined forecast"
+        ]
+      },
+      "inputs": [
+        "individual forecasts",
+        "historical forecast errors",
+        "weight strategy"
+      ],
+      "outputs": [
+        "forecast / method-specific result",
+        "diagnostics"
+      ],
+      "algorithm": "derive normalized model weights from relative BIC support",
+      "applications": [
+        "multi-model forecasting",
+        "model-risk reduction",
+        "adaptive forecasting"
+      ],
+      "assumptions": [
+        "historical errors are informative about future performance"
+      ],
+      "limitations": [
+        "weight overfitting",
+        "regime change",
+        "highly correlated component errors"
+      ],
+      "unsuitable_when": [
+        "method assumptions are materially violated",
+        "no validation/backtest is available"
+      ],
+      "verification": {
+        "code": null,
+        "unit_tests": false,
+        "backtest_required": true,
+        "metrics": [
+          "MAE",
+          "RMSE",
+          "MSE",
+          "MAPE",
+          "rolling-origin score"
+        ]
+      },
+      "sources": [
+        "SRC-FRENKEL-SURKOV-2017"
+      ],
+      "conclusion": "Weights are a model of their own and must be trained/backtested separately from component forecasters.",
+      "qualification_rule": "Requires primary-source verification, implementation, tests and rolling-origin backtest before RUNNABLE."
+    },
+    {
+      "id": "ENS-ADAPT-01",
+      "name": "Adaptive error-weighted combination",
+      "family": "forecast_combination",
+      "status": "DISCOVERED",
+      "evidence_class": "SCIENTIFIC_B",
+      "purpose": {
+        "predicts": [
+          "weighted combined forecast"
+        ]
+      },
+      "inputs": [
+        "individual forecasts",
+        "historical forecast errors",
+        "weight strategy"
+      ],
+      "outputs": [
+        "forecast / method-specific result",
+        "diagnostics"
+      ],
+      "algorithm": "update weights as recent errors arrive, optionally with exponential forgetting",
+      "applications": [
+        "multi-model forecasting",
+        "model-risk reduction",
+        "adaptive forecasting"
+      ],
+      "assumptions": [
+        "historical errors are informative about future performance"
+      ],
+      "limitations": [
+        "weight overfitting",
+        "regime change",
+        "highly correlated component errors"
+      ],
+      "unsuitable_when": [
+        "method assumptions are materially violated",
+        "no validation/backtest is available"
+      ],
+      "verification": {
+        "code": null,
+        "unit_tests": false,
+        "backtest_required": true,
+        "metrics": [
+          "MAE",
+          "RMSE",
+          "MSE",
+          "MAPE",
+          "rolling-origin score"
+        ]
+      },
+      "sources": [
+        "SRC-FRENKEL-SURKOV-2017"
+      ],
+      "conclusion": "Weights are a model of their own and must be trained/backtested separately from component forecasters.",
+      "qualification_rule": "Requires primary-source verification, implementation, tests and rolling-origin backtest before RUNNABLE."
+    },
+    {
+      "id": "ENS-PAIR-01",
+      "name": "Pairwise-preference combination",
+      "family": "forecast_combination",
+      "status": "DISCOVERED",
+      "evidence_class": "SCIENTIFIC_B",
+      "purpose": {
+        "predicts": [
+          "weighted combined forecast"
+        ]
+      },
+      "inputs": [
+        "individual forecasts",
+        "historical forecast errors",
+        "weight strategy"
+      ],
+      "outputs": [
+        "forecast / method-specific result",
+        "diagnostics"
+      ],
+      "algorithm": "Formal algorithm to be finalized during qualification.",
+      "applications": [
+        "multi-model forecasting",
+        "model-risk reduction",
+        "adaptive forecasting"
+      ],
+      "assumptions": [
+        "historical errors are informative about future performance"
+      ],
+      "limitations": [
+        "weight overfitting",
+        "regime change",
+        "highly correlated component errors"
+      ],
+      "unsuitable_when": [
+        "method assumptions are materially violated",
+        "no validation/backtest is available"
+      ],
+      "verification": {
+        "code": null,
+        "unit_tests": false,
+        "backtest_required": true,
+        "metrics": [
+          "MAE",
+          "RMSE",
+          "MSE",
+          "MAPE",
+          "rolling-origin score"
+        ]
+      },
+      "sources": [
+        "SRC-FRENKEL-SURKOV-2017"
+      ],
+      "conclusion": "Weights are a model of their own and must be trained/backtested separately from component forecasters.",
+      "qualification_rule": "Requires primary-source verification, implementation, tests and rolling-origin backtest before RUNNABLE."
+    },
+    {
+      "id": "ENS-FACTOR-01",
+      "name": "Factor-analysis forecast combination",
+      "family": "forecast_combination",
+      "status": "DISCOVERED",
+      "evidence_class": "SCIENTIFIC_B",
+      "purpose": {
+        "predicts": [
+          "weighted combined forecast"
+        ]
+      },
+      "inputs": [
+        "individual forecasts",
+        "historical forecast errors",
+        "weight strategy"
+      ],
+      "outputs": [
+        "forecast / method-specific result",
+        "diagnostics"
+      ],
+      "algorithm": "Formal algorithm to be finalized during qualification.",
+      "applications": [
+        "multi-model forecasting",
+        "model-risk reduction",
+        "adaptive forecasting"
+      ],
+      "assumptions": [
+        "historical errors are informative about future performance"
+      ],
+      "limitations": [
+        "weight overfitting",
+        "regime change",
+        "highly correlated component errors"
+      ],
+      "unsuitable_when": [
+        "method assumptions are materially violated",
+        "no validation/backtest is available"
+      ],
+      "verification": {
+        "code": null,
+        "unit_tests": false,
+        "backtest_required": true,
+        "metrics": [
+          "MAE",
+          "RMSE",
+          "MSE",
+          "MAPE",
+          "rolling-origin score"
+        ]
+      },
+      "sources": [
+        "SRC-FRENKEL-SURKOV-2017"
+      ],
+      "conclusion": "Weights are a model of their own and must be trained/backtested separately from component forecasters.",
+      "qualification_rule": "Requires primary-source verification, implementation, tests and rolling-origin backtest before RUNNABLE."
+    },
+    {
+      "id": "ENS-QP-01",
+      "name": "Quadratic-programming forecast combination",
+      "family": "forecast_combination",
+      "status": "DISCOVERED",
+      "evidence_class": "SCIENTIFIC_B",
+      "purpose": {
+        "predicts": [
+          "weighted combined forecast"
+        ]
+      },
+      "inputs": [
+        "individual forecasts",
+        "historical forecast errors",
+        "weight strategy"
+      ],
+      "outputs": [
+        "forecast / method-specific result",
+        "diagnostics"
+      ],
+      "algorithm": "optimize weights by quadratic programming, often with 0≤wi≤1 and Σwi=1",
+      "applications": [
+        "multi-model forecasting",
+        "model-risk reduction",
+        "adaptive forecasting"
+      ],
+      "assumptions": [
+        "historical errors are informative about future performance"
+      ],
+      "limitations": [
+        "weight overfitting",
+        "regime change",
+        "highly correlated component errors"
+      ],
+      "unsuitable_when": [
+        "method assumptions are materially violated",
+        "no validation/backtest is available"
+      ],
+      "verification": {
+        "code": null,
+        "unit_tests": false,
+        "backtest_required": true,
+        "metrics": [
+          "MAE",
+          "RMSE",
+          "MSE",
+          "MAPE",
+          "rolling-origin score"
+        ]
+      },
+      "sources": [
+        "SRC-FRENKEL-SURKOV-2017"
+      ],
+      "conclusion": "Weights are a model of their own and must be trained/backtested separately from component forecasters.",
+      "qualification_rule": "Requires primary-source verification, implementation, tests and rolling-origin backtest before RUNNABLE."
+    },
+    {
+      "id": "ENS-MAPE-OPT-01",
+      "name": "MAPE-minimizing nonlinear forecast combination",
+      "family": "forecast_combination",
+      "status": "DISCOVERED",
+      "evidence_class": "SCIENTIFIC_B",
+      "purpose": {
+        "predicts": [
+          "weighted combined forecast"
+        ]
+      },
+      "inputs": [
+        "individual forecasts",
+        "historical forecast errors",
+        "weight strategy"
+      ],
+      "outputs": [
+        "forecast / method-specific result",
+        "diagnostics"
+      ],
+      "algorithm": "nonlinear optimization of weights against MAPE objective",
+      "applications": [
+        "multi-model forecasting",
+        "model-risk reduction",
+        "adaptive forecasting"
+      ],
+      "assumptions": [
+        "historical errors are informative about future performance"
+      ],
+      "limitations": [
+        "weight overfitting",
+        "regime change",
+        "highly correlated component errors"
+      ],
+      "unsuitable_when": [
+        "method assumptions are materially violated",
+        "no validation/backtest is available"
+      ],
+      "verification": {
+        "code": null,
+        "unit_tests": false,
+        "backtest_required": true,
+        "metrics": [
+          "MAE",
+          "RMSE",
+          "MSE",
+          "MAPE",
+          "rolling-origin score"
+        ]
+      },
+      "sources": [
+        "SRC-FRENKEL-SURKOV-2017"
+      ],
+      "conclusion": "Weights are a model of their own and must be trained/backtested separately from component forecasters.",
+      "qualification_rule": "Requires primary-source verification, implementation, tests and rolling-origin backtest before RUNNABLE."
+    },
+    {
+      "id": "REG-LIN-01",
+      "name": "Simple linear regression",
+      "family": "regression",
+      "status": "DISCOVERED",
+      "evidence_class": "EXPERIMENTAL",
+      "purpose": {
+        "predicts": [
+          "numeric target from explanatory variables"
+        ]
+      },
+      "inputs": [
+        "target Y",
+        "predictors X",
+        "training sample"
+      ],
+      "outputs": [
+        "forecast / method-specific result",
+        "diagnostics"
+      ],
+      "algorithm": "OLS fit of Y=β0+β1X+ε",
+      "applications": [
+        "demand drivers",
+        "price/sales relationships",
+        "risk factors",
+        "engineering response models"
+      ],
+      "assumptions": [
+        "linear relation",
+        "errors centered around zero; classical inference adds homoscedastic/normality assumptions"
+      ],
+      "limitations": [
+        "correlation is not causation",
+        "multicollinearity destabilizes coefficients",
+        "extrapolation outside training range is risky"
+      ],
+      "unsuitable_when": [
+        "method assumptions are materially violated",
+        "no validation/backtest is available"
+      ],
+      "verification": {
+        "code": null,
+        "unit_tests": false,
+        "backtest_required": true,
+        "metrics": [
+          "RMSE",
+          "MAE",
+          "R² on validation data"
+        ]
+      },
+      "sources": [
+        "SRC-SENKO-MOTP13-3"
+      ],
+      "conclusion": "Useful when future predictors are available and relationships are stable; validate out of sample.",
+      "qualification_rule": "Requires source validation, implementation/test protocol and qualification appropriate to the method class."
+    },
+    {
+      "id": "REG-MULTI-01",
+      "name": "Multiple linear regression",
+      "family": "regression",
+      "status": "DISCOVERED",
+      "evidence_class": "EXPERIMENTAL",
+      "purpose": {
+        "predicts": [
+          "numeric target from explanatory variables"
+        ]
+      },
+      "inputs": [
+        "target Y",
+        "predictors X",
+        "training sample"
+      ],
+      "outputs": [
+        "forecast / method-specific result",
+        "diagnostics"
+      ],
+      "algorithm": "OLS fit of Y=β0+ΣβiXi+ε",
+      "applications": [
+        "demand drivers",
+        "price/sales relationships",
+        "risk factors",
+        "engineering response models"
+      ],
+      "assumptions": [
+        "functional form is adequate",
+        "training sample is representative"
+      ],
+      "limitations": [
+        "multicollinearity can make coefficients unstable",
+        "requires sufficient sample size"
+      ],
+      "unsuitable_when": [
+        "method assumptions are materially violated",
+        "no validation/backtest is available"
+      ],
+      "verification": {
+        "code": null,
+        "unit_tests": false,
+        "backtest_required": true,
+        "metrics": [
+          "RMSE",
+          "MAE",
+          "R² on validation data"
+        ]
+      },
+      "sources": [
+        "SRC-SENKO-MOTP13-3"
+      ],
+      "conclusion": "Useful when future predictors are available and relationships are stable; validate out of sample.",
+      "qualification_rule": "Requires source validation, implementation/test protocol and qualification appropriate to the method class."
+    },
+    {
+      "id": "REG-RIDGE-01",
+      "name": "Ridge / Tikhonov regularized regression",
+      "family": "regression",
+      "status": "DISCOVERED",
+      "evidence_class": "EXPERIMENTAL",
+      "purpose": {
+        "predicts": [
+          "numeric target from explanatory variables"
+        ]
+      },
+      "inputs": [
+        "target Y",
+        "predictors X",
+        "training sample"
+      ],
+      "outputs": [
+        "forecast / method-specific result",
+        "diagnostics"
+      ],
+      "algorithm": "minimize squared error + γΣβ² (Tikhonov/Ridge penalty)",
+      "applications": [
+        "multicollinear predictors",
+        "high-dimensional regression stabilization"
+      ],
+      "assumptions": [
+        "functional form is adequate",
+        "training sample is representative"
+      ],
+      "limitations": [
+        "requires tuning regularization strength",
+        "biased coefficients by design"
+      ],
+      "unsuitable_when": [
+        "method assumptions are materially violated",
+        "no validation/backtest is available"
+      ],
+      "verification": {
+        "code": null,
+        "unit_tests": false,
+        "backtest_required": true,
+        "metrics": [
+          "RMSE",
+          "MAE",
+          "R² on validation data"
+        ]
+      },
+      "sources": [
+        "SRC-SENKO-MOTP13-3"
+      ],
+      "conclusion": "Useful when future predictors are available and relationships are stable; validate out of sample.",
+      "qualification_rule": "Requires source validation, implementation/test protocol and qualification appropriate to the method class."
+    },
+    {
+      "id": "EST-MLE-01",
+      "name": "Maximum likelihood estimation",
+      "family": "parameter_estimation",
+      "status": "DISCOVERED",
+      "evidence_class": "EXPERIMENTAL",
+      "purpose": {
+        "predicts": [
+          "model parameters / probability distribution parameters"
+        ]
+      },
+      "inputs": [
+        "sample",
+        "assumed distribution family"
+      ],
+      "outputs": [
+        "forecast / method-specific result",
+        "diagnostics"
+      ],
+      "algorithm": "choose parameters maximizing the likelihood of observed sample",
+      "applications": [
+        "fitting probabilistic forecasting models",
+        "calibrating distributions"
+      ],
+      "assumptions": [
+        "chosen likelihood family is appropriate"
+      ],
+      "limitations": [
+        "model misspecification can dominate",
+        "not itself a complete forecasting system"
+      ],
+      "unsuitable_when": [
+        "method assumptions are materially violated",
+        "no validation/backtest is available"
+      ],
+      "verification": {
+        "code": null,
+        "unit_tests": false,
+        "backtest_required": true,
+        "metrics": [
+          "log-likelihood",
+          "AIC/BIC",
+          "out-of-sample score"
+        ]
+      },
+      "sources": [
+        "SRC-SENKO-MOTP13-3"
+      ],
+      "conclusion": "Treat as an estimation engine inside a forecasting model, not as an independent forecast.",
+      "qualification_rule": "Requires source validation, implementation/test protocol and qualification appropriate to the method class."
+    },
+    {
+      "id": "POL-DELPHI-01",
+      "name": "Delphi expert forecasting",
+      "family": "political_strategic",
+      "status": "DISCOVERED",
+      "evidence_class": "EXPERIMENTAL",
+      "purpose": {
+        "predicts": [
+          "plausible future states / expert probability / strategic scenarios"
+        ]
+      },
+      "inputs": [
+        "evidence",
+        "expert judgments",
+        "drivers",
+        "assumptions"
+      ],
+      "outputs": [
+        "forecast / method-specific result",
+        "diagnostics"
+      ],
+      "algorithm": "iterative anonymous expert rounds with controlled feedback and revision",
+      "applications": [
+        "strategic planning",
+        "policy risk",
+        "geopolitical/event analysis"
+      ],
+      "assumptions": [
+        "sources and expert process are transparent"
+      ],
+      "limitations": [
+        "scenario planning is not a point forecast",
+        "expert bias and political incentives can distort results",
+        "uncertainty is often irreducible"
+      ],
+      "unsuitable_when": [
+        "method assumptions are materially violated",
+        "no validation/backtest is available"
+      ],
+      "verification": {
+        "code": null,
+        "unit_tests": false,
+        "backtest_required": true,
+        "metrics": [
+          "calibration/Brier for probabilistic questions",
+          "scenario coverage",
+          "assumption traceability"
+        ]
+      },
+      "sources": [],
+      "conclusion": "Separate probability forecasts from scenarios and foresight; never present exploratory scenarios as predicted outcomes.",
+      "qualification_rule": "Requires source validation, implementation/test protocol and qualification appropriate to the method class."
+    },
+    {
+      "id": "POL-SCENARIO-01",
+      "name": "Scenario planning",
+      "family": "political_strategic",
+      "status": "DISCOVERED",
+      "evidence_class": "EXPERIMENTAL",
+      "purpose": {
+        "predicts": [
+          "plausible future states / expert probability / strategic scenarios"
+        ]
+      },
+      "inputs": [
+        "evidence",
+        "expert judgments",
+        "drivers",
+        "assumptions"
+      ],
+      "outputs": [
+        "forecast / method-specific result",
+        "diagnostics"
+      ],
+      "algorithm": "identify key drivers and uncertainties; construct internally coherent alternative futures",
+      "applications": [
+        "strategic planning",
+        "policy risk",
+        "geopolitical/event analysis"
+      ],
+      "assumptions": [
+        "sources and expert process are transparent"
+      ],
+      "limitations": [
+        "scenario planning is not a point forecast",
+        "expert bias and political incentives can distort results",
+        "uncertainty is often irreducible"
+      ],
+      "unsuitable_when": [
+        "method assumptions are materially violated",
+        "no validation/backtest is available"
+      ],
+      "verification": {
+        "code": null,
+        "unit_tests": false,
+        "backtest_required": true,
+        "metrics": [
+          "calibration/Brier for probabilistic questions",
+          "scenario coverage",
+          "assumption traceability"
+        ]
+      },
+      "sources": [],
+      "conclusion": "Scenario planning explores possibilities; it must not be scored or presented as a single predicted winner.",
+      "qualification_rule": "Requires source validation, implementation/test protocol and qualification appropriate to the method class."
+    },
+    {
+      "id": "POL-FORESIGHT-01",
+      "name": "Strategic foresight",
+      "family": "political_strategic",
+      "status": "DISCOVERED",
+      "evidence_class": "EXPERIMENTAL",
+      "purpose": {
+        "predicts": [
+          "plausible future states / expert probability / strategic scenarios"
+        ]
+      },
+      "inputs": [
+        "evidence",
+        "expert judgments",
+        "drivers",
+        "assumptions"
+      ],
+      "outputs": [
+        "forecast / method-specific result",
+        "diagnostics"
+      ],
+      "algorithm": "combine horizon scanning, trends, expert judgment, scenarios and action-oriented interpretation",
+      "applications": [
+        "strategic planning",
+        "policy risk",
+        "geopolitical/event analysis"
+      ],
+      "assumptions": [
+        "sources and expert process are transparent"
+      ],
+      "limitations": [
+        "scenario planning is not a point forecast",
+        "expert bias and political incentives can distort results",
+        "uncertainty is often irreducible"
+      ],
+      "unsuitable_when": [
+        "method assumptions are materially violated",
+        "no validation/backtest is available"
+      ],
+      "verification": {
+        "code": null,
+        "unit_tests": false,
+        "backtest_required": true,
+        "metrics": [
+          "calibration/Brier for probabilistic questions",
+          "scenario coverage",
+          "assumption traceability"
+        ]
+      },
+      "sources": [],
+      "conclusion": "Separate probability forecasts from scenarios and foresight; never present exploratory scenarios as predicted outcomes.",
+      "qualification_rule": "Requires source validation, implementation/test protocol and qualification appropriate to the method class."
+    },
+    {
+      "id": "POL-EXTRAP-01",
+      "name": "Strategic trend extrapolation",
+      "family": "political_strategic",
+      "status": "DISCOVERED",
+      "evidence_class": "EXPERIMENTAL",
+      "purpose": {
+        "predicts": [
+          "plausible future states / expert probability / strategic scenarios"
+        ]
+      },
+      "inputs": [
+        "evidence",
+        "expert judgments",
+        "drivers",
+        "assumptions"
+      ],
+      "outputs": [
+        "forecast / method-specific result",
+        "diagnostics"
+      ],
+      "algorithm": "extend observed strategic trend under explicit continuity assumptions",
+      "applications": [
+        "strategic planning",
+        "policy risk",
+        "geopolitical/event analysis"
+      ],
+      "assumptions": [
+        "sources and expert process are transparent"
+      ],
+      "limitations": [
+        "scenario planning is not a point forecast",
+        "expert bias and political incentives can distort results",
+        "uncertainty is often irreducible"
+      ],
+      "unsuitable_when": [
+        "method assumptions are materially violated",
+        "no validation/backtest is available"
+      ],
+      "verification": {
+        "code": null,
+        "unit_tests": false,
+        "backtest_required": true,
+        "metrics": [
+          "calibration/Brier for probabilistic questions",
+          "scenario coverage",
+          "assumption traceability"
+        ]
+      },
+      "sources": [],
+      "conclusion": "Separate probability forecasts from scenarios and foresight; never present exploratory scenarios as predicted outcomes.",
+      "qualification_rule": "Requires source validation, implementation/test protocol and qualification appropriate to the method class."
+    },
+    {
+      "id": "NP-STORY-01",
+      "name": "Story-structure prior",
+      "family": "narrative",
+      "status": "DESIGNED",
+      "evidence_class": "EXPERIMENTAL",
+      "purpose": {
+        "predicts": [
+          "next narrative event / character or relationship state"
+        ]
+      },
+      "inputs": [
+        "canon",
+        "events",
+        "characters",
+        "relations",
+        "open plot threads"
+      ],
+      "outputs": [
+        "forecast / method-specific result",
+        "diagnostics"
+      ],
+      "algorithm": "Formal algorithm to be finalized during qualification.",
+      "applications": [
+        "ALINA BOOK 2 backtesting",
+        "story analysis",
+        "creative planning"
+      ],
+      "assumptions": [
+        "story state is extracted correctly",
+        "method-specific narrative prior is relevant"
+      ],
+      "limitations": [
+        "author can intentionally violate conventions",
+        "genre prior is not evidence",
+        "LLM output remains hypothesis"
+      ],
+      "unsuitable_when": [
+        "method assumptions are materially violated",
+        "no validation/backtest is available"
+      ],
+      "verification": {
+        "code": null,
+        "unit_tests": false,
+        "backtest_required": true,
+        "metrics": [
+          "EVENT HIT",
+          "CHARACTER HIT",
+          "RELATIONSHIP HIT",
+          "PLOT HIT",
+          "MOTIVE HIT",
+          "SURPRISE MISS"
+        ]
+      },
+      "sources": [],
+      "conclusion": "Use multiple independent narrative methods and backtest chapter-by-chapter; retain uncertainty and competing hypotheses.",
+      "qualification_rule": "Requires source validation, implementation/test protocol and qualification appropriate to the method class."
+    },
+    {
+      "id": "NP-GOAL-01",
+      "name": "Character goal / need forecasting",
+      "family": "narrative",
+      "status": "DESIGNED",
+      "evidence_class": "EXPERIMENTAL",
+      "purpose": {
+        "predicts": [
+          "next narrative event / character or relationship state"
+        ]
+      },
+      "inputs": [
+        "canon",
+        "events",
+        "characters",
+        "relations",
+        "open plot threads"
+      ],
+      "outputs": [
+        "forecast / method-specific result",
+        "diagnostics"
+      ],
+      "algorithm": "Formal algorithm to be finalized during qualification.",
+      "applications": [
+        "ALINA BOOK 2 backtesting",
+        "story analysis",
+        "creative planning"
+      ],
+      "assumptions": [
+        "story state is extracted correctly",
+        "method-specific narrative prior is relevant"
+      ],
+      "limitations": [
+        "author can intentionally violate conventions",
+        "genre prior is not evidence",
+        "LLM output remains hypothesis"
+      ],
+      "unsuitable_when": [
+        "method assumptions are materially violated",
+        "no validation/backtest is available"
+      ],
+      "verification": {
+        "code": null,
+        "unit_tests": false,
+        "backtest_required": true,
+        "metrics": [
+          "EVENT HIT",
+          "CHARACTER HIT",
+          "RELATIONSHIP HIT",
+          "PLOT HIT",
+          "MOTIVE HIT",
+          "SURPRISE MISS"
+        ]
+      },
+      "sources": [],
+      "conclusion": "Use multiple independent narrative methods and backtest chapter-by-chapter; retain uncertainty and competing hypotheses.",
+      "qualification_rule": "Requires source validation, implementation/test protocol and qualification appropriate to the method class."
+    },
+    {
+      "id": "NP-THREAD-01",
+      "name": "Unresolved plot-thread forecasting",
+      "family": "narrative",
+      "status": "DESIGNED",
+      "evidence_class": "EXPERIMENTAL",
+      "purpose": {
+        "predicts": [
+          "next narrative event / character or relationship state"
+        ]
+      },
+      "inputs": [
+        "canon",
+        "events",
+        "characters",
+        "relations",
+        "open plot threads"
+      ],
+      "outputs": [
+        "forecast / method-specific result",
+        "diagnostics"
+      ],
+      "algorithm": "Formal algorithm to be finalized during qualification.",
+      "applications": [
+        "ALINA BOOK 2 backtesting",
+        "story analysis",
+        "creative planning"
+      ],
+      "assumptions": [
+        "story state is extracted correctly",
+        "method-specific narrative prior is relevant"
+      ],
+      "limitations": [
+        "author can intentionally violate conventions",
+        "genre prior is not evidence",
+        "LLM output remains hypothesis"
+      ],
+      "unsuitable_when": [
+        "method assumptions are materially violated",
+        "no validation/backtest is available"
+      ],
+      "verification": {
+        "code": null,
+        "unit_tests": false,
+        "backtest_required": true,
+        "metrics": [
+          "EVENT HIT",
+          "CHARACTER HIT",
+          "RELATIONSHIP HIT",
+          "PLOT HIT",
+          "MOTIVE HIT",
+          "SURPRISE MISS"
+        ]
+      },
+      "sources": [],
+      "conclusion": "Use multiple independent narrative methods and backtest chapter-by-chapter; retain uncertainty and competing hypotheses.",
+      "qualification_rule": "Requires source validation, implementation/test protocol and qualification appropriate to the method class."
+    },
+    {
+      "id": "NP-CAUSE-01",
+      "name": "Narrative cause-effect graph",
+      "family": "narrative",
+      "status": "DESIGNED",
+      "evidence_class": "EXPERIMENTAL",
+      "purpose": {
+        "predicts": [
+          "next narrative event / character or relationship state"
+        ]
+      },
+      "inputs": [
+        "canon",
+        "events",
+        "characters",
+        "relations",
+        "open plot threads"
+      ],
+      "outputs": [
+        "forecast / method-specific result",
+        "diagnostics"
+      ],
+      "algorithm": "Formal algorithm to be finalized during qualification.",
+      "applications": [
+        "ALINA BOOK 2 backtesting",
+        "story analysis",
+        "creative planning"
+      ],
+      "assumptions": [
+        "story state is extracted correctly",
+        "method-specific narrative prior is relevant"
+      ],
+      "limitations": [
+        "author can intentionally violate conventions",
+        "genre prior is not evidence",
+        "LLM output remains hypothesis"
+      ],
+      "unsuitable_when": [
+        "method assumptions are materially violated",
+        "no validation/backtest is available"
+      ],
+      "verification": {
+        "code": null,
+        "unit_tests": false,
+        "backtest_required": true,
+        "metrics": [
+          "EVENT HIT",
+          "CHARACTER HIT",
+          "RELATIONSHIP HIT",
+          "PLOT HIT",
+          "MOTIVE HIT",
+          "SURPRISE MISS"
+        ]
+      },
+      "sources": [],
+      "conclusion": "Use multiple independent narrative methods and backtest chapter-by-chapter; retain uncertainty and competing hypotheses.",
+      "qualification_rule": "Requires source validation, implementation/test protocol and qualification appropriate to the method class."
+    },
+    {
+      "id": "NP-REL-01",
+      "name": "Relationship-dynamics forecasting",
+      "family": "narrative",
+      "status": "DESIGNED",
+      "evidence_class": "EXPERIMENTAL",
+      "purpose": {
+        "predicts": [
+          "next narrative event / character or relationship state"
+        ]
+      },
+      "inputs": [
+        "canon",
+        "events",
+        "characters",
+        "relations",
+        "open plot threads"
+      ],
+      "outputs": [
+        "forecast / method-specific result",
+        "diagnostics"
+      ],
+      "algorithm": "Formal algorithm to be finalized during qualification.",
+      "applications": [
+        "ALINA BOOK 2 backtesting",
+        "story analysis",
+        "creative planning"
+      ],
+      "assumptions": [
+        "story state is extracted correctly",
+        "method-specific narrative prior is relevant"
+      ],
+      "limitations": [
+        "author can intentionally violate conventions",
+        "genre prior is not evidence",
+        "LLM output remains hypothesis"
+      ],
+      "unsuitable_when": [
+        "method assumptions are materially violated",
+        "no validation/backtest is available"
+      ],
+      "verification": {
+        "code": null,
+        "unit_tests": false,
+        "backtest_required": true,
+        "metrics": [
+          "EVENT HIT",
+          "CHARACTER HIT",
+          "RELATIONSHIP HIT",
+          "PLOT HIT",
+          "MOTIVE HIT",
+          "SURPRISE MISS"
+        ]
+      },
+      "sources": [],
+      "conclusion": "Use multiple independent narrative methods and backtest chapter-by-chapter; retain uncertainty and competing hypotheses.",
+      "qualification_rule": "Requires source validation, implementation/test protocol and qualification appropriate to the method class."
+    },
+    {
+      "id": "NP-GENRE-01",
+      "name": "Genre prior",
+      "family": "narrative",
+      "status": "DESIGNED",
+      "evidence_class": "EXPERIMENTAL",
+      "purpose": {
+        "predicts": [
+          "next narrative event / character or relationship state"
+        ]
+      },
+      "inputs": [
+        "canon",
+        "events",
+        "characters",
+        "relations",
+        "open plot threads"
+      ],
+      "outputs": [
+        "forecast / method-specific result",
+        "diagnostics"
+      ],
+      "algorithm": "Formal algorithm to be finalized during qualification.",
+      "applications": [
+        "ALINA BOOK 2 backtesting",
+        "story analysis",
+        "creative planning"
+      ],
+      "assumptions": [
+        "story state is extracted correctly",
+        "method-specific narrative prior is relevant"
+      ],
+      "limitations": [
+        "author can intentionally violate conventions",
+        "genre prior is not evidence",
+        "LLM output remains hypothesis"
+      ],
+      "unsuitable_when": [
+        "method assumptions are materially violated",
+        "no validation/backtest is available"
+      ],
+      "verification": {
+        "code": null,
+        "unit_tests": false,
+        "backtest_required": true,
+        "metrics": [
+          "EVENT HIT",
+          "CHARACTER HIT",
+          "RELATIONSHIP HIT",
+          "PLOT HIT",
+          "MOTIVE HIT",
+          "SURPRISE MISS"
+        ]
+      },
+      "sources": [],
+      "conclusion": "Use multiple independent narrative methods and backtest chapter-by-chapter; retain uncertainty and competing hypotheses.",
+      "qualification_rule": "Requires source validation, implementation/test protocol and qualification appropriate to the method class."
+    },
+    {
+      "id": "NP-MARKOV-01",
+      "name": "Narrative Markov / state transition",
+      "family": "narrative",
+      "status": "DESIGNED",
+      "evidence_class": "EXPERIMENTAL",
+      "purpose": {
+        "predicts": [
+          "next narrative event / character or relationship state"
+        ]
+      },
+      "inputs": [
+        "canon",
+        "events",
+        "characters",
+        "relations",
+        "open plot threads"
+      ],
+      "outputs": [
+        "forecast / method-specific result",
+        "diagnostics"
+      ],
+      "algorithm": "Formal algorithm to be finalized during qualification.",
+      "applications": [
+        "ALINA BOOK 2 backtesting",
+        "story analysis",
+        "creative planning"
+      ],
+      "assumptions": [
+        "story state is extracted correctly",
+        "method-specific narrative prior is relevant"
+      ],
+      "limitations": [
+        "author can intentionally violate conventions",
+        "genre prior is not evidence",
+        "LLM output remains hypothesis"
+      ],
+      "unsuitable_when": [
+        "method assumptions are materially violated",
+        "no validation/backtest is available"
+      ],
+      "verification": {
+        "code": null,
+        "unit_tests": false,
+        "backtest_required": true,
+        "metrics": [
+          "EVENT HIT",
+          "CHARACTER HIT",
+          "RELATIONSHIP HIT",
+          "PLOT HIT",
+          "MOTIVE HIT",
+          "SURPRISE MISS"
+        ]
+      },
+      "sources": [],
+      "conclusion": "Use multiple independent narrative methods and backtest chapter-by-chapter; retain uncertainty and competing hypotheses.",
+      "qualification_rule": "Requires source validation, implementation/test protocol and qualification appropriate to the method class."
+    },
+    {
+      "id": "NP-BAYES-01",
+      "name": "Narrative Bayesian hypothesis update",
+      "family": "narrative",
+      "status": "DESIGNED",
+      "evidence_class": "EXPERIMENTAL",
+      "purpose": {
+        "predicts": [
+          "next narrative event / character or relationship state"
+        ]
+      },
+      "inputs": [
+        "canon",
+        "events",
+        "characters",
+        "relations",
+        "open plot threads"
+      ],
+      "outputs": [
+        "forecast / method-specific result",
+        "diagnostics"
+      ],
+      "algorithm": "Formal algorithm to be finalized during qualification.",
+      "applications": [
+        "ALINA BOOK 2 backtesting",
+        "story analysis",
+        "creative planning"
+      ],
+      "assumptions": [
+        "story state is extracted correctly",
+        "method-specific narrative prior is relevant"
+      ],
+      "limitations": [
+        "author can intentionally violate conventions",
+        "genre prior is not evidence",
+        "LLM output remains hypothesis"
+      ],
+      "unsuitable_when": [
+        "method assumptions are materially violated",
+        "no validation/backtest is available"
+      ],
+      "verification": {
+        "code": null,
+        "unit_tests": false,
+        "backtest_required": true,
+        "metrics": [
+          "EVENT HIT",
+          "CHARACTER HIT",
+          "RELATIONSHIP HIT",
+          "PLOT HIT",
+          "MOTIVE HIT",
+          "SURPRISE MISS"
+        ]
+      },
+      "sources": [],
+      "conclusion": "Use multiple independent narrative methods and backtest chapter-by-chapter; retain uncertainty and competing hypotheses.",
+      "qualification_rule": "Requires source validation, implementation/test protocol and qualification appropriate to the method class."
+    },
+    {
+      "id": "NP-LLM-01",
+      "name": "LLM abductive narrative forecast",
+      "family": "narrative",
+      "status": "DESIGNED",
+      "evidence_class": "EXPERIMENTAL",
+      "purpose": {
+        "predicts": [
+          "next narrative event / character or relationship state"
+        ]
+      },
+      "inputs": [
+        "canon",
+        "events",
+        "characters",
+        "relations",
+        "open plot threads"
+      ],
+      "outputs": [
+        "forecast / method-specific result",
+        "diagnostics"
+      ],
+      "algorithm": "LLM generates abductive hypotheses from structured narrative state",
+      "applications": [
+        "ALINA BOOK 2 backtesting",
+        "story analysis",
+        "creative planning"
+      ],
+      "assumptions": [
+        "story state is extracted correctly",
+        "method-specific narrative prior is relevant"
+      ],
+      "limitations": [
+        "not evidence",
+        "can hallucinate causal links",
+        "requires grounding and competing hypotheses"
+      ],
+      "unsuitable_when": [
+        "method assumptions are materially violated",
+        "no validation/backtest is available"
+      ],
+      "verification": {
+        "code": null,
+        "unit_tests": false,
+        "backtest_required": true,
+        "metrics": [
+          "EVENT HIT",
+          "CHARACTER HIT",
+          "RELATIONSHIP HIT",
+          "PLOT HIT",
+          "MOTIVE HIT",
+          "SURPRISE MISS"
+        ]
+      },
+      "sources": [],
+      "conclusion": "Use multiple independent narrative methods and backtest chapter-by-chapter; retain uncertainty and competing hypotheses.",
+      "qualification_rule": "Requires source validation, implementation/test protocol and qualification appropriate to the method class."
+    },
+    {
+      "id": "NP-ENS-01",
+      "name": "Narrative forecast ensemble",
+      "family": "narrative",
+      "status": "DESIGNED",
+      "evidence_class": "EXPERIMENTAL",
+      "purpose": {
+        "predicts": [
+          "next narrative event / character or relationship state"
+        ]
+      },
+      "inputs": [
+        "canon",
+        "events",
+        "characters",
+        "relations",
+        "open plot threads"
+      ],
+      "outputs": [
+        "forecast / method-specific result",
+        "diagnostics"
+      ],
+      "algorithm": "Formal algorithm to be finalized during qualification.",
+      "applications": [
+        "ALINA BOOK 2 backtesting",
+        "story analysis",
+        "creative planning"
+      ],
+      "assumptions": [
+        "story state is extracted correctly",
+        "method-specific narrative prior is relevant"
+      ],
+      "limitations": [
+        "author can intentionally violate conventions",
+        "genre prior is not evidence",
+        "LLM output remains hypothesis"
+      ],
+      "unsuitable_when": [
+        "method assumptions are materially violated",
+        "no validation/backtest is available"
+      ],
+      "verification": {
+        "code": null,
+        "unit_tests": false,
+        "backtest_required": true,
+        "metrics": [
+          "EVENT HIT",
+          "CHARACTER HIT",
+          "RELATIONSHIP HIT",
+          "PLOT HIT",
+          "MOTIVE HIT",
+          "SURPRISE MISS"
+        ]
+      },
+      "sources": [],
+      "conclusion": "Use multiple independent narrative methods and backtest chapter-by-chapter; retain uncertainty and competing hypotheses.",
+      "qualification_rule": "Requires source validation, implementation/test protocol and qualification appropriate to the method class."
+    },
+    {
+      "id": "DIV-NUM-01",
+      "name": "Numerology",
+      "family": "cultural_divination",
+      "status": "CATALOG_ONLY",
+      "evidence_class": "NON_SCIENTIFIC",
+      "purpose": {
+        "predicts": [
+          "claims defined by the historical/divinatory rule system"
+        ]
+      },
+      "inputs": [
+        "system-specific symbolic inputs"
+      ],
+      "outputs": [
+        "forecast / method-specific result",
+        "diagnostics"
+      ],
+      "algorithm": "documented numerological rule system only; scientific validation is not assumed",
+      "applications": [
+        "historical/cultural comparison",
+        "blind benchmark experiments"
+      ],
+      "assumptions": [
+        "rules are documented reproducibly"
+      ],
+      "limitations": [
+        "not scientifically validated as predictive evidence",
+        "must not influence scientific confidence or high-stakes decisions"
+      ],
+      "unsuitable_when": [
+        "method assumptions are materially violated",
+        "no validation/backtest is available"
+      ],
+      "verification": {
+        "code": null,
+        "unit_tests": false,
+        "backtest_required": true,
+        "metrics": [
+          "blind-test accuracy against baseline",
+          "calibration where probabilities exist"
+        ]
+      },
+      "sources": [],
+      "conclusion": "Keep strictly separated as NON_SCIENTIFIC; may be tested experimentally but never labeled scientific.",
+      "qualification_rule": "Requires source validation, implementation/test protocol and qualification appropriate to the method class."
+    }
+  ]
+}
