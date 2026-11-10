@@ -124,6 +124,8 @@ def _recompute_contradictions(j: Job) -> None:
             bb = b.lower().rstrip(".")
             normalized_a = aa.replace(" does not ", " ").replace(" not ", " ")
             normalized_b = bb.replace(" does not ", " ").replace(" not ", " ")
+            normalized_a = re.sub(r"\brequires\b", "require", normalized_a)
+            normalized_b = re.sub(r"\brequires\b", "require", normalized_b)
             neg_a = " does not " in f" {aa} " or " not " in f" {aa} "
             neg_b = " does not " in f" {bb} " or " not " in f" {bb} "
             if neg_a != neg_b and normalized_a == normalized_b:
