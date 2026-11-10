@@ -1,0 +1,73 @@
+schema_version: "1.0"
+block:
+  code: "AU-01"
+  name: "Аналитик Универсальный"
+  alias: "Алина Аналитик"
+  generation: "01"
+  type: "analytical_engine"
+  maturity_target: "M1"
+  role: >
+    Universal evidence-first analytical block reusable by FATHER products.
+    ALINA-BOOK is the first qualification showcase, not the only use case.
+  inputs:
+    - "research_request"
+    - "sources"
+    - "domain_context"
+    - "prior_state"
+  outputs:
+    - "entities"
+    - "events"
+    - "relations"
+    - "claims"
+    - "evidence"
+    - "contradictions"
+    - "hypotheses"
+    - "unknowns"
+    - "forecast"
+    - "evaluation"
+    - "report"
+  mandatory_properties:
+    provenance: true
+    uncertainty: true
+    typed_knowledge: true
+    auditable_decisions: true
+    idempotent_jobs: true
+    versioned_contracts: true
+  maturity:
+    M0:
+      name: "Running shell"
+      exit:
+        - "request accepted"
+        - "case created"
+        - "job state persisted"
+        - "deterministic fixture result returned"
+        - "audit/status available"
+    M1:
+      name: "Structured analysis"
+      exit:
+        - "entities/events/relations/claims extracted"
+        - "timeline produced"
+        - "machine-readable result validates against contract"
+    M2:
+      name: "Evidence"
+      exit:
+        - "claims linked to evidence"
+        - "source provenance preserved"
+        - "confidence and contradictions supported"
+    M3:
+      name: "Analyst"
+      exit:
+        - "alternative hypotheses"
+        - "evidence weighting"
+        - "unknown registry"
+    M4:
+      name: "Forecast"
+      exit:
+        - "forecast generated"
+        - "known-future backtest"
+        - "error classes recorded"
+    M5:
+      name: "Learning loop"
+      exit:
+        - "improvement candidates proposed"
+        - "regression gate required before adoption"
