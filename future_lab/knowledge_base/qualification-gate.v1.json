@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0",
+  "gates": [
+    {
+      "status": "SOURCED",
+      "requires": [
+        "sources.primary OR sources.books OR sources.university_or_standard"
+      ]
+    },
+    {
+      "status": "FORMALIZED",
+      "requires": [
+        "mathematical_basis",
+        "formulas OR pseudocode",
+        "assumptions",
+        "limitations"
+      ]
+    },
+    {
+      "status": "IMPLEMENTED",
+      "requires": [
+        "implementation.module",
+        "implementation.version"
+      ]
+    },
+    {
+      "status": "TESTED",
+      "requires": [
+        "tests.unit"
+      ]
+    },
+    {
+      "status": "VALIDATED",
+      "requires": [
+        "validation.method",
+        "validation.metrics",
+        "validation.datasets OR validation.backtests"
+      ]
+    },
+    {
+      "status": "QUALIFIED",
+      "requires": [
+        "SOURCED",
+        "FORMALIZED",
+        "IMPLEMENTED",
+        "TESTED",
+        "VALIDATED",
+        "provenance",
+        "resources"
+      ]
+    }
+  ],
+  "prohibitions": [
+    "Wikipedia cannot be sole evidence for QUALIFIED",
+    "Energy values cannot be invented; use UNKNOWN when not measured or responsibly estimated",
+    "An LLM-generated formula without source traceability cannot pass SOURCED"
+  ]
+}
