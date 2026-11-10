@@ -50,6 +50,14 @@
       "title": "Metoposcopy redux — historical discussion of palmistry/chiromancy",
       "url": "https://pubmed.ncbi.nlm.nih.gov/37924996/",
       "class": "SCIENTIFIC_A"
+    },
+    {
+      "id": "SRC-FRENKEL-SURKOV-2017",
+      "authority": "Вопросы статистики / Институт экономики РАН",
+      "title": "Определение весовых коэффициентов при объединении прогнозов",
+      "year": 2017,
+      "class": "SCIENTIFIC_B",
+      "note": "Academic review; primary papers required for final qualification of individual combination methods."
     }
   ],
   "methods": [
@@ -236,6 +244,160 @@
       "status": "DISCOVERED",
       "evidence_class": "EXPERIMENTAL",
       "rule": "Interval formulation must be tied to the selected forecasting model and qualified statistically."
+    },
+    {
+      "id": "ENS-AVG-01",
+      "family": "forecast_combination",
+      "name": "Simple average forecast combination",
+      "status": "DISCOVERED",
+      "evidence_class": "SCIENTIFIC_B",
+      "source_ids": [
+        "SRC-FRENKEL-SURKOV-2017"
+      ],
+      "rule": "Requires primary-source verification, implementation, tests and rolling-origin backtest before RUNNABLE."
+    },
+    {
+      "id": "ENS-TRIM-01",
+      "family": "forecast_combination",
+      "name": "Trimmed mean forecast combination",
+      "status": "DISCOVERED",
+      "evidence_class": "SCIENTIFIC_B",
+      "source_ids": [
+        "SRC-FRENKEL-SURKOV-2017"
+      ],
+      "rule": "Requires primary-source verification, implementation, tests and rolling-origin backtest before RUNNABLE."
+    },
+    {
+      "id": "ENS-OLS-01",
+      "family": "forecast_combination",
+      "name": "OLS / regression forecast combination",
+      "status": "DISCOVERED",
+      "evidence_class": "SCIENTIFIC_B",
+      "source_ids": [
+        "SRC-FRENKEL-SURKOV-2017"
+      ],
+      "rule": "Requires primary-source verification, implementation, tests and rolling-origin backtest before RUNNABLE."
+    },
+    {
+      "id": "ENS-GR-01",
+      "family": "forecast_combination",
+      "name": "Granger–Ramanathan forecast combination",
+      "status": "DISCOVERED",
+      "evidence_class": "SCIENTIFIC_B",
+      "source_ids": [
+        "SRC-FRENKEL-SURKOV-2017"
+      ],
+      "rule": "Requires primary-source verification, implementation, tests and rolling-origin backtest before RUNNABLE."
+    },
+    {
+      "id": "ENS-BG-01",
+      "family": "forecast_combination",
+      "name": "Bates–Granger minimum-error-variance combination",
+      "status": "DISCOVERED",
+      "evidence_class": "SCIENTIFIC_B",
+      "source_ids": [
+        "SRC-FRENKEL-SURKOV-2017"
+      ],
+      "rule": "Requires primary-source verification, implementation, tests and rolling-origin backtest before RUNNABLE."
+    },
+    {
+      "id": "ENS-INVERR-01",
+      "family": "forecast_combination",
+      "name": "Inverse-error weighting",
+      "status": "DISCOVERED",
+      "evidence_class": "SCIENTIFIC_B",
+      "source_ids": [
+        "SRC-FRENKEL-SURKOV-2017"
+      ],
+      "rule": "Requires primary-source verification, implementation, tests and rolling-origin backtest before RUNNABLE."
+    },
+    {
+      "id": "ENS-INVMSE-01",
+      "family": "forecast_combination",
+      "name": "Inverse-MSE weighting",
+      "status": "DISCOVERED",
+      "evidence_class": "SCIENTIFIC_B",
+      "source_ids": [
+        "SRC-FRENKEL-SURKOV-2017"
+      ],
+      "rule": "Requires primary-source verification, implementation, tests and rolling-origin backtest before RUNNABLE."
+    },
+    {
+      "id": "ENS-AIC-01",
+      "family": "forecast_combination",
+      "name": "AIC-weighted forecast combination",
+      "status": "DISCOVERED",
+      "evidence_class": "SCIENTIFIC_B",
+      "source_ids": [
+        "SRC-FRENKEL-SURKOV-2017"
+      ],
+      "rule": "Requires primary-source verification, implementation, tests and rolling-origin backtest before RUNNABLE."
+    },
+    {
+      "id": "ENS-BIC-01",
+      "family": "forecast_combination",
+      "name": "BIC-weighted forecast combination",
+      "status": "DISCOVERED",
+      "evidence_class": "SCIENTIFIC_B",
+      "source_ids": [
+        "SRC-FRENKEL-SURKOV-2017"
+      ],
+      "rule": "Requires primary-source verification, implementation, tests and rolling-origin backtest before RUNNABLE."
+    },
+    {
+      "id": "ENS-ADAPT-01",
+      "family": "forecast_combination",
+      "name": "Adaptive error-weighted combination",
+      "status": "DISCOVERED",
+      "evidence_class": "SCIENTIFIC_B",
+      "source_ids": [
+        "SRC-FRENKEL-SURKOV-2017"
+      ],
+      "rule": "Requires primary-source verification, implementation, tests and rolling-origin backtest before RUNNABLE."
+    },
+    {
+      "id": "ENS-PAIR-01",
+      "family": "forecast_combination",
+      "name": "Pairwise-preference combination",
+      "status": "DISCOVERED",
+      "evidence_class": "SCIENTIFIC_B",
+      "source_ids": [
+        "SRC-FRENKEL-SURKOV-2017"
+      ],
+      "rule": "Requires primary-source verification, implementation, tests and rolling-origin backtest before RUNNABLE."
+    },
+    {
+      "id": "ENS-FACTOR-01",
+      "family": "forecast_combination",
+      "name": "Factor-analysis forecast combination",
+      "status": "DISCOVERED",
+      "evidence_class": "SCIENTIFIC_B",
+      "source_ids": [
+        "SRC-FRENKEL-SURKOV-2017"
+      ],
+      "rule": "Requires primary-source verification, implementation, tests and rolling-origin backtest before RUNNABLE."
+    },
+    {
+      "id": "ENS-QP-01",
+      "family": "forecast_combination",
+      "name": "Quadratic-programming forecast combination",
+      "status": "DISCOVERED",
+      "evidence_class": "SCIENTIFIC_B",
+      "source_ids": [
+        "SRC-FRENKEL-SURKOV-2017"
+      ],
+      "rule": "Requires primary-source verification, implementation, tests and rolling-origin backtest before RUNNABLE."
+    },
+    {
+      "id": "ENS-MAPE-OPT-01",
+      "family": "forecast_combination",
+      "name": "MAPE-minimizing nonlinear forecast combination",
+      "status": "DISCOVERED",
+      "evidence_class": "SCIENTIFIC_B",
+      "source_ids": [
+        "SRC-FRENKEL-SURKOV-2017"
+      ],
+      "rule": "Requires primary-source verification, implementation, tests and rolling-origin backtest before RUNNABLE."
     }
   ]
 }
