@@ -148,6 +148,62 @@
         "SRC-NCBI-PALMISTRY"
       ],
       "rule": "May be documented as a historical divinatory system; predictive claims must not be presented as scientific evidence."
+    },
+    {
+      "id": "GRAPH-SP-01",
+      "family": "graph_network",
+      "name": "Shortest path",
+      "status": "DISCOVERED",
+      "evidence_class": "EXPERIMENTAL",
+      "rule": "Discovery complete. Requires authoritative source, code, tests and qualification before RUNNABLE."
+    },
+    {
+      "id": "GRAPH-MST-01",
+      "family": "graph_network",
+      "name": "Minimum spanning tree",
+      "status": "DISCOVERED",
+      "evidence_class": "EXPERIMENTAL",
+      "rule": "Discovery complete. Requires authoritative source, code, tests and qualification before RUNNABLE."
+    },
+    {
+      "id": "GRAPH-FLOW-01",
+      "family": "graph_network",
+      "name": "Maximum flow / minimum cut",
+      "status": "DISCOVERED",
+      "evidence_class": "EXPERIMENTAL",
+      "rule": "Discovery complete. Requires authoritative source, code, tests and qualification before RUNNABLE."
+    },
+    {
+      "id": "GRAPH-TSP-01",
+      "family": "graph_network",
+      "name": "Travelling salesman problem",
+      "status": "DISCOVERED",
+      "evidence_class": "EXPERIMENTAL",
+      "rule": "Discovery complete. Requires authoritative source, code, tests and qualification before RUNNABLE."
+    },
+    {
+      "id": "GRAPH-CPM-01",
+      "family": "project_network",
+      "name": "Critical Path Method",
+      "status": "DISCOVERED",
+      "evidence_class": "EXPERIMENTAL",
+      "rule": "Discovery complete. Requires authoritative source, code, tests and qualification before RUNNABLE."
+    },
+    {
+      "id": "GRAPH-PERT-01",
+      "family": "project_network",
+      "name": "PERT",
+      "status": "DISCOVERED",
+      "evidence_class": "EXPERIMENTAL",
+      "rule": "Discovery complete. Requires authoritative source, code, tests and qualification before RUNNABLE."
+    },
+    {
+      "id": "GRAPH-GERT-01",
+      "family": "project_network",
+      "name": "GERT probabilistic network",
+      "status": "DISCOVERED",
+      "evidence_class": "EXPERIMENTAL",
+      "rule": "Discovery complete. Requires authoritative source, code, tests and qualification before RUNNABLE."
     }
   ]
 }
