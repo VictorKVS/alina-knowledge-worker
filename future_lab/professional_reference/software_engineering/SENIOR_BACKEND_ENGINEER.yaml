@@ -1,0 +1,246 @@
+profession_id: SW-BE-SENIOR
+family: SOFTWARE_ENGINEERING
+title: Senior Backend Engineer
+version: 1
+
+product_classes:
+  - web_api
+  - enterprise_backend
+  - high_load_service
+  - integration_service
+  - data_intensive_service
+
+responsibility:
+  level: senior
+  expectations:
+    - independently design backend solutions
+    - select algorithms and data structures
+    - justify architecture and technology choices
+    - ensure security, performance, reliability and operability
+    - review implementation quality
+    - diagnose failures and bottlenecks
+
+competency_vector:
+  algorithms_and_data_structures: K4
+  programming_language: K5
+  software_design: K5
+  backend_architecture: K5
+  api_design: K5
+  databases: K4
+  distributed_systems: K4
+  concurrency: K4
+  networking: K4
+  security: K4
+  testing: K5
+  performance_engineering: K4
+  reliability: K4
+  observability: K4
+  devops_delivery: K4
+  documentation: K3
+
+task_catalog:
+  - decompose backend requirements
+  - design API and service boundaries
+  - choose data model and storage
+  - choose algorithms and data structures
+  - design concurrency model
+  - implement business logic
+  - design transactions and idempotency
+  - integrate external systems
+  - design caching
+  - design failure handling
+  - implement security controls
+  - write automated tests
+  - perform load/performance testing
+  - package and deploy service
+  - instrument logs metrics and traces
+  - diagnose incidents
+  - review code and architecture
+
+decision_catalog:
+  - monolith_vs_services
+  - sync_vs_async
+  - relational_vs_nonrelational
+  - algorithm_selection
+  - framework_selection
+  - library_selection
+  - cache_strategy
+  - transaction_strategy
+  - consistency_tradeoff
+  - retry_timeout_circuit_breaker
+  - authentication_authorization
+  - scaling_strategy
+  - deployment_strategy
+
+knowledge_requirements:
+  - id: ALG
+    name: Algorithms and Data Structures
+    depth: K4
+    criticality: MANDATORY
+    includes:
+      - complexity
+      - arrays_lists_stacks_queues
+      - hashing
+      - trees
+      - heaps
+      - graphs
+      - sorting_search
+      - dynamic_programming
+      - algorithm_selection
+
+  - id: LANG
+    name: Programming Language Engineering
+    depth: K5
+    criticality: MANDATORY
+    includes:
+      - language_semantics
+      - type_system
+      - memory_model
+      - exceptions
+      - concurrency_model
+      - package_management
+      - profiling
+      - debugging
+
+  - id: DESIGN
+    name: Software Design
+    depth: K5
+    criticality: MANDATORY
+    includes:
+      - modularity
+      - cohesion_coupling
+      - SOLID
+      - design_patterns
+      - domain_modeling
+      - dependency_management
+      - refactoring
+
+  - id: DB
+    name: Databases
+    depth: K4
+    criticality: MANDATORY
+    includes:
+      - relational_model
+      - SQL
+      - indexing
+      - query_plans
+      - transactions
+      - ACID
+      - isolation
+      - MVCC
+      - locks_deadlocks
+      - replication
+      - partitioning
+      - migrations
+      - backup_recovery
+
+  - id: DIST
+    name: Distributed Systems
+    depth: K4
+    criticality: MANDATORY
+    includes:
+      - partial_failure
+      - idempotency
+      - retries
+      - timeouts
+      - circuit_breaker
+      - messaging
+      - consistency
+      - replication
+      - service_discovery
+      - distributed_transactions
+
+  - id: NET
+    name: Networking and Web Protocols
+    depth: K4
+    criticality: MANDATORY
+    includes:
+      - TCP_IP
+      - DNS
+      - HTTP
+      - HTTP2_HTTP3_awareness
+      - TLS
+      - proxies
+      - load_balancing
+
+  - id: SEC
+    name: Application Security
+    depth: K4
+    criticality: MANDATORY
+    includes:
+      - authentication
+      - authorization
+      - input_validation
+      - injection
+      - secrets
+      - cryptography_usage
+      - API_security
+      - dependency_security
+      - logging_security
+      - threat_modeling
+
+  - id: TEST
+    name: Testing and Quality
+    depth: K5
+    criticality: MANDATORY
+    includes:
+      - unit_testing
+      - integration_testing
+      - contract_testing
+      - property_testing
+      - regression_testing
+      - performance_testing
+      - security_testing
+      - testability
+
+  - id: PERF
+    name: Performance Engineering
+    depth: K4
+    criticality: MANDATORY
+    includes:
+      - profiling
+      - latency
+      - throughput
+      - capacity
+      - bottleneck_analysis
+      - caching
+      - benchmarking
+      - load_testing
+
+  - id: OPS
+    name: Production Operations
+    depth: K4
+    criticality: MANDATORY
+    includes:
+      - containers
+      - CI_CD
+      - health_checks
+      - configuration
+      - logs
+      - metrics
+      - traces
+      - rollback
+      - incident_diagnostics
+
+source_requirements:
+  minimum_types:
+    - body_of_knowledge
+    - official_documentation
+    - standards_or_rfc
+    - canonical_textbook
+    - practical_failure_cases
+  rule: no critical competency may rely only on informal practitioner content
+
+qualification:
+  requires:
+    - knowledge_tests
+    - architecture_case
+    - implementation_case
+    - debugging_case
+    - performance_case
+    - security_case
+    - production_failure_case
+  critical_failure_policy:
+    security: fail
+    correctness: fail
+    provenance: fail
