@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "source_classes": [
+    {
+      "id": "PRIMARY",
+      "priority": 1,
+      "description": "Original paper, primary scientific source"
+    },
+    {
+      "id": "ACADEMIC_BOOK",
+      "priority": 2,
+      "description": "Academic book or monograph"
+    },
+    {
+      "id": "STANDARD_UNIVERSITY",
+      "priority": 3,
+      "description": "Official standard or university material"
+    },
+    {
+      "id": "AUTHORITATIVE_DOCS",
+      "priority": 4,
+      "description": "Official library or implementation documentation"
+    },
+    {
+      "id": "WIKIPEDIA",
+      "priority": 5,
+      "description": "Navigation and terminology only; never sole qualification evidence"
+    }
+  ],
+  "evidence_classes": [
+    "SCIENTIFIC_A",
+    "SCIENTIFIC_B",
+    "EXPERIMENTAL",
+    "NON_SCIENTIFIC"
+  ]
+}
