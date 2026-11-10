@@ -1,0 +1,22 @@
+profession_id: INFRA-SRE
+family: INFRASTRUCTURE
+title: Site Reliability Engineer
+version: 1
+competency_vector:
+  reliability_engineering: K5
+  observability: K5
+  incident_response: K5
+  automation: K5
+  distributed_systems: K4
+  capacity_planning: K4
+  performance: K4
+  security: K4
+knowledge_requirements:
+  - {id: SLO, name: SLI/SLO/Error Budgets, depth: K5, criticality: MANDATORY}
+  - {id: OBS, name: Observability, depth: K5, criticality: MANDATORY}
+  - {id: IR, name: Incident Response, depth: K5, criticality: MANDATORY}
+  - {id: AUTO, name: Reliability Automation, depth: K5, criticality: MANDATORY}
+  - {id: DIST, name: Distributed Systems Failure Modes, depth: K4, criticality: MANDATORY}
+  - {id: CAP, name: Capacity and Performance, depth: K4, criticality: MANDATORY}
+qualification:
+  requires: [SLO_case, incident_case, chaos_case, capacity_case, recovery_case]
