@@ -1,0 +1,28 @@
+profession_id: SW-FS-SENIOR
+family: SOFTWARE_ENGINEERING
+title: Senior Full-Stack Engineer
+version: 1
+responsibility:
+  level: senior
+competency_vector:
+  frontend: K4
+  backend: K5
+  API_design: K5
+  databases: K4
+  algorithms: K4
+  security: K4
+  testing: K5
+  devops_delivery: K4
+  observability: K4
+  performance: K4
+knowledge_requirements:
+  - {id: FRONT, name: Frontend Engineering, depth: K4, criticality: MANDATORY}
+  - {id: BACK, name: Backend Engineering, depth: K5, criticality: MANDATORY}
+  - {id: API, name: API and Integration Design, depth: K5, criticality: MANDATORY}
+  - {id: DB, name: Databases, depth: K4, criticality: MANDATORY}
+  - {id: ALG, name: Algorithms and Data Structures, depth: K4, criticality: MANDATORY}
+  - {id: SEC, name: Application Security, depth: K4, criticality: MANDATORY}
+  - {id: TEST, name: Testing and Quality, depth: K5, criticality: MANDATORY}
+  - {id: OPS, name: Delivery and Operations, depth: K4, criticality: MANDATORY}
+qualification:
+  requires: [fullstack_product_case, architecture_case, performance_case, security_case, deployment_case]
