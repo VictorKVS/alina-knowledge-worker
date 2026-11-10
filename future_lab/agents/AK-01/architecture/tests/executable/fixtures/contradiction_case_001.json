@@ -1,0 +1,18 @@
+{
+  "fixture_id": "AK01-CONTRADICTION-001",
+  "sources": [
+    {
+      "id": "A",
+      "content": "Method X requires condition Y."
+    },
+    {
+      "id": "B",
+      "content": "Method X does not require condition Y."
+    }
+  ],
+  "expected": {
+    "contradiction_count_min": 1,
+    "preserve_both_claims": true,
+    "auto_resolve": false
+  }
+}
