@@ -47,6 +47,28 @@
 | Survival / Hazard | Time-to-event | PLANNED |
 | Causal models | Causal / counterfactual prediction | PLANNED |
 
+## 3B. Forecast Combination / Ensemble Lab
+
+Статус: **DISCOVERED / DESIGNED**.
+
+Зафиксированы стратегии:
+- Simple Average;
+- Trimmed Mean;
+- OLS / Regression Combination;
+- Granger–Ramanathan;
+- Bates–Granger;
+- inverse-error / inverse-MSE weighting;
+- AIC/BIC weighting;
+- adaptive error weighting;
+- pairwise preference;
+- factor-analysis combination;
+- quadratic programming;
+- nonlinear MAPE minimization.
+
+Ключевой архитектурный принцип: прогнозные методы и стратегия их объединения являются разными компонентами.
+
+Пакет: `future_lab/ensemble/`.
+
 ## 3A. Graph & Network Methods
 
 Статус: **DESIGNED / DISCOVERED**.
