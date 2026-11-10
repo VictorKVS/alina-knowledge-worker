@@ -47,6 +47,29 @@
 | Survival / Hazard | Time-to-event | PLANNED |
 | Causal models | Causal / counterfactual prediction | PLANNED |
 
+## 3C. Quant / Trading Lab
+
+Статус: **DISCOVERY / SOURCE CATALOG CREATED**.
+
+Первый внешний reference-source:
+- `wilsonfreitas/awesome-quant` — curated index of quant libraries/resources.
+
+Зафиксированные направления:
+- technical indicators;
+- trading & backtesting;
+- portfolio optimization & risk;
+- factor analysis;
+- sentiment / alternative data;
+- time series;
+- market data;
+- prediction markets;
+- quant research environments.
+
+Ключевое правило:
+`indicator → rule → strategy → execution model → costs → backtest → walk-forward → qualification`.
+
+Пакет: `future_lab/trading/`.
+
 ## 3B. Forecast Combination / Ensemble Lab
 
 Статус: **DISCOVERED / DESIGNED**.
