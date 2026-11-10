@@ -3,4 +3,5 @@ pydantic>=2.9
 uvicorn>=0.30
 sqlalchemy>=2.0
 networkx>=3.3
+psycopg[binary]>=3.2
 pytest>=8.0
