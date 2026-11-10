@@ -4,40 +4,81 @@ Owner: AB-01 Business Analyst
 Product: AK-01 ALINA Knowledge Architect
 
 ## Goal
-Describe how AK-01 creates a knowledge system for a target agent as a repeatable business process.
+
+Describe AK-01 as a continuous knowledge-engineering business process that:
+1. builds the initial knowledge architecture of a target specialist;
+2. converts knowledge into procedures, decision rules and checklists;
+3. hands the capsule to training;
+4. receives evidence from training and real work;
+5. identifies competency and knowledge gaps;
+6. proposes controlled Knowledge Deltas;
+7. supports retraining and requalification.
 
 ## Actors
+
 - FATHER Architect
-- Product Manager
-- Agent Architect
+- PM-01 Product Manager
+- AA-01 Agent Architect
 - Domain Expert
-- Knowledge Curator (AKN-01)
-- Training Architect (AT-01)
-- FATHER_CODEX
-- QA/Evaluator
-- Future Lab
 - Source Provider
+- AK-01 Knowledge Architect
+- AKN-01 Knowledge Curator
+- AT-01 Training Architect
+- AC-01 Agent Coach
+- Target Agent / Digital Specialist
+- AQ-01 QA / Evaluator
+- POLYGON
+- Production Observation
+- FATHER_CODEX
+- Future Lab
 
-## Business outcome
-A validated, traceable **Agent Knowledge Blueprint** that can be consumed by downstream agent-building stages.
+## Main business objects
 
-## Main business object
-Agent Knowledge Job
+- Agent Knowledge Job
+- Knowledge Unit
+- Knowledge Graph
+- Procedure
+- Decision Rule
+- Checklist
+- RAG Spec
+- Prompt Package
+- Knowledge Capsule
+- Specialist Capsule
+- Competency Gap
+- Knowledge Delta
+- Capsule Version
+- Qualification Record
 
-## Main result
-Agent Knowledge Blueprint
+## Knowledge layers
 
-## Main business process
+CORE
+→ DOMAIN
+→ ORGANIZATION
+→ PROJECT / TEAM
+→ ACTIVE CONTEXT
+
+Local knowledge must not silently overwrite universal knowledge.
+
+## Main business lifecycle
+
 REQUEST
 → TARGET AGENT DECOMPOSITION
 → SOURCE INTAKE
 → KNOWLEDGE EXTRACTION
 → EVIDENCE LINKING
 → GRAPH BUILD
-→ WEIGHTING
+→ PROCEDURES / CHECKLISTS
 → RAG DESIGN
 → PROMPT DESIGN
+→ KNOWLEDGE CAPSULE
+→ TRAINING
+→ PRACTICE
+→ EVALUATION
+→ DEPLOYMENT
+→ OBSERVATION
 → GAP ANALYSIS
-→ BLUEPRINT
+→ KNOWLEDGE DELTA
 → REVIEW
-→ HANDOFF
+→ RETRAINING
+→ REQUALIFICATION
+→ NEW CAPSULE VERSION
