@@ -14,6 +14,11 @@ h1{font-size:clamp(36px,6vw,68px);line-height:.96;margin:12px 0 18px;max-width:9
 .calc{display:grid;grid-template-columns:1.5fr .8fr auto;gap:10px}.calc input,.calc select,.calc button{border-radius:12px;border:1px solid #3b4863;background:#0c1322;color:var(--text);padding:12px}.calc button{background:var(--accent);color:#17120a;font-weight:800;cursor:pointer}.out{margin-top:12px;background:#070b14;border:1px solid var(--line);border-radius:12px;padding:14px;white-space:pre-wrap}
 .flow{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;background:#060910;border:1px solid var(--line);border-radius:16px;padding:18px;overflow:auto;color:#cdd8ef}
 footer{margin-top:42px;border-top:1px solid var(--line);padding-top:18px;color:var(--muted);font-size:13px}
+.catalog-tools{display:grid;grid-template-columns:1.4fr .8fr .8fr;gap:10px;margin:14px 0}
+.catalog-tools input,.catalog-tools select{border-radius:12px;border:1px solid #3b4863;background:#0c1322;color:var(--text);padding:12px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:14px 0}.stat{background:#0c1322;border:1px solid var(--line);border-radius:14px;padding:14px}.stat b{display:block;font-size:24px;color:var(--accent)}
+.passport-card{background:linear-gradient(180deg,#172033,#0d1422);border:1px solid var(--line);border-radius:18px;padding:18px}.passport-card h3{margin:8px 0 6px}.passport-meta{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}.passport-card details{border-top:1px solid var(--line);padding-top:10px;margin-top:10px}.passport-card summary{cursor:pointer;font-weight:700}.passport-card ul{padding-left:20px;color:var(--muted)}.passport-card li{margin:4px 0}.passport-k{color:#b9c6df;font-weight:700}.passport-conclusion{border-left:3px solid var(--accent);padding-left:12px;color:#e5e7eb;margin-top:10px}
+@media(max-width:720px){.catalog-tools{grid-template-columns:1fr}}
 @media(max-width:720px){.calc{grid-template-columns:1fr}}
 </style>
 </head>
@@ -37,6 +42,14 @@ footer{margin-top:42px;border-top:1px solid var(--line);padding-top:18px;color:v
 <div class="card method"><span class="badge planned">DISCOVERED</span><h3>Средний темп роста</h3><p>Прогноз строится по приблизительно постоянному коэффициенту относительного роста.</p><small>TS-GROWTH-RATE-01</small></div>
 <div class="card method"><span class="badge planned">DISCOVERED</span><h3>Линия тренда</h3><p>Трендовая модель продолжается на будущие моменты времени при сохранении основной тенденции.</p><small>TS-TREND-LINE-01</small></div>
 <div class="card method"><span class="badge planned">DISCOVERED</span><h3>Интервал прогноза</h3><p>Вместо одного числа показываем диапазон неопределённости вокруг точечного прогноза.</p><small>TS-INTERVAL-01 · формула зависит от модели и должна быть квалифицирована.</small></div>
+</div></section>
+
+
+<section class="section"><h2>Регрессия и статистическое обучение</h2><div class="grid">
+<div class="card method"><span class="badge planned">DISCOVERED</span><h3>Линейная регрессия</h3><p>Прогноз числового Y по одному или нескольким факторам X. Базовая оценка коэффициентов — МНК.</p><small>REG-LIN-01 · REG-MULTI-01</small></div>
+<div class="card method"><span class="badge planned">DISCOVERED</span><h3>Maximum Likelihood</h3><p>Оценивание параметров вероятностной модели максимизацией правдоподобия наблюдаемой выборки.</p><small>EST-MLE-01</small></div>
+<div class="card method"><span class="badge planned">DISCOVERED</span><h3>Ridge / Tikhonov</h3><p>Регуляризованная регрессия для снижения неустойчивости, особенно при мультиколлинеарности и ограниченной выборке.</p><small>REG-RIDGE-01</small></div>
+<div class="card method"><span class="badge planned">DIAGNOSTIC</span><h3>Bias–Variance</h3><p>Разложение ошибки помогает понять, не слишком ли проста или, наоборот, нестабильна модель.</p><small>Диагностический принцип, а не отдельный прогнозный метод.</small></div>
 </div></section>
 
 <section class="section"><h2>Графы и сетевое моделирование</h2><p>Математический пакет для маршрутов, потоков, зависимостей и производственных сетей FATHER.</p><div class="grid">
@@ -69,6 +82,18 @@ footer{margin-top:42px;border-top:1px solid var(--line);padding-top:18px;color:v
 <div class="card"><h3>Cause–Effect Graph</h3><p>Событие → изменение состояния → новое ограничение → следующее действие.</p></div>
 <div class="card"><h3>Bayesian Hypotheses</h3><p>Конкурирующие варианты сохраняются и переоцениваются после каждой новой сцены.</p></div>
 </div></section>
+
+
+<section class="section" id="catalog"><h2>Полный каталог паспортов методов</h2>
+<p>Единый реестр всех уже собранных методов Future Lab. Карточка показывает не только название метода, но и <b>назначение, данные, алгоритм, применение, ограничения, метрики, доказательность и статус допуска</b>.</p>
+<div id="passportStats" class="stats"></div>
+<div class="catalog-tools">
+<input id="methodSearch" placeholder="Поиск: regression, PERT, Bayesian, сюжет..." oninput="renderCatalog()">
+<select id="familyFilter" onchange="renderCatalog()"><option value="">Все направления</option></select>
+<select id="statusFilter" onchange="renderCatalog()"><option value="">Все статусы</option></select>
+</div>
+<div id="passportCatalog" class="grid"></div>
+</section>
 
 <section class="section"><h2>Быстрый расчёт</h2><div class="card">
 <div class="calc"><input id="series" value="10,12,13,16,18" aria-label="Числовой ряд"><select id="method"><option value="naive">Naive</option><option value="mean">Historical Mean</option><option value="drift">Drift</option><option value="ses">SES α=0.5</option></select><button onclick="run()">Рассчитать</button></div>
