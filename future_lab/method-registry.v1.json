@@ -58,6 +58,13 @@
       "year": 2017,
       "class": "SCIENTIFIC_B",
       "note": "Academic review; primary papers required for final qualification of individual combination methods."
+    },
+    {
+      "id": "SRC-SENKO-MOTP13-3",
+      "authority": "Учебная лекция по математическим основам теории прогнозирования",
+      "title": "Лекция 3: линейная регрессия, МНК/ММП, bias-variance, регуляризация Тихонова",
+      "class": "EXPERIMENTAL",
+      "note": "User-provided educational source; authoritative primary/academic corroboration required for final qualification."
     }
   ],
   "methods": [
@@ -398,6 +405,170 @@
         "SRC-FRENKEL-SURKOV-2017"
       ],
       "rule": "Requires primary-source verification, implementation, tests and rolling-origin backtest before RUNNABLE."
+    },
+    {
+      "id": "REG-LIN-01",
+      "family": "regression",
+      "name": "Simple linear regression",
+      "status": "DISCOVERED",
+      "evidence_class": "EXPERIMENTAL",
+      "source_ids": [
+        "SRC-SENKO-MOTP13-3"
+      ],
+      "rule": "Requires source validation, implementation/test protocol and qualification appropriate to the method class."
+    },
+    {
+      "id": "REG-MULTI-01",
+      "family": "regression",
+      "name": "Multiple linear regression",
+      "status": "DISCOVERED",
+      "evidence_class": "EXPERIMENTAL",
+      "source_ids": [
+        "SRC-SENKO-MOTP13-3"
+      ],
+      "rule": "Requires source validation, implementation/test protocol and qualification appropriate to the method class."
+    },
+    {
+      "id": "REG-RIDGE-01",
+      "family": "regression",
+      "name": "Ridge / Tikhonov regularized regression",
+      "status": "DISCOVERED",
+      "evidence_class": "EXPERIMENTAL",
+      "source_ids": [
+        "SRC-SENKO-MOTP13-3"
+      ],
+      "rule": "Requires source validation, implementation/test protocol and qualification appropriate to the method class."
+    },
+    {
+      "id": "EST-MLE-01",
+      "family": "parameter_estimation",
+      "name": "Maximum likelihood estimation",
+      "status": "DISCOVERED",
+      "evidence_class": "EXPERIMENTAL",
+      "source_ids": [
+        "SRC-SENKO-MOTP13-3"
+      ],
+      "rule": "Requires source validation, implementation/test protocol and qualification appropriate to the method class."
+    },
+    {
+      "id": "POL-DELPHI-01",
+      "family": "political_strategic",
+      "name": "Delphi expert forecasting",
+      "status": "DISCOVERED",
+      "evidence_class": "EXPERIMENTAL",
+      "rule": "Requires source validation, implementation/test protocol and qualification appropriate to the method class."
+    },
+    {
+      "id": "POL-SCENARIO-01",
+      "family": "political_strategic",
+      "name": "Scenario planning",
+      "status": "DISCOVERED",
+      "evidence_class": "EXPERIMENTAL",
+      "rule": "Requires source validation, implementation/test protocol and qualification appropriate to the method class."
+    },
+    {
+      "id": "POL-FORESIGHT-01",
+      "family": "political_strategic",
+      "name": "Strategic foresight",
+      "status": "DISCOVERED",
+      "evidence_class": "EXPERIMENTAL",
+      "rule": "Requires source validation, implementation/test protocol and qualification appropriate to the method class."
+    },
+    {
+      "id": "POL-EXTRAP-01",
+      "family": "political_strategic",
+      "name": "Strategic trend extrapolation",
+      "status": "DISCOVERED",
+      "evidence_class": "EXPERIMENTAL",
+      "rule": "Requires source validation, implementation/test protocol and qualification appropriate to the method class."
+    },
+    {
+      "id": "NP-STORY-01",
+      "family": "narrative",
+      "name": "Story-structure prior",
+      "status": "DESIGNED",
+      "evidence_class": "EXPERIMENTAL",
+      "rule": "Requires source validation, implementation/test protocol and qualification appropriate to the method class."
+    },
+    {
+      "id": "NP-GOAL-01",
+      "family": "narrative",
+      "name": "Character goal / need forecasting",
+      "status": "DESIGNED",
+      "evidence_class": "EXPERIMENTAL",
+      "rule": "Requires source validation, implementation/test protocol and qualification appropriate to the method class."
+    },
+    {
+      "id": "NP-THREAD-01",
+      "family": "narrative",
+      "name": "Unresolved plot-thread forecasting",
+      "status": "DESIGNED",
+      "evidence_class": "EXPERIMENTAL",
+      "rule": "Requires source validation, implementation/test protocol and qualification appropriate to the method class."
+    },
+    {
+      "id": "NP-CAUSE-01",
+      "family": "narrative",
+      "name": "Narrative cause-effect graph",
+      "status": "DESIGNED",
+      "evidence_class": "EXPERIMENTAL",
+      "rule": "Requires source validation, implementation/test protocol and qualification appropriate to the method class."
+    },
+    {
+      "id": "NP-REL-01",
+      "family": "narrative",
+      "name": "Relationship-dynamics forecasting",
+      "status": "DESIGNED",
+      "evidence_class": "EXPERIMENTAL",
+      "rule": "Requires source validation, implementation/test protocol and qualification appropriate to the method class."
+    },
+    {
+      "id": "NP-GENRE-01",
+      "family": "narrative",
+      "name": "Genre prior",
+      "status": "DESIGNED",
+      "evidence_class": "EXPERIMENTAL",
+      "rule": "Requires source validation, implementation/test protocol and qualification appropriate to the method class."
+    },
+    {
+      "id": "NP-MARKOV-01",
+      "family": "narrative",
+      "name": "Narrative Markov / state transition",
+      "status": "DESIGNED",
+      "evidence_class": "EXPERIMENTAL",
+      "rule": "Requires source validation, implementation/test protocol and qualification appropriate to the method class."
+    },
+    {
+      "id": "NP-BAYES-01",
+      "family": "narrative",
+      "name": "Narrative Bayesian hypothesis update",
+      "status": "DESIGNED",
+      "evidence_class": "EXPERIMENTAL",
+      "rule": "Requires source validation, implementation/test protocol and qualification appropriate to the method class."
+    },
+    {
+      "id": "NP-LLM-01",
+      "family": "narrative",
+      "name": "LLM abductive narrative forecast",
+      "status": "DESIGNED",
+      "evidence_class": "EXPERIMENTAL",
+      "rule": "Requires source validation, implementation/test protocol and qualification appropriate to the method class."
+    },
+    {
+      "id": "NP-ENS-01",
+      "family": "narrative",
+      "name": "Narrative forecast ensemble",
+      "status": "DESIGNED",
+      "evidence_class": "EXPERIMENTAL",
+      "rule": "Requires source validation, implementation/test protocol and qualification appropriate to the method class."
+    },
+    {
+      "id": "DIV-NUM-01",
+      "family": "cultural_divination",
+      "name": "Numerology",
+      "status": "CATALOG_ONLY",
+      "evidence_class": "NON_SCIENTIFIC",
+      "rule": "Requires source validation, implementation/test protocol and qualification appropriate to the method class."
     }
   ]
 }
