@@ -1,0 +1,153 @@
+{
+  "schema_version": "1.0",
+  "registry": "PMP-01",
+  "title": "FATHER Future Lab — Prediction Method Pool",
+  "evidence_policy": {
+    "SCIENTIFIC_A": "primary peer-reviewed paper, standard, official scientific/engineering body or authoritative academic text",
+    "SCIENTIFIC_B": "replicated/accepted method documented by major technical reference",
+    "EXPERIMENTAL": "research method not yet qualified for product use",
+    "NON_SCIENTIFIC": "historical/cultural/divinatory system; never merged with scientific evidence score"
+  },
+  "sources": [
+    {
+      "id": "SRC-HYNDMAN-FPP3",
+      "authority": "Monash University / OTexts",
+      "title": "Forecasting: Principles and Practice, 3rd ed.",
+      "url": "https://otexts.com/fpp3/",
+      "class": "SCIENTIFIC_A"
+    },
+    {
+      "id": "SRC-NASA-NAV",
+      "authority": "NASA Technical Publication",
+      "title": "Navigation Filter Best Practices",
+      "url": "https://ntrs.nasa.gov/citations/20250002787",
+      "class": "SCIENTIFIC_A"
+    },
+    {
+      "id": "SRC-ECMWF-ENS",
+      "authority": "ECMWF",
+      "title": "Quantifying forecast uncertainty / Ensemble prediction",
+      "url": "https://www.ecmwf.int/en/research/modelling-and-prediction/quantifying-forecast-uncertainty",
+      "class": "SCIENTIFIC_A"
+    },
+    {
+      "id": "SRC-STAN",
+      "authority": "Stan Development Team",
+      "title": "Stan Documentation",
+      "url": "https://mc-stan.org/users/documentation/",
+      "class": "SCIENTIFIC_A"
+    },
+    {
+      "id": "SRC-NATURE-ASTROLOGY",
+      "authority": "Nature",
+      "title": "A double-blind test of astrology",
+      "url": "https://www.nature.com/articles/318419a0",
+      "class": "SCIENTIFIC_A"
+    },
+    {
+      "id": "SRC-NCBI-PALMISTRY",
+      "authority": "NCBI/PubMed",
+      "title": "Metoposcopy redux — historical discussion of palmistry/chiromancy",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37924996/",
+      "class": "SCIENTIFIC_A"
+    }
+  ],
+  "methods": [
+    {
+      "id": "TS-NAIVE-01",
+      "family": "time_series",
+      "name": "Naive forecast",
+      "status": "RUNNABLE",
+      "evidence_class": "SCIENTIFIC_A",
+      "source_ids": [
+        "SRC-HYNDMAN-FPP3"
+      ],
+      "code": "future_lab.methods:naive"
+    },
+    {
+      "id": "TS-MEAN-01",
+      "family": "time_series",
+      "name": "Historical mean",
+      "status": "RUNNABLE",
+      "evidence_class": "SCIENTIFIC_A",
+      "source_ids": [
+        "SRC-HYNDMAN-FPP3"
+      ],
+      "code": "future_lab.methods:historical_mean"
+    },
+    {
+      "id": "TS-DRIFT-01",
+      "family": "time_series",
+      "name": "Drift method",
+      "status": "RUNNABLE",
+      "evidence_class": "SCIENTIFIC_A",
+      "source_ids": [
+        "SRC-HYNDMAN-FPP3"
+      ],
+      "code": "future_lab.methods:drift"
+    },
+    {
+      "id": "TS-SES-01",
+      "family": "time_series",
+      "name": "Simple exponential smoothing",
+      "status": "RUNNABLE",
+      "evidence_class": "SCIENTIFIC_A",
+      "source_ids": [
+        "SRC-HYNDMAN-FPP3"
+      ],
+      "code": "future_lab.methods:simple_exponential_smoothing"
+    },
+    {
+      "id": "NAV-KALMAN-01",
+      "family": "state_estimation",
+      "name": "Kalman-family state estimation",
+      "status": "PLANNED",
+      "evidence_class": "SCIENTIFIC_A",
+      "source_ids": [
+        "SRC-NASA-NAV"
+      ]
+    },
+    {
+      "id": "PROB-BAYES-01",
+      "family": "bayesian",
+      "name": "Bayesian probabilistic model",
+      "status": "PLANNED",
+      "evidence_class": "SCIENTIFIC_A",
+      "source_ids": [
+        "SRC-STAN"
+      ]
+    },
+    {
+      "id": "ENS-01",
+      "family": "ensemble",
+      "name": "Ensemble forecast and uncertainty",
+      "status": "PLANNED",
+      "evidence_class": "SCIENTIFIC_A",
+      "source_ids": [
+        "SRC-ECMWF-ENS"
+      ]
+    },
+    {
+      "id": "DIV-ASTRO-01",
+      "family": "cultural_divination",
+      "name": "Natal astrology",
+      "status": "CATALOG_ONLY",
+      "evidence_class": "NON_SCIENTIFIC",
+      "source_ids": [
+        "SRC-NATURE-ASTROLOGY"
+      ],
+      "rule": "May be reproduced as a cultural/historical algorithm for comparison, never labeled scientifically validated."
+    },
+    {
+      "id": "DIV-PALM-01",
+      "family": "cultural_divination",
+      "name": "Palmistry / chiromancy",
+      "status": "CATALOG_ONLY",
+      "evidence_class": "NON_SCIENTIFIC",
+      "source_ids": [
+        "SRC-NCBI-PALMISTRY"
+      ],
+      "rule": "May be documented as a historical divinatory system; predictive claims must not be presented as scientific evidence."
+    }
+  ]
+}
