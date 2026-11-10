@@ -1,0 +1,25 @@
+profession_id: AI-RAG
+family: AI_ML_ENGINEERING
+title: RAG Engineer
+version: 1
+competency_vector:
+  ingestion: K5
+  chunking: K5
+  embeddings: K4
+  sparse_retrieval: K4
+  vector_retrieval: K5
+  hybrid_search: K5
+  reranking: K5
+  grounding: K5
+  evaluation: K5
+  vector_databases: K4
+knowledge_requirements:
+  - {id: ING, name: Ingestion and Parsing, depth: K5, criticality: MANDATORY}
+  - {id: CHUNK, name: Chunking and Document Structure, depth: K5, criticality: MANDATORY}
+  - {id: EMB, name: Embeddings, depth: K4, criticality: MANDATORY}
+  - {id: RET, name: Retrieval Systems, depth: K5, criticality: MANDATORY}
+  - {id: HYB, name: Hybrid Search and Reranking, depth: K5, criticality: MANDATORY}
+  - {id: GROUND, name: Grounding and Citation, depth: K5, criticality: MANDATORY}
+  - {id: EVAL, name: RAG Evaluation, depth: K5, criticality: MANDATORY}
+qualification:
+  requires: [retrieval_case, reranking_case, grounding_case, failure_case, evaluation_case]
