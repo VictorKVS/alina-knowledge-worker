@@ -1,0 +1,49 @@
+schema_version: 1
+required:
+  - source_id
+  - source_type
+  - identity_status
+  - version_status
+  - integrity_status
+  - qualification_verdict
+  - permitted_uses
+
+fields:
+  source_id: string
+  source_type:
+    enum: [official, standard, article, review, preprint, book, website, documentation, dataset, case_study, other]
+  identifiers:
+    doi: optional
+    isbn: optional
+    issn: optional
+    pmid: optional
+    url: optional
+  identity_status:
+    enum: [verified, partial, unverified]
+  peer_review_status:
+    enum: [confirmed, claimed, not_applicable, unknown, not_peer_reviewed]
+  version_status:
+    enum: [version_of_record, accepted_manuscript, preprint, current, superseded, unknown]
+  integrity_status:
+    enum: [clear, corrected, expression_of_concern, retracted, quarantined, unknown]
+  dimensions:
+    authority: object
+    methodological_rigor: object
+    transparency: object
+    reproducibility: object
+    relevance: object
+    applicability: object
+    recency: object
+    independence: object
+    conflict_of_interest: object
+    external_support: object
+  qualification_verdict:
+    enum: [ACCEPT_PRIMARY, ACCEPT_SUPPORTING, ACCEPT_WITH_LIMITS, DISCOVERY_ONLY, QUARANTINE, REJECT]
+  permitted_uses:
+    type: array
+  supported_claims:
+    type: array
+  limitations:
+    type: array
+  evidence:
+    type: array
