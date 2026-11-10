@@ -26,6 +26,14 @@
 - MAE
 - RMSE
 
+Дополнительно зафиксированы из учебного источника:
+- TS-ABS-GROWTH-01 — средний абсолютный прирост [DISCOVERED];
+- TS-GROWTH-RATE-01 — средний темп роста [DISCOVERED];
+- TS-TREND-LINE-01 — прогноз по линии тренда [DISCOVERED];
+- TS-INTERVAL-01 — интервальная оценка прогноза [DISCOVERED].
+
+Источник intake: `future_lab/time_series/SOURCE_INTAKE_002_SIMPLE_EXTRAPOLATION.md`.
+
 ## 3. Уже заведённые, но ещё не реализованные научные направления
 
 | ID / группа | Направление | Статус |
