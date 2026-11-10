@@ -47,6 +47,35 @@
 | Survival / Hazard | Time-to-event | PLANNED |
 | Causal models | Causal / counterfactual prediction | PLANNED |
 
+## 3D. Celestial Knowledge Base
+
+Статус: **KNOWLEDGE BASE CREATED / SCIENTIFIC CORE DESIGNED**.
+
+Научное ядро:
+- JPL Horizons / DE441;
+- NASA NAIF SPICE;
+- Swiss Ephemeris compatibility layer;
+- time systems;
+- reference frames;
+- ephemerides;
+- coordinates and state vectors;
+- orbital elements;
+- phases / rise-set / conjunctions / eclipses;
+- uncertainty and source/version tracking.
+
+Культурный слой изолирован:
+- Western / Tropical;
+- Sidereal / Jyotish;
+- Hellenistic;
+- Medieval/Renaissance;
+- Chinese;
+- Natal / Transit / Synastry / Horary / Electional / Mundane.
+
+Ключевой принцип:
+`scientific ephemeris != scientific validation of astrology`.
+
+Пакет: `future_lab/celestial/`.
+
 ## 3C. Quant / Trading Lab
 
 Статус: **DISCOVERY / SOURCE CATALOG CREATED**.
