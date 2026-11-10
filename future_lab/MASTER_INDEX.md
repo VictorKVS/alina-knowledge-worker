@@ -2,6 +2,30 @@
 
 Статус: инвентаризация того, что уже создано в AU-01 / Future Lab.
 
+## 1A. FATHER Forecasting Core
+
+Статус: **CORE CONTRACT CREATED**.
+
+Forecasting Core — общая сервисная база методов для всех агентов FATHER.
+
+Компоненты:
+- Method Registry;
+- Method Passport Catalog;
+- Method Selector [planned];
+- Method Runner Interface [planned];
+- Ensemble Engine [partial catalog];
+- Uncertainty Engine [partial];
+- Backtest Engine [partial];
+- Score Registry [planned];
+- Resource Profiler [planned];
+- Energy Profiler [planned];
+- Evidence / Provenance Ledger [planned];
+- Qualification Gate [designed].
+
+Контракты:
+- `FORECASTING_CORE_ARCHITECTURE.md`
+- `forecasting-core.contract.v1.json`
+
 ## 1. Ядро
 
 | Компонент | Статус | Файл |
