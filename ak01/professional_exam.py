@@ -98,10 +98,17 @@ def score_exam_case(
                 passed = str(expected) in actual
         elif mode == "NON_EMPTY":
             passed = bool(actual)
-        elif mode == "AT_LEAST":
-            passed = actual is not None and float(actual) >= float(expected)
-        elif mode == "AT_MOST":
-            passed = actual is not None and float(actual) <= float(expected)
+        elif mode in {"AT_LEAST", "AT_MOST"}:
+            if actual is None or expected is None:
+                passed = False
+            else:
+                actual_value = float(actual)
+                expected_value = float(expected)
+                passed = (
+                    actual_value >= expected_value
+                    if mode == "AT_LEAST"
+                    else actual_value <= expected_value
+                )
         else:
             raise ValueError(f"Unsupported scoring mode: {mode}")
 
