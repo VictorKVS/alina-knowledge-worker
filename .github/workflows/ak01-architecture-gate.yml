@@ -17,6 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       AK01_TEST_ADAPTER: ak01.testing_adapter
+      PYTHONPATH: .
 
     steps:
       - uses: actions/checkout@v4
@@ -35,7 +36,7 @@ jobs:
       - name: Ensure no mandatory tests were skipped
         run: |
           python - <<'PY'
-          import os, subprocess, sys
+          import os, subprocess
           env = os.environ.copy()
           p = subprocess.run(
               ["pytest","future_lab/agents/AK-01/architecture/tests/executable","-q","-rs"],
