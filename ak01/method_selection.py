@@ -3,7 +3,6 @@ from __future__ import annotations
 from copy import deepcopy
 from typing import Any
 
-
 def _normalize_score(value: float, direction: str) -> float:
     if direction == "MINIMIZE":
         return -value
@@ -35,7 +34,7 @@ def compare_candidates(
     eligible_ids: list[str] = []
     excluded: list[dict[str, Any]] = []
 
-    for candidate_id, candidate in candidate_by_id.items():
+    for candidate_id in candidate_by_id:
         ready = readiness_by_id.get(candidate_id, {})
         reasons: list[str] = []
 
@@ -58,9 +57,12 @@ def compare_candidates(
                 reasons.append(f"missing_hard_constraint_measurement:{metric}")
                 continue
 
-            if operator == "<=" and not float(observed) <= threshold:
-                reasons.append(f"hard_constraint_failed:{metric}")
-            elif operator == ">=" and not float(observed) >= threshold:
+            failed_constraint = (
+                operator == "<=" and not float(observed) <= threshold
+            ) or (
+                operator == ">=" and not float(observed) >= threshold
+            )
+            if failed_constraint:
                 reasons.append(f"hard_constraint_failed:{metric}")
 
         if reasons:
