@@ -8,7 +8,6 @@ from typing import Any
 
 from .domain import Job
 
-
 _JOBS: dict[str, Job] = {}
 
 
