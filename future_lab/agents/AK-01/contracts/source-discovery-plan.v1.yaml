@@ -1,0 +1,25 @@
+schema_version: 1
+required:
+  - discovery_plan_id
+  - derived_from_plan
+  - subject
+  - search_intents
+  - source_channels
+  - seed_source_policy
+  - prohibited_actions
+  - required_candidate_fields
+  - status
+
+rules:
+  - discovery plan must trace to a research plan
+  - discovery does not equal qualification
+  - DOI and ISBN are identifiers, not quality certificates
+  - famous authors and search rank are insufficient for acceptance
+  - practitioner sources require corroboration for scientific or normative claims
+  - source qualification is mandatory before knowledge ingestion
+
+status_values:
+  - DISCOVERY_REQUIRED
+  - DISCOVERY_IN_PROGRESS
+  - CANDIDATES_READY
+  - BLOCKED
