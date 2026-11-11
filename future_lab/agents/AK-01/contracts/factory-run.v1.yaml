@@ -1,0 +1,16 @@
+schema_version: 1
+required:
+  - run_id
+  - work_object
+  - stages
+  - next_required_stage
+  - status
+
+principles:
+  - stages are append-only trace records
+  - a blocked gate stops downstream automation
+  - source discovery, source qualification and knowledge qualification remain distinct
+  - method selection requires qualified knowledge and comparison readiness
+  - production outcome creates a learning action
+  - a learning action creates a delta with mandatory regression
+  - no stage may silently fabricate a missing upstream artifact
