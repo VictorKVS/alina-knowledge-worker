@@ -75,6 +75,10 @@ def register_candidates(
                 known_authors.append(author)
         entry["authors_or_issuer"] = known_authors
 
+    for entry in entries.values():
+        entry["metadata_conflicts"] = detect_metadata_conflicts(entry)
+        entry["requires_metadata_review"] = bool(entry["metadata_conflicts"])
+
     ordered = sorted(entries.values(), key=lambda item: item["registry_key"])
 
     return {
@@ -106,7 +110,53 @@ def validate_registry(registry: dict[str, Any]) -> list[str]:
         if entry.get("status") != "DISCOVERED_UNQUALIFIED":
             errors.append(f"invalid_initial_status:{key}")
 
+        conflicts = detect_metadata_conflicts(entry)
+        if conflicts and entry.get("metadata_conflicts") not in (None, conflicts):
+            errors.append(f"metadata_conflict_state_mismatch:{key}")
+
     if registry.get("unique_count") != len(registry.get("entries", [])):
         errors.append("unique_count_mismatch")
 
     return errors
+
+
+
+def detect_metadata_conflicts(entry: dict[str, Any]) -> list[dict[str, Any]]:
+    """Detect material metadata disagreements across discovery records."""
+    fields = [
+        "title",
+        "source_type",
+        "publication_or_version_date",
+    ]
+    conflicts: list[dict[str, Any]] = []
+
+    records = entry.get("discovery_records") or []
+    for field in fields:
+        values = []
+        for record in records:
+            value = record.get(field)
+            if value is None:
+                continue
+            normalized = " ".join(str(value).lower().split())
+            if normalized and normalized not in values:
+                values.append(normalized)
+        if len(values) > 1:
+            conflicts.append({
+                "field": field,
+                "values": values,
+                "severity": "REVIEW_REQUIRED",
+            })
+
+    author_sets = []
+    for record in records:
+        authors = tuple(sorted(str(a).lower() for a in record.get("authors_or_issuer") or []))
+        if authors and authors not in author_sets:
+            author_sets.append(authors)
+    if len(author_sets) > 1:
+        conflicts.append({
+            "field": "authors_or_issuer",
+            "values": [list(item) for item in author_sets],
+            "severity": "REVIEW_REQUIRED",
+        })
+
+    return conflicts
