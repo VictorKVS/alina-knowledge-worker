@@ -3,7 +3,6 @@ from __future__ import annotations
 from copy import deepcopy
 from typing import Any
 
-
 ROOT_CAUSES = {
     "K1_KNOWLEDGE_MISSING",
     "K2_KNOWLEDGE_OUTDATED",
