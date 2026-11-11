@@ -1,0 +1,12 @@
+schema_version: 1
+decisions:
+  - ALLOW
+  - BLOCK
+  - ESCALATE
+
+rules:
+  - QUALIFIED knowledge is runtime eligible
+  - CONFLICTED knowledge requires escalation
+  - RAW, EXTRACTED, EVIDENCE_LINKED, VERIFIED_NOT_QUALIFIED, SUPERSEDED and ARCHIVED are blocked
+  - unknown states are blocked by default
+  - HIGH and SAFETY_CRITICAL tasks require traceable qualification records
