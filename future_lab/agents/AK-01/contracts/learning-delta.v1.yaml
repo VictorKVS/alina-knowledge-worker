@@ -1,0 +1,23 @@
+schema_version: 1
+required:
+  - problem_id
+  - candidate_id
+  - root_cause
+  - route
+  - target
+  - affected_artifacts
+  - proposed_change
+  - regression_case
+  - source_evidence
+  - status
+  - regression_required
+  - requalification_required
+  - applied
+
+rules:
+  - every correction is tied to a classified production failure
+  - every correction names the affected artifact
+  - every applied correction records a Git commit
+  - every applied correction requires a regression test
+  - changes to professional behavior or knowledge require requalification
+  - evidence that caused the correction must be retained
