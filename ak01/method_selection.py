@@ -3,6 +3,7 @@ from __future__ import annotations
 from copy import deepcopy
 from typing import Any
 
+
 def _normalize_score(value: float, direction: str) -> float:
     if direction == "MINIMIZE":
         return -value
