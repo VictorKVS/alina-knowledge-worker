@@ -1,0 +1,40 @@
+schema_version: "1.0"
+object_type: target_agent_profile
+
+target_agent:
+  id:
+  name:
+  role:
+  version:
+
+goals: []
+tasks: []
+required_capabilities: []
+required_knowledge_domains: []
+
+operational_constraints:
+  latency:
+  compute:
+  security:
+  explainability:
+  evidence_level:
+
+knowledge_policy:
+  allowed_evidence_classes:
+    - SCIENTIFIC_A
+    - SCIENTIFIC_B
+    - EXPERIMENTAL
+  allow_non_scientific: false
+  minimum_state_for_runtime_use: VERIFIED
+
+expected_pack:
+  concepts: true
+  methods: true
+  algorithms: true
+  formulas: true
+  assumptions: true
+  limitations: true
+  examples: true
+  implementations: true
+  tests: true
+  sources: true

@@ -1,0 +1,48 @@
+name: AK-01 DevSecOps
+
+on:
+  push:
+    paths:
+      - "ak01/**"
+      - "requirements-ak01*.txt"
+      - ".github/workflows/ak01-devsecops.yml"
+  pull_request:
+    paths:
+      - "ak01/**"
+      - "requirements-ak01*.txt"
+      - ".github/workflows/ak01-devsecops.yml"
+
+jobs:
+  quality-security:
+    runs-on: ubuntu-latest
+    env:
+      PYTHONPATH: .
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements-ak01-dev.txt
+
+      - name: Ruff
+        run: ruff check ak01
+
+      - name: Mypy
+        run: mypy ak01 --ignore-missing-imports
+
+      - name: Bandit
+        run: bandit -r ak01 -q
+
+      - name: Dependency audit
+        run: pip-audit -r requirements-ak01.txt
+
+      - name: Architecture tests
+        env:
+          AK01_TEST_ADAPTER: ak01.testing_adapter
+        run: pytest future_lab/agents/AK-01/architecture/tests/executable -q

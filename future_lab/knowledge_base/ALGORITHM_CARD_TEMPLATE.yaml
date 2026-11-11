@@ -1,0 +1,70 @@
+algorithm_id: ALG-XXXX-001
+name:
+family:
+task_types: []
+domains: []
+
+mathematical_basis:
+
+assumptions: []
+limitations: []
+unsuitable_when: []
+
+sources:
+  primary: []
+  books:
+    - title:
+      authors:
+      edition:
+      year:
+      chapter:
+      section:
+      pages:
+      local_source_ref:
+  university_or_standard: []
+  library_docs: []
+  wikipedia: []
+
+formulas: []
+
+pseudocode: |
+
+implementation:
+  language: Python
+  module:
+  version: 0.1.0
+  status: PLANNED
+
+tests:
+  unit: []
+  regression: []
+  property: []
+
+validation:
+  method:
+  datasets: []
+  metrics: []
+  backtests: []
+
+uncertainty: {}
+
+resources:
+  cpu:
+  ram_mb:
+  gpu:
+  vram_mb:
+  latency_ms:
+
+energy:
+  status: UNKNOWN
+  joules_per_run:
+  wh_per_1000_runs:
+
+qualification_status: DISCOVERED
+
+provenance:
+  created_from:
+  extracted_by:
+  reviewed_by:
+  created_at:
+  updated_at:

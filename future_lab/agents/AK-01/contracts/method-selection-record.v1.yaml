@@ -1,0 +1,21 @@
+schema_version: 1
+required:
+  - decision
+  - selected_candidate_id
+  - scores
+  - eligible_candidates
+  - excluded_candidates
+  - reason
+  - comparison_trace
+
+decisions:
+  - SELECTED
+  - NO_DECISION
+
+rules:
+  - candidates not ready for comparison are excluded
+  - hard constraints are evaluated before weighted comparison
+  - missing required measurements block a candidate
+  - a tie produces NO_DECISION
+  - selection criteria and weights must be preserved in the trace
+  - selection does not prove the method is universally best

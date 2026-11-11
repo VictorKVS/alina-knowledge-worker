@@ -1,0 +1,24 @@
+schema_version: 1
+required_dimensions:
+  - concept
+  - decision
+  - procedure
+  - limitation
+  - evidence
+  - contradiction
+  - practice
+  - evaluation
+  - safety_security
+
+saturation_decisions:
+  - EXPAND
+  - STOP
+
+rules:
+  - mandatory knowledge requirements must be covered before STOP
+  - material alternatives must be represented
+  - material contradictions must be documented
+  - failure modes must be covered
+  - at least two recent iterations are required for saturation
+  - recent material findings force EXPAND
+  - STOP does not mean universal completeness; it means sufficient coverage for the defined work scope

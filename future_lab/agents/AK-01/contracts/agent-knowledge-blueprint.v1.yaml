@@ -1,0 +1,101 @@
+schema_version: "1.0"
+object_type: agent_knowledge_blueprint
+
+target_agent:
+  id:
+  name:
+  version:
+  role:
+  mission:
+  goals: []
+  tasks: []
+  required_capabilities: []
+
+knowledge_architecture:
+  domains: []
+  concepts: []
+  methods: []
+  algorithms: []
+  tools: []
+  policies: []
+  prerequisites: []
+
+knowledge_graph:
+  node_types: []
+  edge_types: []
+  nodes: []
+  edges: []
+  weight_policy:
+    authority_weight:
+    evidence_weight:
+    relevance_weight:
+    recency_weight:
+    applicability_weight:
+    confidence_weight:
+    prerequisite_weight:
+    operational_weight:
+    contradiction_penalty:
+
+rag:
+  corpora: []
+  chunking:
+    strategy:
+    chunk_size:
+    overlap:
+    preserve_sections: true
+    preserve_formulas: true
+    preserve_tables: true
+    preserve_source_location: true
+  metadata_schema: []
+  retrieval:
+    lexical: true
+    vector: true
+    graph: true
+    filters: []
+  reranking:
+    enabled: true
+    criteria: []
+  evidence_policy:
+    minimum_class:
+    citations_required: true
+    weak_evidence_behavior:
+  freshness:
+    policy:
+    stale_after_days:
+
+prompt_architecture:
+  system_core:
+  role_prompt:
+  domain_policy:
+  evidence_policy:
+  tool_policy:
+  decision_policy:
+  output_contract:
+  escalation_policy:
+  task_overlays: []
+
+evaluation:
+  retrieval_tests: []
+  grounding_tests: []
+  contradiction_tests: []
+  missing_knowledge_tests: []
+  task_cases: []
+
+gaps:
+  unknowns: []
+  missing_sources: []
+  weak_evidence_areas: []
+  contradictions: []
+
+training_handoff:
+  required_prerequisites: []
+  target_competencies: []
+  competency_weights: []
+  suggested_sequence_constraints: []
+  evaluation_requirements: []
+
+provenance:
+  produced_by: AK-01
+  reviewed_by:
+  created_at:
+  updated_at:

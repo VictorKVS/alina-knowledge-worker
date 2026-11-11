@@ -1,0 +1,20 @@
+schema_version: 1
+required:
+  - problem_id
+  - candidate_id
+  - selection_reason
+  - expected_metrics
+  - actual_metrics
+  - metric_deltas
+  - context
+  - incident_notes
+  - root_cause
+  - root_cause_evidence
+  - status
+
+rules:
+  - outcome records are append-only historical evidence
+  - root-cause classification requires evidence
+  - method reputation is derived from outcomes and must not rewrite history
+  - a failed outcome does not automatically invalidate a method universally
+  - learning actions are routed according to root cause

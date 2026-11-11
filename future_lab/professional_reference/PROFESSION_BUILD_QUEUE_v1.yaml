@@ -1,0 +1,55 @@
+version: 1
+priority_groups:
+  P0:
+    - Senior Backend Engineer
+    - Senior Frontend Engineer
+    - Senior Full-Stack Engineer
+    - Software Architect
+    - Solution Architect
+    - DevOps Engineer
+    - SRE
+    - Security Engineer
+    - AppSec Engineer
+    - DevSecOps Engineer
+    - LLM Engineer
+    - RAG Engineer
+    - Agent Engineer
+    - Data Engineer
+    - QA Automation Engineer
+
+  P1:
+    - ML Engineer
+    - MLOps Engineer
+    - AI Safety Engineer
+    - Speech AI Engineer
+    - Computer Vision Engineer
+    - Database Engineer
+    - Network Engineer
+    - Cloud Engineer
+    - Kubernetes Engineer
+    - SOC Analyst
+    - Threat Intelligence Analyst
+    - OSINT Analyst
+    - Incident Responder
+    - Security Architect
+
+  P2:
+    - Product Manager
+    - Business Analyst
+    - System Analyst
+    - Project Manager
+    - Data Analyst
+    - Data Scientist
+    - Technical Writer
+    - Knowledge Manager
+    - Compliance Specialist
+    - Privacy Specialist
+    - Financial Analyst
+    - Risk Analyst
+    - Robotics Engineer
+    - Control Systems Engineer
+
+policy:
+  note: >
+    The queue is expandable. AK-01 may synthesize a provisional role not yet in the
+    registry when a product requires it, then submit the role for registry review.

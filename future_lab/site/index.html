@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FATHER Future Lab — Расчёты будущего</title>
+<style>
+:root{--bg:#070b14;--panel:#111827;--panel2:#172033;--line:#293449;--text:#eef2ff;--muted:#9ca9c7;--accent:#f6c453}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,Segoe UI,system-ui,sans-serif;background:radial-gradient(circle at 20% 0,#17213a 0,#070b14 42%);color:var(--text)}
+.wrap{max-width:1180px;margin:auto;padding:34px 22px 70px}.hero{padding:34px 0 18px}.eyebrow{letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:700;font-size:12px}
+h1{font-size:clamp(36px,6vw,68px);line-height:.96;margin:12px 0 18px;max-width:950px}p{color:var(--muted);line-height:1.65}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}.card{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:18px;padding:20px}
+.badge{display:inline-block;border:1px solid #47536b;border-radius:999px;padding:4px 9px;font-size:11px;margin-right:6px}.science{color:#8cf0b4}.culture{color:#ffd38a}.planned{color:#8eb8ff}
+.section{margin-top:30px}.section h2{font-size:26px;margin-bottom:14px}.method h3{margin:4px 0 8px}.method small{color:var(--muted)}
+.calc{display:grid;grid-template-columns:1.5fr .8fr auto;gap:10px}.calc input,.calc select,.calc button{border-radius:12px;border:1px solid #3b4863;background:#0c1322;color:var(--text);padding:12px}.calc button{background:var(--accent);color:#17120a;font-weight:800;cursor:pointer}.out{margin-top:12px;background:#070b14;border:1px solid var(--line);border-radius:12px;padding:14px;white-space:pre-wrap}
+.flow{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;background:#060910;border:1px solid var(--line);border-radius:16px;padding:18px;overflow:auto;color:#cdd8ef}
+footer{margin-top:42px;border-top:1px solid var(--line);padding-top:18px;color:var(--muted);font-size:13px}
+.catalog-tools{display:grid;grid-template-columns:1.4fr .8fr .8fr;gap:10px;margin:14px 0}
+.catalog-tools input,.catalog-tools select{border-radius:12px;border:1px solid #3b4863;background:#0c1322;color:var(--text);padding:12px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:14px 0}.stat{background:#0c1322;border:1px solid var(--line);border-radius:14px;padding:14px}.stat b{display:block;font-size:24px;color:var(--accent)}
+.passport-card{background:linear-gradient(180deg,#172033,#0d1422);border:1px solid var(--line);border-radius:18px;padding:18px}.passport-card h3{margin:8px 0 6px}.passport-meta{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}.passport-card details{border-top:1px solid var(--line);padding-top:10px;margin-top:10px}.passport-card summary{cursor:pointer;font-weight:700}.passport-card ul{padding-left:20px;color:var(--muted)}.passport-card li{margin:4px 0}.passport-k{color:#b9c6df;font-weight:700}.passport-conclusion{border-left:3px solid var(--accent);padding-left:12px;color:#e5e7eb;margin-top:10px}
+@media(max-width:720px){.catalog-tools{grid-template-columns:1fr}}
+@media(max-width:720px){.calc{grid-template-columns:1fr}}
+</style>
+</head>
+<body><main class="wrap">
+<section class="hero"><div class="eyebrow">FATHER / AU-01 / PMP-01</div><h1>Future Lab<br>«Расчёты будущего»</h1><p>Лаборатория воспроизводимых прогнозов. Каждый результат должен показывать: <b>какой метод</b> применён, <b>на каких данных</b>, <b>по какому алгоритму</b>, <b>из какого авторитетного источника</b> и <b>как метод прошёл backtesting</b>.</p></section>
+
+
+<section class="section"><h2>FATHER Forecasting Core</h2>
+<p>Единая база прогнозирования для всех агентов FATHER. Агент формулирует задачу и ограничения, а ядро выбирает методы, запускает сравнение, оценивает неопределённость, backtest, ресурсы и энергию.</p>
+<div class="flow">AGENT → FORECAST REQUEST → CLASSIFY → SELECT METHODS → RUN → COMPARE / ENSEMBLE → BACKTEST → SCORE → RESOURCE / ENERGY PROFILE → RESPONSE</div>
+<div class="grid">
+<div class="card"><h3>Method Registry</h3><p>Единый каталог методов и паспортов.</p></div>
+<div class="card"><h3>Method Selector</h3><p>Выбор кандидатов по домену, горизонту, данным, точности и ограничениям.</p></div>
+<div class="card"><h3>Backtest Engine</h3><p>Проверка метода на известном будущем и rolling-origin validation.</p></div>
+<div class="card"><h3>Score Registry</h3><p>Репутация метода хранится по контексту, а не как одна глобальная оценка.</p></div>
+<div class="card"><h3>Resource Profile</h3><p>CPU, RAM, GPU, VRAM, latency, throughput и сложность развёртывания.</p></div>
+<div class="card"><h3>Energy Profile</h3><p>Энергозатраты маркируются как MEASURED, ESTIMATED или UNKNOWN — без выдуманных значений.</p></div>
+</div></section>
+
+<section class="section"><h2>Принцип работы</h2><div class="flow">TASK → CLASSIFY → SELECT METHODS → CHECK ASSUMPTIONS → RUN → COMPARE / ENSEMBLE → FORECAST → KNOWN FUTURE → BACKTEST → METHOD SCORE REGISTRY</div></section>
+
+<section class="section"><h2>Научный пул</h2><div class="grid">
+<div class="card method"><span class="badge science">SCIENTIFIC_A</span><h3>Time Series</h3><p>Naive, Mean, Drift, SES; далее ETS, ARIMA/SARIMA, regression, VAR.</p><small>База: Hyndman & Athanasopoulos, Forecasting: Principles and Practice.</small></div>
+<div class="card method"><span class="badge science">SCIENTIFIC_A</span><h3>State Estimation</h3><p>Kalman-family и state-space модели для обновления оценки состояния по новым наблюдениям.</p><small>База: NASA Navigation Filter Best Practices.</small></div>
+<div class="card method"><span class="badge planned">PLANNED</span><h3>Bayesian</h3><p>Prior → Evidence → Posterior. Обновление вероятностей гипотез при появлении новых данных.</p><small>Инженерная база: Stan.</small></div>
+<div class="card method"><span class="badge planned">PLANNED</span><h3>Ensemble</h3><p>Несколько моделей вместо одной: сравнение, калибровка и оценка неопределённости.</p><small>Референс: ECMWF ensemble prediction.</small></div>
+</div></section>
+
+
+
+<section class="section"><h2>Простейшие методы экстраполяции</h2><p>Первый учебный уровень математического прогнозирования: прозрачные формулы, явные предпосылки и обязательная последующая проверка на известных данных.</p><div class="grid">
+<div class="card method"><span class="badge science">RUNNABLE</span><h3>Средний уровень</h3><p>Будущее значение принимается равным среднему историческому уровню, если выраженный тренд отсутствует.</p><small>TS-MEAN-01</small></div>
+<div class="card method"><span class="badge planned">DISCOVERED</span><h3>Средний абсолютный прирост</h3><p>Последнее значение продолжается на среднюю величину абсолютного изменения за каждый шаг.</p><small>TS-ABS-GROWTH-01 · близок к Drift для равноотстоящего ряда.</small></div>
+<div class="card method"><span class="badge planned">DISCOVERED</span><h3>Средний темп роста</h3><p>Прогноз строится по приблизительно постоянному коэффициенту относительного роста.</p><small>TS-GROWTH-RATE-01</small></div>
+<div class="card method"><span class="badge planned">DISCOVERED</span><h3>Линия тренда</h3><p>Трендовая модель продолжается на будущие моменты времени при сохранении основной тенденции.</p><small>TS-TREND-LINE-01</small></div>
+<div class="card method"><span class="badge planned">DISCOVERED</span><h3>Интервал прогноза</h3><p>Вместо одного числа показываем диапазон неопределённости вокруг точечного прогноза.</p><small>TS-INTERVAL-01 · формула зависит от модели и должна быть квалифицирована.</small></div>
+</div></section>
+
+
+<section class="section"><h2>Регрессия и статистическое обучение</h2><div class="grid">
+<div class="card method"><span class="badge planned">DISCOVERED</span><h3>Линейная регрессия</h3><p>Прогноз числового Y по одному или нескольким факторам X. Базовая оценка коэффициентов — МНК.</p><small>REG-LIN-01 · REG-MULTI-01</small></div>
+<div class="card method"><span class="badge planned">DISCOVERED</span><h3>Maximum Likelihood</h3><p>Оценивание параметров вероятностной модели максимизацией правдоподобия наблюдаемой выборки.</p><small>EST-MLE-01</small></div>
+<div class="card method"><span class="badge planned">DISCOVERED</span><h3>Ridge / Tikhonov</h3><p>Регуляризованная регрессия для снижения неустойчивости, особенно при мультиколлинеарности и ограниченной выборке.</p><small>REG-RIDGE-01</small></div>
+<div class="card method"><span class="badge planned">DIAGNOSTIC</span><h3>Bias–Variance</h3><p>Разложение ошибки помогает понять, не слишком ли проста или, наоборот, нестабильна модель.</p><small>Диагностический принцип, а не отдельный прогнозный метод.</small></div>
+</div></section>
+
+<section class="section"><h2>Графы и сетевое моделирование</h2><p>Математический пакет для маршрутов, потоков, зависимостей и производственных сетей FATHER.</p><div class="grid">
+<div class="card method"><span class="badge planned">DISCOVERED</span><h3>Shortest Path</h3><p>Минимальный путь по времени, стоимости, риску или другой весовой функции.</p><small>FATHER: поиск оптимальной цепочки действий агента.</small></div>
+<div class="card method"><span class="badge planned">DISCOVERED</span><h3>Maximum Flow / Min Cut</h3><p>Пропускная способность сети и поиск узких мест.</p><small>FATHER: API, очереди, GPU, БД, storage, throughput.</small></div>
+<div class="card method"><span class="badge planned">DISCOVERED</span><h3>TSP</h3><p>Минимальный маршрут с посещением заданного набора узлов.</p><small>OSINT, аудит, логистика, обход источников и объектов.</small></div>
+<div class="card method"><span class="badge planned">DISCOVERED</span><h3>Minimum Spanning Tree</h3><p>Соединение всех узлов с минимальной суммарной стоимостью.</p><small>Инфраструктура, коммуникации, связи между объектами.</small></div>
+<div class="card method"><span class="badge planned">DISCOVERED</span><h3>CPM</h3><p>Критический путь, ранние/поздние сроки и резервы времени.</p><small>FATHER Production Floor: что реально определяет срок релиза.</small></div>
+<div class="card method"><span class="badge planned">DISCOVERED</span><h3>PERT</h3><p>Сетевое планирование при неопределённых длительностях работ.</p><small>Оценка сроков и вероятности завершения проекта.</small></div>
+<div class="card method"><span class="badge planned">DISCOVERED</span><h3>GERT</h3><p>Вероятностные переходы, ветвления, циклы и возвраты.</p><small>Особенно подходит для agent workflow и повторной обработки.</small></div>
+</div></section>
+
+
+<section class="section"><h2>Объединение прогнозов / Ensemble Lab</h2><p>Несколько независимых методов дают свои прогнозы, после чего отдельная стратегия рассчитывает веса и формирует комбинированный прогноз. Веса затем проверяются и обновляются по фактическим ошибкам.</p>
+<div class="flow">METHOD A + METHOD B + METHOD C → WEIGHT STRATEGY → ENSEMBLE → FACT → BACKTEST → UPDATE WEIGHTS</div>
+<div class="grid">
+<div class="card method"><span class="badge planned">DISCOVERED</span><h3>Simple / Trimmed Mean</h3><p>Равные веса либо усечение экстремальных индивидуальных прогнозов.</p><small>ENS-AVG-01 · ENS-TRIM-01</small></div>
+<div class="card method"><span class="badge planned">DISCOVERED</span><h3>Inverse Error</h3><p>Более точные на ретроспективе модели получают больший вес: MAE, MSE, RMSE, MAPE и другие ошибки.</p><small>ENS-INVERR-01 · ENS-INVMSE-01</small></div>
+<div class="card method"><span class="badge planned">DISCOVERED</span><h3>Bates–Granger</h3><p>Весовая комбинация, ориентированная на минимизацию дисперсии ошибки объединённого прогноза.</p><small>ENS-BG-01</small></div>
+<div class="card method"><span class="badge planned">DISCOVERED</span><h3>Regression Combination</h3><p>Веса определяются регрессионно / через МНК, с возможными ограничениями.</p><small>ENS-OLS-01 · ENS-GR-01</small></div>
+<div class="card method"><span class="badge planned">DISCOVERED</span><h3>AIC / BIC Weights</h3><p>Модели получают веса на основе информационных критериев.</p><small>ENS-AIC-01 · ENS-BIC-01</small></div>
+<div class="card method"><span class="badge planned">DISCOVERED</span><h3>Adaptive Weights</h3><p>Вес пересчитывается по свежим ошибкам, чтобы ансамбль реагировал на смену режима.</p><small>ENS-ADAPT-01</small></div>
+<div class="card method"><span class="badge planned">DISCOVERED</span><h3>Optimization</h3><p>Поиск весов через квадратичное или нелинейное программирование при ограничениях на сумму и диапазон весов.</p><small>ENS-QP-01 · ENS-MAPE-OPT-01</small></div>
+<div class="card method"><span class="badge planned">DISCOVERED</span><h3>Pairwise / Factor</h3><p>Попарные предпочтения и факторный анализ как альтернативные способы построения весов.</p><small>ENS-PAIR-01 · ENS-FACTOR-01</small></div>
+</div></section>
+
+<section class="section"><h2>ALINA BOOK 2 — Narrative Prediction Pool</h2><div class="grid">
+<div class="card"><h3>Character Goal / Need</h3><p>Потребность → цель → препятствие → выбор → последствия.</p></div>
+<div class="card"><h3>Plot Threads</h3><p>Незавершённые линии ранжируются по вероятности ближайшего развития.</p></div>
+<div class="card"><h3>Cause–Effect Graph</h3><p>Событие → изменение состояния → новое ограничение → следующее действие.</p></div>
+<div class="card"><h3>Bayesian Hypotheses</h3><p>Конкурирующие варианты сохраняются и переоцениваются после каждой новой сцены.</p></div>
+</div></section>
+
+
+
+
+<section class="section"><h2>Celestial Knowledge Base</h2>
+<p>Научное ядро для расчёта положения и движения небесных тел. Астрономические вычисления и исторические/астрологические интерпретации хранятся как два разных слоя доказательности.</p>
+<div class="flow">JPL HORIZONS / DE441 + SPICE + SWISS EPHEMERIS → CELESTIAL ENGINE → NORMALIZED EPHEMERIS → SCIENCE | CULTURAL INTERPRETATION</div>
+<div class="grid">
+<div class="card method"><span class="badge science">SCIENTIFIC_A</span><h3>JPL Horizons / DE441</h3><p>Эфемериды, положения, скорости, наблюдаемость, координаты и геометрия объектов Солнечной системы.</p><small>Авторитетный reference layer.</small></div>
+<div class="card method"><span class="badge science">SCIENTIFIC_A</span><h3>NASA NAIF SPICE</h3><p>Локальные воспроизводимые расчёты геометрии, reference frames и ephemeris kernels.</p><small>Основа профессионального Celestial Engine.</small></div>
+<div class="card method"><span class="badge planned">COMPATIBILITY</span><h3>Swiss Ephemeris</h3><p>Высокоточная библиотека эфемерид и слой совместимости для традиционных астрологических расчётов.</p><small>Расчёт координат научный; астрологическая интерпретация — отдельный NON_SCIENTIFIC слой.</small></div>
+<div class="card method"><span class="badge science">KB</span><h3>Time & Frames</h3><p>UTC, UT1, TT, TDB, Julian Date, ICRF, ecliptic/equatorial/Earth-fixed frames, precession/nutation.</p></div>
+<div class="card method"><span class="badge science">KB</span><h3>Celestial Events</h3><p>Фазы, восход/заход, кульминации, соединения, оппозиции, угловые расстояния, затмения, occultations.</p></div>
+<div class="card method"><span class="badge culture">NON_SCIENTIFIC</span><h3>Astrology Systems</h3><p>Western, Jyotish, Hellenistic, Medieval, Chinese; natal, transit, synastry, horary, electional, mundane.</p><small>Все правила паспортизируются отдельно и никогда не повышают scientific confidence.</small></div>
+</div></section>
+
+<section class="section"><h2>Quant / Trading Lab</h2>
+<p>Торговый домен Future Lab: индикаторы, стратегии, риск, факторные модели, market data и строгий backtesting. Источник-карта: <b>awesome-quant</b>.</p>
+<div class="flow">INDICATOR → SIGNAL RULE → STRATEGY → EXECUTION → FEES / SLIPPAGE → BACKTEST → WALK-FORWARD → OUT-OF-SAMPLE → RISK SCORE</div>
+<div class="grid">
+<div class="card method"><span class="badge planned">DISCOVERY</span><h3>Technical Indicators</h3><p>TA-Lib, pandas_talib, Tulipy, talipp, streaming indicators, ta4j и другие библиотеки.</p><small>Индикатор сам по себе не считается прогнозной стратегией.</small></div>
+<div class="card method"><span class="badge planned">DISCOVERY</span><h3>Trading & Backtesting</h3><p>Backtest, paper trading, walk-forward, holdout, Monte Carlo и проверки переобучения.</p><small>Главный контур квалификации торговой стратегии.</small></div>
+<div class="card method"><span class="badge planned">DISCOVERY</span><h3>Portfolio & Risk</h3><p>Portfolio optimization, risk analysis, position sizing и оценка просадки.</p><small>Отдельно от directional forecasting.</small></div>
+<div class="card method"><span class="badge planned">DISCOVERY</span><h3>Factor Analysis</h3><p>Факторные модели и многомерные признаки для оценки доходности и риска.</p><small>Требуют out-of-sample validation.</small></div>
+<div class="card method"><span class="badge planned">DISCOVERY</span><h3>Sentiment / Alternative Data</h3><p>Текстовые и альтернативные сигналы как дополнительные признаки для моделей.</p><small>Нужны provenance, timestamp integrity и leakage checks.</small></div>
+<div class="card method"><span class="badge planned">DISCOVERY</span><h3>Market Data</h3><p>Источники цен, OHLCV, tick/order-book данных и торговых календарей.</p><small>Качество данных является частью паспорта метода.</small></div>
+</div></section>
+
+<section class="section" id="catalog"><h2>Полный каталог паспортов методов</h2>
+<p>Единый реестр всех уже собранных методов Future Lab. Карточка показывает не только название метода, но и <b>назначение, данные, алгоритм, применение, ограничения, метрики, доказательность и статус допуска</b>.</p>
+<div id="passportStats" class="stats"></div>
+<div class="catalog-tools">
+<input id="methodSearch" placeholder="Поиск: regression, PERT, Bayesian, сюжет..." oninput="renderCatalog()">
+<select id="familyFilter" onchange="renderCatalog()"><option value="">Все направления</option></select>
+<select id="statusFilter" onchange="renderCatalog()"><option value="">Все статусы</option></select>
+</div>
+<div id="passportCatalog" class="grid"></div>
+</section>
+
+<section class="section"><h2>Быстрый расчёт</h2><div class="card">
+<div class="calc"><input id="series" value="10,12,13,16,18" aria-label="Числовой ряд"><select id="method"><option value="naive">Naive</option><option value="mean">Historical Mean</option><option value="drift">Drift</option><option value="ses">SES α=0.5</option></select><button onclick="run()">Рассчитать</button></div>
+<div id="result" class="out">Введите ряд значений через запятую.</div>
+</div></section>
+
+<section class="section"><h2>Исторические и дивинационные системы</h2><div class="card"><span class="badge culture">NON_SCIENTIFIC</span><h3>Astrology / Palmistry / Numerology / другие</h3><p>Могут быть формализованы как исторические системы правил и проверяться на стенде. Их результаты никогда не смешиваются с научным confidence и не называются научно доказанными.</p></div></section>
+
+<section class="section"><h2>Что считается готовым методом</h2><div class="grid">
+<div class="card">01 — авторитетный источник</div><div class="card">02 — формализованный алгоритм</div><div class="card">03 — воспроизводимый код</div><div class="card">04 — unit / contract tests</div><div class="card">05 — область применимости</div><div class="card">06 — backtesting и score</div>
+</div></section>
+
+<footer>FATHER Future Lab · AU-01 Universal Analyst · Prediction Method Pool PMP-01</footer>
+</main><script src="app.js"></script></body></html>

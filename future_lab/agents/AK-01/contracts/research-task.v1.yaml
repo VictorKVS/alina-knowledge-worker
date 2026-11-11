@@ -1,0 +1,25 @@
+schema_version: 1
+required:
+  - plan_id
+  - derived_from
+  - subject
+  - problem_class
+  - research_questions
+  - source_mix
+  - selection_prohibited
+  - required_outputs
+  - stop_conditions
+  - status
+
+rules:
+  - every plan must reference a trace finding
+  - research planning must not silently select a solution
+  - source mix must depend on the missing knowledge type
+  - alternatives and failure modes must be researched before selection
+  - unresolved material contradiction blocks automatic selection
+
+status_values:
+  - RESEARCH_REQUIRED
+  - RESEARCH_IN_PROGRESS
+  - EVIDENCE_READY
+  - BLOCKED

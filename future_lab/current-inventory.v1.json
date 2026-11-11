@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0",
+  "inventory_id": "FUTURE-LAB-INVENTORY-001",
+  "status": "CURRENT_STATE",
+  "runnable_methods": [
+    {
+      "id": "TS-NAIVE-01",
+      "name": "Naive forecast",
+      "family": "time_series"
+    },
+    {
+      "id": "TS-MEAN-01",
+      "name": "Historical mean",
+      "family": "statistics"
+    },
+    {
+      "id": "TS-DRIFT-01",
+      "name": "Drift",
+      "family": "time_series"
+    },
+    {
+      "id": "TS-SES-01",
+      "name": "Simple exponential smoothing",
+      "family": "time_series"
+    }
+  ],
+  "runnable_metrics": [
+    "MAE",
+    "RMSE"
+  ],
+  "designed_packs": [
+    "narrative"
+  ],
+  "discovered_packs": [
+    "political_strategic"
+  ],
+  "catalog_only_packs": [
+    "cultural"
+  ],
+  "planned_domains": [
+    "weather",
+    "trade_commerce",
+    "text",
+    "security",
+    "osint"
+  ],
+  "planned_core": [
+    "method_selector",
+    "backtest_engine",
+    "score_registry"
+  ],
+  "rule": "Only runnable_methods are to be presented as implemented forecasting algorithms."
+}

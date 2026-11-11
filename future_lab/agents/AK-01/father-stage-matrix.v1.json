@@ -1,0 +1,22 @@
+{
+  "product": "AK-01 ALINA Knowledge Architect",
+  "current_status": "DESIGNED",
+  "stages": [
+    {"id":"00","name":"IDEA","gate":"PASS"},
+    {"id":"01","name":"PRODUCT","gate":"PASS_WITH_VALIDATION_PENDING"},
+    {"id":"02","name":"BUSINESS_ANALYSIS","gate":"PASS"},
+    {"id":"03","name":"SYSTEM_ANALYSIS","gate":"PARTIAL"},
+    {"id":"04","name":"AGENT_ARCHITECTURE","gate":"PASS_DESIGN"},
+    {"id":"05","name":"SOFTWARE_ARCHITECTURE","gate":"PARTIAL"},
+    {"id":"06","name":"SECURITY_ARCHITECTURE","gate":"DESIGN_PASS_IMPLEMENTATION_PENDING"},
+    {"id":"07","name":"BUILD","gate":"NOT_STARTED"},
+    {"id":"08","name":"DEVSECOPS","gate":"NOT_STARTED"},
+    {"id":"09","name":"QA","gate":"NOT_STARTED"},
+    {"id":"10","name":"POLYGON","gate":"NOT_STARTED"},
+    {"id":"11","name":"RELEASE","gate":"NOT_READY"},
+    {"id":"12","name":"SRE_OBSERVATION","gate":"PLANNED"},
+    {"id":"13","name":"ANALYSIS","gate":"PLANNED"},
+    {"id":"14","name":"IMPROVEMENT","gate":"PLANNED"}
+  ],
+  "next_target": "FATHER Forecasting Agent MVP"
+}

@@ -1,0 +1,26 @@
+profession_id: INFRA-DEVOPS
+family: INFRASTRUCTURE
+title: DevOps Engineer
+version: 1
+competency_vector:
+  linux: K4
+  containers: K5
+  CI_CD: K5
+  infrastructure_as_code: K5
+  kubernetes: K4
+  cloud: K4
+  observability: K4
+  security: K4
+  networking: K4
+  scripting: K5
+knowledge_requirements:
+  - {id: LINUX, name: Linux Systems, depth: K4, criticality: MANDATORY}
+  - {id: CONT, name: Containers, depth: K5, criticality: MANDATORY}
+  - {id: CICD, name: CI/CD, depth: K5, criticality: MANDATORY}
+  - {id: IAC, name: Infrastructure as Code, depth: K5, criticality: MANDATORY}
+  - {id: K8S, name: Kubernetes, depth: K4, criticality: MANDATORY}
+  - {id: OBS, name: Observability, depth: K4, criticality: MANDATORY}
+  - {id: SEC, name: DevSecOps Controls, depth: K4, criticality: MANDATORY}
+  - {id: NET, name: Networking, depth: K4, criticality: MANDATORY}
+qualification:
+  requires: [pipeline_case, deployment_case, rollback_case, incident_case, security_case]

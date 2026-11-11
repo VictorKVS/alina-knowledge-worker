@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "knowledge_base": "CELESTIAL-KB-01",
+  "layers": [
+    {
+      "id": "ASTRONOMY",
+      "evidence_class": "SCIENTIFIC_A",
+      "topics": [
+        "time_systems","reference_frames","ephemerides","orbital_elements","state_vectors",
+        "precession_nutation","earth_orientation","topocentric_coordinates","phases",
+        "rise_set_transit","conjunctions","oppositions","retrograde_apparent_motion",
+        "eclipses","occultations","asteroids_comets","barycenters_lagrange_points","uncertainty"
+      ]
+    },
+    {
+      "id": "ASTROLOGY_CULTURAL",
+      "evidence_class": "NON_SCIENTIFIC",
+      "systems": [
+        "western_tropical","sidereal_jyotish","hellenistic","medieval_renaissance",
+        "chinese","natal","transit","synastry","horary","electional","mundane"
+      ]
+    }
+  ],
+  "authoritative_sources": [
+    {"id":"JPL-HORIZONS","url":"https://ssd.jpl.nasa.gov/horizons/manual.html"},
+    {"id":"NAIF-SPICE","url":"https://naif.jpl.nasa.gov/naif/toolkit.html"},
+    {"id":"SWISS-EPHEMERIS","url":"https://www.astro.com/swisseph/swephinfo_e.htm"}
+  ]
+}

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>FATHER Future Lab — Расчёты будущего</title>
+  <style>
+    body{font-family:Inter,system-ui,sans-serif;max-width:1100px;margin:0 auto;padding:28px;background:#0b1020;color:#eef2ff}
+    .card{background:#151c33;border:1px solid #2b3558;border-radius:16px;padding:20px;margin:16px 0}
+    h1,h2{margin-top:0} input,select,button{font:inherit;padding:10px;border-radius:10px;border:1px solid #44507a}
+    input{width:70%} button{cursor:pointer}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+    .tag{display:inline-block;padding:4px 8px;border-radius:999px;background:#25304f;margin-right:6px;font-size:12px}
+    .science{border-left:4px solid #62d394}.nonsci{border-left:4px solid #ffb454}.out{white-space:pre-wrap;background:#0a0f1e;padding:14px;border-radius:10px}
+    small{color:#aab4d5}
+  </style>
+</head>
+<body>
+  <h1>FATHER Future Lab</h1>
+  <p>Лаборатория воспроизводимых прогнозов: метод → источник → алгоритм → расчёт → backtest → фактическая точность.</p>
+
+  <section class="card science">
+    <h2>Научные методы</h2>
+    <div class="grid">
+      <div><b>Naive</b><br><small>Базовый прогноз по последнему наблюдению.</small></div>
+      <div><b>Historical Mean</b><br><small>Прогноз по историческому среднему.</small></div>
+      <div><b>Drift</b><br><small>Продолжение среднего исторического дрейфа.</small></div>
+      <div><b>SES</b><br><small>Простое экспоненциальное сглаживание.</small></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Калькулятор временного ряда</h2>
+    <p><input id="series" value="10,12,13,16,18"> <select id="method"><option value="naive">Naive</option><option value="mean">Mean</option><option value="drift">Drift</option><option value="ses">SES α=0.5</option></select> <button onclick="run()">Рассчитать</button></p>
+    <div id="result" class="out">Введите ряд и выберите метод.</div>
+  </section>
+
+  <section class="card nonsci">
+    <h2>Культурные и дивинационные системы</h2>
+    <p><span class="tag">NON_SCIENTIFIC</span> Астрология, хиромантия и иные исторические практики могут каталогизироваться и воспроизводиться как системы правил для сравнительного эксперимента, но их результаты не смешиваются с научным рейтингом доказательности.</p>
+  </section>
+
+  <section class="card">
+    <h2>Следующий слой</h2>
+    <p>ARIMA/ETS, Bayesian, Kalman/state-space, HMM/Markov, Monte Carlo, survival/hazard, causal models, ensemble forecasting, domain methods и Narrative Prediction Pool для ALINA BOOK 2.</p>
+  </section>
+<script src="future-lab.js"></script>
+</body></html>

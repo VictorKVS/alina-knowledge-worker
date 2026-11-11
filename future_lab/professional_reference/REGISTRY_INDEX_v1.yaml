@@ -1,0 +1,30 @@
+version: 1
+profiles:
+  - id: SW-BE-SENIOR
+    path: software_engineering/SENIOR_BACKEND_ENGINEER.yaml
+  - id: SW-FE-SENIOR
+    path: software_engineering/SENIOR_FRONTEND_ENGINEER.yaml
+  - id: SW-FS-SENIOR
+    path: software_engineering/SENIOR_FULLSTACK_ENGINEER.yaml
+  - id: ARCH-SW
+    path: architecture/SOFTWARE_ARCHITECT.yaml
+  - id: ARCH-SOL
+    path: architecture/SOLUTION_ARCHITECT.yaml
+  - id: INFRA-DEVOPS
+    path: infrastructure/DEVOPS_ENGINEER.yaml
+  - id: INFRA-SRE
+    path: infrastructure/SRE.yaml
+  - id: CYB-SECENG
+    path: cybersecurity/SECURITY_ENGINEER.yaml
+  - id: CYB-APPSEC
+    path: cybersecurity/APPSEC_ENGINEER.yaml
+  - id: AI-LLM
+    path: ai/LLM_ENGINEER.yaml
+  - id: AI-RAG
+    path: ai/RAG_ENGINEER.yaml
+  - id: AI-AGENT
+    path: ai/AGENT_ENGINEER.yaml
+  - id: DATA-ENG
+    path: data/DATA_ENGINEER.yaml
+  - id: QA-AUTO
+    path: qa/QA_AUTOMATION_ENGINEER.yaml

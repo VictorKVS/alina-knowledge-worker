@@ -1,0 +1,24 @@
+profession_id: AI-AGENT
+family: AI_ML_ENGINEERING
+title: Agent Engineer
+version: 1
+competency_vector:
+  agent_architecture: K5
+  planning: K4
+  tool_use: K5
+  memory: K5
+  orchestration: K5
+  MCP: K4
+  evaluation: K5
+  safety_security: K5
+knowledge_requirements:
+  - {id: ARCH, name: Agent Architecture, depth: K5, criticality: MANDATORY}
+  - {id: PLAN, name: Planning and Control, depth: K4, criticality: MANDATORY}
+  - {id: TOOL, name: Tool Use and Permissions, depth: K5, criticality: MANDATORY}
+  - {id: MEM, name: Agent Memory, depth: K5, criticality: MANDATORY}
+  - {id: ORCH, name: Multi-Agent Orchestration, depth: K5, criticality: MANDATORY}
+  - {id: MCP, name: Model Context Protocol, depth: K4, criticality: IMPORTANT}
+  - {id: EVAL, name: Agent Evaluation, depth: K5, criticality: MANDATORY}
+  - {id: SAFE, name: Agent Security and Guardrails, depth: K5, criticality: MANDATORY}
+qualification:
+  requires: [tool_case, orchestration_case, memory_case, attack_case, recovery_case]

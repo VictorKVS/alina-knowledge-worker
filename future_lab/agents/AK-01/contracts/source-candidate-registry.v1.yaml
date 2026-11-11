@@ -1,0 +1,26 @@
+schema_version: 1
+required:
+  - entries
+  - unique_count
+  - input_count
+  - duplicate_count
+  - status
+
+entry_required_fields:
+  - registry_key
+  - title
+  - source_type
+  - authors_or_issuer
+  - publication_or_version_date
+  - persistent_identifier_or_official_locator
+  - discovery_channels
+  - discovery_records
+  - merge_count
+  - status
+
+rules:
+  - DOI locators are normalized before deduplication
+  - discovery provenance from every adapter is preserved
+  - deduplication never implies source qualification
+  - merged entries remain DISCOVERED_UNQUALIFIED
+  - conflicting metadata must remain recoverable from discovery_records

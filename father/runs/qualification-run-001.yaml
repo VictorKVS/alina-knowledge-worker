@@ -1,0 +1,31 @@
+schema_version: "1.0"
+run:
+  id: "FTH-RUN-ALINA-BOOK-001"
+  product_case: "FTH-PC-000001"
+  product: "ALINA-BOOK"
+  purpose: "First FATHER factory qualification run"
+  status: "READY"
+  current_station: "PM-01"
+  benchmark:
+    id: "ALICE-NARRATIVE-001"
+    description: "Narrative benchmark around Alice; committed test data must be synthetic or legally provided."
+  stations:
+    PM-01: {status: "READY", evidence: []}
+    AB-01: {status: "WAITING", evidence: []}
+    AS-01: {status: "WAITING", evidence: []}
+    AA-01: {status: "WAITING", evidence: []}
+    APO-01: {status: "WAITING", evidence: []}
+    SECURITY: {status: "WAITING", evidence: []}
+    FATHER_CODEX: {status: "WAITING", evidence: []}
+    TIMA_SECURITY_DEVSECOPS: {status: "WAITING", evidence: []}
+    AQ-01: {status: "WAITING", evidence: []}
+    POLYGON: {status: "WAITING", evidence: []}
+    RELEASE: {status: "WAITING", evidence: []}
+  stop_conditions:
+    - "missing product value"
+    - "untraceable analytical conclusion"
+    - "fabricated source presented as evidence"
+    - "mandatory gate failure"
+  next_action:
+    owner: "PM-01"
+    artifact: "father/artifacts/PM-01-product-definition.v1.yaml"

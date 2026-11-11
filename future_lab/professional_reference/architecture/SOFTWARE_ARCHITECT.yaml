@@ -1,0 +1,26 @@
+profession_id: ARCH-SW
+family: ANALYSIS_ARCHITECTURE
+title: Software Architect
+version: 1
+competency_vector:
+  requirements_translation: K4
+  architecture_patterns: K5
+  system_design: K5
+  data_architecture: K4
+  integration: K5
+  security_architecture: K4
+  reliability: K5
+  performance: K4
+  technology_evaluation: K5
+  technical_governance: K5
+knowledge_requirements:
+  - {id: ARCH, name: Software Architecture, depth: K5, criticality: MANDATORY}
+  - {id: PAT, name: Architecture Patterns, depth: K5, criticality: MANDATORY}
+  - {id: NFR, name: Non-Functional Requirements, depth: K5, criticality: MANDATORY}
+  - {id: DATA, name: Data Architecture, depth: K4, criticality: MANDATORY}
+  - {id: INT, name: Integration Architecture, depth: K5, criticality: MANDATORY}
+  - {id: SEC, name: Security Architecture, depth: K4, criticality: MANDATORY}
+  - {id: REL, name: Reliability and Resilience, depth: K5, criticality: MANDATORY}
+  - {id: ADR, name: Architecture Decision Records and Governance, depth: K5, criticality: MANDATORY}
+qualification:
+  requires: [architecture_case, tradeoff_case, failure_case, security_case, review_case]

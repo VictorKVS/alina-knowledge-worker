@@ -1,0 +1,54 @@
+schema_version: 1
+required:
+  - trace_id
+  - work_object
+  - nodes
+  - edges
+  - findings
+
+node_types:
+  - PROCESS
+  - SUBPROCESS
+  - ACTIVITY
+  - TASK
+  - DECISION
+  - ATOMIC_OPERATION
+  - METHOD
+  - ALGORITHM
+  - RULE
+  - KNOWLEDGE_REQUIREMENT
+  - EVIDENCE_REQUIREMENT
+  - OUTPUT
+  - QUALITY_CRITERION
+
+edge_types:
+  - CONTAINS
+  - REQUIRES
+  - PRODUCES
+  - DECIDES
+  - JUSTIFIED_BY
+  - VERIFIED_BY
+  - BLOCKED_BY
+
+node_required_fields:
+  id: string
+  type: string
+  label: string
+  derived_from: array
+  rationale: string
+  confidence: string
+  status: string
+
+finding_types:
+  - MISSING_INPUT
+  - MISSING_STEP
+  - MISSING_DECISION_RULE
+  - MISSING_METHOD
+  - MISSING_ALGORITHM
+  - MISSING_KNOWLEDGE
+  - MISSING_EVIDENCE
+  - AMBIGUITY
+  - CONTRADICTION
+  - UNTESTED_ASSUMPTION
+  - OVER_DECOMPOSITION
+  - UNDER_DECOMPOSITION

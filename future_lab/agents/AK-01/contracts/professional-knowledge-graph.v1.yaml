@@ -1,0 +1,37 @@
+schema_version: 1
+required:
+  - graph_id
+  - nodes
+  - edges
+  - runtime_eligible_knowledge
+
+node_types:
+  - WORK_OBJECT
+  - PROCESS
+  - TASK
+  - DECISION
+  - METHOD
+  - ALGORITHM
+  - RULE
+  - PROCEDURE
+  - KNOWLEDGE
+  - TOOL
+  - QUALITY_CRITERION
+  - FAILURE_MODE
+
+edge_types:
+  - CONTAINS
+  - REQUIRES_DECISION
+  - SOLVED_BY
+  - IMPLEMENTED_BY
+  - GOVERNED_BY
+  - SUPPORTED_BY_KNOWLEDGE
+  - USES_TOOL
+  - VERIFIED_BY
+  - FAILS_AS
+
+rules:
+  - only QUALIFIED knowledge may enter the runtime professional graph
+  - every knowledge binding must reference an existing work node
+  - graph nodes retain derivation/provenance
+  - professional execution and knowledge graphs remain traceable to source evidence

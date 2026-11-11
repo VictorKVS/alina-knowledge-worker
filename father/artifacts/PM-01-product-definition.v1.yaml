@@ -1,0 +1,106 @@
+schema_version: "1.0"
+artifact:
+  id: "PM01-PD-ALINA-BOOK-001"
+  station: "PM-01"
+  product_case: "FTH-PC-000001"
+  status: "DRAFT_READY_FOR_GATE"
+
+product:
+  name: "ALINA-BOOK"
+  role_in_father: "Showcase and qualification product for AU-01"
+  target_user:
+    primary: "Analyst/researcher who needs structured, traceable narrative analysis"
+    secondary:
+      - "FATHER architects and developers qualifying AU-01"
+      - "Users evaluating ALINA analytical capabilities"
+  problem:
+    statement: >
+      Generic LLM reading produces fluent summaries but weak provenance, poor distinction
+      between fact/opinion/hypothesis, and little measurable evidence that analytical
+      reasoning improves over time.
+    current_pain:
+      - "narrative facts and interpretations are mixed"
+      - "relationships and chronology are not maintained as durable state"
+      - "forecasts are rarely backtested"
+      - "errors are not classified for improvement"
+  value_proposition: >
+    Turn a narrative source into a traceable analytical model with graph, timeline,
+    typed claims, evidence, hypotheses, forecast and backtesting; expose the entire
+    process on the FATHER Production Floor.
+  why_now:
+    - "Existing ALINA runtime already provides ingestion, provenance and process execution."
+    - "AU-01 needs a qualification showcase before reuse in OSINT/security."
+    - "Narrative data gives a safe, inspectable benchmark for reasoning quality."
+
+mvp:
+  must_have:
+    - "source/segment ingestion"
+    - "case creation and run status"
+    - "entity extraction"
+    - "event extraction"
+    - "relationship graph"
+    - "timeline"
+    - "claim epistemic typing"
+    - "evidence/provenance links"
+    - "hypothesis register"
+    - "forecast object"
+    - "known-future comparison"
+    - "backtest metrics"
+    - "error analysis"
+    - "human-readable report"
+    - "production-floor station visibility"
+  should_have:
+    - "interactive graph"
+    - "comparison of competing hypotheses"
+    - "confidence visualization"
+  not_in_mvp:
+    - "autonomous public-web research"
+    - "unbounded agent loops"
+    - "self-modifying production code"
+    - "multi-tenant SaaS"
+
+success:
+  product_metrics:
+    traceability_coverage: ">= 95% of scored conclusions have evidence or explicit non-evidence label"
+    pipeline_completion: "100% mandatory MVP stages return explicit terminal state"
+    forecast_scoring: "100% generated forecasts can be compared to known future when future is supplied"
+    reproducibility: "same fixture + same version yields structurally equivalent result"
+  user_acceptance:
+    - "User can see who/what/when/why in the story model."
+    - "User can distinguish canon/source evidence from interpretation and hypothesis."
+    - "User can inspect forecast errors rather than receive only a score."
+
+acceptance_criteria:
+  - id: "AC-01"
+    criterion: "A source can be processed into the v1 narrative result contract."
+  - id: "AC-02"
+    criterion: "Every claim carries epistemic_type and status."
+  - id: "AC-03"
+    criterion: "Evidence points to a source locator; missing evidence is explicit."
+  - id: "AC-04"
+    criterion: "Forecast can be backtested against supplied known-future segment."
+  - id: "AC-05"
+    criterion: "Factory run shows station states and blocks release on mandatory gate failure."
+  - id: "AC-06"
+    criterion: "Simulated data is visibly marked and cannot be confused with live research."
+
+risks:
+  - id: "R-01"
+    risk: "LLM hallucination represented as fact"
+    mitigation: "typed claims + provenance gate"
+  - id: "R-02"
+    risk: "overfitting to Alice benchmark"
+    mitigation: "narrative contract is domain-generic; add second synthetic corpus before 1.0"
+  - id: "R-03"
+    risk: "rewrite existing working ALINA runtime unnecessarily"
+    mitigation: "reuse-first architecture and compatibility tests"
+  - id: "R-04"
+    risk: "beautiful UI hides non-working pipeline"
+    mitigation: "release gate requires machine-readable artifacts and tests"
+
+decision:
+  recommendation: "GO"
+  reason: >
+    Existing runtime provides enough foundation to qualify the FATHER production model
+    without rebuilding from zero, and ALINA-BOOK exercises AU-01 capabilities that are
+    reusable in later OSINT/security products.

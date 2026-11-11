@@ -1,0 +1,22 @@
+profession_id: QA-AUTO
+family: QA_ENGINEERING
+title: QA Automation Engineer
+version: 1
+competency_vector:
+  test_design: K5
+  automation: K5
+  API_testing: K5
+  UI_testing: K4
+  contract_testing: K4
+  performance_awareness: K3
+  CI_integration: K4
+  defect_analysis: K5
+knowledge_requirements:
+  - {id: TD, name: Test Design, depth: K5, criticality: MANDATORY}
+  - {id: AUTO, name: Test Automation, depth: K5, criticality: MANDATORY}
+  - {id: API, name: API Testing, depth: K5, criticality: MANDATORY}
+  - {id: CONTRACT, name: Contract Testing, depth: K4, criticality: MANDATORY}
+  - {id: CI, name: CI Test Integration, depth: K4, criticality: MANDATORY}
+  - {id: DEFECT, name: Defect Analysis and Regression, depth: K5, criticality: MANDATORY}
+qualification:
+  requires: [automation_case, API_case, regression_case, pipeline_case, defect_case]

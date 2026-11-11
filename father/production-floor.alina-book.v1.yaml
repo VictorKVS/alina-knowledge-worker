@@ -1,0 +1,137 @@
+schema_version: "1.0"
+production_floor:
+  id: "PF-ALINA-BOOK-001"
+  product_case: "FTH-PC-000001"
+  product: "ALINA-BOOK"
+  mode: "MVP_QUALIFICATION_RUN"
+  stations:
+    - order: 1
+      code: "PM-01"
+      name: "Product Manager"
+      produces: "product_definition"
+      gate:
+        required:
+          - "problem"
+          - "user"
+          - "value"
+          - "mvp_scope"
+          - "success_metrics"
+          - "acceptance_criteria"
+    - order: 2
+      code: "AB-01"
+      name: "Business Analyst"
+      produces: "business_analysis"
+      gate:
+        required:
+          - "user_workflow"
+          - "current_vs_target"
+          - "value_stream"
+          - "measurable_outcome"
+    - order: 3
+      code: "AS-01"
+      name: "System Analyst"
+      produces: "system_specification"
+      gate:
+        required:
+          - "states"
+          - "events"
+          - "actions"
+          - "timeouts"
+          - "errors"
+          - "data_contracts"
+          - "human_gates"
+    - order: 4
+      code: "AA-01"
+      name: "Agent Architect"
+      produces: "agent_architecture"
+      gate:
+        required:
+          - "agent_roles"
+          - "capabilities"
+          - "tools"
+          - "memory"
+          - "permissions"
+          - "fallbacks"
+    - order: 5
+      code: "APO-01"
+      name: "Software Architect"
+      produces: "software_architecture"
+      gate:
+        required:
+          - "runtime_topology"
+          - "persistence"
+          - "queueing"
+          - "api_contracts"
+          - "observability"
+          - "scaling_path"
+    - order: 6
+      code: "SA-01/ASec-01"
+      name: "Security Analysis and Architecture"
+      produces: "security_review"
+      gate:
+        required:
+          - "trust_boundaries"
+          - "data_classification"
+          - "permissions"
+          - "audit"
+          - "threats"
+    - order: 7
+      code: "FATHER_CODEX"
+      name: "Developer"
+      produces: "implementation"
+      gate:
+        required:
+          - "code"
+          - "unit_tests"
+          - "contract_tests"
+          - "documentation"
+    - order: 8
+      code: "TIMA/SE-01/DS-01"
+      name: "Runtime, Security Engineering, DevSecOps"
+      produces: "deployment_and_security_evidence"
+      gate:
+        required:
+          - "repeatable_start"
+          - "healthcheck"
+          - "dependency_scan"
+          - "runtime_logs"
+    - order: 9
+      code: "AQ-01"
+      name: "QA / Evaluator"
+      produces: "verification"
+      gate:
+        required:
+          - "acceptance_tests"
+          - "regression"
+          - "failure_evidence"
+    - order: 10
+      code: "POLYGON"
+      name: "Qualification Polygon"
+      produces: "polygon_result"
+      gate:
+        required:
+          - "normal_case"
+          - "bad_input"
+          - "contradictory_evidence"
+          - "missing_evidence"
+          - "restart_recovery"
+    - order: 11
+      code: "RELEASE"
+      name: "Release Gate"
+      produces: "release_manifest"
+      gate:
+        required:
+          - "all_mandatory_gates_closed"
+          - "known_limitations"
+          - "versioned_artifacts"
+  station_states:
+    - "WAITING"
+    - "READY"
+    - "WORKING"
+    - "DONE"
+    - "BLOCKED"
+    - "REVIEW_REQUIRED"
+    - "NOT_APPLICABLE"
+  rule: >
+    No station may mark DONE without its required artifact and evidence.
+    Free-form LLM text alone is not completion evidence.

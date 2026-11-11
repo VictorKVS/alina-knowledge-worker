@@ -1,0 +1,574 @@
+{
+  "schema_version": "1.0",
+  "registry": "PMP-01",
+  "title": "FATHER Future Lab — Prediction Method Pool",
+  "evidence_policy": {
+    "SCIENTIFIC_A": "primary peer-reviewed paper, standard, official scientific/engineering body or authoritative academic text",
+    "SCIENTIFIC_B": "replicated/accepted method documented by major technical reference",
+    "EXPERIMENTAL": "research method not yet qualified for product use",
+    "NON_SCIENTIFIC": "historical/cultural/divinatory system; never merged with scientific evidence score"
+  },
+  "sources": [
+    {
+      "id": "SRC-HYNDMAN-FPP3",
+      "authority": "Monash University / OTexts",
+      "title": "Forecasting: Principles and Practice, 3rd ed.",
+      "url": "https://otexts.com/fpp3/",
+      "class": "SCIENTIFIC_A"
+    },
+    {
+      "id": "SRC-NASA-NAV",
+      "authority": "NASA Technical Publication",
+      "title": "Navigation Filter Best Practices",
+      "url": "https://ntrs.nasa.gov/citations/20250002787",
+      "class": "SCIENTIFIC_A"
+    },
+    {
+      "id": "SRC-ECMWF-ENS",
+      "authority": "ECMWF",
+      "title": "Quantifying forecast uncertainty / Ensemble prediction",
+      "url": "https://www.ecmwf.int/en/research/modelling-and-prediction/quantifying-forecast-uncertainty",
+      "class": "SCIENTIFIC_A"
+    },
+    {
+      "id": "SRC-STAN",
+      "authority": "Stan Development Team",
+      "title": "Stan Documentation",
+      "url": "https://mc-stan.org/users/documentation/",
+      "class": "SCIENTIFIC_A"
+    },
+    {
+      "id": "SRC-NATURE-ASTROLOGY",
+      "authority": "Nature",
+      "title": "A double-blind test of astrology",
+      "url": "https://www.nature.com/articles/318419a0",
+      "class": "SCIENTIFIC_A"
+    },
+    {
+      "id": "SRC-NCBI-PALMISTRY",
+      "authority": "NCBI/PubMed",
+      "title": "Metoposcopy redux — historical discussion of palmistry/chiromancy",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37924996/",
+      "class": "SCIENTIFIC_A"
+    },
+    {
+      "id": "SRC-FRENKEL-SURKOV-2017",
+      "authority": "Вопросы статистики / Институт экономики РАН",
+      "title": "Определение весовых коэффициентов при объединении прогнозов",
+      "year": 2017,
+      "class": "SCIENTIFIC_B",
+      "note": "Academic review; primary papers required for final qualification of individual combination methods."
+    },
+    {
+      "id": "SRC-SENKO-MOTP13-3",
+      "authority": "Учебная лекция по математическим основам теории прогнозирования",
+      "title": "Лекция 3: линейная регрессия, МНК/ММП, bias-variance, регуляризация Тихонова",
+      "class": "EXPERIMENTAL",
+      "note": "User-provided educational source; authoritative primary/academic corroboration required for final qualification."
+    }
+  ],
+  "methods": [
+    {
+      "id": "TS-NAIVE-01",
+      "family": "time_series",
+      "name": "Naive forecast",
+      "status": "RUNNABLE",
+      "evidence_class": "SCIENTIFIC_A",
+      "source_ids": [
+        "SRC-HYNDMAN-FPP3"
+      ],
+      "code": "future_lab.methods:naive"
+    },
+    {
+      "id": "TS-MEAN-01",
+      "family": "time_series",
+      "name": "Historical mean",
+      "status": "RUNNABLE",
+      "evidence_class": "SCIENTIFIC_A",
+      "source_ids": [
+        "SRC-HYNDMAN-FPP3"
+      ],
+      "code": "future_lab.methods:historical_mean"
+    },
+    {
+      "id": "TS-DRIFT-01",
+      "family": "time_series",
+      "name": "Drift method",
+      "status": "RUNNABLE",
+      "evidence_class": "SCIENTIFIC_A",
+      "source_ids": [
+        "SRC-HYNDMAN-FPP3"
+      ],
+      "code": "future_lab.methods:drift"
+    },
+    {
+      "id": "TS-SES-01",
+      "family": "time_series",
+      "name": "Simple exponential smoothing",
+      "status": "RUNNABLE",
+      "evidence_class": "SCIENTIFIC_A",
+      "source_ids": [
+        "SRC-HYNDMAN-FPP3"
+      ],
+      "code": "future_lab.methods:simple_exponential_smoothing"
+    },
+    {
+      "id": "NAV-KALMAN-01",
+      "family": "state_estimation",
+      "name": "Kalman-family state estimation",
+      "status": "PLANNED",
+      "evidence_class": "SCIENTIFIC_A",
+      "source_ids": [
+        "SRC-NASA-NAV"
+      ]
+    },
+    {
+      "id": "PROB-BAYES-01",
+      "family": "bayesian",
+      "name": "Bayesian probabilistic model",
+      "status": "PLANNED",
+      "evidence_class": "SCIENTIFIC_A",
+      "source_ids": [
+        "SRC-STAN"
+      ]
+    },
+    {
+      "id": "ENS-01",
+      "family": "ensemble",
+      "name": "Ensemble forecast and uncertainty",
+      "status": "PLANNED",
+      "evidence_class": "SCIENTIFIC_A",
+      "source_ids": [
+        "SRC-ECMWF-ENS"
+      ]
+    },
+    {
+      "id": "DIV-ASTRO-01",
+      "family": "cultural_divination",
+      "name": "Natal astrology",
+      "status": "CATALOG_ONLY",
+      "evidence_class": "NON_SCIENTIFIC",
+      "source_ids": [
+        "SRC-NATURE-ASTROLOGY"
+      ],
+      "rule": "May be reproduced as a cultural/historical algorithm for comparison, never labeled scientifically validated."
+    },
+    {
+      "id": "DIV-PALM-01",
+      "family": "cultural_divination",
+      "name": "Palmistry / chiromancy",
+      "status": "CATALOG_ONLY",
+      "evidence_class": "NON_SCIENTIFIC",
+      "source_ids": [
+        "SRC-NCBI-PALMISTRY"
+      ],
+      "rule": "May be documented as a historical divinatory system; predictive claims must not be presented as scientific evidence."
+    },
+    {
+      "id": "GRAPH-SP-01",
+      "family": "graph_network",
+      "name": "Shortest path",
+      "status": "DISCOVERED",
+      "evidence_class": "EXPERIMENTAL",
+      "rule": "Discovery complete. Requires authoritative source, code, tests and qualification before RUNNABLE."
+    },
+    {
+      "id": "GRAPH-MST-01",
+      "family": "graph_network",
+      "name": "Minimum spanning tree",
+      "status": "DISCOVERED",
+      "evidence_class": "EXPERIMENTAL",
+      "rule": "Discovery complete. Requires authoritative source, code, tests and qualification before RUNNABLE."
+    },
+    {
+      "id": "GRAPH-FLOW-01",
+      "family": "graph_network",
+      "name": "Maximum flow / minimum cut",
+      "status": "DISCOVERED",
+      "evidence_class": "EXPERIMENTAL",
+      "rule": "Discovery complete. Requires authoritative source, code, tests and qualification before RUNNABLE."
+    },
+    {
+      "id": "GRAPH-TSP-01",
+      "family": "graph_network",
+      "name": "Travelling salesman problem",
+      "status": "DISCOVERED",
+      "evidence_class": "EXPERIMENTAL",
+      "rule": "Discovery complete. Requires authoritative source, code, tests and qualification before RUNNABLE."
+    },
+    {
+      "id": "GRAPH-CPM-01",
+      "family": "project_network",
+      "name": "Critical Path Method",
+      "status": "DISCOVERED",
+      "evidence_class": "EXPERIMENTAL",
+      "rule": "Discovery complete. Requires authoritative source, code, tests and qualification before RUNNABLE."
+    },
+    {
+      "id": "GRAPH-PERT-01",
+      "family": "project_network",
+      "name": "PERT",
+      "status": "DISCOVERED",
+      "evidence_class": "EXPERIMENTAL",
+      "rule": "Discovery complete. Requires authoritative source, code, tests and qualification before RUNNABLE."
+    },
+    {
+      "id": "GRAPH-GERT-01",
+      "family": "project_network",
+      "name": "GERT probabilistic network",
+      "status": "DISCOVERED",
+      "evidence_class": "EXPERIMENTAL",
+      "rule": "Discovery complete. Requires authoritative source, code, tests and qualification before RUNNABLE."
+    },
+    {
+      "id": "TS-ABS-GROWTH-01",
+      "family": "time_series",
+      "name": "Mean absolute increment extrapolation",
+      "status": "DISCOVERED",
+      "evidence_class": "EXPERIMENTAL",
+      "rule": "Educational source captured; qualify against authoritative time-series reference before RUNNABLE."
+    },
+    {
+      "id": "TS-GROWTH-RATE-01",
+      "family": "time_series",
+      "name": "Mean growth-rate extrapolation",
+      "status": "DISCOVERED",
+      "evidence_class": "EXPERIMENTAL",
+      "rule": "Requires implementation, tests and authoritative-source qualification."
+    },
+    {
+      "id": "TS-TREND-LINE-01",
+      "family": "time_series",
+      "name": "Trend-line extrapolation",
+      "status": "DISCOVERED",
+      "evidence_class": "EXPERIMENTAL",
+      "rule": "Requires explicit trend model selection, diagnostics, code and backtest."
+    },
+    {
+      "id": "TS-INTERVAL-01",
+      "family": "forecast_uncertainty",
+      "name": "Forecast interval",
+      "status": "DISCOVERED",
+      "evidence_class": "EXPERIMENTAL",
+      "rule": "Interval formulation must be tied to the selected forecasting model and qualified statistically."
+    },
+    {
+      "id": "ENS-AVG-01",
+      "family": "forecast_combination",
+      "name": "Simple average forecast combination",
+      "status": "DISCOVERED",
+      "evidence_class": "SCIENTIFIC_B",
+      "source_ids": [
+        "SRC-FRENKEL-SURKOV-2017"
+      ],
+      "rule": "Requires primary-source verification, implementation, tests and rolling-origin backtest before RUNNABLE."
+    },
+    {
+      "id": "ENS-TRIM-01",
+      "family": "forecast_combination",
+      "name": "Trimmed mean forecast combination",
+      "status": "DISCOVERED",
+      "evidence_class": "SCIENTIFIC_B",
+      "source_ids": [
+        "SRC-FRENKEL-SURKOV-2017"
+      ],
+      "rule": "Requires primary-source verification, implementation, tests and rolling-origin backtest before RUNNABLE."
+    },
+    {
+      "id": "ENS-OLS-01",
+      "family": "forecast_combination",
+      "name": "OLS / regression forecast combination",
+      "status": "DISCOVERED",
+      "evidence_class": "SCIENTIFIC_B",
+      "source_ids": [
+        "SRC-FRENKEL-SURKOV-2017"
+      ],
+      "rule": "Requires primary-source verification, implementation, tests and rolling-origin backtest before RUNNABLE."
+    },
+    {
+      "id": "ENS-GR-01",
+      "family": "forecast_combination",
+      "name": "Granger–Ramanathan forecast combination",
+      "status": "DISCOVERED",
+      "evidence_class": "SCIENTIFIC_B",
+      "source_ids": [
+        "SRC-FRENKEL-SURKOV-2017"
+      ],
+      "rule": "Requires primary-source verification, implementation, tests and rolling-origin backtest before RUNNABLE."
+    },
+    {
+      "id": "ENS-BG-01",
+      "family": "forecast_combination",
+      "name": "Bates–Granger minimum-error-variance combination",
+      "status": "DISCOVERED",
+      "evidence_class": "SCIENTIFIC_B",
+      "source_ids": [
+        "SRC-FRENKEL-SURKOV-2017"
+      ],
+      "rule": "Requires primary-source verification, implementation, tests and rolling-origin backtest before RUNNABLE."
+    },
+    {
+      "id": "ENS-INVERR-01",
+      "family": "forecast_combination",
+      "name": "Inverse-error weighting",
+      "status": "DISCOVERED",
+      "evidence_class": "SCIENTIFIC_B",
+      "source_ids": [
+        "SRC-FRENKEL-SURKOV-2017"
+      ],
+      "rule": "Requires primary-source verification, implementation, tests and rolling-origin backtest before RUNNABLE."
+    },
+    {
+      "id": "ENS-INVMSE-01",
+      "family": "forecast_combination",
+      "name": "Inverse-MSE weighting",
+      "status": "DISCOVERED",
+      "evidence_class": "SCIENTIFIC_B",
+      "source_ids": [
+        "SRC-FRENKEL-SURKOV-2017"
+      ],
+      "rule": "Requires primary-source verification, implementation, tests and rolling-origin backtest before RUNNABLE."
+    },
+    {
+      "id": "ENS-AIC-01",
+      "family": "forecast_combination",
+      "name": "AIC-weighted forecast combination",
+      "status": "DISCOVERED",
+      "evidence_class": "SCIENTIFIC_B",
+      "source_ids": [
+        "SRC-FRENKEL-SURKOV-2017"
+      ],
+      "rule": "Requires primary-source verification, implementation, tests and rolling-origin backtest before RUNNABLE."
+    },
+    {
+      "id": "ENS-BIC-01",
+      "family": "forecast_combination",
+      "name": "BIC-weighted forecast combination",
+      "status": "DISCOVERED",
+      "evidence_class": "SCIENTIFIC_B",
+      "source_ids": [
+        "SRC-FRENKEL-SURKOV-2017"
+      ],
+      "rule": "Requires primary-source verification, implementation, tests and rolling-origin backtest before RUNNABLE."
+    },
+    {
+      "id": "ENS-ADAPT-01",
+      "family": "forecast_combination",
+      "name": "Adaptive error-weighted combination",
+      "status": "DISCOVERED",
+      "evidence_class": "SCIENTIFIC_B",
+      "source_ids": [
+        "SRC-FRENKEL-SURKOV-2017"
+      ],
+      "rule": "Requires primary-source verification, implementation, tests and rolling-origin backtest before RUNNABLE."
+    },
+    {
+      "id": "ENS-PAIR-01",
+      "family": "forecast_combination",
+      "name": "Pairwise-preference combination",
+      "status": "DISCOVERED",
+      "evidence_class": "SCIENTIFIC_B",
+      "source_ids": [
+        "SRC-FRENKEL-SURKOV-2017"
+      ],
+      "rule": "Requires primary-source verification, implementation, tests and rolling-origin backtest before RUNNABLE."
+    },
+    {
+      "id": "ENS-FACTOR-01",
+      "family": "forecast_combination",
+      "name": "Factor-analysis forecast combination",
+      "status": "DISCOVERED",
+      "evidence_class": "SCIENTIFIC_B",
+      "source_ids": [
+        "SRC-FRENKEL-SURKOV-2017"
+      ],
+      "rule": "Requires primary-source verification, implementation, tests and rolling-origin backtest before RUNNABLE."
+    },
+    {
+      "id": "ENS-QP-01",
+      "family": "forecast_combination",
+      "name": "Quadratic-programming forecast combination",
+      "status": "DISCOVERED",
+      "evidence_class": "SCIENTIFIC_B",
+      "source_ids": [
+        "SRC-FRENKEL-SURKOV-2017"
+      ],
+      "rule": "Requires primary-source verification, implementation, tests and rolling-origin backtest before RUNNABLE."
+    },
+    {
+      "id": "ENS-MAPE-OPT-01",
+      "family": "forecast_combination",
+      "name": "MAPE-minimizing nonlinear forecast combination",
+      "status": "DISCOVERED",
+      "evidence_class": "SCIENTIFIC_B",
+      "source_ids": [
+        "SRC-FRENKEL-SURKOV-2017"
+      ],
+      "rule": "Requires primary-source verification, implementation, tests and rolling-origin backtest before RUNNABLE."
+    },
+    {
+      "id": "REG-LIN-01",
+      "family": "regression",
+      "name": "Simple linear regression",
+      "status": "DISCOVERED",
+      "evidence_class": "EXPERIMENTAL",
+      "source_ids": [
+        "SRC-SENKO-MOTP13-3"
+      ],
+      "rule": "Requires source validation, implementation/test protocol and qualification appropriate to the method class."
+    },
+    {
+      "id": "REG-MULTI-01",
+      "family": "regression",
+      "name": "Multiple linear regression",
+      "status": "DISCOVERED",
+      "evidence_class": "EXPERIMENTAL",
+      "source_ids": [
+        "SRC-SENKO-MOTP13-3"
+      ],
+      "rule": "Requires source validation, implementation/test protocol and qualification appropriate to the method class."
+    },
+    {
+      "id": "REG-RIDGE-01",
+      "family": "regression",
+      "name": "Ridge / Tikhonov regularized regression",
+      "status": "DISCOVERED",
+      "evidence_class": "EXPERIMENTAL",
+      "source_ids": [
+        "SRC-SENKO-MOTP13-3"
+      ],
+      "rule": "Requires source validation, implementation/test protocol and qualification appropriate to the method class."
+    },
+    {
+      "id": "EST-MLE-01",
+      "family": "parameter_estimation",
+      "name": "Maximum likelihood estimation",
+      "status": "DISCOVERED",
+      "evidence_class": "EXPERIMENTAL",
+      "source_ids": [
+        "SRC-SENKO-MOTP13-3"
+      ],
+      "rule": "Requires source validation, implementation/test protocol and qualification appropriate to the method class."
+    },
+    {
+      "id": "POL-DELPHI-01",
+      "family": "political_strategic",
+      "name": "Delphi expert forecasting",
+      "status": "DISCOVERED",
+      "evidence_class": "EXPERIMENTAL",
+      "rule": "Requires source validation, implementation/test protocol and qualification appropriate to the method class."
+    },
+    {
+      "id": "POL-SCENARIO-01",
+      "family": "political_strategic",
+      "name": "Scenario planning",
+      "status": "DISCOVERED",
+      "evidence_class": "EXPERIMENTAL",
+      "rule": "Requires source validation, implementation/test protocol and qualification appropriate to the method class."
+    },
+    {
+      "id": "POL-FORESIGHT-01",
+      "family": "political_strategic",
+      "name": "Strategic foresight",
+      "status": "DISCOVERED",
+      "evidence_class": "EXPERIMENTAL",
+      "rule": "Requires source validation, implementation/test protocol and qualification appropriate to the method class."
+    },
+    {
+      "id": "POL-EXTRAP-01",
+      "family": "political_strategic",
+      "name": "Strategic trend extrapolation",
+      "status": "DISCOVERED",
+      "evidence_class": "EXPERIMENTAL",
+      "rule": "Requires source validation, implementation/test protocol and qualification appropriate to the method class."
+    },
+    {
+      "id": "NP-STORY-01",
+      "family": "narrative",
+      "name": "Story-structure prior",
+      "status": "DESIGNED",
+      "evidence_class": "EXPERIMENTAL",
+      "rule": "Requires source validation, implementation/test protocol and qualification appropriate to the method class."
+    },
+    {
+      "id": "NP-GOAL-01",
+      "family": "narrative",
+      "name": "Character goal / need forecasting",
+      "status": "DESIGNED",
+      "evidence_class": "EXPERIMENTAL",
+      "rule": "Requires source validation, implementation/test protocol and qualification appropriate to the method class."
+    },
+    {
+      "id": "NP-THREAD-01",
+      "family": "narrative",
+      "name": "Unresolved plot-thread forecasting",
+      "status": "DESIGNED",
+      "evidence_class": "EXPERIMENTAL",
+      "rule": "Requires source validation, implementation/test protocol and qualification appropriate to the method class."
+    },
+    {
+      "id": "NP-CAUSE-01",
+      "family": "narrative",
+      "name": "Narrative cause-effect graph",
+      "status": "DESIGNED",
+      "evidence_class": "EXPERIMENTAL",
+      "rule": "Requires source validation, implementation/test protocol and qualification appropriate to the method class."
+    },
+    {
+      "id": "NP-REL-01",
+      "family": "narrative",
+      "name": "Relationship-dynamics forecasting",
+      "status": "DESIGNED",
+      "evidence_class": "EXPERIMENTAL",
+      "rule": "Requires source validation, implementation/test protocol and qualification appropriate to the method class."
+    },
+    {
+      "id": "NP-GENRE-01",
+      "family": "narrative",
+      "name": "Genre prior",
+      "status": "DESIGNED",
+      "evidence_class": "EXPERIMENTAL",
+      "rule": "Requires source validation, implementation/test protocol and qualification appropriate to the method class."
+    },
+    {
+      "id": "NP-MARKOV-01",
+      "family": "narrative",
+      "name": "Narrative Markov / state transition",
+      "status": "DESIGNED",
+      "evidence_class": "EXPERIMENTAL",
+      "rule": "Requires source validation, implementation/test protocol and qualification appropriate to the method class."
+    },
+    {
+      "id": "NP-BAYES-01",
+      "family": "narrative",
+      "name": "Narrative Bayesian hypothesis update",
+      "status": "DESIGNED",
+      "evidence_class": "EXPERIMENTAL",
+      "rule": "Requires source validation, implementation/test protocol and qualification appropriate to the method class."
+    },
+    {
+      "id": "NP-LLM-01",
+      "family": "narrative",
+      "name": "LLM abductive narrative forecast",
+      "status": "DESIGNED",
+      "evidence_class": "EXPERIMENTAL",
+      "rule": "Requires source validation, implementation/test protocol and qualification appropriate to the method class."
+    },
+    {
+      "id": "NP-ENS-01",
+      "family": "narrative",
+      "name": "Narrative forecast ensemble",
+      "status": "DESIGNED",
+      "evidence_class": "EXPERIMENTAL",
+      "rule": "Requires source validation, implementation/test protocol and qualification appropriate to the method class."
+    },
+    {
+      "id": "DIV-NUM-01",
+      "family": "cultural_divination",
+      "name": "Numerology",
+      "status": "CATALOG_ONLY",
+      "evidence_class": "NON_SCIENTIFIC",
+      "rule": "Requires source validation, implementation/test protocol and qualification appropriate to the method class."
+    }
+  ]
+}

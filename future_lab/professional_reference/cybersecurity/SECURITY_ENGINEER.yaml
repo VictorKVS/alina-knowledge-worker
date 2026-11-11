@@ -1,0 +1,23 @@
+profession_id: CYB-SECENG
+family: CYBERSECURITY
+title: Security Engineer
+version: 1
+competency_vector:
+  threat_modeling: K5
+  network_security: K4
+  application_security: K4
+  IAM: K4
+  cryptography_usage: K4
+  logging_monitoring: K4
+  incident_response: K4
+  vulnerability_management: K5
+knowledge_requirements:
+  - {id: THREAT, name: Threat Modeling, depth: K5, criticality: MANDATORY}
+  - {id: NETSEC, name: Network Security, depth: K4, criticality: MANDATORY}
+  - {id: APPSEC, name: Application Security, depth: K4, criticality: MANDATORY}
+  - {id: IAM, name: Identity and Access Management, depth: K4, criticality: MANDATORY}
+  - {id: CRYPTO, name: Applied Cryptography, depth: K4, criticality: MANDATORY}
+  - {id: VM, name: Vulnerability Management, depth: K5, criticality: MANDATORY}
+  - {id: SIEM, name: Security Monitoring, depth: K4, criticality: MANDATORY}
+qualification:
+  requires: [threat_model_case, hardening_case, detection_case, incident_case, vulnerability_case]

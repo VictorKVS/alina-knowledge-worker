@@ -1,0 +1,32 @@
+schema_version: 1
+required:
+  - knowledge_id
+  - reviewer_id
+  - reviewer_role
+  - verdict
+  - reasons
+  - criteria
+  - notes
+  - qualified_state
+  - promotion_allowed
+
+verdicts:
+  - QUALIFIED
+  - REJECTED
+  - NEEDS_MORE_EVIDENCE
+  - CONFLICTED
+
+required_criteria:
+  - provenance_complete
+  - evidence_sufficient
+  - limitations_explicit
+  - counter_evidence_reviewed
+  - tests_present
+
+rules:
+  - AK-01 cannot qualify its own knowledge
+  - qualification requires an external reviewer identity and role
+  - conflicted knowledge cannot be promoted automatically
+  - failed or missing criteria block promotion
+  - only QUALIFIED with promotion_allowed=true may enter qualified state
+  - the qualification record must be preserved with the knowledge unit

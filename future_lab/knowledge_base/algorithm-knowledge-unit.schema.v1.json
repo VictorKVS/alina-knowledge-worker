@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0",
+  "object_type": "algorithm_knowledge_unit",
+  "required": [
+    "algorithm_id",
+    "name",
+    "family",
+    "qualification_status",
+    "sources",
+    "mathematical_basis",
+    "assumptions",
+    "limitations",
+    "implementation",
+    "tests",
+    "validation",
+    "provenance"
+  ],
+  "fields": {
+    "algorithm_id": "string",
+    "name": "string",
+    "family": "string",
+    "task_types": "array",
+    "domains": "array",
+    "mathematical_basis": "string",
+    "assumptions": "array",
+    "limitations": "array",
+    "unsuitable_when": "array",
+    "sources": {
+      "primary": "array",
+      "books": "array",
+      "university_or_standard": "array",
+      "library_docs": "array",
+      "wikipedia": "array"
+    },
+    "formulas": "array",
+    "pseudocode": "string",
+    "implementation": {
+      "language": "string",
+      "module": "string",
+      "version": "string",
+      "status": "PLANNED|IMPLEMENTED|DEPRECATED"
+    },
+    "tests": {
+      "unit": "array",
+      "regression": "array",
+      "property": "array"
+    },
+    "validation": {
+      "method": "string",
+      "datasets": "array",
+      "metrics": "array",
+      "backtests": "array"
+    },
+    "uncertainty": "object",
+    "resources": "object",
+    "energy": {
+      "status": "MEASURED|ESTIMATED|UNKNOWN",
+      "joules_per_run": "optional number",
+      "wh_per_1000_runs": "optional number"
+    },
+    "qualification_status": "DISCOVERED|SOURCED|FORMALIZED|IMPLEMENTED|TESTED|VALIDATED|QUALIFIED|DEPRECATED",
+    "provenance": "object"
+  }
+}

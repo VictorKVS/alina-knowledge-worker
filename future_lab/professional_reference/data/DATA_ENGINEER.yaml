@@ -1,0 +1,23 @@
+profession_id: DATA-ENG
+family: DATA_ENGINEERING
+title: Data Engineer
+version: 1
+competency_vector:
+  data_modeling: K5
+  SQL: K5
+  ETL_ELT: K5
+  streaming: K4
+  data_quality: K5
+  orchestration: K4
+  storage: K4
+  observability: K4
+  security: K4
+knowledge_requirements:
+  - {id: MODEL, name: Data Modeling, depth: K5, criticality: MANDATORY}
+  - {id: SQL, name: SQL and Query Engineering, depth: K5, criticality: MANDATORY}
+  - {id: ETL, name: ETL/ELT Pipelines, depth: K5, criticality: MANDATORY}
+  - {id: STREAM, name: Streaming Data, depth: K4, criticality: MANDATORY}
+  - {id: DQ, name: Data Quality and Lineage, depth: K5, criticality: MANDATORY}
+  - {id: SEC, name: Data Security, depth: K4, criticality: MANDATORY}
+qualification:
+  requires: [pipeline_case, quality_case, schema_case, streaming_case, recovery_case]

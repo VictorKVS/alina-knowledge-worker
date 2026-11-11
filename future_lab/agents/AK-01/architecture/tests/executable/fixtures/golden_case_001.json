@@ -1,0 +1,18 @@
+{
+  "fixture_id": "AK01-GOLDEN-001",
+  "title": "Minimal forecasting knowledge extraction",
+  "target_agent": {
+    "id": "FTH-FORECAST-TEST",
+    "role": "Forecasting Agent"
+  },
+  "source": {
+    "source_id": "SRC-GOLDEN-001",
+    "version": "1.0",
+    "content": "A naive forecast uses the latest observed value as the next forecast. It is a baseline method and should be evaluated against future observations."
+  },
+  "expected": {
+    "knowledge_types": ["METHOD", "PROCEDURE", "EVALUATION_RULE"],
+    "required_concepts": ["naive forecast", "baseline", "future observations"],
+    "forbidden_states": ["QUALIFIED"]
+  }
+}

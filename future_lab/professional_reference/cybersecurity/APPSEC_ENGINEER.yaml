@@ -1,0 +1,21 @@
+profession_id: CYB-APPSEC
+family: CYBERSECURITY
+title: AppSec Engineer
+version: 1
+competency_vector:
+  secure_SDLC: K5
+  code_security: K5
+  threat_modeling: K5
+  dependency_security: K5
+  API_security: K5
+  CI_security: K4
+  secrets: K4
+knowledge_requirements:
+  - {id: SSDLC, name: Secure SDLC, depth: K5, criticality: MANDATORY}
+  - {id: CODE, name: Secure Coding and Review, depth: K5, criticality: MANDATORY}
+  - {id: TM, name: Threat Modeling, depth: K5, criticality: MANDATORY}
+  - {id: SCA, name: Dependency and Supply Chain Security, depth: K5, criticality: MANDATORY}
+  - {id: API, name: API Security, depth: K5, criticality: MANDATORY}
+  - {id: CICD, name: CI/CD Security, depth: K4, criticality: MANDATORY}
+qualification:
+  requires: [code_review_case, threat_model_case, pipeline_case, API_case, supply_chain_case]

@@ -1,0 +1,16 @@
+schema_version: 1
+graph_node_types:
+  - WORK
+  - AUTHOR
+
+graph_edge_types:
+  - AUTHORED
+  - CITES
+
+rules:
+  - citation expansion is discovery-only
+  - citation count or graph centrality is not a quality verdict
+  - referenced works remain unqualified until source qualification
+  - author identity does not imply authority
+  - backward and author expansion must preserve source provenance
+  - expansion targets are bounded

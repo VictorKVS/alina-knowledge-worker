@@ -1,0 +1,29 @@
+schema_version: 1
+required:
+  - candidate_snapshot
+  - intended_claim
+  - required_role
+  - checks
+  - hard_failures
+  - verdict
+  - reasons
+  - limitations
+  - ingestion_allowed
+  - qualification_complete
+
+verdicts:
+  - ACCEPT_PRIMARY
+  - ACCEPT_SUPPORTING
+  - ACCEPT_WITH_LIMITS
+  - DISCOVERY_ONLY
+  - QUARANTINE
+  - REJECT
+
+rules:
+  - discovery rank is not quality evidence
+  - DOI and ISBN do not prove quality
+  - source assessment is claim-scoped, not universal
+  - retracted, tampered, or invalid sources are rejected
+  - unknown integrity blocks ingestion
+  - supporting evidence cannot silently satisfy a primary-evidence requirement
+  - accepted-with-limits sources must preserve limitations

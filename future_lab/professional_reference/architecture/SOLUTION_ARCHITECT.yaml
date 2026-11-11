@@ -1,0 +1,22 @@
+profession_id: ARCH-SOL
+family: ANALYSIS_ARCHITECTURE
+title: Solution Architect
+version: 1
+competency_vector:
+  business_to_solution: K5
+  system_landscape: K5
+  integration: K5
+  cloud_infrastructure: K4
+  security: K4
+  cost_engineering: K4
+  vendor_evaluation: K4
+  delivery_governance: K4
+knowledge_requirements:
+  - {id: BUS, name: Business-to-Solution Mapping, depth: K5, criticality: MANDATORY}
+  - {id: SYS, name: System and Enterprise Integration, depth: K5, criticality: MANDATORY}
+  - {id: CLOUD, name: Cloud and Infrastructure Architecture, depth: K4, criticality: MANDATORY}
+  - {id: SEC, name: Security and Compliance Architecture, depth: K4, criticality: MANDATORY}
+  - {id: COST, name: Cost and Capacity Engineering, depth: K4, criticality: IMPORTANT}
+  - {id: VEND, name: Vendor and Technology Evaluation, depth: K4, criticality: IMPORTANT}
+qualification:
+  requires: [solution_case, integration_case, cost_case, security_case, migration_case]
