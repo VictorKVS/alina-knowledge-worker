@@ -244,3 +244,49 @@ def test_orchestrator_stops_when_adapter_returns_no_candidates():
 
     assert result["status"] == "WAITING_FOR_SOURCE_CANDIDATES"
     assert result["next_required_stage"] == "SOURCE_DISCOVERY_EXECUTION"
+
+
+
+@pytest.mark.knowledge
+def test_orchestrator_deduplicates_same_source_across_discovery_records():
+    run = prepare_knowledge_acquisition_run(
+        work_object={
+            "id": "ORCH-DISCOVERY-DEDUP",
+            "goal": "hybrid retrieval",
+            "tasks": ["hybrid retrieval"],
+        }
+    )
+    adapter = FixtureSourceAdapter([
+        {
+            "title": "Hybrid Retrieval Study",
+            "abstract": "hybrid retrieval",
+            "match_queries": ["hybrid retrieval"],
+            "source_type": "primary_research",
+            "authors_or_issuer": ["Researcher A"],
+            "publication_or_version_date": "2026",
+            "persistent_identifier_or_official_locator": "https://doi.org/10.1000/x",
+            "discovery_channel": "fixture-a",
+        },
+        {
+            "title": "Hybrid Retrieval Study",
+            "abstract": "hybrid retrieval",
+            "match_queries": ["hybrid retrieval"],
+            "source_type": "primary_research",
+            "authors_or_issuer": ["Researcher A", "Researcher B"],
+            "publication_or_version_date": "2026",
+            "persistent_identifier_or_official_locator": "doi:10.1000/X",
+            "discovery_channel": "fixture-b",
+        },
+    ])
+
+    result = execute_source_discovery(
+        run=run,
+        adapter=adapter,
+        per_query_limit=10,
+    )
+
+    assert result["status"] == "SOURCE_CANDIDATES_READY"
+    assert result["source_registry"]["input_count"] >= 2
+    assert result["source_registry"]["unique_count"] == 1
+    assert result["source_registry"]["duplicate_count"] >= 1
+    assert len(result["source_candidates_unique"]) == 1
