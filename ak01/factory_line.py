@@ -4,6 +4,7 @@ from copy import deepcopy
 from typing import Any
 
 from .claim_evidence import build_evidence_link, summarize_claim_evidence
+from .coverage_saturation import assess_coverage, assess_saturation
 from .knowledge_qualification import apply_qualification, qualify_knowledge_unit
 from .knowledge_unit_builder import build_knowledge_unit
 from .learning_delta import propose_learning_delta
@@ -320,4 +321,53 @@ def execute_source_discovery(
 
     updated["status"] = "SOURCE_CANDIDATES_READY"
     updated["next_required_stage"] = "SOURCE_QUALIFICATION"
+    return updated
+
+
+
+def evaluate_research_completion(
+    *,
+    run: dict[str, Any],
+    requirements: list[dict[str, Any]],
+    evidence_items: list[dict[str, Any]],
+    iteration_history: list[dict[str, Any]],
+    mandatory_alternatives_covered: bool,
+    material_contradictions_documented: bool,
+    failure_modes_covered: bool,
+) -> dict[str, Any]:
+    """Decide whether research must expand or can advance to evidence readiness."""
+    updated = deepcopy(run)
+
+    coverage = assess_coverage(
+        requirements=requirements,
+        evidence_items=evidence_items,
+    )
+    saturation = assess_saturation(
+        coverage_result=coverage,
+        iteration_history=iteration_history,
+        mandatory_alternatives_covered=mandatory_alternatives_covered,
+        material_contradictions_documented=material_contradictions_documented,
+        failure_modes_covered=failure_modes_covered,
+    )
+
+    updated["stages"].append(
+        _stage(
+            "KNOWLEDGE_COVERAGE",
+            "COVERED" if coverage["all_requirements_covered"] else "PARTIAL",
+            coverage,
+        )
+    )
+    updated["stages"].append(
+        _stage("RESEARCH_SATURATION", saturation["decision"], saturation)
+    )
+    updated["coverage"] = coverage
+    updated["saturation"] = saturation
+
+    if saturation["decision"] == "EXPAND":
+        updated["status"] = "RESEARCH_EXPANSION_REQUIRED"
+        updated["next_required_stage"] = "SOURCE_DISCOVERY_EXECUTION"
+        return updated
+
+    updated["status"] = "EVIDENCE_READY"
+    updated["next_required_stage"] = "KNOWLEDGE_ASSEMBLY_AND_QUALIFICATION"
     return updated
