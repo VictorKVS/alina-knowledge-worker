@@ -50,7 +50,18 @@ class FixtureSourceAdapter:
                 " ".join(item.get("keywords", [])),
             ]).lower()
 
-            if query.query_text.lower() not in haystack:
+            match_queries = [
+                str(pattern).lower()
+                for pattern in item.get("match_queries", [])
+            ]
+            query_text = query.query_text.lower()
+            explicit_match = any(
+                pattern in query_text
+                for pattern in match_queries
+            )
+            fallback_match = query_text in haystack
+
+            if not explicit_match and not fallback_match:
                 continue
 
             results.append(
