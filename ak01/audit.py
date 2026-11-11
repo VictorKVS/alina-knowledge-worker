@@ -1,9 +1,9 @@
 from __future__ import annotations
 
-from dataclasses import dataclass, field
-from datetime import datetime, timezone
-from typing import Any
 import uuid
+from dataclasses import dataclass, field
+from datetime import UTC, datetime
+from typing import Any
 
 
 @dataclass(frozen=True)
@@ -14,7 +14,7 @@ class AuditRecord:
     correlation_id: str
     details: dict[str, Any] = field(default_factory=dict)
     id: str = field(default_factory=lambda: str(uuid.uuid4()))
-    occurred_at: str = field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
+    occurred_at: str = field(default_factory=lambda: datetime.now(UTC).isoformat())
 
 
 class AuditSink:
