@@ -22,6 +22,7 @@ from .research_planning import plans_for_trace
 from .source_adapters import SourceAdapter, SourceQuery, run_discovery_queries
 from .source_discovery import build_source_discovery_plan
 from .source_qualification import assess_source
+from .source_registry import register_candidates
 from .work_analysis import decompose_work
 
 
@@ -301,6 +302,18 @@ def execute_source_discovery(
     updated["source_candidates"] = discovery["candidates"]
 
     if discovery["status"] != "CANDIDATES_READY":
+        updated["status"] = "WAITING_FOR_SOURCE_CANDIDATES"
+        updated["next_required_stage"] = "SOURCE_DISCOVERY_EXECUTION"
+        return updated
+
+    registry = register_candidates(discovery["candidates"])
+    updated["stages"].append(
+        _stage("SOURCE_CANDIDATE_REGISTRY", registry["status"], registry)
+    )
+    updated["source_registry"] = registry
+    updated["source_candidates_unique"] = registry["entries"]
+
+    if registry["status"] != "REGISTRY_READY":
         updated["status"] = "WAITING_FOR_SOURCE_CANDIDATES"
         updated["next_required_stage"] = "SOURCE_DISCOVERY_EXECUTION"
         return updated
