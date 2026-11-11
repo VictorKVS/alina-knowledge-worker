@@ -1,0 +1,30 @@
+schema_version: 1
+required:
+  - knowledge_id
+  - knowledge_type
+  - title
+  - state
+  - claim_id
+  - evidence_state
+  - evidence_links
+  - prerequisites
+  - decision_rules
+  - procedures
+  - limitations
+  - failure_modes
+  - tests
+  - qualification_required
+  - auto_qualified
+
+states:
+  - EVIDENCE_LINKED
+  - VERIFIED_NOT_QUALIFIED
+  - CONFLICTED
+
+rules:
+  - knowledge units must retain all evidence links used to build them
+  - source limitations propagate into knowledge limitations
+  - counter-evidence is never discarded
+  - conflicted knowledge cannot silently become qualified
+  - qualification requires an external gate
+  - evidence bundles are qualification inputs, not certificates
