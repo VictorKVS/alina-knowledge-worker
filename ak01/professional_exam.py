@@ -3,7 +3,6 @@ from __future__ import annotations
 from copy import deepcopy
 from typing import Any
 
-
 EXAM_LEVELS = {
     "E1_KNOWLEDGE",
     "E2_DECISION",
