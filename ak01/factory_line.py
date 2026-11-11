@@ -19,6 +19,7 @@ from .problem_solving import (
     register_candidate_method,
 )
 from .research_planning import plans_for_trace
+from .source_adapters import SourceAdapter, SourceQuery, run_discovery_queries
 from .source_discovery import build_source_discovery_plan
 from .source_qualification import assess_source
 from .work_analysis import decompose_work
@@ -252,4 +253,58 @@ def close_run_with_learning(
     updated["learning_delta"] = delta
     updated["status"] = "LEARNING_DELTA_REQUIRED"
     updated["next_required_stage"] = "PATCH_REGRESSION_REQUALIFICATION"
+    return updated
+
+
+
+def execute_source_discovery(
+    *,
+    run: dict[str, Any],
+    adapter: SourceAdapter,
+    per_query_limit: int = 5,
+) -> dict[str, Any]:
+    """Execute discovery plans through an injected source adapter."""
+    updated = deepcopy(run)
+    discovery_plans = updated.get("discovery_plans") or []
+    queries: list[SourceQuery] = []
+
+    for plan_index, plan in enumerate(discovery_plans, start=1):
+        source_types = [
+            str(item.get("source_type"))
+            for item in plan.get("source_channels", [])
+            if item.get("source_type")
+        ]
+        source_type = source_types[0] if source_types else "authoritative_reference"
+
+        for intent_index, intent in enumerate(plan.get("search_intents", []), start=1):
+            query_text = str(intent.get("query_seed") or "").strip()
+            if not query_text:
+                continue
+            queries.append(
+                SourceQuery(
+                    query_id=f"{plan_index}:{intent_index}",
+                    query_text=query_text,
+                    source_type=source_type,
+                    limit=per_query_limit,
+                )
+            )
+
+    if not queries:
+        updated["status"] = "BLOCKED_NO_DISCOVERY_QUERIES"
+        updated["next_required_stage"] = "RESEARCH_PLAN_REVIEW"
+        return updated
+
+    discovery = run_discovery_queries(adapter=adapter, queries=queries)
+    updated["stages"].append(
+        _stage("SOURCE_DISCOVERY_EXECUTION", discovery["status"], discovery)
+    )
+    updated["source_candidates"] = discovery["candidates"]
+
+    if discovery["status"] != "CANDIDATES_READY":
+        updated["status"] = "WAITING_FOR_SOURCE_CANDIDATES"
+        updated["next_required_stage"] = "SOURCE_DISCOVERY_EXECUTION"
+        return updated
+
+    updated["status"] = "SOURCE_CANDIDATES_READY"
+    updated["next_required_stage"] = "SOURCE_QUALIFICATION"
     return updated
