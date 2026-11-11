@@ -11,7 +11,6 @@ from .factory_line import (
 )
 from .knowledge_qualification import apply_qualification, qualify_knowledge_unit
 from .knowledge_unit_builder import build_knowledge_unit
-from .metadata_review import review_metadata_conflicts
 from .method_selection import compare_candidates
 from .outcome_learning import (
     classify_root_cause,
