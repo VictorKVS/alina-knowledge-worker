@@ -51,7 +51,11 @@ def compare_candidates(
         for constraint in hard_constraints or []:
             metric = str(constraint.get("metric"))
             operator = str(constraint.get("operator"))
-            threshold = float(constraint.get("value"))
+            raw_threshold = constraint.get("value")
+            if raw_threshold is None:
+                reasons.append(f"missing_hard_constraint_value:{metric}")
+                continue
+            threshold = float(raw_threshold)
             observed = candidate_measurements.get(metric)
 
             if observed is None:
