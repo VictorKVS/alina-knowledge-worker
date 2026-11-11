@@ -2,10 +2,12 @@ import pytest
 
 from ak01.factory_line import (
     close_run_with_learning,
+    execute_source_discovery,
     prepare_knowledge_acquisition_run,
     qualify_candidate_into_knowledge,
     solve_with_qualified_knowledge,
 )
+from ak01.source_adapters import FixtureSourceAdapter
 
 
 def _criteria():
@@ -188,3 +190,56 @@ def test_orchestrator_runs_to_delta_when_all_gates_pass():
     assert run["status"] == "LEARNING_DELTA_REQUIRED"
     assert run["learning_delta"]["regression_required"] is True
     assert run["learning_delta"]["requalification_required"] is True
+
+
+
+@pytest.mark.knowledge
+def test_orchestrator_executes_discovery_through_adapter():
+    run = prepare_knowledge_acquisition_run(
+        work_object={
+            "id": "ORCH-DISCOVERY-1",
+            "goal": "Choose hybrid retrieval method",
+            "tasks": ["hybrid retrieval"],
+        }
+    )
+    adapter = FixtureSourceAdapter([
+        {
+            "title": "Hybrid Retrieval Evidence",
+            "abstract": "hybrid retrieval evidence",
+            "source_type": "primary_research",
+            "authors_or_issuer": ["Researcher"],
+            "publication_or_version_date": "2026",
+            "persistent_identifier_or_official_locator": "doi:10.example/discovery",
+        }
+    ])
+
+    result = execute_source_discovery(
+        run=run,
+        adapter=adapter,
+        per_query_limit=3,
+    )
+
+    assert result["status"] == "SOURCE_CANDIDATES_READY"
+    assert result["next_required_stage"] == "SOURCE_QUALIFICATION"
+    assert result["source_candidates"]
+    assert result["source_candidates"][0]["discovery_channel"] == "fixture"
+
+
+@pytest.mark.knowledge
+def test_orchestrator_stops_when_adapter_returns_no_candidates():
+    run = prepare_knowledge_acquisition_run(
+        work_object={
+            "id": "ORCH-DISCOVERY-2",
+            "goal": "Find unknown method",
+            "tasks": ["unknown method"],
+        }
+    )
+    adapter = FixtureSourceAdapter([])
+
+    result = execute_source_discovery(
+        run=run,
+        adapter=adapter,
+    )
+
+    assert result["status"] == "WAITING_FOR_SOURCE_CANDIDATES"
+    assert result["next_required_stage"] == "SOURCE_DISCOVERY_EXECUTION"
