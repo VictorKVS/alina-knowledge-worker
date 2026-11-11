@@ -66,6 +66,13 @@ def assess_source(
     if hard_failures:
         verdict = "REJECT"
         reasons.extend(hard_failures)
+    elif (
+        candidate.get("requires_metadata_review") is True
+        and candidate.get("metadata_review_resolved") is not True
+    ):
+        verdict = "QUARANTINE"
+        reasons.append("metadata_conflict_requires_review")
+        limitations.append("metadata_conflict_unresolved")
     else:
         integrity = str(candidate.get("integrity_status", "")).upper()
         claim_fit = str(candidate.get("claim_fit", "")).upper()
