@@ -1,0 +1,17 @@
+schema_version: 1
+levels:
+  - E1_KNOWLEDGE
+  - E2_DECISION
+  - E3_PROCEDURE
+  - E4_FAILURE
+  - E5_ADVERSARIAL
+  - E6_CAPSTONE
+
+rules:
+  - exam specification is derived before training
+  - every case traces to a professional task
+  - scoring criteria are explicit and machine-auditable
+  - critical cases may block pass independently of overall average
+  - diagnostic PASS does not itself grant production qualification
+  - failed criteria produce training gaps
+  - production qualification requires later shadow work / independent qualification
