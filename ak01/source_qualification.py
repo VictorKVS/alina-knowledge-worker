@@ -3,7 +3,6 @@ from __future__ import annotations
 from copy import deepcopy
 from typing import Any
 
-
 VERDICTS = {
     "ACCEPT_PRIMARY",
     "ACCEPT_SUPPORTING",
