@@ -85,3 +85,22 @@ def test_exact_tie_requires_more_evidence_or_policy():
 
     assert result["decision"] == "NO_DECISION"
     assert result["reason"] == "comparison_tie_requires_additional_evidence_or_policy"
+
+
+@pytest.mark.knowledge
+def test_missing_hard_constraint_threshold_blocks_candidate_instead_of_crashing():
+    result = compare_candidates(
+        candidates=[{"candidate_id": "A"}],
+        readiness=[{"candidate_id": "A", "ready_for_comparison": True}],
+        criteria=[{"name": "quality", "weight": 1.0, "direction": "MAXIMIZE"}],
+        measurements={"A": {"quality": 0.9, "latency_ms": 20}},
+        hard_constraints=[
+            {"metric": "latency_ms", "operator": "<="},
+        ],
+    )
+
+    assert result["decision"] == "NO_DECISION"
+    assert (
+        "missing_hard_constraint_value:latency_ms"
+        in result["excluded_candidates"][0]["reasons"]
+    )
