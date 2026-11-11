@@ -1,0 +1,25 @@
+schema_version: 1
+required:
+  - link_id
+  - claim
+  - relation
+  - evidence
+  - rationale
+  - limitations
+  - qualification_required
+
+relations:
+  - SUPPORTS
+  - CONTRADICTS
+  - LIMITS
+  - DEFINES
+  - IMPLEMENTS
+  - DERIVES
+
+rules:
+  - evidence must come from a source whose assessment permits ingestion
+  - every evidence item must point to a source fragment and locator
+  - a relation does not automatically make a claim qualified
+  - contradictory evidence must remain visible
+  - source limitations propagate to evidence links
+  - claim qualification requires a separate external gate
