@@ -55,7 +55,7 @@ def build_exam_spec(
         "pass_policy": {
             "critical_case_min_score": 0.80,
             "overall_min_score": 0.75,
-            "critical_case_failure_blocks_pass": True,
+            "critical_case_failure_blocks_exam": True,
         },
         "status": "EXAM_SPEC_READY",
     }
