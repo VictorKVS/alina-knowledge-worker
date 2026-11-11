@@ -1,0 +1,18 @@
+schema_version: 1
+required_candidate_fields:
+  - title
+  - source_type
+  - authors_or_issuer
+  - publication_or_version_date
+  - persistent_identifier_or_official_locator
+  - discovery_channel
+  - reason_found
+  - raw_metadata
+
+rules:
+  - adapters only discover candidates; they never qualify sources
+  - every candidate retains discovery channel and raw metadata
+  - persistent identifiers or official locators are mandatory
+  - adapter failures are classified before retry
+  - rate limits and transient upstream failures use bounded retry
+  - authorization failures are not retried blindly
