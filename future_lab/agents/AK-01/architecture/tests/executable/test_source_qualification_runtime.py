@@ -93,3 +93,38 @@ def test_supporting_source_does_not_silently_fill_primary_role():
 
     assert result["verdict"] == "ACCEPT_WITH_LIMITS"
     assert "supporting_source_cannot_fill_primary_role_alone" in result["reasons"]
+
+
+
+@pytest.mark.knowledge
+def test_unresolved_metadata_conflict_is_quarantined():
+    candidate = {
+        "title": "Conflicted Source",
+        "source_type": "scientific_article",
+        "authors_or_issuer": ["A. Researcher"],
+        "publication_or_version_date": "2026",
+        "persistent_identifier_or_official_locator": "doi:10.1000/conflict",
+        "integrity_status": "CURRENT",
+        "methodology": "comparative study",
+        "claim_fit": "HIGH",
+        "authority": "SCIENTIFIC_PRIMARY",
+        "limitations": [],
+        "requires_metadata_review": True,
+        "metadata_conflicts": [
+            {
+                "field": "publication_or_version_date",
+                "values": ["2025", "2026"],
+                "severity": "REVIEW_REQUIRED",
+            }
+        ],
+    }
+
+    result = assess_source(
+        candidate,
+        intended_claim="Method A improves quality",
+    )
+
+    assert result["verdict"] == "QUARANTINE"
+    assert result["ingestion_allowed"] is False
+    assert "metadata_conflict_requires_review" in result["reasons"]
+    assert "metadata_conflict_unresolved" in result["limitations"]
