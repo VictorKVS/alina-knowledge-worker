@@ -69,7 +69,7 @@ def decompose_work(work_object: dict[str, Any]) -> dict[str, Any]:
         )))
         edges.append({"from": "P1", "to": task_id, "type": "CONTAINS"})
 
-        decisions = task_data.get("decisions") or []
+        decisions: list[Any] = list(task_data.get("decisions") or [])
         method = task_data.get("method")
         algorithm = task_data.get("algorithm")
 
