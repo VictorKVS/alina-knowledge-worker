@@ -206,6 +206,7 @@ def test_orchestrator_executes_discovery_through_adapter():
         {
             "title": "Hybrid Retrieval Evidence",
             "abstract": "hybrid retrieval evidence",
+            "match_queries": ["hybrid retrieval"],
             "source_type": "primary_research",
             "authors_or_issuer": ["Researcher"],
             "publication_or_version_date": "2026",
