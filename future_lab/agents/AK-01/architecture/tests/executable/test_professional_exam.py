@@ -126,3 +126,38 @@ def test_critical_case_failure_blocks_exam_and_creates_training_gap():
     assert result["verdict"] == "FAIL_DIAGNOSTIC"
     assert result["critical_failures"]
     assert any("C1" in item["failed_criteria"] for item in gaps)
+
+
+
+@pytest.mark.knowledge
+def test_numeric_exam_criterion_with_missing_threshold_fails_safely():
+    spec = build_exam_spec(
+        role_id="AK-01",
+        target_level="ARCHITECT",
+        tasks=[
+            {
+                "task_id": "TN",
+                "label": "Meet latency target",
+                "exam_levels": ["E2_DECISION"],
+                "critical": True,
+            }
+        ],
+        acceptance_criteria=[
+            {
+                "criterion_id": "CN",
+                "task_id": "TN",
+                "field": "latency_ms",
+                "mode": "AT_MOST",
+                "expected": None,
+                "weight": 1,
+            }
+        ],
+    )
+
+    result = evaluate_exam(
+        exam_spec=spec,
+        submissions={"TN:E2_DECISION": {"latency_ms": 20}},
+    )
+
+    assert result["verdict"] == "FAIL_DIAGNOSTIC"
+    assert result["case_results"][0]["criterion_results"][0]["passed"] is False
