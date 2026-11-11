@@ -1,0 +1,17 @@
+schema_version: 1
+required:
+  - graph_id
+  - problem_signature
+  - nodes
+  - edges
+  - candidate_readiness
+  - selection_status
+  - selected_candidate_id
+
+rules:
+  - problem signature precedes solution selection
+  - candidates must expose required knowledge, evidence, metrics and failure modes
+  - only qualified knowledge satisfies candidate readiness
+  - absence of evidence blocks comparison readiness
+  - candidate selection is forbidden before comparison
+  - timing claims require measurement evidence
