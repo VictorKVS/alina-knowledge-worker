@@ -8,7 +8,6 @@ from .events import InMemoryEventBus
 from .middleware import CorrelationIdMiddleware
 from .repositories import InMemoryJobRepository
 
-
 jobs = InMemoryJobRepository()
 events = InMemoryEventBus()
 app_service = KnowledgeApplication(jobs, events)
