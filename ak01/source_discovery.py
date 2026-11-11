@@ -3,7 +3,6 @@ from __future__ import annotations
 from copy import deepcopy
 from typing import Any
 
-
 _CHANNELS_BY_SOURCE_TYPE = {
     "body_of_knowledge": ["professional_body", "standards_body", "academic_curriculum"],
     "scholarly_synthesis": ["openalex", "semantic_scholar", "crossref"],
