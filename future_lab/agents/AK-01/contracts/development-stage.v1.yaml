@@ -1,0 +1,24 @@
+schema_version: 1
+
+stages:
+  - Q0_ENGINEERING_BASELINE
+  - Q1_DETERMINISTIC_DIAGNOSTIC
+  - Q2_HIDDEN_CASES
+  - Q3_TRANSFER
+  - Q4_POLYGON
+  - Q5_LIVE_RESEARCH
+  - Q6_SHADOW_PRODUCTION
+  - Q7_QUALIFICATION_BOARD
+  - Q8_CONTINUOUS_REQUALIFICATION
+
+decisions:
+  - PROMOTE
+  - TRAIN_AND_RETEST
+  - MAINTAIN_REQUALIFICATION
+
+rules:
+  - critical failure blocks promotion
+  - failed stage verdict routes to targeted training
+  - promotion creates the next stage test program, not production access
+  - material deltas require regression and targeted requalification
+  - Q7 qualification is scope-bound
