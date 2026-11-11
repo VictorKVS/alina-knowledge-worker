@@ -2,6 +2,7 @@ import pytest
 
 from ak01.factory_line import (
     close_run_with_learning,
+    evaluate_research_completion,
     execute_source_discovery,
     prepare_knowledge_acquisition_run,
     qualify_candidate_into_knowledge,
@@ -290,3 +291,97 @@ def test_orchestrator_deduplicates_same_source_across_discovery_records():
     assert result["source_registry"]["unique_count"] == 1
     assert result["source_registry"]["duplicate_count"] >= 1
     assert len(result["source_candidates_unique"]) == 1
+
+
+
+@pytest.mark.knowledge
+def test_orchestrator_expands_research_when_coverage_is_incomplete():
+    run = prepare_knowledge_acquisition_run(
+        work_object={
+            "id": "ORCH-COVERAGE-1",
+            "goal": "Choose method",
+            "tasks": ["Choose method"],
+        }
+    )
+
+    result = evaluate_research_completion(
+        run=run,
+        requirements=[
+            {
+                "requirement_id": "KR1",
+                "required_dimensions": ["concept", "decision", "limitation"],
+            }
+        ],
+        evidence_items=[
+            {
+                "evidence_id": "E1",
+                "requirement_ids": ["KR1"],
+                "dimensions": ["concept", "decision"],
+            }
+        ],
+        iteration_history=[
+            {"material_new_findings": 0},
+            {"material_new_findings": 0},
+        ],
+        mandatory_alternatives_covered=True,
+        material_contradictions_documented=True,
+        failure_modes_covered=True,
+    )
+
+    assert result["status"] == "RESEARCH_EXPANSION_REQUIRED"
+    assert result["next_required_stage"] == "SOURCE_DISCOVERY_EXECUTION"
+
+
+@pytest.mark.knowledge
+def test_orchestrator_stops_research_at_evidence_ready_when_saturated():
+    run = prepare_knowledge_acquisition_run(
+        work_object={
+            "id": "ORCH-COVERAGE-2",
+            "goal": "Choose method",
+            "tasks": ["Choose method"],
+        }
+    )
+
+    result = evaluate_research_completion(
+        run=run,
+        requirements=[
+            {
+                "requirement_id": "KR1",
+                "required_dimensions": [
+                    "concept",
+                    "decision",
+                    "limitation",
+                    "contradiction",
+                    "practice",
+                    "evaluation",
+                ],
+            }
+        ],
+        evidence_items=[
+            {
+                "evidence_id": "E1",
+                "requirement_ids": ["KR1"],
+                "dimensions": [
+                    "concept",
+                    "decision",
+                    "limitation",
+                    "contradiction",
+                    "practice",
+                    "evaluation",
+                ],
+            }
+        ],
+        iteration_history=[
+            {"material_new_findings": 0},
+            {"material_new_findings": 0},
+        ],
+        mandatory_alternatives_covered=True,
+        material_contradictions_documented=True,
+        failure_modes_covered=True,
+    )
+
+    assert result["status"] == "EVIDENCE_READY"
+    assert (
+        result["next_required_stage"]
+        == "KNOWLEDGE_ASSEMBLY_AND_QUALIFICATION"
+    )
