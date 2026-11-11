@@ -1,0 +1,19 @@
+schema_version: 1
+required:
+  - reviewer_id
+  - reviewer_role
+  - conflicts_reviewed
+  - canonical_values
+  - evidence
+  - rationale
+  - verdict
+
+verdicts:
+  - RESOLVED
+
+rules:
+  - metadata conflicts require an explicit reviewer
+  - every conflicted field requires a canonical value
+  - review evidence is mandatory
+  - canonicalization does not qualify the source
+  - source qualification remains a separate gate
