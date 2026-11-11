@@ -4,8 +4,8 @@ import hashlib
 import uuid
 from typing import Any
 
-from .parser import SourceParser
 from .evidence import provenance_complete
+from .parser import SourceParser
 
 
 class ExtractionEngine:
