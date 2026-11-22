@@ -1,5 +1,5 @@
 {
-  "version": "0.2.0",
+  "version": "0.3.0",
   "source_id": "SRC-BOOK002-PRIMARY",
   "terms": [
     {
@@ -857,6 +857,344 @@
       "pdf_pages": [
         197,
         198
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-NEURAL_NETWORK",
+      "term": "Neural network",
+      "abbreviation": null,
+      "definition_ru": "система обучаемых связанных вычислительных преобразований",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "pdf_pages": [
+        205,
+        207
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-MODEL_PARAMETER",
+      "term": "Model parameter",
+      "abbreviation": null,
+      "definition_ru": "обучаемое числовое значение, влияющее на вычисления модели",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "pdf_pages": [
+        205,
+        207
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-REPRESENTATION_LEARNING",
+      "term": "Representation learning",
+      "abbreviation": null,
+      "definition_ru": "обучение числовых представлений входных данных",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "pdf_pages": [
+        208,
+        211
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-EMBEDDING_LAYER",
+      "term": "Embedding layer",
+      "abbreviation": null,
+      "definition_ru": "таблица обучаемых векторов, индексируемых token ID",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "pdf_pages": [
+        212,
+        214
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-SELF_ATTENTION",
+      "term": "Self-attention",
+      "abbreviation": null,
+      "definition_ru": "вычисление контекстных представлений по весам соответствия токенов",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "pdf_pages": [
+        215,
+        221
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-QKV",
+      "term": "Q/K/V",
+      "abbreviation": "QKV",
+      "definition_ru": "запросы, ключи и значения в механизме внимания",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "pdf_pages": [
+        218,
+        221
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-MULTI_HEAD_ATTENTION",
+      "term": "Multi-head attention",
+      "abbreviation": null,
+      "definition_ru": "несколько параллельных голов внимания с разными обучаемыми проекциями",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "pdf_pages": [
+        219,
+        221
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-POSITION_ENCODING",
+      "term": "Positional encoding",
+      "abbreviation": null,
+      "definition_ru": "способ учёта порядка токенов в Transformer",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "pdf_pages": [
+        221,
+        223
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-ROPE",
+      "term": "RoPE",
+      "abbreviation": "ROPE",
+      "definition_ru": "rotary positional embedding: позиционное вращение представлений запросов и ключей",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "pdf_pages": [
+        222,
+        223
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-FFN",
+      "term": "Feedforward network",
+      "abbreviation": "FFN",
+      "definition_ru": "поэлементная нелинейная сеть внутри блока Transformer",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "pdf_pages": [
+        223,
+        224
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-LAYER_NORM",
+      "term": "Layer normalization",
+      "abbreviation": null,
+      "definition_ru": "нормировка скрытых представлений для устойчивого обучения",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "pdf_pages": [
+        224,
+        226
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-CROSS_ENTROPY",
+      "term": "Cross-entropy loss",
+      "abbreviation": null,
+      "definition_ru": "минус логарифм вероятности правильного токена при one-hot цели",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "pdf_pages": [
+        226,
+        227
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-BACKPROP",
+      "term": "Backpropagation",
+      "abbreviation": null,
+      "definition_ru": "вычисление градиентов функции потерь по параметрам сети",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "pdf_pages": [
+        206,
+        208
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-INTRINSIC_EVAL",
+      "term": "Intrinsic model evaluation",
+      "abbreviation": null,
+      "definition_ru": "внутренняя оценка качества моделирования последовательностей, например perplexity",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "pdf_pages": [
+        227,
+        228
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-EXTRINSIC_EVAL",
+      "term": "Extrinsic model evaluation",
+      "abbreviation": null,
+      "definition_ru": "оценка качества на реальных прикладных задачах",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "pdf_pages": [
+        227,
+        228
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-ENCODER_ONLY",
+      "term": "Encoder-only",
+      "abbreviation": null,
+      "definition_ru": "архитектура преимущественно для представлений и понимания входного текста",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "pdf_pages": [
+        229,
+        232
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-ENCODER_DECODER",
+      "term": "Encoder-decoder",
+      "abbreviation": null,
+      "definition_ru": "архитектура преобразования входной последовательности в выходную",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "pdf_pages": [
+        229,
+        234
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-DECODER_ONLY",
+      "term": "Decoder-only",
+      "abbreviation": null,
+      "definition_ru": "авторегрессионная генеративная архитектура семейства GPT",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "pdf_pages": [
+        229,
+        234
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-MOE",
+      "term": "Mixture of Experts",
+      "abbreviation": "MOE",
+      "definition_ru": "условное вычисление с маршрутизацией токенов к подмножеству нейросетевых экспертов",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "pdf_pages": [
+        234,
+        238
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-FLM",
+      "term": "Full language modeling",
+      "abbreviation": "FLM",
+      "definition_ru": "обучение предсказывать следующий токен в причинной последовательности",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "pdf_pages": [
+        239,
+        247
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-PREFIX_LM",
+      "term": "Prefix language modeling",
+      "abbreviation": "PREFIX_LM",
+      "definition_ru": "обучение с двунаправленным prefix и предсказанием suffix",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "pdf_pages": [
+        247,
+        248
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-MLM",
+      "term": "Masked language modeling",
+      "abbreviation": "MLM",
+      "definition_ru": "обучение восстанавливать скрытые токены или интервалы",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "pdf_pages": [
+        248,
+        253
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-DENOISING",
+      "term": "Denoising objective",
+      "abbreviation": null,
+      "definition_ru": "обучение восстанавливать исходные данные из искажённого входа",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "pdf_pages": [
+        251,
+        255
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-UL2",
+      "term": "UL2 Mixture of Denoisers",
+      "abbreviation": "UL2",
+      "definition_ru": "объединение разных заданий восстановления текста в рамках предобучения",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "pdf_pages": [
+        253,
+        255
+      ],
+      "importance": 3
+    },
+    {
+      "id": "B002-DOMAIN_SPECIFIC_LANGUAGE",
+      "term": "Domain-specific language",
+      "abbreviation": null,
+      "definition_ru": "специализированная запись предметных объектов и операций для эффективного моделирования",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "pdf_pages": [
+        256,
+        262
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-PGN",
+      "term": "Portable Game Notation",
+      "abbreviation": "PGN",
+      "definition_ru": "структурированная запись последовательностей шахматных ходов",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "pdf_pages": [
+        257,
+        261
       ],
       "importance": 4
     }

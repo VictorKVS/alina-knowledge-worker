@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "graph_id": "ALINA-BOOK-002-KNOWLEDGE-GRAPH",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "created": "2026-11-22",
   "source": {
     "id": "SRC-BOOK002-PRIMARY",
@@ -29,14 +29,19 @@
       "CH03": [
         168,
         203
+      ],
+      "CH04": [
+        204,
+        262
       ]
     },
     "reviewed_chapters": [
       "CH01",
       "CH02",
-      "CH03"
+      "CH03",
+      "CH04"
     ],
-    "remaining_chapters": "CH04-CH13: not reviewed in this knowledge graph"
+    "remaining_chapters": "CH05-CH13 not reviewed in knowledge graph"
   },
   "model": {
     "description": "Directed knowledge/competency graph",
@@ -2039,6 +2044,786 @@
       "owner": "ALINA",
       "version": "0.2.0",
       "last_review": "2026-11-22"
+    },
+    {
+      "id": "B002-NEURAL_NETWORK",
+      "title": "Neural network",
+      "abbr": null,
+      "definition_ru": "система обучаемых связанных вычислительных преобразований",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          205,
+          207
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-LLM"
+      ],
+      "owner": "ALINA",
+      "version": "0.3.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-MODEL_PARAMETER",
+      "title": "Model parameter",
+      "abbr": null,
+      "definition_ru": "обучаемое числовое значение, влияющее на вычисления модели",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          205,
+          207
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-NEURAL_NETWORK"
+      ],
+      "owner": "ALINA",
+      "version": "0.3.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-REPRESENTATION_LEARNING",
+      "title": "Representation learning",
+      "abbr": null,
+      "definition_ru": "обучение числовых представлений входных данных",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          208,
+          211
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-NEURAL_NETWORK"
+      ],
+      "owner": "ALINA",
+      "version": "0.3.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-EMBEDDING_LAYER",
+      "title": "Embedding layer",
+      "abbr": null,
+      "definition_ru": "таблица обучаемых векторов, индексируемых token ID",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          212,
+          214
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-TOKEN_ID"
+      ],
+      "owner": "ALINA",
+      "version": "0.3.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-SELF_ATTENTION",
+      "title": "Self-attention",
+      "abbr": null,
+      "definition_ru": "вычисление контекстных представлений по весам соответствия токенов",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          215,
+          221
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-EMBEDDING_LAYER"
+      ],
+      "owner": "ALINA",
+      "version": "0.3.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-QKV",
+      "title": "Q/K/V",
+      "abbr": "QKV",
+      "definition_ru": "запросы, ключи и значения в механизме внимания",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          218,
+          221
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-SELF_ATTENTION"
+      ],
+      "owner": "ALINA",
+      "version": "0.3.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-MULTI_HEAD_ATTENTION",
+      "title": "Multi-head attention",
+      "abbr": null,
+      "definition_ru": "несколько параллельных голов внимания с разными обучаемыми проекциями",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          219,
+          221
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-SELF_ATTENTION"
+      ],
+      "owner": "ALINA",
+      "version": "0.3.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-POSITION_ENCODING",
+      "title": "Positional encoding",
+      "abbr": null,
+      "definition_ru": "способ учёта порядка токенов в Transformer",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          221,
+          223
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-SELF_ATTENTION"
+      ],
+      "owner": "ALINA",
+      "version": "0.3.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-ROPE",
+      "title": "RoPE",
+      "abbr": "ROPE",
+      "definition_ru": "rotary positional embedding: позиционное вращение представлений запросов и ключей",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          222,
+          223
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-POSITION_ENCODING"
+      ],
+      "owner": "ALINA",
+      "version": "0.3.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-FFN",
+      "title": "Feedforward network",
+      "abbr": "FFN",
+      "definition_ru": "поэлементная нелинейная сеть внутри блока Transformer",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          223,
+          224
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-NEURAL_NETWORK"
+      ],
+      "owner": "ALINA",
+      "version": "0.3.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-LAYER_NORM",
+      "title": "Layer normalization",
+      "abbr": null,
+      "definition_ru": "нормировка скрытых представлений для устойчивого обучения",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          224,
+          226
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-NEURAL_NETWORK"
+      ],
+      "owner": "ALINA",
+      "version": "0.3.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-CROSS_ENTROPY",
+      "title": "Cross-entropy loss",
+      "abbr": null,
+      "definition_ru": "минус логарифм вероятности правильного токена при one-hot цели",
+      "kind": "metric",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          226,
+          227
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-MODEL_PARAMETER"
+      ],
+      "owner": "ALINA",
+      "version": "0.3.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-BACKPROP",
+      "title": "Backpropagation",
+      "abbr": null,
+      "definition_ru": "вычисление градиентов функции потерь по параметрам сети",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          206,
+          208
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-CROSS_ENTROPY"
+      ],
+      "owner": "ALINA",
+      "version": "0.3.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-INTRINSIC_EVAL",
+      "title": "Intrinsic model evaluation",
+      "abbr": null,
+      "definition_ru": "внутренняя оценка качества моделирования последовательностей, например perplexity",
+      "kind": "metric",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          227,
+          228
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-PERPLEXITY"
+      ],
+      "owner": "ALINA",
+      "version": "0.3.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-EXTRINSIC_EVAL",
+      "title": "Extrinsic model evaluation",
+      "abbr": null,
+      "definition_ru": "оценка качества на реальных прикладных задачах",
+      "kind": "metric",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          227,
+          228
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-DOWNSTREAM_TASKS"
+      ],
+      "owner": "ALINA",
+      "version": "0.3.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-ENCODER_ONLY",
+      "title": "Encoder-only",
+      "abbr": null,
+      "definition_ru": "архитектура преимущественно для представлений и понимания входного текста",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          229,
+          232
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-MODEL_ARCHITECTURE"
+      ],
+      "owner": "ALINA",
+      "version": "0.3.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-ENCODER_DECODER",
+      "title": "Encoder-decoder",
+      "abbr": null,
+      "definition_ru": "архитектура преобразования входной последовательности в выходную",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          229,
+          234
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-MODEL_ARCHITECTURE"
+      ],
+      "owner": "ALINA",
+      "version": "0.3.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-DECODER_ONLY",
+      "title": "Decoder-only",
+      "abbr": null,
+      "definition_ru": "авторегрессионная генеративная архитектура семейства GPT",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          229,
+          234
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-MODEL_ARCHITECTURE"
+      ],
+      "owner": "ALINA",
+      "version": "0.3.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-MOE",
+      "title": "Mixture of Experts",
+      "abbr": "MOE",
+      "definition_ru": "условное вычисление с маршрутизацией токенов к подмножеству нейросетевых экспертов",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          234,
+          238
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-FFN"
+      ],
+      "owner": "ALINA",
+      "version": "0.3.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-FLM",
+      "title": "Full language modeling",
+      "abbr": "FLM",
+      "definition_ru": "обучение предсказывать следующий токен в причинной последовательности",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          239,
+          247
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-NEXT_TOKEN_PREDICTION"
+      ],
+      "owner": "ALINA",
+      "version": "0.3.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-PREFIX_LM",
+      "title": "Prefix language modeling",
+      "abbr": "PREFIX_LM",
+      "definition_ru": "обучение с двунаправленным prefix и предсказанием suffix",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          247,
+          248
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-LEARNING_OBJECTIVE"
+      ],
+      "owner": "ALINA",
+      "version": "0.3.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-MLM",
+      "title": "Masked language modeling",
+      "abbr": "MLM",
+      "definition_ru": "обучение восстанавливать скрытые токены или интервалы",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          248,
+          253
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-LEARNING_OBJECTIVE"
+      ],
+      "owner": "ALINA",
+      "version": "0.3.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-DENOISING",
+      "title": "Denoising objective",
+      "abbr": null,
+      "definition_ru": "обучение восстанавливать исходные данные из искажённого входа",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          251,
+          255
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-MLM"
+      ],
+      "owner": "ALINA",
+      "version": "0.3.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-UL2",
+      "title": "UL2 Mixture of Denoisers",
+      "abbr": "UL2",
+      "definition_ru": "объединение разных заданий восстановления текста в рамках предобучения",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          253,
+          255
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 3,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-DENOISING"
+      ],
+      "owner": "ALINA",
+      "version": "0.3.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-DOMAIN_SPECIFIC_LANGUAGE",
+      "title": "Domain-specific language",
+      "abbr": null,
+      "definition_ru": "специализированная запись предметных объектов и операций для эффективного моделирования",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          256,
+          262
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-LEARNING_OBJECTIVE"
+      ],
+      "owner": "ALINA",
+      "version": "0.3.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-PGN",
+      "title": "Portable Game Notation",
+      "abbr": "PGN",
+      "definition_ru": "структурированная запись последовательностей шахматных ходов",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          257,
+          261
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-DOMAIN_SPECIFIC_LANGUAGE"
+      ],
+      "owner": "ALINA",
+      "version": "0.3.0",
+      "last_review": "2026-11-23"
     }
   ],
   "edges": [
@@ -3120,6 +3905,398 @@
       "type": "REQUIRES_KNOWLEDGE",
       "weight": 0.9,
       "weight_reason": "FATHER role assignment",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-NEURAL_NETWORK",
+      "to": "B002-LLM",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link relevance, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-MODEL_PARAMETER",
+      "to": "B002-NEURAL_NETWORK",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link relevance, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-REPRESENTATION_LEARNING",
+      "to": "B002-NEURAL_NETWORK",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link relevance, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-EMBEDDING_LAYER",
+      "to": "B002-TOKEN_ID",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link relevance, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-SELF_ATTENTION",
+      "to": "B002-EMBEDDING_LAYER",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link relevance, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-QKV",
+      "to": "B002-SELF_ATTENTION",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link relevance, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-MULTI_HEAD_ATTENTION",
+      "to": "B002-SELF_ATTENTION",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link relevance, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-POSITION_ENCODING",
+      "to": "B002-SELF_ATTENTION",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link relevance, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-ROPE",
+      "to": "B002-POSITION_ENCODING",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link relevance, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-FFN",
+      "to": "B002-NEURAL_NETWORK",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link relevance, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-LAYER_NORM",
+      "to": "B002-NEURAL_NETWORK",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link relevance, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-CROSS_ENTROPY",
+      "to": "B002-MODEL_PARAMETER",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link relevance, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-BACKPROP",
+      "to": "B002-CROSS_ENTROPY",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link relevance, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-INTRINSIC_EVAL",
+      "to": "B002-PERPLEXITY",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link relevance, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-EXTRINSIC_EVAL",
+      "to": "B002-DOWNSTREAM_TASKS",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link relevance, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-ENCODER_ONLY",
+      "to": "B002-MODEL_ARCHITECTURE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link relevance, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-ENCODER_DECODER",
+      "to": "B002-MODEL_ARCHITECTURE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link relevance, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-DECODER_ONLY",
+      "to": "B002-MODEL_ARCHITECTURE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link relevance, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-MOE",
+      "to": "B002-FFN",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link relevance, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-FLM",
+      "to": "B002-NEXT_TOKEN_PREDICTION",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link relevance, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-PREFIX_LM",
+      "to": "B002-LEARNING_OBJECTIVE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link relevance, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-MLM",
+      "to": "B002-LEARNING_OBJECTIVE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link relevance, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-DENOISING",
+      "to": "B002-MLM",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link relevance, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-UL2",
+      "to": "B002-DENOISING",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link relevance, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-DOMAIN_SPECIFIC_LANGUAGE",
+      "to": "B002-LEARNING_OBJECTIVE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link relevance, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-PGN",
+      "to": "B002-DOMAIN_SPECIFIC_LANGUAGE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link relevance, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_KNOWLEDGE",
+      "to": "B002-REPRESENTATION_LEARNING",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER curriculum assignment",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_KNOWLEDGE",
+      "to": "B002-EMBEDDING_LAYER",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER curriculum assignment",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_KNOWLEDGE",
+      "to": "B002-DOMAIN_SPECIFIC_LANGUAGE",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER curriculum assignment",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_CURRICULUM",
+      "to": "B002-SELF_ATTENTION",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER curriculum assignment",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_CURRICULUM",
+      "to": "B002-CROSS_ENTROPY",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER curriculum assignment",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_CURRICULUM",
+      "to": "B002-FLM",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER curriculum assignment",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_CURRICULUM",
+      "to": "B002-MLM",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER curriculum assignment",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ML_ENGINEER",
+      "to": "B002-BACKPROP",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER curriculum assignment",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ML_ENGINEER",
+      "to": "B002-CROSS_ENTROPY",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER curriculum assignment",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ML_ENGINEER",
+      "to": "B002-SELF_ATTENTION",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER curriculum assignment",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ML_ENGINEER",
+      "to": "B002-MOE",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER curriculum assignment",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ML_ENGINEER",
+      "to": "B002-FLM",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER curriculum assignment",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ML_ENGINEER",
+      "to": "B002-MLM",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER curriculum assignment",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SECURITY",
+      "to": "B002-MOE",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER curriculum assignment",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SECURITY",
+      "to": "B002-EXTRINSIC_EVAL",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER curriculum assignment",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-POLYGON",
+      "to": "B002-INTRINSIC_EVAL",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER curriculum assignment",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-POLYGON",
+      "to": "B002-EXTRINSIC_EVAL",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER curriculum assignment",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-POLYGON",
+      "to": "B002-CROSS_ENTROPY",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER curriculum assignment",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SYSTEM_ARCHITECT",
+      "to": "B002-ENCODER_ONLY",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER curriculum assignment",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SYSTEM_ARCHITECT",
+      "to": "B002-ENCODER_DECODER",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER curriculum assignment",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SYSTEM_ARCHITECT",
+      "to": "B002-DECODER_ONLY",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER curriculum assignment",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SYSTEM_ARCHITECT",
+      "to": "B002-MOE",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER curriculum assignment",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SYSTEM_ARCHITECT",
+      "to": "B002-DOMAIN_SPECIFIC_LANGUAGE",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER curriculum assignment",
       "status": "PROPOSED"
     }
   ]

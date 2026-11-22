@@ -1,5 +1,5 @@
 {
-  "version": "0.2.0",
+  "version": "0.3.0",
   "graph_id": "ALINA-BOOK-002-KNOWLEDGE-GRAPH",
   "views": [
     {
@@ -15,7 +15,10 @@
           "B002-CORPUS",
           "B002-NORMALIZATION",
           "B002-SPECIAL_TOKEN",
-          "B002-TOKEN_DOMAIN"
+          "B002-TOKEN_DOMAIN",
+          "B002-REPRESENTATION_LEARNING",
+          "B002-EMBEDDING_LAYER",
+          "B002-DOMAIN_SPECIFIC_LANGUAGE"
         ]
       },
       "note": "Read-only filtered view of shared graph; do not duplicate facts",
@@ -34,7 +37,11 @@
           "B002-BPE",
           "B002-WORDPIECE",
           "B002-FERTILITY",
-          "B002-PARITY"
+          "B002-PARITY",
+          "B002-SELF_ATTENTION",
+          "B002-CROSS_ENTROPY",
+          "B002-FLM",
+          "B002-MLM"
         ]
       },
       "note": "Read-only filtered view of shared graph; do not duplicate facts",
@@ -55,7 +62,13 @@
           "B002-WORDPIECE",
           "B002-UNIGRAM",
           "B002-VOCAB_SIZE",
-          "B002-EMBED_RESIZE"
+          "B002-EMBED_RESIZE",
+          "B002-BACKPROP",
+          "B002-CROSS_ENTROPY",
+          "B002-SELF_ATTENTION",
+          "B002-MOE",
+          "B002-FLM",
+          "B002-MLM"
         ]
       },
       "note": "Read-only filtered view of shared graph; do not duplicate facts",
@@ -71,7 +84,9 @@
           "B002-MEMORIZATION",
           "B002-F_QUALITY_GATE",
           "B002-SPECIAL_TOKEN",
-          "B002-NORMALIZATION"
+          "B002-NORMALIZATION",
+          "B002-MOE",
+          "B002-EXTRINSIC_EVAL"
         ]
       },
       "note": "Read-only filtered view of shared graph; do not duplicate facts",
@@ -88,7 +103,10 @@
           "B002-DOWNSTREAM_TASKS",
           "B002-FERTILITY",
           "B002-PARITY",
-          "B002-GLITCH_TOKEN"
+          "B002-GLITCH_TOKEN",
+          "B002-INTRINSIC_EVAL",
+          "B002-EXTRINSIC_EVAL",
+          "B002-CROSS_ENTROPY"
         ]
       },
       "note": "Read-only filtered view of shared graph; do not duplicate facts",
@@ -105,7 +123,12 @@
           "B002-VOCAB_SIZE",
           "B002-FERTILITY",
           "B002-PARITY",
-          "B002-TOKEN_DOMAIN"
+          "B002-TOKEN_DOMAIN",
+          "B002-ENCODER_ONLY",
+          "B002-ENCODER_DECODER",
+          "B002-DECODER_ONLY",
+          "B002-MOE",
+          "B002-DOMAIN_SPECIFIC_LANGUAGE"
         ]
       },
       "note": "Read-only filtered view of shared graph; do not duplicate facts",

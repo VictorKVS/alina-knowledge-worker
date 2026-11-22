@@ -1,5 +1,5 @@
 {
-  "version": "0.2.0",
+  "version": "0.3.0",
   "status": "DESIGNED_NOT_RUN",
   "algorithms": [
     {
@@ -182,6 +182,76 @@
       "source_pages": [
         200,
         202
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-ATTENTION-TOY",
+      "name": "Scaled dot-product attention",
+      "nodes": [
+        "self_attention",
+        "qkv"
+      ],
+      "steps": [
+        "Embed input tokens",
+        "Project Q,K,V",
+        "Take dot-product QK^T",
+        "Scale by sqrt(d_k) and apply attention mask",
+        "Softmax scores",
+        "Weighted sum of V"
+      ],
+      "source_pages": [
+        215,
+        221
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "SOURCE_DERIVED_TEACHING_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-TRAIN-LOOP",
+      "name": "Self-supervised next-token learning",
+      "nodes": [
+        "flm",
+        "cross_entropy",
+        "backprop"
+      ],
+      "steps": [
+        "Freeze corpus + tokenizer revision",
+        "Create shifted next-token labels",
+        "Forward pass to logits",
+        "Compute cross entropy on target positions",
+        "Backpropagate loss",
+        "Optimizer step; log training and held-out validation",
+        "Evaluate on extrinsic tasks"
+      ],
+      "source_pages": [
+        205,
+        208
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-ARCH-SELECT",
+      "name": "ALINA selection of architecture/objective",
+      "nodes": [
+        "encoder_only",
+        "encoder_decoder",
+        "decoder_only",
+        "extrinsic_eval"
+      ],
+      "steps": [
+        "Define actual agent task",
+        "Compare deterministic/RAG solution",
+        "Choose architecture for retrieval, classification or generation",
+        "Select objective only if weight training warranted",
+        "Measure quality, latency, privacy, hardware, regression",
+        "Record ADR and independent qualification"
+      ],
+      "source_pages": [
+        229,
+        255
       ],
       "status": "DESIGNED_NOT_RUN",
       "kind": "FATHER_ADAPTATION"
