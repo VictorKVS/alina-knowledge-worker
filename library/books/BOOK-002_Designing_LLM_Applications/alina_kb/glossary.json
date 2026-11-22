@@ -1,0 +1,630 @@
+{
+  "version": "0.1.0",
+  "source_id": "SRC-BOOK002-PRIMARY",
+  "terms": [
+    {
+      "id": "B002-AGENT",
+      "term": "Agent",
+      "abbreviation": null,
+      "definition_ru": "приложение с моделью, способное использовать инструменты в рабочем процессе",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH01",
+      "pdf_pages": [
+        52,
+        54
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-NEAR_DUPLICATE",
+      "term": "Approximate duplicate",
+      "abbreviation": null,
+      "definition_ru": "почти повторяющийся текст с небольшими отличиями",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        139,
+        140
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-BIAS_FAIRNESS",
+      "term": "Bias and fairness",
+      "abbreviation": null,
+      "definition_ru": "искажения и несбалансированность результатов, связанные в том числе с составом и отбором данных",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        163,
+        166
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-BOILERPLATE",
+      "term": "Boilerplate",
+      "abbreviation": null,
+      "definition_ru": "повторяющиеся навигационные и служебные блоки веб-страницы",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        121,
+        125
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-C4",
+      "term": "C4",
+      "abbreviation": "Colossal Clean Crawled Corpus",
+      "definition_ru": "подготовленный очищенный веб-корпус на основе Common Crawl",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        107,
+        108
+      ],
+      "importance": 3
+    },
+    {
+      "id": "B002-COMMON_CRAWL",
+      "term": "Common Crawl",
+      "abbreviation": null,
+      "definition_ru": "масштабный источник веб-страниц для построения корпусов",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        107,
+        108
+      ],
+      "importance": 3
+    },
+    {
+      "id": "B002-CORPUS",
+      "term": "Corpus",
+      "abbreviation": null,
+      "definition_ru": "коллекция текстовых источников и полученного из них содержимого",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        99,
+        108
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-CURRICULUM_LEARNING",
+      "term": "Curriculum learning",
+      "abbreviation": null,
+      "definition_ru": "целенаправленный порядок предъявления обучающих примеров",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        157,
+        157
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-EXTRACTION_CLEANING",
+      "term": "Data extraction and cleaning",
+      "abbreviation": null,
+      "definition_ru": "выделение содержательного текста и удаление технического мусора",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        120,
+        127
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-DATA_MIXTURE",
+      "term": "Data mixtures",
+      "abbreviation": null,
+      "definition_ru": "выбранные пропорции данных разных предметных областей",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        156,
+        157
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-DATA_QUALITY",
+      "term": "Data quality",
+      "abbreviation": null,
+      "definition_ru": "пригодность данных для выбранной задачи; зависит от контекста и метода измерения",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        103,
+        105
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-DATA_COVERAGE",
+      "term": "Data requirements",
+      "abbreviation": null,
+      "definition_ru": "какие знания, языки, задачи и формы информации требуются модели",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        99,
+        104
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-DATASET",
+      "term": "Dataset",
+      "abbreviation": null,
+      "definition_ru": "набор записей, выделенный для обучения или оценки",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        92,
+        94
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-F_DATASET_ROLE",
+      "term": "Dataset roles",
+      "abbreviation": null,
+      "definition_ru": "разделение knowledge, train, validation, test, holdout в FATHER; проектная схема",
+      "origin": "FATHER_ENGINEERING_EXTENSION",
+      "chapter": "CH02",
+      "pdf_pages": [
+        154,
+        155
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-DEDUPLICATION",
+      "term": "Deduplication",
+      "abbreviation": "Dedup",
+      "definition_ru": "выявление повторных документов или последовательностей",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        138,
+        143
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-DOWNSTREAM_TASKS",
+      "term": "Downstream tasks",
+      "abbreviation": null,
+      "definition_ru": "задачи, на которых проверяется полезность ранее обученной модели",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        161,
+        163
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-DP_SGD",
+      "term": "DP-SGD",
+      "abbreviation": "Differentially Private Stochastic Gradient Descent",
+      "definition_ru": "частно-дифференциальный метод оптимизации с ограничением градиента и шумом",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        154,
+        154
+      ],
+      "importance": 3
+    },
+    {
+      "id": "B002-EXACT_DUPLICATE",
+      "term": "Exact match duplicate",
+      "abbreviation": null,
+      "definition_ru": "совпадение текста по выбранному способу нормализации",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        139,
+        140
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-FEW_SHOT",
+      "term": "Few-shot prompting",
+      "abbreviation": null,
+      "definition_ru": "примеры входа/выхода внутри промпта без обновления весов",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH01",
+      "pdf_pages": [
+        59,
+        61
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-LANGUAGE_IDENTIFICATION",
+      "term": "Language identification",
+      "abbreviation": null,
+      "definition_ru": "определение языка документа для отбора и обработки",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        127,
+        131
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-LEARNING_OBJECTIVE",
+      "term": "Learning objective",
+      "abbreviation": null,
+      "definition_ru": "критерий задачи, по которой обучается модель",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        94,
+        96
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-LLM",
+      "term": "LLM",
+      "abbreviation": "Large Language Model",
+      "definition_ru": "крупная языковая модель, работающая с последовательностями токенов",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH01",
+      "pdf_pages": [
+        28,
+        31
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-MEMORIZATION",
+      "term": "Memorization",
+      "abbreviation": null,
+      "definition_ru": "сохранение в модели способности воспроизводить фрагменты обучающих данных",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        141,
+        143
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-MINHASH",
+      "term": "MinHash",
+      "abbreviation": "MinHash",
+      "definition_ru": "приближённое оценивание сходства множеств для выявления кандидатов на дубликаты",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        140,
+        141
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-MODEL_ARCHITECTURE",
+      "term": "Model architecture",
+      "abbreviation": null,
+      "definition_ru": "организация вычислительных блоков модели",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        94,
+        96
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-NGRAM_OVERLAP",
+      "term": "N-gram overlap",
+      "abbreviation": null,
+      "definition_ru": "совпадение последовательностей из N соседних токенов/слов по заданной схеме",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        155,
+        155
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-NEXT_TOKEN_PREDICTION",
+      "term": "Next-token prediction",
+      "abbreviation": null,
+      "definition_ru": "задача прогнозирования распределения вероятностей следующего токена",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH01",
+      "pdf_pages": [
+        29,
+        31
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-PERPLEXITY",
+      "term": "Perplexity",
+      "abbreviation": "PPL",
+      "definition_ru": "мера неожиданности последовательности для языковой модели; сама по себе не гарантирует качество",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        133,
+        137
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-PII",
+      "term": "PII",
+      "abbreviation": "Personally Identifiable Information",
+      "definition_ru": "сведения, позволяющие определить или установить личность человека",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        143,
+        145
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-PII_REMEDIATION",
+      "term": "PII remediation",
+      "abbreviation": null,
+      "definition_ru": "удаление, замена либо иная обработка чувствительных персональных сведений",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        151,
+        154
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-F_POLYGON",
+      "term": "POLYGON qualification",
+      "abbreviation": null,
+      "definition_ru": "независимая проверка навыков агента на закрытых заданиях; проект FATHER",
+      "origin": "FATHER_ENGINEERING_EXTENSION",
+      "chapter": "CH02",
+      "pdf_pages": [
+        154,
+        155
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-PRETRAINING",
+      "term": "Pre-training",
+      "abbreviation": null,
+      "definition_ru": "обучение модели на большом корпусе данных до специализации",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        92,
+        99
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-PROMPT",
+      "term": "Prompt",
+      "abbreviation": null,
+      "definition_ru": "инструкция и контекст, подаваемые LLM для ответа",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH01",
+      "pdf_pages": [
+        55,
+        59
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-QUALITY_FILTERING",
+      "term": "Quality filtering",
+      "abbreviation": null,
+      "definition_ru": "отбор по измеряемым признакам качества с риском ложного исключения",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        130,
+        137
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-F_QUALITY_GATE",
+      "term": "Quality gate",
+      "abbreviation": null,
+      "definition_ru": "формальный запрет перехода без доказательств; проектная схема FATHER",
+      "origin": "FATHER_ENGINEERING_EXTENSION",
+      "chapter": "CH02",
+      "pdf_pages": [
+        154,
+        155
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-RAG",
+      "term": "RAG",
+      "abbreviation": "Retrieval-Augmented Generation",
+      "definition_ru": "подход с внешним извлечением документов; не меняет веса модели при обычном retrieval",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH01",
+      "pdf_pages": [
+        80,
+        87
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-SEMANTIC_DUPLICATE",
+      "term": "Semantic duplicate",
+      "abbreviation": null,
+      "definition_ru": "разные формулировки примерно одного содержания",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        139,
+        140
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-SOURCE_PROVENANCE",
+      "term": "Source provenance",
+      "abbreviation": null,
+      "definition_ru": "происхождение документа и информация о его источнике; термин FATHER",
+      "origin": "FATHER_ENGINEERING_EXTENSION",
+      "chapter": "CH02",
+      "pdf_pages": [
+        92,
+        93
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-F_SOURCE_SPAN",
+      "term": "Source span",
+      "abbreviation": null,
+      "definition_ru": "привязка утверждения к странице, документу и версии для цитирования; проектная схема FATHER",
+      "origin": "FATHER_ENGINEERING_EXTENSION",
+      "chapter": "CH02",
+      "pdf_pages": [
+        92,
+        93
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-SYNTHETIC_DATA",
+      "term": "Synthetic pre-training data",
+      "abbreviation": null,
+      "definition_ru": "материалы, сформированные генератором и требующие контроля качества",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        116,
+        119
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-THE_PILE",
+      "term": "The Pile",
+      "abbreviation": null,
+      "definition_ru": "многодоменный корпус EleutherAI",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        108,
+        110
+      ],
+      "importance": 3
+    },
+    {
+      "id": "B002-TOKEN",
+      "term": "Token",
+      "abbreviation": null,
+      "definition_ru": "элемент словаря модели: слово, часть слова или другой код",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH01",
+      "pdf_pages": [
+        29,
+        30
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-TOKENIZATION",
+      "term": "Tokenization",
+      "abbreviation": null,
+      "definition_ru": "процедура превращения текста в последовательность элементов словаря",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        93,
+        95
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-DATA_PREPROCESSING",
+      "term": "Training data preprocessing",
+      "abbreviation": null,
+      "definition_ru": "обработка данных перед обучением: извлечение, фильтрация, очистка и контроль",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        120,
+        121
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-PRIVACY_ATTACK",
+      "term": "Training data privacy attack",
+      "abbreviation": null,
+      "definition_ru": "попытки выяснить присутствие записи в обучении или извлечь запомненный текст",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        142,
+        146
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-TEST_CONTAMINATION",
+      "term": "Training set contamination",
+      "abbreviation": null,
+      "definition_ru": "присутствие экзаменационных примеров или их частей в обучающем корпусе",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        154,
+        155
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-DECONTAMINATION",
+      "term": "Training set decontamination",
+      "abbreviation": null,
+      "definition_ru": "обнаружение и снижение пересечений train с оценочными наборами",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        154,
+        155
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-VOCABULARY",
+      "term": "Vocabulary",
+      "abbreviation": null,
+      "definition_ru": "набор дискретных элементов, которыми оперирует токенизатор и модель",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        93,
+        95
+      ],
+      "importance": 4
+    }
+  ]
+}

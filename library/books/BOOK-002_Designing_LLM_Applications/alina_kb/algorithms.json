@@ -1,0 +1,142 @@
+{
+  "version": "0.1.0",
+  "status": "DESIGNED_NOT_RUN",
+  "algorithms": [
+    {
+      "id": "ALG-B002-DATA-INGEST",
+      "name": "Источник → набор знаний",
+      "nodes": [
+        "data_preprocessing",
+        "extraction_cleaning",
+        "source_provenance",
+        "f_source_span"
+      ],
+      "steps": [
+        "register source/license/version",
+        "extract text and page spans",
+        "validate extraction with samples",
+        "normalize with reversible record",
+        "write provenance metadata"
+      ],
+      "source_pages": [
+        120,
+        125
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-DEDUP",
+      "name": "Exact / near dedup",
+      "nodes": [
+        "deduplication",
+        "exact_duplicate",
+        "near_duplicate",
+        "minhash"
+      ],
+      "steps": [
+        "record raw sha256",
+        "normalized exact hash groups",
+        "candidate near overlaps with MinHash",
+        "human verify controversial near duplicates",
+        "retain every source_id"
+      ],
+      "source_pages": [
+        138,
+        143
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-PII",
+      "name": "Sensitive data control",
+      "nodes": [
+        "pii",
+        "pii_remediation",
+        "privacy_attack"
+      ],
+      "steps": [
+        "classify sensitivity and legal basis",
+        "detect structured+unstructured PII",
+        "choose drop/redact/pseudonymize with policy",
+        "evaluate residual identification risk",
+        "log review and access scopes"
+      ],
+      "source_pages": [
+        143,
+        154
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-DECONTAM",
+      "name": "Защита POLYGON от утечки экзамена",
+      "nodes": [
+        "test_contamination",
+        "decontamination",
+        "ngram_overlap",
+        "f_polygon"
+      ],
+      "steps": [
+        "split by source family before chunking",
+        "freeze holdout",
+        "scan exact and n-gram overlap",
+        "audit near/paraphrase overlaps",
+        "record exceptions; fail on leakage"
+      ],
+      "source_pages": [
+        154,
+        155
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-MIX",
+      "name": "Конструкция смеси доменов",
+      "nodes": [
+        "data_mixture",
+        "curriculum_learning",
+        "downstream_tasks"
+      ],
+      "steps": [
+        "define competence slices and domain coverage",
+        "propose mixture ratios as hypotheses",
+        "train/evaluate controlled candidates",
+        "compare frozen downstream slices",
+        "record selected mix and failure cases"
+      ],
+      "source_pages": [
+        156,
+        163
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-QUALITY",
+      "name": "Выбор модели/метода повышения качества",
+      "nodes": [
+        "llm",
+        "rag",
+        "dataset",
+        "f_quality_gate"
+      ],
+      "steps": [
+        "define customer requirements and measurable deficits",
+        "test deterministic approach and RAG",
+        "identify behavior vs missing knowledge",
+        "only then design permitted weight-training experiment",
+        "independent safety and regression checks"
+      ],
+      "source_pages": [
+        92,
+        93
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_EXTENSION_NOT_DIRECT_BOOK_ALGORITHM"
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "version": "0.1.0",
+  "graph_id": "ALINA-BOOK-002-KNOWLEDGE-GRAPH",
+  "views": [
+    {
+      "role": "ALINA_KNOWLEDGE",
+      "filter": {
+        "ids": [
+          "B002-SOURCE_PROVENANCE",
+          "B002-F_SOURCE_SPAN",
+          "B002-DATA_PREPROCESSING",
+          "B002-DEDUPLICATION",
+          "B002-DATA_QUALITY",
+          "B002-RAG",
+          "B002-CORPUS"
+        ]
+      },
+      "note": "Read-only filtered view of shared graph; do not duplicate facts",
+      "authorization": "ENFORCE_BY_UAG_AT_RUNTIME"
+    },
+    {
+      "role": "ALINA_CURRICULUM",
+      "filter": {
+        "ids": [
+          "B002-DATA_MIXTURE",
+          "B002-CURRICULUM_LEARNING",
+          "B002-F_DATASET_ROLE",
+          "B002-DECONTAMINATION",
+          "B002-DOWNSTREAM_TASKS",
+          "B002-FEW_SHOT"
+        ]
+      },
+      "note": "Read-only filtered view of shared graph; do not duplicate facts",
+      "authorization": "ENFORCE_BY_UAG_AT_RUNTIME"
+    },
+    {
+      "role": "ML_ENGINEER",
+      "filter": {
+        "ids": [
+          "B002-PRETRAINING",
+          "B002-DATASET",
+          "B002-DATA_MIXTURE",
+          "B002-QUALITY_FILTERING",
+          "B002-PERPLEXITY",
+          "B002-DECONTAMINATION",
+          "B002-BIAS_FAIRNESS"
+        ]
+      },
+      "note": "Read-only filtered view of shared graph; do not duplicate facts",
+      "authorization": "ENFORCE_BY_UAG_AT_RUNTIME"
+    },
+    {
+      "role": "SECURITY",
+      "filter": {
+        "ids": [
+          "B002-PII",
+          "B002-PII_REMEDIATION",
+          "B002-PRIVACY_ATTACK",
+          "B002-MEMORIZATION",
+          "B002-F_QUALITY_GATE"
+        ]
+      },
+      "note": "Read-only filtered view of shared graph; do not duplicate facts",
+      "authorization": "ENFORCE_BY_UAG_AT_RUNTIME"
+    },
+    {
+      "role": "POLYGON",
+      "filter": {
+        "ids": [
+          "B002-TEST_CONTAMINATION",
+          "B002-DECONTAMINATION",
+          "B002-F_POLYGON",
+          "B002-F_DATASET_ROLE",
+          "B002-DOWNSTREAM_TASKS"
+        ]
+      },
+      "note": "Read-only filtered view of shared graph; do not duplicate facts",
+      "authorization": "ENFORCE_BY_UAG_AT_RUNTIME"
+    },
+    {
+      "role": "SYSTEM_ARCHITECT",
+      "filter": {
+        "ids": [
+          "B002-MODEL_ARCHITECTURE",
+          "B002-VOCABULARY",
+          "B002-RAG",
+          "B002-F_QUALITY_GATE"
+        ]
+      },
+      "note": "Read-only filtered view of shared graph; do not duplicate facts",
+      "authorization": "ENFORCE_BY_UAG_AT_RUNTIME"
+    }
+  ]
+}

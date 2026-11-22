@@ -1,0 +1,2269 @@
+{
+  "schema_version": "1.0",
+  "graph_id": "ALINA-BOOK-002-KNOWLEDGE-GRAPH",
+  "version": "0.1.0",
+  "created": "2026-11-22",
+  "source": {
+    "id": "SRC-BOOK002-PRIMARY",
+    "title": "Designing Large Language Model Applications",
+    "author": "Suhas Pai",
+    "publisher": "O'Reilly",
+    "edition": "2025-03 first edition",
+    "format": "PDF user-upload",
+    "pages": 765,
+    "file_id": "file_00000000459c8210b3a3a235e7857d51",
+    "source_type": "PRIMARY",
+    "copyright": "© 2025 Suhas Pai; PDF not published",
+    "source_file_sha256": null,
+    "sha256_status": "NOT_CALCULATED",
+    "access": "user_supplied_not_public_git",
+    "chapter_spans": {
+      "CH01": [
+        27,
+        91
+      ],
+      "CH02": [
+        92,
+        167
+      ]
+    },
+    "reviewed_chapters": [
+      "CH01",
+      "CH02"
+    ],
+    "remaining_chapters": "CH03-CH13: not reviewed in this knowledge graph"
+  },
+  "model": {
+    "description": "Directed knowledge/competency graph",
+    "weight_policy": {
+      "importance": "Ordinal editorial 1-5 (5 most critical); not a probability",
+      "confidence": "0-1 evidence coverage; for proposed engineering extensions use null",
+      "edge_weight": "0-1 editorial link relevance, not measured correlation",
+      "usage": "Never treat graph weights as training loss, reward or objective probability"
+    },
+    "status": "SOURCE_MAPPED_NOT_QUALIFIED",
+    "future": "New chapters append nodes/edges with stable IDs, provenance, tests and version bump"
+  },
+  "nodes": [
+    {
+      "id": "B002-LLM",
+      "title": "LLM",
+      "abbr": "Large Language Model",
+      "definition_ru": "крупная языковая модель, работающая с последовательностями токенов",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH01",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          28,
+          31
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-MODEL_ARCHITECTURE",
+        "B002-TOKENIZATION",
+        "B002-NEXT_TOKEN_PREDICTION"
+      ],
+      "owner": "ALINA",
+      "version": "0.1.0",
+      "last_review": "2026-11-22"
+    },
+    {
+      "id": "B002-NEXT_TOKEN_PREDICTION",
+      "title": "Next-token prediction",
+      "abbr": null,
+      "definition_ru": "задача прогнозирования распределения вероятностей следующего токена",
+      "kind": "method",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH01",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          29,
+          31
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-LLM",
+        "B002-PRETRAINING"
+      ],
+      "owner": "ALINA",
+      "version": "0.1.0",
+      "last_review": "2026-11-22"
+    },
+    {
+      "id": "B002-TOKEN",
+      "title": "Token",
+      "abbr": null,
+      "definition_ru": "элемент словаря модели: слово, часть слова или другой код",
+      "kind": "term",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH01",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          29,
+          30
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-TOKENIZATION"
+      ],
+      "owner": "ALINA",
+      "version": "0.1.0",
+      "last_review": "2026-11-22"
+    },
+    {
+      "id": "B002-TOKENIZATION",
+      "title": "Tokenization",
+      "abbr": null,
+      "definition_ru": "процедура превращения текста в последовательность элементов словаря",
+      "kind": "method",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          93,
+          95
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-VOCABULARY"
+      ],
+      "owner": "ALINA",
+      "version": "0.1.0",
+      "last_review": "2026-11-22"
+    },
+    {
+      "id": "B002-VOCABULARY",
+      "title": "Vocabulary",
+      "abbr": null,
+      "definition_ru": "набор дискретных элементов, которыми оперирует токенизатор и модель",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          93,
+          95
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-TOKENIZATION"
+      ],
+      "owner": "ALINA",
+      "version": "0.1.0",
+      "last_review": "2026-11-22"
+    },
+    {
+      "id": "B002-MODEL_ARCHITECTURE",
+      "title": "Model architecture",
+      "abbr": null,
+      "definition_ru": "организация вычислительных блоков модели",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          94,
+          96
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [],
+      "owner": "ALINA",
+      "version": "0.1.0",
+      "last_review": "2026-11-22"
+    },
+    {
+      "id": "B002-LEARNING_OBJECTIVE",
+      "title": "Learning objective",
+      "abbr": null,
+      "definition_ru": "критерий задачи, по которой обучается модель",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          94,
+          96
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-NEXT_TOKEN_PREDICTION"
+      ],
+      "owner": "ALINA",
+      "version": "0.1.0",
+      "last_review": "2026-11-22"
+    },
+    {
+      "id": "B002-PRETRAINING",
+      "title": "Pre-training",
+      "abbr": null,
+      "definition_ru": "обучение модели на большом корпусе данных до специализации",
+      "kind": "method",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          92,
+          99
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-DATASET",
+        "B002-LEARNING_OBJECTIVE"
+      ],
+      "owner": "ALINA",
+      "version": "0.1.0",
+      "last_review": "2026-11-22"
+    },
+    {
+      "id": "B002-DATASET",
+      "title": "Dataset",
+      "abbr": null,
+      "definition_ru": "набор записей, выделенный для обучения или оценки",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          92,
+          94
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-PRETRAINING"
+      ],
+      "owner": "ALINA",
+      "version": "0.1.0",
+      "last_review": "2026-11-22"
+    },
+    {
+      "id": "B002-CORPUS",
+      "title": "Corpus",
+      "abbr": null,
+      "definition_ru": "коллекция текстовых источников и полученного из них содержимого",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          99,
+          108
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-DATASET"
+      ],
+      "owner": "ALINA",
+      "version": "0.1.0",
+      "last_review": "2026-11-22"
+    },
+    {
+      "id": "B002-SOURCE_PROVENANCE",
+      "title": "Source provenance",
+      "abbr": null,
+      "definition_ru": "происхождение документа и информация о его источнике; термин FATHER",
+      "kind": "father_extension",
+      "origin": "FATHER_ENGINEERING_EXTENSION",
+      "chapter": "CH02",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          92,
+          93
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": null,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-DATASET",
+        "B002-DATA_PREPROCESSING"
+      ],
+      "owner": "ALINA",
+      "version": "0.1.0",
+      "last_review": "2026-11-22"
+    },
+    {
+      "id": "B002-DATA_QUALITY",
+      "title": "Data quality",
+      "abbr": null,
+      "definition_ru": "пригодность данных для выбранной задачи; зависит от контекста и метода измерения",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          103,
+          105
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-QUALITY_FILTERING"
+      ],
+      "owner": "ALINA",
+      "version": "0.1.0",
+      "last_review": "2026-11-22"
+    },
+    {
+      "id": "B002-DATA_COVERAGE",
+      "title": "Data requirements",
+      "abbr": null,
+      "definition_ru": "какие знания, языки, задачи и формы информации требуются модели",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          99,
+          104
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-DATA_MIXTURE"
+      ],
+      "owner": "ALINA",
+      "version": "0.1.0",
+      "last_review": "2026-11-22"
+    },
+    {
+      "id": "B002-SYNTHETIC_DATA",
+      "title": "Synthetic pre-training data",
+      "abbr": null,
+      "definition_ru": "материалы, сформированные генератором и требующие контроля качества",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          116,
+          119
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-DATA_QUALITY",
+        "B002-PRETRAINING"
+      ],
+      "owner": "ALINA",
+      "version": "0.1.0",
+      "last_review": "2026-11-22"
+    },
+    {
+      "id": "B002-COMMON_CRAWL",
+      "title": "Common Crawl",
+      "abbr": null,
+      "definition_ru": "масштабный источник веб-страниц для построения корпусов",
+      "kind": "dataset_example",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          107,
+          108
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 3,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-DATASET"
+      ],
+      "owner": "ALINA",
+      "version": "0.1.0",
+      "last_review": "2026-11-22"
+    },
+    {
+      "id": "B002-C4",
+      "title": "C4",
+      "abbr": "Colossal Clean Crawled Corpus",
+      "definition_ru": "подготовленный очищенный веб-корпус на основе Common Crawl",
+      "kind": "dataset_example",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          107,
+          108
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 3,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-COMMON_CRAWL"
+      ],
+      "owner": "ALINA",
+      "version": "0.1.0",
+      "last_review": "2026-11-22"
+    },
+    {
+      "id": "B002-THE_PILE",
+      "title": "The Pile",
+      "abbr": null,
+      "definition_ru": "многодоменный корпус EleutherAI",
+      "kind": "dataset_example",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          108,
+          110
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 3,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-DATASET"
+      ],
+      "owner": "ALINA",
+      "version": "0.1.0",
+      "last_review": "2026-11-22"
+    },
+    {
+      "id": "B002-DATA_PREPROCESSING",
+      "title": "Training data preprocessing",
+      "abbr": null,
+      "definition_ru": "обработка данных перед обучением: извлечение, фильтрация, очистка и контроль",
+      "kind": "process",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          120,
+          121
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-CORPUS",
+        "B002-QUALITY_FILTERING",
+        "B002-DEDUPLICATION"
+      ],
+      "owner": "ALINA",
+      "version": "0.1.0",
+      "last_review": "2026-11-22"
+    },
+    {
+      "id": "B002-BOILERPLATE",
+      "title": "Boilerplate",
+      "abbr": null,
+      "definition_ru": "повторяющиеся навигационные и служебные блоки веб-страницы",
+      "kind": "term",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          121,
+          125
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-EXTRACTION_CLEANING"
+      ],
+      "owner": "ALINA",
+      "version": "0.1.0",
+      "last_review": "2026-11-22"
+    },
+    {
+      "id": "B002-EXTRACTION_CLEANING",
+      "title": "Data extraction and cleaning",
+      "abbr": null,
+      "definition_ru": "выделение содержательного текста и удаление технического мусора",
+      "kind": "algorithm",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          120,
+          127
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-BOILERPLATE",
+        "B002-QUALITY_FILTERING"
+      ],
+      "owner": "ALINA",
+      "version": "0.1.0",
+      "last_review": "2026-11-22"
+    },
+    {
+      "id": "B002-LANGUAGE_IDENTIFICATION",
+      "title": "Language identification",
+      "abbr": null,
+      "definition_ru": "определение языка документа для отбора и обработки",
+      "kind": "algorithm",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          127,
+          131
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-QUALITY_FILTERING"
+      ],
+      "owner": "ALINA",
+      "version": "0.1.0",
+      "last_review": "2026-11-22"
+    },
+    {
+      "id": "B002-QUALITY_FILTERING",
+      "title": "Quality filtering",
+      "abbr": null,
+      "definition_ru": "отбор по измеряемым признакам качества с риском ложного исключения",
+      "kind": "algorithm",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          130,
+          137
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-DATA_QUALITY",
+        "B002-PERPLEXITY"
+      ],
+      "owner": "ALINA",
+      "version": "0.1.0",
+      "last_review": "2026-11-22"
+    },
+    {
+      "id": "B002-PERPLEXITY",
+      "title": "Perplexity",
+      "abbr": "PPL",
+      "definition_ru": "мера неожиданности последовательности для языковой модели; сама по себе не гарантирует качество",
+      "kind": "metric",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          133,
+          137
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-QUALITY_FILTERING"
+      ],
+      "owner": "ALINA",
+      "version": "0.1.0",
+      "last_review": "2026-11-22"
+    },
+    {
+      "id": "B002-DEDUPLICATION",
+      "title": "Deduplication",
+      "abbr": "Dedup",
+      "definition_ru": "выявление повторных документов или последовательностей",
+      "kind": "algorithm",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          138,
+          143
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-EXACT_DUPLICATE",
+        "B002-NEAR_DUPLICATE",
+        "B002-SEMANTIC_DUPLICATE"
+      ],
+      "owner": "ALINA",
+      "version": "0.1.0",
+      "last_review": "2026-11-22"
+    },
+    {
+      "id": "B002-EXACT_DUPLICATE",
+      "title": "Exact match duplicate",
+      "abbr": null,
+      "definition_ru": "совпадение текста по выбранному способу нормализации",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          139,
+          140
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [],
+      "owner": "ALINA",
+      "version": "0.1.0",
+      "last_review": "2026-11-22"
+    },
+    {
+      "id": "B002-NEAR_DUPLICATE",
+      "title": "Approximate duplicate",
+      "abbr": null,
+      "definition_ru": "почти повторяющийся текст с небольшими отличиями",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          139,
+          140
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [],
+      "owner": "ALINA",
+      "version": "0.1.0",
+      "last_review": "2026-11-22"
+    },
+    {
+      "id": "B002-SEMANTIC_DUPLICATE",
+      "title": "Semantic duplicate",
+      "abbr": null,
+      "definition_ru": "разные формулировки примерно одного содержания",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          139,
+          140
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [],
+      "owner": "ALINA",
+      "version": "0.1.0",
+      "last_review": "2026-11-22"
+    },
+    {
+      "id": "B002-MINHASH",
+      "title": "MinHash",
+      "abbr": "MinHash",
+      "definition_ru": "приближённое оценивание сходства множеств для выявления кандидатов на дубликаты",
+      "kind": "algorithm",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          140,
+          141
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-NEAR_DUPLICATE"
+      ],
+      "owner": "ALINA",
+      "version": "0.1.0",
+      "last_review": "2026-11-22"
+    },
+    {
+      "id": "B002-MEMORIZATION",
+      "title": "Memorization",
+      "abbr": null,
+      "definition_ru": "сохранение в модели способности воспроизводить фрагменты обучающих данных",
+      "kind": "risk",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          141,
+          143
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-PRIVACY_ATTACK",
+        "B002-DEDUPLICATION"
+      ],
+      "owner": "ALINA",
+      "version": "0.1.0",
+      "last_review": "2026-11-22"
+    },
+    {
+      "id": "B002-PRIVACY_ATTACK",
+      "title": "Training data privacy attack",
+      "abbr": null,
+      "definition_ru": "попытки выяснить присутствие записи в обучении или извлечь запомненный текст",
+      "kind": "risk",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          142,
+          146
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-MEMORIZATION",
+        "B002-PII"
+      ],
+      "owner": "ALINA",
+      "version": "0.1.0",
+      "last_review": "2026-11-22"
+    },
+    {
+      "id": "B002-PII",
+      "title": "PII",
+      "abbr": "Personally Identifiable Information",
+      "definition_ru": "сведения, позволяющие определить или установить личность человека",
+      "kind": "security",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          143,
+          145
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-PII_REMEDIATION"
+      ],
+      "owner": "ALINA",
+      "version": "0.1.0",
+      "last_review": "2026-11-22"
+    },
+    {
+      "id": "B002-PII_REMEDIATION",
+      "title": "PII remediation",
+      "abbr": null,
+      "definition_ru": "удаление, замена либо иная обработка чувствительных персональных сведений",
+      "kind": "algorithm",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          151,
+          154
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-PII"
+      ],
+      "owner": "ALINA",
+      "version": "0.1.0",
+      "last_review": "2026-11-22"
+    },
+    {
+      "id": "B002-DP_SGD",
+      "title": "DP-SGD",
+      "abbr": "Differentially Private Stochastic Gradient Descent",
+      "definition_ru": "частно-дифференциальный метод оптимизации с ограничением градиента и шумом",
+      "kind": "method",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          154,
+          154
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 3,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-PII_REMEDIATION"
+      ],
+      "owner": "ALINA",
+      "version": "0.1.0",
+      "last_review": "2026-11-22"
+    },
+    {
+      "id": "B002-TEST_CONTAMINATION",
+      "title": "Training set contamination",
+      "abbr": null,
+      "definition_ru": "присутствие экзаменационных примеров или их частей в обучающем корпусе",
+      "kind": "risk",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          154,
+          155
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-DECONTAMINATION"
+      ],
+      "owner": "ALINA",
+      "version": "0.1.0",
+      "last_review": "2026-11-22"
+    },
+    {
+      "id": "B002-DECONTAMINATION",
+      "title": "Training set decontamination",
+      "abbr": null,
+      "definition_ru": "обнаружение и снижение пересечений train с оценочными наборами",
+      "kind": "algorithm",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          154,
+          155
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-TEST_CONTAMINATION",
+        "B002-NGRAM_OVERLAP"
+      ],
+      "owner": "ALINA",
+      "version": "0.1.0",
+      "last_review": "2026-11-22"
+    },
+    {
+      "id": "B002-NGRAM_OVERLAP",
+      "title": "N-gram overlap",
+      "abbr": null,
+      "definition_ru": "совпадение последовательностей из N соседних токенов/слов по заданной схеме",
+      "kind": "algorithm",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          155,
+          155
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-DECONTAMINATION"
+      ],
+      "owner": "ALINA",
+      "version": "0.1.0",
+      "last_review": "2026-11-22"
+    },
+    {
+      "id": "B002-DATA_MIXTURE",
+      "title": "Data mixtures",
+      "abbr": null,
+      "definition_ru": "выбранные пропорции данных разных предметных областей",
+      "kind": "method",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          156,
+          157
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-DATA_COVERAGE",
+        "B002-CURRICULUM_LEARNING"
+      ],
+      "owner": "ALINA",
+      "version": "0.1.0",
+      "last_review": "2026-11-22"
+    },
+    {
+      "id": "B002-CURRICULUM_LEARNING",
+      "title": "Curriculum learning",
+      "abbr": null,
+      "definition_ru": "целенаправленный порядок предъявления обучающих примеров",
+      "kind": "method",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          157,
+          157
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-DATA_MIXTURE"
+      ],
+      "owner": "ALINA",
+      "version": "0.1.0",
+      "last_review": "2026-11-22"
+    },
+    {
+      "id": "B002-DOWNSTREAM_TASKS",
+      "title": "Downstream tasks",
+      "abbr": null,
+      "definition_ru": "задачи, на которых проверяется полезность ранее обученной модели",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          161,
+          163
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-PRETRAINING"
+      ],
+      "owner": "ALINA",
+      "version": "0.1.0",
+      "last_review": "2026-11-22"
+    },
+    {
+      "id": "B002-BIAS_FAIRNESS",
+      "title": "Bias and fairness",
+      "abbr": null,
+      "definition_ru": "искажения и несбалансированность результатов, связанные в том числе с составом и отбором данных",
+      "kind": "risk",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          163,
+          166
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-DATA_QUALITY"
+      ],
+      "owner": "ALINA",
+      "version": "0.1.0",
+      "last_review": "2026-11-22"
+    },
+    {
+      "id": "B002-RAG",
+      "title": "RAG",
+      "abbr": "Retrieval-Augmented Generation",
+      "definition_ru": "подход с внешним извлечением документов; не меняет веса модели при обычном retrieval",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH01",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          80,
+          87
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-CORPUS"
+      ],
+      "owner": "ALINA",
+      "version": "0.1.0",
+      "last_review": "2026-11-22"
+    },
+    {
+      "id": "B002-PROMPT",
+      "title": "Prompt",
+      "abbr": null,
+      "definition_ru": "инструкция и контекст, подаваемые LLM для ответа",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH01",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          55,
+          59
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-LLM"
+      ],
+      "owner": "ALINA",
+      "version": "0.1.0",
+      "last_review": "2026-11-22"
+    },
+    {
+      "id": "B002-FEW_SHOT",
+      "title": "Few-shot prompting",
+      "abbr": null,
+      "definition_ru": "примеры входа/выхода внутри промпта без обновления весов",
+      "kind": "method",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH01",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          59,
+          61
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-PROMPT"
+      ],
+      "owner": "ALINA",
+      "version": "0.1.0",
+      "last_review": "2026-11-22"
+    },
+    {
+      "id": "B002-AGENT",
+      "title": "Agent",
+      "abbr": null,
+      "definition_ru": "приложение с моделью, способное использовать инструменты в рабочем процессе",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH01",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          52,
+          54
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-LLM"
+      ],
+      "owner": "ALINA",
+      "version": "0.1.0",
+      "last_review": "2026-11-22"
+    },
+    {
+      "id": "B002-F_DATASET_ROLE",
+      "title": "Dataset roles",
+      "abbr": null,
+      "definition_ru": "разделение knowledge, train, validation, test, holdout в FATHER; проектная схема",
+      "kind": "father_extension",
+      "origin": "FATHER_ENGINEERING_EXTENSION",
+      "chapter": "CH02",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          154,
+          155
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": null,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-DECONTAMINATION"
+      ],
+      "owner": "ALINA",
+      "version": "0.1.0",
+      "last_review": "2026-11-22"
+    },
+    {
+      "id": "B002-F_SOURCE_SPAN",
+      "title": "Source span",
+      "abbr": null,
+      "definition_ru": "привязка утверждения к странице, документу и версии для цитирования; проектная схема FATHER",
+      "kind": "father_extension",
+      "origin": "FATHER_ENGINEERING_EXTENSION",
+      "chapter": "CH02",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          92,
+          93
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": null,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-SOURCE_PROVENANCE"
+      ],
+      "owner": "ALINA",
+      "version": "0.1.0",
+      "last_review": "2026-11-22"
+    },
+    {
+      "id": "B002-F_QUALITY_GATE",
+      "title": "Quality gate",
+      "abbr": null,
+      "definition_ru": "формальный запрет перехода без доказательств; проектная схема FATHER",
+      "kind": "father_extension",
+      "origin": "FATHER_ENGINEERING_EXTENSION",
+      "chapter": "CH02",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          154,
+          155
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": null,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-DATA_QUALITY",
+        "B002-DECONTAMINATION"
+      ],
+      "owner": "ALINA",
+      "version": "0.1.0",
+      "last_review": "2026-11-22"
+    },
+    {
+      "id": "B002-F_POLYGON",
+      "title": "POLYGON qualification",
+      "abbr": null,
+      "definition_ru": "независимая проверка навыков агента на закрытых заданиях; проект FATHER",
+      "kind": "father_extension",
+      "origin": "FATHER_ENGINEERING_EXTENSION",
+      "chapter": "CH02",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          154,
+          155
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": null,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-F_DATASET_ROLE",
+        "B002-F_QUALITY_GATE"
+      ],
+      "owner": "ALINA",
+      "version": "0.1.0",
+      "last_review": "2026-11-22"
+    }
+  ],
+  "edges": [
+    {
+      "from": "B002-LLM",
+      "to": "B002-MODEL_ARCHITECTURE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Initial editorial relevance, subject to expert review",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-LLM",
+      "to": "B002-TOKENIZATION",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Initial editorial relevance, subject to expert review",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-LLM",
+      "to": "B002-NEXT_TOKEN_PREDICTION",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Initial editorial relevance, subject to expert review",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-NEXT_TOKEN_PREDICTION",
+      "to": "B002-LLM",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Initial editorial relevance, subject to expert review",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-NEXT_TOKEN_PREDICTION",
+      "to": "B002-PRETRAINING",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Initial editorial relevance, subject to expert review",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-TOKEN",
+      "to": "B002-TOKENIZATION",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Initial editorial relevance, subject to expert review",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-TOKENIZATION",
+      "to": "B002-VOCABULARY",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Initial editorial relevance, subject to expert review",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-VOCABULARY",
+      "to": "B002-TOKENIZATION",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Initial editorial relevance, subject to expert review",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-LEARNING_OBJECTIVE",
+      "to": "B002-NEXT_TOKEN_PREDICTION",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Initial editorial relevance, subject to expert review",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-PRETRAINING",
+      "to": "B002-DATASET",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Initial editorial relevance, subject to expert review",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-PRETRAINING",
+      "to": "B002-LEARNING_OBJECTIVE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Initial editorial relevance, subject to expert review",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-DATASET",
+      "to": "B002-PRETRAINING",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Initial editorial relevance, subject to expert review",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-CORPUS",
+      "to": "B002-DATASET",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Initial editorial relevance, subject to expert review",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-SOURCE_PROVENANCE",
+      "to": "B002-DATASET",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Initial editorial relevance, subject to expert review",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-SOURCE_PROVENANCE",
+      "to": "B002-DATA_PREPROCESSING",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Initial editorial relevance, subject to expert review",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-DATA_QUALITY",
+      "to": "B002-QUALITY_FILTERING",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Initial editorial relevance, subject to expert review",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-DATA_COVERAGE",
+      "to": "B002-DATA_MIXTURE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Initial editorial relevance, subject to expert review",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-SYNTHETIC_DATA",
+      "to": "B002-DATA_QUALITY",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Initial editorial relevance, subject to expert review",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-SYNTHETIC_DATA",
+      "to": "B002-PRETRAINING",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Initial editorial relevance, subject to expert review",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-COMMON_CRAWL",
+      "to": "B002-DATASET",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Initial editorial relevance, subject to expert review",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-C4",
+      "to": "B002-COMMON_CRAWL",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Initial editorial relevance, subject to expert review",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-THE_PILE",
+      "to": "B002-DATASET",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Initial editorial relevance, subject to expert review",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-DATA_PREPROCESSING",
+      "to": "B002-CORPUS",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Initial editorial relevance, subject to expert review",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-DATA_PREPROCESSING",
+      "to": "B002-QUALITY_FILTERING",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Initial editorial relevance, subject to expert review",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-DATA_PREPROCESSING",
+      "to": "B002-DEDUPLICATION",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Initial editorial relevance, subject to expert review",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-BOILERPLATE",
+      "to": "B002-EXTRACTION_CLEANING",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Initial editorial relevance, subject to expert review",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-EXTRACTION_CLEANING",
+      "to": "B002-BOILERPLATE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Initial editorial relevance, subject to expert review",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-EXTRACTION_CLEANING",
+      "to": "B002-QUALITY_FILTERING",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Initial editorial relevance, subject to expert review",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-LANGUAGE_IDENTIFICATION",
+      "to": "B002-QUALITY_FILTERING",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Initial editorial relevance, subject to expert review",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-QUALITY_FILTERING",
+      "to": "B002-DATA_QUALITY",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Initial editorial relevance, subject to expert review",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-QUALITY_FILTERING",
+      "to": "B002-PERPLEXITY",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Initial editorial relevance, subject to expert review",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-PERPLEXITY",
+      "to": "B002-QUALITY_FILTERING",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Initial editorial relevance, subject to expert review",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-DEDUPLICATION",
+      "to": "B002-EXACT_DUPLICATE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Initial editorial relevance, subject to expert review",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-DEDUPLICATION",
+      "to": "B002-NEAR_DUPLICATE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Initial editorial relevance, subject to expert review",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-DEDUPLICATION",
+      "to": "B002-SEMANTIC_DUPLICATE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Initial editorial relevance, subject to expert review",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-MINHASH",
+      "to": "B002-NEAR_DUPLICATE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Initial editorial relevance, subject to expert review",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-MEMORIZATION",
+      "to": "B002-PRIVACY_ATTACK",
+      "type": "RISKS_OR_RELATES_TO",
+      "weight": 0.7,
+      "weight_reason": "Initial editorial relevance, subject to expert review",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-MEMORIZATION",
+      "to": "B002-DEDUPLICATION",
+      "type": "RISKS_OR_RELATES_TO",
+      "weight": 0.7,
+      "weight_reason": "Initial editorial relevance, subject to expert review",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-PRIVACY_ATTACK",
+      "to": "B002-MEMORIZATION",
+      "type": "RISKS_OR_RELATES_TO",
+      "weight": 0.7,
+      "weight_reason": "Initial editorial relevance, subject to expert review",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-PRIVACY_ATTACK",
+      "to": "B002-PII",
+      "type": "RISKS_OR_RELATES_TO",
+      "weight": 0.7,
+      "weight_reason": "Initial editorial relevance, subject to expert review",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-PII",
+      "to": "B002-PII_REMEDIATION",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Initial editorial relevance, subject to expert review",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-PII_REMEDIATION",
+      "to": "B002-PII",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Initial editorial relevance, subject to expert review",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-DP_SGD",
+      "to": "B002-PII_REMEDIATION",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Initial editorial relevance, subject to expert review",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-TEST_CONTAMINATION",
+      "to": "B002-DECONTAMINATION",
+      "type": "RISKS_OR_RELATES_TO",
+      "weight": 0.7,
+      "weight_reason": "Initial editorial relevance, subject to expert review",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-DECONTAMINATION",
+      "to": "B002-TEST_CONTAMINATION",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Initial editorial relevance, subject to expert review",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-DECONTAMINATION",
+      "to": "B002-NGRAM_OVERLAP",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Initial editorial relevance, subject to expert review",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-NGRAM_OVERLAP",
+      "to": "B002-DECONTAMINATION",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Initial editorial relevance, subject to expert review",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-DATA_MIXTURE",
+      "to": "B002-DATA_COVERAGE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Initial editorial relevance, subject to expert review",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-DATA_MIXTURE",
+      "to": "B002-CURRICULUM_LEARNING",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Initial editorial relevance, subject to expert review",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-CURRICULUM_LEARNING",
+      "to": "B002-DATA_MIXTURE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Initial editorial relevance, subject to expert review",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-DOWNSTREAM_TASKS",
+      "to": "B002-PRETRAINING",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Initial editorial relevance, subject to expert review",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-BIAS_FAIRNESS",
+      "to": "B002-DATA_QUALITY",
+      "type": "RISKS_OR_RELATES_TO",
+      "weight": 0.7,
+      "weight_reason": "Initial editorial relevance, subject to expert review",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-RAG",
+      "to": "B002-CORPUS",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Initial editorial relevance, subject to expert review",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-PROMPT",
+      "to": "B002-LLM",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Initial editorial relevance, subject to expert review",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-FEW_SHOT",
+      "to": "B002-PROMPT",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Initial editorial relevance, subject to expert review",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-AGENT",
+      "to": "B002-LLM",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Initial editorial relevance, subject to expert review",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-F_DATASET_ROLE",
+      "to": "B002-DECONTAMINATION",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Initial editorial relevance, subject to expert review",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-F_SOURCE_SPAN",
+      "to": "B002-SOURCE_PROVENANCE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Initial editorial relevance, subject to expert review",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-F_QUALITY_GATE",
+      "to": "B002-DATA_QUALITY",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Initial editorial relevance, subject to expert review",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-F_QUALITY_GATE",
+      "to": "B002-DECONTAMINATION",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Initial editorial relevance, subject to expert review",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-F_POLYGON",
+      "to": "B002-F_DATASET_ROLE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Initial editorial relevance, subject to expert review",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-F_POLYGON",
+      "to": "B002-F_QUALITY_GATE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Initial editorial relevance, subject to expert review",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_KNOWLEDGE",
+      "to": "B002-SOURCE_PROVENANCE",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role assignment; proposed",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_KNOWLEDGE",
+      "to": "B002-F_SOURCE_SPAN",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role assignment; proposed",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_KNOWLEDGE",
+      "to": "B002-DATA_PREPROCESSING",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role assignment; proposed",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_KNOWLEDGE",
+      "to": "B002-DEDUPLICATION",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role assignment; proposed",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_KNOWLEDGE",
+      "to": "B002-DATA_QUALITY",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role assignment; proposed",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_KNOWLEDGE",
+      "to": "B002-RAG",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role assignment; proposed",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_KNOWLEDGE",
+      "to": "B002-CORPUS",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role assignment; proposed",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_CURRICULUM",
+      "to": "B002-DATA_MIXTURE",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role assignment; proposed",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_CURRICULUM",
+      "to": "B002-CURRICULUM_LEARNING",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role assignment; proposed",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_CURRICULUM",
+      "to": "B002-F_DATASET_ROLE",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role assignment; proposed",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_CURRICULUM",
+      "to": "B002-DECONTAMINATION",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role assignment; proposed",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_CURRICULUM",
+      "to": "B002-DOWNSTREAM_TASKS",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role assignment; proposed",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_CURRICULUM",
+      "to": "B002-FEW_SHOT",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role assignment; proposed",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ML_ENGINEER",
+      "to": "B002-PRETRAINING",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role assignment; proposed",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ML_ENGINEER",
+      "to": "B002-DATASET",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role assignment; proposed",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ML_ENGINEER",
+      "to": "B002-DATA_MIXTURE",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role assignment; proposed",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ML_ENGINEER",
+      "to": "B002-QUALITY_FILTERING",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role assignment; proposed",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ML_ENGINEER",
+      "to": "B002-PERPLEXITY",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role assignment; proposed",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ML_ENGINEER",
+      "to": "B002-DECONTAMINATION",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role assignment; proposed",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ML_ENGINEER",
+      "to": "B002-BIAS_FAIRNESS",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role assignment; proposed",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SECURITY",
+      "to": "B002-PII",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role assignment; proposed",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SECURITY",
+      "to": "B002-PII_REMEDIATION",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role assignment; proposed",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SECURITY",
+      "to": "B002-PRIVACY_ATTACK",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role assignment; proposed",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SECURITY",
+      "to": "B002-MEMORIZATION",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role assignment; proposed",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SECURITY",
+      "to": "B002-F_QUALITY_GATE",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role assignment; proposed",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-POLYGON",
+      "to": "B002-TEST_CONTAMINATION",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role assignment; proposed",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-POLYGON",
+      "to": "B002-DECONTAMINATION",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role assignment; proposed",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-POLYGON",
+      "to": "B002-F_POLYGON",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role assignment; proposed",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-POLYGON",
+      "to": "B002-F_DATASET_ROLE",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role assignment; proposed",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-POLYGON",
+      "to": "B002-DOWNSTREAM_TASKS",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role assignment; proposed",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SYSTEM_ARCHITECT",
+      "to": "B002-MODEL_ARCHITECTURE",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role assignment; proposed",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SYSTEM_ARCHITECT",
+      "to": "B002-VOCABULARY",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role assignment; proposed",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SYSTEM_ARCHITECT",
+      "to": "B002-RAG",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role assignment; proposed",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SYSTEM_ARCHITECT",
+      "to": "B002-F_QUALITY_GATE",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role assignment; proposed",
+      "status": "PROPOSED"
+    }
+  ]
+}
