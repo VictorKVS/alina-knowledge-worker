@@ -68,3 +68,9 @@ ALINA — владелец знаний FATHER, а не отдельная ба�
 - `README.md` — этот документ.
 
 **Статус:** SOURCE_MAPPED / VALIDATOR_ADDED / NOT_QUALIFIED. Ни обучение модели, ни развёртывание БД, ни запуск POLYGON этим репозиторием не подтверждены.
+
+## Главная миссия ALINA: проектирование и модернизация всех агентов
+
+[ALINA Agent Factory Intelligence — архитектурный контракт](agent_factory/README.md) · [Agent Blueprint JSON Schema](agent_factory/agent_blueprint.schema.json) · [Протокол модернизации](agent_factory/agent_upgrade_protocol.md) · [Пример FATHER Architect](agent_factory/example_father_architect_blueprint.json)
+
+ALINA отвечает за Knowledge / Prompt / RAG / Learning / Qualification Packages; FATHER Agent Factory собирает исполняемые компоненты, UAG контролирует права, POLYGON независимо квалифицирует, человек утверждает критические изменения. Этот контур пока спроектирован, но не развёрнут.
