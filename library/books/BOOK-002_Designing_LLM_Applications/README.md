@@ -16,7 +16,7 @@
 | 1 | Introduction | PDF 27–91 | [Урок 1: разобран](chapters/CH01_RU.md) |
 | 2 | Pre-Training Data | PDF 92–167 | [Урок 2: разобран](chapters/CH02_RU.md) |
 | 3 | Vocabulary and Tokenization | PDF 168–203 | [Глава 3: изучена](chapters/CH03_RU.md) |
-| 4 | Architectures and Learning Objectives | PDF 204–262 | Ожидает изучения первоисточника |
+| 4 | Architectures and Learning Objectives | PDF 204–262 | [Глава 4: изучена](chapters/CH04_RU.md) |
 | 5 | Adapting LLMs to Your Use Case | PDF 264–328 | Ожидает изучения первоисточника |
 | 6 | Fine-Tuning | PDF 329–377 | Ожидает изучения первоисточника |
 | 7 | Advanced Fine-Tuning Techniques | PDF 378–413 | Ожидает изучения первоисточника |
@@ -51,7 +51,7 @@
 
 ## ALINA — база знаний по книге (единый граф)
 
-**[Открыть ALINA Knowledge Core v0.1.0](alina_kb/README.md)** — 66 узлов, 135 связей, словарь, веса, алгоритмы, ролевые представления, правила версионирования.
+**[Открыть ALINA Knowledge Core v0.1.0](alina_kb/README.md)** — 92 узла, 184 связи, словарь, веса, алгоритмы, ролевые представления, правила версионирования.
 
 - [Graph JSON](alina_kb/knowledge_graph.json) — узлы и связи
 - [Glossary](alina_kb/glossary.json) — словарь терминов и сокращений
@@ -60,7 +60,7 @@
 - [Update rules](alina_kb/schema_policy.md) — обновление после каждой главы
 - [Validator](alina_kb/validate_graph.py) — структурная проверка
 
-**Статус:** составлено по главам 1–3 оригинала; главы 4–13 ещё не импортированы. База на GitHub пока машиночитаемая, но не развёрнута как сервер БД и не подключена к runtime ALINA.
+**Статус:** составлено по главам 1–4 оригинала; главы 5–13 ещё не импортированы. База на GitHub пока машиночитаемая, но не развёрнута как сервер БД и не подключена к runtime ALINA.
 
 ## Качество обучения моделей: алгоритмы и чек-листы
 
@@ -87,3 +87,9 @@
 ## Методика
 
 [Общий стандарт обучения от первого курса МАИ](../../LEARNING_STANDARD_RU.md) · [Рекомендации по практике 2026](../../PRACTICE_2026_RU.md).
+
+## Глава 4 — архитектура и обучение моделей
+
+[Урок по оригиналу](chapters/CH04_RU.md) · [Практикум Attention и loss](practicum/CH04_TRANSFORMER_TRAINING_RU.md) · [Учебный код](alina_kb/labs/ch04_math.py) · [Упражнения ALINA](learning/CH04_learning_package.json)
+
+Слой знаний ALINA v0.3.0: 92 узла, 184 связи, 11 алгоритмов. Прочитаны главы 1–4; главы 5–13 ещё предстоят.
