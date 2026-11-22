@@ -1,0 +1,49 @@
+{
+  "book_id": "BOOK-002",
+  "chapter": "CH01",
+  "status": "NOT_RUN",
+  "experiments": [
+    {
+      "id": "CH01-E1",
+      "name": "Lexical retrieval vs embeddings",
+      "measure": [
+        "recall@k",
+        "source_precision",
+        "latency"
+      ],
+      "require": [
+        "same_heldout_queries",
+        "source_id",
+        "system_versions"
+      ],
+      "result": null
+    },
+    {
+      "id": "CH01-E2",
+      "name": "Prompt drift",
+      "measure": [
+        "format_validity",
+        "answer_correctness"
+      ],
+      "require": [
+        "fixed_prompt_set",
+        "model_versions",
+        "same_test_set"
+      ],
+      "result": null
+    },
+    {
+      "id": "CH01-E3",
+      "name": "Unauthorized document leakage",
+      "measure": [
+        "unauthorized_access_count"
+      ],
+      "require": [
+        "two_user_roles",
+        "ACL",
+        "adversarial_queries"
+      ],
+      "result": null
+    }
+  ]
+}
