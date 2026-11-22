@@ -41,6 +41,12 @@
 
 [Что будет дальше: программа по 13 главам](LEARNING_ROADMAP_RU.md)
 
+## ALINA Academy — подготовка специализированных агентов
+
+**[Программа обучения ALINA, OSINT и Document Intelligence](alina_kb/academy/README.md)** — 10 модулей, прикладные учебные кейсы и алгоритм «нужно ли импортировать дубликат».
+
+[OSINT и агенты работы с документами](alina_kb/academy/AGENT_TRACKS_RU.md) · [Алгоритм решения по дубликатам](alina_kb/academy/DOCUMENT_DECISIONS_RU.md) · [Чек-лист](alina_kb/academy/CHECKLIST_RU.md)
+
 ## ALINA — база знаний по книге (единый граф)
 
 **[Открыть ALINA Knowledge Core v0.1.0](alina_kb/README.md)** — 48 узлов, 96 связей, словарь, веса, алгоритмы, ролевые представления, правила версионирования.
