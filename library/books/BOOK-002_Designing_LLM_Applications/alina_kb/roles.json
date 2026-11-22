@@ -1,5 +1,5 @@
 {
-  "version": "0.5.0",
+  "version": "0.6.0",
   "graph_id": "ALINA-BOOK-002-KNOWLEDGE-GRAPH",
   "views": [
     {
@@ -24,7 +24,10 @@
           "B002-JSON_SCHEMA_OUTPUT",
           "B002-SFT_DATASET",
           "B002-EVOL_INSTRUCT",
-          "B002-SELF_INSTRUCT"
+          "B002-SELF_INSTRUCT",
+          "B002-DAPT",
+          "B002-TAPT",
+          "B002-REPLAY"
         ]
       },
       "note": "Read-only filtered view of shared graph; do not duplicate facts",
@@ -53,7 +56,10 @@
           "B002-SELF_CONSISTENCY",
           "B002-SFT_DATASET",
           "B002-SUPERNATURAL_INSTRUCTIONS",
-          "B002-OUTPUT_FIRST"
+          "B002-OUTPUT_FIRST",
+          "B002-CATASTROPHIC_FORGETTING",
+          "B002-SOFT_PROMPT",
+          "B002-MODEL_ENSEMBLE"
         ]
       },
       "note": "Read-only filtered view of shared graph; do not duplicate facts",
@@ -90,7 +96,11 @@
           "B002-OPTIMIZER",
           "B002-PEFT",
           "B002-LORA",
-          "B002-QLORA"
+          "B002-QLORA",
+          "B002-CONTINUAL_PRETRAINING",
+          "B002-PEFT_ADAPTER",
+          "B002-PREFIX_TUNING",
+          "B002-ADAPTER_MERGING"
         ]
       },
       "note": "Read-only filtered view of shared graph; do not duplicate facts",
@@ -113,7 +123,9 @@
           "B002-CONSTRAINED_DECODING",
           "B002-EVAL_CONTAMINATION",
           "B002-REGRESSION_RISK",
-          "B002-PUBLIC_INSTRUCTION_DATA"
+          "B002-PUBLIC_INSTRUCTION_DATA",
+          "B002-CATASTROPHIC_FORGETTING",
+          "B002-MODEL_FUSION"
         ]
       },
       "note": "Read-only filtered view of shared graph; do not duplicate facts",
@@ -140,7 +152,10 @@
           "B002-HELM",
           "B002-CALIBRATION",
           "B002-ABLATION_STUDY",
-          "B002-REGRESSION_RISK"
+          "B002-REGRESSION_RISK",
+          "B002-REPLAY",
+          "B002-MODEL_ENSEMBLE",
+          "B002-CATASTROPHIC_FORGETTING"
         ]
       },
       "note": "Read-only filtered view of shared graph; do not duplicate facts",
@@ -171,7 +186,11 @@
           "B002-FINE_TUNING",
           "B002-PEFT",
           "B002-REGRESSION_RISK",
-          "B002-GRAD_CHECKPOINT"
+          "B002-GRAD_CHECKPOINT",
+          "B002-MODEL_FUSION",
+          "B002-MODEL_ENSEMBLE",
+          "B002-PEFT_ADAPTER",
+          "B002-DAPT"
         ]
       },
       "note": "Read-only filtered view of shared graph; do not duplicate facts",

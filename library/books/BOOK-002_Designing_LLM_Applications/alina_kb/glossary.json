@@ -1,5 +1,5 @@
 {
-  "version": "0.5.0",
+  "version": "0.6.0",
   "source_id": "SRC-BOOK002-PRIMARY",
   "terms": [
     {
@@ -1886,6 +1886,279 @@
         331
       ],
       "importance": 5
+    },
+    {
+      "id": "B002-CONTINUAL_PRETRAINING",
+      "term": "Continual pre-training",
+      "abbreviation": null,
+      "definition_ru": "продолжение самоконтролируемого предобучения с уже имеющегося checkpoint",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH07",
+      "pdf_pages": [
+        380,
+        384
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-DAPT",
+      "term": "Domain-adaptive pre-training",
+      "abbreviation": "DAPT",
+      "definition_ru": "дополнительное предобучение на массиве текстов выбранной предметной области",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH07",
+      "pdf_pages": [
+        380,
+        384
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-TAPT",
+      "term": "Task-adaptive pre-training",
+      "abbreviation": "TAPT",
+      "definition_ru": "продолженное предобучение на данных, близких к конкретной целевой задаче",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH07",
+      "pdf_pages": [
+        381,
+        390
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-LIFELONG_LEARNING",
+      "term": "Lifelong learning",
+      "abbreviation": null,
+      "definition_ru": "периодическое обновление модели через дальнейшее обучение на новых данных",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH07",
+      "pdf_pages": [
+        381,
+        390
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-CATASTROPHIC_FORGETTING",
+      "term": "Catastrophic forgetting",
+      "abbreviation": null,
+      "definition_ru": "утрата ранее усвоенных способностей при обучении на новых данных",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH07",
+      "pdf_pages": [
+        382,
+        387
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-REPLAY",
+      "term": "Experience replay",
+      "abbreviation": null,
+      "definition_ru": "смешивание старых и новых тренировочных данных для уменьшения забывания",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH07",
+      "pdf_pages": [
+        385,
+        387
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-DISTILLATION",
+      "term": "Knowledge distillation",
+      "abbreviation": null,
+      "definition_ru": "использование старого checkpoint для ограничения расхождения представлений новой модели",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH07",
+      "pdf_pages": [
+        385,
+        386
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-PARAM_EXPANSION",
+      "term": "Parameter expansion",
+      "abbreviation": null,
+      "definition_ru": "добавление обучаемых параметров при дальнейшей адаптации модели",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH07",
+      "pdf_pages": [
+        385,
+        389
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-DEMIX",
+      "term": "DEMix domain experts",
+      "abbreviation": "DEMIX",
+      "definition_ru": "внутренние предметные нейросетевые эксперты как варианты FFN",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH07",
+      "pdf_pages": [
+        388,
+        390
+      ],
+      "importance": 3
+    },
+    {
+      "id": "B002-PEFT_ADAPTER",
+      "term": "Bottleneck adapter",
+      "abbreviation": null,
+      "definition_ru": "обучаемый узкий модуль с down- и up-проекциями внутри Transformer",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH07",
+      "pdf_pages": [
+        391,
+        398
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-PREFIX_TUNING",
+      "term": "Prefix-tuning",
+      "abbreviation": null,
+      "definition_ru": "обучаемые векторы-префиксы внутри слоёв модели",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH07",
+      "pdf_pages": [
+        398,
+        400
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-SOFT_PROMPT",
+      "term": "Soft prompt tuning",
+      "abbreviation": null,
+      "definition_ru": "обучаемые виртуальные векторы на входе, а не текст системного промпта",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH07",
+      "pdf_pages": [
+        400,
+        402
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-SUBSET_FINETUNE",
+      "term": "Subset fine-tuning",
+      "abbreviation": null,
+      "definition_ru": "адаптация ограниченного подмножества существующих параметров",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH07",
+      "pdf_pages": [
+        402,
+        403
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-BITFIT",
+      "term": "BitFit bias tuning",
+      "abbreviation": "BITFIT",
+      "definition_ru": "дообучение только bias-параметров как частный случай subset methods",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH07",
+      "pdf_pages": [
+        402,
+        403
+      ],
+      "importance": 3
+    },
+    {
+      "id": "B002-MODEL_ENSEMBLE",
+      "term": "Model ensembling",
+      "abbreviation": null,
+      "definition_ru": "агрегация результатов нескольких отдельных моделей без объединения весов",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH07",
+      "pdf_pages": [
+        404,
+        408
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-PAIRRANKER",
+      "term": "PairRanker",
+      "abbreviation": null,
+      "definition_ru": "компонент LLM-Blender для сравнения кандидатных ответов моделей попарно",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH07",
+      "pdf_pages": [
+        405,
+        407
+      ],
+      "importance": 3
+    },
+    {
+      "id": "B002-GENFUSER",
+      "term": "GenFuser",
+      "abbreviation": null,
+      "definition_ru": "компонент LLM-Blender для синтеза итогового ответа из кандидатов",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH07",
+      "pdf_pages": [
+        405,
+        408
+      ],
+      "importance": 3
+    },
+    {
+      "id": "B002-MODEL_FUSION",
+      "term": "Model merging/fusion",
+      "abbreviation": null,
+      "definition_ru": "объединение совместимых параметров нескольких моделей",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH07",
+      "pdf_pages": [
+        408,
+        413
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-WEIGHT_AVERAGING",
+      "term": "Weight averaging",
+      "abbreviation": null,
+      "definition_ru": "усреднение или взвешенное объединение параметров моделей",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH07",
+      "pdf_pages": [
+        409,
+        411
+      ],
+      "importance": 3
+    },
+    {
+      "id": "B002-ADAPTER_MERGING",
+      "term": "Adapter merging",
+      "abbreviation": null,
+      "definition_ru": "объединение параметров нескольких адаптеров, включая AdapterSoup/AdaMix",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH07",
+      "pdf_pages": [
+        411,
+        413
+      ],
+      "importance": 3
+    },
+    {
+      "id": "B002-INTERTRAINING",
+      "term": "Intertraining",
+      "abbreviation": null,
+      "definition_ru": "использование адаптированного checkpoint как начальной точки для другой задачи",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH07",
+      "pdf_pages": [
+        410,
+        411
+      ],
+      "importance": 3
     }
   ]
 }

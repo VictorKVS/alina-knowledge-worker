@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "graph_id": "ALINA-BOOK-002-KNOWLEDGE-GRAPH",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "created": "2026-11-22",
   "source": {
     "id": "SRC-BOOK002-PRIMARY",
@@ -41,6 +41,10 @@
       "CH06": [
         329,
         377
+      ],
+      "CH07": [
+        378,
+        413
       ]
     },
     "reviewed_chapters": [
@@ -49,9 +53,10 @@
       "CH03",
       "CH04",
       "CH05",
-      "CH06"
+      "CH06",
+      "CH07"
     ],
-    "remaining_chapters": "CH07-CH13 not yet reviewed"
+    "remaining_chapters": "CH08-CH13 not yet reviewed"
   },
   "model": {
     "description": "Directed knowledge/competency graph",
@@ -4424,6 +4429,636 @@
       "owner": "ALINA",
       "version": "0.5.0",
       "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-CONTINUAL_PRETRAINING",
+      "title": "Continual pre-training",
+      "abbr": null,
+      "definition_ru": "продолжение самоконтролируемого предобучения с уже имеющегося checkpoint",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH07",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          380,
+          384
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-FINE_TUNING"
+      ],
+      "owner": "ALINA",
+      "version": "0.6.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-DAPT",
+      "title": "Domain-adaptive pre-training",
+      "abbr": "DAPT",
+      "definition_ru": "дополнительное предобучение на массиве текстов выбранной предметной области",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH07",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          380,
+          384
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-CONTINUAL_PRETRAINING"
+      ],
+      "owner": "ALINA",
+      "version": "0.6.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-TAPT",
+      "title": "Task-adaptive pre-training",
+      "abbr": "TAPT",
+      "definition_ru": "продолженное предобучение на данных, близких к конкретной целевой задаче",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH07",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          381,
+          390
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-DAPT"
+      ],
+      "owner": "ALINA",
+      "version": "0.6.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-LIFELONG_LEARNING",
+      "title": "Lifelong learning",
+      "abbr": null,
+      "definition_ru": "периодическое обновление модели через дальнейшее обучение на новых данных",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH07",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          381,
+          390
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-CONTINUAL_PRETRAINING"
+      ],
+      "owner": "ALINA",
+      "version": "0.6.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-CATASTROPHIC_FORGETTING",
+      "title": "Catastrophic forgetting",
+      "abbr": null,
+      "definition_ru": "утрата ранее усвоенных способностей при обучении на новых данных",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH07",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          382,
+          387
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-REGRESSION_RISK"
+      ],
+      "owner": "ALINA",
+      "version": "0.6.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-REPLAY",
+      "title": "Experience replay",
+      "abbr": null,
+      "definition_ru": "смешивание старых и новых тренировочных данных для уменьшения забывания",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH07",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          385,
+          387
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-CATASTROPHIC_FORGETTING"
+      ],
+      "owner": "ALINA",
+      "version": "0.6.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-DISTILLATION",
+      "title": "Knowledge distillation",
+      "abbr": null,
+      "definition_ru": "использование старого checkpoint для ограничения расхождения представлений новой модели",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH07",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          385,
+          386
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-CATASTROPHIC_FORGETTING"
+      ],
+      "owner": "ALINA",
+      "version": "0.6.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-PARAM_EXPANSION",
+      "title": "Parameter expansion",
+      "abbr": null,
+      "definition_ru": "добавление обучаемых параметров при дальнейшей адаптации модели",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH07",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          385,
+          389
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-CONTINUAL_PRETRAINING"
+      ],
+      "owner": "ALINA",
+      "version": "0.6.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-DEMIX",
+      "title": "DEMix domain experts",
+      "abbr": "DEMIX",
+      "definition_ru": "внутренние предметные нейросетевые эксперты как варианты FFN",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH07",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          388,
+          390
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 3,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-MOE"
+      ],
+      "owner": "ALINA",
+      "version": "0.6.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-PEFT_ADAPTER",
+      "title": "Bottleneck adapter",
+      "abbr": null,
+      "definition_ru": "обучаемый узкий модуль с down- и up-проекциями внутри Transformer",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH07",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          391,
+          398
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-PEFT"
+      ],
+      "owner": "ALINA",
+      "version": "0.6.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-PREFIX_TUNING",
+      "title": "Prefix-tuning",
+      "abbr": null,
+      "definition_ru": "обучаемые векторы-префиксы внутри слоёв модели",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH07",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          398,
+          400
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-PEFT"
+      ],
+      "owner": "ALINA",
+      "version": "0.6.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-SOFT_PROMPT",
+      "title": "Soft prompt tuning",
+      "abbr": null,
+      "definition_ru": "обучаемые виртуальные векторы на входе, а не текст системного промпта",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH07",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          400,
+          402
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-PREFIX_TUNING"
+      ],
+      "owner": "ALINA",
+      "version": "0.6.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-SUBSET_FINETUNE",
+      "title": "Subset fine-tuning",
+      "abbr": null,
+      "definition_ru": "адаптация ограниченного подмножества существующих параметров",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH07",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          402,
+          403
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-PEFT"
+      ],
+      "owner": "ALINA",
+      "version": "0.6.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-BITFIT",
+      "title": "BitFit bias tuning",
+      "abbr": "BITFIT",
+      "definition_ru": "дообучение только bias-параметров как частный случай subset methods",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH07",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          402,
+          403
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 3,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-SUBSET_FINETUNE"
+      ],
+      "owner": "ALINA",
+      "version": "0.6.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-MODEL_ENSEMBLE",
+      "title": "Model ensembling",
+      "abbr": null,
+      "definition_ru": "агрегация результатов нескольких отдельных моделей без объединения весов",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH07",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          404,
+          408
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-LLM"
+      ],
+      "owner": "ALINA",
+      "version": "0.6.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-PAIRRANKER",
+      "title": "PairRanker",
+      "abbr": null,
+      "definition_ru": "компонент LLM-Blender для сравнения кандидатных ответов моделей попарно",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH07",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          405,
+          407
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 3,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-MODEL_ENSEMBLE"
+      ],
+      "owner": "ALINA",
+      "version": "0.6.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-GENFUSER",
+      "title": "GenFuser",
+      "abbr": null,
+      "definition_ru": "компонент LLM-Blender для синтеза итогового ответа из кандидатов",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH07",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          405,
+          408
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 3,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-MODEL_ENSEMBLE"
+      ],
+      "owner": "ALINA",
+      "version": "0.6.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-MODEL_FUSION",
+      "title": "Model merging/fusion",
+      "abbr": null,
+      "definition_ru": "объединение совместимых параметров нескольких моделей",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH07",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          408,
+          413
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-MODEL_PARAMETER"
+      ],
+      "owner": "ALINA",
+      "version": "0.6.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-WEIGHT_AVERAGING",
+      "title": "Weight averaging",
+      "abbr": null,
+      "definition_ru": "усреднение или взвешенное объединение параметров моделей",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH07",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          409,
+          411
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 3,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-MODEL_FUSION"
+      ],
+      "owner": "ALINA",
+      "version": "0.6.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-ADAPTER_MERGING",
+      "title": "Adapter merging",
+      "abbr": null,
+      "definition_ru": "объединение параметров нескольких адаптеров, включая AdapterSoup/AdaMix",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH07",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          411,
+          413
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 3,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-MODEL_FUSION"
+      ],
+      "owner": "ALINA",
+      "version": "0.6.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-INTERTRAINING",
+      "title": "Intertraining",
+      "abbr": null,
+      "definition_ru": "использование адаптированного checkpoint как начальной точки для другой задачи",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH07",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          410,
+          411
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 3,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-CONTINUAL_PRETRAINING"
+      ],
+      "owner": "ALINA",
+      "version": "0.6.0",
+      "last_review": "2026-11-23"
     }
   ],
   "edges": [
@@ -6665,6 +7300,326 @@
       "type": "REQUIRES_KNOWLEDGE",
       "weight": 0.9,
       "weight_reason": "Curriculum assignment proposal",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-CONTINUAL_PRETRAINING",
+      "to": "B002-FINE_TUNING",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link; not measured causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-DAPT",
+      "to": "B002-CONTINUAL_PRETRAINING",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link; not measured causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-TAPT",
+      "to": "B002-DAPT",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link; not measured causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-LIFELONG_LEARNING",
+      "to": "B002-CONTINUAL_PRETRAINING",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link; not measured causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-CATASTROPHIC_FORGETTING",
+      "to": "B002-REGRESSION_RISK",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link; not measured causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-REPLAY",
+      "to": "B002-CATASTROPHIC_FORGETTING",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link; not measured causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-DISTILLATION",
+      "to": "B002-CATASTROPHIC_FORGETTING",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link; not measured causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-PARAM_EXPANSION",
+      "to": "B002-CONTINUAL_PRETRAINING",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link; not measured causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-DEMIX",
+      "to": "B002-MOE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link; not measured causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-PEFT_ADAPTER",
+      "to": "B002-PEFT",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link; not measured causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-PREFIX_TUNING",
+      "to": "B002-PEFT",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link; not measured causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-SOFT_PROMPT",
+      "to": "B002-PREFIX_TUNING",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link; not measured causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-SUBSET_FINETUNE",
+      "to": "B002-PEFT",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link; not measured causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-BITFIT",
+      "to": "B002-SUBSET_FINETUNE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link; not measured causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-MODEL_ENSEMBLE",
+      "to": "B002-LLM",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link; not measured causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-PAIRRANKER",
+      "to": "B002-MODEL_ENSEMBLE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link; not measured causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-GENFUSER",
+      "to": "B002-MODEL_ENSEMBLE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link; not measured causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-MODEL_FUSION",
+      "to": "B002-MODEL_PARAMETER",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link; not measured causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-WEIGHT_AVERAGING",
+      "to": "B002-MODEL_FUSION",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link; not measured causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-ADAPTER_MERGING",
+      "to": "B002-MODEL_FUSION",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link; not measured causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-INTERTRAINING",
+      "to": "B002-CONTINUAL_PRETRAINING",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link; not measured causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_KNOWLEDGE",
+      "to": "B002-DAPT",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed role knowledge view",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_KNOWLEDGE",
+      "to": "B002-TAPT",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed role knowledge view",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_KNOWLEDGE",
+      "to": "B002-REPLAY",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed role knowledge view",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_CURRICULUM",
+      "to": "B002-CATASTROPHIC_FORGETTING",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed role knowledge view",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_CURRICULUM",
+      "to": "B002-SOFT_PROMPT",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed role knowledge view",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_CURRICULUM",
+      "to": "B002-MODEL_ENSEMBLE",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed role knowledge view",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ML_ENGINEER",
+      "to": "B002-CONTINUAL_PRETRAINING",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed role knowledge view",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ML_ENGINEER",
+      "to": "B002-PEFT_ADAPTER",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed role knowledge view",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ML_ENGINEER",
+      "to": "B002-PREFIX_TUNING",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed role knowledge view",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ML_ENGINEER",
+      "to": "B002-ADAPTER_MERGING",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed role knowledge view",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SECURITY",
+      "to": "B002-CATASTROPHIC_FORGETTING",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed role knowledge view",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SECURITY",
+      "to": "B002-MODEL_FUSION",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed role knowledge view",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-POLYGON",
+      "to": "B002-REPLAY",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed role knowledge view",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-POLYGON",
+      "to": "B002-MODEL_ENSEMBLE",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed role knowledge view",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-POLYGON",
+      "to": "B002-CATASTROPHIC_FORGETTING",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed role knowledge view",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SYSTEM_ARCHITECT",
+      "to": "B002-MODEL_FUSION",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed role knowledge view",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SYSTEM_ARCHITECT",
+      "to": "B002-MODEL_ENSEMBLE",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed role knowledge view",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SYSTEM_ARCHITECT",
+      "to": "B002-PEFT_ADAPTER",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed role knowledge view",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SYSTEM_ARCHITECT",
+      "to": "B002-DAPT",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed role knowledge view",
       "status": "PROPOSED"
     }
   ]

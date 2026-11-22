@@ -1,5 +1,5 @@
 {
-  "version": "0.5.0",
+  "version": "0.6.0",
   "status": "DESIGNED_NOT_RUN",
   "algorithms": [
     {
@@ -400,6 +400,100 @@
       ],
       "status": "DESIGNED_NOT_RUN",
       "kind": "SOURCE_DERIVED_TEACHING_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-CH07-CONTINUAL-GATE",
+      "name": "Gate: дальнейшее предобучение или RAG",
+      "nodes": [
+        "continual_pretraining",
+        "dapt",
+        "tapt",
+        "catastrophic_forgetting"
+      ],
+      "steps": [
+        "Specify whether goal is new facts, domain language, or trainable behavior",
+        "Prefer source-grounded RAG when goal is fresh facts",
+        "Collect legally reusable domain corpus if structural language adaptation required",
+        "Freeze baseline and unrelated regression suite",
+        "Choose adaptation protocol and evaluate retained general capabilities",
+        "Require reproducible evidence before qualification"
+      ],
+      "source_pages": [
+        380,
+        390
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-CH07-REPLAY",
+      "name": "Replay-based catastrophic forgetting evaluation",
+      "nodes": [
+        "replay",
+        "catastrophic_forgetting",
+        "regression_risk"
+      ],
+      "steps": [
+        "Record base checkpoint",
+        "Select permitted representative old-domain samples",
+        "Mix old and new data; log proportions",
+        "Track domain task and general task benchmarks throughout training",
+        "Measure forgetting and stop on defined thresholds",
+        "Archive exact data mix and checkpoint evidence"
+      ],
+      "source_pages": [
+        385,
+        387
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-CH07-PEFT-DECISION",
+      "name": "Выбор типа PEFT",
+      "nodes": [
+        "peft_adapter",
+        "prefix_tuning",
+        "soft_prompt",
+        "lora"
+      ],
+      "steps": [
+        "Identify training rights and infrastructure constraints",
+        "Choose bottleneck adapter/LoRA/prefix/soft prompt as candidates",
+        "Document base model compatibility and version",
+        "Run matching baseline without training",
+        "Compare target accuracy, forgetting, VRAM and inference overhead",
+        "Reject adaptation lacking measurable gain"
+      ],
+      "source_pages": [
+        391,
+        403
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-CH07-ENSEMBLE-VS-MERGE",
+      "name": "Сравнение ансамбля моделей и слияния параметров",
+      "nodes": [
+        "model_ensemble",
+        "model_fusion",
+        "adapter_merging"
+      ],
+      "steps": [
+        "Keep ensemble outputs distinct from model parameter fusion",
+        "Benchmark one model before introducing complexity",
+        "For ensemble, measure independent errors, ranking and costs",
+        "For weight merging, verify architecture, tokenizer, license and parameter alignment",
+        "Test target and unrelated capabilities independently",
+        "Publish ADR and regressions before deployment"
+      ],
+      "source_pages": [
+        404,
+        413
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
     }
   ]
 }
