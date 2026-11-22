@@ -17,7 +17,7 @@
 | 2 | Pre-Training Data | PDF 92–167 | [Урок 2: разобран](chapters/CH02_RU.md) |
 | 3 | Vocabulary and Tokenization | PDF 168–203 | [Глава 3: изучена](chapters/CH03_RU.md) |
 | 4 | Architectures and Learning Objectives | PDF 204–262 | [Глава 4: изучена](chapters/CH04_RU.md) |
-| 5 | Adapting LLMs to Your Use Case | PDF 264–328 | Ожидает изучения первоисточника |
+| 5 | Adapting LLMs to Your Use Case | PDF 264–328 | [Глава 5: изучена](chapters/CH05_RU.md) |
 | 6 | Fine-Tuning | PDF 329–377 | Ожидает изучения первоисточника |
 | 7 | Advanced Fine-Tuning Techniques | PDF 378–413 | Ожидает изучения первоисточника |
 | 8 | Alignment Training and Reasoning | PDF 414–458 | Ожидает изучения первоисточника |
@@ -51,7 +51,7 @@
 
 ## ALINA — база знаний по книге (единый граф)
 
-**[Открыть ALINA Knowledge Core v0.1.0](alina_kb/README.md)** — 92 узла, 184 связи, словарь, веса, алгоритмы, ролевые представления, правила версионирования.
+**[Открыть ALINA Knowledge Core v0.1.0](alina_kb/README.md)** — 120 узлов, 234 связи, словарь, веса, алгоритмы, ролевые представления, правила версионирования.
 
 - [Graph JSON](alina_kb/knowledge_graph.json) — узлы и связи
 - [Glossary](alina_kb/glossary.json) — словарь терминов и сокращений
@@ -60,7 +60,7 @@
 - [Update rules](alina_kb/schema_policy.md) — обновление после каждой главы
 - [Validator](alina_kb/validate_graph.py) — структурная проверка
 
-**Статус:** составлено по главам 1–4 оригинала; главы 5–13 ещё не импортированы. База на GitHub пока машиночитаемая, но не развёрнута как сервер БД и не подключена к runtime ALINA.
+**Статус:** составлено по главам 1–5 оригинала; главы 6–13 ещё не импортированы. База на GitHub пока машиночитаемая, но не развёрнута как сервер БД и не подключена к runtime ALINA.
 
 ## Качество обучения моделей: алгоритмы и чек-листы
 
@@ -93,3 +93,9 @@
 [Урок по оригиналу](chapters/CH04_RU.md) · [Практикум Attention и loss](practicum/CH04_TRANSFORMER_TRAINING_RU.md) · [Учебный код](alina_kb/labs/ch04_math.py) · [Упражнения ALINA](learning/CH04_learning_package.json)
 
 Слой знаний ALINA v0.3.0: 92 узла, 184 связи, 11 алгоритмов. Прочитаны главы 1–4; главы 5–13 ещё предстоят.
+
+## Глава 5 — выбор модели, декодирование и структурированные выходы
+
+[Учебный разбор по оригиналу](chapters/CH05_RU.md) · [Практикум ALINA GPT Runtime](practicum/CH05_MODEL_SELECTION_RU.md) · [Демонстрационный код декодирования](alina_kb/labs/ch05_decode.py) · [Задания и эталоны](learning/CH05_learning_package.json)
+
+Граф ALINA v0.4: 120 узлов, 234 связи, 14 алгоритмов, по изученным главам 1–5. Реальные испытания моделей и POLYGON отдельно не проводились.
