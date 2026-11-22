@@ -1,5 +1,5 @@
 {
-  "version": "0.3.0",
+  "version": "0.4.0",
   "status": "DESIGNED_NOT_RUN",
   "algorithms": [
     {
@@ -252,6 +252,78 @@
       "source_pages": [
         229,
         255
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-MODEL-SELECTION",
+      "name": "Выбор модели для роли агента",
+      "nodes": [
+        "model_selection",
+        "model_license",
+        "llm_benchmark",
+        "tpot"
+      ],
+      "steps": [
+        "Define agent task and hard nonfunctional gates",
+        "Check rights and data processing conditions",
+        "Select candidate base/instruct/chat variants",
+        "Test frozen task-specific and negative cases",
+        "Record quality latency cost consistency and risk",
+        "Select least costly qualified candidate, retain fallback"
+      ],
+      "source_pages": [
+        286,
+        306
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-DECODING-EXPERIMENT",
+      "name": "Эксперимент с декодированием",
+      "nodes": [
+        "greedy_decoding",
+        "beam_search",
+        "top_k",
+        "top_p",
+        "temperature",
+        "nondeterminism"
+      ],
+      "steps": [
+        "Pin model and dataset",
+        "Repeat one task across generation configurations",
+        "Record exact text outputs and validation results",
+        "Compute error/repetition and diversity by case",
+        "Do not infer deterministic guarantee from temperature zero"
+      ],
+      "source_pages": [
+        312,
+        320
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "SOURCE_DERIVED_TEACHING_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-STRUCTURED-GATE",
+      "name": "Схема выхода агента с независимой проверкой фактов",
+      "nodes": [
+        "structured_output",
+        "json_schema_output",
+        "constrained_decoding"
+      ],
+      "steps": [
+        "Specify allowed JSON types and enums",
+        "Generate constrained result where supported",
+        "Validate JSON shape independent of LLM",
+        "Validate source rights, evidence and reasoning independently",
+        "Quarantine unproven or conflicting decisions",
+        "Log evidence and version"
+      ],
+      "source_pages": [
+        320,
+        323
       ],
       "status": "DESIGNED_NOT_RUN",
       "kind": "FATHER_ADAPTATION"

@@ -1,5 +1,5 @@
 {
-  "version": "0.3.0",
+  "version": "0.4.0",
   "graph_id": "ALINA-BOOK-002-KNOWLEDGE-GRAPH",
   "views": [
     {
@@ -18,7 +18,10 @@
           "B002-TOKEN_DOMAIN",
           "B002-REPRESENTATION_LEARNING",
           "B002-EMBEDDING_LAYER",
-          "B002-DOMAIN_SPECIFIC_LANGUAGE"
+          "B002-DOMAIN_SPECIFIC_LANGUAGE",
+          "B002-MODEL_SELECTION",
+          "B002-STRUCTURED_OUTPUT",
+          "B002-JSON_SCHEMA_OUTPUT"
         ]
       },
       "note": "Read-only filtered view of shared graph; do not duplicate facts",
@@ -41,7 +44,10 @@
           "B002-SELF_ATTENTION",
           "B002-CROSS_ENTROPY",
           "B002-FLM",
-          "B002-MLM"
+          "B002-MLM",
+          "B002-INSTRUCT_TUNING",
+          "B002-LLM_BENCHMARK",
+          "B002-SELF_CONSISTENCY"
         ]
       },
       "note": "Read-only filtered view of shared graph; do not duplicate facts",
@@ -68,7 +74,11 @@
           "B002-SELF_ATTENTION",
           "B002-MOE",
           "B002-FLM",
-          "B002-MLM"
+          "B002-MLM",
+          "B002-MODEL_LICENSE",
+          "B002-QUANTIZATION",
+          "B002-INFERENCE",
+          "B002-TEMPERATURE"
         ]
       },
       "note": "Read-only filtered view of shared graph; do not duplicate facts",
@@ -86,7 +96,10 @@
           "B002-SPECIAL_TOKEN",
           "B002-NORMALIZATION",
           "B002-MOE",
-          "B002-EXTRINSIC_EVAL"
+          "B002-EXTRINSIC_EVAL",
+          "B002-MODEL_LICENSE",
+          "B002-CONSTRAINED_DECODING",
+          "B002-EVAL_CONTAMINATION"
         ]
       },
       "note": "Read-only filtered view of shared graph; do not duplicate facts",
@@ -106,7 +119,11 @@
           "B002-GLITCH_TOKEN",
           "B002-INTRINSIC_EVAL",
           "B002-EXTRINSIC_EVAL",
-          "B002-CROSS_ENTROPY"
+          "B002-CROSS_ENTROPY",
+          "B002-LLM_BENCHMARK",
+          "B002-NONDETERMINISM",
+          "B002-STRUCTURED_OUTPUT",
+          "B002-HELM"
         ]
       },
       "note": "Read-only filtered view of shared graph; do not duplicate facts",
@@ -128,7 +145,12 @@
           "B002-ENCODER_DECODER",
           "B002-DECODER_ONLY",
           "B002-MOE",
-          "B002-DOMAIN_SPECIFIC_LANGUAGE"
+          "B002-DOMAIN_SPECIFIC_LANGUAGE",
+          "B002-MODEL_SELECTION",
+          "B002-TPOT",
+          "B002-LONG_CONTEXT",
+          "B002-INFERENCE",
+          "B002-MODEL_LICENSE"
         ]
       },
       "note": "Read-only filtered view of shared graph; do not duplicate facts",

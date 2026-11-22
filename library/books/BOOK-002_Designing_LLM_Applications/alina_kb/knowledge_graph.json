@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "graph_id": "ALINA-BOOK-002-KNOWLEDGE-GRAPH",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "created": "2026-11-22",
   "source": {
     "id": "SRC-BOOK002-PRIMARY",
@@ -33,15 +33,20 @@
       "CH04": [
         204,
         262
+      ],
+      "CH05": [
+        264,
+        328
       ]
     },
     "reviewed_chapters": [
       "CH01",
       "CH02",
       "CH03",
-      "CH04"
+      "CH04",
+      "CH05"
     ],
-    "remaining_chapters": "CH05-CH13 not reviewed in knowledge graph"
+    "remaining_chapters": "CH06-CH13 not yet reviewed"
   },
   "model": {
     "description": "Directed knowledge/competency graph",
@@ -2824,6 +2829,846 @@
       "owner": "ALINA",
       "version": "0.3.0",
       "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-MODEL_PROVIDER",
+      "title": "Model provider",
+      "abbr": null,
+      "definition_ru": "поставщик готовой LLM, открытых весов или сервиса API",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          265,
+          269
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-LLM"
+      ],
+      "owner": "ALINA",
+      "version": "0.4.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-BASE_MODEL",
+      "title": "Base model",
+      "abbr": null,
+      "definition_ru": "предобученная модель без последующей настройки на пользовательские инструкции",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          269,
+          270
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-PRETRAINING"
+      ],
+      "owner": "ALINA",
+      "version": "0.4.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-INSTRUCT_TUNING",
+      "title": "Instruction tuning",
+      "abbr": null,
+      "definition_ru": "адаптация весов на примерах инструкций и ответов для лучшего выполнения задач",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          270,
+          274
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-BASE_MODEL"
+      ],
+      "owner": "ALINA",
+      "version": "0.4.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-CHAT_MODEL",
+      "title": "Chat-tuned model",
+      "abbr": null,
+      "definition_ru": "вариант модели, настроенный на диалоговый формат",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          274,
+          275
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-INSTRUCT_TUNING"
+      ],
+      "owner": "ALINA",
+      "version": "0.4.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-LONG_CONTEXT",
+      "title": "Long-context model",
+      "abbr": null,
+      "definition_ru": "модель, способная принимать большие последовательности, качество использования которых требует проверки",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          275,
+          277
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-LLM"
+      ],
+      "owner": "ALINA",
+      "version": "0.4.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-DOMAIN_ADAPTATION",
+      "title": "Domain-adapted model",
+      "abbr": null,
+      "definition_ru": "модель с дополнительной специализацией для предметной области",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          276,
+          277
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-INSTRUCT_TUNING"
+      ],
+      "owner": "ALINA",
+      "version": "0.4.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-MODEL_LICENSE",
+      "title": "Model licensing",
+      "abbr": null,
+      "definition_ru": "правовые разрешения и ограничения использования, изменения и распространения модели",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          278,
+          286
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-MODEL_PROVIDER"
+      ],
+      "owner": "ALINA",
+      "version": "0.4.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-MODEL_SELECTION",
+      "title": "Task-driven model selection",
+      "abbr": null,
+      "definition_ru": "выбор LLM по качеству на задаче, стоимости, задержке, безопасности и лицензии",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          286,
+          288
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-EXTRINSIC_EVAL"
+      ],
+      "owner": "ALINA",
+      "version": "0.4.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-TPOT",
+      "title": "Time per output token",
+      "abbr": "TPOT",
+      "definition_ru": "время генерации одного выходного токена в выбранном измерении",
+      "kind": "metric",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          286,
+          287
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-MODEL_SELECTION"
+      ],
+      "owner": "ALINA",
+      "version": "0.4.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-LLM_BENCHMARK",
+      "title": "LLM benchmark",
+      "abbr": null,
+      "definition_ru": "стандартизированный набор задач для сравнительной оценки моделей",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          291,
+          306
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-EXTRINSIC_EVAL"
+      ],
+      "owner": "ALINA",
+      "version": "0.4.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-EVAL_CONTAMINATION",
+      "title": "Benchmark contamination",
+      "abbr": null,
+      "definition_ru": "пересечение оценочных заданий с данными обучения, искажающее измерения",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          298,
+          301
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-TEST_CONTAMINATION"
+      ],
+      "owner": "ALINA",
+      "version": "0.4.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-HELM",
+      "title": "HELM",
+      "abbr": "HELM",
+      "definition_ru": "Holistic Evaluation of Language Models: оценка нескольких аспектов работы модели",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          299,
+          300
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-LLM_BENCHMARK"
+      ],
+      "owner": "ALINA",
+      "version": "0.4.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-ELO",
+      "title": "Elo rating",
+      "abbr": "ELO",
+      "definition_ru": "относительная оценка по результатам парных человеческих сравнений",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          302,
+          304
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 3,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-LLM_BENCHMARK"
+      ],
+      "owner": "ALINA",
+      "version": "0.4.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-QUANTIZATION",
+      "title": "Quantization",
+      "abbr": null,
+      "definition_ru": "представление весов модели пониженной точностью ради экономии памяти и ресурсов",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          307,
+          309
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-MODEL_SELECTION"
+      ],
+      "owner": "ALINA",
+      "version": "0.4.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-INFERENCE",
+      "title": "Inference",
+      "abbr": null,
+      "definition_ru": "применение обученной модели для выдачи предсказаний без обычного обновления её весов",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          307,
+          318
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-LLM"
+      ],
+      "owner": "ALINA",
+      "version": "0.4.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-GREEDY_DECODING",
+      "title": "Greedy decoding",
+      "abbr": null,
+      "definition_ru": "выбор наиболее вероятного следующего токена на каждом шаге",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          312,
+          313
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-INFERENCE"
+      ],
+      "owner": "ALINA",
+      "version": "0.4.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-BEAM_SEARCH",
+      "title": "Beam search",
+      "abbr": null,
+      "definition_ru": "поиск нескольких вероятных вариантов продолжения последовательности",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          313,
+          315
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-INFERENCE"
+      ],
+      "owner": "ALINA",
+      "version": "0.4.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-TOP_K",
+      "title": "Top-k sampling",
+      "abbr": null,
+      "definition_ru": "случайный выбор среди k наиболее вероятных токенов",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          315,
+          316
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-INFERENCE"
+      ],
+      "owner": "ALINA",
+      "version": "0.4.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-TOP_P",
+      "title": "Top-p/nucleus sampling",
+      "abbr": null,
+      "definition_ru": "выбор токена из минимального набора с заданной суммарной массой вероятности",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          316,
+          317
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-INFERENCE"
+      ],
+      "owner": "ALINA",
+      "version": "0.4.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-TEMPERATURE",
+      "title": "Sampling temperature",
+      "abbr": null,
+      "definition_ru": "параметр, меняющий степень концентрации распределения при генерации",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          318,
+          320
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-INFERENCE"
+      ],
+      "owner": "ALINA",
+      "version": "0.4.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-NONDETERMINISM",
+      "title": "Inference nondeterminism",
+      "abbr": null,
+      "definition_ru": "изменчивость генерации даже при одинаковых запросах вследствие вычислений и режима выбора",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          318,
+          320
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-TEMPERATURE"
+      ],
+      "owner": "ALINA",
+      "version": "0.4.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-SELF_CONSISTENCY",
+      "title": "Self-consistency",
+      "abbr": null,
+      "definition_ru": "сравнение нескольких путей генерации и выбор итогового ответа по агрегированию",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          319,
+          320
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-INFERENCE"
+      ],
+      "owner": "ALINA",
+      "version": "0.4.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-STRUCTURED_OUTPUT",
+      "title": "Structured output",
+      "abbr": null,
+      "definition_ru": "машинно-обрабатываемый ответ с явной схемой и ограничениями",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          320,
+          323
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-INFERENCE"
+      ],
+      "owner": "ALINA",
+      "version": "0.4.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-JSON_SCHEMA_OUTPUT",
+      "title": "JSON Schema",
+      "abbr": null,
+      "definition_ru": "структура проверки допустимых ключей и типов сгенерированного JSON",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          320,
+          322
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-STRUCTURED_OUTPUT"
+      ],
+      "owner": "ALINA",
+      "version": "0.4.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-CONSTRAINED_DECODING",
+      "title": "Constrained decoding",
+      "abbr": null,
+      "definition_ru": "ограничение допустимых генерируемых последовательностей правилами/грамматикой",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          321,
+          323
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-STRUCTURED_OUTPUT"
+      ],
+      "owner": "ALINA",
+      "version": "0.4.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-CFG",
+      "title": "Context-free grammar",
+      "abbr": "CFG",
+      "definition_ru": "формальная грамматика для описания допустимых последовательностей",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          322,
+          323
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-CONSTRAINED_DECODING"
+      ],
+      "owner": "ALINA",
+      "version": "0.4.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-MODEL_INTERPRETABILITY",
+      "title": "Model interpretability",
+      "abbr": null,
+      "definition_ru": "методы исследования внутренних представлений и влияния входов на модель",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          324,
+          328
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-LLM"
+      ],
+      "owner": "ALINA",
+      "version": "0.4.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-LIT_NLP",
+      "title": "LIT-NLP",
+      "abbr": "LIT_NLP",
+      "definition_ru": "инструмент исследования поведения языковых моделей и их представлений",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          324,
+          326
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 3,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-MODEL_INTERPRETABILITY"
+      ],
+      "owner": "ALINA",
+      "version": "0.4.0",
+      "last_review": "2026-11-23"
     }
   ],
   "edges": [
@@ -4297,6 +5142,406 @@
       "type": "REQUIRES_KNOWLEDGE",
       "weight": 0.9,
       "weight_reason": "FATHER curriculum assignment",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-MODEL_PROVIDER",
+      "to": "B002-LLM",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-BASE_MODEL",
+      "to": "B002-PRETRAINING",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-INSTRUCT_TUNING",
+      "to": "B002-BASE_MODEL",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-CHAT_MODEL",
+      "to": "B002-INSTRUCT_TUNING",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-LONG_CONTEXT",
+      "to": "B002-LLM",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-DOMAIN_ADAPTATION",
+      "to": "B002-INSTRUCT_TUNING",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-MODEL_LICENSE",
+      "to": "B002-MODEL_PROVIDER",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-MODEL_SELECTION",
+      "to": "B002-EXTRINSIC_EVAL",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-TPOT",
+      "to": "B002-MODEL_SELECTION",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-LLM_BENCHMARK",
+      "to": "B002-EXTRINSIC_EVAL",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-EVAL_CONTAMINATION",
+      "to": "B002-TEST_CONTAMINATION",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-HELM",
+      "to": "B002-LLM_BENCHMARK",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-ELO",
+      "to": "B002-LLM_BENCHMARK",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-QUANTIZATION",
+      "to": "B002-MODEL_SELECTION",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-INFERENCE",
+      "to": "B002-LLM",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-GREEDY_DECODING",
+      "to": "B002-INFERENCE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-BEAM_SEARCH",
+      "to": "B002-INFERENCE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-TOP_K",
+      "to": "B002-INFERENCE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-TOP_P",
+      "to": "B002-INFERENCE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-TEMPERATURE",
+      "to": "B002-INFERENCE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-NONDETERMINISM",
+      "to": "B002-TEMPERATURE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-SELF_CONSISTENCY",
+      "to": "B002-INFERENCE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-STRUCTURED_OUTPUT",
+      "to": "B002-INFERENCE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-JSON_SCHEMA_OUTPUT",
+      "to": "B002-STRUCTURED_OUTPUT",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-CONSTRAINED_DECODING",
+      "to": "B002-STRUCTURED_OUTPUT",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-CFG",
+      "to": "B002-CONSTRAINED_DECODING",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-MODEL_INTERPRETABILITY",
+      "to": "B002-LLM",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-LIT_NLP",
+      "to": "B002-MODEL_INTERPRETABILITY",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial link, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_KNOWLEDGE",
+      "to": "B002-MODEL_SELECTION",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role relevance proposal",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_KNOWLEDGE",
+      "to": "B002-STRUCTURED_OUTPUT",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role relevance proposal",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_KNOWLEDGE",
+      "to": "B002-JSON_SCHEMA_OUTPUT",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role relevance proposal",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_CURRICULUM",
+      "to": "B002-INSTRUCT_TUNING",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role relevance proposal",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_CURRICULUM",
+      "to": "B002-LLM_BENCHMARK",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role relevance proposal",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_CURRICULUM",
+      "to": "B002-SELF_CONSISTENCY",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role relevance proposal",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ML_ENGINEER",
+      "to": "B002-MODEL_LICENSE",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role relevance proposal",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ML_ENGINEER",
+      "to": "B002-QUANTIZATION",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role relevance proposal",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ML_ENGINEER",
+      "to": "B002-INFERENCE",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role relevance proposal",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ML_ENGINEER",
+      "to": "B002-TEMPERATURE",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role relevance proposal",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SECURITY",
+      "to": "B002-MODEL_LICENSE",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role relevance proposal",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SECURITY",
+      "to": "B002-CONSTRAINED_DECODING",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role relevance proposal",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SECURITY",
+      "to": "B002-EVAL_CONTAMINATION",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role relevance proposal",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-POLYGON",
+      "to": "B002-LLM_BENCHMARK",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role relevance proposal",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-POLYGON",
+      "to": "B002-NONDETERMINISM",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role relevance proposal",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-POLYGON",
+      "to": "B002-STRUCTURED_OUTPUT",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role relevance proposal",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-POLYGON",
+      "to": "B002-HELM",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role relevance proposal",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SYSTEM_ARCHITECT",
+      "to": "B002-MODEL_SELECTION",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role relevance proposal",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SYSTEM_ARCHITECT",
+      "to": "B002-TPOT",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role relevance proposal",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SYSTEM_ARCHITECT",
+      "to": "B002-LONG_CONTEXT",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role relevance proposal",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SYSTEM_ARCHITECT",
+      "to": "B002-INFERENCE",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role relevance proposal",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SYSTEM_ARCHITECT",
+      "to": "B002-MODEL_LICENSE",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role relevance proposal",
       "status": "PROPOSED"
     }
   ]

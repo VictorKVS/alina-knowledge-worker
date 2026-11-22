@@ -1,5 +1,5 @@
 {
-  "version": "0.3.0",
+  "version": "0.4.0",
   "source_id": "SRC-BOOK002-PRIMARY",
   "terms": [
     {
@@ -1197,6 +1197,370 @@
         261
       ],
       "importance": 4
+    },
+    {
+      "id": "B002-MODEL_PROVIDER",
+      "term": "Model provider",
+      "abbreviation": null,
+      "definition_ru": "поставщик готовой LLM, открытых весов или сервиса API",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "pdf_pages": [
+        265,
+        269
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-BASE_MODEL",
+      "term": "Base model",
+      "abbreviation": null,
+      "definition_ru": "предобученная модель без последующей настройки на пользовательские инструкции",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "pdf_pages": [
+        269,
+        270
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-INSTRUCT_TUNING",
+      "term": "Instruction tuning",
+      "abbreviation": null,
+      "definition_ru": "адаптация весов на примерах инструкций и ответов для лучшего выполнения задач",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "pdf_pages": [
+        270,
+        274
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-CHAT_MODEL",
+      "term": "Chat-tuned model",
+      "abbreviation": null,
+      "definition_ru": "вариант модели, настроенный на диалоговый формат",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "pdf_pages": [
+        274,
+        275
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-LONG_CONTEXT",
+      "term": "Long-context model",
+      "abbreviation": null,
+      "definition_ru": "модель, способная принимать большие последовательности, качество использования которых требует проверки",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "pdf_pages": [
+        275,
+        277
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-DOMAIN_ADAPTATION",
+      "term": "Domain-adapted model",
+      "abbreviation": null,
+      "definition_ru": "модель с дополнительной специализацией для предметной области",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "pdf_pages": [
+        276,
+        277
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-MODEL_LICENSE",
+      "term": "Model licensing",
+      "abbreviation": null,
+      "definition_ru": "правовые разрешения и ограничения использования, изменения и распространения модели",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "pdf_pages": [
+        278,
+        286
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-MODEL_SELECTION",
+      "term": "Task-driven model selection",
+      "abbreviation": null,
+      "definition_ru": "выбор LLM по качеству на задаче, стоимости, задержке, безопасности и лицензии",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "pdf_pages": [
+        286,
+        288
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-TPOT",
+      "term": "Time per output token",
+      "abbreviation": "TPOT",
+      "definition_ru": "время генерации одного выходного токена в выбранном измерении",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "pdf_pages": [
+        286,
+        287
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-LLM_BENCHMARK",
+      "term": "LLM benchmark",
+      "abbreviation": null,
+      "definition_ru": "стандартизированный набор задач для сравнительной оценки моделей",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "pdf_pages": [
+        291,
+        306
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-EVAL_CONTAMINATION",
+      "term": "Benchmark contamination",
+      "abbreviation": null,
+      "definition_ru": "пересечение оценочных заданий с данными обучения, искажающее измерения",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "pdf_pages": [
+        298,
+        301
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-HELM",
+      "term": "HELM",
+      "abbreviation": "HELM",
+      "definition_ru": "Holistic Evaluation of Language Models: оценка нескольких аспектов работы модели",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "pdf_pages": [
+        299,
+        300
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-ELO",
+      "term": "Elo rating",
+      "abbreviation": "ELO",
+      "definition_ru": "относительная оценка по результатам парных человеческих сравнений",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "pdf_pages": [
+        302,
+        304
+      ],
+      "importance": 3
+    },
+    {
+      "id": "B002-QUANTIZATION",
+      "term": "Quantization",
+      "abbreviation": null,
+      "definition_ru": "представление весов модели пониженной точностью ради экономии памяти и ресурсов",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "pdf_pages": [
+        307,
+        309
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-INFERENCE",
+      "term": "Inference",
+      "abbreviation": null,
+      "definition_ru": "применение обученной модели для выдачи предсказаний без обычного обновления её весов",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "pdf_pages": [
+        307,
+        318
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-GREEDY_DECODING",
+      "term": "Greedy decoding",
+      "abbreviation": null,
+      "definition_ru": "выбор наиболее вероятного следующего токена на каждом шаге",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "pdf_pages": [
+        312,
+        313
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-BEAM_SEARCH",
+      "term": "Beam search",
+      "abbreviation": null,
+      "definition_ru": "поиск нескольких вероятных вариантов продолжения последовательности",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "pdf_pages": [
+        313,
+        315
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-TOP_K",
+      "term": "Top-k sampling",
+      "abbreviation": null,
+      "definition_ru": "случайный выбор среди k наиболее вероятных токенов",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "pdf_pages": [
+        315,
+        316
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-TOP_P",
+      "term": "Top-p/nucleus sampling",
+      "abbreviation": null,
+      "definition_ru": "выбор токена из минимального набора с заданной суммарной массой вероятности",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "pdf_pages": [
+        316,
+        317
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-TEMPERATURE",
+      "term": "Sampling temperature",
+      "abbreviation": null,
+      "definition_ru": "параметр, меняющий степень концентрации распределения при генерации",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "pdf_pages": [
+        318,
+        320
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-NONDETERMINISM",
+      "term": "Inference nondeterminism",
+      "abbreviation": null,
+      "definition_ru": "изменчивость генерации даже при одинаковых запросах вследствие вычислений и режима выбора",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "pdf_pages": [
+        318,
+        320
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-SELF_CONSISTENCY",
+      "term": "Self-consistency",
+      "abbreviation": null,
+      "definition_ru": "сравнение нескольких путей генерации и выбор итогового ответа по агрегированию",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "pdf_pages": [
+        319,
+        320
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-STRUCTURED_OUTPUT",
+      "term": "Structured output",
+      "abbreviation": null,
+      "definition_ru": "машинно-обрабатываемый ответ с явной схемой и ограничениями",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "pdf_pages": [
+        320,
+        323
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-JSON_SCHEMA_OUTPUT",
+      "term": "JSON Schema",
+      "abbreviation": null,
+      "definition_ru": "структура проверки допустимых ключей и типов сгенерированного JSON",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "pdf_pages": [
+        320,
+        322
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-CONSTRAINED_DECODING",
+      "term": "Constrained decoding",
+      "abbreviation": null,
+      "definition_ru": "ограничение допустимых генерируемых последовательностей правилами/грамматикой",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "pdf_pages": [
+        321,
+        323
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-CFG",
+      "term": "Context-free grammar",
+      "abbreviation": "CFG",
+      "definition_ru": "формальная грамматика для описания допустимых последовательностей",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "pdf_pages": [
+        322,
+        323
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-MODEL_INTERPRETABILITY",
+      "term": "Model interpretability",
+      "abbreviation": null,
+      "definition_ru": "методы исследования внутренних представлений и влияния входов на модель",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "pdf_pages": [
+        324,
+        328
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-LIT_NLP",
+      "term": "LIT-NLP",
+      "abbreviation": "LIT_NLP",
+      "definition_ru": "инструмент исследования поведения языковых моделей и их представлений",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "pdf_pages": [
+        324,
+        326
+      ],
+      "importance": 3
     }
   ]
 }
