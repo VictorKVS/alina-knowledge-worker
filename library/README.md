@@ -1,25 +1,25 @@
-# FATHER / ALINA — инженерная библиотека
+# FATHER / ALINA — библиотека технических книг
 
-> По аналогии с навигацией открытых учебных репозиториев, но с трассировкой знаний, компетенциями агентов и независимой квалификацией.
+Объяснения на уровне **первого курса МАИ**: с нуля, простыми словами, затем формулы, алгоритмы и реальные инженерные применения в 2026 году.
 
-## Навигация
+[Как учимся](LEARNING_STANDARD_RU.md) · [Практика 2026](PRACTICE_2026_RU.md) · [Первая книга](books/BOOK-001_AI_Engineering/README.md) · [Шаблон книжного проекта](BOOK_PROJECT_TEMPLATE.md)
 
-- [Каталог книг](CATALOG.md)
-- [BOOK-001 — AI Engineering (Chip Huyen)](books/BOOK-001_AI_Engineering/README.md)
-- [Шаблон проекта любой книги или статьи](BOOK_PROJECT_TEMPLATE.md)
+Содержимое книг не копируется в открытый репозиторий без проверки авторских прав. Каталог содержит метаданные 39 позиций, а не их полные тексты.
 
-## Принцип
+## Книжные проекты
 
-**Источник → глава → проверяемое знание → алгоритм → компетенция → испытание → evidence.**
+- [LIB-0001 — AI Engineering: Building Applications with Foundation Models](books/LIB-0001/README.md)
+- [LIB-0002 — Designing Machine Learning Systems](books/LIB-0002/README.md)
+- [LIB-0003 — Designing Large Language Model Applications](books/LIB-0003/README.md)
+- [LIB-0004 — Building Complex Multi-Agent Systems Using Pattern Prompting](books/LIB-0004/README.md)
+- [LIB-0005 — Generative AI Security: Theories and Practices](books/LIB-0005/README.md)
+- [LIB-0006 — Hands-On Large Language Models](books/LIB-0006/README.md)
+- [LIB-0007 — Building Large Language Models from Scratch](books/LIB-0007/README.md)
+- [LIB-0008 — The MCP Standard: A Developer’s Guide](books/LIB-0008/README.md)
+- [LIB-0009 — Illustrated Guide to AI Agents](books/LIB-0009/README.md)
+- [LIB-0010 — Introduction to Generative AI, 2nd Edition](books/LIB-0010/README.md)
+- [LIB-0011 — Generative AI in Practice: Transformers and Diffusion Models](books/LIB-0011/README.md)
+- [LIB-0012 — Production Development with DeepSeek](books/LIB-0012/README.md)
 
-Одна книга / статья — самостоятельный проект. Для каждой главы готовятся Study Guide, Knowledge Package, Learning Package, Competency Package и Experiment/Evidence Package. Отсутствие первоисточника, вычислений или испытаний должно быть явно обозначено.
+[Все 39 позиций каталога](CATALOG.md)
 
-## Правила публикации
-
-- Не публиковать полный текст защищённой авторским правом книги без разрешения.
-- Обязательно отделять исходные утверждения автора, содержание сторонних конспектов и проектные интерпретации FATHER.
-- Указывать версию источника, раздел и страницу, по возможности — hash источника.
-- Не объявлять навыки агентов подтверждёнными без реальных испытаний POLYGON.
-- Сохранять совместимость с существующей `sample-library/FATHER_GOLDEN_LIBRARY` и `docs/knowledge`.
-
-_Этот раздел является начальным каталогом и не означает, что все книги загружены или изучены._
