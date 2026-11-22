@@ -6,7 +6,7 @@
 | --- | --- | --- | --- |
 | LIB-0001 | [AI Engineering: Building Applications with Foundation Models](books/LIB-0001/README.md) | AI / архитектура | 10 глав обработано по вторичному конспекту; без квалификации |
 | LIB-0002 | [Designing Machine Learning Systems](books/LIB-0002/README.md) | ML / Data Science | Не разобрано / источник требует проверки |
-| LIB-0003 | [Designing Large Language Model Applications](books/LIB-0003/README.md) | AI / архитектура | Не разобрано / источник требует проверки |
+| LIB-0003 | [Designing Large Language Model Applications](books/BOOK-002_Designing_LLM_Applications/README.md) | AI / архитектура | Оригинал 765 стр. проверен; глава 1 разобрана, главы 2–13 впереди |
 | LIB-0004 | [Building Complex Multi-Agent Systems Using Pattern Prompting](books/LIB-0004/README.md) | AI-агенты | Не разобрано / источник требует проверки |
 | LIB-0005 | [Generative AI Security: Theories and Practices](books/LIB-0005/README.md) | AI Security | Не разобрано / источник требует проверки |
 | LIB-0006 | [Hands-On Large Language Models](books/LIB-0006/README.md) | LLM Engineering | Не разобрано / источник требует проверки |
