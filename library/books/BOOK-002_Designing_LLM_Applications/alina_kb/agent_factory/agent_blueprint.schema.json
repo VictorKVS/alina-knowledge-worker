@@ -1,0 +1,149 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ALINA Agent Blueprint v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "agent_id",
+    "version",
+    "role",
+    "goal",
+    "capability_contract",
+    "packages",
+    "status",
+    "owner"
+  ],
+  "properties": {
+    "agent_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "version": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string"
+    },
+    "goal": {
+      "type": "string"
+    },
+    "capability_contract": {
+      "type": "object",
+      "required": [
+        "inputs",
+        "outputs",
+        "allowed_tools",
+        "hard_constraints",
+        "acceptance_criteria"
+      ],
+      "properties": {
+        "inputs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "outputs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "allowed_tools": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "hard_constraints": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "acceptance_criteria": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "packages": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "knowledge",
+        "prompt",
+        "rag",
+        "learning",
+        "qualification"
+      ],
+      "properties": {
+        "knowledge": {
+          "$ref": "#/$defs/package"
+        },
+        "prompt": {
+          "$ref": "#/$defs/package"
+        },
+        "rag": {
+          "$ref": "#/$defs/package"
+        },
+        "learning": {
+          "$ref": "#/$defs/package"
+        },
+        "qualification": {
+          "$ref": "#/$defs/package"
+        }
+      }
+    },
+    "status": {
+      "enum": [
+        "DESIGNED",
+        "IMPLEMENTED",
+        "TESTED",
+        "QUALIFIED",
+        "RELEASED"
+      ]
+    },
+    "owner": {
+      "type": "string"
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "$defs": {
+    "package": {
+      "type": "object",
+      "required": [
+        "package_id",
+        "version",
+        "artifact_ref",
+        "status"
+      ],
+      "properties": {
+        "package_id": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "artifact_ref": {
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "PLANNED",
+            "PREPARED",
+            "TESTED",
+            "QUALIFIED"
+          ]
+        }
+      }
+    }
+  }
+}
