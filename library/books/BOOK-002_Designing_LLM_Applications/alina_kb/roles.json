@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.2.0",
   "graph_id": "ALINA-BOOK-002-KNOWLEDGE-GRAPH",
   "views": [
     {
@@ -12,7 +12,10 @@
           "B002-DEDUPLICATION",
           "B002-DATA_QUALITY",
           "B002-RAG",
-          "B002-CORPUS"
+          "B002-CORPUS",
+          "B002-NORMALIZATION",
+          "B002-SPECIAL_TOKEN",
+          "B002-TOKEN_DOMAIN"
         ]
       },
       "note": "Read-only filtered view of shared graph; do not duplicate facts",
@@ -27,7 +30,11 @@
           "B002-F_DATASET_ROLE",
           "B002-DECONTAMINATION",
           "B002-DOWNSTREAM_TASKS",
-          "B002-FEW_SHOT"
+          "B002-FEW_SHOT",
+          "B002-BPE",
+          "B002-WORDPIECE",
+          "B002-FERTILITY",
+          "B002-PARITY"
         ]
       },
       "note": "Read-only filtered view of shared graph; do not duplicate facts",
@@ -43,7 +50,12 @@
           "B002-QUALITY_FILTERING",
           "B002-PERPLEXITY",
           "B002-DECONTAMINATION",
-          "B002-BIAS_FAIRNESS"
+          "B002-BIAS_FAIRNESS",
+          "B002-BPE",
+          "B002-WORDPIECE",
+          "B002-UNIGRAM",
+          "B002-VOCAB_SIZE",
+          "B002-EMBED_RESIZE"
         ]
       },
       "note": "Read-only filtered view of shared graph; do not duplicate facts",
@@ -57,7 +69,9 @@
           "B002-PII_REMEDIATION",
           "B002-PRIVACY_ATTACK",
           "B002-MEMORIZATION",
-          "B002-F_QUALITY_GATE"
+          "B002-F_QUALITY_GATE",
+          "B002-SPECIAL_TOKEN",
+          "B002-NORMALIZATION"
         ]
       },
       "note": "Read-only filtered view of shared graph; do not duplicate facts",
@@ -71,7 +85,10 @@
           "B002-DECONTAMINATION",
           "B002-F_POLYGON",
           "B002-F_DATASET_ROLE",
-          "B002-DOWNSTREAM_TASKS"
+          "B002-DOWNSTREAM_TASKS",
+          "B002-FERTILITY",
+          "B002-PARITY",
+          "B002-GLITCH_TOKEN"
         ]
       },
       "note": "Read-only filtered view of shared graph; do not duplicate facts",
@@ -84,7 +101,11 @@
           "B002-MODEL_ARCHITECTURE",
           "B002-VOCABULARY",
           "B002-RAG",
-          "B002-F_QUALITY_GATE"
+          "B002-F_QUALITY_GATE",
+          "B002-VOCAB_SIZE",
+          "B002-FERTILITY",
+          "B002-PARITY",
+          "B002-TOKEN_DOMAIN"
         ]
       },
       "note": "Read-only filtered view of shared graph; do not duplicate facts",

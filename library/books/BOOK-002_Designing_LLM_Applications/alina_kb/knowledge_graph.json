@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "graph_id": "ALINA-BOOK-002-KNOWLEDGE-GRAPH",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "created": "2026-11-22",
   "source": {
     "id": "SRC-BOOK002-PRIMARY",
@@ -25,13 +25,18 @@
       "CH02": [
         92,
         167
+      ],
+      "CH03": [
+        168,
+        203
       ]
     },
     "reviewed_chapters": [
       "CH01",
-      "CH02"
+      "CH02",
+      "CH03"
     ],
-    "remaining_chapters": "CH03-CH13: not reviewed in this knowledge graph"
+    "remaining_chapters": "CH04-CH13: not reviewed in this knowledge graph"
   },
   "model": {
     "description": "Directed knowledge/competency graph",
@@ -42,7 +47,7 @@
       "usage": "Never treat graph weights as training loss, reward or objective probability"
     },
     "status": "SOURCE_MAPPED_NOT_QUALIFIED",
-    "future": "New chapters append nodes/edges with stable IDs, provenance, tests and version bump"
+    "future": "Chapter 4 should extend existing node IDs after direct source review."
   },
   "nodes": [
     {
@@ -1494,6 +1499,546 @@
       "owner": "ALINA",
       "version": "0.1.0",
       "last_review": "2026-11-22"
+    },
+    {
+      "id": "B002-SUBWORD",
+      "title": "Subword",
+      "abbr": null,
+      "definition_ru": "часть слова, используемая как единица токенизации",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH03",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          169,
+          176
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-TOKENIZATION"
+      ],
+      "owner": "ALINA",
+      "version": "0.2.0",
+      "last_review": "2026-11-22"
+    },
+    {
+      "id": "B002-TOKEN_ID",
+      "title": "Token ID",
+      "abbr": null,
+      "definition_ru": "числовой идентификатор токена в словаре модели",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH03",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          169,
+          170
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-TOKEN"
+      ],
+      "owner": "ALINA",
+      "version": "0.2.0",
+      "last_review": "2026-11-22"
+    },
+    {
+      "id": "B002-OOV",
+      "title": "Out-of-vocabulary",
+      "abbr": "OOV",
+      "definition_ru": "элемент, отсутствующий в словаре токенизатора",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH03",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          174,
+          176
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-VOCABULARY"
+      ],
+      "owner": "ALINA",
+      "version": "0.2.0",
+      "last_review": "2026-11-22"
+    },
+    {
+      "id": "B002-VOCAB_SIZE",
+      "title": "Vocabulary size",
+      "abbr": null,
+      "definition_ru": "число единиц словаря и компромисс между сжатием и редкими токенами",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH03",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          177,
+          178
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-VOCABULARY"
+      ],
+      "owner": "ALINA",
+      "version": "0.2.0",
+      "last_review": "2026-11-22"
+    },
+    {
+      "id": "B002-NORMALIZATION",
+      "title": "Text normalization",
+      "abbr": null,
+      "definition_ru": "предобработка формы текста: регистр, Unicode, диакритика",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH03",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          186,
+          188
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-TOKENIZATION"
+      ],
+      "owner": "ALINA",
+      "version": "0.2.0",
+      "last_review": "2026-11-22"
+    },
+    {
+      "id": "B002-PRETOKENIZATION",
+      "title": "Pre-tokenization",
+      "abbr": null,
+      "definition_ru": "предварительное разбиение на элементы перед основным токенизатором",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH03",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          188,
+          190
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-NORMALIZATION"
+      ],
+      "owner": "ALINA",
+      "version": "0.2.0",
+      "last_review": "2026-11-22"
+    },
+    {
+      "id": "B002-BPE",
+      "title": "Byte Pair Encoding",
+      "abbr": "BPE",
+      "definition_ru": "обучение словаря объединением самых частых соседних пар элементов",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH03",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          190,
+          194
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-TOKENIZATION"
+      ],
+      "owner": "ALINA",
+      "version": "0.2.0",
+      "last_review": "2026-11-22"
+    },
+    {
+      "id": "B002-BYTE_BPE",
+      "title": "Byte-level BPE",
+      "abbr": "byte-BPE",
+      "definition_ru": "вариант BPE на байтовых исходных элементах, покрывающий Unicode без неизвестного символа",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH03",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          193,
+          194
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-BPE"
+      ],
+      "owner": "ALINA",
+      "version": "0.2.0",
+      "last_review": "2026-11-22"
+    },
+    {
+      "id": "B002-WORDPIECE",
+      "title": "WordPiece",
+      "abbr": null,
+      "definition_ru": "подход к субсловной токенизации с выбором объединений на основе нормализованной частоты",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH03",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          194,
+          196
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-BPE"
+      ],
+      "owner": "ALINA",
+      "version": "0.2.0",
+      "last_review": "2026-11-22"
+    },
+    {
+      "id": "B002-UNIGRAM",
+      "title": "Unigram LM",
+      "abbr": null,
+      "definition_ru": "упомянутый в главе вероятностный подход к субсловной токенизации; подробный алгоритм в изученном разделе не раскрыт",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH03",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          190,
+          190
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 3,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-TOKENIZATION"
+      ],
+      "owner": "ALINA",
+      "version": "0.2.0",
+      "last_review": "2026-11-22"
+    },
+    {
+      "id": "B002-POSTPROCESSING",
+      "title": "Postprocessing",
+      "abbr": null,
+      "definition_ru": "добавление специальных маркеров после токенизации",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH03",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          196,
+          199
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-TOKENIZATION"
+      ],
+      "owner": "ALINA",
+      "version": "0.2.0",
+      "last_review": "2026-11-22"
+    },
+    {
+      "id": "B002-SPECIAL_TOKEN",
+      "title": "Special tokens",
+      "abbr": null,
+      "definition_ru": "служебные токены модели: завершение, заполнение, разделители и маркеры инструментов",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH03",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          196,
+          199
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-POSTPROCESSING"
+      ],
+      "owner": "ALINA",
+      "version": "0.2.0",
+      "last_review": "2026-11-22"
+    },
+    {
+      "id": "B002-FERTILITY",
+      "title": "Fertility",
+      "abbr": null,
+      "definition_ru": "среднее число токенов на слово для заданного корпуса",
+      "kind": "metric",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH03",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          200,
+          200
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-TOKENIZATION"
+      ],
+      "owner": "ALINA",
+      "version": "0.2.0",
+      "last_review": "2026-11-22"
+    },
+    {
+      "id": "B002-PARITY",
+      "title": "Tokenizer parity",
+      "abbr": null,
+      "definition_ru": "отношение чисел токенов для эквивалентного текста на двух языках",
+      "kind": "metric",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH03",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          200,
+          201
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-FERTILITY"
+      ],
+      "owner": "ALINA",
+      "version": "0.2.0",
+      "last_review": "2026-11-22"
+    },
+    {
+      "id": "B002-TOKEN_DOMAIN",
+      "title": "Domain-specific vocabulary",
+      "abbr": null,
+      "definition_ru": "технические термины могут дробиться на дополнительные токены, что отражается на стоимости и качестве",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH03",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          201,
+          202
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-VOCABULARY"
+      ],
+      "owner": "ALINA",
+      "version": "0.2.0",
+      "last_review": "2026-11-22"
+    },
+    {
+      "id": "B002-EMBED_RESIZE",
+      "title": "Token embedding resize",
+      "abbr": null,
+      "definition_ru": "после добавления токенов меняется размер таблицы представлений; новые векторы требуют обучения",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH03",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          201,
+          202
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-TOKEN_DOMAIN"
+      ],
+      "owner": "ALINA",
+      "version": "0.2.0",
+      "last_review": "2026-11-22"
+    },
+    {
+      "id": "B002-BYTE_MODELS",
+      "title": "Byte and character models",
+      "abbr": null,
+      "definition_ru": "исследованные автором примеры CANINE, ByT5, Charformer без обычной субсловной схемы",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH03",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          185,
+          186
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 3,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-TOKENIZATION"
+      ],
+      "owner": "ALINA",
+      "version": "0.2.0",
+      "last_review": "2026-11-22"
+    },
+    {
+      "id": "B002-GLITCH_TOKEN",
+      "title": "Undertrained token",
+      "abbr": null,
+      "definition_ru": "редкий элемент словаря, чьё представление могло получить недостаточно тренировочного сигнала",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH03",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          197,
+          198
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial for agent utility; not probability",
+        "confidence": 0.95,
+        "confidence_scale": "0..1 evidence coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-VOCABULARY"
+      ],
+      "owner": "ALINA",
+      "version": "0.2.0",
+      "last_review": "2026-11-22"
     }
   ],
   "edges": [
@@ -2263,6 +2808,318 @@
       "type": "REQUIRES_KNOWLEDGE",
       "weight": 0.9,
       "weight_reason": "FATHER role assignment; proposed",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-SUBWORD",
+      "to": "B002-TOKENIZATION",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relevance; not measured correlation",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-TOKEN_ID",
+      "to": "B002-TOKEN",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relevance; not measured correlation",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-OOV",
+      "to": "B002-VOCABULARY",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relevance; not measured correlation",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-VOCAB_SIZE",
+      "to": "B002-VOCABULARY",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relevance; not measured correlation",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-NORMALIZATION",
+      "to": "B002-TOKENIZATION",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relevance; not measured correlation",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-PRETOKENIZATION",
+      "to": "B002-NORMALIZATION",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relevance; not measured correlation",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-BPE",
+      "to": "B002-TOKENIZATION",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relevance; not measured correlation",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-BYTE_BPE",
+      "to": "B002-BPE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relevance; not measured correlation",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-WORDPIECE",
+      "to": "B002-BPE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relevance; not measured correlation",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-UNIGRAM",
+      "to": "B002-TOKENIZATION",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relevance; not measured correlation",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-POSTPROCESSING",
+      "to": "B002-TOKENIZATION",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relevance; not measured correlation",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-SPECIAL_TOKEN",
+      "to": "B002-POSTPROCESSING",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relevance; not measured correlation",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-FERTILITY",
+      "to": "B002-TOKENIZATION",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relevance; not measured correlation",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-PARITY",
+      "to": "B002-FERTILITY",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relevance; not measured correlation",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-TOKEN_DOMAIN",
+      "to": "B002-VOCABULARY",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relevance; not measured correlation",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-EMBED_RESIZE",
+      "to": "B002-TOKEN_DOMAIN",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relevance; not measured correlation",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-BYTE_MODELS",
+      "to": "B002-TOKENIZATION",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relevance; not measured correlation",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-GLITCH_TOKEN",
+      "to": "B002-VOCABULARY",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relevance; not measured correlation",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_KNOWLEDGE",
+      "to": "B002-NORMALIZATION",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role assignment",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_KNOWLEDGE",
+      "to": "B002-SPECIAL_TOKEN",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role assignment",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_KNOWLEDGE",
+      "to": "B002-TOKEN_DOMAIN",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role assignment",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_CURRICULUM",
+      "to": "B002-BPE",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role assignment",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_CURRICULUM",
+      "to": "B002-WORDPIECE",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role assignment",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_CURRICULUM",
+      "to": "B002-FERTILITY",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role assignment",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_CURRICULUM",
+      "to": "B002-PARITY",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role assignment",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ML_ENGINEER",
+      "to": "B002-BPE",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role assignment",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ML_ENGINEER",
+      "to": "B002-WORDPIECE",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role assignment",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ML_ENGINEER",
+      "to": "B002-UNIGRAM",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role assignment",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ML_ENGINEER",
+      "to": "B002-VOCAB_SIZE",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role assignment",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ML_ENGINEER",
+      "to": "B002-EMBED_RESIZE",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role assignment",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SECURITY",
+      "to": "B002-SPECIAL_TOKEN",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role assignment",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SECURITY",
+      "to": "B002-NORMALIZATION",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role assignment",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-POLYGON",
+      "to": "B002-FERTILITY",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role assignment",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-POLYGON",
+      "to": "B002-PARITY",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role assignment",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-POLYGON",
+      "to": "B002-GLITCH_TOKEN",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role assignment",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SYSTEM_ARCHITECT",
+      "to": "B002-VOCAB_SIZE",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role assignment",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SYSTEM_ARCHITECT",
+      "to": "B002-FERTILITY",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role assignment",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SYSTEM_ARCHITECT",
+      "to": "B002-PARITY",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role assignment",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SYSTEM_ARCHITECT",
+      "to": "B002-TOKEN_DOMAIN",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "FATHER role assignment",
       "status": "PROPOSED"
     }
   ]

@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.2.0",
   "status": "DESIGNED_NOT_RUN",
   "algorithms": [
     {
@@ -137,6 +137,54 @@
       ],
       "status": "DESIGNED_NOT_RUN",
       "kind": "FATHER_EXTENSION_NOT_DIRECT_BOOK_ALGORITHM"
+    },
+    {
+      "id": "ALG-B002-BPE",
+      "name": "Учебный BPE: частотные слияния",
+      "nodes": [
+        "bpe",
+        "subword",
+        "vocabulary"
+      ],
+      "steps": [
+        "Normalize and pretokenize example corpus",
+        "Initialize individual character tokens",
+        "Count adjacent pairs weighted by sample frequency",
+        "Choose most frequent pair with deterministic tie-break",
+        "Merge occurrences and repeat until vocabulary target",
+        "On inference apply saved merges in learned order"
+      ],
+      "source_pages": [
+        190,
+        194
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "SOURCE_DERIVED_TEACHING_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-TOKENIZER-AUDIT",
+      "name": "Сравнение токенизаторов для ролей ALINA",
+      "nodes": [
+        "tokenization",
+        "fertility",
+        "parity",
+        "token_domain"
+      ],
+      "steps": [
+        "Pin exact tokenizer and model revision",
+        "Curate equivalent RU/EN and domain-specific text samples",
+        "Count raw words and actual model tokens",
+        "Compute fertility and translation-pair parity",
+        "Check special-token and Unicode handling",
+        "Measure cost and retrieval chunk boundaries",
+        "Publish experiment and warnings"
+      ],
+      "source_pages": [
+        200,
+        202
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
     }
   ]
 }

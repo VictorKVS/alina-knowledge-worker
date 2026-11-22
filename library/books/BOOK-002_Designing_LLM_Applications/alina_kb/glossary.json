@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.2.0",
   "source_id": "SRC-BOOK002-PRIMARY",
   "terms": [
     {
@@ -623,6 +623,240 @@
       "pdf_pages": [
         93,
         95
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-SUBWORD",
+      "term": "Subword",
+      "abbreviation": null,
+      "definition_ru": "часть слова, используемая как единица токенизации",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH03",
+      "pdf_pages": [
+        169,
+        176
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-TOKEN_ID",
+      "term": "Token ID",
+      "abbreviation": null,
+      "definition_ru": "числовой идентификатор токена в словаре модели",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH03",
+      "pdf_pages": [
+        169,
+        170
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-OOV",
+      "term": "Out-of-vocabulary",
+      "abbreviation": "OOV",
+      "definition_ru": "элемент, отсутствующий в словаре токенизатора",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH03",
+      "pdf_pages": [
+        174,
+        176
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-VOCAB_SIZE",
+      "term": "Vocabulary size",
+      "abbreviation": null,
+      "definition_ru": "число единиц словаря и компромисс между сжатием и редкими токенами",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH03",
+      "pdf_pages": [
+        177,
+        178
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-NORMALIZATION",
+      "term": "Text normalization",
+      "abbreviation": null,
+      "definition_ru": "предобработка формы текста: регистр, Unicode, диакритика",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH03",
+      "pdf_pages": [
+        186,
+        188
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-PRETOKENIZATION",
+      "term": "Pre-tokenization",
+      "abbreviation": null,
+      "definition_ru": "предварительное разбиение на элементы перед основным токенизатором",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH03",
+      "pdf_pages": [
+        188,
+        190
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-BPE",
+      "term": "Byte Pair Encoding",
+      "abbreviation": "BPE",
+      "definition_ru": "обучение словаря объединением самых частых соседних пар элементов",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH03",
+      "pdf_pages": [
+        190,
+        194
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-BYTE_BPE",
+      "term": "Byte-level BPE",
+      "abbreviation": "byte-BPE",
+      "definition_ru": "вариант BPE на байтовых исходных элементах, покрывающий Unicode без неизвестного символа",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH03",
+      "pdf_pages": [
+        193,
+        194
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-WORDPIECE",
+      "term": "WordPiece",
+      "abbreviation": null,
+      "definition_ru": "подход к субсловной токенизации с выбором объединений на основе нормализованной частоты",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH03",
+      "pdf_pages": [
+        194,
+        196
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-UNIGRAM",
+      "term": "Unigram LM",
+      "abbreviation": null,
+      "definition_ru": "упомянутый в главе вероятностный подход к субсловной токенизации; подробный алгоритм в изученном разделе не раскрыт",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH03",
+      "pdf_pages": [
+        190,
+        190
+      ],
+      "importance": 3
+    },
+    {
+      "id": "B002-POSTPROCESSING",
+      "term": "Postprocessing",
+      "abbreviation": null,
+      "definition_ru": "добавление специальных маркеров после токенизации",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH03",
+      "pdf_pages": [
+        196,
+        199
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-SPECIAL_TOKEN",
+      "term": "Special tokens",
+      "abbreviation": null,
+      "definition_ru": "служебные токены модели: завершение, заполнение, разделители и маркеры инструментов",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH03",
+      "pdf_pages": [
+        196,
+        199
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-FERTILITY",
+      "term": "Fertility",
+      "abbreviation": null,
+      "definition_ru": "среднее число токенов на слово для заданного корпуса",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH03",
+      "pdf_pages": [
+        200,
+        200
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-PARITY",
+      "term": "Tokenizer parity",
+      "abbreviation": null,
+      "definition_ru": "отношение чисел токенов для эквивалентного текста на двух языках",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH03",
+      "pdf_pages": [
+        200,
+        201
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-TOKEN_DOMAIN",
+      "term": "Domain-specific vocabulary",
+      "abbreviation": null,
+      "definition_ru": "технические термины могут дробиться на дополнительные токены, что отражается на стоимости и качестве",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH03",
+      "pdf_pages": [
+        201,
+        202
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-EMBED_RESIZE",
+      "term": "Token embedding resize",
+      "abbreviation": null,
+      "definition_ru": "после добавления токенов меняется размер таблицы представлений; новые векторы требуют обучения",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH03",
+      "pdf_pages": [
+        201,
+        202
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-BYTE_MODELS",
+      "term": "Byte and character models",
+      "abbreviation": null,
+      "definition_ru": "исследованные автором примеры CANINE, ByT5, Charformer без обычной субсловной схемы",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH03",
+      "pdf_pages": [
+        185,
+        186
+      ],
+      "importance": 3
+    },
+    {
+      "id": "B002-GLITCH_TOKEN",
+      "term": "Undertrained token",
+      "abbreviation": null,
+      "definition_ru": "редкий элемент словаря, чьё представление могло получить недостаточно тренировочного сигнала",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH03",
+      "pdf_pages": [
+        197,
+        198
       ],
       "importance": 4
     }
