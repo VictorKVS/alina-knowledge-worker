@@ -1,0 +1,57 @@
+{
+  "book_id": "BOOK-003",
+  "library_id": "LIB-0004",
+  "source": "PacktPublishing/Building-Complex-Multi-Agent-Systems-Using-Pattern-Prompting/Topologos-Manual.md",
+  "source_version": "v5",
+  "status": "DESIGNED_NOT_RUN",
+  "tasks": [
+    {
+      "question": "Что отличается между pattern и topology?",
+      "gold": "Pattern определяет логику взаимодействия агентов, topology — конфигурацию RabbitMQ и инфраструктурные правила.",
+      "typical_error": "Путать порядок работ с именованием очередей.",
+      "id": "TP-L1",
+      "verification": "Объяснение и проверяемый артефакт",
+      "execution": "NOT_RUN"
+    },
+    {
+      "question": "Какие три операции доступны на двух уровнях?",
+      "gold": "Compose, extend, define; как для patterns, так и для topology.",
+      "typical_error": "Считать define обычным исправлением одного поля.",
+      "id": "TP-L2",
+      "verification": "Объяснение и проверяемый артефакт",
+      "execution": "NOT_RUN"
+    },
+    {
+      "question": "Назови четыре фазы метода.",
+      "gold": "Clarify, Pattern Analysis, Iterative Approval, Final Topology Output.",
+      "typical_error": "Пропуск явного утверждения решения.",
+      "id": "TP-L3",
+      "verification": "Объяснение и проверяемый артефакт",
+      "execution": "NOT_RUN"
+    },
+    {
+      "question": "После crash worker сообщение пришло повторно. Как предотвратить повторное исполнение операции?",
+      "gold": "Идемпотентность, отдельный action_id, журнал исполненных действий и проверка перед побочным эффектом.",
+      "typical_error": "Объявить RabbitMQ exactly-once.",
+      "id": "TP-L4",
+      "verification": "Объяснение и проверяемый артефакт",
+      "execution": "NOT_RUN"
+    },
+    {
+      "question": "Что проверяет архитектор перед выбором брокера?",
+      "gold": "Потребности в асинхронности, независимости, отказоустойчивости, безопасности, стоимость и сложность.",
+      "typical_error": "Применять RabbitMQ к любой задаче без альтернатив.",
+      "id": "TP-L5",
+      "verification": "Объяснение и проверяемый артефакт",
+      "execution": "NOT_RUN"
+    },
+    {
+      "question": "Что нужно сделать с /deploy kubernetes?",
+      "gold": "Рассматривать IaC как черновик, проверить версию провайдера/образа, секреты, настройки безопасности, провести интеграционные и отказоустойчивые испытания.",
+      "typical_error": "Называть сгенерированный YAML автоматически рабочим и безопасным.",
+      "id": "TP-L6",
+      "verification": "Объяснение и проверяемый артефакт",
+      "execution": "NOT_RUN"
+    }
+  ]
+}
