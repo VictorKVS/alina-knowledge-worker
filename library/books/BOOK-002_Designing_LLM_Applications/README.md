@@ -18,7 +18,7 @@
 | 3 | Vocabulary and Tokenization | PDF 168–203 | [Глава 3: изучена](chapters/CH03_RU.md) |
 | 4 | Architectures and Learning Objectives | PDF 204–262 | [Глава 4: изучена](chapters/CH04_RU.md) |
 | 5 | Adapting LLMs to Your Use Case | PDF 264–328 | [Глава 5: изучена](chapters/CH05_RU.md) |
-| 6 | Fine-Tuning | PDF 329–377 | Ожидает изучения первоисточника |
+| 6 | Fine-Tuning | PDF 329–377 | [Глава 6: изучена](chapters/CH06_RU.md) |
 | 7 | Advanced Fine-Tuning Techniques | PDF 378–413 | Ожидает изучения первоисточника |
 | 8 | Alignment Training and Reasoning | PDF 414–458 | Ожидает изучения первоисточника |
 | 9 | Inference Optimization | PDF 459–491 | Ожидает изучения первоисточника |
@@ -51,7 +51,7 @@
 
 ## ALINA — база знаний по книге (единый граф)
 
-**[Открыть ALINA Knowledge Core v0.1.0](alina_kb/README.md)** — 120 узлов, 234 связи, словарь, веса, алгоритмы, ролевые представления, правила версионирования.
+**[Открыть ALINA Knowledge Core v0.1.0](alina_kb/README.md)** — 145 узлов, 280 связей, словарь, веса, алгоритмы, ролевые представления, правила версионирования.
 
 - [Graph JSON](alina_kb/knowledge_graph.json) — узлы и связи
 - [Glossary](alina_kb/glossary.json) — словарь терминов и сокращений
@@ -60,7 +60,7 @@
 - [Update rules](alina_kb/schema_policy.md) — обновление после каждой главы
 - [Validator](alina_kb/validate_graph.py) — структурная проверка
 
-**Статус:** составлено по главам 1–5 оригинала; главы 6–13 ещё не импортированы. База на GitHub пока машиночитаемая, но не развёрнута как сервер БД и не подключена к runtime ALINA.
+**Статус:** составлено по главам 1–6 оригинала; главы 7–13 ещё не импортированы. База на GitHub пока машиночитаемая, но не развёрнута как сервер БД и не подключена к runtime ALINA.
 
 ## Качество обучения моделей: алгоритмы и чек-листы
 
@@ -98,4 +98,10 @@
 
 [Учебный разбор по оригиналу](chapters/CH05_RU.md) · [Практикум ALINA GPT Runtime](practicum/CH05_MODEL_SELECTION_RU.md) · [Демонстрационный код декодирования](alina_kb/labs/ch05_decode.py) · [Задания и эталоны](learning/CH05_learning_package.json)
 
-Граф ALINA v0.4: 120 узлов, 234 связи, 14 алгоритмов, по изученным главам 1–5. Реальные испытания моделей и POLYGON отдельно не проводились.
+Граф ALINA v0.4: 120 узлов, 234 связи, 17 алгоритмов, по изученным главам 1–5. Реальные испытания моделей и POLYGON отдельно не проводились.
+
+## Глава 6 — fine-tuning и производство проверенных обучающих примеров
+
+[Разбор первоисточника](chapters/CH06_RU.md) · [Практикум Dataset Factory](practicum/CH06_FINETUNING_DATASET_LAB_RU.md) · [Учебные примеры с обозначенными статусами](learning/CH06_dataset_seed_examples.json) · [Вопросы для ALINA](learning/CH06_learning_package.json)
+
+ALINA Knowledge Core v0.5.0: 145 узлов, 280 связей, 17 описанных алгоритмов, главы 1–6 изучены по оригиналу. Fine-tuning не выполнялся; примеры без самостоятельного evidence не квалифицированы.
