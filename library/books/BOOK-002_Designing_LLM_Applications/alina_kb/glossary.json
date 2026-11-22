@@ -1,5 +1,5 @@
 {
-  "version": "0.4.0",
+  "version": "0.5.0",
   "source_id": "SRC-BOOK002-PRIMARY",
   "terms": [
     {
@@ -1561,6 +1561,331 @@
         326
       ],
       "importance": 3
+    },
+    {
+      "id": "B002-FINE_TUNING",
+      "term": "Fine-tuning",
+      "abbreviation": null,
+      "definition_ru": "дополнительное обучение модели на задачах с обновлением обучаемых параметров",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "pdf_pages": [
+        329,
+        331
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-SUPERVISED_FINETUNE",
+      "term": "Supervised fine-tuning",
+      "abbreviation": null,
+      "definition_ru": "обучение на примерах инструкций, входов и правильных выходов",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "pdf_pages": [
+        332,
+        335
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-TRAINING_ARGUMENTS",
+      "term": "TrainingArguments",
+      "abbreviation": null,
+      "definition_ru": "настройки процедуры обучения и её оптимизации",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "pdf_pages": [
+        334,
+        335
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-OPTIMIZER",
+      "term": "Optimizer",
+      "abbreviation": null,
+      "definition_ru": "алгоритм обновления параметров по градиентам",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "pdf_pages": [
+        335,
+        341
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-ADAMW",
+      "term": "AdamW",
+      "abbreviation": "ADAMW",
+      "definition_ru": "адаптивный оптимизатор с регуляризацией weight decay",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "pdf_pages": [
+        335,
+        343
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-LEARNING_RATE",
+      "term": "Learning rate",
+      "abbreviation": null,
+      "definition_ru": "величина шага обновления обучаемых параметров",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "pdf_pages": [
+        339,
+        343
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-LR_SCHEDULER",
+      "term": "Learning rate scheduler",
+      "abbreviation": null,
+      "definition_ru": "расписание изменения темпа обучения, в том числе warmup/cosine/linear",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "pdf_pages": [
+        341,
+        343
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-GRAD_CHECKPOINT",
+      "term": "Gradient checkpointing",
+      "abbreviation": null,
+      "definition_ru": "уменьшение памяти за счёт повторного вычисления активаций",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "pdf_pages": [
+        344,
+        345
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-GRAD_ACCUM",
+      "term": "Gradient accumulation",
+      "abbreviation": null,
+      "definition_ru": "накопление градиентов нескольких mini-batches до обновления весов",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "pdf_pages": [
+        344,
+        345
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-LABEL_SMOOTHING",
+      "term": "Label smoothing",
+      "abbreviation": null,
+      "definition_ru": "смягчение целевых меток для уменьшения переуверенности и переобучения",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "pdf_pages": [
+        346,
+        349
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-CALIBRATION",
+      "term": "Calibration",
+      "abbreviation": null,
+      "definition_ru": "соответствие вероятностных оценок фактической доле верных решений",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "pdf_pages": [
+        346,
+        347
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-NEFTUNE",
+      "term": "NEFTune",
+      "abbreviation": "NEFTUNE",
+      "definition_ru": "регуляризация через шум в embeddings во время обучения",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "pdf_pages": [
+        348,
+        349
+      ],
+      "importance": 3
+    },
+    {
+      "id": "B002-BATCH_SIZE",
+      "term": "Batch size",
+      "abbreviation": null,
+      "definition_ru": "количество обучающих примеров в одном пакете",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "pdf_pages": [
+        350,
+        352
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-PEFT",
+      "term": "Parameter-efficient fine-tuning",
+      "abbreviation": "PEFT",
+      "definition_ru": "дообучение ограниченного набора параметров вместо всех весов",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "pdf_pages": [
+        352,
+        355
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-LORA",
+      "term": "LoRA",
+      "abbreviation": "LORA",
+      "definition_ru": "low-rank adaptation: параметроэффективное дообучение посредством низкоранговых изменений",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "pdf_pages": [
+        353,
+        355
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-QLORA",
+      "term": "Quantized LoRA",
+      "abbreviation": "QLORA",
+      "definition_ru": "параметроэффективная адаптация с квантованной основной моделью",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "pdf_pages": [
+        354,
+        359
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-SFT_DATASET",
+      "term": "Instruction-tuning dataset",
+      "abbreviation": null,
+      "definition_ru": "набор проверенных примеров инструкция-вход-ответ для обучения",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "pdf_pages": [
+        360,
+        364
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-PUBLIC_INSTRUCTION_DATA",
+      "term": "Public instruction datasets",
+      "abbreviation": null,
+      "definition_ru": "готовые корпуса инструкций, требующие лицензирования и проверки применимости",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "pdf_pages": [
+        364,
+        370
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-FLAN_INSTRUCTION",
+      "term": "FLAN instruction collection",
+      "abbreviation": null,
+      "definition_ru": "коллекция instruction-tuning примеров с заданиями и шаблонами",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "pdf_pages": [
+        366,
+        370
+      ],
+      "importance": 3
+    },
+    {
+      "id": "B002-SUPERNATURAL_INSTRUCTIONS",
+      "term": "Super-NaturalInstructions",
+      "abbreviation": null,
+      "definition_ru": "формат с определениями задач, положительными и отрицательными примерами",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "pdf_pages": [
+        370,
+        372
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-SELF_INSTRUCT",
+      "term": "Self-Instruct",
+      "abbreviation": null,
+      "definition_ru": "синтез новых инструкций и примеров из набора качественных затравок",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "pdf_pages": [
+        372,
+        374
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-OUTPUT_FIRST",
+      "term": "Output-first sampling",
+      "abbreviation": null,
+      "definition_ru": "сначала выбрать целевую метку, затем сгенерировать вход для неё во избежание дисбаланса",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "pdf_pages": [
+        372,
+        374
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-EVOL_INSTRUCT",
+      "term": "Evol-Instruct",
+      "abbreviation": null,
+      "definition_ru": "управляемое расширение сложности и разнообразия синтетических заданий с фильтрацией",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "pdf_pages": [
+        374,
+        375
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-ABLATION_STUDY",
+      "term": "Ablation study",
+      "abbreviation": null,
+      "definition_ru": "эксперимент по исключению одного компонента для измерения его вклада",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "pdf_pages": [
+        359,
+        360
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-REGRESSION_RISK",
+      "term": "Fine-tuning regression risk",
+      "abbreviation": null,
+      "definition_ru": "ухудшение прежних возможностей модели после изменения параметров",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "pdf_pages": [
+        331,
+        331
+      ],
+      "importance": 5
     }
   ]
 }

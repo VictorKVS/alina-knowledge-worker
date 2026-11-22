@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "graph_id": "ALINA-BOOK-002-KNOWLEDGE-GRAPH",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "created": "2026-11-22",
   "source": {
     "id": "SRC-BOOK002-PRIMARY",
@@ -37,6 +37,10 @@
       "CH05": [
         264,
         328
+      ],
+      "CH06": [
+        329,
+        377
       ]
     },
     "reviewed_chapters": [
@@ -44,9 +48,10 @@
       "CH02",
       "CH03",
       "CH04",
-      "CH05"
+      "CH05",
+      "CH06"
     ],
-    "remaining_chapters": "CH06-CH13 not yet reviewed"
+    "remaining_chapters": "CH07-CH13 not yet reviewed"
   },
   "model": {
     "description": "Directed knowledge/competency graph",
@@ -3669,6 +3674,756 @@
       "owner": "ALINA",
       "version": "0.4.0",
       "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-FINE_TUNING",
+      "title": "Fine-tuning",
+      "abbr": null,
+      "definition_ru": "дополнительное обучение модели на задачах с обновлением обучаемых параметров",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          329,
+          331
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-INSTRUCT_TUNING"
+      ],
+      "owner": "ALINA",
+      "version": "0.5.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-SUPERVISED_FINETUNE",
+      "title": "Supervised fine-tuning",
+      "abbr": null,
+      "definition_ru": "обучение на примерах инструкций, входов и правильных выходов",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          332,
+          335
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-FINE_TUNING"
+      ],
+      "owner": "ALINA",
+      "version": "0.5.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-TRAINING_ARGUMENTS",
+      "title": "TrainingArguments",
+      "abbr": null,
+      "definition_ru": "настройки процедуры обучения и её оптимизации",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          334,
+          335
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-FINE_TUNING"
+      ],
+      "owner": "ALINA",
+      "version": "0.5.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-OPTIMIZER",
+      "title": "Optimizer",
+      "abbr": null,
+      "definition_ru": "алгоритм обновления параметров по градиентам",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          335,
+          341
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-BACKPROP"
+      ],
+      "owner": "ALINA",
+      "version": "0.5.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-ADAMW",
+      "title": "AdamW",
+      "abbr": "ADAMW",
+      "definition_ru": "адаптивный оптимизатор с регуляризацией weight decay",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          335,
+          343
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-OPTIMIZER"
+      ],
+      "owner": "ALINA",
+      "version": "0.5.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-LEARNING_RATE",
+      "title": "Learning rate",
+      "abbr": null,
+      "definition_ru": "величина шага обновления обучаемых параметров",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          339,
+          343
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-OPTIMIZER"
+      ],
+      "owner": "ALINA",
+      "version": "0.5.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-LR_SCHEDULER",
+      "title": "Learning rate scheduler",
+      "abbr": null,
+      "definition_ru": "расписание изменения темпа обучения, в том числе warmup/cosine/linear",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          341,
+          343
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-LEARNING_RATE"
+      ],
+      "owner": "ALINA",
+      "version": "0.5.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-GRAD_CHECKPOINT",
+      "title": "Gradient checkpointing",
+      "abbr": null,
+      "definition_ru": "уменьшение памяти за счёт повторного вычисления активаций",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          344,
+          345
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-FINE_TUNING"
+      ],
+      "owner": "ALINA",
+      "version": "0.5.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-GRAD_ACCUM",
+      "title": "Gradient accumulation",
+      "abbr": null,
+      "definition_ru": "накопление градиентов нескольких mini-batches до обновления весов",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          344,
+          345
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-OPTIMIZER"
+      ],
+      "owner": "ALINA",
+      "version": "0.5.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-LABEL_SMOOTHING",
+      "title": "Label smoothing",
+      "abbr": null,
+      "definition_ru": "смягчение целевых меток для уменьшения переуверенности и переобучения",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          346,
+          349
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-CROSS_ENTROPY"
+      ],
+      "owner": "ALINA",
+      "version": "0.5.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-CALIBRATION",
+      "title": "Calibration",
+      "abbr": null,
+      "definition_ru": "соответствие вероятностных оценок фактической доле верных решений",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          346,
+          347
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-EXTRINSIC_EVAL"
+      ],
+      "owner": "ALINA",
+      "version": "0.5.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-NEFTUNE",
+      "title": "NEFTune",
+      "abbr": "NEFTUNE",
+      "definition_ru": "регуляризация через шум в embeddings во время обучения",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          348,
+          349
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 3,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-EMBEDDING_LAYER"
+      ],
+      "owner": "ALINA",
+      "version": "0.5.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-BATCH_SIZE",
+      "title": "Batch size",
+      "abbr": null,
+      "definition_ru": "количество обучающих примеров в одном пакете",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          350,
+          352
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-FINE_TUNING"
+      ],
+      "owner": "ALINA",
+      "version": "0.5.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-PEFT",
+      "title": "Parameter-efficient fine-tuning",
+      "abbr": "PEFT",
+      "definition_ru": "дообучение ограниченного набора параметров вместо всех весов",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          352,
+          355
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-FINE_TUNING"
+      ],
+      "owner": "ALINA",
+      "version": "0.5.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-LORA",
+      "title": "LoRA",
+      "abbr": "LORA",
+      "definition_ru": "low-rank adaptation: параметроэффективное дообучение посредством низкоранговых изменений",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          353,
+          355
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-PEFT"
+      ],
+      "owner": "ALINA",
+      "version": "0.5.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-QLORA",
+      "title": "Quantized LoRA",
+      "abbr": "QLORA",
+      "definition_ru": "параметроэффективная адаптация с квантованной основной моделью",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          354,
+          359
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-LORA"
+      ],
+      "owner": "ALINA",
+      "version": "0.5.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-SFT_DATASET",
+      "title": "Instruction-tuning dataset",
+      "abbr": null,
+      "definition_ru": "набор проверенных примеров инструкция-вход-ответ для обучения",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          360,
+          364
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-SUPERVISED_FINETUNE"
+      ],
+      "owner": "ALINA",
+      "version": "0.5.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-PUBLIC_INSTRUCTION_DATA",
+      "title": "Public instruction datasets",
+      "abbr": null,
+      "definition_ru": "готовые корпуса инструкций, требующие лицензирования и проверки применимости",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          364,
+          370
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-SFT_DATASET"
+      ],
+      "owner": "ALINA",
+      "version": "0.5.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-FLAN_INSTRUCTION",
+      "title": "FLAN instruction collection",
+      "abbr": null,
+      "definition_ru": "коллекция instruction-tuning примеров с заданиями и шаблонами",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          366,
+          370
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 3,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-SFT_DATASET"
+      ],
+      "owner": "ALINA",
+      "version": "0.5.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-SUPERNATURAL_INSTRUCTIONS",
+      "title": "Super-NaturalInstructions",
+      "abbr": null,
+      "definition_ru": "формат с определениями задач, положительными и отрицательными примерами",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          370,
+          372
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-SFT_DATASET"
+      ],
+      "owner": "ALINA",
+      "version": "0.5.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-SELF_INSTRUCT",
+      "title": "Self-Instruct",
+      "abbr": null,
+      "definition_ru": "синтез новых инструкций и примеров из набора качественных затравок",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          372,
+          374
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-SFT_DATASET"
+      ],
+      "owner": "ALINA",
+      "version": "0.5.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-OUTPUT_FIRST",
+      "title": "Output-first sampling",
+      "abbr": null,
+      "definition_ru": "сначала выбрать целевую метку, затем сгенерировать вход для неё во избежание дисбаланса",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          372,
+          374
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-SELF_INSTRUCT"
+      ],
+      "owner": "ALINA",
+      "version": "0.5.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-EVOL_INSTRUCT",
+      "title": "Evol-Instruct",
+      "abbr": null,
+      "definition_ru": "управляемое расширение сложности и разнообразия синтетических заданий с фильтрацией",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          374,
+          375
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-SELF_INSTRUCT"
+      ],
+      "owner": "ALINA",
+      "version": "0.5.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-ABLATION_STUDY",
+      "title": "Ablation study",
+      "abbr": null,
+      "definition_ru": "эксперимент по исключению одного компонента для измерения его вклада",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          359,
+          360
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-EXTRINSIC_EVAL"
+      ],
+      "owner": "ALINA",
+      "version": "0.5.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-REGRESSION_RISK",
+      "title": "Fine-tuning regression risk",
+      "abbr": null,
+      "definition_ru": "ухудшение прежних возможностей модели после изменения параметров",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          331,
+          331
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-FINE_TUNING"
+      ],
+      "owner": "ALINA",
+      "version": "0.5.0",
+      "last_review": "2026-11-23"
     }
   ],
   "edges": [
@@ -5542,6 +6297,374 @@
       "type": "REQUIRES_KNOWLEDGE",
       "weight": 0.9,
       "weight_reason": "FATHER role relevance proposal",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-FINE_TUNING",
+      "to": "B002-INSTRUCT_TUNING",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relevance, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-SUPERVISED_FINETUNE",
+      "to": "B002-FINE_TUNING",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relevance, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-TRAINING_ARGUMENTS",
+      "to": "B002-FINE_TUNING",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relevance, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-OPTIMIZER",
+      "to": "B002-BACKPROP",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relevance, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-ADAMW",
+      "to": "B002-OPTIMIZER",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relevance, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-LEARNING_RATE",
+      "to": "B002-OPTIMIZER",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relevance, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-LR_SCHEDULER",
+      "to": "B002-LEARNING_RATE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relevance, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-GRAD_CHECKPOINT",
+      "to": "B002-FINE_TUNING",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relevance, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-GRAD_ACCUM",
+      "to": "B002-OPTIMIZER",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relevance, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-LABEL_SMOOTHING",
+      "to": "B002-CROSS_ENTROPY",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relevance, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-CALIBRATION",
+      "to": "B002-EXTRINSIC_EVAL",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relevance, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-NEFTUNE",
+      "to": "B002-EMBEDDING_LAYER",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relevance, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-BATCH_SIZE",
+      "to": "B002-FINE_TUNING",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relevance, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-PEFT",
+      "to": "B002-FINE_TUNING",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relevance, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-LORA",
+      "to": "B002-PEFT",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relevance, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-QLORA",
+      "to": "B002-LORA",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relevance, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-SFT_DATASET",
+      "to": "B002-SUPERVISED_FINETUNE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relevance, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-PUBLIC_INSTRUCTION_DATA",
+      "to": "B002-SFT_DATASET",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relevance, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-FLAN_INSTRUCTION",
+      "to": "B002-SFT_DATASET",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relevance, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-SUPERNATURAL_INSTRUCTIONS",
+      "to": "B002-SFT_DATASET",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relevance, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-SELF_INSTRUCT",
+      "to": "B002-SFT_DATASET",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relevance, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-OUTPUT_FIRST",
+      "to": "B002-SELF_INSTRUCT",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relevance, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-EVOL_INSTRUCT",
+      "to": "B002-SELF_INSTRUCT",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relevance, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-ABLATION_STUDY",
+      "to": "B002-EXTRINSIC_EVAL",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relevance, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-REGRESSION_RISK",
+      "to": "B002-FINE_TUNING",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relevance, not statistical causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_KNOWLEDGE",
+      "to": "B002-SFT_DATASET",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Curriculum assignment proposal",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_KNOWLEDGE",
+      "to": "B002-EVOL_INSTRUCT",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Curriculum assignment proposal",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_KNOWLEDGE",
+      "to": "B002-SELF_INSTRUCT",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Curriculum assignment proposal",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_CURRICULUM",
+      "to": "B002-SFT_DATASET",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Curriculum assignment proposal",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_CURRICULUM",
+      "to": "B002-SUPERNATURAL_INSTRUCTIONS",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Curriculum assignment proposal",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_CURRICULUM",
+      "to": "B002-OUTPUT_FIRST",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Curriculum assignment proposal",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ML_ENGINEER",
+      "to": "B002-FINE_TUNING",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Curriculum assignment proposal",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ML_ENGINEER",
+      "to": "B002-LEARNING_RATE",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Curriculum assignment proposal",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ML_ENGINEER",
+      "to": "B002-OPTIMIZER",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Curriculum assignment proposal",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ML_ENGINEER",
+      "to": "B002-PEFT",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Curriculum assignment proposal",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ML_ENGINEER",
+      "to": "B002-LORA",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Curriculum assignment proposal",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ML_ENGINEER",
+      "to": "B002-QLORA",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Curriculum assignment proposal",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SECURITY",
+      "to": "B002-REGRESSION_RISK",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Curriculum assignment proposal",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SECURITY",
+      "to": "B002-PUBLIC_INSTRUCTION_DATA",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Curriculum assignment proposal",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-POLYGON",
+      "to": "B002-CALIBRATION",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Curriculum assignment proposal",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-POLYGON",
+      "to": "B002-ABLATION_STUDY",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Curriculum assignment proposal",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-POLYGON",
+      "to": "B002-REGRESSION_RISK",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Curriculum assignment proposal",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SYSTEM_ARCHITECT",
+      "to": "B002-FINE_TUNING",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Curriculum assignment proposal",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SYSTEM_ARCHITECT",
+      "to": "B002-PEFT",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Curriculum assignment proposal",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SYSTEM_ARCHITECT",
+      "to": "B002-REGRESSION_RISK",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Curriculum assignment proposal",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SYSTEM_ARCHITECT",
+      "to": "B002-GRAD_CHECKPOINT",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Curriculum assignment proposal",
       "status": "PROPOSED"
     }
   ]

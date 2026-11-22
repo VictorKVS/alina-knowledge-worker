@@ -1,5 +1,5 @@
 {
-  "version": "0.4.0",
+  "version": "0.5.0",
   "graph_id": "ALINA-BOOK-002-KNOWLEDGE-GRAPH",
   "views": [
     {
@@ -21,7 +21,10 @@
           "B002-DOMAIN_SPECIFIC_LANGUAGE",
           "B002-MODEL_SELECTION",
           "B002-STRUCTURED_OUTPUT",
-          "B002-JSON_SCHEMA_OUTPUT"
+          "B002-JSON_SCHEMA_OUTPUT",
+          "B002-SFT_DATASET",
+          "B002-EVOL_INSTRUCT",
+          "B002-SELF_INSTRUCT"
         ]
       },
       "note": "Read-only filtered view of shared graph; do not duplicate facts",
@@ -47,7 +50,10 @@
           "B002-MLM",
           "B002-INSTRUCT_TUNING",
           "B002-LLM_BENCHMARK",
-          "B002-SELF_CONSISTENCY"
+          "B002-SELF_CONSISTENCY",
+          "B002-SFT_DATASET",
+          "B002-SUPERNATURAL_INSTRUCTIONS",
+          "B002-OUTPUT_FIRST"
         ]
       },
       "note": "Read-only filtered view of shared graph; do not duplicate facts",
@@ -78,7 +84,13 @@
           "B002-MODEL_LICENSE",
           "B002-QUANTIZATION",
           "B002-INFERENCE",
-          "B002-TEMPERATURE"
+          "B002-TEMPERATURE",
+          "B002-FINE_TUNING",
+          "B002-LEARNING_RATE",
+          "B002-OPTIMIZER",
+          "B002-PEFT",
+          "B002-LORA",
+          "B002-QLORA"
         ]
       },
       "note": "Read-only filtered view of shared graph; do not duplicate facts",
@@ -99,7 +111,9 @@
           "B002-EXTRINSIC_EVAL",
           "B002-MODEL_LICENSE",
           "B002-CONSTRAINED_DECODING",
-          "B002-EVAL_CONTAMINATION"
+          "B002-EVAL_CONTAMINATION",
+          "B002-REGRESSION_RISK",
+          "B002-PUBLIC_INSTRUCTION_DATA"
         ]
       },
       "note": "Read-only filtered view of shared graph; do not duplicate facts",
@@ -123,7 +137,10 @@
           "B002-LLM_BENCHMARK",
           "B002-NONDETERMINISM",
           "B002-STRUCTURED_OUTPUT",
-          "B002-HELM"
+          "B002-HELM",
+          "B002-CALIBRATION",
+          "B002-ABLATION_STUDY",
+          "B002-REGRESSION_RISK"
         ]
       },
       "note": "Read-only filtered view of shared graph; do not duplicate facts",
@@ -150,7 +167,11 @@
           "B002-TPOT",
           "B002-LONG_CONTEXT",
           "B002-INFERENCE",
-          "B002-MODEL_LICENSE"
+          "B002-MODEL_LICENSE",
+          "B002-FINE_TUNING",
+          "B002-PEFT",
+          "B002-REGRESSION_RISK",
+          "B002-GRAD_CHECKPOINT"
         ]
       },
       "note": "Read-only filtered view of shared graph; do not duplicate facts",

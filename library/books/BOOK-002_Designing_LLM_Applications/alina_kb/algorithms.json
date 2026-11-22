@@ -1,5 +1,5 @@
 {
-  "version": "0.4.0",
+  "version": "0.5.0",
   "status": "DESIGNED_NOT_RUN",
   "algorithms": [
     {
@@ -327,6 +327,79 @@
       ],
       "status": "DESIGNED_NOT_RUN",
       "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-FINETUNE-DECISION",
+      "name": "Определение необходимости fine-tuning для агента",
+      "nodes": [
+        "fine_tuning",
+        "regression_risk",
+        "sft_dataset"
+      ],
+      "steps": [
+        "Reproduce and classify concrete failures",
+        "Check missing or stale source facts and RAG",
+        "Check prompt, tool, policy and algorithm baselines",
+        "Quantify residual learnable input-output mapping errors",
+        "Estimate rights, data volume, compute cost and privacy",
+        "Train only if feasible and better than frozen baseline on holdout",
+        "Test regression and independent release gates"
+      ],
+      "source_pages": [
+        329,
+        333
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-SYNTHETIC-DATA-QA",
+      "name": "Проверяемая генерация обучающих примеров",
+      "nodes": [
+        "self_instruct",
+        "output_first",
+        "evol_instruct",
+        "sft_dataset"
+      ],
+      "steps": [
+        "Construct high-quality manually verified seed samples",
+        "Use input-first and output-first label-aware generation",
+        "Evolve difficulty and topical breadth",
+        "Validate label via human/source evidence",
+        "Deduplicate and isolate by source group across train/test",
+        "Reject unlicensed, contaminated or uncertain cases",
+        "Freeze version and run independent regression"
+      ],
+      "source_pages": [
+        360,
+        375
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-FINETUNE-ABLATION",
+      "name": "Анализ влияния компонентов fine-tuning",
+      "nodes": [
+        "ablation_study",
+        "neftune",
+        "label_smoothing",
+        "calibration"
+      ],
+      "steps": [
+        "Fix data, model, optimizer and evaluation",
+        "Change exactly one component or hyperparameter at a time",
+        "Repeat runs when stochastic",
+        "Compare task metrics, calibration, memory and latency",
+        "Check unrelated capabilities and regressions",
+        "Archive evidence and decision"
+      ],
+      "source_pages": [
+        346,
+        360
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "SOURCE_DERIVED_TEACHING_ADAPTATION"
     }
   ]
 }
