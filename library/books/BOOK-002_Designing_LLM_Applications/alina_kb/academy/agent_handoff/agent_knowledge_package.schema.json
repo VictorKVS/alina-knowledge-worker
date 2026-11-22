@@ -1,0 +1,211 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ALINA AgentKnowledgePackage v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "package_id",
+    "version",
+    "task_id",
+    "agent_role",
+    "objective",
+    "handoff_status",
+    "knowledge_items",
+    "evidence_groups",
+    "source_decisions",
+    "constraints",
+    "unknowns",
+    "contradictions",
+    "glossary",
+    "algorithms",
+    "audit"
+  ],
+  "properties": {
+    "package_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "version": {
+      "type": "string"
+    },
+    "task_id": {
+      "type": "string"
+    },
+    "agent_role": {
+      "type": "string"
+    },
+    "objective": {
+      "type": "string"
+    },
+    "handoff_status": {
+      "enum": [
+        "READY",
+        "BLOCKED"
+      ]
+    },
+    "knowledge_items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "item_id",
+          "statement",
+          "source_ids",
+          "source_spans",
+          "confidence_note",
+          "valid_at"
+        ],
+        "properties": {
+          "item_id": {
+            "type": "string"
+          },
+          "statement": {
+            "type": "string"
+          },
+          "source_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "source_spans": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "confidence_note": {
+            "type": "string"
+          },
+          "valid_at": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "evidence_groups": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "group_id",
+          "source_ids",
+          "independence"
+        ],
+        "properties": {
+          "group_id": {
+            "type": "string"
+          },
+          "source_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "independence": {
+            "enum": [
+              "INDEPENDENT",
+              "DERIVED",
+              "UNKNOWN"
+            ]
+          }
+        }
+      }
+    },
+    "source_decisions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "source_id",
+          "decision",
+          "reason"
+        ],
+        "properties": {
+          "source_id": {
+            "type": "string"
+          },
+          "decision": {
+            "enum": [
+              "INGEST_NEW",
+              "LINK_DUPLICATE",
+              "NEW_VERSION",
+              "RELATED_VARIANT",
+              "REVIEW",
+              "QUARANTINE",
+              "REJECT"
+            ]
+          },
+          "reason": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "constraints": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "unknowns": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "contradictions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "glossary": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "algorithms": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "audit": {
+      "type": "object",
+      "required": [
+        "source_versions",
+        "policy_version",
+        "review_status"
+      ],
+      "properties": {
+        "source_versions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "policy_version": {
+          "type": "string"
+        },
+        "review_status": {
+          "enum": [
+            "UNREVIEWED",
+            "REVIEWED"
+          ]
+        },
+        "package_sha256": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    }
+  }
+}
