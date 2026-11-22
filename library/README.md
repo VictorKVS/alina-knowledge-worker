@@ -2,7 +2,7 @@
 
 Объяснения на уровне **первого курса МАИ**: с нуля, простыми словами, затем формулы, алгоритмы и реальные инженерные применения в 2026 году.
 
-[Как учимся](LEARNING_STANDARD_RU.md) · [Практика 2026](PRACTICE_2026_RU.md) · [BOOK-002: Suhas Pai](books/BOOK-002_Designing_LLM_Applications/README.md) · [Первая книга](books/BOOK-001_AI_Engineering/README.md) · [Шаблон книжного проекта](BOOK_PROJECT_TEMPLATE.md)
+[Как учимся](LEARNING_STANDARD_RU.md) · [Практика 2026](PRACTICE_2026_RU.md) · [BOOK-002: Suhas Pai](books/BOOK-002_Designing_LLM_Applications/README.md) · [Первая книга](books/BOOK-001_AI_Engineering/README.md) · [BOOK-003 Topologos](books/BOOK-003_Multi_Agent_Pattern_Prompting/README.md) · [Шаблон книжного проекта](BOOK_PROJECT_TEMPLATE.md)
 
 Содержимое книг не копируется в открытый репозиторий без проверки авторских прав. Каталог содержит метаданные 39 позиций, а не их полные тексты.
 
