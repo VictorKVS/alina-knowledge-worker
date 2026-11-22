@@ -1,0 +1,160 @@
+{
+  "version": "0.1.0",
+  "book_id": "BOOK-002",
+  "scope": "CH01-CH02 primary-source reviewed + FATHER curriculum extensions",
+  "status": "DESIGNED_NOT_QUALIFIED",
+  "modules": [
+    {
+      "id": "A01",
+      "name": "Источники и происхождение",
+      "goal": "Составляет паспорт документа, его права, редакцию, URL, дату, hash и точные ссылки",
+      "graph_node_id": "B002-SOURCE_PROVENANCE",
+      "deliverable": "source manifest",
+      "prerequisites": [],
+      "assessment": "explain + produce artifact + negative test",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "A02",
+      "name": "Извлечение документов",
+      "goal": "Находит таблицы, заголовки, формулы, страницы; оценивает пропуски",
+      "graph_node_id": "B002-EXTRACTION_CLEANING",
+      "deliverable": "parsed document + spans",
+      "prerequisites": [
+        "A01"
+      ],
+      "assessment": "explain + produce artifact + negative test",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "A03",
+      "name": "Качество информации",
+      "goal": "Выявляет мусор, ошибки OCR, неподходящий язык и потери смысла",
+      "graph_node_id": "B002-DATA_QUALITY",
+      "deliverable": "quality report",
+      "prerequisites": [
+        "A02"
+      ],
+      "assessment": "explain + produce artifact + negative test",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "A04",
+      "name": "Дедупликация",
+      "goal": "Различает одинаковые файлы, текстовые копии, близкие документы и изменения редакции",
+      "graph_node_id": "B002-DEDUPLICATION",
+      "deliverable": "duplicate decision report",
+      "prerequisites": [
+        "A03"
+      ],
+      "assessment": "explain + produce artifact + negative test",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "A05",
+      "name": "Источниковая независимость OSINT",
+      "goal": "Прослеживает цепочки перепечаток и отделяет независимое подтверждение от репоста",
+      "graph_node_id": "B002-SOURCE_PROVENANCE",
+      "deliverable": "claim provenance cluster",
+      "prerequisites": [
+        "A04"
+      ],
+      "assessment": "explain + produce artifact + negative test",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "A06",
+      "name": "Защита данных",
+      "goal": "Проверяет PII, секреты, допустимые цели хранения и обучения",
+      "graph_node_id": "B002-PII",
+      "deliverable": "permission matrix",
+      "prerequisites": [
+        "A05"
+      ],
+      "assessment": "explain + produce artifact + negative test",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "A07",
+      "name": "Построение графа",
+      "goal": "Отделяет факт, мнение, метод, алгоритм, гипотезу и противоречие",
+      "graph_node_id": "B002-F_SOURCE_SPAN",
+      "deliverable": "typed nodes and relations",
+      "prerequisites": [
+        "A06"
+      ],
+      "assessment": "explain + produce artifact + negative test",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "A08",
+      "name": "Учебная программа",
+      "goal": "Строит маршрут обучения, словарь, определения, эталоны, не раскрывая holdout",
+      "graph_node_id": "B002-CURRICULUM_LEARNING",
+      "deliverable": "learning package",
+      "prerequisites": [
+        "A07"
+      ],
+      "assessment": "explain + produce artifact + negative test",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "A09",
+      "name": "Ролевые компетенции",
+      "goal": "Даёт OSINT и Document Agent ограниченные представления общего графа",
+      "graph_node_id": "B002-F_QUALITY_GATE",
+      "deliverable": "role view",
+      "prerequisites": [
+        "A08"
+      ],
+      "assessment": "explain + produce artifact + negative test",
+      "status": "NOT_RUN"
+    },
+    {
+      "id": "A10",
+      "name": "Изменения и квалификация",
+      "goal": "Сохраняет версии, назначает регрессию, требует независимый POLYGON",
+      "graph_node_id": "B002-F_POLYGON",
+      "deliverable": "changelog + qualification plan",
+      "prerequisites": [
+        "A09"
+      ],
+      "assessment": "explain + produce artifact + negative test",
+      "status": "NOT_RUN"
+    }
+  ],
+  "specializations": [
+    "ALINA_KNOWLEDGE_TEACHER",
+    "OSINT_ANALYST",
+    "DOCUMENT_INTELLIGENCE",
+    "RESEARCH_ANALYST",
+    "ML_DATA_ENGINEER"
+  ],
+  "rubric": {
+    "source_provenance": 25,
+    "duplicate_and_version_decisions": 25,
+    "security_and_rights": 20,
+    "extraction_quality": 15,
+    "reproducibility": 15,
+    "proposed_pass_mark": 85,
+    "critical_failure": "Always blocks; POLYGON must approve rubric"
+  },
+  "sources": [
+    {
+      "name": "Suhas Pai, Designing Large Language Model Applications",
+      "pdf_pages": [
+        120,
+        167
+      ],
+      "derived": [
+        "extraction",
+        "filtering",
+        "deduplication",
+        "PII",
+        "data contamination",
+        "data mixtures"
+      ]
+    }
+  ],
+  "notes": "OSINT investigation, agent curricula, decisions and risk gates are FATHER engineering extensions. No agent trained or qualified."
+}

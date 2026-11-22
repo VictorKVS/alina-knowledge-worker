@@ -1,0 +1,63 @@
+{
+  "type": "PUBLIC_ILLUSTRATIVE_TRAINING",
+  "status": "DESIGNED_NOT_EXECUTED",
+  "cases": [
+    {
+      "id": "OSINT-DOC-01",
+      "scenario": "Тот же файл в двух URL",
+      "expected_decision": "LINK_DUPLICATE",
+      "gold_reason": "Сохранить оба источника, не дублировать содержимое",
+      "synthetic": true
+    },
+    {
+      "id": "OSINT-DOC-02",
+      "scenario": "Регламент 2025 и обновление 2026 с одним изменённым пунктом",
+      "expected_decision": "NEW_VERSION",
+      "gold_reason": "Проверить редакцию и срок действия, не объединять по 95% сходству",
+      "synthetic": true
+    },
+    {
+      "id": "OSINT-DOC-03",
+      "scenario": "Три новостных перепечатки одного пресс-релиза",
+      "expected_decision": "RELATED_VARIANT",
+      "gold_reason": "Сохранить происхождение, не считать независимыми подтверждениями",
+      "synthetic": true
+    },
+    {
+      "id": "OSINT-DOC-04",
+      "scenario": "Статья добавляет новое измерение и таблицу",
+      "expected_decision": "INGEST_NEW",
+      "gold_reason": "Добавляет новое evidence при разрешённом использовании",
+      "synthetic": true
+    },
+    {
+      "id": "OSINT-DOC-05",
+      "scenario": "Источник содержит ПДн без допуска",
+      "expected_decision": "QUARANTINE",
+      "gold_reason": "Нельзя импортировать или отправлять во внешний API до разрешения",
+      "synthetic": true
+    },
+    {
+      "id": "OSINT-DOC-06",
+      "scenario": "PDF потерял таблицу при извлечении",
+      "expected_decision": "REVIEW",
+      "gold_reason": "Исправить извлечение до включения в знания",
+      "synthetic": true
+    },
+    {
+      "id": "OSINT-DOC-07",
+      "scenario": "Неизвестна лицензия и источник",
+      "expected_decision": "REVIEW",
+      "gold_reason": "Уточнить права и происхождение; не обучать на нём модель",
+      "synthetic": true
+    },
+    {
+      "id": "OSINT-DOC-08",
+      "scenario": "Требуемое использование явно запрещено",
+      "expected_decision": "REJECT",
+      "gold_reason": "Исключить из запрещённого направления",
+      "synthetic": true
+    }
+  ],
+  "warning": "Never put protected POLYGON holdout into public curriculum"
+}
