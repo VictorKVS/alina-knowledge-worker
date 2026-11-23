@@ -1,5 +1,5 @@
 {
-  "version": "0.9.0",
+  "version": "1.0.0",
   "source_id": "SRC-BOOK002-PRIMARY",
   "terms": [
     {
@@ -3184,6 +3184,396 @@
       "pdf_pages": [
         550,
         552
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-TEXT_EMBEDDING",
+      "term": "Text embedding",
+      "abbreviation": null,
+      "definition_ru": "числовой вектор, кодирующий свойства слова, предложения или документа",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "pdf_pages": [
+        555,
+        559
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-EMBEDDING_POOLING",
+      "term": "Embedding pooling",
+      "abbreviation": null,
+      "definition_ru": "агрегация токенных представлений в вектор фрагмента",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "pdf_pages": [
+        557,
+        559
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-MEAN_POOLING",
+      "term": "Mean pooling",
+      "abbreviation": null,
+      "definition_ru": "усреднение выходных векторов токенов для представления фрагмента",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "pdf_pages": [
+        557,
+        558
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-MAX_POOLING",
+      "term": "Max pooling",
+      "abbreviation": null,
+      "definition_ru": "выбор максимального значения каждой координаты токенных векторов",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "pdf_pages": [
+        557,
+        558
+      ],
+      "importance": 3
+    },
+    {
+      "id": "B002-CLS_POOLING",
+      "term": "CLS pooling",
+      "abbreviation": "CLS_POOLING",
+      "definition_ru": "использование представления начального специального токена",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "pdf_pages": [
+        557,
+        558
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-SEMANTIC_SEARCH",
+      "term": "Semantic search",
+      "abbreviation": null,
+      "definition_ru": "поиск по близости смысловых векторов запроса и документов",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "pdf_pages": [
+        559,
+        563
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-ASYMMETRIC_SEARCH",
+      "term": "Asymmetric semantic search",
+      "abbreviation": null,
+      "definition_ru": "поиск коротким запросом по более длинным документам",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "pdf_pages": [
+        563,
+        564
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-COSINE_SIMILARITY",
+      "term": "Cosine similarity",
+      "abbreviation": null,
+      "definition_ru": "метрика сходства по углу между двумя векторами",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "pdf_pages": [
+        563,
+        565
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-DOT_PRODUCT",
+      "term": "Dot product",
+      "abbreviation": null,
+      "definition_ru": "скалярное произведение векторов для измерения сходства",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "pdf_pages": [
+        563,
+        564
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-EUCLIDEAN_DISTANCE",
+      "term": "Euclidean distance",
+      "abbreviation": null,
+      "definition_ru": "геометрическое расстояние в векторном пространстве",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "pdf_pages": [
+        563,
+        564
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-SEMANTIC_NEGATION",
+      "term": "Negation sensitivity",
+      "abbreviation": null,
+      "definition_ru": "риск высокой семантической близости высказываний с противоположным смыслом",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "pdf_pages": [
+        564,
+        567
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-EMBEDDING_FINETUNING",
+      "term": "Embedding fine-tuning",
+      "abbreviation": null,
+      "definition_ru": "адаптация embedding-модели на предметных парах и тройках",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "pdf_pages": [
+        567,
+        575
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-TRIPLET_DATASET",
+      "term": "Triplet dataset",
+      "abbreviation": null,
+      "definition_ru": "набор троек anchor positive negative для обучения сходства",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "pdf_pages": [
+        569,
+        573
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-HARD_NEGATIVE",
+      "term": "Hard negative",
+      "abbreviation": null,
+      "definition_ru": "релевантный на вид, но неверный ответ для обучения и оценки поиска",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "pdf_pages": [
+        571,
+        573
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-TRIPLET_LOSS",
+      "term": "Triplet loss",
+      "abbreviation": null,
+      "definition_ru": "обучающая функция, сближающая anchor-positive и раздвигающая anchor-negative",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "pdf_pages": [
+        572,
+        573
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-MNR_LOSS",
+      "term": "Multiple Negatives Ranking Loss",
+      "abbreviation": "MNR_LOSS",
+      "definition_ru": "ранжирующая функция, использующая остальные элементы батча как отрицательные",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "pdf_pages": [
+        573,
+        575
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-INSTRUCTION_EMBEDDING",
+      "term": "Instruction embedding",
+      "abbreviation": null,
+      "definition_ru": "генерация embedding с явным описанием назначения текста и запроса",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "pdf_pages": [
+        576,
+        578
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-MTEB",
+      "term": "Massive Text Embedding Benchmark",
+      "abbreviation": "MTEB",
+      "definition_ru": "набор задач сравнительной оценки embedding-моделей",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "pdf_pages": [
+        579,
+        580
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-MATRYOSHKA",
+      "term": "Matryoshka Representation Learning",
+      "abbreviation": null,
+      "definition_ru": "обучение векторов так, чтобы префиксы разной размерности сохраняли полезные признаки",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "pdf_pages": [
+        580,
+        584
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-BINARY_EMBEDDING",
+      "term": "Binary embedding",
+      "abbreviation": null,
+      "definition_ru": "представление координат вектора двоичными значениями",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "pdf_pages": [
+        584,
+        586
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-PRODUCT_QUANTIZATION",
+      "term": "Product quantization",
+      "abbreviation": null,
+      "definition_ru": "компрессия векторов путем кластеризации их подпространств",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "pdf_pages": [
+        586,
+        588
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-DOCUMENT_CHUNKING",
+      "term": "Document chunking",
+      "abbreviation": null,
+      "definition_ru": "разделение текста на фрагменты для индексации и извлечения",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "pdf_pages": [
+        588,
+        592
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-SLIDING_WINDOW_CHUNKING",
+      "term": "Sliding window chunking",
+      "abbreviation": null,
+      "definition_ru": "перекрывающееся разбиение текста для сохранения соседнего контекста",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "pdf_pages": [
+        592,
+        593
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-METADATA_CHUNKING",
+      "term": "Metadata-aware chunking",
+      "abbreviation": null,
+      "definition_ru": "учёт секций, заголовков и метаданных при определении фрагментов",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "pdf_pages": [
+        593,
+        594
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-LAYOUT_CHUNKING",
+      "term": "Layout-aware chunking",
+      "abbreviation": null,
+      "definition_ru": "использование визуальной структуры страницы и областей документа",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "pdf_pages": [
+        593,
+        594
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-SEMANTIC_CHUNKING",
+      "term": "Semantic chunking",
+      "abbreviation": null,
+      "definition_ru": "группировка семантически связанных фрагментов текста",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "pdf_pages": [
+        594,
+        596
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-LATE_CHUNKING",
+      "term": "Late chunking",
+      "abbreviation": null,
+      "definition_ru": "контекстуализация токенов длинного текста до pooling по отдельным сегментам",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "pdf_pages": [
+        596,
+        597
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-VECTOR_DATABASE",
+      "term": "Vector database",
+      "abbreviation": null,
+      "definition_ru": "хранилище векторов с поиском и фильтрами метаданных",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "pdf_pages": [
+        598,
+        600
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-MULTILEVEL_EMBEDDINGS",
+      "term": "Multi-level embeddings",
+      "abbreviation": null,
+      "definition_ru": "векторы разной гранулярности от предложения до документа",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "pdf_pages": [
+        600,
+        601
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-SPARSE_AUTOENCODER",
+      "term": "Sparse autoencoder",
+      "abbreviation": null,
+      "definition_ru": "разреженный автоэнкодер для анализа интерпретируемых признаков представлений",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "pdf_pages": [
+        601,
+        603
       ],
       "importance": 4
     }

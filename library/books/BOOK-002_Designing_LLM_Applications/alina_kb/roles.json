@@ -1,5 +1,5 @@
 {
-  "version": "0.9.0",
+  "version": "1.0.0",
   "graph_id": "ALINA-BOOK-002-KNOWLEDGE-GRAPH",
   "views": [
     {
@@ -36,7 +36,12 @@
           "B002-DISTILL_TEACHER_STUDENT",
           "B002-PROMPT_REPOSITORY",
           "B002-TOOL_DOC_STORE",
-          "B002-NLI_VERIFICATION"
+          "B002-NLI_VERIFICATION",
+          "B002-TEXT_EMBEDDING",
+          "B002-DOCUMENT_CHUNKING",
+          "B002-SEMANTIC_NEGATION",
+          "B002-METADATA_CHUNKING",
+          "B002-VECTOR_DATABASE"
         ]
       },
       "note": "Read-only filtered view of shared graph; do not duplicate facts",
@@ -77,7 +82,10 @@
           "B002-DISTILL_TEACHER_STUDENT",
           "B002-TOOL_SELECTION",
           "B002-TASK_DECOMPOSITION",
-          "B002-SESSION_MEMORY"
+          "B002-SESSION_MEMORY",
+          "B002-TRIPLET_DATASET",
+          "B002-HARD_NEGATIVE",
+          "B002-SEMANTIC_CHUNKING"
         ]
       },
       "note": "Read-only filtered view of shared graph; do not duplicate facts",
@@ -128,7 +136,11 @@
           "B002-BF16",
           "B002-SYMMETRIC_QUANT",
           "B002-TOOL_CALL_JSON",
-          "B002-AGENT_LOOP_PROMPT"
+          "B002-AGENT_LOOP_PROMPT",
+          "B002-EMBEDDING_FINETUNING",
+          "B002-TRIPLET_LOSS",
+          "B002-MATRYOSHKA",
+          "B002-SPARSE_AUTOENCODER"
         ]
       },
       "note": "Read-only filtered view of shared graph; do not duplicate facts",
@@ -164,7 +176,10 @@
           "B002-AGENT_GUARDRAIL",
           "B002-PROMPT_INJECTION",
           "B002-PII_DETECTION",
-          "B002-DATABASE_CONNECTOR"
+          "B002-DATABASE_CONNECTOR",
+          "B002-SEMANTIC_NEGATION",
+          "B002-VECTOR_DATABASE",
+          "B002-LAYOUT_CHUNKING"
         ]
       },
       "note": "Read-only filtered view of shared graph; do not duplicate facts",
@@ -205,7 +220,11 @@
           "B002-SUMMARY_VERIFICATION",
           "B002-NLI_VERIFICATION",
           "B002-TOOL_SELECTION",
-          "B002-AGENT_GUARDRAIL"
+          "B002-AGENT_GUARDRAIL",
+          "B002-HARD_NEGATIVE",
+          "B002-MTEB",
+          "B002-COSINE_SIMILARITY",
+          "B002-LATE_CHUNKING"
         ]
       },
       "note": "Read-only filtered view of shared graph; do not duplicate facts",
@@ -254,7 +273,11 @@
           "B002-AGENT_ORCHESTRATION",
           "B002-PASSIVE_APPROACH",
           "B002-EXPLICIT_APPROACH",
-          "B002-AUTONOMOUS_APPROACH"
+          "B002-AUTONOMOUS_APPROACH",
+          "B002-VECTOR_DATABASE",
+          "B002-MULTILEVEL_EMBEDDINGS",
+          "B002-PRODUCT_QUANTIZATION",
+          "B002-SEMANTIC_SEARCH"
         ]
       },
       "note": "Read-only filtered view of shared graph; do not duplicate facts",

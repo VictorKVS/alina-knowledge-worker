@@ -1,5 +1,5 @@
 {
-  "version": "0.9.0",
+  "version": "1.0.0",
   "status": "DESIGNED_NOT_RUN",
   "algorithms": [
     {
@@ -768,6 +768,96 @@
       "source_pages": [
         539,
         548
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-CH11-EMBEDDING-SELECT",
+      "name": "Embedding model selection",
+      "nodes": [
+        "text_embedding",
+        "mteb",
+        "semantic_search"
+      ],
+      "steps": [
+        "Freeze public query-gold retrieval task and provenance",
+        "Compare keyword/BM25 with at least two permitted embedding models",
+        "Check model card for similarity metric and max tokens",
+        "Calculate recall@k, MRR, p95, index size and false positives",
+        "Select a model only after independent holdout evaluation"
+      ],
+      "source_pages": [
+        555,
+        580
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-CH11-NEGATION-GATE",
+      "name": "Opposite-meaning retrieval validation",
+      "nodes": [
+        "semantic_negation",
+        "hard_negative",
+        "triplet_loss"
+      ],
+      "steps": [
+        "Build verified positive and negative pairs, especially negations",
+        "Record cosine similarity and ranking of contradictory statements",
+        "Do not equate proximity with entailment",
+        "Use deterministic and/or NLI verification of each retrieved claim",
+        "Fail closed on conflicting or unproven versions"
+      ],
+      "source_pages": [
+        564,
+        575
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-CH11-CHUNKING-SELECT",
+      "name": "Chunking strategy comparison",
+      "nodes": [
+        "document_chunking",
+        "sliding_window_chunking",
+        "metadata_chunking",
+        "late_chunking"
+      ],
+      "steps": [
+        "Preserve parent document ID and source spans",
+        "Chunk same corpus by paragraph, overlap, metadata, layout and late method if available",
+        "Test context-dependent facts and units defined in distant sections",
+        "Measure recall@k, citation correctness, duplicates and cost",
+        "Select method by task evidence instead of arbitrary chunk length"
+      ],
+      "source_pages": [
+        588,
+        597
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-CH11-VECTOR-INDEX-GATE",
+      "name": "Vector store and compression qualification",
+      "nodes": [
+        "vector_database",
+        "matryoshka",
+        "binary_embedding",
+        "product_quantization"
+      ],
+      "steps": [
+        "Record baseline vector count, dimension, index size and exact search quality",
+        "Compare metadata-filtered ANN and exact search",
+        "Try MRL and quantization only with supported models and verified calibrations",
+        "Measure recall loss, RAM/VRAM, p95, updates and delete behavior",
+        "Check tenant filters before results become model context"
+      ],
+      "source_pages": [
+        579,
+        601
       ],
       "status": "DESIGNED_NOT_RUN",
       "kind": "FATHER_ADAPTATION"

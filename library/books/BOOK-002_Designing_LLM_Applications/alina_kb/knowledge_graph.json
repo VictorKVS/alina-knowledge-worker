@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "graph_id": "ALINA-BOOK-002-KNOWLEDGE-GRAPH",
-  "version": "0.9.0",
+  "version": "1.0.0",
   "created": "2026-11-22",
   "source": {
     "id": "SRC-BOOK002-PRIMARY",
@@ -57,6 +57,10 @@
       "CH10": [
         493,
         552
+      ],
+      "CH11": [
+        553,
+        603
       ]
     },
     "reviewed_chapters": [
@@ -69,9 +73,10 @@
       "CH07",
       "CH08",
       "CH09",
-      "CH10"
+      "CH10",
+      "CH11"
     ],
-    "remaining_chapters": "CH11-CH13 not reviewed"
+    "remaining_chapters": "CH12-CH13 not reviewed"
   },
   "model": {
     "description": "Directed knowledge/competency graph",
@@ -7444,6 +7449,906 @@
       "owner": "ALINA",
       "version": "0.9.0",
       "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-TEXT_EMBEDDING",
+      "title": "Text embedding",
+      "abbr": null,
+      "definition_ru": "числовой вектор, кодирующий свойства слова, предложения или документа",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          555,
+          559
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-EMBEDDING_LAYER"
+      ],
+      "owner": "ALINA",
+      "version": "1.0.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-EMBEDDING_POOLING",
+      "title": "Embedding pooling",
+      "abbr": null,
+      "definition_ru": "агрегация токенных представлений в вектор фрагмента",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          557,
+          559
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-TEXT_EMBEDDING"
+      ],
+      "owner": "ALINA",
+      "version": "1.0.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-MEAN_POOLING",
+      "title": "Mean pooling",
+      "abbr": null,
+      "definition_ru": "усреднение выходных векторов токенов для представления фрагмента",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          557,
+          558
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-EMBEDDING_POOLING"
+      ],
+      "owner": "ALINA",
+      "version": "1.0.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-MAX_POOLING",
+      "title": "Max pooling",
+      "abbr": null,
+      "definition_ru": "выбор максимального значения каждой координаты токенных векторов",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          557,
+          558
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 3,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-EMBEDDING_POOLING"
+      ],
+      "owner": "ALINA",
+      "version": "1.0.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-CLS_POOLING",
+      "title": "CLS pooling",
+      "abbr": "CLS_POOLING",
+      "definition_ru": "использование представления начального специального токена",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          557,
+          558
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-EMBEDDING_POOLING"
+      ],
+      "owner": "ALINA",
+      "version": "1.0.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-SEMANTIC_SEARCH",
+      "title": "Semantic search",
+      "abbr": null,
+      "definition_ru": "поиск по близости смысловых векторов запроса и документов",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          559,
+          563
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-TEXT_EMBEDDING"
+      ],
+      "owner": "ALINA",
+      "version": "1.0.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-ASYMMETRIC_SEARCH",
+      "title": "Asymmetric semantic search",
+      "abbr": null,
+      "definition_ru": "поиск коротким запросом по более длинным документам",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          563,
+          564
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-SEMANTIC_SEARCH"
+      ],
+      "owner": "ALINA",
+      "version": "1.0.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-COSINE_SIMILARITY",
+      "title": "Cosine similarity",
+      "abbr": null,
+      "definition_ru": "метрика сходства по углу между двумя векторами",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          563,
+          565
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-SEMANTIC_SEARCH"
+      ],
+      "owner": "ALINA",
+      "version": "1.0.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-DOT_PRODUCT",
+      "title": "Dot product",
+      "abbr": null,
+      "definition_ru": "скалярное произведение векторов для измерения сходства",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          563,
+          564
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-COSINE_SIMILARITY"
+      ],
+      "owner": "ALINA",
+      "version": "1.0.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-EUCLIDEAN_DISTANCE",
+      "title": "Euclidean distance",
+      "abbr": null,
+      "definition_ru": "геометрическое расстояние в векторном пространстве",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          563,
+          564
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-SEMANTIC_SEARCH"
+      ],
+      "owner": "ALINA",
+      "version": "1.0.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-SEMANTIC_NEGATION",
+      "title": "Negation sensitivity",
+      "abbr": null,
+      "definition_ru": "риск высокой семантической близости высказываний с противоположным смыслом",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          564,
+          567
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-SEMANTIC_SEARCH"
+      ],
+      "owner": "ALINA",
+      "version": "1.0.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-EMBEDDING_FINETUNING",
+      "title": "Embedding fine-tuning",
+      "abbr": null,
+      "definition_ru": "адаптация embedding-модели на предметных парах и тройках",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          567,
+          575
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-FINE_TUNING"
+      ],
+      "owner": "ALINA",
+      "version": "1.0.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-TRIPLET_DATASET",
+      "title": "Triplet dataset",
+      "abbr": null,
+      "definition_ru": "набор троек anchor positive negative для обучения сходства",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          569,
+          573
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-EMBEDDING_FINETUNING"
+      ],
+      "owner": "ALINA",
+      "version": "1.0.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-HARD_NEGATIVE",
+      "title": "Hard negative",
+      "abbr": null,
+      "definition_ru": "релевантный на вид, но неверный ответ для обучения и оценки поиска",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          571,
+          573
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-TRIPLET_DATASET"
+      ],
+      "owner": "ALINA",
+      "version": "1.0.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-TRIPLET_LOSS",
+      "title": "Triplet loss",
+      "abbr": null,
+      "definition_ru": "обучающая функция, сближающая anchor-positive и раздвигающая anchor-negative",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          572,
+          573
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-TRIPLET_DATASET"
+      ],
+      "owner": "ALINA",
+      "version": "1.0.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-MNR_LOSS",
+      "title": "Multiple Negatives Ranking Loss",
+      "abbr": "MNR_LOSS",
+      "definition_ru": "ранжирующая функция, использующая остальные элементы батча как отрицательные",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          573,
+          575
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-EMBEDDING_FINETUNING"
+      ],
+      "owner": "ALINA",
+      "version": "1.0.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-INSTRUCTION_EMBEDDING",
+      "title": "Instruction embedding",
+      "abbr": null,
+      "definition_ru": "генерация embedding с явным описанием назначения текста и запроса",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          576,
+          578
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-TEXT_EMBEDDING"
+      ],
+      "owner": "ALINA",
+      "version": "1.0.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-MTEB",
+      "title": "Massive Text Embedding Benchmark",
+      "abbr": "MTEB",
+      "definition_ru": "набор задач сравнительной оценки embedding-моделей",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          579,
+          580
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-LLM_BENCHMARK"
+      ],
+      "owner": "ALINA",
+      "version": "1.0.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-MATRYOSHKA",
+      "title": "Matryoshka Representation Learning",
+      "abbr": null,
+      "definition_ru": "обучение векторов так, чтобы префиксы разной размерности сохраняли полезные признаки",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          580,
+          584
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-TEXT_EMBEDDING"
+      ],
+      "owner": "ALINA",
+      "version": "1.0.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-BINARY_EMBEDDING",
+      "title": "Binary embedding",
+      "abbr": null,
+      "definition_ru": "представление координат вектора двоичными значениями",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          584,
+          586
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-TEXT_EMBEDDING"
+      ],
+      "owner": "ALINA",
+      "version": "1.0.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-PRODUCT_QUANTIZATION",
+      "title": "Product quantization",
+      "abbr": null,
+      "definition_ru": "компрессия векторов путем кластеризации их подпространств",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          586,
+          588
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-QUANTIZATION"
+      ],
+      "owner": "ALINA",
+      "version": "1.0.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-DOCUMENT_CHUNKING",
+      "title": "Document chunking",
+      "abbr": null,
+      "definition_ru": "разделение текста на фрагменты для индексации и извлечения",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          588,
+          592
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-CORPUS"
+      ],
+      "owner": "ALINA",
+      "version": "1.0.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-SLIDING_WINDOW_CHUNKING",
+      "title": "Sliding window chunking",
+      "abbr": null,
+      "definition_ru": "перекрывающееся разбиение текста для сохранения соседнего контекста",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          592,
+          593
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-DOCUMENT_CHUNKING"
+      ],
+      "owner": "ALINA",
+      "version": "1.0.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-METADATA_CHUNKING",
+      "title": "Metadata-aware chunking",
+      "abbr": null,
+      "definition_ru": "учёт секций, заголовков и метаданных при определении фрагментов",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          593,
+          594
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-DOCUMENT_CHUNKING"
+      ],
+      "owner": "ALINA",
+      "version": "1.0.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-LAYOUT_CHUNKING",
+      "title": "Layout-aware chunking",
+      "abbr": null,
+      "definition_ru": "использование визуальной структуры страницы и областей документа",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          593,
+          594
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-DOCUMENT_CHUNKING"
+      ],
+      "owner": "ALINA",
+      "version": "1.0.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-SEMANTIC_CHUNKING",
+      "title": "Semantic chunking",
+      "abbr": null,
+      "definition_ru": "группировка семантически связанных фрагментов текста",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          594,
+          596
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-DOCUMENT_CHUNKING"
+      ],
+      "owner": "ALINA",
+      "version": "1.0.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-LATE_CHUNKING",
+      "title": "Late chunking",
+      "abbr": null,
+      "definition_ru": "контекстуализация токенов длинного текста до pooling по отдельным сегментам",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          596,
+          597
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-DOCUMENT_CHUNKING"
+      ],
+      "owner": "ALINA",
+      "version": "1.0.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-VECTOR_DATABASE",
+      "title": "Vector database",
+      "abbr": null,
+      "definition_ru": "хранилище векторов с поиском и фильтрами метаданных",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          598,
+          600
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-SEMANTIC_SEARCH"
+      ],
+      "owner": "ALINA",
+      "version": "1.0.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-MULTILEVEL_EMBEDDINGS",
+      "title": "Multi-level embeddings",
+      "abbr": null,
+      "definition_ru": "векторы разной гранулярности от предложения до документа",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          600,
+          601
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-TEXT_EMBEDDING"
+      ],
+      "owner": "ALINA",
+      "version": "1.0.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-SPARSE_AUTOENCODER",
+      "title": "Sparse autoencoder",
+      "abbr": null,
+      "definition_ru": "разреженный автоэнкодер для анализа интерпретируемых признаков представлений",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          601,
+          603
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-TEXT_EMBEDDING"
+      ],
+      "owner": "ALINA",
+      "version": "1.0.0",
+      "last_review": "2026-11-23"
     }
   ],
   "edges": [
@@ -11149,6 +12054,430 @@
       "type": "REQUIRES_KNOWLEDGE",
       "weight": 0.9,
       "weight_reason": "Proposed role relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-TEXT_EMBEDDING",
+      "to": "B002-EMBEDDING_LAYER",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relationship; not measured causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-EMBEDDING_POOLING",
+      "to": "B002-TEXT_EMBEDDING",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relationship; not measured causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-MEAN_POOLING",
+      "to": "B002-EMBEDDING_POOLING",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relationship; not measured causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-MAX_POOLING",
+      "to": "B002-EMBEDDING_POOLING",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relationship; not measured causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-CLS_POOLING",
+      "to": "B002-EMBEDDING_POOLING",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relationship; not measured causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-SEMANTIC_SEARCH",
+      "to": "B002-TEXT_EMBEDDING",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relationship; not measured causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-ASYMMETRIC_SEARCH",
+      "to": "B002-SEMANTIC_SEARCH",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relationship; not measured causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-COSINE_SIMILARITY",
+      "to": "B002-SEMANTIC_SEARCH",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relationship; not measured causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-DOT_PRODUCT",
+      "to": "B002-COSINE_SIMILARITY",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relationship; not measured causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-EUCLIDEAN_DISTANCE",
+      "to": "B002-SEMANTIC_SEARCH",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relationship; not measured causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-SEMANTIC_NEGATION",
+      "to": "B002-SEMANTIC_SEARCH",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relationship; not measured causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-EMBEDDING_FINETUNING",
+      "to": "B002-FINE_TUNING",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relationship; not measured causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-TRIPLET_DATASET",
+      "to": "B002-EMBEDDING_FINETUNING",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relationship; not measured causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-HARD_NEGATIVE",
+      "to": "B002-TRIPLET_DATASET",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relationship; not measured causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-TRIPLET_LOSS",
+      "to": "B002-TRIPLET_DATASET",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relationship; not measured causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-MNR_LOSS",
+      "to": "B002-EMBEDDING_FINETUNING",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relationship; not measured causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-INSTRUCTION_EMBEDDING",
+      "to": "B002-TEXT_EMBEDDING",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relationship; not measured causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-MTEB",
+      "to": "B002-LLM_BENCHMARK",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relationship; not measured causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-MATRYOSHKA",
+      "to": "B002-TEXT_EMBEDDING",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relationship; not measured causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-BINARY_EMBEDDING",
+      "to": "B002-TEXT_EMBEDDING",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relationship; not measured causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-PRODUCT_QUANTIZATION",
+      "to": "B002-QUANTIZATION",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relationship; not measured causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-DOCUMENT_CHUNKING",
+      "to": "B002-CORPUS",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relationship; not measured causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-SLIDING_WINDOW_CHUNKING",
+      "to": "B002-DOCUMENT_CHUNKING",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relationship; not measured causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-METADATA_CHUNKING",
+      "to": "B002-DOCUMENT_CHUNKING",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relationship; not measured causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-LAYOUT_CHUNKING",
+      "to": "B002-DOCUMENT_CHUNKING",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relationship; not measured causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-SEMANTIC_CHUNKING",
+      "to": "B002-DOCUMENT_CHUNKING",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relationship; not measured causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-LATE_CHUNKING",
+      "to": "B002-DOCUMENT_CHUNKING",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relationship; not measured causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-VECTOR_DATABASE",
+      "to": "B002-SEMANTIC_SEARCH",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relationship; not measured causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-MULTILEVEL_EMBEDDINGS",
+      "to": "B002-TEXT_EMBEDDING",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relationship; not measured causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-SPARSE_AUTOENCODER",
+      "to": "B002-TEXT_EMBEDDING",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relationship; not measured causality",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_KNOWLEDGE",
+      "to": "B002-TEXT_EMBEDDING",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Editorial role relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_KNOWLEDGE",
+      "to": "B002-DOCUMENT_CHUNKING",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Editorial role relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_KNOWLEDGE",
+      "to": "B002-SEMANTIC_NEGATION",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Editorial role relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_KNOWLEDGE",
+      "to": "B002-METADATA_CHUNKING",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Editorial role relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_KNOWLEDGE",
+      "to": "B002-VECTOR_DATABASE",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Editorial role relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_CURRICULUM",
+      "to": "B002-TRIPLET_DATASET",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Editorial role relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_CURRICULUM",
+      "to": "B002-HARD_NEGATIVE",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Editorial role relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_CURRICULUM",
+      "to": "B002-SEMANTIC_CHUNKING",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Editorial role relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ML_ENGINEER",
+      "to": "B002-EMBEDDING_FINETUNING",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Editorial role relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ML_ENGINEER",
+      "to": "B002-TRIPLET_LOSS",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Editorial role relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ML_ENGINEER",
+      "to": "B002-MATRYOSHKA",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Editorial role relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ML_ENGINEER",
+      "to": "B002-SPARSE_AUTOENCODER",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Editorial role relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SECURITY",
+      "to": "B002-SEMANTIC_NEGATION",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Editorial role relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SECURITY",
+      "to": "B002-VECTOR_DATABASE",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Editorial role relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SECURITY",
+      "to": "B002-LAYOUT_CHUNKING",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Editorial role relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-POLYGON",
+      "to": "B002-HARD_NEGATIVE",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Editorial role relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-POLYGON",
+      "to": "B002-MTEB",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Editorial role relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-POLYGON",
+      "to": "B002-COSINE_SIMILARITY",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Editorial role relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-POLYGON",
+      "to": "B002-LATE_CHUNKING",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Editorial role relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SYSTEM_ARCHITECT",
+      "to": "B002-VECTOR_DATABASE",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Editorial role relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SYSTEM_ARCHITECT",
+      "to": "B002-MULTILEVEL_EMBEDDINGS",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Editorial role relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SYSTEM_ARCHITECT",
+      "to": "B002-PRODUCT_QUANTIZATION",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Editorial role relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SYSTEM_ARCHITECT",
+      "to": "B002-SEMANTIC_SEARCH",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Editorial role relevance",
       "status": "PROPOSED"
     }
   ]
