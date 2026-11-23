@@ -1,5 +1,5 @@
 {
-  "version": "0.6.0",
+  "version": "0.7.0",
   "graph_id": "ALINA-BOOK-002-KNOWLEDGE-GRAPH",
   "views": [
     {
@@ -27,7 +27,11 @@
           "B002-SELF_INSTRUCT",
           "B002-DAPT",
           "B002-TAPT",
-          "B002-REPLAY"
+          "B002-REPLAY",
+          "B002-HALLUCINATION",
+          "B002-RAG_GROUNDING",
+          "B002-COVE",
+          "B002-KNOWLEDGE_QUADRANT"
         ]
       },
       "note": "Read-only filtered view of shared graph; do not duplicate facts",
@@ -59,7 +63,11 @@
           "B002-OUTPUT_FIRST",
           "B002-CATASTROPHIC_FORGETTING",
           "B002-SOFT_PROMPT",
-          "B002-MODEL_ENSEMBLE"
+          "B002-MODEL_ENSEMBLE",
+          "B002-HHH",
+          "B002-HUMAN_FEEDBACK",
+          "B002-REASONING_SFT",
+          "B002-BEST_OF_K"
         ]
       },
       "note": "Read-only filtered view of shared graph; do not duplicate facts",
@@ -100,7 +108,11 @@
           "B002-CONTINUAL_PRETRAINING",
           "B002-PEFT_ADAPTER",
           "B002-PREFIX_TUNING",
-          "B002-ADAPTER_MERGING"
+          "B002-ADAPTER_MERGING",
+          "B002-RLHF",
+          "B002-REWARD_MODEL",
+          "B002-PPO",
+          "B002-KL_REGULARIZATION"
         ]
       },
       "note": "Read-only filtered view of shared graph; do not duplicate facts",
@@ -125,7 +137,11 @@
           "B002-REGRESSION_RISK",
           "B002-PUBLIC_INSTRUCTION_DATA",
           "B002-CATASTROPHIC_FORGETTING",
-          "B002-MODEL_FUSION"
+          "B002-MODEL_FUSION",
+          "B002-ALIGNMENT",
+          "B002-HALLUCINATION",
+          "B002-S2A",
+          "B002-KNOWLEDGE_OVERSHADOWING"
         ]
       },
       "note": "Read-only filtered view of shared graph; do not duplicate facts",
@@ -155,7 +171,11 @@
           "B002-REGRESSION_RISK",
           "B002-REPLAY",
           "B002-MODEL_ENSEMBLE",
-          "B002-CATASTROPHIC_FORGETTING"
+          "B002-CATASTROPHIC_FORGETTING",
+          "B002-VERIFIER",
+          "B002-UNCERTAINTY_CALIBRATION",
+          "B002-ITERATIVE_BACKPROMPTING",
+          "B002-HHH"
         ]
       },
       "note": "Read-only filtered view of shared graph; do not duplicate facts",
@@ -190,7 +210,11 @@
           "B002-MODEL_FUSION",
           "B002-MODEL_ENSEMBLE",
           "B002-PEFT_ADAPTER",
-          "B002-DAPT"
+          "B002-DAPT",
+          "B002-TEST_TIME_COMPUTE",
+          "B002-VERIFIER",
+          "B002-RAG_GROUNDING",
+          "B002-DOLA"
         ]
       },
       "note": "Read-only filtered view of shared graph; do not duplicate facts",

@@ -1,5 +1,5 @@
 {
-  "version": "0.6.0",
+  "version": "0.7.0",
   "status": "DESIGNED_NOT_RUN",
   "algorithms": [
     {
@@ -491,6 +491,97 @@
       "source_pages": [
         404,
         413
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-CH08-ALIGNMENT-EVAL",
+      "name": "Evaluation matrix of helpfulness, honesty and safety",
+      "nodes": [
+        "alignment",
+        "hhh",
+        "hallucination"
+      ],
+      "steps": [
+        "Create synthetic allowed and disallowed requests",
+        "Establish fixed human-verified gold for facts and permissions",
+        "Run answer and refusal consistency tests",
+        "Score task success, evidence coverage, false rejection and violations separately",
+        "Log all errors, never equate pleasant tone with factuality"
+      ],
+      "source_pages": [
+        414,
+        429
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-CH08-COVE-VERIFY",
+      "name": "Chain-of-Verification with independent evidence",
+      "nodes": [
+        "cove",
+        "verifier",
+        "rag_grounding"
+      ],
+      "steps": [
+        "Generate a source-scoped draft",
+        "List atomic factual claims",
+        "Generate explicit verification questions",
+        "For each claim independently query trusted sources or deterministic rules",
+        "Revise and abstain on unsupported details",
+        "Compare original and verified answer on held-out examples"
+      ],
+      "source_pages": [
+        428,
+        432
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-CH08-S2A-DISTRACTOR",
+      "name": "Context distractor ablation",
+      "nodes": [
+        "s2a",
+        "knowledge_overshadowing",
+        "hallucination"
+      ],
+      "steps": [
+        "Construct same answerable question with relevant source context",
+        "Add misleading but clearly irrelevant text",
+        "Run baseline vs context filtering, keep data frozen",
+        "Check whether source evidence is preserved",
+        "Measure factual errors and latency"
+      ],
+      "source_pages": [
+        442,
+        445
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-CH08-VERIFIER-BUDGET",
+      "name": "Generator-verifier with bounded compute",
+      "nodes": [
+        "verifier",
+        "iterative_backprompting",
+        "best_of_k",
+        "test_time_compute"
+      ],
+      "steps": [
+        "Define deterministic checkable tasks and a verifier",
+        "Benchmark one-shot baseline",
+        "Compare bounded feedback loop vs best-of-k",
+        "Cap model/tool calls and costs",
+        "Measure answer accuracy, false accept, retries and total latency",
+        "Run unrelated regression checks"
+      ],
+      "source_pages": [
+        451,
+        456
       ],
       "status": "DESIGNED_NOT_RUN",
       "kind": "FATHER_ADAPTATION"

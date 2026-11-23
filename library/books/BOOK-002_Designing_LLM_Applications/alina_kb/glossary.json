@@ -1,5 +1,5 @@
 {
-  "version": "0.6.0",
+  "version": "0.7.0",
   "source_id": "SRC-BOOK002-PRIMARY",
   "terms": [
     {
@@ -2159,6 +2159,357 @@
         411
       ],
       "importance": 3
+    },
+    {
+      "id": "B002-ALIGNMENT",
+      "term": "Alignment training",
+      "abbreviation": null,
+      "definition_ru": "методы повышения управляемости и соответствия модели ожидаемым человеческим принципам",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "pdf_pages": [
+        414,
+        416
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-HHH",
+      "term": "Helpful, Honest, Harmless",
+      "abbreviation": "HHH",
+      "definition_ru": "три целевых свойства согласованного поведения модели: полезность, честность и безопасность",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "pdf_pages": [
+        414,
+        415
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-RLHF",
+      "term": "Reinforcement Learning from Human Feedback",
+      "abbreviation": "RLHF",
+      "definition_ru": "обучение поведения с учётом человеческих сравнений или предпочтений и модели награды",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "pdf_pages": [
+        416,
+        422
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-HUMAN_FEEDBACK",
+      "term": "Human feedback types",
+      "abbreviation": null,
+      "definition_ru": "бинарный отзыв, парное предпочтение, ранжирование, корректирующий отзыв",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "pdf_pages": [
+        417,
+        418
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-REWARD_MODEL",
+      "term": "Reward model",
+      "abbreviation": null,
+      "definition_ru": "модель, оценивающая предпочтительность ответа для заданного запроса",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "pdf_pages": [
+        418,
+        420
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-PPO",
+      "term": "Proximal Policy Optimization",
+      "abbreviation": "PPO",
+      "definition_ru": "метод оптимизации политики с наградой и ограничением отклонения",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "pdf_pages": [
+        419,
+        422
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-KL_REGULARIZATION",
+      "term": "KL divergence regularization",
+      "abbreviation": null,
+      "definition_ru": "штраф за отклонение от reference policy при RLHF",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "pdf_pages": [
+        419,
+        420
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-HALLUCINATION",
+      "term": "Hallucination",
+      "abbreviation": null,
+      "definition_ru": "необоснованная относительно контекста или обучающих данных генерация",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "pdf_pages": [
+        423,
+        425
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-KNOWLEDGE_QUADRANT",
+      "term": "Knowledge and awareness quadrant",
+      "abbreviation": null,
+      "definition_ru": "классы known knowns, unknown knowns, known unknowns и unknown unknowns",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "pdf_pages": [
+        425,
+        428
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-UNCERTAINTY_CALIBRATION",
+      "term": "Output uncertainty calibration",
+      "abbreviation": null,
+      "definition_ru": "оценка согласованности уверенности модели с фактической корректностью",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "pdf_pages": [
+        427,
+        429
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-RAG_GROUNDING",
+      "term": "Grounding by retrieval",
+      "abbreviation": null,
+      "definition_ru": "снижение риска галлюцинаций через релевантный подтверждённый контекст",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "pdf_pages": [
+        428,
+        429
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-COVE",
+      "term": "Chain-of-Verification",
+      "abbreviation": "COVE",
+      "definition_ru": "составление отдельных проверочных вопросов, ответы на них и исправление исходного вывода",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "pdf_pages": [
+        429,
+        432
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-RECITATION",
+      "term": "Recitation",
+      "abbreviation": null,
+      "definition_ru": "генерация промежуточных текстовых фрагментов перед ответом",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "pdf_pages": [
+        432,
+        434
+      ],
+      "importance": 3
+    },
+    {
+      "id": "B002-FACTUAL_NUCLEUS",
+      "term": "Factual-nucleus sampling",
+      "abbreviation": null,
+      "definition_ru": "регулирование порога top-p в процессе генерации для уменьшения риска фактических ошибок",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "pdf_pages": [
+        434,
+        435
+      ],
+      "importance": 3
+    },
+    {
+      "id": "B002-DOLA",
+      "term": "DoLa contrastive decoding",
+      "abbreviation": "DOLA",
+      "definition_ru": "контрастирование logits верхнего и промежуточных слоёв модели",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "pdf_pages": [
+        436,
+        438
+      ],
+      "importance": 3
+    },
+    {
+      "id": "B002-LOOKBACK_LENS",
+      "term": "Lookback Lens",
+      "abbreviation": null,
+      "definition_ru": "использование отношения внимания к контекстным и сгенерированным токенам для оценки риска ошибок",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "pdf_pages": [
+        439,
+        441
+      ],
+      "importance": 3
+    },
+    {
+      "id": "B002-KNOWLEDGE_OVERSHADOWING",
+      "term": "Knowledge overshadowing",
+      "abbreviation": null,
+      "definition_ru": "доминирование одного условия, ведущее к игнорированию другого",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "pdf_pages": [
+        442,
+        443
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-S2A",
+      "term": "System 2 Attention",
+      "abbreviation": "S2A",
+      "definition_ru": "очистка контекста от нерелевантной информации перед ответом",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "pdf_pages": [
+        443,
+        445
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-DEDUCTIVE_REASONING",
+      "term": "Deductive reasoning",
+      "abbreviation": null,
+      "definition_ru": "логическое следствие из заданных предпосылок",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "pdf_pages": [
+        446,
+        447
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-INDUCTIVE_REASONING",
+      "term": "Inductive reasoning",
+      "abbreviation": null,
+      "definition_ru": "обобщение наблюдений с вероятностным выводом",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "pdf_pages": [
+        447,
+        447
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-ABDUCTIVE_REASONING",
+      "term": "Abductive reasoning",
+      "abbreviation": null,
+      "definition_ru": "выбор правдоподобного объяснения наблюдаемого",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "pdf_pages": [
+        447,
+        448
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-VERIFIER",
+      "term": "External verifier",
+      "abbreviation": null,
+      "definition_ru": "проверка кандидата на решение отдельным алгоритмом, моделью или формальными правилами",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "pdf_pages": [
+        451,
+        452
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-ITERATIVE_BACKPROMPTING",
+      "term": "Iterative backprompting",
+      "abbreviation": null,
+      "definition_ru": "итеративное исправление решения с обратной связью проверяющего компонента",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "pdf_pages": [
+        451,
+        452
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-BEST_OF_K",
+      "term": "Top-k guessing / best-of-k",
+      "abbreviation": null,
+      "definition_ru": "генерация нескольких кандидатов с выбором после проверки",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "pdf_pages": [
+        452,
+        454
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-TEST_TIME_COMPUTE",
+      "term": "Inference-time computation",
+      "abbreviation": null,
+      "definition_ru": "выделение дополнительных вычислений для поиска и проверки решения во время инференса",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "pdf_pages": [
+        452,
+        455
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-MCTS",
+      "term": "Monte Carlo Tree Search",
+      "abbreviation": "MCTS",
+      "definition_ru": "метод поиска, упомянутый как вариант inference-time search",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "pdf_pages": [
+        455,
+        456
+      ],
+      "importance": 3
+    },
+    {
+      "id": "B002-REASONING_SFT",
+      "term": "Fine-tuning for reasoning",
+      "abbreviation": null,
+      "definition_ru": "дообучение на наборах задач с размеченными промежуточными шагами",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "pdf_pages": [
+        456,
+        457
+      ],
+      "importance": 4
     }
   ]
 }

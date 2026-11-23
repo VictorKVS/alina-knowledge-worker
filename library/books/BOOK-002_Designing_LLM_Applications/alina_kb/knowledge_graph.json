@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "graph_id": "ALINA-BOOK-002-KNOWLEDGE-GRAPH",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "created": "2026-11-22",
   "source": {
     "id": "SRC-BOOK002-PRIMARY",
@@ -45,6 +45,10 @@
       "CH07": [
         378,
         413
+      ],
+      "CH08": [
+        414,
+        458
       ]
     },
     "reviewed_chapters": [
@@ -54,9 +58,10 @@
       "CH04",
       "CH05",
       "CH06",
-      "CH07"
+      "CH07",
+      "CH08"
     ],
-    "remaining_chapters": "CH08-CH13 not yet reviewed"
+    "remaining_chapters": "CH09-CH13 not reviewed"
   },
   "model": {
     "description": "Directed knowledge/competency graph",
@@ -5059,6 +5064,816 @@
       "owner": "ALINA",
       "version": "0.6.0",
       "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-ALIGNMENT",
+      "title": "Alignment training",
+      "abbr": null,
+      "definition_ru": "методы повышения управляемости и соответствия модели ожидаемым человеческим принципам",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          414,
+          416
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "coverage not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-MODEL_SELECTION"
+      ],
+      "owner": "ALINA",
+      "version": "0.7.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-HHH",
+      "title": "Helpful, Honest, Harmless",
+      "abbr": "HHH",
+      "definition_ru": "три целевых свойства согласованного поведения модели: полезность, честность и безопасность",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          414,
+          415
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "coverage not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-ALIGNMENT"
+      ],
+      "owner": "ALINA",
+      "version": "0.7.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-RLHF",
+      "title": "Reinforcement Learning from Human Feedback",
+      "abbr": "RLHF",
+      "definition_ru": "обучение поведения с учётом человеческих сравнений или предпочтений и модели награды",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          416,
+          422
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "coverage not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-ALIGNMENT"
+      ],
+      "owner": "ALINA",
+      "version": "0.7.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-HUMAN_FEEDBACK",
+      "title": "Human feedback types",
+      "abbr": null,
+      "definition_ru": "бинарный отзыв, парное предпочтение, ранжирование, корректирующий отзыв",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          417,
+          418
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "coverage not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-RLHF"
+      ],
+      "owner": "ALINA",
+      "version": "0.7.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-REWARD_MODEL",
+      "title": "Reward model",
+      "abbr": null,
+      "definition_ru": "модель, оценивающая предпочтительность ответа для заданного запроса",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          418,
+          420
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "coverage not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-RLHF"
+      ],
+      "owner": "ALINA",
+      "version": "0.7.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-PPO",
+      "title": "Proximal Policy Optimization",
+      "abbr": "PPO",
+      "definition_ru": "метод оптимизации политики с наградой и ограничением отклонения",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          419,
+          422
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "coverage not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-RLHF"
+      ],
+      "owner": "ALINA",
+      "version": "0.7.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-KL_REGULARIZATION",
+      "title": "KL divergence regularization",
+      "abbr": null,
+      "definition_ru": "штраф за отклонение от reference policy при RLHF",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          419,
+          420
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "coverage not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-PPO"
+      ],
+      "owner": "ALINA",
+      "version": "0.7.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-HALLUCINATION",
+      "title": "Hallucination",
+      "abbr": null,
+      "definition_ru": "необоснованная относительно контекста или обучающих данных генерация",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          423,
+          425
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "coverage not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-RAG"
+      ],
+      "owner": "ALINA",
+      "version": "0.7.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-KNOWLEDGE_QUADRANT",
+      "title": "Knowledge and awareness quadrant",
+      "abbr": null,
+      "definition_ru": "классы known knowns, unknown knowns, known unknowns и unknown unknowns",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          425,
+          428
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "coverage not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-HALLUCINATION"
+      ],
+      "owner": "ALINA",
+      "version": "0.7.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-UNCERTAINTY_CALIBRATION",
+      "title": "Output uncertainty calibration",
+      "abbr": null,
+      "definition_ru": "оценка согласованности уверенности модели с фактической корректностью",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          427,
+          429
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "coverage not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-CALIBRATION"
+      ],
+      "owner": "ALINA",
+      "version": "0.7.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-RAG_GROUNDING",
+      "title": "Grounding by retrieval",
+      "abbr": null,
+      "definition_ru": "снижение риска галлюцинаций через релевантный подтверждённый контекст",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          428,
+          429
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "coverage not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-RAG"
+      ],
+      "owner": "ALINA",
+      "version": "0.7.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-COVE",
+      "title": "Chain-of-Verification",
+      "abbr": "COVE",
+      "definition_ru": "составление отдельных проверочных вопросов, ответы на них и исправление исходного вывода",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          429,
+          432
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "coverage not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-HALLUCINATION"
+      ],
+      "owner": "ALINA",
+      "version": "0.7.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-RECITATION",
+      "title": "Recitation",
+      "abbr": null,
+      "definition_ru": "генерация промежуточных текстовых фрагментов перед ответом",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          432,
+          434
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 3,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "coverage not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-HALLUCINATION"
+      ],
+      "owner": "ALINA",
+      "version": "0.7.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-FACTUAL_NUCLEUS",
+      "title": "Factual-nucleus sampling",
+      "abbr": null,
+      "definition_ru": "регулирование порога top-p в процессе генерации для уменьшения риска фактических ошибок",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          434,
+          435
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 3,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "coverage not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-TOP_P"
+      ],
+      "owner": "ALINA",
+      "version": "0.7.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-DOLA",
+      "title": "DoLa contrastive decoding",
+      "abbr": "DOLA",
+      "definition_ru": "контрастирование logits верхнего и промежуточных слоёв модели",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          436,
+          438
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 3,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "coverage not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-INFERENCE"
+      ],
+      "owner": "ALINA",
+      "version": "0.7.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-LOOKBACK_LENS",
+      "title": "Lookback Lens",
+      "abbr": null,
+      "definition_ru": "использование отношения внимания к контекстным и сгенерированным токенам для оценки риска ошибок",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          439,
+          441
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 3,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "coverage not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-SELF_ATTENTION"
+      ],
+      "owner": "ALINA",
+      "version": "0.7.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-KNOWLEDGE_OVERSHADOWING",
+      "title": "Knowledge overshadowing",
+      "abbr": null,
+      "definition_ru": "доминирование одного условия, ведущее к игнорированию другого",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          442,
+          443
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "coverage not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-HALLUCINATION"
+      ],
+      "owner": "ALINA",
+      "version": "0.7.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-S2A",
+      "title": "System 2 Attention",
+      "abbr": "S2A",
+      "definition_ru": "очистка контекста от нерелевантной информации перед ответом",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          443,
+          445
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "coverage not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-HALLUCINATION"
+      ],
+      "owner": "ALINA",
+      "version": "0.7.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-DEDUCTIVE_REASONING",
+      "title": "Deductive reasoning",
+      "abbr": null,
+      "definition_ru": "логическое следствие из заданных предпосылок",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          446,
+          447
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "coverage not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-LLM"
+      ],
+      "owner": "ALINA",
+      "version": "0.7.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-INDUCTIVE_REASONING",
+      "title": "Inductive reasoning",
+      "abbr": null,
+      "definition_ru": "обобщение наблюдений с вероятностным выводом",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          447,
+          447
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "coverage not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-LLM"
+      ],
+      "owner": "ALINA",
+      "version": "0.7.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-ABDUCTIVE_REASONING",
+      "title": "Abductive reasoning",
+      "abbr": null,
+      "definition_ru": "выбор правдоподобного объяснения наблюдаемого",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          447,
+          448
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "coverage not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-LLM"
+      ],
+      "owner": "ALINA",
+      "version": "0.7.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-VERIFIER",
+      "title": "External verifier",
+      "abbr": null,
+      "definition_ru": "проверка кандидата на решение отдельным алгоритмом, моделью или формальными правилами",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          451,
+          452
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "coverage not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-EXTRINSIC_EVAL"
+      ],
+      "owner": "ALINA",
+      "version": "0.7.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-ITERATIVE_BACKPROMPTING",
+      "title": "Iterative backprompting",
+      "abbr": null,
+      "definition_ru": "итеративное исправление решения с обратной связью проверяющего компонента",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          451,
+          452
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "coverage not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-VERIFIER"
+      ],
+      "owner": "ALINA",
+      "version": "0.7.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-BEST_OF_K",
+      "title": "Top-k guessing / best-of-k",
+      "abbr": null,
+      "definition_ru": "генерация нескольких кандидатов с выбором после проверки",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          452,
+          454
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "coverage not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-VERIFIER"
+      ],
+      "owner": "ALINA",
+      "version": "0.7.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-TEST_TIME_COMPUTE",
+      "title": "Inference-time computation",
+      "abbr": null,
+      "definition_ru": "выделение дополнительных вычислений для поиска и проверки решения во время инференса",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          452,
+          455
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "coverage not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-INFERENCE"
+      ],
+      "owner": "ALINA",
+      "version": "0.7.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-MCTS",
+      "title": "Monte Carlo Tree Search",
+      "abbr": "MCTS",
+      "definition_ru": "метод поиска, упомянутый как вариант inference-time search",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          455,
+          456
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 3,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "coverage not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-TEST_TIME_COMPUTE"
+      ],
+      "owner": "ALINA",
+      "version": "0.7.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-REASONING_SFT",
+      "title": "Fine-tuning for reasoning",
+      "abbr": null,
+      "definition_ru": "дообучение на наборах задач с размеченными промежуточными шагами",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          456,
+          457
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "coverage not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-FINE_TUNING"
+      ],
+      "owner": "ALINA",
+      "version": "0.7.0",
+      "last_review": "2026-11-23"
     }
   ],
   "edges": [
@@ -7620,6 +8435,414 @@
       "type": "REQUIRES_KNOWLEDGE",
       "weight": 0.9,
       "weight_reason": "Proposed role knowledge view",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-ALIGNMENT",
+      "to": "B002-MODEL_SELECTION",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation, not verified causal relationship",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-HHH",
+      "to": "B002-ALIGNMENT",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation, not verified causal relationship",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-RLHF",
+      "to": "B002-ALIGNMENT",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation, not verified causal relationship",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-HUMAN_FEEDBACK",
+      "to": "B002-RLHF",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation, not verified causal relationship",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-REWARD_MODEL",
+      "to": "B002-RLHF",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation, not verified causal relationship",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-PPO",
+      "to": "B002-RLHF",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation, not verified causal relationship",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-KL_REGULARIZATION",
+      "to": "B002-PPO",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation, not verified causal relationship",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-HALLUCINATION",
+      "to": "B002-RAG",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation, not verified causal relationship",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-KNOWLEDGE_QUADRANT",
+      "to": "B002-HALLUCINATION",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation, not verified causal relationship",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-UNCERTAINTY_CALIBRATION",
+      "to": "B002-CALIBRATION",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation, not verified causal relationship",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-RAG_GROUNDING",
+      "to": "B002-RAG",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation, not verified causal relationship",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-COVE",
+      "to": "B002-HALLUCINATION",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation, not verified causal relationship",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-RECITATION",
+      "to": "B002-HALLUCINATION",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation, not verified causal relationship",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-FACTUAL_NUCLEUS",
+      "to": "B002-TOP_P",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation, not verified causal relationship",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-DOLA",
+      "to": "B002-INFERENCE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation, not verified causal relationship",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-LOOKBACK_LENS",
+      "to": "B002-SELF_ATTENTION",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation, not verified causal relationship",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-KNOWLEDGE_OVERSHADOWING",
+      "to": "B002-HALLUCINATION",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation, not verified causal relationship",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-S2A",
+      "to": "B002-HALLUCINATION",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation, not verified causal relationship",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-DEDUCTIVE_REASONING",
+      "to": "B002-LLM",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation, not verified causal relationship",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-INDUCTIVE_REASONING",
+      "to": "B002-LLM",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation, not verified causal relationship",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-ABDUCTIVE_REASONING",
+      "to": "B002-LLM",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation, not verified causal relationship",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-VERIFIER",
+      "to": "B002-EXTRINSIC_EVAL",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation, not verified causal relationship",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-ITERATIVE_BACKPROMPTING",
+      "to": "B002-VERIFIER",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation, not verified causal relationship",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-BEST_OF_K",
+      "to": "B002-VERIFIER",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation, not verified causal relationship",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-TEST_TIME_COMPUTE",
+      "to": "B002-INFERENCE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation, not verified causal relationship",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-MCTS",
+      "to": "B002-TEST_TIME_COMPUTE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation, not verified causal relationship",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-REASONING_SFT",
+      "to": "B002-FINE_TUNING",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation, not verified causal relationship",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_KNOWLEDGE",
+      "to": "B002-HALLUCINATION",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed curriculum relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_KNOWLEDGE",
+      "to": "B002-RAG_GROUNDING",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed curriculum relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_KNOWLEDGE",
+      "to": "B002-COVE",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed curriculum relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_KNOWLEDGE",
+      "to": "B002-KNOWLEDGE_QUADRANT",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed curriculum relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_CURRICULUM",
+      "to": "B002-HHH",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed curriculum relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_CURRICULUM",
+      "to": "B002-HUMAN_FEEDBACK",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed curriculum relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_CURRICULUM",
+      "to": "B002-REASONING_SFT",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed curriculum relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_CURRICULUM",
+      "to": "B002-BEST_OF_K",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed curriculum relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ML_ENGINEER",
+      "to": "B002-RLHF",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed curriculum relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ML_ENGINEER",
+      "to": "B002-REWARD_MODEL",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed curriculum relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ML_ENGINEER",
+      "to": "B002-PPO",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed curriculum relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ML_ENGINEER",
+      "to": "B002-KL_REGULARIZATION",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed curriculum relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SECURITY",
+      "to": "B002-ALIGNMENT",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed curriculum relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SECURITY",
+      "to": "B002-HALLUCINATION",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed curriculum relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SECURITY",
+      "to": "B002-S2A",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed curriculum relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SECURITY",
+      "to": "B002-KNOWLEDGE_OVERSHADOWING",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed curriculum relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-POLYGON",
+      "to": "B002-VERIFIER",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed curriculum relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-POLYGON",
+      "to": "B002-UNCERTAINTY_CALIBRATION",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed curriculum relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-POLYGON",
+      "to": "B002-ITERATIVE_BACKPROMPTING",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed curriculum relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-POLYGON",
+      "to": "B002-HHH",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed curriculum relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SYSTEM_ARCHITECT",
+      "to": "B002-TEST_TIME_COMPUTE",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed curriculum relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SYSTEM_ARCHITECT",
+      "to": "B002-VERIFIER",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed curriculum relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SYSTEM_ARCHITECT",
+      "to": "B002-RAG_GROUNDING",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed curriculum relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SYSTEM_ARCHITECT",
+      "to": "B002-DOLA",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed curriculum relevance",
       "status": "PROPOSED"
     }
   ]
