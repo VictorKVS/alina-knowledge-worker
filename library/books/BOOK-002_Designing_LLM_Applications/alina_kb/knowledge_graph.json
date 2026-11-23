@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "graph_id": "ALINA-BOOK-002-KNOWLEDGE-GRAPH",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "created": "2026-11-22",
   "source": {
     "id": "SRC-BOOK002-PRIMARY",
@@ -53,6 +53,10 @@
       "CH09": [
         459,
         491
+      ],
+      "CH10": [
+        493,
+        552
       ]
     },
     "reviewed_chapters": [
@@ -64,9 +68,10 @@
       "CH06",
       "CH07",
       "CH08",
-      "CH09"
+      "CH09",
+      "CH10"
     ],
-    "remaining_chapters": "CH10-CH13 not reviewed"
+    "remaining_chapters": "CH11-CH13 not reviewed"
   },
   "model": {
     "description": "Directed knowledge/competency graph",
@@ -6629,6 +6634,816 @@
       "owner": "ALINA",
       "version": "0.8.0",
       "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-PASSIVE_APPROACH",
+      "title": "Passive interaction",
+      "abbr": null,
+      "definition_ru": "извлечение внешнего контекста программой с последующей передачей данных LLM без самостоятельного выбора инструментов",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH10",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          496,
+          498
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "coverage not correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-RAG"
+      ],
+      "owner": "ALINA",
+      "version": "0.9.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-EXPLICIT_APPROACH",
+      "title": "Explicit interaction",
+      "abbr": null,
+      "definition_ru": "предопределённая последовательность обращений к инструментам в фиксированном workflow",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH10",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          499,
+          500
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "coverage not correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-INFERENCE"
+      ],
+      "owner": "ALINA",
+      "version": "0.9.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-AUTONOMOUS_APPROACH",
+      "title": "Autonomous interaction",
+      "abbr": null,
+      "definition_ru": "LLM декомпозирует задачу и самостоятельно выбирает действия и инструменты",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH10",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          501,
+          505
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "coverage not correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-EXPLICIT_APPROACH"
+      ],
+      "owner": "ALINA",
+      "version": "0.9.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-AGENT_AUTONOMY",
+      "title": "Agent autonomy",
+      "abbr": null,
+      "definition_ru": "возможность определять дальнейшие действия без детального предписания человеком",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH10",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          503,
+          505
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "coverage not correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-AUTONOMOUS_APPROACH"
+      ],
+      "owner": "ALINA",
+      "version": "0.9.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-TASK_DECOMPOSITION",
+      "title": "Task decomposition",
+      "abbr": null,
+      "definition_ru": "разделение пользовательской цели на последовательность зависимых подзадач",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH10",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          505,
+          508
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "coverage not correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-AUTONOMOUS_APPROACH"
+      ],
+      "owner": "ALINA",
+      "version": "0.9.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-AGENT_COMPONENTS",
+      "title": "Agentic system components",
+      "abbr": null,
+      "definition_ru": "набор моделей, инструментов, хранилищ, loop prompt, guardrails/verifiers и оркестратора",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH10",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          508,
+          511
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "coverage not correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-AUTONOMOUS_APPROACH"
+      ],
+      "owner": "ALINA",
+      "version": "0.9.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-TOOL_INTERFACE",
+      "title": "Tool interface",
+      "abbr": null,
+      "definition_ru": "объявление вызываемой функции и аргументов для взаимодействия LLM и приложения",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH10",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          511,
+          520
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "coverage not correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-AGENT_COMPONENTS"
+      ],
+      "owner": "ALINA",
+      "version": "0.9.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-WEB_SEARCH_TOOL",
+      "title": "Web search tool",
+      "abbr": null,
+      "definition_ru": "подключение к поисковым системам для извлечения внешних материалов",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH10",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          512,
+          513
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "coverage not correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-TOOL_INTERFACE"
+      ],
+      "owner": "ALINA",
+      "version": "0.9.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-API_CONNECTOR",
+      "title": "API connector",
+      "abbr": null,
+      "definition_ru": "программный адаптер для получения данных из внешнего API",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH10",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          512,
+          514
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "coverage not correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-TOOL_INTERFACE"
+      ],
+      "owner": "ALINA",
+      "version": "0.9.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-CODE_INTERPRETER",
+      "title": "Code interpreter",
+      "abbr": null,
+      "definition_ru": "изолированный вычислитель для исполнения проверяемых программных фрагментов",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH10",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          513,
+          514
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "coverage not correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-TOOL_INTERFACE"
+      ],
+      "owner": "ALINA",
+      "version": "0.9.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-DATABASE_CONNECTOR",
+      "title": "Database connector",
+      "abbr": null,
+      "definition_ru": "интерфейс к БД с известной схемой и параметризованными операциями",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH10",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          514,
+          515
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "coverage not correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-TOOL_INTERFACE"
+      ],
+      "owner": "ALINA",
+      "version": "0.9.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-TOOL_SELECTION",
+      "title": "Tool selection",
+      "abbr": null,
+      "definition_ru": "выбор нужного инструмента из перечня по задаче",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH10",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          515,
+          520
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "coverage not correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-TOOL_INTERFACE"
+      ],
+      "owner": "ALINA",
+      "version": "0.9.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-TOOL_CALL_JSON",
+      "title": "Structured tool call",
+      "abbr": null,
+      "definition_ru": "машиночитаемое описание операции и её аргументов для оркестратора",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH10",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          518,
+          520
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "coverage not correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-STRUCTURED_OUTPUT"
+      ],
+      "owner": "ALINA",
+      "version": "0.9.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-PROMPT_REPOSITORY",
+      "title": "Prompt repository",
+      "abbr": null,
+      "definition_ru": "хранилище специализированных инструкций и примеров для выполнения задач",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH10",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          523,
+          525
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "coverage not correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-AGENT_COMPONENTS"
+      ],
+      "owner": "ALINA",
+      "version": "0.9.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-SESSION_MEMORY",
+      "title": "Session memory",
+      "abbr": null,
+      "definition_ru": "журнал состояния, предыдущих действий и наблюдений в процессе работы агента",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH10",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          525,
+          528
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "coverage not correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-AGENT_COMPONENTS"
+      ],
+      "owner": "ALINA",
+      "version": "0.9.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-TOOL_DOC_STORE",
+      "title": "Tool documentation store",
+      "abbr": null,
+      "definition_ru": "хранилище схем БД и документации API для корректного обращения к инструментам",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH10",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          528,
+          530
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "coverage not correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-TOOL_INTERFACE"
+      ],
+      "owner": "ALINA",
+      "version": "0.9.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-AGENT_LOOP_PROMPT",
+      "title": "Agent loop prompt",
+      "abbr": null,
+      "definition_ru": "инструкция по циклу использования инструментов, наблюдений и завершения задачи",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH10",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          530,
+          533
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "coverage not correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-AGENT_COMPONENTS"
+      ],
+      "owner": "ALINA",
+      "version": "0.9.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-REACT",
+      "title": "ReAct",
+      "abbr": "REACT",
+      "definition_ru": "схема итераций планирования, действия и наблюдения при работе агента",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH10",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          530,
+          532
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "coverage not correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-AGENT_LOOP_PROMPT"
+      ],
+      "owner": "ALINA",
+      "version": "0.9.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-REFLEXION",
+      "title": "Reflexion",
+      "abbr": "REFLEXION",
+      "definition_ru": "механизм исправления решений на основе обратной связи и истории действий",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH10",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          532,
+          533
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "coverage not correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-AGENT_LOOP_PROMPT"
+      ],
+      "owner": "ALINA",
+      "version": "0.9.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-AGENT_GUARDRAIL",
+      "title": "Agent guardrail",
+      "abbr": null,
+      "definition_ru": "контроль допустимости входов, выходов и действий модели во время работы",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH10",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          533,
+          538
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "coverage not correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-ALIGNMENT"
+      ],
+      "owner": "ALINA",
+      "version": "0.9.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-PII_DETECTION",
+      "title": "PII detection",
+      "abbr": "PII_DETECTION",
+      "definition_ru": "обнаружение персональных данных при входном и выходном контроле",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH10",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          534,
+          538
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "coverage not correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-AGENT_GUARDRAIL"
+      ],
+      "owner": "ALINA",
+      "version": "0.9.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-PROMPT_INJECTION",
+      "title": "Prompt injection",
+      "abbr": null,
+      "definition_ru": "попытка подменить допустимые инструкции через недоверенный текст",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH10",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          535,
+          538
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "coverage not correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-AGENT_GUARDRAIL"
+      ],
+      "owner": "ALINA",
+      "version": "0.9.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-GUARDRAIL_FAIL_ACTION",
+      "title": "Guardrail failure actions",
+      "abbr": null,
+      "definition_ru": "повторный запрос, исправление, фильтрация, отказ, исключение или журналирование",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH10",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          536,
+          538
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "coverage not correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-AGENT_GUARDRAIL"
+      ],
+      "owner": "ALINA",
+      "version": "0.9.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-NLI_VERIFICATION",
+      "title": "Natural language inference verification",
+      "abbr": "NLI_VERIFICATION",
+      "definition_ru": "проверка, следует ли гипотеза из предоставленного источника",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH10",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          543,
+          545
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "coverage not correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-VERIFIER"
+      ],
+      "owner": "ALINA",
+      "version": "0.9.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-SUMMARY_VERIFICATION",
+      "title": "Summary verification criteria",
+      "abbr": null,
+      "definition_ru": "оценка фактичности, полноты, релевантности, структуры и других свойств сводки",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH10",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          540,
+          548
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "coverage not correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-VERIFIER"
+      ],
+      "owner": "ALINA",
+      "version": "0.9.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-AGENT_ORCHESTRATION",
+      "title": "Agent orchestration",
+      "abbr": null,
+      "definition_ru": "управление состоянием, инструментами, маршрутом данных и журналами агента",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH10",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          549,
+          550
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "coverage not correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-AGENT_COMPONENTS"
+      ],
+      "owner": "ALINA",
+      "version": "0.9.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-COMPUTER_USE_AGENT",
+      "title": "Computer-use agent",
+      "abbr": null,
+      "definition_ru": "взаимодействие с GUI/DOM интерфейсом при отсутствии подходящего API",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH10",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          550,
+          552
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "coverage not correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-AUTONOMOUS_APPROACH"
+      ],
+      "owner": "ALINA",
+      "version": "0.9.0",
+      "last_review": "2026-11-23"
     }
   ],
   "edges": [
@@ -9947,6 +10762,390 @@
     {
       "from": "ROLE-SYSTEM_ARCHITECT",
       "to": "B002-INT8",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed role relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-PASSIVE_APPROACH",
+      "to": "B002-RAG",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation not tested",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-EXPLICIT_APPROACH",
+      "to": "B002-INFERENCE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation not tested",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-AUTONOMOUS_APPROACH",
+      "to": "B002-EXPLICIT_APPROACH",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation not tested",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-AGENT_AUTONOMY",
+      "to": "B002-AUTONOMOUS_APPROACH",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation not tested",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-TASK_DECOMPOSITION",
+      "to": "B002-AUTONOMOUS_APPROACH",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation not tested",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-AGENT_COMPONENTS",
+      "to": "B002-AUTONOMOUS_APPROACH",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation not tested",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-TOOL_INTERFACE",
+      "to": "B002-AGENT_COMPONENTS",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation not tested",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-WEB_SEARCH_TOOL",
+      "to": "B002-TOOL_INTERFACE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation not tested",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-API_CONNECTOR",
+      "to": "B002-TOOL_INTERFACE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation not tested",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-CODE_INTERPRETER",
+      "to": "B002-TOOL_INTERFACE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation not tested",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-DATABASE_CONNECTOR",
+      "to": "B002-TOOL_INTERFACE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation not tested",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-TOOL_SELECTION",
+      "to": "B002-TOOL_INTERFACE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation not tested",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-TOOL_CALL_JSON",
+      "to": "B002-STRUCTURED_OUTPUT",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation not tested",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-PROMPT_REPOSITORY",
+      "to": "B002-AGENT_COMPONENTS",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation not tested",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-SESSION_MEMORY",
+      "to": "B002-AGENT_COMPONENTS",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation not tested",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-TOOL_DOC_STORE",
+      "to": "B002-TOOL_INTERFACE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation not tested",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-AGENT_LOOP_PROMPT",
+      "to": "B002-AGENT_COMPONENTS",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation not tested",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-REACT",
+      "to": "B002-AGENT_LOOP_PROMPT",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation not tested",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-REFLEXION",
+      "to": "B002-AGENT_LOOP_PROMPT",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation not tested",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-AGENT_GUARDRAIL",
+      "to": "B002-ALIGNMENT",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation not tested",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-PII_DETECTION",
+      "to": "B002-AGENT_GUARDRAIL",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation not tested",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-PROMPT_INJECTION",
+      "to": "B002-AGENT_GUARDRAIL",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation not tested",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-GUARDRAIL_FAIL_ACTION",
+      "to": "B002-AGENT_GUARDRAIL",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation not tested",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-NLI_VERIFICATION",
+      "to": "B002-VERIFIER",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation not tested",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-SUMMARY_VERIFICATION",
+      "to": "B002-VERIFIER",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation not tested",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-AGENT_ORCHESTRATION",
+      "to": "B002-AGENT_COMPONENTS",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation not tested",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-COMPUTER_USE_AGENT",
+      "to": "B002-AUTONOMOUS_APPROACH",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation not tested",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_KNOWLEDGE",
+      "to": "B002-PROMPT_REPOSITORY",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed role relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_KNOWLEDGE",
+      "to": "B002-TOOL_DOC_STORE",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed role relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_KNOWLEDGE",
+      "to": "B002-NLI_VERIFICATION",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed role relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_CURRICULUM",
+      "to": "B002-TOOL_SELECTION",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed role relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_CURRICULUM",
+      "to": "B002-TASK_DECOMPOSITION",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed role relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_CURRICULUM",
+      "to": "B002-SESSION_MEMORY",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed role relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ML_ENGINEER",
+      "to": "B002-TOOL_CALL_JSON",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed role relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ML_ENGINEER",
+      "to": "B002-AGENT_LOOP_PROMPT",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed role relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SECURITY",
+      "to": "B002-AGENT_GUARDRAIL",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed role relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SECURITY",
+      "to": "B002-PROMPT_INJECTION",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed role relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SECURITY",
+      "to": "B002-PII_DETECTION",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed role relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SECURITY",
+      "to": "B002-DATABASE_CONNECTOR",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed role relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-POLYGON",
+      "to": "B002-SUMMARY_VERIFICATION",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed role relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-POLYGON",
+      "to": "B002-NLI_VERIFICATION",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed role relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-POLYGON",
+      "to": "B002-TOOL_SELECTION",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed role relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-POLYGON",
+      "to": "B002-AGENT_GUARDRAIL",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed role relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SYSTEM_ARCHITECT",
+      "to": "B002-AGENT_COMPONENTS",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed role relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SYSTEM_ARCHITECT",
+      "to": "B002-AGENT_ORCHESTRATION",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed role relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SYSTEM_ARCHITECT",
+      "to": "B002-PASSIVE_APPROACH",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed role relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SYSTEM_ARCHITECT",
+      "to": "B002-EXPLICIT_APPROACH",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed role relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SYSTEM_ARCHITECT",
+      "to": "B002-AUTONOMOUS_APPROACH",
       "type": "REQUIRES_KNOWLEDGE",
       "weight": 0.9,
       "weight_reason": "Proposed role relevance",

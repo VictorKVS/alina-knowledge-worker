@@ -1,5 +1,5 @@
 {
-  "version": "0.8.0",
+  "version": "0.9.0",
   "status": "DESIGNED_NOT_RUN",
   "algorithms": [
     {
@@ -674,6 +674,100 @@
       "source_pages": [
         479,
         482
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-CH10-INTERACTION-PARADIGM",
+      "name": "Choose passive, explicit or controlled agentic workflow",
+      "nodes": [
+        "passive_approach",
+        "explicit_approach",
+        "autonomous_approach"
+      ],
+      "steps": [
+        "Define operational risk and task complexity",
+        "Attempt deterministic direct workflow and passive retrieval",
+        "Use explicit bounded steps when interactions predictable",
+        "Consider autonomy only for tasks with variable planning needs",
+        "Require source proof, UAG permissions and POLYGON qualification",
+        "Document bounded fallback and human review"
+      ],
+      "source_pages": [
+        495,
+        505
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-CH10-TOOL-GATE",
+      "name": "Tool access and argument qualification",
+      "nodes": [
+        "tool_interface",
+        "tool_selection",
+        "tool_call_json",
+        "agent_guardrail"
+      ],
+      "steps": [
+        "Identify task and declared tool registry",
+        "Validate structured schema and tool allowlist",
+        "Enforce UAG authorization and input constraints externally",
+        "Execute read-only/test sandbox and capture trace evidence",
+        "Check tool observation for prompt injection and parse failures",
+        "Abort/retry within budget and audit every call"
+      ],
+      "source_pages": [
+        511,
+        520
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-CH10-LOOP-SUPERVISION",
+      "name": "Bounded stateful agent loop",
+      "nodes": [
+        "agent_loop_prompt",
+        "session_memory",
+        "react",
+        "reflexion"
+      ],
+      "steps": [
+        "Freeze role, prompt, tools, model and task ID",
+        "Set maximum steps, time, tokens and per-tool call budgets",
+        "Log action, observation, state, source refs and error types",
+        "Detect repeated/identical calls and missing progress",
+        "Route failed plans to verified fallback/human review",
+        "Use external verifier, never model self-confidence as proof"
+      ],
+      "source_pages": [
+        525,
+        533
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-CH10-SUMMARY-VERIFY",
+      "name": "Evidence based output verification",
+      "nodes": [
+        "summary_verification",
+        "nli_verification",
+        "verifier"
+      ],
+      "steps": [
+        "Atomize generated output and reference source spans",
+        "Check numerical and entity consistency deterministically",
+        "Assess entailment only with source-supported premise",
+        "Score relevance, completeness, repetition and structure independently",
+        "Reject unsupported material claims; mark UNKNOWN",
+        "Record evidence and make exam cases for POLYGON"
+      ],
+      "source_pages": [
+        539,
+        548
       ],
       "status": "DESIGNED_NOT_RUN",
       "kind": "FATHER_ADAPTATION"
