@@ -2,7 +2,7 @@
 
 Объяснения на уровне **первого курса МАИ**: с нуля, простыми словами, затем формулы, алгоритмы и реальные инженерные применения в 2026 году.
 
-[Как учимся](LEARNING_STANDARD_RU.md) · [Практика 2026](PRACTICE_2026_RU.md) · [BOOK-002: Suhas Pai](books/BOOK-002_Designing_LLM_Applications/README.md) · [Первая книга](books/BOOK-001_AI_Engineering/README.md) · [BOOK-003 Topologos](books/BOOK-003_Multi_Agent_Pattern_Prompting/README.md) · [Шаблон книжного проекта](BOOK_PROJECT_TEMPLATE.md)
+[Лаборатории: все 39 книг](books/LABORATORIES_INDEX_RU.md) · [Стандарт лабораторий](LABORATORY_STANDARD_RU.md) · [Как учимся](LEARNING_STANDARD_RU.md) · [Практика 2026](PRACTICE_2026_RU.md) · [BOOK-002: Suhas Pai](books/BOOK-002_Designing_LLM_Applications/README.md) · [Первая книга](books/BOOK-001_AI_Engineering/README.md) · [BOOK-003 Topologos](books/BOOK-003_Multi_Agent_Pattern_Prompting/README.md) · [Шаблон книжного проекта](BOOK_PROJECT_TEMPLATE.md)
 
 Содержимое книг не копируется в открытый репозиторий без проверки авторских прав. Каталог содержит метаданные 39 позиций, а не их полные тексты.
 
@@ -23,3 +23,7 @@
 
 [Все 39 позиций каталога](CATALOG.md)
 
+
+## Исследовательские лаборатории
+
+Созданы [индекс программ для всех 39 книг](books/LABORATORIES_INDEX_RU.md) и [единый регламент A/B/C](LABORATORY_STANDARD_RU.md). Для 23 глав BOOK-001/BOOK-002 подготовлены самостоятельные планы, для руководства Topologos — отдельный. Это планы `DESIGNED_ONLY`, **не квалифицированные результаты испытаний**. После проверки остальных оригиналов главы получают собственные программы, затем выполняется интеграция в ALINA Knowledge Core.
