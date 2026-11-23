@@ -51,7 +51,7 @@
 
 ## ALINA — база знаний по книге (единый граф)
 
-**[Открыть ALINA Knowledge Core v0.1.0](alina_kb/README.md)** — 307 узлов, 570 связей, словарь, веса, алгоритмы, ролевые представления, правила версионирования.
+**[Открыть ALINA Knowledge Core v0.1.0](alina_kb/README.md)** — 326 узлов, 607 связей, словарь, веса, алгоритмы, ролевые представления, правила версионирования.
 
 - [Graph JSON](alina_kb/knowledge_graph.json) — узлы и связи
 - [Glossary](alina_kb/glossary.json) — словарь терминов и сокращений
@@ -60,7 +60,7 @@
 - [Update rules](alina_kb/schema_policy.md) — обновление после каждой главы
 - [Validator](alina_kb/validate_graph.py) — структурная проверка
 
-**Статус:** составлено по главам 1–12 оригинала; глава 13 ещё не импортирована. База на GitHub пока машиночитаемая, но не развёрнута как сервер БД и не подключена к runtime ALINA.
+**Статус:** составлено по всем главам CH01–CH13 оригинала. База на GitHub пока машиночитаемая, но не развёрнута как сервер БД и не подключена к runtime ALINA.
 
 ## Качество обучения моделей: алгоритмы и чек-листы
 
@@ -116,28 +116,34 @@ ALINA Knowledge Core v0.5.0: 145 узлов, 280 связей, 17 описанн
 
 [Учебный разбор по первоисточнику](chapters/CH08_RU.md) · [Лаборатория A/B/C: достоверность, безопасность и рассуждения](labs/CH08/LAB_PROGRAM.md) · [Проверочные задания](learning/CH08_learning_package.json)
 
-ALINA Knowledge Core v0.7.0: 193 узла, 371 связь, 41 описанный алгоритм. Источники глав 1–8 разобраны. Лаборатории главы 8 **DESIGNED_ONLY / NOT_RUN / NOT_QUALIFIED**; POLYGON не запускался.
+ALINA Knowledge Core v0.7.0: 193 узла, 371 связь, 45 описанных алгоритмов. Источники глав 1–8 разобраны. Лаборатории главы 8 **DESIGNED_ONLY / NOT_RUN / NOT_QUALIFIED**; POLYGON не запускался.
 
 ## Глава 9 — Inference Optimization
 
 [Разбор главы 9](chapters/CH09_RU.md) · [Лабораторная A/B/C](labs/CH09/LAB_PROGRAM.md) · [Учебный экзамен](learning/CH09_learning_package.json) · [POLYGON: основной независимый экзамен после обучения](alina_kb/qualification/POLYGON_POST_TRAINING_PROTOCOL_RU.md)
 
-Граф ALINA v0.8.0 — 307 узлов, 570 связей, 41 описанный алгоритм. Главы 1–9 разобраны по первоисточнику. Для главы 9 **NOT_RUN / NOT_QUALIFIED**.
+Граф ALINA v0.8.0 — 326 узлов, 607 связей, 45 описанных алгоритмов. Главы 1–9 разобраны по первоисточнику. Для главы 9 **NOT_RUN / NOT_QUALIFIED**.
 
 ## Глава 10 — работа LLM с внешними инструментами
 
 [Разбор главы 10](chapters/CH10_RU.md) · [Лаборатория A/B/C и POLYGON Tool Use](labs/CH10/LAB_PROGRAM.md) · [Обучающие вопросы](learning/CH10_learning_package.json)
 
-ALINA Knowledge Core v0.9.0: 307 узлов, 570 связей, 41 описанный алгоритм, главы 1–10 изучены по оригиналу. Лаборатория Tool Use только спроектирована, NOT_RUN / NOT_QUALIFIED.
+ALINA Knowledge Core v0.9.0: 326 узлов, 607 связей, 45 описанных алгоритмов, главы 1–10 изучены по оригиналу. Лаборатория Tool Use только спроектирована, NOT_RUN / NOT_QUALIFIED.
 
 ## Глава 11 — Representation Learning and Embeddings
 
 [Конспект первоисточника](chapters/CH11_RU.md) · [Лаборатория A/B/C](labs/CH11/LAB_PROGRAM.md) · [Учебный пакет](learning/CH11_learning_package.json)
 
-ALINA Knowledge Core v1.0.0: 307 узлов, 570 связей, 41 описанный алгоритм; прочитаны главы CH01–CH11. Испытания главы 11 НЕ выполнены, POLYGON NOT_QUALIFIED.
+ALINA Knowledge Core v1.0.0: 326 узлов, 607 связей, 45 описанных алгоритмов; прочитаны главы CH01–CH11. Испытания главы 11 НЕ выполнены, POLYGON NOT_QUALIFIED.
 
 ## Глава 12 — Retrieval-Augmented Generation
 
 [Конспект по первоисточнику](chapters/CH12_RU.md) · [Лаборатория A/B/C и POLYGON](labs/CH12/LAB_PROGRAM.md) · [Учебный пакет](learning/CH12_learning_package.json)
 
-ALINA Knowledge Core v1.1.0: 307 узлов, 570 связей, 41 описанный алгоритм, главы CH01–CH12 изучены непосредственно по оригиналу. Лаборатория RAG — DESIGNED_ONLY / NOT_RUN / NOT_QUALIFIED.
+ALINA Knowledge Core v1.1.0: 326 узлов, 607 связей, 45 описанных алгоритмов, главы CH01–CH12 изучены непосредственно по оригиналу. Лаборатория RAG — DESIGNED_ONLY / NOT_RUN / NOT_QUALIFIED.
+
+## Завершение CH13 и статус книги
+
+[Глава 13 — Architecture Patterns](chapters/CH13_RU.md) · [Лаборатория A/B/C](labs/CH13/LAB_PROGRAM.md) · [Обучающие вопросы](learning/CH13_learning_package.json).
+
+**Все 13 глав BOOK-002 изучены по первоисточнику** (PDF 27–700, согласно разметке глав). ALINA KB v1.2.0: 326 узлов, 607 связей, 45 описанных алгоритмов. **Это завершение первичного чтения и проектирования лабораторий, не результат прогонов и квалификации POLYGON.** Предстоит итоговый аудит полноты/перекрёстных ссылок и единая интеграция знаний со всеми книгами.
