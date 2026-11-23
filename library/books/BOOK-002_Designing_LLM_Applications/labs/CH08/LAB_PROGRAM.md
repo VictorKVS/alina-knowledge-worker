@@ -46,3 +46,7 @@
 
 ## Статус
 SOURCE_REVIEWED → LAB_PROGRAM_DESIGNED → RUN_NOT_STARTED → POLYGON_NOT_QUALIFIED.
+
+## Главная функция POLYGON после обучения
+
+Эта лаборатория является основой **обязательного независимого экзамена агента после обучения**. Полный протокол: [POLYGON Post-Training Qualification](../../alina_kb/qualification/POLYGON_POST_TRAINING_PROTOCOL_RU.md). Замороженный закрытый holdout не передавать ALINA. Проверять знания, рассуждения, источники, права, adversarial, performance и регрессии. Повторная квалификация нужна при изменении модели, промпта, RAG или инструментов. **NOT_RUN**.
