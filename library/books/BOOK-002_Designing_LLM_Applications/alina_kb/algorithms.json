@@ -1,5 +1,5 @@
 {
-  "version": "1.1.0",
+  "version": "1.2.0",
   "status": "DESIGNED_NOT_RUN",
   "algorithms": [
     {
@@ -951,6 +951,97 @@
       "source_pages": [
         609,
         672
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-CH13-MODEL-CASCADE",
+      "name": "Quality-constrained model cascade",
+      "nodes": [
+        "llm_cascade",
+        "cascade_confidence",
+        "self_consistency_routing"
+      ],
+      "source_pages": [
+        686,
+        689
+      ],
+      "steps": [
+        "Freeze the reference task set and independent quality threshold",
+        "Run lowest-cost capable model",
+        "Verify using external rubric, never rely solely on model-declared confidence",
+        "Escalate to larger model if quality unverified or confidence rule fails",
+        "Measure cumulative cost, latency and quality; retain trace and model IDs",
+        "Do not claim PASS without frozen POLYGON holdout"
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-CH13-MODEL-ROUTER",
+      "name": "Task-aware model and retrieval routing",
+      "nodes": [
+        "llm_router",
+        "intent_routing",
+        "complexity_routing",
+        "rag_router"
+      ],
+      "source_pages": [
+        689,
+        691
+      ],
+      "steps": [
+        "Extract task intent, complexity, privacy constraints and evidence needs",
+        "Check candidate models' published capability and license scope",
+        "Choose smallest qualified executor or retrieval path, without side effects",
+        "Audit routing and reroute on validated failure",
+        "Evaluate misrouting, cost and p95 on independent dataset"
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-CH13-SPECIALIST-COMPOSE",
+      "name": "Multi-specialist decomposition and assembly",
+      "nodes": [
+        "task_specialized_llm",
+        "multi_llm_architecture",
+        "system_architecture"
+      ],
+      "source_pages": [
+        684,
+        692
+      ],
+      "steps": [
+        "Break customer requirement into source-grounded subtasks",
+        "Match tasks to versioned qualified agent capabilities",
+        "Build explicit tool and data/security contracts",
+        "Execute in bounded orchestration with UAG policy",
+        "Run independent integration verification and regression through POLYGON"
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-CH13-DECLARATIVE-COMPARE",
+      "name": "Declarative programming comparison DSPy/LMQL",
+      "nodes": [
+        "dspy",
+        "dspy_module",
+        "dspy_optimizer",
+        "lmql"
+      ],
+      "source_pages": [
+        692,
+        700
+      ],
+      "steps": [
+        "Implement identical simple QA specification in baseline Python and candidate frameworks",
+        "Hold inputs, allowed source corpus and metric constant",
+        "Tune only on training subset, do not leak closed qualification set",
+        "Compare type validity, factuality, repeatability, latency and resource use",
+        "Adopt only when independent evidence supports quality and maintainability"
       ],
       "status": "DESIGNED_NOT_RUN",
       "kind": "FATHER_ADAPTATION"

@@ -1,5 +1,5 @@
 {
-  "version": "1.1.0",
+  "version": "1.2.0",
   "source_id": "SRC-BOOK002-PRIMARY",
   "terms": [
     {
@@ -3990,6 +3990,253 @@
       "pdf_pages": [
         679,
         682
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-SYSTEM_ARCHITECTURE",
+      "term": "System architecture",
+      "abbreviation": null,
+      "definition_ru": "композиция программных и модельных компонентов для достижения надёжности, качества, стоимости и задержки",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH13",
+      "pdf_pages": [
+        683,
+        684
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-MULTI_LLM_ARCHITECTURE",
+      "term": "Multi-LLM architecture",
+      "abbreviation": null,
+      "definition_ru": "совместное применение нескольких языковых моделей для подзадач или выбора модели на запрос",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH13",
+      "pdf_pages": [
+        684,
+        685
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-LLM_ENSEMBLE",
+      "term": "LLM ensemble",
+      "abbreviation": null,
+      "definition_ru": "объединение выходов нескольких моделей методами агрегирования",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH13",
+      "pdf_pages": [
+        685,
+        686
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-LLM_CASCADE",
+      "term": "LLM cascade",
+      "abbreviation": null,
+      "definition_ru": "последовательная передача задачи моделям возрастающей мощности при недостаточной уверенности",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH13",
+      "pdf_pages": [
+        686,
+        689
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-CASCADE_CONFIDENCE",
+      "term": "Cascade confidence calibration",
+      "abbreviation": null,
+      "definition_ru": "оценивание достаточности ответа для остановки каскада с учётом калибровки",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH13",
+      "pdf_pages": [
+        687,
+        689
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-MARGIN_SAMPLING",
+      "term": "Margin sampling",
+      "abbreviation": null,
+      "definition_ru": "использование разницы вероятностей двух наиболее вероятных токенов как эвристики уверенности",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH13",
+      "pdf_pages": [
+        688,
+        689
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-SELF_CONSISTENCY_ROUTING",
+      "term": "Self-consistency for routing",
+      "abbreviation": null,
+      "definition_ru": "сравнение нескольких ответов модели как эвристики уверенности",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH13",
+      "pdf_pages": [
+        687,
+        689
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-LLM_ROUTER",
+      "term": "LLM router",
+      "abbreviation": null,
+      "definition_ru": "модель или программа предварительного распределения запросов по исполнителям",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH13",
+      "pdf_pages": [
+        689,
+        691
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-INTENT_ROUTING",
+      "term": "Intent routing",
+      "abbreviation": null,
+      "definition_ru": "направление запроса по распознанному намерению к соответствующей модели",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH13",
+      "pdf_pages": [
+        689,
+        690
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-COMPLEXITY_ROUTING",
+      "term": "Complexity-based routing",
+      "abbreviation": null,
+      "definition_ru": "направление запроса к наименьшей модели с достаточным ожидаемым качеством",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH13",
+      "pdf_pages": [
+        689,
+        691
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-RAG_ROUTER",
+      "term": "RAG retrieval routing",
+      "abbreviation": null,
+      "definition_ru": "выбор вида поискового механизма по характеристикам запроса",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH13",
+      "pdf_pages": [
+        690,
+        691
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-TASK_SPECIALIZED_LLM",
+      "term": "Task-specialized LLM",
+      "abbreviation": null,
+      "definition_ru": "использование предметных или функциональных моделей для отдельных подзадач",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH13",
+      "pdf_pages": [
+        691,
+        692
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-PROGRAMMING_PARADIGMS",
+      "term": "LLM programming paradigms",
+      "abbreviation": null,
+      "definition_ru": "программное описание логики приложения с отделением потока исполнения от текстовых инструкций",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH13",
+      "pdf_pages": [
+        692,
+        693
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-DSPY",
+      "term": "DSPy",
+      "abbreviation": "DSPY",
+      "definition_ru": "фреймворк декларативной разработки LLM-программ с модулями и оптимизаторами",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH13",
+      "pdf_pages": [
+        693,
+        697
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-DSPY_MODULE",
+      "term": "DSPy module",
+      "abbreviation": null,
+      "definition_ru": "компонент программы с декларативной сигнатурой входов и выходов",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH13",
+      "pdf_pages": [
+        694,
+        696
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-DSPY_SIGNATURE",
+      "term": "DSPy signature",
+      "abbreviation": null,
+      "definition_ru": "декларативная спецификация входных и выходных полей задачи",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH13",
+      "pdf_pages": [
+        694,
+        696
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-DSPY_OPTIMIZER",
+      "term": "DSPy optimizer",
+      "abbreviation": null,
+      "definition_ru": "модуль экспериментальной настройки инструкций, примеров или параметров модели по метрике",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH13",
+      "pdf_pages": [
+        696,
+        697
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-LMQL",
+      "term": "Language Model Query Language",
+      "abbreviation": "LMQL",
+      "definition_ru": "декларативный подход для промптов, ограничений генерации и управления программным потоком",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH13",
+      "pdf_pages": [
+        697,
+        700
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-CONSTRAINED_GENERATION",
+      "term": "Constrained generation",
+      "abbreviation": null,
+      "definition_ru": "ограничение возможного вывода модели заданными программными правилами",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH13",
+      "pdf_pages": [
+        698,
+        699
       ],
       "importance": 5
     }

@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "graph_id": "ALINA-BOOK-002-KNOWLEDGE-GRAPH",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "created": "2026-11-22",
   "source": {
     "id": "SRC-BOOK002-PRIMARY",
@@ -65,6 +65,10 @@
       "CH12": [
         604,
         682
+      ],
+      "CH13": [
+        683,
+        700
       ]
     },
     "reviewed_chapters": [
@@ -79,9 +83,10 @@
       "CH09",
       "CH10",
       "CH11",
-      "CH12"
+      "CH12",
+      "CH13"
     ],
-    "remaining_chapters": "CH13 not reviewed"
+    "remaining_chapters": "NONE: CH01-CH13 source-reviewed"
   },
   "model": {
     "description": "Directed knowledge/competency graph",
@@ -9314,6 +9319,576 @@
       "owner": "ALINA",
       "version": "1.1.0",
       "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-SYSTEM_ARCHITECTURE",
+      "title": "System architecture",
+      "abbr": null,
+      "definition_ru": "композиция программных и модельных компонентов для достижения надёжности, качества, стоимости и задержки",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH13",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          683,
+          684
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "source coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-LLM"
+      ],
+      "owner": "ALINA",
+      "version": "1.2.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-MULTI_LLM_ARCHITECTURE",
+      "title": "Multi-LLM architecture",
+      "abbr": null,
+      "definition_ru": "совместное применение нескольких языковых моделей для подзадач или выбора модели на запрос",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH13",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          684,
+          685
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "source coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-SYSTEM_ARCHITECTURE"
+      ],
+      "owner": "ALINA",
+      "version": "1.2.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-LLM_ENSEMBLE",
+      "title": "LLM ensemble",
+      "abbr": null,
+      "definition_ru": "объединение выходов нескольких моделей методами агрегирования",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH13",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          685,
+          686
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "source coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-MULTI_LLM_ARCHITECTURE"
+      ],
+      "owner": "ALINA",
+      "version": "1.2.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-LLM_CASCADE",
+      "title": "LLM cascade",
+      "abbr": null,
+      "definition_ru": "последовательная передача задачи моделям возрастающей мощности при недостаточной уверенности",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH13",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          686,
+          689
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "source coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-MULTI_LLM_ARCHITECTURE"
+      ],
+      "owner": "ALINA",
+      "version": "1.2.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-CASCADE_CONFIDENCE",
+      "title": "Cascade confidence calibration",
+      "abbr": null,
+      "definition_ru": "оценивание достаточности ответа для остановки каскада с учётом калибровки",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH13",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          687,
+          689
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "source coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-LLM_CASCADE"
+      ],
+      "owner": "ALINA",
+      "version": "1.2.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-MARGIN_SAMPLING",
+      "title": "Margin sampling",
+      "abbr": null,
+      "definition_ru": "использование разницы вероятностей двух наиболее вероятных токенов как эвристики уверенности",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH13",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          688,
+          689
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "source coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-CASCADE_CONFIDENCE"
+      ],
+      "owner": "ALINA",
+      "version": "1.2.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-SELF_CONSISTENCY_ROUTING",
+      "title": "Self-consistency for routing",
+      "abbr": null,
+      "definition_ru": "сравнение нескольких ответов модели как эвристики уверенности",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH13",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          687,
+          689
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "source coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-CASCADE_CONFIDENCE"
+      ],
+      "owner": "ALINA",
+      "version": "1.2.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-LLM_ROUTER",
+      "title": "LLM router",
+      "abbr": null,
+      "definition_ru": "модель или программа предварительного распределения запросов по исполнителям",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH13",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          689,
+          691
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "source coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-MULTI_LLM_ARCHITECTURE"
+      ],
+      "owner": "ALINA",
+      "version": "1.2.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-INTENT_ROUTING",
+      "title": "Intent routing",
+      "abbr": null,
+      "definition_ru": "направление запроса по распознанному намерению к соответствующей модели",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH13",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          689,
+          690
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "source coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-LLM_ROUTER"
+      ],
+      "owner": "ALINA",
+      "version": "1.2.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-COMPLEXITY_ROUTING",
+      "title": "Complexity-based routing",
+      "abbr": null,
+      "definition_ru": "направление запроса к наименьшей модели с достаточным ожидаемым качеством",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH13",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          689,
+          691
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "source coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-LLM_ROUTER"
+      ],
+      "owner": "ALINA",
+      "version": "1.2.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-RAG_ROUTER",
+      "title": "RAG retrieval routing",
+      "abbr": null,
+      "definition_ru": "выбор вида поискового механизма по характеристикам запроса",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH13",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          690,
+          691
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "source coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-LLM_ROUTER"
+      ],
+      "owner": "ALINA",
+      "version": "1.2.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-TASK_SPECIALIZED_LLM",
+      "title": "Task-specialized LLM",
+      "abbr": null,
+      "definition_ru": "использование предметных или функциональных моделей для отдельных подзадач",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH13",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          691,
+          692
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "source coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-MULTI_LLM_ARCHITECTURE"
+      ],
+      "owner": "ALINA",
+      "version": "1.2.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-PROGRAMMING_PARADIGMS",
+      "title": "LLM programming paradigms",
+      "abbr": null,
+      "definition_ru": "программное описание логики приложения с отделением потока исполнения от текстовых инструкций",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH13",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          692,
+          693
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "source coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-SYSTEM_ARCHITECTURE"
+      ],
+      "owner": "ALINA",
+      "version": "1.2.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-DSPY",
+      "title": "DSPy",
+      "abbr": "DSPY",
+      "definition_ru": "фреймворк декларативной разработки LLM-программ с модулями и оптимизаторами",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH13",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          693,
+          697
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "source coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-PROGRAMMING_PARADIGMS"
+      ],
+      "owner": "ALINA",
+      "version": "1.2.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-DSPY_MODULE",
+      "title": "DSPy module",
+      "abbr": null,
+      "definition_ru": "компонент программы с декларативной сигнатурой входов и выходов",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH13",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          694,
+          696
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "source coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-DSPY"
+      ],
+      "owner": "ALINA",
+      "version": "1.2.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-DSPY_SIGNATURE",
+      "title": "DSPy signature",
+      "abbr": null,
+      "definition_ru": "декларативная спецификация входных и выходных полей задачи",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH13",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          694,
+          696
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "source coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-DSPY_MODULE"
+      ],
+      "owner": "ALINA",
+      "version": "1.2.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-DSPY_OPTIMIZER",
+      "title": "DSPy optimizer",
+      "abbr": null,
+      "definition_ru": "модуль экспериментальной настройки инструкций, примеров или параметров модели по метрике",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH13",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          696,
+          697
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "source coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-DSPY"
+      ],
+      "owner": "ALINA",
+      "version": "1.2.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-LMQL",
+      "title": "Language Model Query Language",
+      "abbr": "LMQL",
+      "definition_ru": "декларативный подход для промптов, ограничений генерации и управления программным потоком",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH13",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          697,
+          700
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "source coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-PROGRAMMING_PARADIGMS"
+      ],
+      "owner": "ALINA",
+      "version": "1.2.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-CONSTRAINED_GENERATION",
+      "title": "Constrained generation",
+      "abbr": null,
+      "definition_ru": "ограничение возможного вывода модели заданными программными правилами",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH13",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          698,
+          699
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "source coverage, not model correctness"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-LMQL"
+      ],
+      "owner": "ALINA",
+      "version": "1.2.0",
+      "last_review": "2026-11-23"
     }
   ],
   "edges": [
@@ -13875,6 +14450,302 @@
       "type": "REQUIRES_KNOWLEDGE",
       "weight": 0.9,
       "weight_reason": "Proposed curriculum assignment",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-SYSTEM_ARCHITECTURE",
+      "to": "B002-LLM",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Source-derived concept association",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-MULTI_LLM_ARCHITECTURE",
+      "to": "B002-SYSTEM_ARCHITECTURE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Source-derived concept association",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-LLM_ENSEMBLE",
+      "to": "B002-MULTI_LLM_ARCHITECTURE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Source-derived concept association",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-LLM_CASCADE",
+      "to": "B002-MULTI_LLM_ARCHITECTURE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Source-derived concept association",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-CASCADE_CONFIDENCE",
+      "to": "B002-LLM_CASCADE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Source-derived concept association",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-MARGIN_SAMPLING",
+      "to": "B002-CASCADE_CONFIDENCE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Source-derived concept association",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-SELF_CONSISTENCY_ROUTING",
+      "to": "B002-CASCADE_CONFIDENCE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Source-derived concept association",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-LLM_ROUTER",
+      "to": "B002-MULTI_LLM_ARCHITECTURE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Source-derived concept association",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-INTENT_ROUTING",
+      "to": "B002-LLM_ROUTER",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Source-derived concept association",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-COMPLEXITY_ROUTING",
+      "to": "B002-LLM_ROUTER",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Source-derived concept association",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-RAG_ROUTER",
+      "to": "B002-LLM_ROUTER",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Source-derived concept association",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-TASK_SPECIALIZED_LLM",
+      "to": "B002-MULTI_LLM_ARCHITECTURE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Source-derived concept association",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-PROGRAMMING_PARADIGMS",
+      "to": "B002-SYSTEM_ARCHITECTURE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Source-derived concept association",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-DSPY",
+      "to": "B002-PROGRAMMING_PARADIGMS",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Source-derived concept association",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-DSPY_MODULE",
+      "to": "B002-DSPY",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Source-derived concept association",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-DSPY_SIGNATURE",
+      "to": "B002-DSPY_MODULE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Source-derived concept association",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-DSPY_OPTIMIZER",
+      "to": "B002-DSPY",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Source-derived concept association",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-LMQL",
+      "to": "B002-PROGRAMMING_PARADIGMS",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Source-derived concept association",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-CONSTRAINED_GENERATION",
+      "to": "B002-LMQL",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Source-derived concept association",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_KNOWLEDGE",
+      "to": "B002-SYSTEM_ARCHITECTURE",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed role relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_KNOWLEDGE",
+      "to": "B002-DSPY_SIGNATURE",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed role relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_CURRICULUM",
+      "to": "B002-TASK_SPECIALIZED_LLM",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed role relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_CURRICULUM",
+      "to": "B002-DSPY_MODULE",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed role relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ML_ENGINEER",
+      "to": "B002-LLM_CASCADE",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed role relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ML_ENGINEER",
+      "to": "B002-MARGIN_SAMPLING",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed role relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ML_ENGINEER",
+      "to": "B002-DSPY_OPTIMIZER",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed role relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ML_ENGINEER",
+      "to": "B002-LMQL",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed role relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SECURITY",
+      "to": "B002-LLM_ROUTER",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed role relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SECURITY",
+      "to": "B002-CONSTRAINED_GENERATION",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed role relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-POLYGON",
+      "to": "B002-CASCADE_CONFIDENCE",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed role relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-POLYGON",
+      "to": "B002-COMPLEXITY_ROUTING",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed role relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-POLYGON",
+      "to": "B002-LLM_ENSEMBLE",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed role relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SYSTEM_ARCHITECT",
+      "to": "B002-MULTI_LLM_ARCHITECTURE",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed role relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SYSTEM_ARCHITECT",
+      "to": "B002-LLM_CASCADE",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed role relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SYSTEM_ARCHITECT",
+      "to": "B002-LLM_ROUTER",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed role relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SYSTEM_ARCHITECT",
+      "to": "B002-TASK_SPECIALIZED_LLM",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed role relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SYSTEM_ARCHITECT",
+      "to": "B002-PROGRAMMING_PARADIGMS",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed role relevance",
       "status": "PROPOSED"
     }
   ]

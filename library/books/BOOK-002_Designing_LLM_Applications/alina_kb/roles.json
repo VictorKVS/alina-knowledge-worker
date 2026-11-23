@@ -1,5 +1,5 @@
 {
-  "version": "1.1.0",
+  "version": "1.2.0",
   "graph_id": "ALINA-BOOK-002-KNOWLEDGE-GRAPH",
   "views": [
     {
@@ -46,7 +46,9 @@
           "B002-HYBRID_SEARCH",
           "B002-RAG_METADATA_FILTER",
           "B002-CHAIN_OF_NOTE",
-          "B002-RAG_CONTEXT_CONFLICT"
+          "B002-RAG_CONTEXT_CONFLICT",
+          "B002-SYSTEM_ARCHITECTURE",
+          "B002-DSPY_SIGNATURE"
         ]
       },
       "note": "Read-only filtered view of shared graph; do not duplicate facts",
@@ -93,7 +95,9 @@
           "B002-SEMANTIC_CHUNKING",
           "B002-RAG_FEWSHOT",
           "B002-LLMR",
-          "B002-RAG_MEMORY_MGMT"
+          "B002-RAG_MEMORY_MGMT",
+          "B002-TASK_SPECIALIZED_LLM",
+          "B002-DSPY_MODULE"
         ]
       },
       "note": "Read-only filtered view of shared graph; do not duplicate facts",
@@ -151,7 +155,11 @@
           "B002-SPARSE_AUTOENCODER",
           "B002-REALM",
           "B002-TIGHT_RETRIEVER",
-          "B002-COLBERT"
+          "B002-COLBERT",
+          "B002-LLM_CASCADE",
+          "B002-MARGIN_SAMPLING",
+          "B002-DSPY_OPTIMIZER",
+          "B002-LMQL"
         ]
       },
       "note": "Read-only filtered view of shared graph; do not duplicate facts",
@@ -193,7 +201,9 @@
           "B002-LAYOUT_CHUNKING",
           "B002-RAG_METADATA_FILTER",
           "B002-RAG_CONTEXT_CONFLICT",
-          "B002-QUERY_DRIFT"
+          "B002-QUERY_DRIFT",
+          "B002-LLM_ROUTER",
+          "B002-CONSTRAINED_GENERATION"
         ]
       },
       "note": "Read-only filtered view of shared graph; do not duplicate facts",
@@ -242,7 +252,10 @@
           "B002-RERANKER",
           "B002-RAG_CONTEXT_CONFLICT",
           "B002-CHAIN_OF_NOTE",
-          "B002-RAG_VS_FINETUNE"
+          "B002-RAG_VS_FINETUNE",
+          "B002-CASCADE_CONFIDENCE",
+          "B002-COMPLEXITY_ROUTING",
+          "B002-LLM_ENSEMBLE"
         ]
       },
       "note": "Read-only filtered view of shared graph; do not duplicate facts",
@@ -299,7 +312,12 @@
           "B002-GRAPHRAG",
           "B002-RAG_LONG_CONTEXT",
           "B002-RAG_PIPELINE",
-          "B002-HYBRID_SEARCH"
+          "B002-HYBRID_SEARCH",
+          "B002-MULTI_LLM_ARCHITECTURE",
+          "B002-LLM_CASCADE",
+          "B002-LLM_ROUTER",
+          "B002-TASK_SPECIALIZED_LLM",
+          "B002-PROGRAMMING_PARADIGMS"
         ]
       },
       "note": "Read-only filtered view of shared graph; do not duplicate facts",
