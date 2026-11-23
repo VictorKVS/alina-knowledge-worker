@@ -13,9 +13,17 @@
 - [Лаборатория A/B/C](labs/CH08/LAB_PROGRAM.md): от простой session memory до масштабирования и POLYGON.
 - [Реестр источников](sources.json): оригинал PDF, проверенный внешний перевод и ограничения авторских прав.
 
-**Состояние:** `CH08_SOURCE_REVIEWED / STUDY_CREATED / LAB_DESIGNED / NOT_RUN / NOT_QUALIFIED`. Остальные 20 глав не объявляются изученными: предусмотрен дальнейший последовательный разбор всей книги.
+**Состояние:** `CH08_SOURCE_REVIEWED / STUDY_CREATED / LAB_DESIGNED / NOT_RUN / NOT_QUALIFIED`. Главы 2 (Routing) и 3 (Parallelization) также проработаны по оригиналу и получили исправленные учебные примеры кода; остальные 18 глав ещё не пройдены полностью.
 
 ## Отношение к FATHER
 
 Одна общая память/KB в ALINA, а у FRODO, TIMA и других агентов — отдельные разрешённые представления знаний, сессии, рабочее состояние и собственные политики долговременного хранения. Память — данные, но не полномочия на tool-use. Закрытые экзаменационные задания POLYGON не сохраняются в обучающую память.
 
+
+## Разборы CH02 и CH03 по оригиналу
+
+- [CH02 Routing — инженерный разбор](chapters/CH02_ROUTING_RU.md), [Python](examples/ch02_router.py), [лаборатория](labs/CH02/LAB_PROGRAM.md)
+- [CH03 Parallelization — инженерный разбор](chapters/CH03_PARALLELIZATION_RU.md), [Python](examples/ch03_parallelization.py), [лаборатория](labs/CH03/LAB_PROGRAM.md)
+- [Каталог паттернов Agent Factory](architecture/AGENT_PATTERNS_CATALOG_RU.md)
+
+Код только подготовлен и исправлен статически, не исполнялся с API; source-review не означает runtime/qualification PASS.
