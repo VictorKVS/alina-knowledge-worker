@@ -27,3 +27,9 @@
 - [Каталог паттернов Agent Factory](architecture/AGENT_PATTERNS_CATALOG_RU.md)
 
 Код только подготовлен и исправлен статически, не исполнялся с API; source-review не означает runtime/qualification PASS.
+
+## Универсальное подключение LLM для CH02 и CH03
+
+Оба примера используют единый [ModelAdapter](examples/model_adapter.py) с выбором `ollama/openai/gemini/anthropic/openai-compatible` через переменные окружения. Без копирования логики агента. [Руководство и команды](architecture/MODEL_PROVIDERS_RU.md) · [Offline tests](tests/test_model_adapter.py).
+
+Ни одна удалённая модель не вызывалась; смена адаптера сама по себе не даёт POLYGON PASS.

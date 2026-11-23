@@ -1,57 +1,56 @@
-"""LIB-0040 CH02: demonstration of LLM routing to simulated handlers.
+"""Chapter 2 — Routing: one coordinator, provider-independent LLM.
 
-Requires: pip install langchain-core langchain-google-genai
-          GOOGLE_API_KEY environment variable.
-This example does NOT book anything and does not run privileged tools.
+Usage: set AGENT_LLM_PROVIDER and AGENT_LLM_MODEL; python ch02_router.py.
+The three handlers are MOCKS. No real booking or external tool actions.
 """
-import os
-
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.runnables import RunnableBranch, RunnableLambda, RunnablePassthrough
-from langchain_google_genai import ChatGoogleGenerativeAI
 
-LABELS = {"booker", "info", "unclear"}
+from model_adapter import ModelConfig, create_chat_model
+
+LABELS = frozenset({"booker", "info", "unclear"})
 
 def normalize_label(value: str) -> str:
-    label = value.strip().lower()
-    return label if label in LABELS else "unclear"
+    value = value.strip().lower()
+    return value if value in LABELS else "unclear"
 
-def booking_handler(data: dict) -> str:
-    return f"DEMO: booking handler received: {data['request']}"
+def booking_handler(state: dict) -> str:
+    return "DEMO: booking task received: " + state["request"]
 
-def info_handler(data: dict) -> str:
-    return f"DEMO: information handler received: {data['request']}"
+def info_handler(state: dict) -> str:
+    return "DEMO: information task received: " + state["request"]
 
-def unclear_handler(data: dict) -> str:
-    return "Please clarify the request."
+def unclear_handler(state: dict) -> str:
+    return "DEMO: request needs clarification"
 
 def build_agent(llm):
     prompt = ChatPromptTemplate.from_messages([
-        ("system", "Classify the user request. Flights/hotels reservation -> booker; "
-                   "ordinary factual information -> info; otherwise -> unclear. "
-                   "Return EXACTLY one label: booker, info, or unclear."),
+        ("system", "Select one handler for a user request. "
+                   "booker for booking flights/hotels, info for general factual questions, "
+                   "unclear for ambiguous or unsupported requests. "
+                   "Reply with exactly one label: booker, info, or unclear."),
         ("human", "{request}"),
     ])
-    router = prompt | llm | StrOutputParser() | RunnableLambda(normalize_label)
-    branch = RunnableBranch(
-        (lambda x: x["decision"] == "booker", RunnableLambda(booking_handler)),
-        (lambda x: x["decision"] == "info", RunnableLambda(info_handler)),
+    classify = prompt | llm | StrOutputParser() | RunnableLambda(normalize_label)
+    dispatch = RunnableBranch(
+        (lambda x: x["route"] == "booker", RunnableLambda(booking_handler)),
+        (lambda x: x["route"] == "info", RunnableLambda(info_handler)),
         RunnableLambda(unclear_handler),
     )
-    return RunnablePassthrough.assign(decision=router) | branch
+    return RunnablePassthrough.assign(route=classify) | dispatch
 
 def main():
-    if not os.getenv("GOOGLE_API_KEY"):
-        raise SystemExit("Set GOOGLE_API_KEY before running this example.")
-    llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash", temperature=0)
+    config = ModelConfig.from_env()
+    llm = create_chat_model(config)
     agent = build_agent(llm)
-    for request in ("Book me a flight to London", "What is the capital of Italy?",
-                    "Help me with something"):
+    print(f"Router provider={config.provider} model={config.model}")
+    for question in ("Book me a flight to London", "What is the capital of Italy?",
+                     "Help me with something"):
         try:
-            print(agent.invoke({"request": request}))
+            print(agent.invoke({"request": question}))
         except Exception as exc:
-            print(f"Router invocation failed: {type(exc).__name__}: {exc}")
+            print(f"LLM/Router error: {type(exc).__name__}: {exc}")
 
 if __name__ == "__main__":
     main()
