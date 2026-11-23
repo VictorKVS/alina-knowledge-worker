@@ -22,7 +22,7 @@
 | 7 | Advanced Fine-Tuning Techniques | PDF 378–413 | [Глава 7: изучена](chapters/CH07_RU.md) |
 | 8 | Alignment Training and Reasoning | PDF 414–458 | [Глава 8: изучена](chapters/CH08_RU.md) |
 | 9 | Inference Optimization | PDF 459–491 | [Глава 9: изучена](chapters/CH09_RU.md) |
-| 10 | Interfacing LLMs with External Tools | PDF 493–552 | Ожидает изучения первоисточника |
+| 10 | Interfacing LLMs with External Tools | PDF 493–552 | [Глава 10: изучена](chapters/CH10_RU.md) |
 | 11 | Representation Learning and Embeddings | PDF 553–603 | Ожидает изучения первоисточника |
 | 12 | Retrieval-Augmented Generation | PDF 604–682 | Ожидает изучения первоисточника |
 | 13 | Design Patterns and System Architecture | PDF 683–765 | Ожидает изучения первоисточника |
@@ -51,7 +51,7 @@
 
 ## ALINA — база знаний по книге (единый граф)
 
-**[Открыть ALINA Knowledge Core v0.1.0](alina_kb/README.md)** — 218 узлов, 415 связей, словарь, веса, алгоритмы, ролевые представления, правила версионирования.
+**[Открыть ALINA Knowledge Core v0.1.0](alina_kb/README.md)** — 245 узлов, 463 связи, словарь, веса, алгоритмы, ролевые представления, правила версионирования.
 
 - [Graph JSON](alina_kb/knowledge_graph.json) — узлы и связи
 - [Glossary](alina_kb/glossary.json) — словарь терминов и сокращений
@@ -60,7 +60,7 @@
 - [Update rules](alina_kb/schema_policy.md) — обновление после каждой главы
 - [Validator](alina_kb/validate_graph.py) — структурная проверка
 
-**Статус:** составлено по главам 1–9 оригинала; главы 10–13 ещё не импортированы. База на GitHub пока машиночитаемая, но не развёрнута как сервер БД и не подключена к runtime ALINA.
+**Статус:** составлено по главам 1–10 оригинала; главы 11–13 ещё не импортированы. База на GitHub пока машиночитаемая, но не развёрнута как сервер БД и не подключена к runtime ALINA.
 
 ## Качество обучения моделей: алгоритмы и чек-листы
 
@@ -116,10 +116,16 @@ ALINA Knowledge Core v0.5.0: 145 узлов, 280 связей, 17 описанн
 
 [Учебный разбор по первоисточнику](chapters/CH08_RU.md) · [Лаборатория A/B/C: достоверность, безопасность и рассуждения](labs/CH08/LAB_PROGRAM.md) · [Проверочные задания](learning/CH08_learning_package.json)
 
-ALINA Knowledge Core v0.7.0: 193 узла, 371 связь, 29 описанных алгоритмов. Источники глав 1–8 разобраны. Лаборатории главы 8 **DESIGNED_ONLY / NOT_RUN / NOT_QUALIFIED**; POLYGON не запускался.
+ALINA Knowledge Core v0.7.0: 193 узла, 371 связь, 33 описанных алгоритма. Источники глав 1–8 разобраны. Лаборатории главы 8 **DESIGNED_ONLY / NOT_RUN / NOT_QUALIFIED**; POLYGON не запускался.
 
 ## Глава 9 — Inference Optimization
 
 [Разбор главы 9](chapters/CH09_RU.md) · [Лабораторная A/B/C](labs/CH09/LAB_PROGRAM.md) · [Учебный экзамен](learning/CH09_learning_package.json) · [POLYGON: основной независимый экзамен после обучения](alina_kb/qualification/POLYGON_POST_TRAINING_PROTOCOL_RU.md)
 
-Граф ALINA v0.8.0 — 218 узлов, 415 связей, 29 описанных алгоритмов. Главы 1–9 разобраны по первоисточнику. Для главы 9 **NOT_RUN / NOT_QUALIFIED**.
+Граф ALINA v0.8.0 — 245 узлов, 463 связи, 33 описанных алгоритма. Главы 1–9 разобраны по первоисточнику. Для главы 9 **NOT_RUN / NOT_QUALIFIED**.
+
+## Глава 10 — работа LLM с внешними инструментами
+
+[Разбор главы 10](chapters/CH10_RU.md) · [Лаборатория A/B/C и POLYGON Tool Use](labs/CH10/LAB_PROGRAM.md) · [Обучающие вопросы](learning/CH10_learning_package.json)
+
+ALINA Knowledge Core v0.9.0: 245 узлов, 463 связи, 33 описанных алгоритма, главы 1–10 изучены по оригиналу. Лаборатория Tool Use только спроектирована, NOT_RUN / NOT_QUALIFIED.
