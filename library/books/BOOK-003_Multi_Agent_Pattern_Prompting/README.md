@@ -19,3 +19,9 @@ Topologos — системный промпт, который помогает L
 Границы: в конкретном руководстве используется RabbitMQ; автоматически переносить конфигурации на Kafka, NATS или SQS нельзя. Генерация IaC требует проверки актуальности версий, безопасности и испытаний.
 
 **Состояние:** SOURCE_READ / STUDY_READY / PRACTICE_DESIGNED / NOT_QUALIFIED.
+
+## Вся книга (PDF 2026)
+
+[Навигация по 10 главам, приложениям и лабораториям](SOURCE_AND_ROADMAP.md) · [Полный учебный комплект](README_FULL_BOOK.md) · [Аудит и пробелы](AUDIT_AND_GAPS.md)
+
+Изучение по загруженному пользователем оригиналу (10 глав, приложения A–C). Статус: SOURCE_REVIEWED / LEARNING_DRAFTS / LABS_DESIGNED / NOT_RUN / NOT_QUALIFIED. Прежнее техническое пособие Topologos Manual v5 сохранено отдельно.
