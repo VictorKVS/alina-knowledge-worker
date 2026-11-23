@@ -1,34 +1,58 @@
-# CH09 — отдельная лабораторная программа
+# CH09 — Инженерная лабораторная программа: ускорение и оптимизация инференса
 
-**Канонический проект:** BOOK-002_Designing_LLM_Applications  
-**Тема в учебном маршруте:** Inference Optimization  
-**Статус источника:** SOURCE_NOT_DIRECTLY_REVIEWED_FOR_LAB; ORIGINAL_PDF_CH01_CH07_REVIEWED_CH08_CH13_TOC_ONLY  
-**Диапазон по оглавлению исходного PDF:** 459–491.  
-**Статус выполнения:** DESIGNED_ONLY / NOT_RUN / NOT_QUALIFIED.
+**Первоисточник:** Suhas Pai, BOOK-002, PDF 459–491. **SOURCE_REVIEWED / DESIGNED_ONLY / NOT_RUN / NOT_QUALIFIED.**
 
-## Инженерная цель
-Измерить скорость и память разных реализаций. После сверки источника детализация алгоритмов и точные страницы обязательны.
+## Главная цель
 
-## Вариант A — основная лаборатория
-На небольшом синтетическом наборе и без зависимости от крупной модели воспроизвести один проверяемый механизм главы. Записать определения, конкретный вход, верный ожидаемый результат, пошаговый расчёт, псевдокод и негативный пример. **Испытание запланировано, не выполнено.**
+Найти воспроизводимый компромисс качества и скорости для задач ALINA/FATHER, проверив ограничения памяти и безопасность. Ничего не объявлять ускоренным до фактических замеров.
 
-## Вариант B — сравнение
-Провести нагрузочный тест и деградацию. Заморозить dataset, эталон, версии, условия запуска. Минимум baseline и candidate; записать точность, время, объём вычислений и ошибки. Для GPT/API соблюдать актуальные права и исключить неразрешённые чувствительные материалы.
+## A. Уровень учебного эксперимента
 
-## Вариант C — интеграция FATHER
-Выбрать один сценарий `ALINA → Agent Factory → UAG → POLYGON`, описать входной/выходной JSON контракт, права на инструмент, source references, fail-closed решение, логирование и rollback. Задача — доказать совместимость, а не только качество отдельно взятого алгоритма.
+**A1 — кэш:** сравнить повторную обработку неизменного префикса и безопасное использование cache; на mock runtime вручную измерить экономию повторных операций, затем при доступном checkpoint проверить реальный KV-cache.
 
-## План тестов
-1. Gold-positive: правильно обработанный простой пример.
-2. Boundary: пустые, длинные, повреждённые или необычные входы.
-3. Gold-negative: материал, не подходящий под правила.
-4. Adversarial: неверный источник, противоречие, попытка выдать данные/команду за доверенную инструкцию.
-5. Regression: соседние сценарии не ухудшились.
-6. Reproducibility: manifest среды, фиксация версий и повторение.
+**A2 — quantization:** на синтетических числах выполнить FP32 → FP16/BF16/INT8 и обратное преобразование; проверить знаки, ноль, отрицательные числа, выбросы и saturation.
 
-## Критерии и evidence
-До запуска установить конкретный порог целевой метрики и ограничения по стоимости/времени. Критическая утечка/нарушение полномочий → FAIL независимо от средней точности. Сохранять `fixtures`, `tests`, `raw_logs`, `metrics`, `source_provenance`, `ADR`, `POLYGON_qualification`.
+**A3 — theoretical memory:** расчёт веса модели по `parameter_count × bits_per_weight / 8`, отдельно добавить estimate KV-cache и runtime; отметить формат GB/GiB.
 
-**Отдельные документы и примеры:** см. существующий материал главы в книжном проекте, если он есть. Не считать этот план выполненной лабораторией.
+**A4 — speculative:** смоделировать draft acceptance на дискретных вероятностях, не выдавать toy simulation за ускорение реальной LLM.
 
-[Стандарт](../../../../LABORATORY_STANDARD_RU.md)
+## B. Сравнительные эксперименты
+
+**B1:** один разрешённый точный checkpoint, одинаковые prompt versions и dataset, варианты: context-cache off/on, quantization поддерживаемых битностей, batch=1 и concurrency 2/4.
+
+**B2:** при наличии runtime support проверить speculative on/off, acceptance rate, p95 и extra RAM.
+
+**B3:** ранжировать варианты по Quality × Latency × VRAM × Total Cost; выбрать Pareto-допустимые конфигурации, не скрывать critical FAIL средними значениями.
+
+**B4:** distillation/early exit — отдельно только при наличии доступа к весам, прав на адаптацию и воспроизводимого учебного набора; не мешать запуску первого FATHER.
+
+Собирать TTFT, end-to-end latency p50/p95/p99, output tokens/sec, throughput, RAM/VRAM peak, correctness, citation accuracy, invalid JSON rate, cache hit rate, cost, process crashes.
+
+## C. Интеграционная лаборатория FATHER
+
+`ALINA produces task requirements → TIMA sizes compute → FATHER Architect selects candidate → Model Gateway applies safe runtime → UAG enforces data scope → POLYGON qualifies agent and configuration`.
+
+Требования: cache isolation по tenant/security/source revision, prompt version, trace IDs, no sensitive data leakage, bounded queue, timeout, retry, audit, rollback to qualified version. Запрещать оптимизацию, которая ухудшает критическую компетенцию.
+
+## Варианты
+
+- **Lite:** ручные вычисления + Python standard libs + фиксированные fixtures.
+- **Standard:** разрешённая локальная модель + сравнение cache/precision.
+- **Research:** поддерживаемые open-weight модели, speculative, early exit, distillation, throughput under load.
+
+## Программа негативных тестов
+
+1. Изменился системный промпт, а cache не инвалидирован.
+2. Tenant A пытается использовать KV-cache Tenant B.
+3. После quantization агент уверенно выдаёт неверные нормативные ссылки.
+4. Под длинным контекстом модель достигает OOM/latency timeout.
+5. Несогласованные параллельно сгенерированные разделы.
+6. Partial failures в speculative draft/target workflow.
+
+## Квалификация POLYGON
+
+**Заранее** определить SLA и quality floor в зависимости от роли. Строгие блокировки: любое неразрешённое обращение, критическая утечка, ложное заявление о выполненной проверке, невозможность rollback. Сравнить с baseline на независимых задачах. Допуск относится к версии **модели + prompt + RAG + runtime + параметрам оптимизации + dataset scope**.
+
+**Артефакты после будущего прогона:** dataset manifest, hardware software versions, runbook, trace logs, metrics.json, security_negative_cases, model hashes, ADR, qualification.json, signed tag/SBOM для поставки.
+
+**Итог на дату подготовки:** LAB_PREPARED / NOT_RUN. Никаких измерений или ускорений пока не подтверждено.

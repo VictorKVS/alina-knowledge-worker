@@ -1,5 +1,5 @@
 {
-  "version": "0.7.0",
+  "version": "0.8.0",
   "graph_id": "ALINA-BOOK-002-KNOWLEDGE-GRAPH",
   "views": [
     {
@@ -31,7 +31,9 @@
           "B002-HALLUCINATION",
           "B002-RAG_GROUNDING",
           "B002-COVE",
-          "B002-KNOWLEDGE_QUADRANT"
+          "B002-KNOWLEDGE_QUADRANT",
+          "B002-PROMPT_PREFIX_CACHE",
+          "B002-DISTILL_TEACHER_STUDENT"
         ]
       },
       "note": "Read-only filtered view of shared graph; do not duplicate facts",
@@ -67,7 +69,9 @@
           "B002-HHH",
           "B002-HUMAN_FEEDBACK",
           "B002-REASONING_SFT",
-          "B002-BEST_OF_K"
+          "B002-BEST_OF_K",
+          "B002-DYNAMIC_INFERENCE",
+          "B002-DISTILL_TEACHER_STUDENT"
         ]
       },
       "note": "Read-only filtered view of shared graph; do not duplicate facts",
@@ -112,7 +116,11 @@
           "B002-RLHF",
           "B002-REWARD_MODEL",
           "B002-PPO",
-          "B002-KL_REGULARIZATION"
+          "B002-KL_REGULARIZATION",
+          "B002-SPECULATIVE_DECODING",
+          "B002-EARLY_EXIT",
+          "B002-BF16",
+          "B002-SYMMETRIC_QUANT"
         ]
       },
       "note": "Read-only filtered view of shared graph; do not duplicate facts",
@@ -141,7 +149,10 @@
           "B002-ALIGNMENT",
           "B002-HALLUCINATION",
           "B002-S2A",
-          "B002-KNOWLEDGE_OVERSHADOWING"
+          "B002-KNOWLEDGE_OVERSHADOWING",
+          "B002-KV_CACHE",
+          "B002-PROMPT_PREFIX_CACHE",
+          "B002-QUANT_CALIBRATION"
         ]
       },
       "note": "Read-only filtered view of shared graph; do not duplicate facts",
@@ -175,7 +186,10 @@
           "B002-VERIFIER",
           "B002-UNCERTAINTY_CALIBRATION",
           "B002-ITERATIVE_BACKPROMPTING",
-          "B002-HHH"
+          "B002-HHH",
+          "B002-TOKEN_ACCEPTANCE",
+          "B002-QUANT_CALIBRATION",
+          "B002-INFERENCE_OPTIMIZATION"
         ]
       },
       "note": "Read-only filtered view of shared graph; do not duplicate facts",
@@ -214,7 +228,12 @@
           "B002-TEST_TIME_COMPUTE",
           "B002-VERIFIER",
           "B002-RAG_GROUNDING",
-          "B002-DOLA"
+          "B002-DOLA",
+          "B002-INFERENCE_OPTIMIZATION",
+          "B002-KV_CACHE",
+          "B002-PARALLEL_DECODING",
+          "B002-FP16",
+          "B002-INT8"
         ]
       },
       "note": "Read-only filtered view of shared graph; do not duplicate facts",

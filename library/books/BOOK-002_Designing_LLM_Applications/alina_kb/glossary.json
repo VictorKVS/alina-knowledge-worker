@@ -1,5 +1,5 @@
 {
-  "version": "0.7.0",
+  "version": "0.8.0",
   "source_id": "SRC-BOOK002-PRIMARY",
   "terms": [
     {
@@ -2510,6 +2510,331 @@
         457
       ],
       "importance": 4
+    },
+    {
+      "id": "B002-INFERENCE_OPTIMIZATION",
+      "term": "Inference optimization",
+      "abbreviation": null,
+      "definition_ru": "уменьшение стоимости, памяти и задержки выполнения модели при сохранении нужного качества",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH09",
+      "pdf_pages": [
+        459,
+        462
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-AUTOREGRESSIVE_BOTTLENECK",
+      "term": "Autoregressive decoding bottleneck",
+      "abbreviation": null,
+      "definition_ru": "последовательная генерация токенов ограничивает скорость вывода",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH09",
+      "pdf_pages": [
+        459,
+        461
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-KV_CACHE",
+      "term": "Key-value cache",
+      "abbreviation": null,
+      "definition_ru": "повторное использование вычисленных K и V self-attention для уже обработанных токенов",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH09",
+      "pdf_pages": [
+        462,
+        466
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-PROMPT_PREFIX_CACHE",
+      "term": "Prompt prefix caching",
+      "abbreviation": null,
+      "definition_ru": "повторное использование неизменного префикса запросов с учётом политики кэша",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH09",
+      "pdf_pages": [
+        463,
+        466
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-EARLY_EXIT",
+      "term": "Early exit",
+      "abbreviation": null,
+      "definition_ru": "завершение вычисления на части слоёв для экономии ресурсов",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH09",
+      "pdf_pages": [
+        466,
+        472
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-SEQUENCE_EARLY_EXIT",
+      "term": "Sequence-level early exit",
+      "abbreviation": null,
+      "definition_ru": "выход на промежуточном слое сразу для всей последовательности",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH09",
+      "pdf_pages": [
+        468,
+        470
+      ],
+      "importance": 3
+    },
+    {
+      "id": "B002-TOKEN_EARLY_EXIT",
+      "term": "Token-level early exit",
+      "abbreviation": null,
+      "definition_ru": "динамический выбор глубины сети отдельно для токенов",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH09",
+      "pdf_pages": [
+        470,
+        472
+      ],
+      "importance": 3
+    },
+    {
+      "id": "B002-DYNAMIC_INFERENCE",
+      "term": "Dynamic inference",
+      "abbreviation": null,
+      "definition_ru": "выбор объёма вычислений в зависимости от свойств входа",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH09",
+      "pdf_pages": [
+        472,
+        473
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-DISTILL_TEACHER_STUDENT",
+      "term": "Teacher-student distillation",
+      "abbreviation": null,
+      "definition_ru": "обучение компактной модели по выходам или представлениям другой модели",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH09",
+      "pdf_pages": [
+        472,
+        479
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-BLACK_BOX_DISTILL",
+      "term": "Black-box knowledge distillation",
+      "abbreviation": null,
+      "definition_ru": "адаптация ученика по наблюдаемым ответам учителя",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH09",
+      "pdf_pages": [
+        473,
+        479
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-WHITE_BOX_DISTILL",
+      "term": "White-box knowledge distillation",
+      "abbreviation": null,
+      "definition_ru": "сопоставление logits или внутренних представлений учителя и ученика",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH09",
+      "pdf_pages": [
+        474,
+        479
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-WEAK_TO_STRONG",
+      "term": "Weak-to-strong generalization",
+      "abbreviation": null,
+      "definition_ru": "обучение более сильного ученика на метках слабого учителя",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH09",
+      "pdf_pages": [
+        478,
+        479
+      ],
+      "importance": 3
+    },
+    {
+      "id": "B002-SPECULATIVE_DECODING",
+      "term": "Speculative decoding",
+      "abbreviation": null,
+      "definition_ru": "проверка большой моделью нескольких токенов, предложенных меньшей draft-моделью",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH09",
+      "pdf_pages": [
+        480,
+        482
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-DRAFT_MODEL",
+      "term": "Draft model",
+      "abbreviation": null,
+      "definition_ru": "модель-кандидат для генерации последовательности при speculative decoding",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH09",
+      "pdf_pages": [
+        480,
+        482
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-TOKEN_ACCEPTANCE",
+      "term": "Draft token acceptance rate",
+      "abbreviation": null,
+      "definition_ru": "доля предложенных токенов, принятых проверяющей моделью",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH09",
+      "pdf_pages": [
+        480,
+        482
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-PARALLEL_DECODING",
+      "term": "Parallel decoding",
+      "abbreviation": null,
+      "definition_ru": "параллельное получение независимых частей или нескольких токенов",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH09",
+      "pdf_pages": [
+        482,
+        485
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-MULTI_TOKEN_DECODING",
+      "term": "Multi-token decoding",
+      "abbreviation": null,
+      "definition_ru": "предсказание нескольких последующих токенов через дополнительные головы",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH09",
+      "pdf_pages": [
+        483,
+        484
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-MEDUSA",
+      "term": "Medusa decoding",
+      "abbreviation": "MEDUSA",
+      "definition_ru": "архитектура с дополнительными decoding heads для multi-token prediction",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH09",
+      "pdf_pages": [
+        483,
+        484
+      ],
+      "importance": 3
+    },
+    {
+      "id": "B002-FP32",
+      "term": "FP32",
+      "abbreviation": "FP32",
+      "definition_ru": "32-битный формат с плавающей точкой",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH09",
+      "pdf_pages": [
+        485,
+        486
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-FP16",
+      "term": "FP16",
+      "abbreviation": "FP16",
+      "definition_ru": "16-битный формат с плавающей точкой с ограниченным диапазоном чисел",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH09",
+      "pdf_pages": [
+        485,
+        487
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-BF16",
+      "term": "BF16",
+      "abbreviation": "BF16",
+      "definition_ru": "16-битный формат с диапазоном экспоненты, близким FP32, и меньшей точностью мантиссы",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH09",
+      "pdf_pages": [
+        486,
+        487
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-INT8",
+      "term": "INT8",
+      "abbreviation": "INT8",
+      "definition_ru": "целочисленное 8-битное представление весов или активаций",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH09",
+      "pdf_pages": [
+        487,
+        490
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-SYMMETRIC_QUANT",
+      "term": "Symmetric quantization",
+      "abbreviation": null,
+      "definition_ru": "отображение вещественного нуля в целочисленный ноль с масштабом",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH09",
+      "pdf_pages": [
+        487,
+        488
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-ASYMMETRIC_QUANT",
+      "term": "Asymmetric quantization",
+      "abbreviation": null,
+      "definition_ru": "аффинное отображение диапазона значений с zero point",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH09",
+      "pdf_pages": [
+        488,
+        490
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-QUANT_CALIBRATION",
+      "term": "Quantization calibration",
+      "abbreviation": null,
+      "definition_ru": "определение диапазона и масштабов с использованием контрольных данных",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH09",
+      "pdf_pages": [
+        489,
+        490
+      ],
+      "importance": 5
     }
   ]
 }

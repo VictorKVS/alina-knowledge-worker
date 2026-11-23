@@ -1,5 +1,5 @@
 {
-  "version": "0.7.0",
+  "version": "0.8.0",
   "status": "DESIGNED_NOT_RUN",
   "algorithms": [
     {
@@ -582,6 +582,98 @@
       "source_pages": [
         451,
         456
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-CH09-COST-QUALITY-GATE",
+      "name": "Quality-constrained inference decision",
+      "nodes": [
+        "inference_optimization",
+        "kv_cache",
+        "quantization"
+      ],
+      "steps": [
+        "Freeze agent task and quality threshold",
+        "Measure unoptimized baseline TTFT, tokens/sec, p95, RAM, VRAM, accuracy",
+        "Try one optimization at a time using same dataset",
+        "Include cache isolation, source accuracy and UAG boundaries",
+        "Compare tail latency, throughput, energy and cost",
+        "Only POLYGON qualifies configuration under SLA"
+      ],
+      "source_pages": [
+        459,
+        491
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-CH09-CACHE-INTEGRITY",
+      "name": "Prefix cache safety and validity",
+      "nodes": [
+        "kv_cache",
+        "prompt_prefix_cache"
+      ],
+      "steps": [
+        "Assign model, tokenizer, tenant, source version and security scope to cache key",
+        "Run same-prompt and modified-prompt tests",
+        "Reject cross-tenant or stale cache reuse",
+        "Measure cache hit rate, TTFT and memory cost",
+        "Perform regression and authorization checks"
+      ],
+      "source_pages": [
+        462,
+        466
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-CH09-QUANT-GATE",
+      "name": "Quantization qualification experiment",
+      "nodes": [
+        "fp32",
+        "fp16",
+        "bf16",
+        "int8",
+        "symmetric_quant",
+        "asymmetric_quant"
+      ],
+      "steps": [
+        "Construct finite numeric fixtures including outliers",
+        "Compare quantization and inverse quantization error",
+        "Benchmark actual supported model precision modes",
+        "Measure task accuracy, VRAM, throughput and latency",
+        "Reject mode with unsafe numeric error or task regression"
+      ],
+      "source_pages": [
+        485,
+        490
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-CH09-SPECULATIVE-GATE",
+      "name": "Speculative vs conventional decoding",
+      "nodes": [
+        "speculative_decoding",
+        "draft_model",
+        "token_acceptance"
+      ],
+      "steps": [
+        "Pin identical target model and prompts",
+        "Measure autoregressive latency baseline",
+        "Run supported speculative decoding setup",
+        "Measure draft-token acceptance and exact output distribution criteria",
+        "Check extra memory and draft runtime costs",
+        "Compare p95 and errors on holdout"
+      ],
+      "source_pages": [
+        479,
+        482
       ],
       "status": "DESIGNED_NOT_RUN",
       "kind": "FATHER_ADAPTATION"
