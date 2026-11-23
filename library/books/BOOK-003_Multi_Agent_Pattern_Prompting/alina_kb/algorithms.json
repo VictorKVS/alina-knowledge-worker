@@ -1,0 +1,174 @@
+[
+  {
+    "id": "ALG-B003-CH01-01",
+    "name": "FATHER adaptation — Introduction: Patterns, Abstractions, and the GenAI Landscape",
+    "source_pdf_pages": [
+      30,
+      43
+    ],
+    "steps": [
+      "Определить назначение каждого агента как компонента и границы его ответственности",
+      "Перечислить связи и контракты между компонентами",
+      "Определить, где нужна оркестрация, а где допустима хореография",
+      "Сопоставить уже известные паттерны с новой функцией и проверить отказоустойчивость"
+    ],
+    "status": "DESIGNED_NOT_RUN",
+    "type": "FATHER_ADAPTATION_NOT_SOURCE_CODE"
+  },
+  {
+    "id": "ALG-B003-CH02-01",
+    "name": "FATHER adaptation — Embeddings: The Language of AI",
+    "source_pdf_pages": [
+      44,
+      61
+    ],
+    "steps": [
+      "Собрать небольшой размеченный корпус с source IDs",
+      "Определить единицу извлечения и стратегию разбиения",
+      "Построить векторные представления с версией модели",
+      "Сравнить ранжирование с ключевыми словами и контрольным gold",
+      "Сохранить исходные документы и ссылки на фрагменты"
+    ],
+    "status": "DESIGNED_NOT_RUN",
+    "type": "FATHER_ADAPTATION_NOT_SOURCE_CODE"
+  },
+  {
+    "id": "ALG-B003-CH03-01",
+    "name": "FATHER adaptation — Building with GenAI: Parameters, Tuning, and Project Phases",
+    "source_pdf_pages": [
+      62,
+      79
+    ],
+    "steps": [
+      "Зафиксировать критерии качества и контрольные запросы",
+      "Записать текущие chunking/model/retrieval/temperature/prompts",
+      "Изменять одну группу параметров за эксперимент",
+      "Измерять groundedness, recall, latency, tokens и стоимость",
+      "Сравнить с baseline и документировать принятое решение"
+    ],
+    "status": "DESIGNED_NOT_RUN",
+    "type": "FATHER_ADAPTATION_NOT_SOURCE_CODE"
+  },
+  {
+    "id": "ALG-B003-CH04-01",
+    "name": "FATHER adaptation — Building Your First RAG App",
+    "source_pdf_pages": [
+      80,
+      103
+    ],
+    "steps": [
+      "Определить границы RAG: ingest, retrieve, generate, verify",
+      "Выбрать очереди, routing key, contract и correlation ID",
+      "Сделать адаптер LLM поставщика и стратегию retry/timeout",
+      "Проверить ACK/DLQ, idempotency и поведение при отключении модели",
+      "Задокументировать SLO, версию манифеста и rollout"
+    ],
+    "status": "DESIGNED_NOT_RUN",
+    "type": "FATHER_ADAPTATION_NOT_SOURCE_CODE"
+  },
+  {
+    "id": "ALG-B003-CH05-01",
+    "name": "FATHER adaptation — Starting Your Data Migration Project",
+    "source_pdf_pages": [
+      104,
+      119
+    ],
+    "steps": [
+      "Составить source inventory, owner/license/ACL, formats, revisions",
+      "Оценить объём, частоту изменений, throughput и expected cost",
+      "Разделить raw, parsed, cleaned, chunked и indexed datasets",
+      "Включить incremental sync, checksums, dedup и rollback",
+      "Измерить retrieval quality и проследить каждую запись к источнику"
+    ],
+    "status": "DESIGNED_NOT_RUN",
+    "type": "FATHER_ADAPTATION_NOT_SOURCE_CODE"
+  },
+  {
+    "id": "ALG-B003-CH06-01",
+    "name": "FATHER adaptation — Ingesting Data Using Airbyte and Pinecone",
+    "source_pdf_pages": [
+      120,
+      133
+    ],
+    "steps": [
+      "Проверить лицензию, доступность, регион и безопасность выбранных сервисов",
+      "Создать независимый контракт Source Adapter → Normalized Document",
+      "Провести тестовую загрузку ограниченного набора с known gold",
+      "Проверить число документов, метаданные, дубли и ошибки",
+      "Добавить incremental повтор, rollback и capture evidence"
+    ],
+    "status": "DESIGNED_NOT_RUN",
+    "type": "FATHER_ADAPTATION_NOT_SOURCE_CODE"
+  },
+  {
+    "id": "ALG-B003-CH07-01",
+    "name": "FATHER adaptation — Tips and Best Practices",
+    "source_pdf_pages": [
+      134,
+      151
+    ],
+    "steps": [
+      "Задать security/privacy и cost budget до разработки",
+      "Определить POC, baseline и регулярную eval-сборку",
+      "Version prompts, models, corpus, tools, datasets и policy",
+      "Измерять latency, throughput, error rates, drift и затраты",
+      "Использовать red-team cases на разрешённой среде и review результатов"
+    ],
+    "status": "DESIGNED_NOT_RUN",
+    "type": "FATHER_ADAPTATION_NOT_SOURCE_CODE"
+  },
+  {
+    "id": "ALG-B003-CH08-01",
+    "name": "FATHER adaptation — Pattern-Guided Coding: Using Patterns as the Design Vocabulary for GenAI Systems Built on RabbitMQ",
+    "source_pdf_pages": [
+      152,
+      181
+    ],
+    "steps": [
+      "Описать requirement, role map и messaging constraints",
+      "Разложить решение на GoF, EIP и reliability patterns",
+      "Зафиксировать каждое решение с Approve/Modify/Reject",
+      "Сгенерировать конфигурацию, диаграммы, security и DLQ manifests",
+      "Проверить schema, binding/routing, multi-tenancy и failure modes",
+      "Разрешать deployment только после внешнего approval и квалификации"
+    ],
+    "status": "DESIGNED_NOT_RUN",
+    "type": "FATHER_ADAPTATION_NOT_SOURCE_CODE"
+  },
+  {
+    "id": "ALG-B003-CH09-01",
+    "name": "FATHER adaptation — Implementing the ReAct Pattern Over RabbitMQ",
+    "source_pdf_pages": [
+      182,
+      223
+    ],
+    "steps": [
+      "Подготовить синтетический ReAct-task и tool registry",
+      "Создать contracts message_id, task_id, correlation_id, action_id и schema_version",
+      "Ограничить число шагов, время, разрешённые инструменты и scope",
+      "Направлять запрос в mock tool worker через безопасную очередь",
+      "При успешном ответе сохранять observation и завершать ACK",
+      "При retryable failure использовать лимит/backoff; poison→DLQ; idempotent dedup",
+      "Сохранить трассу и выполнить квалификацию POLYGON"
+    ],
+    "status": "DESIGNED_NOT_RUN",
+    "type": "FATHER_ADAPTATION_NOT_SOURCE_CODE"
+  },
+  {
+    "id": "ALG-B003-CH10-01",
+    "name": "FATHER adaptation — The Future and Limitations of LLMs",
+    "source_pdf_pages": [
+      224,
+      235
+    ],
+    "steps": [
+      "Определить, какие типы задач требуют достоверности и формальных гарантий",
+      "Отделить текстовую генерацию от внешней проверки фактов и действий",
+      "Проверить модели на противоречиях, математике и неопределённости",
+      "Ввести состояния ABSTAIN/ESCALATE/REVIEW вместо уверенной галлюцинации",
+      "Устанавливать границы автономии через UAG и подписанный scope"
+    ],
+    "status": "DESIGNED_NOT_RUN",
+    "type": "FATHER_ADAPTATION_NOT_SOURCE_CODE"
+  }
+]

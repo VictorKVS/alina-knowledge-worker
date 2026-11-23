@@ -1,0 +1,34 @@
+{
+  "chapter": "CH07",
+  "source_pages": [
+    134,
+    151
+  ],
+  "status": "PUBLIC_QUESTIONS_NOT_POLYGON_HOLDOUT",
+  "questions": [
+    {
+      "id": "B003-CH07-Q1",
+      "question": "Почему нужны многократные LLM-тесты?",
+      "topic": "R&D mindset; small POCs; latency and throughput",
+      "grade": "UNASSESSED"
+    },
+    {
+      "id": "B003-CH07-Q2",
+      "question": "Как версионировать промпты?",
+      "topic": "Drift and non-determinism",
+      "grade": "UNASSESSED"
+    },
+    {
+      "id": "B003-CH07-Q3",
+      "question": "Чем SLO отличается от отдельной latency-пробы?",
+      "topic": "Security: injection, leakage, PII, output validation",
+      "grade": "UNASSESSED"
+    },
+    {
+      "id": "B003-CH07-Q4",
+      "question": "Как спланировать red-team испытание без доступа к чужой инфраструктуре?",
+      "topic": "Token budgets and cost governance",
+      "grade": "UNASSESSED"
+    }
+  ]
+}

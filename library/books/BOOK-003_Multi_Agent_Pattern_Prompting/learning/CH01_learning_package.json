@@ -1,0 +1,34 @@
+{
+  "chapter": "CH01",
+  "source_pages": [
+    30,
+    43
+  ],
+  "status": "PUBLIC_QUESTIONS_NOT_POLYGON_HOLDOUT",
+  "questions": [
+    {
+      "id": "B003-CH01-Q1",
+      "question": "Чем отличается оркестрация от хореографии?",
+      "topic": "Vocabulary bridge between GenAI and IT",
+      "grade": "UNASSESSED"
+    },
+    {
+      "id": "B003-CH01-Q2",
+      "question": "Почему агент можно моделировать как компонент, но нельзя считать детерминированным?",
+      "topic": "Abstractions and reusable design patterns",
+      "grade": "UNASSESSED"
+    },
+    {
+      "id": "B003-CH01-Q3",
+      "question": "Какие преимущества даёт декомпозиция микоархитектур?",
+      "topic": "Orchestration versus choreography",
+      "grade": "UNASSESSED"
+    },
+    {
+      "id": "B003-CH01-Q4",
+      "question": "Какой контракт необходим между агентом и инструментом?",
+      "topic": "LLM as a service endpoint; agentic AI",
+      "grade": "UNASSESSED"
+    }
+  ]
+}

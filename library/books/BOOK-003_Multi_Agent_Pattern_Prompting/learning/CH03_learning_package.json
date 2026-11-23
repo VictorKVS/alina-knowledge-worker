@@ -1,0 +1,34 @@
+{
+  "chapter": "CH03",
+  "source_pages": [
+    62,
+    79
+  ],
+  "status": "PUBLIC_QUESTIONS_NOT_POLYGON_HOLDOUT",
+  "questions": [
+    {
+      "id": "B003-CH03-Q1",
+      "question": "Почему chunking связан с prompt size?",
+      "topic": "Coupled GenAI tuning parameters",
+      "grade": "UNASSESSED"
+    },
+    {
+      "id": "B003-CH03-Q2",
+      "question": "Как устроить воспроизводимый эксперимент?",
+      "topic": "Chunking → retrieval → prompting",
+      "grade": "UNASSESSED"
+    },
+    {
+      "id": "B003-CH03-Q3",
+      "question": "Для чего нужен baseline?",
+      "topic": "Model, context/tokens and temperature",
+      "grade": "UNASSESSED"
+    },
+    {
+      "id": "B003-CH03-Q4",
+      "question": "Чем законченный POC отличается от готового продукта?",
+      "topic": "Project initiation, intermediate goals, finish",
+      "grade": "UNASSESSED"
+    }
+  ]
+}

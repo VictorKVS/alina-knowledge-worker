@@ -1,0 +1,34 @@
+{
+  "chapter": "CH05",
+  "source_pages": [
+    104,
+    119
+  ],
+  "status": "PUBLIC_QUESTIONS_NOT_POLYGON_HOLDOUT",
+  "questions": [
+    {
+      "id": "B003-CH05-Q1",
+      "question": "Что должно войти в паспорт источника?",
+      "topic": "Document and data source inventory",
+      "grade": "UNASSESSED"
+    },
+    {
+      "id": "B003-CH05-Q2",
+      "question": "Как измерить ingestion throughput?",
+      "topic": "ETL tool evaluation",
+      "grade": "UNASSESSED"
+    },
+    {
+      "id": "B003-CH05-Q3",
+      "question": "Как обработать новую редакцию документа?",
+      "topic": "Throughput/capacity and incremental updates",
+      "grade": "UNASSESSED"
+    },
+    {
+      "id": "B003-CH05-Q4",
+      "question": "Почему требуется hybrid retrieval?",
+      "topic": "Privacy, security, CI/CD and validation",
+      "grade": "UNASSESSED"
+    }
+  ]
+}

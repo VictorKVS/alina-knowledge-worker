@@ -1,0 +1,34 @@
+{
+  "chapter": "CH02",
+  "source_pages": [
+    44,
+    61
+  ],
+  "status": "PUBLIC_QUESTIONS_NOT_POLYGON_HOLDOUT",
+  "questions": [
+    {
+      "id": "B003-CH02-Q1",
+      "question": "Что такое эмбеддинг и affinity?",
+      "topic": "Embedding vectors and affinity",
+      "grade": "UNASSESSED"
+    },
+    {
+      "id": "B003-CH02-Q2",
+      "question": "Как проверить качество embedding-модели?",
+      "topic": "Cosine similarity and programmatic computation",
+      "grade": "UNASSESSED"
+    },
+    {
+      "id": "B003-CH02-Q3",
+      "question": "Чем chunking влияет на recall?",
+      "topic": "Selecting and testing an embedding model",
+      "grade": "UNASSESSED"
+    },
+    {
+      "id": "B003-CH02-Q4",
+      "question": "Зачем сохранять parent source и offset?",
+      "topic": "Vector databases and chunking",
+      "grade": "UNASSESSED"
+    }
+  ]
+}
