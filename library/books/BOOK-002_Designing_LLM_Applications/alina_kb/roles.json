@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "graph_id": "ALINA-BOOK-002-KNOWLEDGE-GRAPH",
   "views": [
     {
@@ -41,7 +41,12 @@
           "B002-DOCUMENT_CHUNKING",
           "B002-SEMANTIC_NEGATION",
           "B002-METADATA_CHUNKING",
-          "B002-VECTOR_DATABASE"
+          "B002-VECTOR_DATABASE",
+          "B002-RAG_PIPELINE",
+          "B002-HYBRID_SEARCH",
+          "B002-RAG_METADATA_FILTER",
+          "B002-CHAIN_OF_NOTE",
+          "B002-RAG_CONTEXT_CONFLICT"
         ]
       },
       "note": "Read-only filtered view of shared graph; do not duplicate facts",
@@ -85,7 +90,10 @@
           "B002-SESSION_MEMORY",
           "B002-TRIPLET_DATASET",
           "B002-HARD_NEGATIVE",
-          "B002-SEMANTIC_CHUNKING"
+          "B002-SEMANTIC_CHUNKING",
+          "B002-RAG_FEWSHOT",
+          "B002-LLMR",
+          "B002-RAG_MEMORY_MGMT"
         ]
       },
       "note": "Read-only filtered view of shared graph; do not duplicate facts",
@@ -140,7 +148,10 @@
           "B002-EMBEDDING_FINETUNING",
           "B002-TRIPLET_LOSS",
           "B002-MATRYOSHKA",
-          "B002-SPARSE_AUTOENCODER"
+          "B002-SPARSE_AUTOENCODER",
+          "B002-REALM",
+          "B002-TIGHT_RETRIEVER",
+          "B002-COLBERT"
         ]
       },
       "note": "Read-only filtered view of shared graph; do not duplicate facts",
@@ -179,7 +190,10 @@
           "B002-DATABASE_CONNECTOR",
           "B002-SEMANTIC_NEGATION",
           "B002-VECTOR_DATABASE",
-          "B002-LAYOUT_CHUNKING"
+          "B002-LAYOUT_CHUNKING",
+          "B002-RAG_METADATA_FILTER",
+          "B002-RAG_CONTEXT_CONFLICT",
+          "B002-QUERY_DRIFT"
         ]
       },
       "note": "Read-only filtered view of shared graph; do not duplicate facts",
@@ -224,7 +238,11 @@
           "B002-HARD_NEGATIVE",
           "B002-MTEB",
           "B002-COSINE_SIMILARITY",
-          "B002-LATE_CHUNKING"
+          "B002-LATE_CHUNKING",
+          "B002-RERANKER",
+          "B002-RAG_CONTEXT_CONFLICT",
+          "B002-CHAIN_OF_NOTE",
+          "B002-RAG_VS_FINETUNE"
         ]
       },
       "note": "Read-only filtered view of shared graph; do not duplicate facts",
@@ -277,7 +295,11 @@
           "B002-VECTOR_DATABASE",
           "B002-MULTILEVEL_EMBEDDINGS",
           "B002-PRODUCT_QUANTIZATION",
-          "B002-SEMANTIC_SEARCH"
+          "B002-SEMANTIC_SEARCH",
+          "B002-GRAPHRAG",
+          "B002-RAG_LONG_CONTEXT",
+          "B002-RAG_PIPELINE",
+          "B002-HYBRID_SEARCH"
         ]
       },
       "note": "Read-only filtered view of shared graph; do not duplicate facts",

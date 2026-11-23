@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "DESIGNED_NOT_RUN",
   "algorithms": [
     {
@@ -858,6 +858,99 @@
       "source_pages": [
         579,
         601
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-CH12-EVIDENCE-RAG",
+      "name": "Evidence-first RAG and factual qualification",
+      "nodes": [
+        "rag_pipeline",
+        "rag_metadata_filter",
+        "rag_refine",
+        "rag_context_conflict"
+      ],
+      "steps": [
+        "Record exact source scope, rights and source versions",
+        "Rewrite query preserving original intent and identifiers",
+        "Filter by tenant, edition and permissions BEFORE retrieval",
+        "Retrieve using keyword and embedding baselines and check recall",
+        "Rerank then preserve source spans, units and contradiction markers",
+        "Generate atomic claims from cited evidence; abstain where absent",
+        "Verify each material claim and record retrieval/generation error separately"
+      ],
+      "source_pages": [
+        604,
+        682
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-CH12-QUERY-DRIFT-GATE",
+      "name": "Rewrite expansion safety gate",
+      "nodes": [
+        "query_rewrite",
+        "hyde",
+        "query_drift"
+      ],
+      "steps": [
+        "Freeze a reference query and entity constraints",
+        "Expand queries with PRF/HyDE only in controlled experimental branch",
+        "Check entity, date and scope preservation",
+        "Measure gold recall versus topic drift and false results",
+        "Reject reformulation when constraints are altered"
+      ],
+      "source_pages": [
+        615,
+        625
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-CH12-RAG-RERANK-ABLATION",
+      "name": "Retrieve/rerank/refine ablation protocol",
+      "nodes": [
+        "bm25",
+        "hybrid_search",
+        "reranker",
+        "chain_of_note"
+      ],
+      "steps": [
+        "Freeze candidate corpus and holdout labels",
+        "Baseline BM25, then compare embeddings and hybrid retrieval",
+        "Add reranker while recording recall and precision separately",
+        "Add CoN/summary and inspect unsupported claims",
+        "Compare latency/cost and retrieval evidence coverage",
+        "Accept component only when measurable benefit exists"
+      ],
+      "source_pages": [
+        625,
+        656
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-CH12-RAG-MEMORY",
+      "name": "Controlled retrieval for agent memory and examples",
+      "nodes": [
+        "rag_history",
+        "rag_fewshot",
+        "rag_tool_docs"
+      ],
+      "steps": [
+        "Separate fact corpus, conversation logs, validated examples and tool specs",
+        "Enforce permissions and TTL for each memory tier",
+        "Retrieve only task-relevant artifacts with provenance",
+        "Avoid pollution from unverified assistant outputs",
+        "Freeze test cases and check memory leakage and outdated examples"
+      ],
+      "source_pages": [
+        609,
+        672
       ],
       "status": "DESIGNED_NOT_RUN",
       "kind": "FATHER_ADAPTATION"

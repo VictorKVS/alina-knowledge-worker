@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "graph_id": "ALINA-BOOK-002-KNOWLEDGE-GRAPH",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "created": "2026-11-22",
   "source": {
     "id": "SRC-BOOK002-PRIMARY",
@@ -61,6 +61,10 @@
       "CH11": [
         553,
         603
+      ],
+      "CH12": [
+        604,
+        682
       ]
     },
     "reviewed_chapters": [
@@ -74,9 +78,10 @@
       "CH08",
       "CH09",
       "CH10",
-      "CH11"
+      "CH11",
+      "CH12"
     ],
-    "remaining_chapters": "CH12-CH13 not reviewed"
+    "remaining_chapters": "CH13 not reviewed"
   },
   "model": {
     "description": "Directed knowledge/competency graph",
@@ -8349,6 +8354,966 @@
       "owner": "ALINA",
       "version": "1.0.0",
       "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-RAG_PIPELINE",
+      "title": "RAG pipeline",
+      "abbr": "RAG_PIPELINE",
+      "definition_ru": "этапный конвейер извлечения данных и ответа модели с дополнительными проверками",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          604,
+          618
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-RAG"
+      ],
+      "owner": "ALINA",
+      "version": "1.1.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-RAG_EXTERNAL_KNOWLEDGE",
+      "title": "External knowledge retrieval",
+      "abbr": null,
+      "definition_ru": "извлечение внешних фактов и обновляемых данных во время использования модели",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          605,
+          610
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-RAG_PIPELINE"
+      ],
+      "owner": "ALINA",
+      "version": "1.1.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-RAG_HISTORY",
+      "title": "Conversation history retrieval",
+      "abbr": null,
+      "definition_ru": "извлечение нужных фрагментов прошлых взаимодействий при ограничении контекста",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          609,
+          610
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-RAG_PIPELINE"
+      ],
+      "owner": "ALINA",
+      "version": "1.1.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-RAG_FEWSHOT",
+      "title": "In-context example retrieval",
+      "abbr": null,
+      "definition_ru": "подбор учебных примеров по текущему запросу",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          610,
+          611
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-RAG_PIPELINE"
+      ],
+      "owner": "ALINA",
+      "version": "1.1.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-RAG_TOOL_DOCS",
+      "title": "Tool information retrieval",
+      "abbr": null,
+      "definition_ru": "поиск документации, схем и описаний инструментов по ситуации",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          610,
+          611
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-TOOL_DOC_STORE"
+      ],
+      "owner": "ALINA",
+      "version": "1.1.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-RETRIEVAL_GATE",
+      "title": "Decision when to retrieve",
+      "abbr": null,
+      "definition_ru": "динамический выбор между памятью модели и внешним извлечением",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          610,
+          613
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-RAG_PIPELINE"
+      ],
+      "owner": "ALINA",
+      "version": "1.1.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-QUERY_REWRITE",
+      "title": "Query rewriting",
+      "abbr": null,
+      "definition_ru": "переформулирование пользовательского запроса для согласования с корпусом",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          614,
+          625
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-RAG_PIPELINE"
+      ],
+      "owner": "ALINA",
+      "version": "1.1.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-PRF",
+      "title": "Pseudo relevance feedback",
+      "abbr": "PRF",
+      "definition_ru": "уточнение запроса с опорой на предварительно найденные документы",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          616,
+          621
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-QUERY_REWRITE"
+      ],
+      "owner": "ALINA",
+      "version": "1.1.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-HYDE",
+      "title": "Hypothetical document embeddings",
+      "abbr": "HYDE",
+      "definition_ru": "создание гипотетического документа для приближения запроса к документному пространству",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          619,
+          623
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-QUERY_REWRITE"
+      ],
+      "owner": "ALINA",
+      "version": "1.1.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-QUERY_DRIFT",
+      "title": "Query topic drift",
+      "abbr": null,
+      "definition_ru": "отклонение расширенного поискового запроса от исходного смысла",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          622,
+          624
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-QUERY_REWRITE"
+      ],
+      "owner": "ALINA",
+      "version": "1.1.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-QUERY_DECOMPOSITION",
+      "title": "Query decomposition",
+      "abbr": null,
+      "definition_ru": "разбиение сложного вопроса на подзапросы с зависимостями",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          624,
+          625
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-QUERY_REWRITE"
+      ],
+      "owner": "ALINA",
+      "version": "1.1.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-BM25",
+      "title": "BM25 keyword retrieval",
+      "abbr": "BM25",
+      "definition_ru": "вероятностная поисковая модель ранжирования по словам и частотам",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          625,
+          628
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-SEMANTIC_SEARCH"
+      ],
+      "owner": "ALINA",
+      "version": "1.1.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-HYBRID_SEARCH",
+      "title": "Hybrid retrieval",
+      "abbr": null,
+      "definition_ru": "объединение лексического поиска и поиска по векторам",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          627,
+          629
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-BM25"
+      ],
+      "owner": "ALINA",
+      "version": "1.1.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-RAG_METADATA_FILTER",
+      "title": "Retrieval metadata filtering",
+      "abbr": null,
+      "definition_ru": "ограничение документов по дате, роли, корпусу, версии и другим атрибутам",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          628,
+          629
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-HYBRID_SEARCH"
+      ],
+      "owner": "ALINA",
+      "version": "1.1.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-GENERATIVE_RETRIEVAL",
+      "title": "Generative retrieval",
+      "abbr": null,
+      "definition_ru": "генерация идентификаторов документов моделью вместо обычного индексного поиска",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          629,
+          632
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 3,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-RAG_PIPELINE"
+      ],
+      "owner": "ALINA",
+      "version": "1.1.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-TIGHT_RETRIEVER",
+      "title": "Tightly coupled retriever",
+      "abbr": null,
+      "definition_ru": "retriever, обученный совместно или под конкретную целевую языковую модель",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          632,
+          634
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-RAG_PIPELINE"
+      ],
+      "owner": "ALINA",
+      "version": "1.1.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-GRAPHRAG",
+      "title": "GraphRAG",
+      "abbr": "GRAPHRAG",
+      "definition_ru": "поиск с использованием связей сущностей и извлечённых графовых структур",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          634,
+          636
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-RAG_PIPELINE"
+      ],
+      "owner": "ALINA",
+      "version": "1.1.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-RERANKER",
+      "title": "Reranker",
+      "abbr": null,
+      "definition_ru": "повторное ранжирование небольшого множества кандидатов более точной моделью",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          636,
+          644
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-HYBRID_SEARCH"
+      ],
+      "owner": "ALINA",
+      "version": "1.1.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-CROSS_ENCODER",
+      "title": "Cross encoder reranking",
+      "abbr": null,
+      "definition_ru": "совместное кодирование запроса и документа при проверке релевантности",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          637,
+          639
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-RERANKER"
+      ],
+      "owner": "ALINA",
+      "version": "1.1.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-COLBERT",
+      "title": "ColBERT late-interaction retrieval",
+      "abbr": "COLBERT",
+      "definition_ru": "ранжирование по позднему взаимодействию токенных представлений",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          638,
+          639
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-RERANKER"
+      ],
+      "owner": "ALINA",
+      "version": "1.1.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-LISTWISE_RERANK",
+      "title": "Listwise reranking",
+      "abbr": null,
+      "definition_ru": "модель оценивает и упорядочивает группу документов за один запрос",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          641,
+          644
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-RERANKER"
+      ],
+      "owner": "ALINA",
+      "version": "1.1.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-RAG_REFINE",
+      "title": "RAG refine stage",
+      "abbr": null,
+      "definition_ru": "сокращение, очистка и улучшение извлечённого материала перед генерацией",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          645,
+          656
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-RAG_PIPELINE"
+      ],
+      "owner": "ALINA",
+      "version": "1.1.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-CHAIN_OF_NOTE",
+      "title": "Chain-of-Note",
+      "abbr": null,
+      "definition_ru": "создание заметок о том, отвечает ли каждый документ на вопрос или лишь содержит контекст",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          651,
+          656
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-RAG_REFINE"
+      ],
+      "owner": "ALINA",
+      "version": "1.1.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-RAG_INSERT",
+      "title": "RAG context insertion",
+      "abbr": null,
+      "definition_ru": "размещение кандидатов в контексте с учётом порядка и ограничения окна",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          656,
+          659
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-RAG_PIPELINE"
+      ],
+      "owner": "ALINA",
+      "version": "1.1.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-RAG_GENERATE",
+      "title": "RAG generation",
+      "abbr": null,
+      "definition_ru": "формирование ответа моделью на базе подготовленного контекста",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          658,
+          665
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-RAG_PIPELINE"
+      ],
+      "owner": "ALINA",
+      "version": "1.1.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-FLARE",
+      "title": "Forward-Looking Active REtrieval",
+      "abbr": "FLARE",
+      "definition_ru": "инициирование дополнительных retrieval при генерации по потребности",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          660,
+          664
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-RAG_GENERATE"
+      ],
+      "owner": "ALINA",
+      "version": "1.1.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-RAG_MEMORY_MGMT",
+      "title": "RAG memory management",
+      "abbr": null,
+      "definition_ru": "извлечение важной истории и состояния для поддержания длительных задач",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          665,
+          670
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-RAG_HISTORY"
+      ],
+      "owner": "ALINA",
+      "version": "1.1.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-LLMR",
+      "title": "LLM-R example retriever",
+      "abbr": "LLMR",
+      "definition_ru": "подбор few-shot примеров по ожидаемому улучшению ответов модели",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          670,
+          672
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 4,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-RAG_FEWSHOT"
+      ],
+      "owner": "ALINA",
+      "version": "1.1.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-REALM",
+      "title": "Retrieval-Augmented Language Model",
+      "abbr": "REALM",
+      "definition_ru": "совместное обучение retriever и языкового компонента при masked-language objective",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          672,
+          674
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 3,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-RAG_PIPELINE"
+      ],
+      "owner": "ALINA",
+      "version": "1.1.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-RAG_CONTEXT_CONFLICT",
+      "title": "Retrieved context contradiction",
+      "abbr": null,
+      "definition_ru": "противоречие найденного контекста знаниям модели или другим источникам",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          674,
+          676
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-RAG_PIPELINE"
+      ],
+      "owner": "ALINA",
+      "version": "1.1.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-RAG_LONG_CONTEXT",
+      "title": "RAG versus long context",
+      "abbr": null,
+      "definition_ru": "сравнение избирательного поиска с передачей длинного контекста целиком",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          676,
+          679
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-RAG_PIPELINE"
+      ],
+      "owner": "ALINA",
+      "version": "1.1.0",
+      "last_review": "2026-11-23"
+    },
+    {
+      "id": "B002-RAG_VS_FINETUNE",
+      "title": "RAG versus fine-tuning",
+      "abbr": null,
+      "definition_ru": "выбор обновляемого контекста либо изменения параметров в зависимости от задачи",
+      "kind": "concept",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "evidence": {
+        "source_id": "SRC-BOOK002-PRIMARY",
+        "pdf_pages": [
+          679,
+          682
+        ],
+        "verification": "DIRECTLY_REVIEWED"
+      },
+      "weight": {
+        "importance": 5,
+        "importance_scale": "1..5 editorial, not probability",
+        "confidence": 0.95,
+        "confidence_scale": "evidence coverage only"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED",
+      "related_ids": [
+        "B002-FINE_TUNING"
+      ],
+      "owner": "ALINA",
+      "version": "1.1.0",
+      "last_review": "2026-11-23"
     }
   ],
   "edges": [
@@ -12478,6 +13443,438 @@
       "type": "REQUIRES_KNOWLEDGE",
       "weight": 0.9,
       "weight_reason": "Editorial role relevance",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-RAG_PIPELINE",
+      "to": "B002-RAG",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation; not a statistical proof",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-RAG_EXTERNAL_KNOWLEDGE",
+      "to": "B002-RAG_PIPELINE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation; not a statistical proof",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-RAG_HISTORY",
+      "to": "B002-RAG_PIPELINE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation; not a statistical proof",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-RAG_FEWSHOT",
+      "to": "B002-RAG_PIPELINE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation; not a statistical proof",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-RAG_TOOL_DOCS",
+      "to": "B002-TOOL_DOC_STORE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation; not a statistical proof",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-RETRIEVAL_GATE",
+      "to": "B002-RAG_PIPELINE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation; not a statistical proof",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-QUERY_REWRITE",
+      "to": "B002-RAG_PIPELINE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation; not a statistical proof",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-PRF",
+      "to": "B002-QUERY_REWRITE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation; not a statistical proof",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-HYDE",
+      "to": "B002-QUERY_REWRITE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation; not a statistical proof",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-QUERY_DRIFT",
+      "to": "B002-QUERY_REWRITE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation; not a statistical proof",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-QUERY_DECOMPOSITION",
+      "to": "B002-QUERY_REWRITE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation; not a statistical proof",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-BM25",
+      "to": "B002-SEMANTIC_SEARCH",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation; not a statistical proof",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-HYBRID_SEARCH",
+      "to": "B002-BM25",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation; not a statistical proof",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-RAG_METADATA_FILTER",
+      "to": "B002-HYBRID_SEARCH",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation; not a statistical proof",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-GENERATIVE_RETRIEVAL",
+      "to": "B002-RAG_PIPELINE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation; not a statistical proof",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-TIGHT_RETRIEVER",
+      "to": "B002-RAG_PIPELINE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation; not a statistical proof",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-GRAPHRAG",
+      "to": "B002-RAG_PIPELINE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation; not a statistical proof",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-RERANKER",
+      "to": "B002-HYBRID_SEARCH",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation; not a statistical proof",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-CROSS_ENCODER",
+      "to": "B002-RERANKER",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation; not a statistical proof",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-COLBERT",
+      "to": "B002-RERANKER",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation; not a statistical proof",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-LISTWISE_RERANK",
+      "to": "B002-RERANKER",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation; not a statistical proof",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-RAG_REFINE",
+      "to": "B002-RAG_PIPELINE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation; not a statistical proof",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-CHAIN_OF_NOTE",
+      "to": "B002-RAG_REFINE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation; not a statistical proof",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-RAG_INSERT",
+      "to": "B002-RAG_PIPELINE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation; not a statistical proof",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-RAG_GENERATE",
+      "to": "B002-RAG_PIPELINE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation; not a statistical proof",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-FLARE",
+      "to": "B002-RAG_GENERATE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation; not a statistical proof",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-RAG_MEMORY_MGMT",
+      "to": "B002-RAG_HISTORY",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation; not a statistical proof",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-LLMR",
+      "to": "B002-RAG_FEWSHOT",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation; not a statistical proof",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-REALM",
+      "to": "B002-RAG_PIPELINE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation; not a statistical proof",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-RAG_CONTEXT_CONFLICT",
+      "to": "B002-RAG_PIPELINE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation; not a statistical proof",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-RAG_LONG_CONTEXT",
+      "to": "B002-RAG_PIPELINE",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation; not a statistical proof",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "B002-RAG_VS_FINETUNE",
+      "to": "B002-FINE_TUNING",
+      "type": "RELATED_TO",
+      "weight": 0.7,
+      "weight_reason": "Editorial relation; not a statistical proof",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_KNOWLEDGE",
+      "to": "B002-RAG_PIPELINE",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed curriculum assignment",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_KNOWLEDGE",
+      "to": "B002-HYBRID_SEARCH",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed curriculum assignment",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_KNOWLEDGE",
+      "to": "B002-RAG_METADATA_FILTER",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed curriculum assignment",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_KNOWLEDGE",
+      "to": "B002-CHAIN_OF_NOTE",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed curriculum assignment",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_KNOWLEDGE",
+      "to": "B002-RAG_CONTEXT_CONFLICT",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed curriculum assignment",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_CURRICULUM",
+      "to": "B002-RAG_FEWSHOT",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed curriculum assignment",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_CURRICULUM",
+      "to": "B002-LLMR",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed curriculum assignment",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ALINA_CURRICULUM",
+      "to": "B002-RAG_MEMORY_MGMT",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed curriculum assignment",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ML_ENGINEER",
+      "to": "B002-REALM",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed curriculum assignment",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ML_ENGINEER",
+      "to": "B002-TIGHT_RETRIEVER",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed curriculum assignment",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-ML_ENGINEER",
+      "to": "B002-COLBERT",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed curriculum assignment",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SECURITY",
+      "to": "B002-RAG_METADATA_FILTER",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed curriculum assignment",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SECURITY",
+      "to": "B002-RAG_CONTEXT_CONFLICT",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed curriculum assignment",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SECURITY",
+      "to": "B002-QUERY_DRIFT",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed curriculum assignment",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-POLYGON",
+      "to": "B002-RERANKER",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed curriculum assignment",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-POLYGON",
+      "to": "B002-RAG_CONTEXT_CONFLICT",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed curriculum assignment",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-POLYGON",
+      "to": "B002-CHAIN_OF_NOTE",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed curriculum assignment",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-POLYGON",
+      "to": "B002-RAG_VS_FINETUNE",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed curriculum assignment",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SYSTEM_ARCHITECT",
+      "to": "B002-GRAPHRAG",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed curriculum assignment",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SYSTEM_ARCHITECT",
+      "to": "B002-RAG_LONG_CONTEXT",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed curriculum assignment",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SYSTEM_ARCHITECT",
+      "to": "B002-RAG_PIPELINE",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed curriculum assignment",
+      "status": "PROPOSED"
+    },
+    {
+      "from": "ROLE-SYSTEM_ARCHITECT",
+      "to": "B002-HYBRID_SEARCH",
+      "type": "REQUIRES_KNOWLEDGE",
+      "weight": 0.9,
+      "weight_reason": "Proposed curriculum assignment",
       "status": "PROPOSED"
     }
   ]

@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "source_id": "SRC-BOOK002-PRIMARY",
   "terms": [
     {
@@ -3576,6 +3576,422 @@
         603
       ],
       "importance": 4
+    },
+    {
+      "id": "B002-RAG_PIPELINE",
+      "term": "RAG pipeline",
+      "abbreviation": "RAG_PIPELINE",
+      "definition_ru": "этапный конвейер извлечения данных и ответа модели с дополнительными проверками",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "pdf_pages": [
+        604,
+        618
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-RAG_EXTERNAL_KNOWLEDGE",
+      "term": "External knowledge retrieval",
+      "abbreviation": null,
+      "definition_ru": "извлечение внешних фактов и обновляемых данных во время использования модели",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "pdf_pages": [
+        605,
+        610
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-RAG_HISTORY",
+      "term": "Conversation history retrieval",
+      "abbreviation": null,
+      "definition_ru": "извлечение нужных фрагментов прошлых взаимодействий при ограничении контекста",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "pdf_pages": [
+        609,
+        610
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-RAG_FEWSHOT",
+      "term": "In-context example retrieval",
+      "abbreviation": null,
+      "definition_ru": "подбор учебных примеров по текущему запросу",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "pdf_pages": [
+        610,
+        611
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-RAG_TOOL_DOCS",
+      "term": "Tool information retrieval",
+      "abbreviation": null,
+      "definition_ru": "поиск документации, схем и описаний инструментов по ситуации",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "pdf_pages": [
+        610,
+        611
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-RETRIEVAL_GATE",
+      "term": "Decision when to retrieve",
+      "abbreviation": null,
+      "definition_ru": "динамический выбор между памятью модели и внешним извлечением",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "pdf_pages": [
+        610,
+        613
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-QUERY_REWRITE",
+      "term": "Query rewriting",
+      "abbreviation": null,
+      "definition_ru": "переформулирование пользовательского запроса для согласования с корпусом",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "pdf_pages": [
+        614,
+        625
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-PRF",
+      "term": "Pseudo relevance feedback",
+      "abbreviation": "PRF",
+      "definition_ru": "уточнение запроса с опорой на предварительно найденные документы",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "pdf_pages": [
+        616,
+        621
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-HYDE",
+      "term": "Hypothetical document embeddings",
+      "abbreviation": "HYDE",
+      "definition_ru": "создание гипотетического документа для приближения запроса к документному пространству",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "pdf_pages": [
+        619,
+        623
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-QUERY_DRIFT",
+      "term": "Query topic drift",
+      "abbreviation": null,
+      "definition_ru": "отклонение расширенного поискового запроса от исходного смысла",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "pdf_pages": [
+        622,
+        624
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-QUERY_DECOMPOSITION",
+      "term": "Query decomposition",
+      "abbreviation": null,
+      "definition_ru": "разбиение сложного вопроса на подзапросы с зависимостями",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "pdf_pages": [
+        624,
+        625
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-BM25",
+      "term": "BM25 keyword retrieval",
+      "abbreviation": "BM25",
+      "definition_ru": "вероятностная поисковая модель ранжирования по словам и частотам",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "pdf_pages": [
+        625,
+        628
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-HYBRID_SEARCH",
+      "term": "Hybrid retrieval",
+      "abbreviation": null,
+      "definition_ru": "объединение лексического поиска и поиска по векторам",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "pdf_pages": [
+        627,
+        629
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-RAG_METADATA_FILTER",
+      "term": "Retrieval metadata filtering",
+      "abbreviation": null,
+      "definition_ru": "ограничение документов по дате, роли, корпусу, версии и другим атрибутам",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "pdf_pages": [
+        628,
+        629
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-GENERATIVE_RETRIEVAL",
+      "term": "Generative retrieval",
+      "abbreviation": null,
+      "definition_ru": "генерация идентификаторов документов моделью вместо обычного индексного поиска",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "pdf_pages": [
+        629,
+        632
+      ],
+      "importance": 3
+    },
+    {
+      "id": "B002-TIGHT_RETRIEVER",
+      "term": "Tightly coupled retriever",
+      "abbreviation": null,
+      "definition_ru": "retriever, обученный совместно или под конкретную целевую языковую модель",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "pdf_pages": [
+        632,
+        634
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-GRAPHRAG",
+      "term": "GraphRAG",
+      "abbreviation": "GRAPHRAG",
+      "definition_ru": "поиск с использованием связей сущностей и извлечённых графовых структур",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "pdf_pages": [
+        634,
+        636
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-RERANKER",
+      "term": "Reranker",
+      "abbreviation": null,
+      "definition_ru": "повторное ранжирование небольшого множества кандидатов более точной моделью",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "pdf_pages": [
+        636,
+        644
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-CROSS_ENCODER",
+      "term": "Cross encoder reranking",
+      "abbreviation": null,
+      "definition_ru": "совместное кодирование запроса и документа при проверке релевантности",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "pdf_pages": [
+        637,
+        639
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-COLBERT",
+      "term": "ColBERT late-interaction retrieval",
+      "abbreviation": "COLBERT",
+      "definition_ru": "ранжирование по позднему взаимодействию токенных представлений",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "pdf_pages": [
+        638,
+        639
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-LISTWISE_RERANK",
+      "term": "Listwise reranking",
+      "abbreviation": null,
+      "definition_ru": "модель оценивает и упорядочивает группу документов за один запрос",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "pdf_pages": [
+        641,
+        644
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-RAG_REFINE",
+      "term": "RAG refine stage",
+      "abbreviation": null,
+      "definition_ru": "сокращение, очистка и улучшение извлечённого материала перед генерацией",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "pdf_pages": [
+        645,
+        656
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-CHAIN_OF_NOTE",
+      "term": "Chain-of-Note",
+      "abbreviation": null,
+      "definition_ru": "создание заметок о том, отвечает ли каждый документ на вопрос или лишь содержит контекст",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "pdf_pages": [
+        651,
+        656
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-RAG_INSERT",
+      "term": "RAG context insertion",
+      "abbreviation": null,
+      "definition_ru": "размещение кандидатов в контексте с учётом порядка и ограничения окна",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "pdf_pages": [
+        656,
+        659
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-RAG_GENERATE",
+      "term": "RAG generation",
+      "abbreviation": null,
+      "definition_ru": "формирование ответа моделью на базе подготовленного контекста",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "pdf_pages": [
+        658,
+        665
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-FLARE",
+      "term": "Forward-Looking Active REtrieval",
+      "abbreviation": "FLARE",
+      "definition_ru": "инициирование дополнительных retrieval при генерации по потребности",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "pdf_pages": [
+        660,
+        664
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-RAG_MEMORY_MGMT",
+      "term": "RAG memory management",
+      "abbreviation": null,
+      "definition_ru": "извлечение важной истории и состояния для поддержания длительных задач",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "pdf_pages": [
+        665,
+        670
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-LLMR",
+      "term": "LLM-R example retriever",
+      "abbreviation": "LLMR",
+      "definition_ru": "подбор few-shot примеров по ожидаемому улучшению ответов модели",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "pdf_pages": [
+        670,
+        672
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-REALM",
+      "term": "Retrieval-Augmented Language Model",
+      "abbreviation": "REALM",
+      "definition_ru": "совместное обучение retriever и языкового компонента при masked-language objective",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "pdf_pages": [
+        672,
+        674
+      ],
+      "importance": 3
+    },
+    {
+      "id": "B002-RAG_CONTEXT_CONFLICT",
+      "term": "Retrieved context contradiction",
+      "abbreviation": null,
+      "definition_ru": "противоречие найденного контекста знаниям модели или другим источникам",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "pdf_pages": [
+        674,
+        676
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-RAG_LONG_CONTEXT",
+      "term": "RAG versus long context",
+      "abbreviation": null,
+      "definition_ru": "сравнение избирательного поиска с передачей длинного контекста целиком",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "pdf_pages": [
+        676,
+        679
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-RAG_VS_FINETUNE",
+      "term": "RAG versus fine-tuning",
+      "abbreviation": null,
+      "definition_ru": "выбор обновляемого контекста либо изменения параметров в зависимости от задачи",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "pdf_pages": [
+        679,
+        682
+      ],
+      "importance": 5
     }
   ]
 }
