@@ -7,6 +7,8 @@
 | PAT-002 Routing / Delegation | CH02, 34–47 | Intent Classifier, Validator, Branch, Handler | `request` → `route → result` | if/else → LCEL → qualified FATHER worker |
 | PAT-003 Parallelization | CH03, 48–63 | Fan-out, Independent Tasks, Join, Synthesis | `topic` → `{summary, questions, key_terms}` → answer | asyncio → RunnableParallel → distributed aggregator |
 
+| PAT-004 Reflection / Generator–Critic | CH04, 63–76 | Producer, Critic, Iteration Controller, External Validator | `task` → `candidate → critique → revise` | self-review → provider-adapter loop → evidence-based FATHER acceptance |
+
 ## Инварианты
 
 - Решение модели не является разрешением на выполнение инструментов.

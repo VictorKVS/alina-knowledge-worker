@@ -33,3 +33,9 @@
 Оба примера используют единый [ModelAdapter](examples/model_adapter.py) с выбором `ollama/openai/gemini/anthropic/openai-compatible` через переменные окружения. Без копирования логики агента. [Руководство и команды](architecture/MODEL_PROVIDERS_RU.md) · [Offline tests](tests/test_model_adapter.py).
 
 Ни одна удалённая модель не вызывалась; смена адаптера сама по себе не даёт POLYGON PASS.
+
+## CH04 — Reflection / Generator–Critic
+
+[Источник и разбор по PDF 63–76](chapters/CH04_REFLECTION_RU.md) · [Универсальный Python-демонстратор](examples/ch04_reflection.py) · [Лаборатория A/B/C](labs/CH04/LAB_PROGRAM.md) · [Offline unit tests](tests/test_ch04_reflection.py).
+
+Сгенерированный LLM код не исполняется; LLM-критика не является доказательством `PASS`.
