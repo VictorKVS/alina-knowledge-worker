@@ -57,12 +57,6 @@ class ToolUseTests(unittest.TestCase):
         ])
         self.assertEqual(run_tool_loop(FakeModel([msg]), "many")["status"], "LIMIT_REACHED")
 
-    def test_missing_call_id(self):
-        model = FakeModel([AIMessage(content="", tool_calls=[{"name": "multiply", "args": {"a": 2, "b": 3}, "id": "call-1"}])])
-        # The LangChain AIMessage validates and normalizes tool_calls; direct low-level
-        # missing ID is provider dependent, so this case is covered by validation in code.
-        self.assertEqual(run_tool_loop(model, "multiply", max_steps=1)["status"], "LIMIT_REACHED") if False else None
-
     def test_empty_request(self):
         with self.assertRaises(ValueError):
             run_tool_loop(FakeModel([]), "")
