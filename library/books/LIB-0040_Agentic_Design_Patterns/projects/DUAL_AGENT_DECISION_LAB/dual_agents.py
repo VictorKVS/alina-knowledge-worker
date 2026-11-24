@@ -48,7 +48,7 @@ class World:
             ]
         return [
             action for action in pool
-            if action.name not in self.facts
+            if (self.kind == "game" or action.name not in self.facts)
             and action.duration <= self.budget
             and all(pre in self.facts for pre in action.prerequisites)
             and not (self.kind == "game" and action.name == "scout" and "scout" in self.facts)
@@ -80,7 +80,7 @@ class World:
                 self.position += 1
                 if "scout" not in self.facts:
                     self.hp -= 1
-                self.goal = self.position >= 2
+                self.goal = self.position >= 2 and self.hp > 0
                 observation = f"Moved to {self.position}; hp={self.hp}"
             else:
                 self.position += 2
@@ -108,7 +108,7 @@ def score(option: Option, world: World, strategy: str = "balanced") -> float:
             reward += 3
     else:
         if option.name == "scout" and world.position == 0 and world.budget >= 3:
-            reward += (3 if strategy == "careful" else 0)
+            reward += (3 if strategy in {"balanced", "careful"} else 0)
         if option.name == "rush" and world.hp <= 2:
             return float("-inf")  # hard safety constraint: unacceptable death risk
     return reward - risk_weight * option.risk - 0.2 * option.duration
