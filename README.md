@@ -373,3 +373,7 @@ This repository is currently an active research and engineering project. Before 
 ---
 
 Maintained by **VictorKVS**.
+
+## Narrative Theory KB (literary algorithms)
+
+[ALINA_NARRATIVE_THEORY_KB](projects/ALINA_NARRATIVE_THEORY_KB/README.md) — отдельный проект базы литературоведческих алгоритмов с источниками, краткими цитатами, PDF-страницами, проверкой схем и статусами квалификации. Исходные книги не публикуются.
