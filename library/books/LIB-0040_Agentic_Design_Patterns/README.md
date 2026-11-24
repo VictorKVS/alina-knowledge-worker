@@ -39,3 +39,9 @@
 [Источник и разбор по PDF 63–76](chapters/CH04_REFLECTION_RU.md) · [Универсальный Python-демонстратор](examples/ch04_reflection.py) · [Лаборатория A/B/C](labs/CH04/LAB_PROGRAM.md) · [Offline unit tests](tests/test_ch04_reflection.py).
 
 Сгенерированный LLM код не исполняется; LLM-критика не является доказательством `PASS`.
+
+## CH05 — Tool Use / Function Calling
+
+[Инженерный разбор по книге и предоставленному переводу](chapters/CH05_TOOL_USE_RU.md) · [Python: universal ModelAdapter + 2 безопасных tools](examples/ch05_tool_use.py) · [Лаборатория A/B/C](labs/CH05/LAB_PROGRAM.md) · [Offline tests](tests/test_ch05_tool_use.py).
+
+Реальных веб-, финансовых, почтовых и физических действий нет. Поддержка tool calling каждой моделью проверяется отдельно; `NOT_RUN / NOT_QUALIFIED` до подтверждений.
