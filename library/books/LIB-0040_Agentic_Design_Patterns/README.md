@@ -45,3 +45,7 @@
 [Инженерный разбор по книге и предоставленному переводу](chapters/CH05_TOOL_USE_RU.md) · [Python: universal ModelAdapter + 2 безопасных tools](examples/ch05_tool_use.py) · [Лаборатория A/B/C](labs/CH05/LAB_PROGRAM.md) · [Offline tests](tests/test_ch05_tool_use.py).
 
 Реальных веб-, финансовых, почтовых и физических действий нет. Поддержка tool calling каждой моделью проверяется отдельно; `NOT_RUN / NOT_QUALIFIED` до подтверждений.
+
+## Две параллельные специализации (Story vs Game)
+
+[DUAL AGENT DECISION LAB](projects/DUAL_AGENT_DECISION_LAB/README.md) — общая схема `observe/choose/step` и два разных симулятора: сюжетный и игровой, сравнение инструментов и стратегий, baseline и режим с Ollama. Код — учебный; независимые tests/qualification ещё необходимы.
