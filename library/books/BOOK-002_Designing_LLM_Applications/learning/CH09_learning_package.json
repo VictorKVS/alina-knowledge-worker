@@ -1,0 +1,60 @@
+{
+  "chapter": "CH09",
+  "status": "PUBLIC_LEARNING_NOT_POLYGON_HOLDOUT",
+  "pdf_pages": [
+    459,
+    491
+  ],
+  "questions": [
+    {
+      "id": "CH09-Q1",
+      "question": "Что сохраняет KV-cache?",
+      "gold": "K и V для ранее обработанных токенов, уменьшая повторные вычисления"
+    },
+    {
+      "id": "CH09-Q2",
+      "question": "Что означает early exit?",
+      "gold": "Выход из модели на промежуточном слое при достаточной оценке, потенциально с потерей качества"
+    },
+    {
+      "id": "CH09-Q3",
+      "question": "Чем distillation отличается от RAG?",
+      "gold": "Дистилляция меняет параметры student; RAG передаёт внешние данные в контекст"
+    },
+    {
+      "id": "CH09-Q4",
+      "question": "Для чего draft model?",
+      "gold": "Для предложения кандидатов токенов, проверяемых основной target-моделью"
+    },
+    {
+      "id": "CH09-Q5",
+      "question": "Чем parallel sections отличаются от multi-token heads?",
+      "gold": "Первое — независимые запросы/части; второе — механизм внутри модели"
+    },
+    {
+      "id": "CH09-Q6",
+      "question": "Почему BF16 и FP16 различаются?",
+      "gold": "Разная доля битов экспоненты и мантиссы, разные диапазон и точность"
+    },
+    {
+      "id": "CH09-Q7",
+      "question": "Что означает symmetric quantization?",
+      "gold": "Mapping ноля в ноль с масштабом"
+    },
+    {
+      "id": "CH09-Q8",
+      "question": "Почему меньшее число бит не гарантирует ускорения?",
+      "gold": "Hardware, kernels, conversions, bottlenecks and runtime overhead"
+    },
+    {
+      "id": "CH09-Q9",
+      "question": "Какие дополнительные данные занимают VRAM?",
+      "gold": "KV-cache, activation/workspaces, runtime, metadata и иногда optimizer"
+    },
+    {
+      "id": "CH09-Q10",
+      "question": "Какая роль POLYGON в оптимизации?",
+      "gold": "Независимо проверяет сохранение качества и безопасности при нужной нагрузке"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "version": "0.1",
+  "sources": [
+    {
+      "id": "SRC-001",
+      "title": "Анатомия истории. 22 шага к созданию успешного сценария",
+      "author": "John Truby",
+      "filename": "rwrfw3.pdf",
+      "sha256": "a5e7cc30cff6d56d3e67602167d1f87ec84e9a13aa19ed23718371b2ca2cff83",
+      "pages": 432,
+      "quality": "PRIMARY_AUTHOR_TEXT",
+      "description": "Русскоязычный перевод авторского текста; полный SHA-256 исходного пользовательского файла"
+    },
+    {
+      "id": "SRC-002",
+      "title": "Structuring Your Novel: Essential Keys for Writing an Outstanding Story",
+      "author": "K. M. Weiland",
+      "filename": "_OceanofPDF.com_Structuring_Your_Novel__Essential_Keys_for_-_KM_Weiland.pdf",
+      "sha256": "956e3537dc123d465849289c2481021d81519c7bf165864230e89b4b7b66a032",
+      "pages": 208,
+      "quality": "PRIMARY_AUTHOR_TEXT",
+      "description": "Англоязычный авторский текст"
+    },
+    {
+      "id": "SRC-003",
+      "title": "Story: Substance, Structure, Style, and the Principles of Screenwriting — Part 3",
+      "author": "Robert McKee",
+      "filename": "robert-mckee-story-part3.pdf",
+      "sha256": "0973873cb51e7667b72771f080ea08f4b3885e9ccc5995bc683a5ecb07e9ea69",
+      "pages": 183,
+      "quality": "PRIMARY_AUTHOR_TEXT",
+      "description": "Только часть 3, главы 7–13; цитировать PDF-пагинацию"
+    },
+    {
+      "id": "SRC-004",
+      "title": "Structuring Your Novel — story structure chart",
+      "author": "Matt Gemmell (based on K. M. Weiland)",
+      "filename": "structuring_your_novel_chart.pdf",
+      "sha256": "6533224312e4b302dff1ceadfcaf26e7e4ed7c4a855a632862e3740fd30e558d",
+      "pages": 2,
+      "quality": "SECONDARY_DERIVED",
+      "description": "Отдельный автор схемы, изначальная теория K.M. Weiland"
+    },
+    {
+      "id": "SRC-005",
+      "title": "Story Genius — Bookey summary",
+      "author": "Bookey (summary of Lisa Cron)",
+      "filename": "story-genius.pdf",
+      "sha256": "50bfe856013b8c24e47835f81ef05d7aa4cb0ed6a71a9dcced01d4ae3d889800",
+      "pages": 169,
+      "quality": "SECONDARY_SUMMARY",
+      "description": "Пользовательский PDF является пересказом от Bookey; не выдавать за текст Lisa Cron"
+    },
+    {
+      "id": "SRC-006",
+      "title": "The Story Grid — Bookey summary",
+      "author": "Bookey (summary of Shawn Coyne)",
+      "filename": "the-story-grid.pdf",
+      "sha256": "aa9be8cf117f4c49393eb2d54f4c657bde53f7514ebd8f75bfce2f90c13a185c",
+      "pages": 117,
+      "quality": "SECONDARY_SUMMARY",
+      "description": "Пользовательский PDF является пересказом от Bookey; не выдавать за текст Shawn Coyne"
+    }
+  ]
+}

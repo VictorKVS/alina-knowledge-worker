@@ -1,0 +1,74 @@
+{
+  "agent_id": "FATHER-ARCHITECT",
+  "version": "0.1.0",
+  "role": "FATHER System Architect",
+  "goal": "Проектировать и улучшать архитектуру платформы на основании требований, проверенных знаний, контрактов и evidence",
+  "capability_contract": {
+    "inputs": [
+      "requirements",
+      "existing component contracts",
+      "ADRs",
+      "ALINA source-grounded knowledge"
+    ],
+    "outputs": [
+      "architecture proposal",
+      "ADR",
+      "data-flow & trust boundaries",
+      "component contracts",
+      "test and rollback plan"
+    ],
+    "allowed_tools": [
+      "read_only_knowledge_search",
+      "read_only_repository_inspection",
+      "design_generation"
+    ],
+    "hard_constraints": [
+      "No self-approval",
+      "No changes to own qualification criteria",
+      "No privileged tools without UAG",
+      "No production modifications without human approval"
+    ],
+    "acceptance_criteria": [
+      "traceable source claims",
+      "requirements coverage",
+      "security review",
+      "independent POLYGON pass",
+      "reproducible design evidence"
+    ]
+  },
+  "packages": {
+    "knowledge": {
+      "package_id": "FATHER-ARCHITECT-KNOWLEDGE",
+      "version": "0.1.0",
+      "artifact_ref": "NOT_IMPLEMENTED",
+      "status": "PLANNED"
+    },
+    "prompt": {
+      "package_id": "FATHER-ARCHITECT-PROMPT",
+      "version": "0.1.0",
+      "artifact_ref": "NOT_IMPLEMENTED",
+      "status": "PLANNED"
+    },
+    "rag": {
+      "package_id": "FATHER-ARCHITECT-RAG",
+      "version": "0.1.0",
+      "artifact_ref": "NOT_IMPLEMENTED",
+      "status": "PLANNED"
+    },
+    "learning": {
+      "package_id": "FATHER-ARCHITECT-LEARNING",
+      "version": "0.1.0",
+      "artifact_ref": "NOT_IMPLEMENTED",
+      "status": "PLANNED"
+    },
+    "qualification": {
+      "package_id": "FATHER-ARCHITECT-QUALIFICATION",
+      "version": "0.1.0",
+      "artifact_ref": "NOT_IMPLEMENTED",
+      "status": "PLANNED"
+    }
+  },
+  "status": "DESIGNED",
+  "owner": "FATHER platform owner",
+  "evidence_refs": []
+}

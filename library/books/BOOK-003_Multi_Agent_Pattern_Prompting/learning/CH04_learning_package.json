@@ -1,0 +1,34 @@
+{
+  "chapter": "CH04",
+  "source_pages": [
+    80,
+    103
+  ],
+  "status": "PUBLIC_QUESTIONS_NOT_POLYGON_HOLDOUT",
+  "questions": [
+    {
+      "id": "B003-CH04-Q1",
+      "question": "Какие свойства определяют production-grade?",
+      "topic": "Meaning of production-grade software",
+      "grade": "UNASSESSED"
+    },
+    {
+      "id": "B003-CH04-Q2",
+      "question": "Чем полезны Adapter и Strategy для LLM?",
+      "topic": "Queues, topics and RabbitMQ",
+      "grade": "UNASSESSED"
+    },
+    {
+      "id": "B003-CH04-Q3",
+      "question": "Для чего нужны correlation ID и DLQ?",
+      "topic": "EIP patterns for a production RAG pipeline",
+      "grade": "UNASSESSED"
+    },
+    {
+      "id": "B003-CH04-Q4",
+      "question": "Почему в RabbitMQ важны ACK и idempotency?",
+      "topic": "LLM client: Template Method, Adapter, Strategy",
+      "grade": "UNASSESSED"
+    }
+  ]
+}

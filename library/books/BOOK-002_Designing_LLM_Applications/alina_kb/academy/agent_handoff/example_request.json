@@ -1,0 +1,9 @@
+{
+  "task_id": "OSINT-DEMO-001",
+  "role": "OSINT",
+  "objective": "Оценить источники одной публичной технической новости",
+  "allowed_sensitivity": [
+    "public"
+  ],
+  "max_items": 5
+}

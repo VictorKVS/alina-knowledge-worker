@@ -1,0 +1,65 @@
+{
+  "source_id": "SRC-BOOK002-PRIMARY",
+  "chapter": "CH04",
+  "pages": [
+    204,
+    262
+  ],
+  "status": "PUBLIC_TRAINING_EXERCISES_NOT_POLYGON_HOLDOUT",
+  "questions": [
+    {
+      "id": "CH04-Q1",
+      "question": "Почему число ID токена не его смысл?",
+      "gold": "ID индексирует строку таблицы обучаемых представлений; семантика возникает из обучения сети",
+      "qualification": "NOT_RUN"
+    },
+    {
+      "id": "CH04-Q2",
+      "question": "Что делает self-attention?",
+      "gold": "Создаёт контекстные представления из Q K V с масштабированием, softmax и взвешиванием V",
+      "qualification": "NOT_RUN"
+    },
+    {
+      "id": "CH04-Q3",
+      "question": "Зачем позиционное кодирование?",
+      "gold": "Чтобы моделировать порядок/взаимные позиции токенов",
+      "qualification": "NOT_RUN"
+    },
+    {
+      "id": "CH04-Q4",
+      "question": "Как вычислить loss для one-hot цели?",
+      "gold": "Cross-entropy=-ln(probability of correct token)",
+      "qualification": "NOT_RUN"
+    },
+    {
+      "id": "CH04-Q5",
+      "question": "Как связать perplexity и loss?",
+      "gold": "exp(loss) при натуральном логарифме; 2^loss при битовой энтропии",
+      "qualification": "NOT_RUN"
+    },
+    {
+      "id": "CH04-Q6",
+      "question": "Чем отличается encoder-only?",
+      "gold": "Ориентирован на представление/понимание входа, часто полезен для классификации и embeddings",
+      "qualification": "NOT_RUN"
+    },
+    {
+      "id": "CH04-Q7",
+      "question": "Что такое MoE?",
+      "gold": "Условное вычисление с маршрутизацией к подмножеству внутренней сети экспертов, не команда программных агентов",
+      "qualification": "NOT_RUN"
+    },
+    {
+      "id": "CH04-Q8",
+      "question": "Чем различаются FLM и MLM?",
+      "gold": "FLM предсказывает очередной токен, MLM восстанавливает скрытые токены/спаны",
+      "qualification": "NOT_RUN"
+    },
+    {
+      "id": "CH04-Q9",
+      "question": "Что показывает пример PGN?",
+      "gold": "В эксперименте книги специализированная нотация эффективнее словесной для модели шахмат; для FATHER нужна отдельная проверка",
+      "qualification": "NOT_RUN"
+    }
+  ]
+}

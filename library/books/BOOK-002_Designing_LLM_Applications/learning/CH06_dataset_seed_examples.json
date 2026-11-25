@@ -1,0 +1,70 @@
+{
+  "chapter": "CH06",
+  "source_id": "SRC-BOOK002-PRIMARY",
+  "pdf_pages": [
+    329,
+    377
+  ],
+  "status": "UNVERIFIED_SYNTHETIC_TEACHING_EXAMPLES",
+  "schema": {
+    "required": [
+      "case_id",
+      "instruction",
+      "input",
+      "expected_output",
+      "label_origin",
+      "evidence_refs",
+      "source_family_id",
+      "split"
+    ],
+    "notes": "Use source-family isolation, no fake evidence, human review for high-risk cases."
+  },
+  "samples": [
+    {
+      "case_id": "TRAIN-EX-1",
+      "source_family_id": "EX-A",
+      "instruction": "Classify the relationship between two files",
+      "input": {
+        "sha256_match": true
+      },
+      "expected_output": {
+        "decision": "LINK_DUPLICATE"
+      },
+      "label_origin": "RULE_VERIFIED_TOY",
+      "evidence_refs": [],
+      "split": "train"
+    },
+    {
+      "case_id": "TRAIN-EX-2",
+      "source_family_id": "EX-B",
+      "instruction": "Classify the relationship between two files",
+      "input": {
+        "same_document_identity": true,
+        "changed_sections": [
+          "7.2"
+        ]
+      },
+      "expected_output": {
+        "decision": "NEW_VERSION"
+      },
+      "label_origin": "GENERATED_UNVERIFIED",
+      "evidence_refs": [],
+      "split": "train"
+    },
+    {
+      "case_id": "TRAIN-EX-3",
+      "source_family_id": "EX-C",
+      "instruction": "Classify the relationship between two files",
+      "input": {
+        "identity_uncertain": true,
+        "conflicting_metadata": true
+      },
+      "expected_output": {
+        "decision": "REVIEW"
+      },
+      "label_origin": "GENERATED_UNVERIFIED",
+      "evidence_refs": [],
+      "split": "validation"
+    }
+  ]
+}

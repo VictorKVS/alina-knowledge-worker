@@ -1,0 +1,1050 @@
+{
+  "version": "1.2.0",
+  "status": "DESIGNED_NOT_RUN",
+  "algorithms": [
+    {
+      "id": "ALG-B002-DATA-INGEST",
+      "name": "Источник → набор знаний",
+      "nodes": [
+        "data_preprocessing",
+        "extraction_cleaning",
+        "source_provenance",
+        "f_source_span"
+      ],
+      "steps": [
+        "register source/license/version",
+        "extract text and page spans",
+        "validate extraction with samples",
+        "normalize with reversible record",
+        "write provenance metadata"
+      ],
+      "source_pages": [
+        120,
+        125
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-DEDUP",
+      "name": "Exact / near dedup",
+      "nodes": [
+        "deduplication",
+        "exact_duplicate",
+        "near_duplicate",
+        "minhash"
+      ],
+      "steps": [
+        "record raw sha256",
+        "normalized exact hash groups",
+        "candidate near overlaps with MinHash",
+        "human verify controversial near duplicates",
+        "retain every source_id"
+      ],
+      "source_pages": [
+        138,
+        143
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-PII",
+      "name": "Sensitive data control",
+      "nodes": [
+        "pii",
+        "pii_remediation",
+        "privacy_attack"
+      ],
+      "steps": [
+        "classify sensitivity and legal basis",
+        "detect structured+unstructured PII",
+        "choose drop/redact/pseudonymize with policy",
+        "evaluate residual identification risk",
+        "log review and access scopes"
+      ],
+      "source_pages": [
+        143,
+        154
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-DECONTAM",
+      "name": "Защита POLYGON от утечки экзамена",
+      "nodes": [
+        "test_contamination",
+        "decontamination",
+        "ngram_overlap",
+        "f_polygon"
+      ],
+      "steps": [
+        "split by source family before chunking",
+        "freeze holdout",
+        "scan exact and n-gram overlap",
+        "audit near/paraphrase overlaps",
+        "record exceptions; fail on leakage"
+      ],
+      "source_pages": [
+        154,
+        155
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-MIX",
+      "name": "Конструкция смеси доменов",
+      "nodes": [
+        "data_mixture",
+        "curriculum_learning",
+        "downstream_tasks"
+      ],
+      "steps": [
+        "define competence slices and domain coverage",
+        "propose mixture ratios as hypotheses",
+        "train/evaluate controlled candidates",
+        "compare frozen downstream slices",
+        "record selected mix and failure cases"
+      ],
+      "source_pages": [
+        156,
+        163
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-QUALITY",
+      "name": "Выбор модели/метода повышения качества",
+      "nodes": [
+        "llm",
+        "rag",
+        "dataset",
+        "f_quality_gate"
+      ],
+      "steps": [
+        "define customer requirements and measurable deficits",
+        "test deterministic approach and RAG",
+        "identify behavior vs missing knowledge",
+        "only then design permitted weight-training experiment",
+        "independent safety and regression checks"
+      ],
+      "source_pages": [
+        92,
+        93
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_EXTENSION_NOT_DIRECT_BOOK_ALGORITHM"
+    },
+    {
+      "id": "ALG-B002-BPE",
+      "name": "Учебный BPE: частотные слияния",
+      "nodes": [
+        "bpe",
+        "subword",
+        "vocabulary"
+      ],
+      "steps": [
+        "Normalize and pretokenize example corpus",
+        "Initialize individual character tokens",
+        "Count adjacent pairs weighted by sample frequency",
+        "Choose most frequent pair with deterministic tie-break",
+        "Merge occurrences and repeat until vocabulary target",
+        "On inference apply saved merges in learned order"
+      ],
+      "source_pages": [
+        190,
+        194
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "SOURCE_DERIVED_TEACHING_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-TOKENIZER-AUDIT",
+      "name": "Сравнение токенизаторов для ролей ALINA",
+      "nodes": [
+        "tokenization",
+        "fertility",
+        "parity",
+        "token_domain"
+      ],
+      "steps": [
+        "Pin exact tokenizer and model revision",
+        "Curate equivalent RU/EN and domain-specific text samples",
+        "Count raw words and actual model tokens",
+        "Compute fertility and translation-pair parity",
+        "Check special-token and Unicode handling",
+        "Measure cost and retrieval chunk boundaries",
+        "Publish experiment and warnings"
+      ],
+      "source_pages": [
+        200,
+        202
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-ATTENTION-TOY",
+      "name": "Scaled dot-product attention",
+      "nodes": [
+        "self_attention",
+        "qkv"
+      ],
+      "steps": [
+        "Embed input tokens",
+        "Project Q,K,V",
+        "Take dot-product QK^T",
+        "Scale by sqrt(d_k) and apply attention mask",
+        "Softmax scores",
+        "Weighted sum of V"
+      ],
+      "source_pages": [
+        215,
+        221
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "SOURCE_DERIVED_TEACHING_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-TRAIN-LOOP",
+      "name": "Self-supervised next-token learning",
+      "nodes": [
+        "flm",
+        "cross_entropy",
+        "backprop"
+      ],
+      "steps": [
+        "Freeze corpus + tokenizer revision",
+        "Create shifted next-token labels",
+        "Forward pass to logits",
+        "Compute cross entropy on target positions",
+        "Backpropagate loss",
+        "Optimizer step; log training and held-out validation",
+        "Evaluate on extrinsic tasks"
+      ],
+      "source_pages": [
+        205,
+        208
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-ARCH-SELECT",
+      "name": "ALINA selection of architecture/objective",
+      "nodes": [
+        "encoder_only",
+        "encoder_decoder",
+        "decoder_only",
+        "extrinsic_eval"
+      ],
+      "steps": [
+        "Define actual agent task",
+        "Compare deterministic/RAG solution",
+        "Choose architecture for retrieval, classification or generation",
+        "Select objective only if weight training warranted",
+        "Measure quality, latency, privacy, hardware, regression",
+        "Record ADR and independent qualification"
+      ],
+      "source_pages": [
+        229,
+        255
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-MODEL-SELECTION",
+      "name": "Выбор модели для роли агента",
+      "nodes": [
+        "model_selection",
+        "model_license",
+        "llm_benchmark",
+        "tpot"
+      ],
+      "steps": [
+        "Define agent task and hard nonfunctional gates",
+        "Check rights and data processing conditions",
+        "Select candidate base/instruct/chat variants",
+        "Test frozen task-specific and negative cases",
+        "Record quality latency cost consistency and risk",
+        "Select least costly qualified candidate, retain fallback"
+      ],
+      "source_pages": [
+        286,
+        306
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-DECODING-EXPERIMENT",
+      "name": "Эксперимент с декодированием",
+      "nodes": [
+        "greedy_decoding",
+        "beam_search",
+        "top_k",
+        "top_p",
+        "temperature",
+        "nondeterminism"
+      ],
+      "steps": [
+        "Pin model and dataset",
+        "Repeat one task across generation configurations",
+        "Record exact text outputs and validation results",
+        "Compute error/repetition and diversity by case",
+        "Do not infer deterministic guarantee from temperature zero"
+      ],
+      "source_pages": [
+        312,
+        320
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "SOURCE_DERIVED_TEACHING_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-STRUCTURED-GATE",
+      "name": "Схема выхода агента с независимой проверкой фактов",
+      "nodes": [
+        "structured_output",
+        "json_schema_output",
+        "constrained_decoding"
+      ],
+      "steps": [
+        "Specify allowed JSON types and enums",
+        "Generate constrained result where supported",
+        "Validate JSON shape independent of LLM",
+        "Validate source rights, evidence and reasoning independently",
+        "Quarantine unproven or conflicting decisions",
+        "Log evidence and version"
+      ],
+      "source_pages": [
+        320,
+        323
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-FINETUNE-DECISION",
+      "name": "Определение необходимости fine-tuning для агента",
+      "nodes": [
+        "fine_tuning",
+        "regression_risk",
+        "sft_dataset"
+      ],
+      "steps": [
+        "Reproduce and classify concrete failures",
+        "Check missing or stale source facts and RAG",
+        "Check prompt, tool, policy and algorithm baselines",
+        "Quantify residual learnable input-output mapping errors",
+        "Estimate rights, data volume, compute cost and privacy",
+        "Train only if feasible and better than frozen baseline on holdout",
+        "Test regression and independent release gates"
+      ],
+      "source_pages": [
+        329,
+        333
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-SYNTHETIC-DATA-QA",
+      "name": "Проверяемая генерация обучающих примеров",
+      "nodes": [
+        "self_instruct",
+        "output_first",
+        "evol_instruct",
+        "sft_dataset"
+      ],
+      "steps": [
+        "Construct high-quality manually verified seed samples",
+        "Use input-first and output-first label-aware generation",
+        "Evolve difficulty and topical breadth",
+        "Validate label via human/source evidence",
+        "Deduplicate and isolate by source group across train/test",
+        "Reject unlicensed, contaminated or uncertain cases",
+        "Freeze version and run independent regression"
+      ],
+      "source_pages": [
+        360,
+        375
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-FINETUNE-ABLATION",
+      "name": "Анализ влияния компонентов fine-tuning",
+      "nodes": [
+        "ablation_study",
+        "neftune",
+        "label_smoothing",
+        "calibration"
+      ],
+      "steps": [
+        "Fix data, model, optimizer and evaluation",
+        "Change exactly one component or hyperparameter at a time",
+        "Repeat runs when stochastic",
+        "Compare task metrics, calibration, memory and latency",
+        "Check unrelated capabilities and regressions",
+        "Archive evidence and decision"
+      ],
+      "source_pages": [
+        346,
+        360
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "SOURCE_DERIVED_TEACHING_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-CH07-CONTINUAL-GATE",
+      "name": "Gate: дальнейшее предобучение или RAG",
+      "nodes": [
+        "continual_pretraining",
+        "dapt",
+        "tapt",
+        "catastrophic_forgetting"
+      ],
+      "steps": [
+        "Specify whether goal is new facts, domain language, or trainable behavior",
+        "Prefer source-grounded RAG when goal is fresh facts",
+        "Collect legally reusable domain corpus if structural language adaptation required",
+        "Freeze baseline and unrelated regression suite",
+        "Choose adaptation protocol and evaluate retained general capabilities",
+        "Require reproducible evidence before qualification"
+      ],
+      "source_pages": [
+        380,
+        390
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-CH07-REPLAY",
+      "name": "Replay-based catastrophic forgetting evaluation",
+      "nodes": [
+        "replay",
+        "catastrophic_forgetting",
+        "regression_risk"
+      ],
+      "steps": [
+        "Record base checkpoint",
+        "Select permitted representative old-domain samples",
+        "Mix old and new data; log proportions",
+        "Track domain task and general task benchmarks throughout training",
+        "Measure forgetting and stop on defined thresholds",
+        "Archive exact data mix and checkpoint evidence"
+      ],
+      "source_pages": [
+        385,
+        387
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-CH07-PEFT-DECISION",
+      "name": "Выбор типа PEFT",
+      "nodes": [
+        "peft_adapter",
+        "prefix_tuning",
+        "soft_prompt",
+        "lora"
+      ],
+      "steps": [
+        "Identify training rights and infrastructure constraints",
+        "Choose bottleneck adapter/LoRA/prefix/soft prompt as candidates",
+        "Document base model compatibility and version",
+        "Run matching baseline without training",
+        "Compare target accuracy, forgetting, VRAM and inference overhead",
+        "Reject adaptation lacking measurable gain"
+      ],
+      "source_pages": [
+        391,
+        403
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-CH07-ENSEMBLE-VS-MERGE",
+      "name": "Сравнение ансамбля моделей и слияния параметров",
+      "nodes": [
+        "model_ensemble",
+        "model_fusion",
+        "adapter_merging"
+      ],
+      "steps": [
+        "Keep ensemble outputs distinct from model parameter fusion",
+        "Benchmark one model before introducing complexity",
+        "For ensemble, measure independent errors, ranking and costs",
+        "For weight merging, verify architecture, tokenizer, license and parameter alignment",
+        "Test target and unrelated capabilities independently",
+        "Publish ADR and regressions before deployment"
+      ],
+      "source_pages": [
+        404,
+        413
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-CH08-ALIGNMENT-EVAL",
+      "name": "Evaluation matrix of helpfulness, honesty and safety",
+      "nodes": [
+        "alignment",
+        "hhh",
+        "hallucination"
+      ],
+      "steps": [
+        "Create synthetic allowed and disallowed requests",
+        "Establish fixed human-verified gold for facts and permissions",
+        "Run answer and refusal consistency tests",
+        "Score task success, evidence coverage, false rejection and violations separately",
+        "Log all errors, never equate pleasant tone with factuality"
+      ],
+      "source_pages": [
+        414,
+        429
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-CH08-COVE-VERIFY",
+      "name": "Chain-of-Verification with independent evidence",
+      "nodes": [
+        "cove",
+        "verifier",
+        "rag_grounding"
+      ],
+      "steps": [
+        "Generate a source-scoped draft",
+        "List atomic factual claims",
+        "Generate explicit verification questions",
+        "For each claim independently query trusted sources or deterministic rules",
+        "Revise and abstain on unsupported details",
+        "Compare original and verified answer on held-out examples"
+      ],
+      "source_pages": [
+        428,
+        432
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-CH08-S2A-DISTRACTOR",
+      "name": "Context distractor ablation",
+      "nodes": [
+        "s2a",
+        "knowledge_overshadowing",
+        "hallucination"
+      ],
+      "steps": [
+        "Construct same answerable question with relevant source context",
+        "Add misleading but clearly irrelevant text",
+        "Run baseline vs context filtering, keep data frozen",
+        "Check whether source evidence is preserved",
+        "Measure factual errors and latency"
+      ],
+      "source_pages": [
+        442,
+        445
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-CH08-VERIFIER-BUDGET",
+      "name": "Generator-verifier with bounded compute",
+      "nodes": [
+        "verifier",
+        "iterative_backprompting",
+        "best_of_k",
+        "test_time_compute"
+      ],
+      "steps": [
+        "Define deterministic checkable tasks and a verifier",
+        "Benchmark one-shot baseline",
+        "Compare bounded feedback loop vs best-of-k",
+        "Cap model/tool calls and costs",
+        "Measure answer accuracy, false accept, retries and total latency",
+        "Run unrelated regression checks"
+      ],
+      "source_pages": [
+        451,
+        456
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-CH09-COST-QUALITY-GATE",
+      "name": "Quality-constrained inference decision",
+      "nodes": [
+        "inference_optimization",
+        "kv_cache",
+        "quantization"
+      ],
+      "steps": [
+        "Freeze agent task and quality threshold",
+        "Measure unoptimized baseline TTFT, tokens/sec, p95, RAM, VRAM, accuracy",
+        "Try one optimization at a time using same dataset",
+        "Include cache isolation, source accuracy and UAG boundaries",
+        "Compare tail latency, throughput, energy and cost",
+        "Only POLYGON qualifies configuration under SLA"
+      ],
+      "source_pages": [
+        459,
+        491
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-CH09-CACHE-INTEGRITY",
+      "name": "Prefix cache safety and validity",
+      "nodes": [
+        "kv_cache",
+        "prompt_prefix_cache"
+      ],
+      "steps": [
+        "Assign model, tokenizer, tenant, source version and security scope to cache key",
+        "Run same-prompt and modified-prompt tests",
+        "Reject cross-tenant or stale cache reuse",
+        "Measure cache hit rate, TTFT and memory cost",
+        "Perform regression and authorization checks"
+      ],
+      "source_pages": [
+        462,
+        466
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-CH09-QUANT-GATE",
+      "name": "Quantization qualification experiment",
+      "nodes": [
+        "fp32",
+        "fp16",
+        "bf16",
+        "int8",
+        "symmetric_quant",
+        "asymmetric_quant"
+      ],
+      "steps": [
+        "Construct finite numeric fixtures including outliers",
+        "Compare quantization and inverse quantization error",
+        "Benchmark actual supported model precision modes",
+        "Measure task accuracy, VRAM, throughput and latency",
+        "Reject mode with unsafe numeric error or task regression"
+      ],
+      "source_pages": [
+        485,
+        490
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-CH09-SPECULATIVE-GATE",
+      "name": "Speculative vs conventional decoding",
+      "nodes": [
+        "speculative_decoding",
+        "draft_model",
+        "token_acceptance"
+      ],
+      "steps": [
+        "Pin identical target model and prompts",
+        "Measure autoregressive latency baseline",
+        "Run supported speculative decoding setup",
+        "Measure draft-token acceptance and exact output distribution criteria",
+        "Check extra memory and draft runtime costs",
+        "Compare p95 and errors on holdout"
+      ],
+      "source_pages": [
+        479,
+        482
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-CH10-INTERACTION-PARADIGM",
+      "name": "Choose passive, explicit or controlled agentic workflow",
+      "nodes": [
+        "passive_approach",
+        "explicit_approach",
+        "autonomous_approach"
+      ],
+      "steps": [
+        "Define operational risk and task complexity",
+        "Attempt deterministic direct workflow and passive retrieval",
+        "Use explicit bounded steps when interactions predictable",
+        "Consider autonomy only for tasks with variable planning needs",
+        "Require source proof, UAG permissions and POLYGON qualification",
+        "Document bounded fallback and human review"
+      ],
+      "source_pages": [
+        495,
+        505
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-CH10-TOOL-GATE",
+      "name": "Tool access and argument qualification",
+      "nodes": [
+        "tool_interface",
+        "tool_selection",
+        "tool_call_json",
+        "agent_guardrail"
+      ],
+      "steps": [
+        "Identify task and declared tool registry",
+        "Validate structured schema and tool allowlist",
+        "Enforce UAG authorization and input constraints externally",
+        "Execute read-only/test sandbox and capture trace evidence",
+        "Check tool observation for prompt injection and parse failures",
+        "Abort/retry within budget and audit every call"
+      ],
+      "source_pages": [
+        511,
+        520
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-CH10-LOOP-SUPERVISION",
+      "name": "Bounded stateful agent loop",
+      "nodes": [
+        "agent_loop_prompt",
+        "session_memory",
+        "react",
+        "reflexion"
+      ],
+      "steps": [
+        "Freeze role, prompt, tools, model and task ID",
+        "Set maximum steps, time, tokens and per-tool call budgets",
+        "Log action, observation, state, source refs and error types",
+        "Detect repeated/identical calls and missing progress",
+        "Route failed plans to verified fallback/human review",
+        "Use external verifier, never model self-confidence as proof"
+      ],
+      "source_pages": [
+        525,
+        533
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-CH10-SUMMARY-VERIFY",
+      "name": "Evidence based output verification",
+      "nodes": [
+        "summary_verification",
+        "nli_verification",
+        "verifier"
+      ],
+      "steps": [
+        "Atomize generated output and reference source spans",
+        "Check numerical and entity consistency deterministically",
+        "Assess entailment only with source-supported premise",
+        "Score relevance, completeness, repetition and structure independently",
+        "Reject unsupported material claims; mark UNKNOWN",
+        "Record evidence and make exam cases for POLYGON"
+      ],
+      "source_pages": [
+        539,
+        548
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-CH11-EMBEDDING-SELECT",
+      "name": "Embedding model selection",
+      "nodes": [
+        "text_embedding",
+        "mteb",
+        "semantic_search"
+      ],
+      "steps": [
+        "Freeze public query-gold retrieval task and provenance",
+        "Compare keyword/BM25 with at least two permitted embedding models",
+        "Check model card for similarity metric and max tokens",
+        "Calculate recall@k, MRR, p95, index size and false positives",
+        "Select a model only after independent holdout evaluation"
+      ],
+      "source_pages": [
+        555,
+        580
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-CH11-NEGATION-GATE",
+      "name": "Opposite-meaning retrieval validation",
+      "nodes": [
+        "semantic_negation",
+        "hard_negative",
+        "triplet_loss"
+      ],
+      "steps": [
+        "Build verified positive and negative pairs, especially negations",
+        "Record cosine similarity and ranking of contradictory statements",
+        "Do not equate proximity with entailment",
+        "Use deterministic and/or NLI verification of each retrieved claim",
+        "Fail closed on conflicting or unproven versions"
+      ],
+      "source_pages": [
+        564,
+        575
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-CH11-CHUNKING-SELECT",
+      "name": "Chunking strategy comparison",
+      "nodes": [
+        "document_chunking",
+        "sliding_window_chunking",
+        "metadata_chunking",
+        "late_chunking"
+      ],
+      "steps": [
+        "Preserve parent document ID and source spans",
+        "Chunk same corpus by paragraph, overlap, metadata, layout and late method if available",
+        "Test context-dependent facts and units defined in distant sections",
+        "Measure recall@k, citation correctness, duplicates and cost",
+        "Select method by task evidence instead of arbitrary chunk length"
+      ],
+      "source_pages": [
+        588,
+        597
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-CH11-VECTOR-INDEX-GATE",
+      "name": "Vector store and compression qualification",
+      "nodes": [
+        "vector_database",
+        "matryoshka",
+        "binary_embedding",
+        "product_quantization"
+      ],
+      "steps": [
+        "Record baseline vector count, dimension, index size and exact search quality",
+        "Compare metadata-filtered ANN and exact search",
+        "Try MRL and quantization only with supported models and verified calibrations",
+        "Measure recall loss, RAM/VRAM, p95, updates and delete behavior",
+        "Check tenant filters before results become model context"
+      ],
+      "source_pages": [
+        579,
+        601
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-CH12-EVIDENCE-RAG",
+      "name": "Evidence-first RAG and factual qualification",
+      "nodes": [
+        "rag_pipeline",
+        "rag_metadata_filter",
+        "rag_refine",
+        "rag_context_conflict"
+      ],
+      "steps": [
+        "Record exact source scope, rights and source versions",
+        "Rewrite query preserving original intent and identifiers",
+        "Filter by tenant, edition and permissions BEFORE retrieval",
+        "Retrieve using keyword and embedding baselines and check recall",
+        "Rerank then preserve source spans, units and contradiction markers",
+        "Generate atomic claims from cited evidence; abstain where absent",
+        "Verify each material claim and record retrieval/generation error separately"
+      ],
+      "source_pages": [
+        604,
+        682
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-CH12-QUERY-DRIFT-GATE",
+      "name": "Rewrite expansion safety gate",
+      "nodes": [
+        "query_rewrite",
+        "hyde",
+        "query_drift"
+      ],
+      "steps": [
+        "Freeze a reference query and entity constraints",
+        "Expand queries with PRF/HyDE only in controlled experimental branch",
+        "Check entity, date and scope preservation",
+        "Measure gold recall versus topic drift and false results",
+        "Reject reformulation when constraints are altered"
+      ],
+      "source_pages": [
+        615,
+        625
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-CH12-RAG-RERANK-ABLATION",
+      "name": "Retrieve/rerank/refine ablation protocol",
+      "nodes": [
+        "bm25",
+        "hybrid_search",
+        "reranker",
+        "chain_of_note"
+      ],
+      "steps": [
+        "Freeze candidate corpus and holdout labels",
+        "Baseline BM25, then compare embeddings and hybrid retrieval",
+        "Add reranker while recording recall and precision separately",
+        "Add CoN/summary and inspect unsupported claims",
+        "Compare latency/cost and retrieval evidence coverage",
+        "Accept component only when measurable benefit exists"
+      ],
+      "source_pages": [
+        625,
+        656
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-CH12-RAG-MEMORY",
+      "name": "Controlled retrieval for agent memory and examples",
+      "nodes": [
+        "rag_history",
+        "rag_fewshot",
+        "rag_tool_docs"
+      ],
+      "steps": [
+        "Separate fact corpus, conversation logs, validated examples and tool specs",
+        "Enforce permissions and TTL for each memory tier",
+        "Retrieve only task-relevant artifacts with provenance",
+        "Avoid pollution from unverified assistant outputs",
+        "Freeze test cases and check memory leakage and outdated examples"
+      ],
+      "source_pages": [
+        609,
+        672
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-CH13-MODEL-CASCADE",
+      "name": "Quality-constrained model cascade",
+      "nodes": [
+        "llm_cascade",
+        "cascade_confidence",
+        "self_consistency_routing"
+      ],
+      "source_pages": [
+        686,
+        689
+      ],
+      "steps": [
+        "Freeze the reference task set and independent quality threshold",
+        "Run lowest-cost capable model",
+        "Verify using external rubric, never rely solely on model-declared confidence",
+        "Escalate to larger model if quality unverified or confidence rule fails",
+        "Measure cumulative cost, latency and quality; retain trace and model IDs",
+        "Do not claim PASS without frozen POLYGON holdout"
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-CH13-MODEL-ROUTER",
+      "name": "Task-aware model and retrieval routing",
+      "nodes": [
+        "llm_router",
+        "intent_routing",
+        "complexity_routing",
+        "rag_router"
+      ],
+      "source_pages": [
+        689,
+        691
+      ],
+      "steps": [
+        "Extract task intent, complexity, privacy constraints and evidence needs",
+        "Check candidate models' published capability and license scope",
+        "Choose smallest qualified executor or retrieval path, without side effects",
+        "Audit routing and reroute on validated failure",
+        "Evaluate misrouting, cost and p95 on independent dataset"
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-CH13-SPECIALIST-COMPOSE",
+      "name": "Multi-specialist decomposition and assembly",
+      "nodes": [
+        "task_specialized_llm",
+        "multi_llm_architecture",
+        "system_architecture"
+      ],
+      "source_pages": [
+        684,
+        692
+      ],
+      "steps": [
+        "Break customer requirement into source-grounded subtasks",
+        "Match tasks to versioned qualified agent capabilities",
+        "Build explicit tool and data/security contracts",
+        "Execute in bounded orchestration with UAG policy",
+        "Run independent integration verification and regression through POLYGON"
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    },
+    {
+      "id": "ALG-B002-CH13-DECLARATIVE-COMPARE",
+      "name": "Declarative programming comparison DSPy/LMQL",
+      "nodes": [
+        "dspy",
+        "dspy_module",
+        "dspy_optimizer",
+        "lmql"
+      ],
+      "source_pages": [
+        692,
+        700
+      ],
+      "steps": [
+        "Implement identical simple QA specification in baseline Python and candidate frameworks",
+        "Hold inputs, allowed source corpus and metric constant",
+        "Tune only on training subset, do not leak closed qualification set",
+        "Compare type validity, factuality, repeatability, latency and resource use",
+        "Adopt only when independent evidence supports quality and maintainability"
+      ],
+      "status": "DESIGNED_NOT_RUN",
+      "kind": "FATHER_ADAPTATION"
+    }
+  ]
+}

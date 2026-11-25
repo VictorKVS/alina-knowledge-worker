@@ -1,0 +1,4244 @@
+{
+  "version": "1.2.0",
+  "source_id": "SRC-BOOK002-PRIMARY",
+  "terms": [
+    {
+      "id": "B002-AGENT",
+      "term": "Agent",
+      "abbreviation": null,
+      "definition_ru": "приложение с моделью, способное использовать инструменты в рабочем процессе",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH01",
+      "pdf_pages": [
+        52,
+        54
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-NEAR_DUPLICATE",
+      "term": "Approximate duplicate",
+      "abbreviation": null,
+      "definition_ru": "почти повторяющийся текст с небольшими отличиями",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        139,
+        140
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-BIAS_FAIRNESS",
+      "term": "Bias and fairness",
+      "abbreviation": null,
+      "definition_ru": "искажения и несбалансированность результатов, связанные в том числе с составом и отбором данных",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        163,
+        166
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-BOILERPLATE",
+      "term": "Boilerplate",
+      "abbreviation": null,
+      "definition_ru": "повторяющиеся навигационные и служебные блоки веб-страницы",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        121,
+        125
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-C4",
+      "term": "C4",
+      "abbreviation": "Colossal Clean Crawled Corpus",
+      "definition_ru": "подготовленный очищенный веб-корпус на основе Common Crawl",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        107,
+        108
+      ],
+      "importance": 3
+    },
+    {
+      "id": "B002-COMMON_CRAWL",
+      "term": "Common Crawl",
+      "abbreviation": null,
+      "definition_ru": "масштабный источник веб-страниц для построения корпусов",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        107,
+        108
+      ],
+      "importance": 3
+    },
+    {
+      "id": "B002-CORPUS",
+      "term": "Corpus",
+      "abbreviation": null,
+      "definition_ru": "коллекция текстовых источников и полученного из них содержимого",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        99,
+        108
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-CURRICULUM_LEARNING",
+      "term": "Curriculum learning",
+      "abbreviation": null,
+      "definition_ru": "целенаправленный порядок предъявления обучающих примеров",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        157,
+        157
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-EXTRACTION_CLEANING",
+      "term": "Data extraction and cleaning",
+      "abbreviation": null,
+      "definition_ru": "выделение содержательного текста и удаление технического мусора",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        120,
+        127
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-DATA_MIXTURE",
+      "term": "Data mixtures",
+      "abbreviation": null,
+      "definition_ru": "выбранные пропорции данных разных предметных областей",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        156,
+        157
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-DATA_QUALITY",
+      "term": "Data quality",
+      "abbreviation": null,
+      "definition_ru": "пригодность данных для выбранной задачи; зависит от контекста и метода измерения",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        103,
+        105
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-DATA_COVERAGE",
+      "term": "Data requirements",
+      "abbreviation": null,
+      "definition_ru": "какие знания, языки, задачи и формы информации требуются модели",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        99,
+        104
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-DATASET",
+      "term": "Dataset",
+      "abbreviation": null,
+      "definition_ru": "набор записей, выделенный для обучения или оценки",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        92,
+        94
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-F_DATASET_ROLE",
+      "term": "Dataset roles",
+      "abbreviation": null,
+      "definition_ru": "разделение knowledge, train, validation, test, holdout в FATHER; проектная схема",
+      "origin": "FATHER_ENGINEERING_EXTENSION",
+      "chapter": "CH02",
+      "pdf_pages": [
+        154,
+        155
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-DEDUPLICATION",
+      "term": "Deduplication",
+      "abbreviation": "Dedup",
+      "definition_ru": "выявление повторных документов или последовательностей",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        138,
+        143
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-DOWNSTREAM_TASKS",
+      "term": "Downstream tasks",
+      "abbreviation": null,
+      "definition_ru": "задачи, на которых проверяется полезность ранее обученной модели",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        161,
+        163
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-DP_SGD",
+      "term": "DP-SGD",
+      "abbreviation": "Differentially Private Stochastic Gradient Descent",
+      "definition_ru": "частно-дифференциальный метод оптимизации с ограничением градиента и шумом",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        154,
+        154
+      ],
+      "importance": 3
+    },
+    {
+      "id": "B002-EXACT_DUPLICATE",
+      "term": "Exact match duplicate",
+      "abbreviation": null,
+      "definition_ru": "совпадение текста по выбранному способу нормализации",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        139,
+        140
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-FEW_SHOT",
+      "term": "Few-shot prompting",
+      "abbreviation": null,
+      "definition_ru": "примеры входа/выхода внутри промпта без обновления весов",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH01",
+      "pdf_pages": [
+        59,
+        61
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-LANGUAGE_IDENTIFICATION",
+      "term": "Language identification",
+      "abbreviation": null,
+      "definition_ru": "определение языка документа для отбора и обработки",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        127,
+        131
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-LEARNING_OBJECTIVE",
+      "term": "Learning objective",
+      "abbreviation": null,
+      "definition_ru": "критерий задачи, по которой обучается модель",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        94,
+        96
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-LLM",
+      "term": "LLM",
+      "abbreviation": "Large Language Model",
+      "definition_ru": "крупная языковая модель, работающая с последовательностями токенов",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH01",
+      "pdf_pages": [
+        28,
+        31
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-MEMORIZATION",
+      "term": "Memorization",
+      "abbreviation": null,
+      "definition_ru": "сохранение в модели способности воспроизводить фрагменты обучающих данных",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        141,
+        143
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-MINHASH",
+      "term": "MinHash",
+      "abbreviation": "MinHash",
+      "definition_ru": "приближённое оценивание сходства множеств для выявления кандидатов на дубликаты",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        140,
+        141
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-MODEL_ARCHITECTURE",
+      "term": "Model architecture",
+      "abbreviation": null,
+      "definition_ru": "организация вычислительных блоков модели",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        94,
+        96
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-NGRAM_OVERLAP",
+      "term": "N-gram overlap",
+      "abbreviation": null,
+      "definition_ru": "совпадение последовательностей из N соседних токенов/слов по заданной схеме",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        155,
+        155
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-NEXT_TOKEN_PREDICTION",
+      "term": "Next-token prediction",
+      "abbreviation": null,
+      "definition_ru": "задача прогнозирования распределения вероятностей следующего токена",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH01",
+      "pdf_pages": [
+        29,
+        31
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-PERPLEXITY",
+      "term": "Perplexity",
+      "abbreviation": "PPL",
+      "definition_ru": "мера неожиданности последовательности для языковой модели; сама по себе не гарантирует качество",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        133,
+        137
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-PII",
+      "term": "PII",
+      "abbreviation": "Personally Identifiable Information",
+      "definition_ru": "сведения, позволяющие определить или установить личность человека",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        143,
+        145
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-PII_REMEDIATION",
+      "term": "PII remediation",
+      "abbreviation": null,
+      "definition_ru": "удаление, замена либо иная обработка чувствительных персональных сведений",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        151,
+        154
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-F_POLYGON",
+      "term": "POLYGON qualification",
+      "abbreviation": null,
+      "definition_ru": "независимая проверка навыков агента на закрытых заданиях; проект FATHER",
+      "origin": "FATHER_ENGINEERING_EXTENSION",
+      "chapter": "CH02",
+      "pdf_pages": [
+        154,
+        155
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-PRETRAINING",
+      "term": "Pre-training",
+      "abbreviation": null,
+      "definition_ru": "обучение модели на большом корпусе данных до специализации",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        92,
+        99
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-PROMPT",
+      "term": "Prompt",
+      "abbreviation": null,
+      "definition_ru": "инструкция и контекст, подаваемые LLM для ответа",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH01",
+      "pdf_pages": [
+        55,
+        59
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-QUALITY_FILTERING",
+      "term": "Quality filtering",
+      "abbreviation": null,
+      "definition_ru": "отбор по измеряемым признакам качества с риском ложного исключения",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        130,
+        137
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-F_QUALITY_GATE",
+      "term": "Quality gate",
+      "abbreviation": null,
+      "definition_ru": "формальный запрет перехода без доказательств; проектная схема FATHER",
+      "origin": "FATHER_ENGINEERING_EXTENSION",
+      "chapter": "CH02",
+      "pdf_pages": [
+        154,
+        155
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-RAG",
+      "term": "RAG",
+      "abbreviation": "Retrieval-Augmented Generation",
+      "definition_ru": "подход с внешним извлечением документов; не меняет веса модели при обычном retrieval",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH01",
+      "pdf_pages": [
+        80,
+        87
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-SEMANTIC_DUPLICATE",
+      "term": "Semantic duplicate",
+      "abbreviation": null,
+      "definition_ru": "разные формулировки примерно одного содержания",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        139,
+        140
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-SOURCE_PROVENANCE",
+      "term": "Source provenance",
+      "abbreviation": null,
+      "definition_ru": "происхождение документа и информация о его источнике; термин FATHER",
+      "origin": "FATHER_ENGINEERING_EXTENSION",
+      "chapter": "CH02",
+      "pdf_pages": [
+        92,
+        93
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-F_SOURCE_SPAN",
+      "term": "Source span",
+      "abbreviation": null,
+      "definition_ru": "привязка утверждения к странице, документу и версии для цитирования; проектная схема FATHER",
+      "origin": "FATHER_ENGINEERING_EXTENSION",
+      "chapter": "CH02",
+      "pdf_pages": [
+        92,
+        93
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-SYNTHETIC_DATA",
+      "term": "Synthetic pre-training data",
+      "abbreviation": null,
+      "definition_ru": "материалы, сформированные генератором и требующие контроля качества",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        116,
+        119
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-THE_PILE",
+      "term": "The Pile",
+      "abbreviation": null,
+      "definition_ru": "многодоменный корпус EleutherAI",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        108,
+        110
+      ],
+      "importance": 3
+    },
+    {
+      "id": "B002-TOKEN",
+      "term": "Token",
+      "abbreviation": null,
+      "definition_ru": "элемент словаря модели: слово, часть слова или другой код",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH01",
+      "pdf_pages": [
+        29,
+        30
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-TOKENIZATION",
+      "term": "Tokenization",
+      "abbreviation": null,
+      "definition_ru": "процедура превращения текста в последовательность элементов словаря",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        93,
+        95
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-DATA_PREPROCESSING",
+      "term": "Training data preprocessing",
+      "abbreviation": null,
+      "definition_ru": "обработка данных перед обучением: извлечение, фильтрация, очистка и контроль",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        120,
+        121
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-PRIVACY_ATTACK",
+      "term": "Training data privacy attack",
+      "abbreviation": null,
+      "definition_ru": "попытки выяснить присутствие записи в обучении или извлечь запомненный текст",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        142,
+        146
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-TEST_CONTAMINATION",
+      "term": "Training set contamination",
+      "abbreviation": null,
+      "definition_ru": "присутствие экзаменационных примеров или их частей в обучающем корпусе",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        154,
+        155
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-DECONTAMINATION",
+      "term": "Training set decontamination",
+      "abbreviation": null,
+      "definition_ru": "обнаружение и снижение пересечений train с оценочными наборами",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        154,
+        155
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-VOCABULARY",
+      "term": "Vocabulary",
+      "abbreviation": null,
+      "definition_ru": "набор дискретных элементов, которыми оперирует токенизатор и модель",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH02",
+      "pdf_pages": [
+        93,
+        95
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-SUBWORD",
+      "term": "Subword",
+      "abbreviation": null,
+      "definition_ru": "часть слова, используемая как единица токенизации",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH03",
+      "pdf_pages": [
+        169,
+        176
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-TOKEN_ID",
+      "term": "Token ID",
+      "abbreviation": null,
+      "definition_ru": "числовой идентификатор токена в словаре модели",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH03",
+      "pdf_pages": [
+        169,
+        170
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-OOV",
+      "term": "Out-of-vocabulary",
+      "abbreviation": "OOV",
+      "definition_ru": "элемент, отсутствующий в словаре токенизатора",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH03",
+      "pdf_pages": [
+        174,
+        176
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-VOCAB_SIZE",
+      "term": "Vocabulary size",
+      "abbreviation": null,
+      "definition_ru": "число единиц словаря и компромисс между сжатием и редкими токенами",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH03",
+      "pdf_pages": [
+        177,
+        178
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-NORMALIZATION",
+      "term": "Text normalization",
+      "abbreviation": null,
+      "definition_ru": "предобработка формы текста: регистр, Unicode, диакритика",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH03",
+      "pdf_pages": [
+        186,
+        188
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-PRETOKENIZATION",
+      "term": "Pre-tokenization",
+      "abbreviation": null,
+      "definition_ru": "предварительное разбиение на элементы перед основным токенизатором",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH03",
+      "pdf_pages": [
+        188,
+        190
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-BPE",
+      "term": "Byte Pair Encoding",
+      "abbreviation": "BPE",
+      "definition_ru": "обучение словаря объединением самых частых соседних пар элементов",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH03",
+      "pdf_pages": [
+        190,
+        194
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-BYTE_BPE",
+      "term": "Byte-level BPE",
+      "abbreviation": "byte-BPE",
+      "definition_ru": "вариант BPE на байтовых исходных элементах, покрывающий Unicode без неизвестного символа",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH03",
+      "pdf_pages": [
+        193,
+        194
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-WORDPIECE",
+      "term": "WordPiece",
+      "abbreviation": null,
+      "definition_ru": "подход к субсловной токенизации с выбором объединений на основе нормализованной частоты",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH03",
+      "pdf_pages": [
+        194,
+        196
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-UNIGRAM",
+      "term": "Unigram LM",
+      "abbreviation": null,
+      "definition_ru": "упомянутый в главе вероятностный подход к субсловной токенизации; подробный алгоритм в изученном разделе не раскрыт",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH03",
+      "pdf_pages": [
+        190,
+        190
+      ],
+      "importance": 3
+    },
+    {
+      "id": "B002-POSTPROCESSING",
+      "term": "Postprocessing",
+      "abbreviation": null,
+      "definition_ru": "добавление специальных маркеров после токенизации",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH03",
+      "pdf_pages": [
+        196,
+        199
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-SPECIAL_TOKEN",
+      "term": "Special tokens",
+      "abbreviation": null,
+      "definition_ru": "служебные токены модели: завершение, заполнение, разделители и маркеры инструментов",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH03",
+      "pdf_pages": [
+        196,
+        199
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-FERTILITY",
+      "term": "Fertility",
+      "abbreviation": null,
+      "definition_ru": "среднее число токенов на слово для заданного корпуса",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH03",
+      "pdf_pages": [
+        200,
+        200
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-PARITY",
+      "term": "Tokenizer parity",
+      "abbreviation": null,
+      "definition_ru": "отношение чисел токенов для эквивалентного текста на двух языках",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH03",
+      "pdf_pages": [
+        200,
+        201
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-TOKEN_DOMAIN",
+      "term": "Domain-specific vocabulary",
+      "abbreviation": null,
+      "definition_ru": "технические термины могут дробиться на дополнительные токены, что отражается на стоимости и качестве",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH03",
+      "pdf_pages": [
+        201,
+        202
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-EMBED_RESIZE",
+      "term": "Token embedding resize",
+      "abbreviation": null,
+      "definition_ru": "после добавления токенов меняется размер таблицы представлений; новые векторы требуют обучения",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH03",
+      "pdf_pages": [
+        201,
+        202
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-BYTE_MODELS",
+      "term": "Byte and character models",
+      "abbreviation": null,
+      "definition_ru": "исследованные автором примеры CANINE, ByT5, Charformer без обычной субсловной схемы",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH03",
+      "pdf_pages": [
+        185,
+        186
+      ],
+      "importance": 3
+    },
+    {
+      "id": "B002-GLITCH_TOKEN",
+      "term": "Undertrained token",
+      "abbreviation": null,
+      "definition_ru": "редкий элемент словаря, чьё представление могло получить недостаточно тренировочного сигнала",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH03",
+      "pdf_pages": [
+        197,
+        198
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-NEURAL_NETWORK",
+      "term": "Neural network",
+      "abbreviation": null,
+      "definition_ru": "система обучаемых связанных вычислительных преобразований",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "pdf_pages": [
+        205,
+        207
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-MODEL_PARAMETER",
+      "term": "Model parameter",
+      "abbreviation": null,
+      "definition_ru": "обучаемое числовое значение, влияющее на вычисления модели",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "pdf_pages": [
+        205,
+        207
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-REPRESENTATION_LEARNING",
+      "term": "Representation learning",
+      "abbreviation": null,
+      "definition_ru": "обучение числовых представлений входных данных",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "pdf_pages": [
+        208,
+        211
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-EMBEDDING_LAYER",
+      "term": "Embedding layer",
+      "abbreviation": null,
+      "definition_ru": "таблица обучаемых векторов, индексируемых token ID",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "pdf_pages": [
+        212,
+        214
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-SELF_ATTENTION",
+      "term": "Self-attention",
+      "abbreviation": null,
+      "definition_ru": "вычисление контекстных представлений по весам соответствия токенов",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "pdf_pages": [
+        215,
+        221
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-QKV",
+      "term": "Q/K/V",
+      "abbreviation": "QKV",
+      "definition_ru": "запросы, ключи и значения в механизме внимания",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "pdf_pages": [
+        218,
+        221
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-MULTI_HEAD_ATTENTION",
+      "term": "Multi-head attention",
+      "abbreviation": null,
+      "definition_ru": "несколько параллельных голов внимания с разными обучаемыми проекциями",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "pdf_pages": [
+        219,
+        221
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-POSITION_ENCODING",
+      "term": "Positional encoding",
+      "abbreviation": null,
+      "definition_ru": "способ учёта порядка токенов в Transformer",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "pdf_pages": [
+        221,
+        223
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-ROPE",
+      "term": "RoPE",
+      "abbreviation": "ROPE",
+      "definition_ru": "rotary positional embedding: позиционное вращение представлений запросов и ключей",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "pdf_pages": [
+        222,
+        223
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-FFN",
+      "term": "Feedforward network",
+      "abbreviation": "FFN",
+      "definition_ru": "поэлементная нелинейная сеть внутри блока Transformer",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "pdf_pages": [
+        223,
+        224
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-LAYER_NORM",
+      "term": "Layer normalization",
+      "abbreviation": null,
+      "definition_ru": "нормировка скрытых представлений для устойчивого обучения",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "pdf_pages": [
+        224,
+        226
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-CROSS_ENTROPY",
+      "term": "Cross-entropy loss",
+      "abbreviation": null,
+      "definition_ru": "минус логарифм вероятности правильного токена при one-hot цели",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "pdf_pages": [
+        226,
+        227
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-BACKPROP",
+      "term": "Backpropagation",
+      "abbreviation": null,
+      "definition_ru": "вычисление градиентов функции потерь по параметрам сети",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "pdf_pages": [
+        206,
+        208
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-INTRINSIC_EVAL",
+      "term": "Intrinsic model evaluation",
+      "abbreviation": null,
+      "definition_ru": "внутренняя оценка качества моделирования последовательностей, например perplexity",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "pdf_pages": [
+        227,
+        228
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-EXTRINSIC_EVAL",
+      "term": "Extrinsic model evaluation",
+      "abbreviation": null,
+      "definition_ru": "оценка качества на реальных прикладных задачах",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "pdf_pages": [
+        227,
+        228
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-ENCODER_ONLY",
+      "term": "Encoder-only",
+      "abbreviation": null,
+      "definition_ru": "архитектура преимущественно для представлений и понимания входного текста",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "pdf_pages": [
+        229,
+        232
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-ENCODER_DECODER",
+      "term": "Encoder-decoder",
+      "abbreviation": null,
+      "definition_ru": "архитектура преобразования входной последовательности в выходную",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "pdf_pages": [
+        229,
+        234
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-DECODER_ONLY",
+      "term": "Decoder-only",
+      "abbreviation": null,
+      "definition_ru": "авторегрессионная генеративная архитектура семейства GPT",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "pdf_pages": [
+        229,
+        234
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-MOE",
+      "term": "Mixture of Experts",
+      "abbreviation": "MOE",
+      "definition_ru": "условное вычисление с маршрутизацией токенов к подмножеству нейросетевых экспертов",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "pdf_pages": [
+        234,
+        238
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-FLM",
+      "term": "Full language modeling",
+      "abbreviation": "FLM",
+      "definition_ru": "обучение предсказывать следующий токен в причинной последовательности",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "pdf_pages": [
+        239,
+        247
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-PREFIX_LM",
+      "term": "Prefix language modeling",
+      "abbreviation": "PREFIX_LM",
+      "definition_ru": "обучение с двунаправленным prefix и предсказанием suffix",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "pdf_pages": [
+        247,
+        248
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-MLM",
+      "term": "Masked language modeling",
+      "abbreviation": "MLM",
+      "definition_ru": "обучение восстанавливать скрытые токены или интервалы",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "pdf_pages": [
+        248,
+        253
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-DENOISING",
+      "term": "Denoising objective",
+      "abbreviation": null,
+      "definition_ru": "обучение восстанавливать исходные данные из искажённого входа",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "pdf_pages": [
+        251,
+        255
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-UL2",
+      "term": "UL2 Mixture of Denoisers",
+      "abbreviation": "UL2",
+      "definition_ru": "объединение разных заданий восстановления текста в рамках предобучения",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "pdf_pages": [
+        253,
+        255
+      ],
+      "importance": 3
+    },
+    {
+      "id": "B002-DOMAIN_SPECIFIC_LANGUAGE",
+      "term": "Domain-specific language",
+      "abbreviation": null,
+      "definition_ru": "специализированная запись предметных объектов и операций для эффективного моделирования",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "pdf_pages": [
+        256,
+        262
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-PGN",
+      "term": "Portable Game Notation",
+      "abbreviation": "PGN",
+      "definition_ru": "структурированная запись последовательностей шахматных ходов",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH04",
+      "pdf_pages": [
+        257,
+        261
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-MODEL_PROVIDER",
+      "term": "Model provider",
+      "abbreviation": null,
+      "definition_ru": "поставщик готовой LLM, открытых весов или сервиса API",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "pdf_pages": [
+        265,
+        269
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-BASE_MODEL",
+      "term": "Base model",
+      "abbreviation": null,
+      "definition_ru": "предобученная модель без последующей настройки на пользовательские инструкции",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "pdf_pages": [
+        269,
+        270
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-INSTRUCT_TUNING",
+      "term": "Instruction tuning",
+      "abbreviation": null,
+      "definition_ru": "адаптация весов на примерах инструкций и ответов для лучшего выполнения задач",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "pdf_pages": [
+        270,
+        274
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-CHAT_MODEL",
+      "term": "Chat-tuned model",
+      "abbreviation": null,
+      "definition_ru": "вариант модели, настроенный на диалоговый формат",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "pdf_pages": [
+        274,
+        275
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-LONG_CONTEXT",
+      "term": "Long-context model",
+      "abbreviation": null,
+      "definition_ru": "модель, способная принимать большие последовательности, качество использования которых требует проверки",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "pdf_pages": [
+        275,
+        277
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-DOMAIN_ADAPTATION",
+      "term": "Domain-adapted model",
+      "abbreviation": null,
+      "definition_ru": "модель с дополнительной специализацией для предметной области",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "pdf_pages": [
+        276,
+        277
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-MODEL_LICENSE",
+      "term": "Model licensing",
+      "abbreviation": null,
+      "definition_ru": "правовые разрешения и ограничения использования, изменения и распространения модели",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "pdf_pages": [
+        278,
+        286
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-MODEL_SELECTION",
+      "term": "Task-driven model selection",
+      "abbreviation": null,
+      "definition_ru": "выбор LLM по качеству на задаче, стоимости, задержке, безопасности и лицензии",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "pdf_pages": [
+        286,
+        288
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-TPOT",
+      "term": "Time per output token",
+      "abbreviation": "TPOT",
+      "definition_ru": "время генерации одного выходного токена в выбранном измерении",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "pdf_pages": [
+        286,
+        287
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-LLM_BENCHMARK",
+      "term": "LLM benchmark",
+      "abbreviation": null,
+      "definition_ru": "стандартизированный набор задач для сравнительной оценки моделей",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "pdf_pages": [
+        291,
+        306
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-EVAL_CONTAMINATION",
+      "term": "Benchmark contamination",
+      "abbreviation": null,
+      "definition_ru": "пересечение оценочных заданий с данными обучения, искажающее измерения",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "pdf_pages": [
+        298,
+        301
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-HELM",
+      "term": "HELM",
+      "abbreviation": "HELM",
+      "definition_ru": "Holistic Evaluation of Language Models: оценка нескольких аспектов работы модели",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "pdf_pages": [
+        299,
+        300
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-ELO",
+      "term": "Elo rating",
+      "abbreviation": "ELO",
+      "definition_ru": "относительная оценка по результатам парных человеческих сравнений",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "pdf_pages": [
+        302,
+        304
+      ],
+      "importance": 3
+    },
+    {
+      "id": "B002-QUANTIZATION",
+      "term": "Quantization",
+      "abbreviation": null,
+      "definition_ru": "представление весов модели пониженной точностью ради экономии памяти и ресурсов",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "pdf_pages": [
+        307,
+        309
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-INFERENCE",
+      "term": "Inference",
+      "abbreviation": null,
+      "definition_ru": "применение обученной модели для выдачи предсказаний без обычного обновления её весов",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "pdf_pages": [
+        307,
+        318
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-GREEDY_DECODING",
+      "term": "Greedy decoding",
+      "abbreviation": null,
+      "definition_ru": "выбор наиболее вероятного следующего токена на каждом шаге",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "pdf_pages": [
+        312,
+        313
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-BEAM_SEARCH",
+      "term": "Beam search",
+      "abbreviation": null,
+      "definition_ru": "поиск нескольких вероятных вариантов продолжения последовательности",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "pdf_pages": [
+        313,
+        315
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-TOP_K",
+      "term": "Top-k sampling",
+      "abbreviation": null,
+      "definition_ru": "случайный выбор среди k наиболее вероятных токенов",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "pdf_pages": [
+        315,
+        316
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-TOP_P",
+      "term": "Top-p/nucleus sampling",
+      "abbreviation": null,
+      "definition_ru": "выбор токена из минимального набора с заданной суммарной массой вероятности",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "pdf_pages": [
+        316,
+        317
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-TEMPERATURE",
+      "term": "Sampling temperature",
+      "abbreviation": null,
+      "definition_ru": "параметр, меняющий степень концентрации распределения при генерации",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "pdf_pages": [
+        318,
+        320
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-NONDETERMINISM",
+      "term": "Inference nondeterminism",
+      "abbreviation": null,
+      "definition_ru": "изменчивость генерации даже при одинаковых запросах вследствие вычислений и режима выбора",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "pdf_pages": [
+        318,
+        320
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-SELF_CONSISTENCY",
+      "term": "Self-consistency",
+      "abbreviation": null,
+      "definition_ru": "сравнение нескольких путей генерации и выбор итогового ответа по агрегированию",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "pdf_pages": [
+        319,
+        320
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-STRUCTURED_OUTPUT",
+      "term": "Structured output",
+      "abbreviation": null,
+      "definition_ru": "машинно-обрабатываемый ответ с явной схемой и ограничениями",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "pdf_pages": [
+        320,
+        323
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-JSON_SCHEMA_OUTPUT",
+      "term": "JSON Schema",
+      "abbreviation": null,
+      "definition_ru": "структура проверки допустимых ключей и типов сгенерированного JSON",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "pdf_pages": [
+        320,
+        322
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-CONSTRAINED_DECODING",
+      "term": "Constrained decoding",
+      "abbreviation": null,
+      "definition_ru": "ограничение допустимых генерируемых последовательностей правилами/грамматикой",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "pdf_pages": [
+        321,
+        323
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-CFG",
+      "term": "Context-free grammar",
+      "abbreviation": "CFG",
+      "definition_ru": "формальная грамматика для описания допустимых последовательностей",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "pdf_pages": [
+        322,
+        323
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-MODEL_INTERPRETABILITY",
+      "term": "Model interpretability",
+      "abbreviation": null,
+      "definition_ru": "методы исследования внутренних представлений и влияния входов на модель",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "pdf_pages": [
+        324,
+        328
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-LIT_NLP",
+      "term": "LIT-NLP",
+      "abbreviation": "LIT_NLP",
+      "definition_ru": "инструмент исследования поведения языковых моделей и их представлений",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH05",
+      "pdf_pages": [
+        324,
+        326
+      ],
+      "importance": 3
+    },
+    {
+      "id": "B002-FINE_TUNING",
+      "term": "Fine-tuning",
+      "abbreviation": null,
+      "definition_ru": "дополнительное обучение модели на задачах с обновлением обучаемых параметров",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "pdf_pages": [
+        329,
+        331
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-SUPERVISED_FINETUNE",
+      "term": "Supervised fine-tuning",
+      "abbreviation": null,
+      "definition_ru": "обучение на примерах инструкций, входов и правильных выходов",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "pdf_pages": [
+        332,
+        335
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-TRAINING_ARGUMENTS",
+      "term": "TrainingArguments",
+      "abbreviation": null,
+      "definition_ru": "настройки процедуры обучения и её оптимизации",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "pdf_pages": [
+        334,
+        335
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-OPTIMIZER",
+      "term": "Optimizer",
+      "abbreviation": null,
+      "definition_ru": "алгоритм обновления параметров по градиентам",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "pdf_pages": [
+        335,
+        341
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-ADAMW",
+      "term": "AdamW",
+      "abbreviation": "ADAMW",
+      "definition_ru": "адаптивный оптимизатор с регуляризацией weight decay",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "pdf_pages": [
+        335,
+        343
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-LEARNING_RATE",
+      "term": "Learning rate",
+      "abbreviation": null,
+      "definition_ru": "величина шага обновления обучаемых параметров",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "pdf_pages": [
+        339,
+        343
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-LR_SCHEDULER",
+      "term": "Learning rate scheduler",
+      "abbreviation": null,
+      "definition_ru": "расписание изменения темпа обучения, в том числе warmup/cosine/linear",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "pdf_pages": [
+        341,
+        343
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-GRAD_CHECKPOINT",
+      "term": "Gradient checkpointing",
+      "abbreviation": null,
+      "definition_ru": "уменьшение памяти за счёт повторного вычисления активаций",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "pdf_pages": [
+        344,
+        345
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-GRAD_ACCUM",
+      "term": "Gradient accumulation",
+      "abbreviation": null,
+      "definition_ru": "накопление градиентов нескольких mini-batches до обновления весов",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "pdf_pages": [
+        344,
+        345
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-LABEL_SMOOTHING",
+      "term": "Label smoothing",
+      "abbreviation": null,
+      "definition_ru": "смягчение целевых меток для уменьшения переуверенности и переобучения",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "pdf_pages": [
+        346,
+        349
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-CALIBRATION",
+      "term": "Calibration",
+      "abbreviation": null,
+      "definition_ru": "соответствие вероятностных оценок фактической доле верных решений",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "pdf_pages": [
+        346,
+        347
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-NEFTUNE",
+      "term": "NEFTune",
+      "abbreviation": "NEFTUNE",
+      "definition_ru": "регуляризация через шум в embeddings во время обучения",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "pdf_pages": [
+        348,
+        349
+      ],
+      "importance": 3
+    },
+    {
+      "id": "B002-BATCH_SIZE",
+      "term": "Batch size",
+      "abbreviation": null,
+      "definition_ru": "количество обучающих примеров в одном пакете",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "pdf_pages": [
+        350,
+        352
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-PEFT",
+      "term": "Parameter-efficient fine-tuning",
+      "abbreviation": "PEFT",
+      "definition_ru": "дообучение ограниченного набора параметров вместо всех весов",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "pdf_pages": [
+        352,
+        355
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-LORA",
+      "term": "LoRA",
+      "abbreviation": "LORA",
+      "definition_ru": "low-rank adaptation: параметроэффективное дообучение посредством низкоранговых изменений",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "pdf_pages": [
+        353,
+        355
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-QLORA",
+      "term": "Quantized LoRA",
+      "abbreviation": "QLORA",
+      "definition_ru": "параметроэффективная адаптация с квантованной основной моделью",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "pdf_pages": [
+        354,
+        359
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-SFT_DATASET",
+      "term": "Instruction-tuning dataset",
+      "abbreviation": null,
+      "definition_ru": "набор проверенных примеров инструкция-вход-ответ для обучения",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "pdf_pages": [
+        360,
+        364
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-PUBLIC_INSTRUCTION_DATA",
+      "term": "Public instruction datasets",
+      "abbreviation": null,
+      "definition_ru": "готовые корпуса инструкций, требующие лицензирования и проверки применимости",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "pdf_pages": [
+        364,
+        370
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-FLAN_INSTRUCTION",
+      "term": "FLAN instruction collection",
+      "abbreviation": null,
+      "definition_ru": "коллекция instruction-tuning примеров с заданиями и шаблонами",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "pdf_pages": [
+        366,
+        370
+      ],
+      "importance": 3
+    },
+    {
+      "id": "B002-SUPERNATURAL_INSTRUCTIONS",
+      "term": "Super-NaturalInstructions",
+      "abbreviation": null,
+      "definition_ru": "формат с определениями задач, положительными и отрицательными примерами",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "pdf_pages": [
+        370,
+        372
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-SELF_INSTRUCT",
+      "term": "Self-Instruct",
+      "abbreviation": null,
+      "definition_ru": "синтез новых инструкций и примеров из набора качественных затравок",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "pdf_pages": [
+        372,
+        374
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-OUTPUT_FIRST",
+      "term": "Output-first sampling",
+      "abbreviation": null,
+      "definition_ru": "сначала выбрать целевую метку, затем сгенерировать вход для неё во избежание дисбаланса",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "pdf_pages": [
+        372,
+        374
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-EVOL_INSTRUCT",
+      "term": "Evol-Instruct",
+      "abbreviation": null,
+      "definition_ru": "управляемое расширение сложности и разнообразия синтетических заданий с фильтрацией",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "pdf_pages": [
+        374,
+        375
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-ABLATION_STUDY",
+      "term": "Ablation study",
+      "abbreviation": null,
+      "definition_ru": "эксперимент по исключению одного компонента для измерения его вклада",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "pdf_pages": [
+        359,
+        360
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-REGRESSION_RISK",
+      "term": "Fine-tuning regression risk",
+      "abbreviation": null,
+      "definition_ru": "ухудшение прежних возможностей модели после изменения параметров",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH06",
+      "pdf_pages": [
+        331,
+        331
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-CONTINUAL_PRETRAINING",
+      "term": "Continual pre-training",
+      "abbreviation": null,
+      "definition_ru": "продолжение самоконтролируемого предобучения с уже имеющегося checkpoint",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH07",
+      "pdf_pages": [
+        380,
+        384
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-DAPT",
+      "term": "Domain-adaptive pre-training",
+      "abbreviation": "DAPT",
+      "definition_ru": "дополнительное предобучение на массиве текстов выбранной предметной области",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH07",
+      "pdf_pages": [
+        380,
+        384
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-TAPT",
+      "term": "Task-adaptive pre-training",
+      "abbreviation": "TAPT",
+      "definition_ru": "продолженное предобучение на данных, близких к конкретной целевой задаче",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH07",
+      "pdf_pages": [
+        381,
+        390
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-LIFELONG_LEARNING",
+      "term": "Lifelong learning",
+      "abbreviation": null,
+      "definition_ru": "периодическое обновление модели через дальнейшее обучение на новых данных",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH07",
+      "pdf_pages": [
+        381,
+        390
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-CATASTROPHIC_FORGETTING",
+      "term": "Catastrophic forgetting",
+      "abbreviation": null,
+      "definition_ru": "утрата ранее усвоенных способностей при обучении на новых данных",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH07",
+      "pdf_pages": [
+        382,
+        387
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-REPLAY",
+      "term": "Experience replay",
+      "abbreviation": null,
+      "definition_ru": "смешивание старых и новых тренировочных данных для уменьшения забывания",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH07",
+      "pdf_pages": [
+        385,
+        387
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-DISTILLATION",
+      "term": "Knowledge distillation",
+      "abbreviation": null,
+      "definition_ru": "использование старого checkpoint для ограничения расхождения представлений новой модели",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH07",
+      "pdf_pages": [
+        385,
+        386
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-PARAM_EXPANSION",
+      "term": "Parameter expansion",
+      "abbreviation": null,
+      "definition_ru": "добавление обучаемых параметров при дальнейшей адаптации модели",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH07",
+      "pdf_pages": [
+        385,
+        389
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-DEMIX",
+      "term": "DEMix domain experts",
+      "abbreviation": "DEMIX",
+      "definition_ru": "внутренние предметные нейросетевые эксперты как варианты FFN",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH07",
+      "pdf_pages": [
+        388,
+        390
+      ],
+      "importance": 3
+    },
+    {
+      "id": "B002-PEFT_ADAPTER",
+      "term": "Bottleneck adapter",
+      "abbreviation": null,
+      "definition_ru": "обучаемый узкий модуль с down- и up-проекциями внутри Transformer",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH07",
+      "pdf_pages": [
+        391,
+        398
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-PREFIX_TUNING",
+      "term": "Prefix-tuning",
+      "abbreviation": null,
+      "definition_ru": "обучаемые векторы-префиксы внутри слоёв модели",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH07",
+      "pdf_pages": [
+        398,
+        400
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-SOFT_PROMPT",
+      "term": "Soft prompt tuning",
+      "abbreviation": null,
+      "definition_ru": "обучаемые виртуальные векторы на входе, а не текст системного промпта",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH07",
+      "pdf_pages": [
+        400,
+        402
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-SUBSET_FINETUNE",
+      "term": "Subset fine-tuning",
+      "abbreviation": null,
+      "definition_ru": "адаптация ограниченного подмножества существующих параметров",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH07",
+      "pdf_pages": [
+        402,
+        403
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-BITFIT",
+      "term": "BitFit bias tuning",
+      "abbreviation": "BITFIT",
+      "definition_ru": "дообучение только bias-параметров как частный случай subset methods",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH07",
+      "pdf_pages": [
+        402,
+        403
+      ],
+      "importance": 3
+    },
+    {
+      "id": "B002-MODEL_ENSEMBLE",
+      "term": "Model ensembling",
+      "abbreviation": null,
+      "definition_ru": "агрегация результатов нескольких отдельных моделей без объединения весов",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH07",
+      "pdf_pages": [
+        404,
+        408
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-PAIRRANKER",
+      "term": "PairRanker",
+      "abbreviation": null,
+      "definition_ru": "компонент LLM-Blender для сравнения кандидатных ответов моделей попарно",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH07",
+      "pdf_pages": [
+        405,
+        407
+      ],
+      "importance": 3
+    },
+    {
+      "id": "B002-GENFUSER",
+      "term": "GenFuser",
+      "abbreviation": null,
+      "definition_ru": "компонент LLM-Blender для синтеза итогового ответа из кандидатов",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH07",
+      "pdf_pages": [
+        405,
+        408
+      ],
+      "importance": 3
+    },
+    {
+      "id": "B002-MODEL_FUSION",
+      "term": "Model merging/fusion",
+      "abbreviation": null,
+      "definition_ru": "объединение совместимых параметров нескольких моделей",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH07",
+      "pdf_pages": [
+        408,
+        413
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-WEIGHT_AVERAGING",
+      "term": "Weight averaging",
+      "abbreviation": null,
+      "definition_ru": "усреднение или взвешенное объединение параметров моделей",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH07",
+      "pdf_pages": [
+        409,
+        411
+      ],
+      "importance": 3
+    },
+    {
+      "id": "B002-ADAPTER_MERGING",
+      "term": "Adapter merging",
+      "abbreviation": null,
+      "definition_ru": "объединение параметров нескольких адаптеров, включая AdapterSoup/AdaMix",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH07",
+      "pdf_pages": [
+        411,
+        413
+      ],
+      "importance": 3
+    },
+    {
+      "id": "B002-INTERTRAINING",
+      "term": "Intertraining",
+      "abbreviation": null,
+      "definition_ru": "использование адаптированного checkpoint как начальной точки для другой задачи",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH07",
+      "pdf_pages": [
+        410,
+        411
+      ],
+      "importance": 3
+    },
+    {
+      "id": "B002-ALIGNMENT",
+      "term": "Alignment training",
+      "abbreviation": null,
+      "definition_ru": "методы повышения управляемости и соответствия модели ожидаемым человеческим принципам",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "pdf_pages": [
+        414,
+        416
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-HHH",
+      "term": "Helpful, Honest, Harmless",
+      "abbreviation": "HHH",
+      "definition_ru": "три целевых свойства согласованного поведения модели: полезность, честность и безопасность",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "pdf_pages": [
+        414,
+        415
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-RLHF",
+      "term": "Reinforcement Learning from Human Feedback",
+      "abbreviation": "RLHF",
+      "definition_ru": "обучение поведения с учётом человеческих сравнений или предпочтений и модели награды",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "pdf_pages": [
+        416,
+        422
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-HUMAN_FEEDBACK",
+      "term": "Human feedback types",
+      "abbreviation": null,
+      "definition_ru": "бинарный отзыв, парное предпочтение, ранжирование, корректирующий отзыв",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "pdf_pages": [
+        417,
+        418
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-REWARD_MODEL",
+      "term": "Reward model",
+      "abbreviation": null,
+      "definition_ru": "модель, оценивающая предпочтительность ответа для заданного запроса",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "pdf_pages": [
+        418,
+        420
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-PPO",
+      "term": "Proximal Policy Optimization",
+      "abbreviation": "PPO",
+      "definition_ru": "метод оптимизации политики с наградой и ограничением отклонения",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "pdf_pages": [
+        419,
+        422
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-KL_REGULARIZATION",
+      "term": "KL divergence regularization",
+      "abbreviation": null,
+      "definition_ru": "штраф за отклонение от reference policy при RLHF",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "pdf_pages": [
+        419,
+        420
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-HALLUCINATION",
+      "term": "Hallucination",
+      "abbreviation": null,
+      "definition_ru": "необоснованная относительно контекста или обучающих данных генерация",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "pdf_pages": [
+        423,
+        425
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-KNOWLEDGE_QUADRANT",
+      "term": "Knowledge and awareness quadrant",
+      "abbreviation": null,
+      "definition_ru": "классы known knowns, unknown knowns, known unknowns и unknown unknowns",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "pdf_pages": [
+        425,
+        428
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-UNCERTAINTY_CALIBRATION",
+      "term": "Output uncertainty calibration",
+      "abbreviation": null,
+      "definition_ru": "оценка согласованности уверенности модели с фактической корректностью",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "pdf_pages": [
+        427,
+        429
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-RAG_GROUNDING",
+      "term": "Grounding by retrieval",
+      "abbreviation": null,
+      "definition_ru": "снижение риска галлюцинаций через релевантный подтверждённый контекст",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "pdf_pages": [
+        428,
+        429
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-COVE",
+      "term": "Chain-of-Verification",
+      "abbreviation": "COVE",
+      "definition_ru": "составление отдельных проверочных вопросов, ответы на них и исправление исходного вывода",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "pdf_pages": [
+        429,
+        432
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-RECITATION",
+      "term": "Recitation",
+      "abbreviation": null,
+      "definition_ru": "генерация промежуточных текстовых фрагментов перед ответом",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "pdf_pages": [
+        432,
+        434
+      ],
+      "importance": 3
+    },
+    {
+      "id": "B002-FACTUAL_NUCLEUS",
+      "term": "Factual-nucleus sampling",
+      "abbreviation": null,
+      "definition_ru": "регулирование порога top-p в процессе генерации для уменьшения риска фактических ошибок",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "pdf_pages": [
+        434,
+        435
+      ],
+      "importance": 3
+    },
+    {
+      "id": "B002-DOLA",
+      "term": "DoLa contrastive decoding",
+      "abbreviation": "DOLA",
+      "definition_ru": "контрастирование logits верхнего и промежуточных слоёв модели",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "pdf_pages": [
+        436,
+        438
+      ],
+      "importance": 3
+    },
+    {
+      "id": "B002-LOOKBACK_LENS",
+      "term": "Lookback Lens",
+      "abbreviation": null,
+      "definition_ru": "использование отношения внимания к контекстным и сгенерированным токенам для оценки риска ошибок",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "pdf_pages": [
+        439,
+        441
+      ],
+      "importance": 3
+    },
+    {
+      "id": "B002-KNOWLEDGE_OVERSHADOWING",
+      "term": "Knowledge overshadowing",
+      "abbreviation": null,
+      "definition_ru": "доминирование одного условия, ведущее к игнорированию другого",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "pdf_pages": [
+        442,
+        443
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-S2A",
+      "term": "System 2 Attention",
+      "abbreviation": "S2A",
+      "definition_ru": "очистка контекста от нерелевантной информации перед ответом",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "pdf_pages": [
+        443,
+        445
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-DEDUCTIVE_REASONING",
+      "term": "Deductive reasoning",
+      "abbreviation": null,
+      "definition_ru": "логическое следствие из заданных предпосылок",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "pdf_pages": [
+        446,
+        447
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-INDUCTIVE_REASONING",
+      "term": "Inductive reasoning",
+      "abbreviation": null,
+      "definition_ru": "обобщение наблюдений с вероятностным выводом",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "pdf_pages": [
+        447,
+        447
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-ABDUCTIVE_REASONING",
+      "term": "Abductive reasoning",
+      "abbreviation": null,
+      "definition_ru": "выбор правдоподобного объяснения наблюдаемого",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "pdf_pages": [
+        447,
+        448
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-VERIFIER",
+      "term": "External verifier",
+      "abbreviation": null,
+      "definition_ru": "проверка кандидата на решение отдельным алгоритмом, моделью или формальными правилами",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "pdf_pages": [
+        451,
+        452
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-ITERATIVE_BACKPROMPTING",
+      "term": "Iterative backprompting",
+      "abbreviation": null,
+      "definition_ru": "итеративное исправление решения с обратной связью проверяющего компонента",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "pdf_pages": [
+        451,
+        452
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-BEST_OF_K",
+      "term": "Top-k guessing / best-of-k",
+      "abbreviation": null,
+      "definition_ru": "генерация нескольких кандидатов с выбором после проверки",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "pdf_pages": [
+        452,
+        454
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-TEST_TIME_COMPUTE",
+      "term": "Inference-time computation",
+      "abbreviation": null,
+      "definition_ru": "выделение дополнительных вычислений для поиска и проверки решения во время инференса",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "pdf_pages": [
+        452,
+        455
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-MCTS",
+      "term": "Monte Carlo Tree Search",
+      "abbreviation": "MCTS",
+      "definition_ru": "метод поиска, упомянутый как вариант inference-time search",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "pdf_pages": [
+        455,
+        456
+      ],
+      "importance": 3
+    },
+    {
+      "id": "B002-REASONING_SFT",
+      "term": "Fine-tuning for reasoning",
+      "abbreviation": null,
+      "definition_ru": "дообучение на наборах задач с размеченными промежуточными шагами",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH08",
+      "pdf_pages": [
+        456,
+        457
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-INFERENCE_OPTIMIZATION",
+      "term": "Inference optimization",
+      "abbreviation": null,
+      "definition_ru": "уменьшение стоимости, памяти и задержки выполнения модели при сохранении нужного качества",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH09",
+      "pdf_pages": [
+        459,
+        462
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-AUTOREGRESSIVE_BOTTLENECK",
+      "term": "Autoregressive decoding bottleneck",
+      "abbreviation": null,
+      "definition_ru": "последовательная генерация токенов ограничивает скорость вывода",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH09",
+      "pdf_pages": [
+        459,
+        461
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-KV_CACHE",
+      "term": "Key-value cache",
+      "abbreviation": null,
+      "definition_ru": "повторное использование вычисленных K и V self-attention для уже обработанных токенов",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH09",
+      "pdf_pages": [
+        462,
+        466
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-PROMPT_PREFIX_CACHE",
+      "term": "Prompt prefix caching",
+      "abbreviation": null,
+      "definition_ru": "повторное использование неизменного префикса запросов с учётом политики кэша",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH09",
+      "pdf_pages": [
+        463,
+        466
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-EARLY_EXIT",
+      "term": "Early exit",
+      "abbreviation": null,
+      "definition_ru": "завершение вычисления на части слоёв для экономии ресурсов",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH09",
+      "pdf_pages": [
+        466,
+        472
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-SEQUENCE_EARLY_EXIT",
+      "term": "Sequence-level early exit",
+      "abbreviation": null,
+      "definition_ru": "выход на промежуточном слое сразу для всей последовательности",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH09",
+      "pdf_pages": [
+        468,
+        470
+      ],
+      "importance": 3
+    },
+    {
+      "id": "B002-TOKEN_EARLY_EXIT",
+      "term": "Token-level early exit",
+      "abbreviation": null,
+      "definition_ru": "динамический выбор глубины сети отдельно для токенов",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH09",
+      "pdf_pages": [
+        470,
+        472
+      ],
+      "importance": 3
+    },
+    {
+      "id": "B002-DYNAMIC_INFERENCE",
+      "term": "Dynamic inference",
+      "abbreviation": null,
+      "definition_ru": "выбор объёма вычислений в зависимости от свойств входа",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH09",
+      "pdf_pages": [
+        472,
+        473
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-DISTILL_TEACHER_STUDENT",
+      "term": "Teacher-student distillation",
+      "abbreviation": null,
+      "definition_ru": "обучение компактной модели по выходам или представлениям другой модели",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH09",
+      "pdf_pages": [
+        472,
+        479
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-BLACK_BOX_DISTILL",
+      "term": "Black-box knowledge distillation",
+      "abbreviation": null,
+      "definition_ru": "адаптация ученика по наблюдаемым ответам учителя",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH09",
+      "pdf_pages": [
+        473,
+        479
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-WHITE_BOX_DISTILL",
+      "term": "White-box knowledge distillation",
+      "abbreviation": null,
+      "definition_ru": "сопоставление logits или внутренних представлений учителя и ученика",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH09",
+      "pdf_pages": [
+        474,
+        479
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-WEAK_TO_STRONG",
+      "term": "Weak-to-strong generalization",
+      "abbreviation": null,
+      "definition_ru": "обучение более сильного ученика на метках слабого учителя",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH09",
+      "pdf_pages": [
+        478,
+        479
+      ],
+      "importance": 3
+    },
+    {
+      "id": "B002-SPECULATIVE_DECODING",
+      "term": "Speculative decoding",
+      "abbreviation": null,
+      "definition_ru": "проверка большой моделью нескольких токенов, предложенных меньшей draft-моделью",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH09",
+      "pdf_pages": [
+        480,
+        482
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-DRAFT_MODEL",
+      "term": "Draft model",
+      "abbreviation": null,
+      "definition_ru": "модель-кандидат для генерации последовательности при speculative decoding",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH09",
+      "pdf_pages": [
+        480,
+        482
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-TOKEN_ACCEPTANCE",
+      "term": "Draft token acceptance rate",
+      "abbreviation": null,
+      "definition_ru": "доля предложенных токенов, принятых проверяющей моделью",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH09",
+      "pdf_pages": [
+        480,
+        482
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-PARALLEL_DECODING",
+      "term": "Parallel decoding",
+      "abbreviation": null,
+      "definition_ru": "параллельное получение независимых частей или нескольких токенов",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH09",
+      "pdf_pages": [
+        482,
+        485
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-MULTI_TOKEN_DECODING",
+      "term": "Multi-token decoding",
+      "abbreviation": null,
+      "definition_ru": "предсказание нескольких последующих токенов через дополнительные головы",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH09",
+      "pdf_pages": [
+        483,
+        484
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-MEDUSA",
+      "term": "Medusa decoding",
+      "abbreviation": "MEDUSA",
+      "definition_ru": "архитектура с дополнительными decoding heads для multi-token prediction",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH09",
+      "pdf_pages": [
+        483,
+        484
+      ],
+      "importance": 3
+    },
+    {
+      "id": "B002-FP32",
+      "term": "FP32",
+      "abbreviation": "FP32",
+      "definition_ru": "32-битный формат с плавающей точкой",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH09",
+      "pdf_pages": [
+        485,
+        486
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-FP16",
+      "term": "FP16",
+      "abbreviation": "FP16",
+      "definition_ru": "16-битный формат с плавающей точкой с ограниченным диапазоном чисел",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH09",
+      "pdf_pages": [
+        485,
+        487
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-BF16",
+      "term": "BF16",
+      "abbreviation": "BF16",
+      "definition_ru": "16-битный формат с диапазоном экспоненты, близким FP32, и меньшей точностью мантиссы",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH09",
+      "pdf_pages": [
+        486,
+        487
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-INT8",
+      "term": "INT8",
+      "abbreviation": "INT8",
+      "definition_ru": "целочисленное 8-битное представление весов или активаций",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH09",
+      "pdf_pages": [
+        487,
+        490
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-SYMMETRIC_QUANT",
+      "term": "Symmetric quantization",
+      "abbreviation": null,
+      "definition_ru": "отображение вещественного нуля в целочисленный ноль с масштабом",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH09",
+      "pdf_pages": [
+        487,
+        488
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-ASYMMETRIC_QUANT",
+      "term": "Asymmetric quantization",
+      "abbreviation": null,
+      "definition_ru": "аффинное отображение диапазона значений с zero point",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH09",
+      "pdf_pages": [
+        488,
+        490
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-QUANT_CALIBRATION",
+      "term": "Quantization calibration",
+      "abbreviation": null,
+      "definition_ru": "определение диапазона и масштабов с использованием контрольных данных",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH09",
+      "pdf_pages": [
+        489,
+        490
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-PASSIVE_APPROACH",
+      "term": "Passive interaction",
+      "abbreviation": null,
+      "definition_ru": "извлечение внешнего контекста программой с последующей передачей данных LLM без самостоятельного выбора инструментов",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH10",
+      "pdf_pages": [
+        496,
+        498
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-EXPLICIT_APPROACH",
+      "term": "Explicit interaction",
+      "abbreviation": null,
+      "definition_ru": "предопределённая последовательность обращений к инструментам в фиксированном workflow",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH10",
+      "pdf_pages": [
+        499,
+        500
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-AUTONOMOUS_APPROACH",
+      "term": "Autonomous interaction",
+      "abbreviation": null,
+      "definition_ru": "LLM декомпозирует задачу и самостоятельно выбирает действия и инструменты",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH10",
+      "pdf_pages": [
+        501,
+        505
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-AGENT_AUTONOMY",
+      "term": "Agent autonomy",
+      "abbreviation": null,
+      "definition_ru": "возможность определять дальнейшие действия без детального предписания человеком",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH10",
+      "pdf_pages": [
+        503,
+        505
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-TASK_DECOMPOSITION",
+      "term": "Task decomposition",
+      "abbreviation": null,
+      "definition_ru": "разделение пользовательской цели на последовательность зависимых подзадач",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH10",
+      "pdf_pages": [
+        505,
+        508
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-AGENT_COMPONENTS",
+      "term": "Agentic system components",
+      "abbreviation": null,
+      "definition_ru": "набор моделей, инструментов, хранилищ, loop prompt, guardrails/verifiers и оркестратора",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH10",
+      "pdf_pages": [
+        508,
+        511
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-TOOL_INTERFACE",
+      "term": "Tool interface",
+      "abbreviation": null,
+      "definition_ru": "объявление вызываемой функции и аргументов для взаимодействия LLM и приложения",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH10",
+      "pdf_pages": [
+        511,
+        520
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-WEB_SEARCH_TOOL",
+      "term": "Web search tool",
+      "abbreviation": null,
+      "definition_ru": "подключение к поисковым системам для извлечения внешних материалов",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH10",
+      "pdf_pages": [
+        512,
+        513
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-API_CONNECTOR",
+      "term": "API connector",
+      "abbreviation": null,
+      "definition_ru": "программный адаптер для получения данных из внешнего API",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH10",
+      "pdf_pages": [
+        512,
+        514
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-CODE_INTERPRETER",
+      "term": "Code interpreter",
+      "abbreviation": null,
+      "definition_ru": "изолированный вычислитель для исполнения проверяемых программных фрагментов",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH10",
+      "pdf_pages": [
+        513,
+        514
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-DATABASE_CONNECTOR",
+      "term": "Database connector",
+      "abbreviation": null,
+      "definition_ru": "интерфейс к БД с известной схемой и параметризованными операциями",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH10",
+      "pdf_pages": [
+        514,
+        515
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-TOOL_SELECTION",
+      "term": "Tool selection",
+      "abbreviation": null,
+      "definition_ru": "выбор нужного инструмента из перечня по задаче",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH10",
+      "pdf_pages": [
+        515,
+        520
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-TOOL_CALL_JSON",
+      "term": "Structured tool call",
+      "abbreviation": null,
+      "definition_ru": "машиночитаемое описание операции и её аргументов для оркестратора",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH10",
+      "pdf_pages": [
+        518,
+        520
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-PROMPT_REPOSITORY",
+      "term": "Prompt repository",
+      "abbreviation": null,
+      "definition_ru": "хранилище специализированных инструкций и примеров для выполнения задач",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH10",
+      "pdf_pages": [
+        523,
+        525
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-SESSION_MEMORY",
+      "term": "Session memory",
+      "abbreviation": null,
+      "definition_ru": "журнал состояния, предыдущих действий и наблюдений в процессе работы агента",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH10",
+      "pdf_pages": [
+        525,
+        528
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-TOOL_DOC_STORE",
+      "term": "Tool documentation store",
+      "abbreviation": null,
+      "definition_ru": "хранилище схем БД и документации API для корректного обращения к инструментам",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH10",
+      "pdf_pages": [
+        528,
+        530
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-AGENT_LOOP_PROMPT",
+      "term": "Agent loop prompt",
+      "abbreviation": null,
+      "definition_ru": "инструкция по циклу использования инструментов, наблюдений и завершения задачи",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH10",
+      "pdf_pages": [
+        530,
+        533
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-REACT",
+      "term": "ReAct",
+      "abbreviation": "REACT",
+      "definition_ru": "схема итераций планирования, действия и наблюдения при работе агента",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH10",
+      "pdf_pages": [
+        530,
+        532
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-REFLEXION",
+      "term": "Reflexion",
+      "abbreviation": "REFLEXION",
+      "definition_ru": "механизм исправления решений на основе обратной связи и истории действий",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH10",
+      "pdf_pages": [
+        532,
+        533
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-AGENT_GUARDRAIL",
+      "term": "Agent guardrail",
+      "abbreviation": null,
+      "definition_ru": "контроль допустимости входов, выходов и действий модели во время работы",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH10",
+      "pdf_pages": [
+        533,
+        538
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-PII_DETECTION",
+      "term": "PII detection",
+      "abbreviation": "PII_DETECTION",
+      "definition_ru": "обнаружение персональных данных при входном и выходном контроле",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH10",
+      "pdf_pages": [
+        534,
+        538
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-PROMPT_INJECTION",
+      "term": "Prompt injection",
+      "abbreviation": null,
+      "definition_ru": "попытка подменить допустимые инструкции через недоверенный текст",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH10",
+      "pdf_pages": [
+        535,
+        538
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-GUARDRAIL_FAIL_ACTION",
+      "term": "Guardrail failure actions",
+      "abbreviation": null,
+      "definition_ru": "повторный запрос, исправление, фильтрация, отказ, исключение или журналирование",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH10",
+      "pdf_pages": [
+        536,
+        538
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-NLI_VERIFICATION",
+      "term": "Natural language inference verification",
+      "abbreviation": "NLI_VERIFICATION",
+      "definition_ru": "проверка, следует ли гипотеза из предоставленного источника",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH10",
+      "pdf_pages": [
+        543,
+        545
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-SUMMARY_VERIFICATION",
+      "term": "Summary verification criteria",
+      "abbreviation": null,
+      "definition_ru": "оценка фактичности, полноты, релевантности, структуры и других свойств сводки",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH10",
+      "pdf_pages": [
+        540,
+        548
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-AGENT_ORCHESTRATION",
+      "term": "Agent orchestration",
+      "abbreviation": null,
+      "definition_ru": "управление состоянием, инструментами, маршрутом данных и журналами агента",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH10",
+      "pdf_pages": [
+        549,
+        550
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-COMPUTER_USE_AGENT",
+      "term": "Computer-use agent",
+      "abbreviation": null,
+      "definition_ru": "взаимодействие с GUI/DOM интерфейсом при отсутствии подходящего API",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH10",
+      "pdf_pages": [
+        550,
+        552
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-TEXT_EMBEDDING",
+      "term": "Text embedding",
+      "abbreviation": null,
+      "definition_ru": "числовой вектор, кодирующий свойства слова, предложения или документа",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "pdf_pages": [
+        555,
+        559
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-EMBEDDING_POOLING",
+      "term": "Embedding pooling",
+      "abbreviation": null,
+      "definition_ru": "агрегация токенных представлений в вектор фрагмента",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "pdf_pages": [
+        557,
+        559
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-MEAN_POOLING",
+      "term": "Mean pooling",
+      "abbreviation": null,
+      "definition_ru": "усреднение выходных векторов токенов для представления фрагмента",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "pdf_pages": [
+        557,
+        558
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-MAX_POOLING",
+      "term": "Max pooling",
+      "abbreviation": null,
+      "definition_ru": "выбор максимального значения каждой координаты токенных векторов",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "pdf_pages": [
+        557,
+        558
+      ],
+      "importance": 3
+    },
+    {
+      "id": "B002-CLS_POOLING",
+      "term": "CLS pooling",
+      "abbreviation": "CLS_POOLING",
+      "definition_ru": "использование представления начального специального токена",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "pdf_pages": [
+        557,
+        558
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-SEMANTIC_SEARCH",
+      "term": "Semantic search",
+      "abbreviation": null,
+      "definition_ru": "поиск по близости смысловых векторов запроса и документов",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "pdf_pages": [
+        559,
+        563
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-ASYMMETRIC_SEARCH",
+      "term": "Asymmetric semantic search",
+      "abbreviation": null,
+      "definition_ru": "поиск коротким запросом по более длинным документам",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "pdf_pages": [
+        563,
+        564
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-COSINE_SIMILARITY",
+      "term": "Cosine similarity",
+      "abbreviation": null,
+      "definition_ru": "метрика сходства по углу между двумя векторами",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "pdf_pages": [
+        563,
+        565
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-DOT_PRODUCT",
+      "term": "Dot product",
+      "abbreviation": null,
+      "definition_ru": "скалярное произведение векторов для измерения сходства",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "pdf_pages": [
+        563,
+        564
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-EUCLIDEAN_DISTANCE",
+      "term": "Euclidean distance",
+      "abbreviation": null,
+      "definition_ru": "геометрическое расстояние в векторном пространстве",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "pdf_pages": [
+        563,
+        564
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-SEMANTIC_NEGATION",
+      "term": "Negation sensitivity",
+      "abbreviation": null,
+      "definition_ru": "риск высокой семантической близости высказываний с противоположным смыслом",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "pdf_pages": [
+        564,
+        567
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-EMBEDDING_FINETUNING",
+      "term": "Embedding fine-tuning",
+      "abbreviation": null,
+      "definition_ru": "адаптация embedding-модели на предметных парах и тройках",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "pdf_pages": [
+        567,
+        575
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-TRIPLET_DATASET",
+      "term": "Triplet dataset",
+      "abbreviation": null,
+      "definition_ru": "набор троек anchor positive negative для обучения сходства",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "pdf_pages": [
+        569,
+        573
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-HARD_NEGATIVE",
+      "term": "Hard negative",
+      "abbreviation": null,
+      "definition_ru": "релевантный на вид, но неверный ответ для обучения и оценки поиска",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "pdf_pages": [
+        571,
+        573
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-TRIPLET_LOSS",
+      "term": "Triplet loss",
+      "abbreviation": null,
+      "definition_ru": "обучающая функция, сближающая anchor-positive и раздвигающая anchor-negative",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "pdf_pages": [
+        572,
+        573
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-MNR_LOSS",
+      "term": "Multiple Negatives Ranking Loss",
+      "abbreviation": "MNR_LOSS",
+      "definition_ru": "ранжирующая функция, использующая остальные элементы батча как отрицательные",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "pdf_pages": [
+        573,
+        575
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-INSTRUCTION_EMBEDDING",
+      "term": "Instruction embedding",
+      "abbreviation": null,
+      "definition_ru": "генерация embedding с явным описанием назначения текста и запроса",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "pdf_pages": [
+        576,
+        578
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-MTEB",
+      "term": "Massive Text Embedding Benchmark",
+      "abbreviation": "MTEB",
+      "definition_ru": "набор задач сравнительной оценки embedding-моделей",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "pdf_pages": [
+        579,
+        580
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-MATRYOSHKA",
+      "term": "Matryoshka Representation Learning",
+      "abbreviation": null,
+      "definition_ru": "обучение векторов так, чтобы префиксы разной размерности сохраняли полезные признаки",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "pdf_pages": [
+        580,
+        584
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-BINARY_EMBEDDING",
+      "term": "Binary embedding",
+      "abbreviation": null,
+      "definition_ru": "представление координат вектора двоичными значениями",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "pdf_pages": [
+        584,
+        586
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-PRODUCT_QUANTIZATION",
+      "term": "Product quantization",
+      "abbreviation": null,
+      "definition_ru": "компрессия векторов путем кластеризации их подпространств",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "pdf_pages": [
+        586,
+        588
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-DOCUMENT_CHUNKING",
+      "term": "Document chunking",
+      "abbreviation": null,
+      "definition_ru": "разделение текста на фрагменты для индексации и извлечения",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "pdf_pages": [
+        588,
+        592
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-SLIDING_WINDOW_CHUNKING",
+      "term": "Sliding window chunking",
+      "abbreviation": null,
+      "definition_ru": "перекрывающееся разбиение текста для сохранения соседнего контекста",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "pdf_pages": [
+        592,
+        593
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-METADATA_CHUNKING",
+      "term": "Metadata-aware chunking",
+      "abbreviation": null,
+      "definition_ru": "учёт секций, заголовков и метаданных при определении фрагментов",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "pdf_pages": [
+        593,
+        594
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-LAYOUT_CHUNKING",
+      "term": "Layout-aware chunking",
+      "abbreviation": null,
+      "definition_ru": "использование визуальной структуры страницы и областей документа",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "pdf_pages": [
+        593,
+        594
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-SEMANTIC_CHUNKING",
+      "term": "Semantic chunking",
+      "abbreviation": null,
+      "definition_ru": "группировка семантически связанных фрагментов текста",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "pdf_pages": [
+        594,
+        596
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-LATE_CHUNKING",
+      "term": "Late chunking",
+      "abbreviation": null,
+      "definition_ru": "контекстуализация токенов длинного текста до pooling по отдельным сегментам",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "pdf_pages": [
+        596,
+        597
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-VECTOR_DATABASE",
+      "term": "Vector database",
+      "abbreviation": null,
+      "definition_ru": "хранилище векторов с поиском и фильтрами метаданных",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "pdf_pages": [
+        598,
+        600
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-MULTILEVEL_EMBEDDINGS",
+      "term": "Multi-level embeddings",
+      "abbreviation": null,
+      "definition_ru": "векторы разной гранулярности от предложения до документа",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "pdf_pages": [
+        600,
+        601
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-SPARSE_AUTOENCODER",
+      "term": "Sparse autoencoder",
+      "abbreviation": null,
+      "definition_ru": "разреженный автоэнкодер для анализа интерпретируемых признаков представлений",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH11",
+      "pdf_pages": [
+        601,
+        603
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-RAG_PIPELINE",
+      "term": "RAG pipeline",
+      "abbreviation": "RAG_PIPELINE",
+      "definition_ru": "этапный конвейер извлечения данных и ответа модели с дополнительными проверками",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "pdf_pages": [
+        604,
+        618
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-RAG_EXTERNAL_KNOWLEDGE",
+      "term": "External knowledge retrieval",
+      "abbreviation": null,
+      "definition_ru": "извлечение внешних фактов и обновляемых данных во время использования модели",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "pdf_pages": [
+        605,
+        610
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-RAG_HISTORY",
+      "term": "Conversation history retrieval",
+      "abbreviation": null,
+      "definition_ru": "извлечение нужных фрагментов прошлых взаимодействий при ограничении контекста",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "pdf_pages": [
+        609,
+        610
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-RAG_FEWSHOT",
+      "term": "In-context example retrieval",
+      "abbreviation": null,
+      "definition_ru": "подбор учебных примеров по текущему запросу",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "pdf_pages": [
+        610,
+        611
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-RAG_TOOL_DOCS",
+      "term": "Tool information retrieval",
+      "abbreviation": null,
+      "definition_ru": "поиск документации, схем и описаний инструментов по ситуации",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "pdf_pages": [
+        610,
+        611
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-RETRIEVAL_GATE",
+      "term": "Decision when to retrieve",
+      "abbreviation": null,
+      "definition_ru": "динамический выбор между памятью модели и внешним извлечением",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "pdf_pages": [
+        610,
+        613
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-QUERY_REWRITE",
+      "term": "Query rewriting",
+      "abbreviation": null,
+      "definition_ru": "переформулирование пользовательского запроса для согласования с корпусом",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "pdf_pages": [
+        614,
+        625
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-PRF",
+      "term": "Pseudo relevance feedback",
+      "abbreviation": "PRF",
+      "definition_ru": "уточнение запроса с опорой на предварительно найденные документы",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "pdf_pages": [
+        616,
+        621
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-HYDE",
+      "term": "Hypothetical document embeddings",
+      "abbreviation": "HYDE",
+      "definition_ru": "создание гипотетического документа для приближения запроса к документному пространству",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "pdf_pages": [
+        619,
+        623
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-QUERY_DRIFT",
+      "term": "Query topic drift",
+      "abbreviation": null,
+      "definition_ru": "отклонение расширенного поискового запроса от исходного смысла",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "pdf_pages": [
+        622,
+        624
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-QUERY_DECOMPOSITION",
+      "term": "Query decomposition",
+      "abbreviation": null,
+      "definition_ru": "разбиение сложного вопроса на подзапросы с зависимостями",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "pdf_pages": [
+        624,
+        625
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-BM25",
+      "term": "BM25 keyword retrieval",
+      "abbreviation": "BM25",
+      "definition_ru": "вероятностная поисковая модель ранжирования по словам и частотам",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "pdf_pages": [
+        625,
+        628
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-HYBRID_SEARCH",
+      "term": "Hybrid retrieval",
+      "abbreviation": null,
+      "definition_ru": "объединение лексического поиска и поиска по векторам",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "pdf_pages": [
+        627,
+        629
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-RAG_METADATA_FILTER",
+      "term": "Retrieval metadata filtering",
+      "abbreviation": null,
+      "definition_ru": "ограничение документов по дате, роли, корпусу, версии и другим атрибутам",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "pdf_pages": [
+        628,
+        629
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-GENERATIVE_RETRIEVAL",
+      "term": "Generative retrieval",
+      "abbreviation": null,
+      "definition_ru": "генерация идентификаторов документов моделью вместо обычного индексного поиска",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "pdf_pages": [
+        629,
+        632
+      ],
+      "importance": 3
+    },
+    {
+      "id": "B002-TIGHT_RETRIEVER",
+      "term": "Tightly coupled retriever",
+      "abbreviation": null,
+      "definition_ru": "retriever, обученный совместно или под конкретную целевую языковую модель",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "pdf_pages": [
+        632,
+        634
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-GRAPHRAG",
+      "term": "GraphRAG",
+      "abbreviation": "GRAPHRAG",
+      "definition_ru": "поиск с использованием связей сущностей и извлечённых графовых структур",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "pdf_pages": [
+        634,
+        636
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-RERANKER",
+      "term": "Reranker",
+      "abbreviation": null,
+      "definition_ru": "повторное ранжирование небольшого множества кандидатов более точной моделью",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "pdf_pages": [
+        636,
+        644
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-CROSS_ENCODER",
+      "term": "Cross encoder reranking",
+      "abbreviation": null,
+      "definition_ru": "совместное кодирование запроса и документа при проверке релевантности",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "pdf_pages": [
+        637,
+        639
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-COLBERT",
+      "term": "ColBERT late-interaction retrieval",
+      "abbreviation": "COLBERT",
+      "definition_ru": "ранжирование по позднему взаимодействию токенных представлений",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "pdf_pages": [
+        638,
+        639
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-LISTWISE_RERANK",
+      "term": "Listwise reranking",
+      "abbreviation": null,
+      "definition_ru": "модель оценивает и упорядочивает группу документов за один запрос",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "pdf_pages": [
+        641,
+        644
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-RAG_REFINE",
+      "term": "RAG refine stage",
+      "abbreviation": null,
+      "definition_ru": "сокращение, очистка и улучшение извлечённого материала перед генерацией",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "pdf_pages": [
+        645,
+        656
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-CHAIN_OF_NOTE",
+      "term": "Chain-of-Note",
+      "abbreviation": null,
+      "definition_ru": "создание заметок о том, отвечает ли каждый документ на вопрос или лишь содержит контекст",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "pdf_pages": [
+        651,
+        656
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-RAG_INSERT",
+      "term": "RAG context insertion",
+      "abbreviation": null,
+      "definition_ru": "размещение кандидатов в контексте с учётом порядка и ограничения окна",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "pdf_pages": [
+        656,
+        659
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-RAG_GENERATE",
+      "term": "RAG generation",
+      "abbreviation": null,
+      "definition_ru": "формирование ответа моделью на базе подготовленного контекста",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "pdf_pages": [
+        658,
+        665
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-FLARE",
+      "term": "Forward-Looking Active REtrieval",
+      "abbreviation": "FLARE",
+      "definition_ru": "инициирование дополнительных retrieval при генерации по потребности",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "pdf_pages": [
+        660,
+        664
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-RAG_MEMORY_MGMT",
+      "term": "RAG memory management",
+      "abbreviation": null,
+      "definition_ru": "извлечение важной истории и состояния для поддержания длительных задач",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "pdf_pages": [
+        665,
+        670
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-LLMR",
+      "term": "LLM-R example retriever",
+      "abbreviation": "LLMR",
+      "definition_ru": "подбор few-shot примеров по ожидаемому улучшению ответов модели",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "pdf_pages": [
+        670,
+        672
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-REALM",
+      "term": "Retrieval-Augmented Language Model",
+      "abbreviation": "REALM",
+      "definition_ru": "совместное обучение retriever и языкового компонента при masked-language objective",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "pdf_pages": [
+        672,
+        674
+      ],
+      "importance": 3
+    },
+    {
+      "id": "B002-RAG_CONTEXT_CONFLICT",
+      "term": "Retrieved context contradiction",
+      "abbreviation": null,
+      "definition_ru": "противоречие найденного контекста знаниям модели или другим источникам",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "pdf_pages": [
+        674,
+        676
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-RAG_LONG_CONTEXT",
+      "term": "RAG versus long context",
+      "abbreviation": null,
+      "definition_ru": "сравнение избирательного поиска с передачей длинного контекста целиком",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "pdf_pages": [
+        676,
+        679
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-RAG_VS_FINETUNE",
+      "term": "RAG versus fine-tuning",
+      "abbreviation": null,
+      "definition_ru": "выбор обновляемого контекста либо изменения параметров в зависимости от задачи",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH12",
+      "pdf_pages": [
+        679,
+        682
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-SYSTEM_ARCHITECTURE",
+      "term": "System architecture",
+      "abbreviation": null,
+      "definition_ru": "композиция программных и модельных компонентов для достижения надёжности, качества, стоимости и задержки",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH13",
+      "pdf_pages": [
+        683,
+        684
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-MULTI_LLM_ARCHITECTURE",
+      "term": "Multi-LLM architecture",
+      "abbreviation": null,
+      "definition_ru": "совместное применение нескольких языковых моделей для подзадач или выбора модели на запрос",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH13",
+      "pdf_pages": [
+        684,
+        685
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-LLM_ENSEMBLE",
+      "term": "LLM ensemble",
+      "abbreviation": null,
+      "definition_ru": "объединение выходов нескольких моделей методами агрегирования",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH13",
+      "pdf_pages": [
+        685,
+        686
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-LLM_CASCADE",
+      "term": "LLM cascade",
+      "abbreviation": null,
+      "definition_ru": "последовательная передача задачи моделям возрастающей мощности при недостаточной уверенности",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH13",
+      "pdf_pages": [
+        686,
+        689
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-CASCADE_CONFIDENCE",
+      "term": "Cascade confidence calibration",
+      "abbreviation": null,
+      "definition_ru": "оценивание достаточности ответа для остановки каскада с учётом калибровки",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH13",
+      "pdf_pages": [
+        687,
+        689
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-MARGIN_SAMPLING",
+      "term": "Margin sampling",
+      "abbreviation": null,
+      "definition_ru": "использование разницы вероятностей двух наиболее вероятных токенов как эвристики уверенности",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH13",
+      "pdf_pages": [
+        688,
+        689
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-SELF_CONSISTENCY_ROUTING",
+      "term": "Self-consistency for routing",
+      "abbreviation": null,
+      "definition_ru": "сравнение нескольких ответов модели как эвристики уверенности",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH13",
+      "pdf_pages": [
+        687,
+        689
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-LLM_ROUTER",
+      "term": "LLM router",
+      "abbreviation": null,
+      "definition_ru": "модель или программа предварительного распределения запросов по исполнителям",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH13",
+      "pdf_pages": [
+        689,
+        691
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-INTENT_ROUTING",
+      "term": "Intent routing",
+      "abbreviation": null,
+      "definition_ru": "направление запроса по распознанному намерению к соответствующей модели",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH13",
+      "pdf_pages": [
+        689,
+        690
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-COMPLEXITY_ROUTING",
+      "term": "Complexity-based routing",
+      "abbreviation": null,
+      "definition_ru": "направление запроса к наименьшей модели с достаточным ожидаемым качеством",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH13",
+      "pdf_pages": [
+        689,
+        691
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-RAG_ROUTER",
+      "term": "RAG retrieval routing",
+      "abbreviation": null,
+      "definition_ru": "выбор вида поискового механизма по характеристикам запроса",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH13",
+      "pdf_pages": [
+        690,
+        691
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-TASK_SPECIALIZED_LLM",
+      "term": "Task-specialized LLM",
+      "abbreviation": null,
+      "definition_ru": "использование предметных или функциональных моделей для отдельных подзадач",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH13",
+      "pdf_pages": [
+        691,
+        692
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-PROGRAMMING_PARADIGMS",
+      "term": "LLM programming paradigms",
+      "abbreviation": null,
+      "definition_ru": "программное описание логики приложения с отделением потока исполнения от текстовых инструкций",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH13",
+      "pdf_pages": [
+        692,
+        693
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-DSPY",
+      "term": "DSPy",
+      "abbreviation": "DSPY",
+      "definition_ru": "фреймворк декларативной разработки LLM-программ с модулями и оптимизаторами",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH13",
+      "pdf_pages": [
+        693,
+        697
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-DSPY_MODULE",
+      "term": "DSPy module",
+      "abbreviation": null,
+      "definition_ru": "компонент программы с декларативной сигнатурой входов и выходов",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH13",
+      "pdf_pages": [
+        694,
+        696
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-DSPY_SIGNATURE",
+      "term": "DSPy signature",
+      "abbreviation": null,
+      "definition_ru": "декларативная спецификация входных и выходных полей задачи",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH13",
+      "pdf_pages": [
+        694,
+        696
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-DSPY_OPTIMIZER",
+      "term": "DSPy optimizer",
+      "abbreviation": null,
+      "definition_ru": "модуль экспериментальной настройки инструкций, примеров или параметров модели по метрике",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH13",
+      "pdf_pages": [
+        696,
+        697
+      ],
+      "importance": 5
+    },
+    {
+      "id": "B002-LMQL",
+      "term": "Language Model Query Language",
+      "abbreviation": "LMQL",
+      "definition_ru": "декларативный подход для промптов, ограничений генерации и управления программным потоком",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH13",
+      "pdf_pages": [
+        697,
+        700
+      ],
+      "importance": 4
+    },
+    {
+      "id": "B002-CONSTRAINED_GENERATION",
+      "term": "Constrained generation",
+      "abbreviation": null,
+      "definition_ru": "ограничение возможного вывода модели заданными программными правилами",
+      "origin": "SOURCE_DERIVED_PARAPHRASE",
+      "chapter": "CH13",
+      "pdf_pages": [
+        698,
+        699
+      ],
+      "importance": 5
+    }
+  ]
+}

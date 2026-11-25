@@ -1,0 +1,34 @@
+{
+  "chapter": "CH09",
+  "source_pages": [
+    182,
+    223
+  ],
+  "status": "PUBLIC_QUESTIONS_NOT_POLYGON_HOLDOUT",
+  "questions": [
+    {
+      "id": "B003-CH09-Q1",
+      "question": "Какова роль observation в ReAct?",
+      "topic": "ReAct reason→act→observe loop",
+      "grade": "UNASSESSED"
+    },
+    {
+      "id": "B003-CH09-Q2",
+      "question": "Как связать task_id и correlation_id?",
+      "topic": "RabbitMQ exchanges, queues and bindings",
+      "grade": "UNASSESSED"
+    },
+    {
+      "id": "B003-CH09-Q3",
+      "question": "Когда ACK допустим?",
+      "topic": "Agent message schemas and LLM _think",
+      "grade": "UNASSESSED"
+    },
+    {
+      "id": "B003-CH09-Q4",
+      "question": "Что делать при timeout и poison message?",
+      "topic": "Tool dispatch, workers, ACK, retry, DLQ",
+      "grade": "UNASSESSED"
+    }
+  ]
+}

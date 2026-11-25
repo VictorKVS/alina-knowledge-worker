@@ -1,0 +1,34 @@
+{
+  "chapter": "CH06",
+  "source_pages": [
+    120,
+    133
+  ],
+  "status": "PUBLIC_QUESTIONS_NOT_POLYGON_HOLDOUT",
+  "questions": [
+    {
+      "id": "B003-CH06-Q1",
+      "question": "Почему ETL использует Channel Adapter?",
+      "topic": "ETL integration patterns",
+      "grade": "UNASSESSED"
+    },
+    {
+      "id": "B003-CH06-Q2",
+      "question": "Какие проверки нужны после загрузки?",
+      "topic": "Channel Adapter and Strategy",
+      "grade": "UNASSESSED"
+    },
+    {
+      "id": "B003-CH06-Q3",
+      "question": "Как избежать vendor lock-in?",
+      "topic": "Airbyte connectors and configuration",
+      "grade": "UNASSESSED"
+    },
+    {
+      "id": "B003-CH06-Q4",
+      "question": "Чем no-code манифест отличается от доказательства готовности?",
+      "topic": "Pinecone ingestion, YAML/no-code",
+      "grade": "UNASSESSED"
+    }
+  ]
+}

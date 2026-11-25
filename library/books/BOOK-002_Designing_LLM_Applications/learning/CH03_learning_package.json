@@ -1,0 +1,62 @@
+{
+  "book_id": "BOOK-002",
+  "chapter": "CH03",
+  "status": "PREPARED_NOT_QUALIFIED",
+  "source": {
+    "source_id": "SRC-BOOK002-PRIMARY",
+    "pages": [
+      168,
+      203
+    ]
+  },
+  "tasks": [
+    {
+      "id": "CH03-Q1",
+      "question": "Объясни токен/тип/ID",
+      "gold": "Токен — единица из словаря или её встречаемость в последовательности; ID — цифровой индекс токена",
+      "verification": "open training exercise, not protected POLYGON holdout"
+    },
+    {
+      "id": "CH03-Q2",
+      "question": "Как BPE выбирает пару?",
+      "gold": "Выбирает самую частую соседнюю пару по обучающему корпусу и добавляет merge-правило",
+      "verification": "open training exercise, not protected POLYGON holdout"
+    },
+    {
+      "id": "CH03-Q3",
+      "question": "Что меняется между train tokenizer и inference?",
+      "gold": "При train строятся словарь и правила; при inference они применяются без переобучения на запросе",
+      "verification": "open training exercise, not protected POLYGON holdout"
+    },
+    {
+      "id": "CH03-Q4",
+      "question": "Fertility 250/100?",
+      "gold": "2.5 токена на слово; это мера сжатия, не правдивости",
+      "verification": "open training exercise, not protected POLYGON holdout"
+    },
+    {
+      "id": "CH03-Q5",
+      "question": "Parity 180/100?",
+      "gold": "1.8 для сравниваемых эквивалентных фрагментов; это не оценка ответов модели",
+      "verification": "open training exercise, not protected POLYGON holdout"
+    },
+    {
+      "id": "CH03-Q6",
+      "question": "Почему нужны проверки русских терминов?",
+      "gold": "Домен и язык меняют эффективность токенизации и бюджет контекста",
+      "verification": "open training exercise, not protected POLYGON holdout"
+    },
+    {
+      "id": "CH03-Q7",
+      "question": "Можно ли просто добавить токены?",
+      "gold": "Новые embeddings требуют обучения; надо проверять совместимость модели и токенизатора",
+      "verification": "open training exercise, not protected POLYGON holdout"
+    },
+    {
+      "id": "CH03-Q8",
+      "question": "Что делает postprocessing?",
+      "gold": "Добавляет модельно-зависимые служебные токены",
+      "verification": "open training exercise, not protected POLYGON holdout"
+    }
+  ]
+}

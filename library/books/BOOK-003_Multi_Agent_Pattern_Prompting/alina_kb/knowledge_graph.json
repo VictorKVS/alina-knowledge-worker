@@ -1,0 +1,952 @@
+{
+  "schema": "father.book003.knowledge.v1",
+  "book_id": "BOOK-003",
+  "origin": "SOURCE_DERIVED_PARAPHRASE",
+  "source_pdf_sha256": "d96fb8b53a85fb1d0aa3f95f58db0b85374aa9a07cd99e18c3db620dca892ee2",
+  "source_pages": 310,
+  "source_license": "user-provided; no copy of book text",
+  "reviewed_chapters": [
+    "CH01",
+    "CH02",
+    "CH03",
+    "CH04",
+    "CH05",
+    "CH06",
+    "CH07",
+    "CH08",
+    "CH09",
+    "CH10"
+  ],
+  "status": "SOURCE_REVIEWED_LABS_NOT_RUN",
+  "nodes": [
+    {
+      "id": "B003-CH01-T01",
+      "title": "Vocabulary bridge between GenAI and IT",
+      "chapter": "CH01",
+      "pdf_pages": [
+        30,
+        43
+      ],
+      "importance": 4,
+      "evidence": {
+        "file_sha256": "d96fb8b53a85fb1d0aa3f95f58db0b85374aa9a07cd99e18c3db620dca892ee2",
+        "level": "CHAPTER_RANGE_NOT_PARAGRAPH_ANCHOR"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED"
+    },
+    {
+      "id": "B003-CH01-T02",
+      "title": "Abstractions and reusable design patterns",
+      "chapter": "CH01",
+      "pdf_pages": [
+        30,
+        43
+      ],
+      "importance": 4,
+      "evidence": {
+        "file_sha256": "d96fb8b53a85fb1d0aa3f95f58db0b85374aa9a07cd99e18c3db620dca892ee2",
+        "level": "CHAPTER_RANGE_NOT_PARAGRAPH_ANCHOR"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED"
+    },
+    {
+      "id": "B003-CH01-T03",
+      "title": "Orchestration versus choreography",
+      "chapter": "CH01",
+      "pdf_pages": [
+        30,
+        43
+      ],
+      "importance": 4,
+      "evidence": {
+        "file_sha256": "d96fb8b53a85fb1d0aa3f95f58db0b85374aa9a07cd99e18c3db620dca892ee2",
+        "level": "CHAPTER_RANGE_NOT_PARAGRAPH_ANCHOR"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED"
+    },
+    {
+      "id": "B003-CH01-T04",
+      "title": "LLM as a service endpoint; agentic AI",
+      "chapter": "CH01",
+      "pdf_pages": [
+        30,
+        43
+      ],
+      "importance": 4,
+      "evidence": {
+        "file_sha256": "d96fb8b53a85fb1d0aa3f95f58db0b85374aa9a07cd99e18c3db620dca892ee2",
+        "level": "CHAPTER_RANGE_NOT_PARAGRAPH_ANCHOR"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED"
+    },
+    {
+      "id": "B003-CH02-T01",
+      "title": "Embedding vectors and affinity",
+      "chapter": "CH02",
+      "pdf_pages": [
+        44,
+        61
+      ],
+      "importance": 4,
+      "evidence": {
+        "file_sha256": "d96fb8b53a85fb1d0aa3f95f58db0b85374aa9a07cd99e18c3db620dca892ee2",
+        "level": "CHAPTER_RANGE_NOT_PARAGRAPH_ANCHOR"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED"
+    },
+    {
+      "id": "B003-CH02-T02",
+      "title": "Cosine similarity and programmatic computation",
+      "chapter": "CH02",
+      "pdf_pages": [
+        44,
+        61
+      ],
+      "importance": 4,
+      "evidence": {
+        "file_sha256": "d96fb8b53a85fb1d0aa3f95f58db0b85374aa9a07cd99e18c3db620dca892ee2",
+        "level": "CHAPTER_RANGE_NOT_PARAGRAPH_ANCHOR"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED"
+    },
+    {
+      "id": "B003-CH02-T03",
+      "title": "Selecting and testing an embedding model",
+      "chapter": "CH02",
+      "pdf_pages": [
+        44,
+        61
+      ],
+      "importance": 4,
+      "evidence": {
+        "file_sha256": "d96fb8b53a85fb1d0aa3f95f58db0b85374aa9a07cd99e18c3db620dca892ee2",
+        "level": "CHAPTER_RANGE_NOT_PARAGRAPH_ANCHOR"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED"
+    },
+    {
+      "id": "B003-CH02-T04",
+      "title": "Vector databases and chunking",
+      "chapter": "CH02",
+      "pdf_pages": [
+        44,
+        61
+      ],
+      "importance": 4,
+      "evidence": {
+        "file_sha256": "d96fb8b53a85fb1d0aa3f95f58db0b85374aa9a07cd99e18c3db620dca892ee2",
+        "level": "CHAPTER_RANGE_NOT_PARAGRAPH_ANCHOR"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED"
+    },
+    {
+      "id": "B003-CH03-T01",
+      "title": "Coupled GenAI tuning parameters",
+      "chapter": "CH03",
+      "pdf_pages": [
+        62,
+        79
+      ],
+      "importance": 4,
+      "evidence": {
+        "file_sha256": "d96fb8b53a85fb1d0aa3f95f58db0b85374aa9a07cd99e18c3db620dca892ee2",
+        "level": "CHAPTER_RANGE_NOT_PARAGRAPH_ANCHOR"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED"
+    },
+    {
+      "id": "B003-CH03-T02",
+      "title": "Chunking → retrieval → prompting",
+      "chapter": "CH03",
+      "pdf_pages": [
+        62,
+        79
+      ],
+      "importance": 4,
+      "evidence": {
+        "file_sha256": "d96fb8b53a85fb1d0aa3f95f58db0b85374aa9a07cd99e18c3db620dca892ee2",
+        "level": "CHAPTER_RANGE_NOT_PARAGRAPH_ANCHOR"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED"
+    },
+    {
+      "id": "B003-CH03-T03",
+      "title": "Model, context/tokens and temperature",
+      "chapter": "CH03",
+      "pdf_pages": [
+        62,
+        79
+      ],
+      "importance": 4,
+      "evidence": {
+        "file_sha256": "d96fb8b53a85fb1d0aa3f95f58db0b85374aa9a07cd99e18c3db620dca892ee2",
+        "level": "CHAPTER_RANGE_NOT_PARAGRAPH_ANCHOR"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED"
+    },
+    {
+      "id": "B003-CH03-T04",
+      "title": "Project initiation, intermediate goals, finish",
+      "chapter": "CH03",
+      "pdf_pages": [
+        62,
+        79
+      ],
+      "importance": 4,
+      "evidence": {
+        "file_sha256": "d96fb8b53a85fb1d0aa3f95f58db0b85374aa9a07cd99e18c3db620dca892ee2",
+        "level": "CHAPTER_RANGE_NOT_PARAGRAPH_ANCHOR"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED"
+    },
+    {
+      "id": "B003-CH04-T01",
+      "title": "Meaning of production-grade software",
+      "chapter": "CH04",
+      "pdf_pages": [
+        80,
+        103
+      ],
+      "importance": 4,
+      "evidence": {
+        "file_sha256": "d96fb8b53a85fb1d0aa3f95f58db0b85374aa9a07cd99e18c3db620dca892ee2",
+        "level": "CHAPTER_RANGE_NOT_PARAGRAPH_ANCHOR"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED"
+    },
+    {
+      "id": "B003-CH04-T02",
+      "title": "Queues, topics and RabbitMQ",
+      "chapter": "CH04",
+      "pdf_pages": [
+        80,
+        103
+      ],
+      "importance": 4,
+      "evidence": {
+        "file_sha256": "d96fb8b53a85fb1d0aa3f95f58db0b85374aa9a07cd99e18c3db620dca892ee2",
+        "level": "CHAPTER_RANGE_NOT_PARAGRAPH_ANCHOR"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED"
+    },
+    {
+      "id": "B003-CH04-T03",
+      "title": "EIP patterns for a production RAG pipeline",
+      "chapter": "CH04",
+      "pdf_pages": [
+        80,
+        103
+      ],
+      "importance": 4,
+      "evidence": {
+        "file_sha256": "d96fb8b53a85fb1d0aa3f95f58db0b85374aa9a07cd99e18c3db620dca892ee2",
+        "level": "CHAPTER_RANGE_NOT_PARAGRAPH_ANCHOR"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED"
+    },
+    {
+      "id": "B003-CH04-T04",
+      "title": "LLM client: Template Method, Adapter, Strategy",
+      "chapter": "CH04",
+      "pdf_pages": [
+        80,
+        103
+      ],
+      "importance": 4,
+      "evidence": {
+        "file_sha256": "d96fb8b53a85fb1d0aa3f95f58db0b85374aa9a07cd99e18c3db620dca892ee2",
+        "level": "CHAPTER_RANGE_NOT_PARAGRAPH_ANCHOR"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED"
+    },
+    {
+      "id": "B003-CH04-T05",
+      "title": "Deployment configuration",
+      "chapter": "CH04",
+      "pdf_pages": [
+        80,
+        103
+      ],
+      "importance": 4,
+      "evidence": {
+        "file_sha256": "d96fb8b53a85fb1d0aa3f95f58db0b85374aa9a07cd99e18c3db620dca892ee2",
+        "level": "CHAPTER_RANGE_NOT_PARAGRAPH_ANCHOR"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED"
+    },
+    {
+      "id": "B003-CH05-T01",
+      "title": "Document and data source inventory",
+      "chapter": "CH05",
+      "pdf_pages": [
+        104,
+        119
+      ],
+      "importance": 4,
+      "evidence": {
+        "file_sha256": "d96fb8b53a85fb1d0aa3f95f58db0b85374aa9a07cd99e18c3db620dca892ee2",
+        "level": "CHAPTER_RANGE_NOT_PARAGRAPH_ANCHOR"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED"
+    },
+    {
+      "id": "B003-CH05-T02",
+      "title": "ETL tool evaluation",
+      "chapter": "CH05",
+      "pdf_pages": [
+        104,
+        119
+      ],
+      "importance": 4,
+      "evidence": {
+        "file_sha256": "d96fb8b53a85fb1d0aa3f95f58db0b85374aa9a07cd99e18c3db620dca892ee2",
+        "level": "CHAPTER_RANGE_NOT_PARAGRAPH_ANCHOR"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED"
+    },
+    {
+      "id": "B003-CH05-T03",
+      "title": "Throughput/capacity and incremental updates",
+      "chapter": "CH05",
+      "pdf_pages": [
+        104,
+        119
+      ],
+      "importance": 4,
+      "evidence": {
+        "file_sha256": "d96fb8b53a85fb1d0aa3f95f58db0b85374aa9a07cd99e18c3db620dca892ee2",
+        "level": "CHAPTER_RANGE_NOT_PARAGRAPH_ANCHOR"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED"
+    },
+    {
+      "id": "B003-CH05-T04",
+      "title": "Privacy, security, CI/CD and validation",
+      "chapter": "CH05",
+      "pdf_pages": [
+        104,
+        119
+      ],
+      "importance": 4,
+      "evidence": {
+        "file_sha256": "d96fb8b53a85fb1d0aa3f95f58db0b85374aa9a07cd99e18c3db620dca892ee2",
+        "level": "CHAPTER_RANGE_NOT_PARAGRAPH_ANCHOR"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED"
+    },
+    {
+      "id": "B003-CH05-T05",
+      "title": "Hybrid search, data cleaning, graph databases",
+      "chapter": "CH05",
+      "pdf_pages": [
+        104,
+        119
+      ],
+      "importance": 4,
+      "evidence": {
+        "file_sha256": "d96fb8b53a85fb1d0aa3f95f58db0b85374aa9a07cd99e18c3db620dca892ee2",
+        "level": "CHAPTER_RANGE_NOT_PARAGRAPH_ANCHOR"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED"
+    },
+    {
+      "id": "B003-CH06-T01",
+      "title": "ETL integration patterns",
+      "chapter": "CH06",
+      "pdf_pages": [
+        120,
+        133
+      ],
+      "importance": 4,
+      "evidence": {
+        "file_sha256": "d96fb8b53a85fb1d0aa3f95f58db0b85374aa9a07cd99e18c3db620dca892ee2",
+        "level": "CHAPTER_RANGE_NOT_PARAGRAPH_ANCHOR"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED"
+    },
+    {
+      "id": "B003-CH06-T02",
+      "title": "Channel Adapter and Strategy",
+      "chapter": "CH06",
+      "pdf_pages": [
+        120,
+        133
+      ],
+      "importance": 4,
+      "evidence": {
+        "file_sha256": "d96fb8b53a85fb1d0aa3f95f58db0b85374aa9a07cd99e18c3db620dca892ee2",
+        "level": "CHAPTER_RANGE_NOT_PARAGRAPH_ANCHOR"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED"
+    },
+    {
+      "id": "B003-CH06-T03",
+      "title": "Airbyte connectors and configuration",
+      "chapter": "CH06",
+      "pdf_pages": [
+        120,
+        133
+      ],
+      "importance": 4,
+      "evidence": {
+        "file_sha256": "d96fb8b53a85fb1d0aa3f95f58db0b85374aa9a07cd99e18c3db620dca892ee2",
+        "level": "CHAPTER_RANGE_NOT_PARAGRAPH_ANCHOR"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED"
+    },
+    {
+      "id": "B003-CH06-T04",
+      "title": "Pinecone ingestion, YAML/no-code",
+      "chapter": "CH06",
+      "pdf_pages": [
+        120,
+        133
+      ],
+      "importance": 4,
+      "evidence": {
+        "file_sha256": "d96fb8b53a85fb1d0aa3f95f58db0b85374aa9a07cd99e18c3db620dca892ee2",
+        "level": "CHAPTER_RANGE_NOT_PARAGRAPH_ANCHOR"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED"
+    },
+    {
+      "id": "B003-CH06-T05",
+      "title": "Verification of ETL outputs",
+      "chapter": "CH06",
+      "pdf_pages": [
+        120,
+        133
+      ],
+      "importance": 4,
+      "evidence": {
+        "file_sha256": "d96fb8b53a85fb1d0aa3f95f58db0b85374aa9a07cd99e18c3db620dca892ee2",
+        "level": "CHAPTER_RANGE_NOT_PARAGRAPH_ANCHOR"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED"
+    },
+    {
+      "id": "B003-CH07-T01",
+      "title": "R&D mindset; small POCs; latency and throughput",
+      "chapter": "CH07",
+      "pdf_pages": [
+        134,
+        151
+      ],
+      "importance": 4,
+      "evidence": {
+        "file_sha256": "d96fb8b53a85fb1d0aa3f95f58db0b85374aa9a07cd99e18c3db620dca892ee2",
+        "level": "CHAPTER_RANGE_NOT_PARAGRAPH_ANCHOR"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED"
+    },
+    {
+      "id": "B003-CH07-T02",
+      "title": "Drift and non-determinism",
+      "chapter": "CH07",
+      "pdf_pages": [
+        134,
+        151
+      ],
+      "importance": 4,
+      "evidence": {
+        "file_sha256": "d96fb8b53a85fb1d0aa3f95f58db0b85374aa9a07cd99e18c3db620dca892ee2",
+        "level": "CHAPTER_RANGE_NOT_PARAGRAPH_ANCHOR"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED"
+    },
+    {
+      "id": "B003-CH07-T03",
+      "title": "Security: injection, leakage, PII, output validation",
+      "chapter": "CH07",
+      "pdf_pages": [
+        134,
+        151
+      ],
+      "importance": 4,
+      "evidence": {
+        "file_sha256": "d96fb8b53a85fb1d0aa3f95f58db0b85374aa9a07cd99e18c3db620dca892ee2",
+        "level": "CHAPTER_RANGE_NOT_PARAGRAPH_ANCHOR"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED"
+    },
+    {
+      "id": "B003-CH07-T04",
+      "title": "Token budgets and cost governance",
+      "chapter": "CH07",
+      "pdf_pages": [
+        134,
+        151
+      ],
+      "importance": 4,
+      "evidence": {
+        "file_sha256": "d96fb8b53a85fb1d0aa3f95f58db0b85374aa9a07cd99e18c3db620dca892ee2",
+        "level": "CHAPTER_RANGE_NOT_PARAGRAPH_ANCHOR"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED"
+    },
+    {
+      "id": "B003-CH07-T05",
+      "title": "Prompt versioning, rollback, testing and red team",
+      "chapter": "CH07",
+      "pdf_pages": [
+        134,
+        151
+      ],
+      "importance": 4,
+      "evidence": {
+        "file_sha256": "d96fb8b53a85fb1d0aa3f95f58db0b85374aa9a07cd99e18c3db620dca892ee2",
+        "level": "CHAPTER_RANGE_NOT_PARAGRAPH_ANCHOR"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED"
+    },
+    {
+      "id": "B003-CH08-T01",
+      "title": "Shared pattern vocabulary for coding agents",
+      "chapter": "CH08",
+      "pdf_pages": [
+        152,
+        181
+      ],
+      "importance": 4,
+      "evidence": {
+        "file_sha256": "d96fb8b53a85fb1d0aa3f95f58db0b85374aa9a07cd99e18c3db620dca892ee2",
+        "level": "CHAPTER_RANGE_NOT_PARAGRAPH_ANCHOR"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED"
+    },
+    {
+      "id": "B003-CH08-T02",
+      "title": "Topologos four-phase iterative approval",
+      "chapter": "CH08",
+      "pdf_pages": [
+        152,
+        181
+      ],
+      "importance": 4,
+      "evidence": {
+        "file_sha256": "d96fb8b53a85fb1d0aa3f95f58db0b85374aa9a07cd99e18c3db620dca892ee2",
+        "level": "CHAPTER_RANGE_NOT_PARAGRAPH_ANCHOR"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED"
+    },
+    {
+      "id": "B003-CH08-T03",
+      "title": "RabbitMQ producers/consumers: Strategy, Command, Template Method, Adapter",
+      "chapter": "CH08",
+      "pdf_pages": [
+        152,
+        181
+      ],
+      "importance": 4,
+      "evidence": {
+        "file_sha256": "d96fb8b53a85fb1d0aa3f95f58db0b85374aa9a07cd99e18c3db620dca892ee2",
+        "level": "CHAPTER_RANGE_NOT_PARAGRAPH_ANCHOR"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED"
+    },
+    {
+      "id": "B003-CH08-T04",
+      "title": "Manual ACK and multi-tier DLQ",
+      "chapter": "CH08",
+      "pdf_pages": [
+        152,
+        181
+      ],
+      "importance": 4,
+      "evidence": {
+        "file_sha256": "d96fb8b53a85fb1d0aa3f95f58db0b85374aa9a07cd99e18c3db620dca892ee2",
+        "level": "CHAPTER_RANGE_NOT_PARAGRAPH_ANCHOR"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED"
+    },
+    {
+      "id": "B003-CH08-T05",
+      "title": "Single RAG → dual-LLM Scatter-Gather case study",
+      "chapter": "CH08",
+      "pdf_pages": [
+        152,
+        181
+      ],
+      "importance": 4,
+      "evidence": {
+        "file_sha256": "d96fb8b53a85fb1d0aa3f95f58db0b85374aa9a07cd99e18c3db620dca892ee2",
+        "level": "CHAPTER_RANGE_NOT_PARAGRAPH_ANCHOR"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED"
+    },
+    {
+      "id": "B003-CH09-T01",
+      "title": "ReAct reason→act→observe loop",
+      "chapter": "CH09",
+      "pdf_pages": [
+        182,
+        223
+      ],
+      "importance": 4,
+      "evidence": {
+        "file_sha256": "d96fb8b53a85fb1d0aa3f95f58db0b85374aa9a07cd99e18c3db620dca892ee2",
+        "level": "CHAPTER_RANGE_NOT_PARAGRAPH_ANCHOR"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED"
+    },
+    {
+      "id": "B003-CH09-T02",
+      "title": "RabbitMQ exchanges, queues and bindings",
+      "chapter": "CH09",
+      "pdf_pages": [
+        182,
+        223
+      ],
+      "importance": 4,
+      "evidence": {
+        "file_sha256": "d96fb8b53a85fb1d0aa3f95f58db0b85374aa9a07cd99e18c3db620dca892ee2",
+        "level": "CHAPTER_RANGE_NOT_PARAGRAPH_ANCHOR"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED"
+    },
+    {
+      "id": "B003-CH09-T03",
+      "title": "Agent message schemas and LLM _think",
+      "chapter": "CH09",
+      "pdf_pages": [
+        182,
+        223
+      ],
+      "importance": 4,
+      "evidence": {
+        "file_sha256": "d96fb8b53a85fb1d0aa3f95f58db0b85374aa9a07cd99e18c3db620dca892ee2",
+        "level": "CHAPTER_RANGE_NOT_PARAGRAPH_ANCHOR"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED"
+    },
+    {
+      "id": "B003-CH09-T04",
+      "title": "Tool dispatch, workers, ACK, retry, DLQ",
+      "chapter": "CH09",
+      "pdf_pages": [
+        182,
+        223
+      ],
+      "importance": 4,
+      "evidence": {
+        "file_sha256": "d96fb8b53a85fb1d0aa3f95f58db0b85374aa9a07cd99e18c3db620dca892ee2",
+        "level": "CHAPTER_RANGE_NOT_PARAGRAPH_ANCHOR"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED"
+    },
+    {
+      "id": "B003-CH09-T05",
+      "title": "End-to-end demo and production considerations",
+      "chapter": "CH09",
+      "pdf_pages": [
+        182,
+        223
+      ],
+      "importance": 4,
+      "evidence": {
+        "file_sha256": "d96fb8b53a85fb1d0aa3f95f58db0b85374aa9a07cd99e18c3db620dca892ee2",
+        "level": "CHAPTER_RANGE_NOT_PARAGRAPH_ANCHOR"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED"
+    },
+    {
+      "id": "B003-CH10-T01",
+      "title": "Precise characterization of what LLMs do",
+      "chapter": "CH10",
+      "pdf_pages": [
+        224,
+        235
+      ],
+      "importance": 4,
+      "evidence": {
+        "file_sha256": "d96fb8b53a85fb1d0aa3f95f58db0b85374aa9a07cd99e18c3db620dca892ee2",
+        "level": "CHAPTER_RANGE_NOT_PARAGRAPH_ANCHOR"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED"
+    },
+    {
+      "id": "B003-CH10-T02",
+      "title": "Stochastic parrot and Chinese Room perspectives",
+      "chapter": "CH10",
+      "pdf_pages": [
+        224,
+        235
+      ],
+      "importance": 4,
+      "evidence": {
+        "file_sha256": "d96fb8b53a85fb1d0aa3f95f58db0b85374aa9a07cd99e18c3db620dca892ee2",
+        "level": "CHAPTER_RANGE_NOT_PARAGRAPH_ANCHOR"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED"
+    },
+    {
+      "id": "B003-CH10-T03",
+      "title": "Limits of statistical learning and reasoning",
+      "chapter": "CH10",
+      "pdf_pages": [
+        224,
+        235
+      ],
+      "importance": 4,
+      "evidence": {
+        "file_sha256": "d96fb8b53a85fb1d0aa3f95f58db0b85374aa9a07cd99e18c3db620dca892ee2",
+        "level": "CHAPTER_RANGE_NOT_PARAGRAPH_ANCHOR"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED"
+    },
+    {
+      "id": "B003-CH10-T04",
+      "title": "Inconsistency, confidence calibration and symbol grounding",
+      "chapter": "CH10",
+      "pdf_pages": [
+        224,
+        235
+      ],
+      "importance": 4,
+      "evidence": {
+        "file_sha256": "d96fb8b53a85fb1d0aa3f95f58db0b85374aa9a07cd99e18c3db620dca892ee2",
+        "level": "CHAPTER_RANGE_NOT_PARAGRAPH_ANCHOR"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED"
+    },
+    {
+      "id": "B003-CH10-T05",
+      "title": "Engineering advice and overclaiming",
+      "chapter": "CH10",
+      "pdf_pages": [
+        224,
+        235
+      ],
+      "importance": 4,
+      "evidence": {
+        "file_sha256": "d96fb8b53a85fb1d0aa3f95f58db0b85374aa9a07cd99e18c3db620dca892ee2",
+        "level": "CHAPTER_RANGE_NOT_PARAGRAPH_ANCHOR"
+      },
+      "status": "DESCRIBED_NOT_QUALIFIED"
+    }
+  ],
+  "edges": [
+    {
+      "from": "B003-CH01-T01",
+      "to": "B003-CH01-T02",
+      "type": "SEQUENCE_IN_CHAPTER",
+      "status": "EDITORIAL"
+    },
+    {
+      "from": "B003-CH01-T02",
+      "to": "B003-CH01-T03",
+      "type": "SEQUENCE_IN_CHAPTER",
+      "status": "EDITORIAL"
+    },
+    {
+      "from": "B003-CH01-T03",
+      "to": "B003-CH01-T04",
+      "type": "SEQUENCE_IN_CHAPTER",
+      "status": "EDITORIAL"
+    },
+    {
+      "from": "B003-CH02-T01",
+      "to": "B003-CH02-T02",
+      "type": "SEQUENCE_IN_CHAPTER",
+      "status": "EDITORIAL"
+    },
+    {
+      "from": "B003-CH02-T02",
+      "to": "B003-CH02-T03",
+      "type": "SEQUENCE_IN_CHAPTER",
+      "status": "EDITORIAL"
+    },
+    {
+      "from": "B003-CH02-T03",
+      "to": "B003-CH02-T04",
+      "type": "SEQUENCE_IN_CHAPTER",
+      "status": "EDITORIAL"
+    },
+    {
+      "from": "B003-CH03-T01",
+      "to": "B003-CH03-T02",
+      "type": "SEQUENCE_IN_CHAPTER",
+      "status": "EDITORIAL"
+    },
+    {
+      "from": "B003-CH03-T02",
+      "to": "B003-CH03-T03",
+      "type": "SEQUENCE_IN_CHAPTER",
+      "status": "EDITORIAL"
+    },
+    {
+      "from": "B003-CH03-T03",
+      "to": "B003-CH03-T04",
+      "type": "SEQUENCE_IN_CHAPTER",
+      "status": "EDITORIAL"
+    },
+    {
+      "from": "B003-CH04-T01",
+      "to": "B003-CH04-T02",
+      "type": "SEQUENCE_IN_CHAPTER",
+      "status": "EDITORIAL"
+    },
+    {
+      "from": "B003-CH04-T02",
+      "to": "B003-CH04-T03",
+      "type": "SEQUENCE_IN_CHAPTER",
+      "status": "EDITORIAL"
+    },
+    {
+      "from": "B003-CH04-T03",
+      "to": "B003-CH04-T04",
+      "type": "SEQUENCE_IN_CHAPTER",
+      "status": "EDITORIAL"
+    },
+    {
+      "from": "B003-CH04-T04",
+      "to": "B003-CH04-T05",
+      "type": "SEQUENCE_IN_CHAPTER",
+      "status": "EDITORIAL"
+    },
+    {
+      "from": "B003-CH05-T01",
+      "to": "B003-CH05-T02",
+      "type": "SEQUENCE_IN_CHAPTER",
+      "status": "EDITORIAL"
+    },
+    {
+      "from": "B003-CH05-T02",
+      "to": "B003-CH05-T03",
+      "type": "SEQUENCE_IN_CHAPTER",
+      "status": "EDITORIAL"
+    },
+    {
+      "from": "B003-CH05-T03",
+      "to": "B003-CH05-T04",
+      "type": "SEQUENCE_IN_CHAPTER",
+      "status": "EDITORIAL"
+    },
+    {
+      "from": "B003-CH05-T04",
+      "to": "B003-CH05-T05",
+      "type": "SEQUENCE_IN_CHAPTER",
+      "status": "EDITORIAL"
+    },
+    {
+      "from": "B003-CH06-T01",
+      "to": "B003-CH06-T02",
+      "type": "SEQUENCE_IN_CHAPTER",
+      "status": "EDITORIAL"
+    },
+    {
+      "from": "B003-CH06-T02",
+      "to": "B003-CH06-T03",
+      "type": "SEQUENCE_IN_CHAPTER",
+      "status": "EDITORIAL"
+    },
+    {
+      "from": "B003-CH06-T03",
+      "to": "B003-CH06-T04",
+      "type": "SEQUENCE_IN_CHAPTER",
+      "status": "EDITORIAL"
+    },
+    {
+      "from": "B003-CH06-T04",
+      "to": "B003-CH06-T05",
+      "type": "SEQUENCE_IN_CHAPTER",
+      "status": "EDITORIAL"
+    },
+    {
+      "from": "B003-CH07-T01",
+      "to": "B003-CH07-T02",
+      "type": "SEQUENCE_IN_CHAPTER",
+      "status": "EDITORIAL"
+    },
+    {
+      "from": "B003-CH07-T02",
+      "to": "B003-CH07-T03",
+      "type": "SEQUENCE_IN_CHAPTER",
+      "status": "EDITORIAL"
+    },
+    {
+      "from": "B003-CH07-T03",
+      "to": "B003-CH07-T04",
+      "type": "SEQUENCE_IN_CHAPTER",
+      "status": "EDITORIAL"
+    },
+    {
+      "from": "B003-CH07-T04",
+      "to": "B003-CH07-T05",
+      "type": "SEQUENCE_IN_CHAPTER",
+      "status": "EDITORIAL"
+    },
+    {
+      "from": "B003-CH08-T01",
+      "to": "B003-CH08-T02",
+      "type": "SEQUENCE_IN_CHAPTER",
+      "status": "EDITORIAL"
+    },
+    {
+      "from": "B003-CH08-T02",
+      "to": "B003-CH08-T03",
+      "type": "SEQUENCE_IN_CHAPTER",
+      "status": "EDITORIAL"
+    },
+    {
+      "from": "B003-CH08-T03",
+      "to": "B003-CH08-T04",
+      "type": "SEQUENCE_IN_CHAPTER",
+      "status": "EDITORIAL"
+    },
+    {
+      "from": "B003-CH08-T04",
+      "to": "B003-CH08-T05",
+      "type": "SEQUENCE_IN_CHAPTER",
+      "status": "EDITORIAL"
+    },
+    {
+      "from": "B003-CH09-T01",
+      "to": "B003-CH09-T02",
+      "type": "SEQUENCE_IN_CHAPTER",
+      "status": "EDITORIAL"
+    },
+    {
+      "from": "B003-CH09-T02",
+      "to": "B003-CH09-T03",
+      "type": "SEQUENCE_IN_CHAPTER",
+      "status": "EDITORIAL"
+    },
+    {
+      "from": "B003-CH09-T03",
+      "to": "B003-CH09-T04",
+      "type": "SEQUENCE_IN_CHAPTER",
+      "status": "EDITORIAL"
+    },
+    {
+      "from": "B003-CH09-T04",
+      "to": "B003-CH09-T05",
+      "type": "SEQUENCE_IN_CHAPTER",
+      "status": "EDITORIAL"
+    },
+    {
+      "from": "B003-CH10-T01",
+      "to": "B003-CH10-T02",
+      "type": "SEQUENCE_IN_CHAPTER",
+      "status": "EDITORIAL"
+    },
+    {
+      "from": "B003-CH10-T02",
+      "to": "B003-CH10-T03",
+      "type": "SEQUENCE_IN_CHAPTER",
+      "status": "EDITORIAL"
+    },
+    {
+      "from": "B003-CH10-T03",
+      "to": "B003-CH10-T04",
+      "type": "SEQUENCE_IN_CHAPTER",
+      "status": "EDITORIAL"
+    },
+    {
+      "from": "B003-CH10-T04",
+      "to": "B003-CH10-T05",
+      "type": "SEQUENCE_IN_CHAPTER",
+      "status": "EDITORIAL"
+    }
+  ]
+}
